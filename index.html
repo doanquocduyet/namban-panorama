@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Namban Panorama — Bản thiết kế web v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Be+Vietnam+Pro:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1815;--paper:#f1ece2;--card:#faf6ee;
+    --forest:#2f4034;--forest-deep:#1e2a20;
+    --clay:#9d5d38;--clay-soft:#bb8862;
+    --stone:#a79c87;--muted:#6e6759;--line:#e1d9c8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Be Vietnam Pro',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.03;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  .serif{font-family:'Fraunces',serif;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 40px;}
+  .kicker{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--clay);font-weight:500;}
+  .idx{font-family:'Fraunces',serif;font-weight:300;font-style:italic;color:var(--stone);font-size:15px;}
+  .fu{opacity:0;transform:translateY(16px);animation:fu 1s cubic-bezier(.2,.7,.2,1) forwards;}
+  @keyframes fu{to{opacity:1;transform:none;}}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+  .navin{display:flex;align-items:center;justify-content:space-between;height:72px;}
+  .logo{font-family:'Fraunces',serif;font-weight:500;font-size:20px;letter-spacing:1px;}
+  .logo i{font-style:normal;color:var(--clay);}
+  .logo .sub{font-family:'Be Vietnam Pro';font-weight:400;font-size:9.5px;letter-spacing:3px;color:var(--stone);margin-left:8px;text-transform:uppercase;}
+  .navlinks{display:flex;gap:30px;align-items:center;font-size:13px;color:var(--muted);font-weight:400;}
+  .navlinks a{color:inherit;text-decoration:none;transition:color .25s;}
+  .navlinks a:hover{color:var(--ink);}
+  .btn{background:var(--forest);color:var(--paper);padding:10px 22px;border-radius:2px;font-size:12.5px;letter-spacing:.5px;text-decoration:none;transition:background .3s;}
+  .btn:hover{background:var(--forest-deep);}
+
+  /* HERO with panorama ridges */
+  header{position:relative;padding:92px 0 0;text-align:center;overflow:hidden;}
+  header .wrap{position:relative;z-index:2;padding-bottom:60px;}
+  header h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(38px,6.4vw,64px);line-height:1.04;letter-spacing:-1px;margin:24px auto 20px;max-width:14ch;}
+  header h1 em{font-style:italic;color:var(--forest);}
+  .lede{font-size:clamp(15px,1.7vw,18px);color:var(--muted);max-width:540px;margin:0 auto 34px;}
+  .capture{display:flex;justify-content:center;max-width:440px;margin:0 auto;border:1px solid var(--ink);border-radius:2px;overflow:hidden;background:rgba(250,246,238,.7);}
+  .capture input{flex:1;border:0;background:transparent;padding:14px 18px;font-family:inherit;font-size:14px;font-weight:300;color:var(--ink);outline:none;}
+  .capture input::placeholder{color:var(--stone);}
+  .capture button{border:0;background:var(--clay);color:var(--paper);padding:0 22px;font-family:inherit;font-size:12.5px;letter-spacing:.5px;cursor:pointer;transition:background .3s;}
+  .capture button:hover{background:#84481f;}
+  .hero-foot{font-size:12px;color:var(--stone);margin-top:14px;}
+  .ridges{position:absolute;left:0;right:0;bottom:0;width:100%;height:300px;z-index:1;}
+
+  /* LAYERS STRIP */
+  .layers{background:var(--forest);color:#e9e3d5;}
+  .layers .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;padding-top:22px;padding-bottom:22px;}
+  .layer{display:flex;flex-direction:column;gap:2px;}
+  .layer b{font-family:'Fraunces',serif;font-weight:400;font-size:15px;}
+  .layer span{font-size:11px;color:var(--clay-soft);letter-spacing:.3px;}
+  .layer-sep{width:1px;align-self:stretch;background:rgba(255,255,255,.12);}
+
+  /* PULSE */
+  .pulse{background:var(--forest-deep);color:#e9e3d5;overflow:hidden;}
+  .pulse-row{display:flex;align-items:center;white-space:nowrap;animation:scroll 30s linear infinite;}
+  .pulse:hover .pulse-row{animation-play-state:paused;}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  .pulse-label{padding:14px 26px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--clay-soft);flex:none;}
+  .pulse-item{padding:14px 0;font-size:13px;font-weight:300;display:flex;align-items:center;}
+  .pulse-item .cat{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--clay-soft);margin-right:12px;}
+  .pulse-item::after{content:"";width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.22);margin:0 30px;}
+
+  /* SECTIONS */
+  section{padding:76px 0;}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:38px;}
+  .grid2{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start;}
+  .feature .idx{display:block;margin-bottom:14px;}
+  .feature h3{font-family:'Fraunces',serif;font-weight:400;font-size:30px;line-height:1.2;letter-spacing:-.4px;margin-bottom:16px;}
+  .feature p{font-size:15px;color:var(--muted);margin-bottom:22px;max-width:46ch;}
+  .link{font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:var(--forest);text-decoration:none;border-bottom:1px solid var(--clay-soft);padding-bottom:3px;transition:border-color .3s;}
+  .link:hover{border-color:var(--forest);}
+  .kb{border-top:1px solid var(--line);}
+  .kb a{display:flex;align-items:baseline;justify-content:space-between;padding:17px 2px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);transition:padding .25s;}
+  .kb a:hover{padding-left:10px;}
+  .kb .kb-t{font-family:'Fraunces',serif;font-size:18px;}
+  .kb .kb-s{font-size:12.5px;color:var(--muted);}
+  .kb .kb-n{font-family:'Fraunces',serif;font-style:italic;color:var(--stone);font-size:14px;}
+
+  .alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .members{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:36px;}
+  .mcell{background:var(--card);padding:26px 24px;}
+  .mhead{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+  .avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--paper);font-family:'Fraunces',serif;font-size:18px;}
+  .mname{font-size:14.5px;font-weight:500;}
+  .verified{color:var(--clay);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;}
+  .mrole{font-size:12.5px;color:var(--muted);}
+  .mstat{font-size:12.5px;color:var(--muted);line-height:1.7;}
+  .feed-h{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--stone);margin-bottom:14px;}
+  .feed-item{font-size:13px;padding:7px 0;display:flex;gap:10px;align-items:baseline;border-bottom:1px solid var(--line);}
+  .feed-item:last-child{border:0;}
+  .feed-item .d{width:6px;height:6px;border-radius:50%;flex:none;margin-top:6px;}
+  .tiers{display:flex;border:1px solid var(--line);border-radius:2px;overflow:hidden;max-width:560px;margin:0 auto;}
+  .tier{flex:1;text-align:center;padding:14px 8px;font-size:12px;letter-spacing:1px;text-transform:uppercase;border-right:1px solid var(--line);color:var(--muted);}
+  .tier:last-child{border-right:0;}
+  .tier.on1{background:var(--forest);color:var(--paper);border-color:var(--forest);}
+  .tier.on2{background:var(--clay);color:var(--paper);border-color:var(--clay);}
+
+  /* SELECTION — both sides */
+  .sel{border:1px solid var(--ink);border-radius:2px;overflow:hidden;}
+  .sel-top{padding:28px 30px;}
+  .sel-t{font-family:'Fraunces',serif;font-size:23px;letter-spacing:-.3px;margin-bottom:8px;}
+  .sel-b{font-size:14px;color:var(--muted);max-width:60ch;}
+  .sel-split{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);}
+  .sel-col{padding:22px 30px;}
+  .sel-col:first-child{border-right:1px solid var(--line);}
+  .sel-k{font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
+  .sel-k.good{color:var(--forest);}
+  .sel-k.risk{color:var(--clay);}
+  .sel-li{font-size:13px;color:var(--muted);padding:4px 0;}
+
+  .promise{background:var(--forest);color:#e9e3d5;padding:88px 0;text-align:center;}
+  .promise-q{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(22px,3.2vw,33px);line-height:1.42;max-width:26ch;margin:0 auto;color:var(--paper);}
+  .promise-q em{color:var(--clay-soft);}
+  footer{background:var(--ink);color:#cabfab;padding:72px 0;text-align:center;}
+  footer .manifesto{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(22px,3.4vw,32px);color:var(--paper);max-width:18ch;margin:0 auto 18px;line-height:1.3;}
+  footer .meta{font-size:11.5px;letter-spacing:.8px;opacity:.5;}
+  .note{max-width:1080px;margin:22px auto 0;padding:0 40px;font-size:11.5px;color:var(--stone);text-align:center;font-style:italic;}
+
+  @media(max-width:780px){
+    .wrap{padding:0 24px;}
+    .navlinks a:not(.cta-link){display:none;}
+    .grid2,.sel-split{grid-template-columns:1fr;}
+    .sel-col:first-child{border-right:0;border-bottom:1px solid var(--line);}
+    .members{grid-template-columns:1fr;}
+    .layers .wrap{justify-content:flex-start;}
+    .layer-sep{display:none;}
+    .pulse-item .cat{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap navin">
+    <div class="logo">Namban Panorama<span class="sub">Est. 2026</span></div>
+    <div class="navlinks">
+      <a href="#">Toàn cảnh</a>
+      <a href="#">Quy hoạch</a>
+      <a href="#">Câu chuyện</a>
+      <a href="#">Thành viên</a>
+      <a href="#" class="btn cta-link">Tham gia</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="kicker fu" style="animation-delay:.05s">Góc nhìn độc lập · Nam Ban – Lâm Hà, Lâm Đồng</div>
+    <h1 class="fu" style="animation-delay:.15s">Thấy <em>toàn cảnh</em> Nam Ban trước khi xuống tiền.</h1>
+    <p class="lede fu" style="animation-delay:.3s">Chúng tôi không bán đất. Chúng tôi cho bạn bức tranh đầy đủ — cả cơ hội lẫn rủi ro — để bạn tự quyết định đúng. Đôi khi, quyết định đúng là không mua gì cả.</p>
+    <form class="capture fu" style="animation-delay:.42s" onsubmit="return false;">
+      <input type="email" placeholder="Email của bạn">
+      <button type="submit">Nhận Panorama Brief</button>
+    </form>
+    <div class="hero-foot fu" style="animation-delay:.5s">Bản tin hằng tháng · miễn phí · hủy bất cứ lúc nào</div>
+  </div>
+  <svg class="ridges" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#2f4034" stroke-width="1" opacity="0.12">
+      <path d="M0,70 C200,40 380,95 600,65 C820,38 1000,90 1200,60"/>
+      <path d="M0,110 C220,85 400,135 620,105 C840,80 1020,128 1200,100"/>
+    </g>
+    <path d="M0,300 L0,175 C160,150 320,190 520,170 C760,146 940,200 1200,165 L1200,300 Z" fill="#8a8a6f" opacity="0.30"/>
+    <path d="M0,300 L0,205 C200,180 360,225 580,205 C820,182 1010,232 1200,200 L1200,300 Z" fill="#5f6b52" opacity="0.42"/>
+    <path d="M0,300 L0,240 C180,222 380,258 600,240 C840,220 1020,262 1200,238 L1200,300 Z" fill="#44543f" opacity="0.6"/>
+    <path d="M0,300 L0,272 C220,260 420,286 640,272 C880,256 1040,288 1200,270 L1200,300 Z" fill="#2f4034" opacity="0.9"/>
+  </svg>
+</header>
+
+<!-- LAYERS / ECOSYSTEM -->
+<div class="layers">
+  <div class="wrap">
+    <div class="layer"><b>Notes</b><span>Ghi chép thực địa</span></div>
+    <div class="layer-sep"></div>
+    <div class="layer"><b>Brief</b><span>Bản tin tháng</span></div>
+    <div class="layer-sep"></div>
+    <div class="layer"><b>Selection</b><span>Cơ hội tuyển chọn</span></div>
+    <div class="layer-sep"></div>
+    <div class="layer"><b>Advisory</b><span>Tư vấn độc lập bên mua</span></div>
+    <div class="layer-sep"></div>
+    <div class="layer"><b>Society</b><span>Cộng đồng · giai đoạn sau</span></div>
+  </div>
+</div>
+
+<!-- PULSE -->
+<div class="pulse">
+  <div class="pulse-row">
+    <span class="pulse-label">Toàn cảnh tuần này</span>
+    <span class="pulse-item"><span class="cat">Quy hoạch</span>2 thay đổi mới được ghi nhận</span>
+    <span class="pulse-item"><span class="cat">Hạ tầng</span>Tuyến kết nối Đà Lạt cập nhật</span>
+    <span class="pulse-item"><span class="cat">Giá</span>Vùng A điều chỉnh −2%</span>
+    <span class="pulse-item"><span class="cat">Cảnh báo</span>1 khu đang bị thổi giá</span>
+    <span class="pulse-label">Toàn cảnh tuần này</span>
+    <span class="pulse-item"><span class="cat">Quy hoạch</span>2 thay đổi mới được ghi nhận</span>
+    <span class="pulse-item"><span class="cat">Hạ tầng</span>Tuyến kết nối Đà Lạt cập nhật</span>
+    <span class="pulse-item"><span class="cat">Giá</span>Vùng A điều chỉnh −2%</span>
+    <span class="pulse-item"><span class="cat">Cảnh báo</span>1 khu đang bị thổi giá</span>
+  </div>
+</div>
+
+<!-- 01 NOTES + BRIEF -->
+<section>
+  <div class="wrap">
+    <div class="sechead"><span class="idx">01</span><span class="kicker">Panorama Notes &amp; Brief</span></div>
+    <div class="grid2">
+      <div class="feature">
+        <span class="idx">Panorama Brief · Số 01</span>
+        <h3>Nam Ban không còn là Nam Ban: bản đồ vừa bị vẽ lại</h3>
+        <p>Từ 1/7/2025, thị trấn Nam Ban hợp nhất thành xã Nam Ban Lâm Hà, thuộc tỉnh Lâm Đồng mới. Bức tranh đầy đủ: điều này đổi gì với túi tiền của bạn, vùng nào hưởng lợi, và vùng nào rủi ro bất định cao mà phần lớn nhà đầu tư chưa nhìn ra.</p>
+        <a href="#" class="link">Đọc · 10 phút</a>
+      </div>
+      <div>
+        <div class="kicker" style="display:block;margin-bottom:6px;">Kho tri thức Nam Ban</div>
+        <div class="kb">
+          <a href="#"><span><span class="kb-t">Quy hoạch</span><br><span class="kb-s">Giải thích &amp; dòng thời gian</span></span><span class="kb-n">→</span></a>
+          <a href="#"><span><span class="kb-t">Bản đồ</span><br><span class="kb-s">Ranh giới hành chính mới</span></span><span class="kb-n">→</span></a>
+          <a href="#"><span><span class="kb-t">Pháp lý</span><br><span class="kb-s">Những điều cần tránh</span></span><span class="kb-n">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 COMMUNITY -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sechead"><span class="idx">02</span><span class="kicker">Người kiến tạo Nam Ban · sắp ra mắt</span></div>
+    <h3 class="serif" style="font-weight:400;font-size:30px;letter-spacing:-.4px;margin-bottom:6px;">Một mạng lưới nhỏ, được tuyển chọn</h3>
+    <p style="font-size:15px;color:var(--muted);max-width:50ch;margin-bottom:34px;">Không phải ai cũng vào. Những người làm nghề tử tế — nơi danh tiếng được tích lũy qua đóng góp, không phải mua. Bắt đầu từ một nhóm sáng lập rất nhỏ.</p>
+    <div class="members">
+      <div class="mcell">
+        <div class="mhead"><div class="avatar" style="background:var(--forest)">D</div><div><div class="mname">Dũng</div><div class="verified">✔ Verified</div></div></div>
+        <div class="mrole" style="margin-bottom:6px;">Môi giới · 5 năm</div>
+        <div class="mstat">Chuyên đất view rừng<br>40 giao dịch · 85 điểm uy tín</div>
+      </div>
+      <div class="mcell">
+        <div class="mhead"><div class="avatar" style="background:var(--clay)">L</div><div><div class="mname">Lan</div><div class="verified">✔ Verified</div></div></div>
+        <div class="mrole" style="margin-bottom:6px;">Chủ farm · 8 năm</div>
+        <div class="mstat">Cà phê &amp; farmstay<br>12 bài đóng góp · 92 điểm</div>
+      </div>
+      <div class="mcell">
+        <div class="feed-h">Bảng tin đóng góp</div>
+        <div class="feed-item"><span class="d" style="background:var(--forest)"></span>Tuấn xác minh tuyến đường mới ở khu B</div>
+        <div class="feed-item"><span class="d" style="background:var(--clay)"></span>Mai chia sẻ giá giao dịch thật vùng A</div>
+        <div class="feed-item"><span class="d" style="background:var(--clay-soft)"></span>Câu hỏi: khu C quy hoạch ra sao?</div>
+      </div>
+    </div>
+    <div class="tiers">
+      <span class="tier">Visitor</span>
+      <span class="tier">Member</span>
+      <span class="tier on1">Verified</span>
+      <span class="tier on2">Society</span>
+    </div>
+  </div>
+</section>
+
+<!-- 03 SELECTION — both sides -->
+<section>
+  <div class="wrap">
+    <div class="sechead"><span class="idx">03</span><span class="kicker">Panorama Selection · cơ hội VÀ rủi ro</span></div>
+    <div class="sel">
+      <div class="sel-top">
+        <div class="sel-t">Selection 07 — 5.200m², view hồ</div>
+        <div class="sel-b">Cách tuyến cao tốc tương lai 12 phút · pháp lý rõ ràng. Mỗi cơ hội luôn được trình bày cả hai mặt — đó là cách chúng tôi xây niềm tin.</div>
+      </div>
+      <div class="sel-split">
+        <div class="sel-col">
+          <div class="sel-k good">Điểm mạnh</div>
+          <div class="sel-li">Dòng tiền farmstay khả thi</div>
+          <div class="sel-li">Pháp lý sạch, sổ riêng</div>
+          <div class="sel-li">Gần hạ tầng đang hình thành</div>
+        </div>
+        <div class="sel-col">
+          <div class="sel-k risk">Rủi ro cần biết</div>
+          <div class="sel-li">Quy hoạch tỉnh mới chưa chốt</div>
+          <div class="sel-li">Thanh khoản mỏng, khó thoát nhanh</div>
+          <div class="sel-li">Không hợp đầu cơ ngắn hạn</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISE -->
+<div class="promise">
+  <div class="wrap">
+    <div class="kicker" style="color:var(--clay-soft);display:block;margin-bottom:20px;">Lời hứa của chúng tôi</div>
+    <p class="promise-q">“Tôi sẽ cho bạn thấy toàn cảnh Nam Ban — kể cả những điều khiến bạn quyết định <em>không mua</em>.”</p>
+  </div>
+</div>
+
+<footer>
+  <div class="manifesto">We don't sell Namban.<br>We help you see the whole picture.</div>
+  <div class="meta">NAMBAN PANORAMA &nbsp;·&nbsp; Góc nhìn toàn cảnh, độc lập &amp; trung thực về Nam Ban – Lâm Hà</div>
+</footer>
+
+<div class="note">Bản thiết kế web v2 — màu, phông và nội dung mẫu chỉ để hình dung. Mọi con số là minh hoạ.</div>
+
+</body>
+</html>
