@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nam Ban không còn là Nam Ban — Panorama Brief Số 01</title>
+<meta name="description" content="Từ 1/7/2025, thị trấn Nam Ban đã hợp nhất thành xã Nam Ban Lâm Hà. Điều này đổi gì với túi tiền của bạn — và đâu là rủi ro đang bị che khuất.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Be+Vietnam+Pro:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1815;--paper:#f1ece2;--card:#faf6ee;
+    --forest:#2f4034;--forest-deep:#1e2a20;
+    --clay:#9d5d38;--clay-soft:#bb8862;
+    --stone:#a79c87;--muted:#6e6759;--line:#e1d9c8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Be Vietnam Pro',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-weight:300;-webkit-font-smoothing:antialiased;}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+  .navin{max-width:1080px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;}
+  .logo{font-family:'Fraunces',serif;font-weight:500;font-size:19px;letter-spacing:.5px;text-decoration:none;color:var(--ink);}
+  .logo .sub{font-family:'Be Vietnam Pro';font-weight:400;font-size:9.5px;letter-spacing:3px;color:var(--stone);margin-left:8px;text-transform:uppercase;}
+  .back{font-size:12.5px;color:var(--muted);text-decoration:none;letter-spacing:.5px;transition:color .2s;}
+  .back:hover{color:var(--ink);}
+
+  /* ARTICLE HEADER */
+  .art-header{max-width:720px;margin:0 auto;padding:72px 40px 48px;}
+  .issue-line{display:flex;align-items:center;gap:16px;margin-bottom:28px;}
+  .issue-badge{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--clay);}
+  .issue-date{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);}
+  .art-header h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(34px,5.5vw,52px);line-height:1.08;letter-spacing:-1px;margin-bottom:22px;}
+  .standfirst{font-size:18px;color:var(--muted);line-height:1.6;font-style:italic;border-left:3px solid var(--clay);padding-left:20px;}
+
+  /* ARTICLE BODY */
+  .art-body{max-width:720px;margin:0 auto;padding:0 40px 80px;}
+  .art-body hr{border:0;border-top:1px solid var(--line);margin:42px 0;}
+  .art-body p{font-size:16.5px;margin-bottom:22px;color:var(--ink);}
+  .art-body p:first-of-type::first-letter{font-family:'Fraunces',serif;font-size:4.2em;line-height:.75;float:left;margin:6px 10px 0 0;color:var(--forest);}
+
+  .section-head{margin:44px 0 18px;}
+  .section-head .eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--clay);font-weight:500;display:block;margin-bottom:8px;}
+  .section-head h2{font-family:'Fraunces',serif;font-weight:400;font-size:26px;letter-spacing:-.3px;}
+
+  .pull-quote{background:var(--forest);color:#e9e3d5;padding:36px 40px;margin:44px -20px;border-radius:2px;}
+  .pull-quote p{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(18px,2.5vw,24px);line-height:1.4;margin:0;color:#f4efe6;}
+  .pull-quote p em{color:var(--clay-soft);}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:2px;margin:32px 0;}
+  .col-cell{background:var(--card);padding:26px 24px;}
+  .col-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:14px;font-weight:500;}
+  .col-label.good{color:var(--forest);}
+  .col-label.risk{color:var(--clay);}
+  .col-cell li{font-size:14px;color:var(--muted);padding:5px 0;list-style:none;border-bottom:1px solid var(--line);line-height:1.5;}
+  .col-cell li:last-child{border:0;}
+  .col-cell li::before{content:"—";margin-right:8px;color:var(--stone);}
+
+  .watch-list{background:var(--card);border:1px solid var(--line);border-radius:2px;padding:28px 32px;margin:32px 0;}
+  .watch-list h3{font-family:'Fraunces',serif;font-weight:400;font-size:20px;margin-bottom:16px;}
+  .watch-item{display:flex;gap:14px;padding:10px 0;border-bottom:1px solid var(--line);align-items:baseline;}
+  .watch-item:last-child{border:0;}
+  .watch-num{font-family:'Fraunces',serif;font-style:italic;color:var(--stone);font-size:16px;flex:none;}
+  .watch-text{font-size:14px;color:var(--muted);}
+
+  .source-box{background:var(--paper);border:1px solid var(--line);border-radius:2px;padding:24px 28px;margin-top:44px;}
+  .source-box h4{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--stone);margin-bottom:12px;}
+  .source-box p{font-size:13px;color:var(--muted);margin-bottom:8px;}
+  .source-box p:last-child{margin:0;}
+
+  /* CTA */
+  .cta-box{background:var(--forest);color:#e9e3d5;padding:52px 40px;text-align:center;margin-top:60px;}
+  .cta-box .next-issue{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--clay-soft);margin-bottom:14px;}
+  .cta-box h3{font-family:'Fraunces',serif;font-weight:400;font-size:26px;color:#f4efe6;margin-bottom:10px;}
+  .cta-box p{font-size:14px;opacity:.75;margin-bottom:28px;max-width:42ch;margin-left:auto;margin-right:auto;}
+  .cta-form{display:flex;gap:0;max-width:420px;margin:0 auto;border:1px solid rgba(255,255,255,.25);border-radius:2px;overflow:hidden;background:rgba(255,255,255,.08);}
+  .cta-form input{flex:1;border:0;background:transparent;padding:14px 18px;font-family:inherit;font-size:14px;color:#f4efe6;outline:none;}
+  .cta-form input::placeholder{color:rgba(255,255,255,.45);}
+  .cta-form button{border:0;background:var(--clay);color:#fbf8f1;padding:0 22px;font-family:inherit;font-size:12.5px;letter-spacing:.5px;cursor:pointer;}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:#cabfab;padding:48px 0;text-align:center;}
+  footer .manifesto{font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:var(--paper);margin-bottom:10px;}
+  footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
+
+  @media(max-width:680px){
+    .art-header,.art-body{padding-left:24px;padding-right:24px;}
+    .navin{padding:0 24px;}
+    .two-col{grid-template-columns:1fr;}
+    .pull-quote{margin:36px 0;}
+    .art-body p:first-of-type::first-letter{font-size:3.4em;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="navin">
+    <a class="logo" href="index.html">Namban Panorama<span class="sub">Intelligence</span></a>
+    <a class="back" href="index.html">← Trang chủ</a>
+  </div>
+</nav>
+
+<div class="art-header">
+  <div class="issue-line">
+    <span class="issue-badge">Panorama Brief · Số 01</span>
+    <span class="issue-date">Tháng 6, 2026</span>
+  </div>
+  <h1>Nam Ban không còn là Nam Ban</h1>
+  <p class="standfirst">Một thay đổi hành chính mà phần lớn nhà đầu tư lướt qua — nhưng nó đổi cách bạn đọc mọi tờ sổ, mọi tin quy hoạch và mọi lời chào bán ở vùng đất này.</p>
+</div>
+
+<div class="art-body">
+
+  <p>Nếu trong sáu tháng qua có ai chào bạn một lô đất "ở thị trấn Nam Ban", họ đang nói về một nơi không còn tồn tại trên giấy tờ hành chính.</p>
+
+  <p>Từ ngày 1/7/2025, thị trấn Nam Ban — cùng ba xã Đông Thanh, Mê Linh và Gia Lâm — được hợp nhất thành <strong style="font-weight:500;">xã Nam Ban Lâm Hà</strong>, thuộc tỉnh Lâm Đồng mới. Đây là một phần của đợt tái cơ cấu hành chính lớn nhất lịch sử Việt Nam, đưa cả nước từ 63 xuống còn 34 tỉnh thành. Nghị quyết số 202/2025/QH15 có hiệu lực ngay từ ngày ký.</p>
+
+  <p>Nghe như chuyện thủ tục. Nhưng với người sắp bỏ vài tỷ vào vùng đất này, nó là chuyện đáng dừng lại mười phút.</p>
+
+  <hr>
+
+  <div class="section-head">
+    <span class="eyebrow">01 — Thay đổi</span>
+    <h2>Cái gì vừa khác đi</h2>
+  </div>
+
+  <p>Ba điều, theo thứ tự quan trọng với người đầu tư.</p>
+
+  <p><strong style="font-weight:500;">Bỏ cấp huyện.</strong> "Huyện Lâm Hà" với tư cách một cấp quản lý đã không còn — xã Nam Ban Lâm Hà làm việc trực tiếp với cấp tỉnh. Bộ máy, con dấu, đầu mối thủ tục đều thay đổi. Một thủ tục đất đai bạn biết cách làm ở huyện cũ có thể cần hỏi lại từ đầu.</p>
+
+  <p><strong style="font-weight:500;">Ranh giới và địa chỉ được vẽ lại.</strong> Bốn đơn vị cũ gộp thành một. Cùng một mảnh đất nay có thể mang địa chỉ hành chính khác với những gì ghi trên giấy tờ cũ. Khi thẩm định, bạn phải đối chiếu với ranh giới mới — không phải bản đồ huyện cũ đang lưu hành trên các sàn.</p>
+
+  <p><strong style="font-weight:500;">Quy hoạch chung đang được xây lại.</strong> Đây là điều quan trọng nhất. Quy hoạch tỉnh mới giai đoạn 2025–2030 đang trong quá trình lập. Khi một bản quy hoạch đang được vẽ lại, không ai — kể cả người bán tự tin nhất — biết chắc một thửa đất sẽ rơi vào phân khu chức năng nào. Định hướng được công bố là vùng đệm chiến lược, phát triển nông nghiệp công nghệ cao và du lịch sinh thái.</p>
+
+  <hr>
+
+  <div class="section-head">
+    <span class="eyebrow">02 — Toàn cảnh</span>
+    <h2>Hai mặt của cùng một sự kiện</h2>
+  </div>
+
+  <p>Theo đúng tinh thần của bản tin này — cả hai mặt, không bỏ cái nào.</p>
+
+  <div class="two-col">
+    <div class="col-cell">
+      <div class="col-label good">Cơ hội đáng xem xét</div>
+      <ul>
+        <li>Định hướng nông nghiệp CNC + du lịch sinh thái khớp với tài sản có dòng tiền: farmstay, nông trại, lưu trú sinh thái</li>
+        <li>Trong thị trường siết tín dụng, đất tạo ra dòng tiền có lợi thế rõ rệt so với đất đầu cơ chờ tăng giá</li>
+        <li>Giai đoạn "bản đồ còn mờ" — giá chưa phản ánh hết kỳ vọng, người hiểu vùng đất có cửa sổ để chọn lọc</li>
+      </ul>
+    </div>
+    <div class="col-cell">
+      <div class="col-label risk">Rủi ro cần biết trước</div>
+      <ul>
+        <li>Quy hoạch tỉnh mới chưa chốt — mua trước khi biết phân khu là đặt cược vào một bản vẽ chưa ai ký</li>
+        <li>Thanh khoản mỏng: dễ mua, khó bán nhanh khi cần tiền. Không phải thị trường cho vốn ngắn hạn</li>
+        <li>Giấy tờ cũ vẫn hợp lệ nhưng địa chỉ thay đổi — cần đối chiếu cẩn thận trước khi giao dịch</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="section-head">
+    <span class="eyebrow">03 — Cảnh báo</span>
+    <h2>Điều đang bị thổi phồng</h2>
+  </div>
+
+  <p>Mọi đợt sáp nhập đều sinh ra một câu chuyện bán hàng: <em>"đất ăn theo tỉnh mới, lên trung tâm hành chính, giá sắp bùng."</em> Hãy nghe câu đó như một lời cảnh báo, không phải một lời mời.</p>
+
+  <p>Việc đổi tên đơn vị hành chính tự nó không tạo ra giá trị kinh tế mới cho một thửa đất. Một môi giới vẫn nói "đất mặt tiền thị trấn" là người chưa cập nhật — và đó là tín hiệu đầu tiên để bạn dè chừng mọi thứ họ nói tiếp theo.</p>
+
+  <div class="pull-quote">
+    <p>"Tôi sẽ cho bạn thấy toàn cảnh Nam Ban — kể cả những điều khiến bạn quyết định <em>không mua</em>."</p>
+  </div>
+
+  <hr>
+
+  <div class="section-head">
+    <span class="eyebrow">04 — Theo dõi</span>
+    <h2>Điều đáng chú ý 6–12 tháng tới</h2>
+  </div>
+
+  <div class="watch-list">
+    <h3>Ba biến số quyết định</h3>
+    <div class="watch-item">
+      <span class="watch-num">01</span>
+      <span class="watch-text"><strong style="font-weight:500;">Bản quy hoạch chung tỉnh Lâm Đồng mới</strong> — khi được công bố, đây là tài liệu quan trọng nhất cho mọi quyết định ở đây. Phân khu nào hưởng lợi, phân khu nào không — sẽ rõ lúc đó.</span>
+    </div>
+    <div class="watch-item">
+      <span class="watch-num">02</span>
+      <span class="watch-text"><strong style="font-weight:500;">Các tuyến hạ tầng kết nối Đà Lạt</strong> — không phải kỳ vọng, mà là tiến độ thi công thật. Hai thứ này khác nhau rất nhiều.</span>
+    </div>
+    <div class="watch-item">
+      <span class="watch-num">03</span>
+      <span class="watch-text"><strong style="font-weight:500;">Mặt bằng lãi suất và room tín dụng</strong> — yếu tố quyết định liệu dòng tiền có chảy về vùng này hay không trong 2026.</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <p>Tôi sẽ không khuyến nghị bạn mua bất cứ thứ gì trong số này. Đây không phải lời chào hàng — đây là một bản đồ tư duy để bạn không bị dắt mũi giữa một vùng đất vừa bị vẽ lại.</p>
+
+  <p style="color:var(--muted);font-size:15px;">Tháng sau, Brief số 02 sẽ mổ xẻ một câu hỏi cụ thể hơn: <em>trong vùng Nam Ban Lâm Hà, loại tài sản nào có dòng tiền thật, và loại nào chỉ sống bằng kỳ vọng?</em></p>
+
+  <div class="source-box">
+    <h4>Nguồn &amp; lưu ý</h4>
+    <p>Nghị quyết 202/2025/QH15 (sắp xếp đơn vị hành chính cấp tỉnh, hiệu lực 12/6/2025) và Nghị quyết 1671/NQ-UBTVQH15 (sắp xếp cấp xã tỉnh Lâm Đồng), trên cơ sở Đề án 399/ĐA-CP ngày 9/5/2025.</p>
+    <p>Thông tin chính thức địa phương: <strong style="font-weight:400;">nambanlamha.lamdong.gov.vn</strong></p>
+    <p style="font-style:italic;">Bản tin này mang tính tham khảo và phân tích độc lập, không phải tư vấn pháp lý hay khuyến nghị đầu tư cá nhân. Trước mọi giao dịch, hãy đối chiếu với văn bản pháp quy gốc.</p>
+  </div>
+
+</div>
+
+<div class="cta-box">
+  <div class="next-issue">Panorama Brief · Số 02 — Tháng 7, 2026</div>
+  <h3>Dòng tiền hay đầu cơ?</h3>
+  <p>Hai loại người đang mua Nam Ban và chỉ một loại đang mua đúng. Đăng ký để nhận khi ra mắt.</p>
+  <form class="cta-form" onsubmit="return false;">
+    <input type="email" placeholder="Email của bạn">
+    <button type="button">Đăng ký</button>
+  </form>
+</div>
+
+<footer>
+  <div class="manifesto">We don't sell Namban. We help you see the whole picture.</div>
+  <div class="meta">NAMBAN PANORAMA &nbsp;·&nbsp; nambanpanorama.com</div>
+</footer>
+
+</body>
+</html>
