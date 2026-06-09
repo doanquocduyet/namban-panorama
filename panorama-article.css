@@ -1,0 +1,126 @@
+/* Namban Panorama — Article stylesheet */
+:root{
+  --ink:#1a1815;--paper:#f1ece2;--card:#faf6ee;
+  --forest:#2f4034;--forest-deep:#1e2a20;
+  --clay:#9d5d38;--clay-soft:#bb8862;
+  --stone:#a79c87;--muted:#6e6759;--line:#e1d9c8;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Be Vietnam Pro',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-weight:300;-webkit-font-smoothing:antialiased;}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+.navin{max-width:1080px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.logo{font-family:'Fraunces',serif;font-weight:500;font-size:19px;letter-spacing:.5px;text-decoration:none;color:var(--ink);}
+.logo .sub{font-family:'Be Vietnam Pro';font-weight:400;font-size:9.5px;letter-spacing:3px;color:var(--stone);margin-left:8px;text-transform:uppercase;}
+.back{font-size:12.5px;color:var(--muted);text-decoration:none;letter-spacing:.5px;transition:color .2s;}
+.back:hover{color:var(--ink);}
+
+.art-header{max-width:720px;margin:0 auto;padding:72px 40px 40px;}
+.issue-line{display:flex;align-items:center;gap:16px;margin-bottom:28px;flex-wrap:wrap;}
+.issue-badge{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--clay);}
+.issue-date{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);}
+.art-header h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(32px,5.2vw,50px);line-height:1.1;letter-spacing:-1px;margin-bottom:22px;}
+.standfirst{font-size:18px;color:var(--muted);line-height:1.6;font-style:italic;border-left:3px solid var(--clay);padding-left:20px;}
+
+.hero-photo{max-width:980px;margin:0 auto 8px;padding:0 40px;}
+.hero-photo img{width:100%;height:auto;border-radius:3px;display:block;filter:saturate(.96);}
+.hero-photo figcaption{font-size:12px;color:var(--stone);margin-top:10px;font-style:italic;letter-spacing:.2px;}
+
+.art-body{max-width:720px;margin:0 auto;padding:24px 40px 60px;}
+.art-body hr{border:0;border-top:1px solid var(--line);margin:42px 0;}
+.art-body p{font-size:16.5px;margin-bottom:22px;color:var(--ink);}
+.art-body p a{color:var(--clay);text-decoration:none;border-bottom:1px solid var(--line);}
+.art-body p a:hover{border-color:var(--clay);}
+.art-body strong{font-weight:500;}
+.lead::first-letter{font-family:'Fraunces',serif;font-size:4.2em;line-height:.75;float:left;margin:6px 10px 0 0;color:var(--forest);}
+
+.section-head{margin:44px 0 18px;}
+.section-head .eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--clay);font-weight:500;display:block;margin-bottom:8px;}
+.section-head h2{font-family:'Fraunces',serif;font-weight:400;font-size:26px;letter-spacing:-.3px;}
+
+.pull-quote{background:var(--forest);color:#e9e3d5;padding:36px 40px;margin:44px -20px;border-radius:2px;}
+.pull-quote p{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(18px,2.5vw,24px);line-height:1.4;margin:0;color:#f4efe6;}
+.pull-quote p em{color:var(--clay-soft);font-style:italic;}
+
+/* Figures / SVG diagrams */
+.fig{margin:36px -20px;background:var(--card);border:1px solid var(--line);border-radius:3px;padding:30px 28px 22px;}
+.fig svg{width:100%;height:auto;display:block;}
+.fig figcaption{font-size:12px;color:var(--stone);margin-top:16px;font-style:italic;text-align:center;}
+
+/* Stat strip */
+.stat-strip{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden;margin:32px 0;}
+.stat{background:var(--card);padding:22px 20px;}
+.stat .num{font-family:'Fraunces',serif;font-size:28px;color:var(--forest);line-height:1;margin-bottom:6px;}
+.stat .lab{font-size:12.5px;color:var(--muted);line-height:1.4;}
+
+/* Comparison table */
+.compare{width:100%;border-collapse:collapse;margin:30px 0;font-size:14px;}
+.compare th,.compare td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);}
+.compare thead th{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--stone);font-weight:500;}
+.compare tbody th{font-weight:400;color:var(--muted);}
+.compare td.hl{color:var(--forest);font-weight:500;}
+.compare caption{font-size:12px;color:var(--stone);font-style:italic;margin-top:10px;caption-side:bottom;text-align:left;}
+
+/* Buyer groups */
+.buyer-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden;margin:30px 0;}
+.buyer{background:var(--card);padding:22px 20px;}
+.buyer .pct{font-family:'Fraunces',serif;font-size:30px;color:var(--clay);line-height:1;margin-bottom:8px;}
+.buyer .who{font-weight:500;font-size:14.5px;margin-bottom:6px;}
+.buyer .desc{font-size:13px;color:var(--muted);line-height:1.5;}
+
+/* Asset / list cards */
+.asset{border-top:1px solid var(--line);padding:20px 0;}
+.asset h3{font-family:'Fraunces',serif;font-weight:400;font-size:19px;margin-bottom:6px;}
+.asset .meta{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--clay);margin-bottom:8px;}
+.asset p{font-size:14.5px;color:var(--muted);margin:0;}
+
+/* Two-column opportunity/risk */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:2px;margin:32px 0;}
+.col-cell{background:var(--card);padding:26px 24px;}
+.col-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:14px;font-weight:500;}
+.col-label.good{color:var(--forest);}
+.col-label.risk{color:var(--clay);}
+.col-cell li{font-size:14px;color:var(--muted);padding:5px 0;list-style:none;border-bottom:1px solid var(--line);line-height:1.5;}
+.col-cell li:last-child{border:0;}
+.col-cell li::before{content:"—";margin-right:8px;color:var(--stone);}
+
+/* Risk list */
+.risk-list{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:8px 28px;margin:30px 0;}
+.risk-item{padding:18px 0;border-bottom:1px solid var(--line);}
+.risk-item:last-child{border:0;}
+.risk-item h4{font-size:14.5px;font-weight:500;margin-bottom:5px;color:var(--ink);}
+.risk-item p{font-size:13.5px;color:var(--muted);margin:0;line-height:1.55;}
+
+/* Honest note callout */
+.note{background:var(--paper);border:1px dashed var(--stone);border-radius:3px;padding:20px 24px;margin:30px 0;font-size:14.5px;color:var(--muted);font-style:italic;}
+
+.source-box{background:var(--paper);border:1px solid var(--line);border-radius:2px;padding:24px 28px;margin-top:44px;}
+.source-box h4{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--stone);margin-bottom:12px;}
+.source-box p{font-size:13px;color:var(--muted);margin-bottom:8px;}
+.source-box p:last-child{margin:0;}
+
+/* CTA */
+.cta-box{background:var(--forest);color:#e9e3d5;padding:52px 40px;text-align:center;margin-top:60px;}
+.cta-box .next-issue{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--clay-soft);margin-bottom:14px;}
+.cta-box h3{font-family:'Fraunces',serif;font-weight:400;font-size:26px;color:#f4efe6;margin-bottom:10px;}
+.cta-box p{font-size:14px;opacity:.78;margin-bottom:26px;max-width:46ch;margin-left:auto;margin-right:auto;}
+.cta-box .cta-links a{color:#f4efe6;text-decoration:none;font-size:13px;letter-spacing:.5px;border:1px solid rgba(255,255,255,.3);padding:11px 22px;border-radius:2px;display:inline-block;margin:5px;transition:all .2s;}
+.cta-box .cta-links a:hover{background:var(--clay);border-color:var(--clay);}
+
+footer{background:var(--ink);color:#cabfab;padding:48px 24px;text-align:center;}
+footer .manifesto{font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:var(--paper);margin-bottom:10px;}
+footer .contact-line{font-size:12.5px;color:#b3a892;margin-bottom:14px;letter-spacing:.3px;}
+footer .contact-line a{color:var(--clay-soft);text-decoration:none;}
+footer .contact-line a:hover{color:var(--paper);}
+footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
+
+@media(max-width:680px){
+  .art-header,.art-body,.hero-photo{padding-left:24px;padding-right:24px;}
+  .navin{padding:0 24px;}
+  .two-col,.stat-strip,.buyer-grid{grid-template-columns:1fr;}
+  .pull-quote,.fig{margin-left:0;margin-right:0;}
+  .compare{font-size:13px;}
+  .compare th,.compare td{padding:9px 8px;}
+}
