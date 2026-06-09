@@ -24,9 +24,9 @@ nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.88);backdrop-
 .art-header h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(32px,5.2vw,50px);line-height:1.1;letter-spacing:-1px;margin-bottom:22px;}
 .standfirst{font-size:18px;color:var(--muted);line-height:1.6;font-style:italic;border-left:3px solid var(--clay);padding-left:20px;}
 
-.hero-photo{max-width:980px;margin:0 auto 8px;padding:0 40px;}
-.hero-photo img{width:100%;height:auto;border-radius:3px;display:block;filter:saturate(.96);}
-.hero-photo figcaption{font-size:12px;color:var(--stone);margin-top:10px;font-style:italic;letter-spacing:.2px;}
+.hero-photo{max-width:940px;margin:10px auto 12px;padding:0 40px;}
+.hero-photo img{width:100%;height:auto;display:block;border-radius:2px;border:1px solid var(--line);padding:8px;background:var(--card);filter:saturate(.97) contrast(1.02);box-shadow:0 2px 8px rgba(26,24,21,.07);}
+.hero-photo figcaption{font-size:12px;color:var(--stone);margin-top:13px;font-style:italic;letter-spacing:.2px;padding-left:2px;}
 
 .art-body{max-width:720px;margin:0 auto;padding:24px 40px 60px;}
 .art-body hr{border:0;border-top:1px solid var(--line);margin:42px 0;}
