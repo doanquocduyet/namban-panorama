@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trao đổi về Nam Ban — Namban Panorama</title>
+<meta name="description" content="Trao đổi trực tiếp về những gì bạn đang tìm kiếm ở Nam Ban. Không bán hàng. Không pitch. Chỉ là cuộc trò chuyện thật để giúp bạn nhìn rõ hơn.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,400&family=Be+Vietnam+Pro:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1815;--paper:#f1ece2;--card:#faf6ee;
+  --forest:#2f4034;--clay:#9d5d38;--clay-soft:#bb8862;
+  --stone:#a79c87;--muted:#6e6759;--line:#e1d9c8;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Be Vietnam Pro',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-weight:300;-webkit-font-smoothing:antialiased;}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+.navin{max-width:1080px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.logo{font-family:'Fraunces',serif;font-weight:500;font-size:19px;text-decoration:none;color:var(--ink);}
+.logo .sub{font-family:'Be Vietnam Pro';font-size:9.5px;letter-spacing:3px;color:var(--stone);margin-left:8px;text-transform:uppercase;}
+.back{font-size:12.5px;color:var(--muted);text-decoration:none;letter-spacing:.5px;}
+.back:hover{color:var(--ink);}
+
+.wrap{max-width:680px;margin:0 auto;padding:72px 40px 80px;}
+
+.eyebrow{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--clay);margin-bottom:18px;}
+h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(28px,4vw,42px);line-height:1.1;letter-spacing:-.6px;margin-bottom:22px;}
+.standfirst{font-size:17px;color:var(--muted);line-height:1.65;font-style:italic;border-left:3px solid var(--clay);padding-left:20px;margin-bottom:44px;}
+
+/* Form */
+.conv-form{display:flex;flex-direction:column;gap:22px;}
+.field label{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--stone);margin-bottom:8px;font-weight:500;}
+.field input,.field textarea,.field select{width:100%;background:var(--card);border:1px solid var(--line);border-radius:2px;padding:13px 16px;font-family:inherit;font-size:15px;font-weight:300;color:var(--ink);outline:none;transition:border-color .2s;}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--clay);}
+.field textarea{height:110px;resize:vertical;line-height:1.6;}
+.field select{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23a79c87' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;}
+
+.submit-btn{background:var(--forest);color:var(--paper);border:0;padding:15px 32px;font-family:inherit;font-size:14px;font-weight:400;letter-spacing:.5px;cursor:pointer;border-radius:2px;transition:background .2s;align-self:flex-start;}
+.submit-btn:hover{background:#1e2a20;}
+
+.note-small{font-size:13px;color:var(--stone);font-style:italic;line-height:1.6;margin-top:4px;}
+
+/* What to expect */
+.expect{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:28px 28px;margin-top:44px;}
+.expect h3{font-family:'Fraunces',serif;font-weight:400;font-size:18px;margin-bottom:16px;}
+.expect-item{display:grid;grid-template-columns:20px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--muted);line-height:1.5;}
+.expect-item:last-child{border:0;}
+.expect-check{color:var(--clay);font-size:13px;margin-top:2px;}
+
+/* Honesty strip -->
+.honesty{background:var(--forest);color:#d4cfc5;padding:28px 28px;border-radius:2px;margin-top:28px;font-size:14px;line-height:1.65;}
+.honesty strong{color:#f1ece2;font-weight:500;}
+
+footer{background:var(--ink);color:#cabfab;padding:44px 24px;text-align:center;margin-top:0;}
+footer .manifesto{font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:var(--paper);margin-bottom:10px;}
+footer .contact-line{font-size:12.5px;color:#b3a892;margin-bottom:14px;}
+footer .contact-line a{color:var(--clay-soft);text-decoration:none;}
+footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
+
+@media(max-width:680px){.navin,.wrap{padding-left:24px;padding-right:24px;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="navin">
+    <a class="logo" href="index.html">Namban Panorama<span class="sub">Intelligence</span></a>
+    <a class="back" href="index.html">← Trang chủ</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="eyebrow">Trao đổi</div>
+  <h1>Kể cho tôi nghe bạn đang tìm gì ở Nam Ban</h1>
+  <p class="standfirst">Không phải buổi tư vấn. Không phải pitch bất động sản. Chỉ là cuộc trò chuyện thật — để tôi hiểu bạn đang đứng ở đâu, và bạn hiểu rõ hơn mình đang tìm gì.</p>
+
+  <form class="conv-form" onsubmit="handleSubmit(event)">
+    <div class="field">
+      <label>Bạn đang nhìn Nam Ban theo góc nào?</label>
+      <select>
+        <option value="">— chọn một góc nhìn —</option>
+        <option>Tìm hiểu vùng đất, chưa có kế hoạch cụ thể</option>
+        <option>Muốn có chỗ trốn khỏi thành phố cuối tuần</option>
+        <option>Cân nhắc đầu tư, muốn hiểu rõ trước khi quyết định</option>
+        <option>Đang tìm một tài sản cụ thể để nghiên cứu</option>
+        <option>Đang muốn bán / chuyển nhượng tài sản tại Nam Ban</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Điều bạn muốn làm rõ nhất trong cuộc trò chuyện này là gì?</label>
+      <textarea placeholder="Ví dụ: tôi đang xem một lô đất 1.500m² gần hồ, muốn biết giá có hợp lý không và rủi ro pháp lý ra sao..."></textarea>
+    </div>
+
+    <div class="field">
+      <label>Thời gian bạn dự kiến có thể hành động (nếu mọi thứ rõ ràng)?</label>
+      <select>
+        <option value="">— chọn —</option>
+        <option>Trong 1–3 tháng tới</option>
+        <option>Trong 3–6 tháng tới</option>
+        <option>Sau 6 tháng hoặc chưa xác định</option>
+        <option>Chỉ đang tìm hiểu, chưa có kế hoạch mua</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Tên và cách liên hệ tốt nhất</label>
+      <input type="text" placeholder="Tên · email hoặc số điện thoại (chỉ dùng để liên lạc với bạn, không chia sẻ)">
+    </div>
+
+    <div>
+      <button type="submit" class="submit-btn">Gửi — tôi sẽ phản hồi trong 24–48 giờ</button>
+      <p class="note-small" style="margin-top:10px;">Thông thường phản hồi qua email hoặc gọi điện ngắn trước để xác nhận lịch nói chuyện.</p>
+    </div>
+  </form>
+
+  <div class="expect">
+    <h3>Bạn có thể kỳ vọng gì</h3>
+    <div class="expect-item"><span class="expect-check">→</span><span>Không có bảng giá, không có danh sách đất. Tôi sẽ hỏi thêm để hiểu bạn đang cần gì thật sự.</span></div>
+    <div class="expect-item"><span class="expect-check">→</span><span>Nếu Nam Ban không phù hợp với bạn lúc này, tôi sẽ nói thẳng. Đó cũng là câu trả lời có giá trị.</span></div>
+    <div class="expect-item"><span class="expect-check">→</span><span>Nếu có tài sản hoặc khu vực cụ thể đáng xem, tôi sẽ chia sẻ — cùng với cả điểm cần cân nhắc.</span></div>
+    <div class="expect-item"><span class="expect-check">→</span><span>Thời lượng thường 20–30 phút. Không kéo dài không cần thiết.</span></div>
+  </div>
+
+  <div class="honesty">
+    <strong>Một điều tôi muốn nói thẳng:</strong> tôi không đại diện cho chủ đất hay sàn giao dịch nào. Nếu sau cuộc trao đổi có giao dịch xảy ra và bạn muốn tôi hỗ trợ, chúng ta sẽ nói rõ điều đó riêng. Còn cuộc trò chuyện ban đầu này — hoàn toàn không có nghĩa vụ gì từ hai phía.
+  </div>
+</div>
+
+<footer>
+  <div class="manifesto">We don't sell Namban. We help you see the whole picture.</div>
+  <div class="contact-line">
+    Liên hệ: <a href="mailto:nambanpanorama@gmail.com">nambanpanorama@gmail.com</a>
+    &nbsp;·&nbsp; <a href="tel:0978758788">0978 758 788</a>
+  </div>
+  <div class="meta">NAMBAN PANORAMA &nbsp;·&nbsp; nambanpanorama.com</div>
+</footer>
+
+<script>
+function handleSubmit(e){
+  e.preventDefault();
+  var btn = e.target.querySelector('.submit-btn');
+  btn.textContent = 'Đã nhận — tôi sẽ liên hệ sớm';
+  btn.style.background = '#4a7c59';
+  btn.disabled = true;
+}
+</script>
+</body>
+</html>
