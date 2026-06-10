@@ -77,46 +77,53 @@
   <p>Cụ thể hơn, Nam Ban Lâm Hà nằm trong <strong>tiểu vùng Lâm Hà</strong> (gồm Nam Ban Lâm Hà, Nam Hà Lâm Hà và Phú Sơn Lâm Hà) — một mảnh ghép trực tiếp trong không gian phát triển lấy Đà Lạt làm hạt nhân. Sự khác biệt này không nhỏ: nó quyết định Nam Ban sẽ được định hình bởi câu chuyện nghỉ dưỡng cao nguyên, chứ không phải câu chuyện khai khoáng.</p>
 
   <figure class="fig">
-    <svg viewBox="0 0 700 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bản đồ định hướng vị trí Nam Ban, Đà Lạt, Lạc Dương, Đam Rông và sân bay Liên Khương, Bắc hướng lên">
+    <svg viewBox="0 0 700 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vị trí Nam Ban nằm giữa Đà Lạt và sân bay Liên Khương, lệch về phía Tây">
       <defs><style>
         .cl-line{stroke:#e8e0d0;stroke-width:1;fill:none;}
         .cl-node{fill:#faf6ee;stroke:#a79c87;stroke-width:1.2;}
-        .cl-label{font-family:'Be Vietnam Pro',sans-serif;font-size:12px;fill:#6e6759;}
-        .cl-title{font-family:'Fraunces',serif;font-size:13px;fill:#2f4034;}
-        .cl-band{font-family:'Be Vietnam Pro',sans-serif;font-size:10.5px;letter-spacing:2px;fill:#a79c87;}
+        .cl-lbl{font-family:'Be Vietnam Pro',sans-serif;font-size:12px;fill:#6e6759;}
+        .cl-sub{font-family:'Be Vietnam Pro',sans-serif;font-size:9px;fill:#a79c87;}
+        .cl-dist{font-family:'Be Vietnam Pro',sans-serif;font-size:10.5px;fill:#9d5d38;font-style:italic;}
       </style></defs>
-      <path class="cl-line" d="M20,95 Q200,55 380,90 T690,82"/>
-      <path class="cl-line" d="M20,400 Q220,372 410,402 T690,392"/>
-      <text class="cl-band" x="355" y="30" text-anchor="middle">VÙNG TRUNG TÂM PHÍA BẮC LÂM ĐỒNG</text>
-      <!-- compass: Bac (North) up -->
-      <line x1="62" y1="94" x2="62" y2="66" stroke="#a79c87" stroke-width="1.5"/>
-      <path d="M62,60 l-4,9 l8,0 z" fill="#9d5d38"/>
-      <text x="62" y="110" text-anchor="middle" font-family="Be Vietnam Pro" font-size="11" fill="#a79c87">B</text>
-      <!-- connections -->
-      <line x1="420" y1="220" x2="488" y2="104" stroke="#e1d9c8" stroke-width="1.4"/>
-      <line x1="420" y1="220" x2="455" y2="364" stroke="#e1d9c8" stroke-width="1.4"/>
-      <line x1="240" y1="124" x2="222" y2="274" stroke="#e8e0d0" stroke-width="1.2" stroke-dasharray="3 4"/>
-      <line x1="420" y1="220" x2="258" y2="302" stroke="#bb8862" stroke-width="1.8" stroke-dasharray="5 3"/>
-      <text class="cl-label" x="318" y="246" font-style="italic" font-size="11" fill="#9d5d38">~30 km · đèo Tà Nung</text>
-      <!-- Dam Rong (NW) -->
-      <circle class="cl-node" cx="150" cy="122" r="22"/>
-      <text class="cl-label" x="150" y="162" text-anchor="middle" font-size="11">Đam Rông</text>
-      <!-- Lac Duong (N) -->
-      <circle class="cl-node" cx="490" cy="100" r="22"/>
-      <text class="cl-label" x="490" y="140" text-anchor="middle" font-size="11">Lạc Dương</text>
-      <!-- Da Lat hub (center) -->
-      <circle cx="420" cy="220" r="42" fill="#2f4034"/>
-      <text x="420" y="216" text-anchor="middle" font-family="Fraunces,serif" font-size="16" fill="#f4efe6">Đà Lạt</text>
-      <text x="420" y="233" text-anchor="middle" font-family="Be Vietnam Pro" font-size="8.5" fill="#bb8862">nghỉ dưỡng quốc tế</text>
-      <!-- Nam Ban (SW, highlight) -->
-      <circle cx="225" cy="310" r="38" fill="#9d5d38"/>
-      <text x="225" y="306" text-anchor="middle" font-family="Fraunces,serif" font-size="14" fill="#f4efe6">Nam Ban</text>
-      <text x="225" y="323" text-anchor="middle" font-family="Be Vietnam Pro" font-size="9" fill="#f1ece2">Lâm Hà</text>
-      <!-- San bay Lien Khuong (S) -->
-      <circle class="cl-node" cx="455" cy="366" r="26" stroke="#9d5d38"/>
-      <path d="M444,366 l20,-6 l-5,6 l5,6 z" fill="#9d5d38"/>
-      <text class="cl-title" x="455" y="408" text-anchor="middle" font-size="12.5">Sân bay Liên Khương</text>
-      <text class="cl-label" x="455" y="423" text-anchor="middle" font-size="10">chuẩn 4E</text>
+      <!-- contour lines -->
+      <path class="cl-line" d="M20,72 Q200,42 420,68 T690,58"/>
+      <path class="cl-line" d="M20,110 Q200,82 420,108 T690,98"/>
+      <path class="cl-line" d="M20,390 Q220,368 440,392 T690,384"/>
+      <!-- compass -->
+      <line x1="58" y1="158" x2="58" y2="128" stroke="#a79c87" stroke-width="1.5"/>
+      <path d="M58,122 l-5,10 l10,0 z" fill="#9d5d38"/>
+      <text x="58" y="175" text-anchor="middle" font-family="Be Vietnam Pro" font-size="11" fill="#a79c87">B</text>
+      <!-- === Đà Lạt (center-right, trung tâm) === -->
+      <circle cx="440" cy="178" r="46" fill="#2f4034"/>
+      <text x="440" y="174" text-anchor="middle" font-family="Fraunces,serif" font-size="17" fill="#f4efe6">Đà Lạt</text>
+      <text x="440" y="191" text-anchor="middle" font-family="Be Vietnam Pro" font-size="8.5" fill="#bb8862">nghỉ dưỡng quốc tế</text>
+      <!-- === Lạc Dương (Bắc Đà Lạt) === -->
+      <circle class="cl-node" cx="510" cy="82" r="22"/>
+      <text class="cl-lbl" x="510" y="118" text-anchor="middle">Lạc Dương</text>
+      <line x1="510" y1="104" x2="465" y2="140" stroke="#e1d9c8" stroke-width="1.3"/>
+      <!-- === Đam Rông (Tây Bắc) === -->
+      <circle class="cl-node" cx="175" cy="100" r="20"/>
+      <text class="cl-lbl" x="175" y="134" text-anchor="middle">Đam Rông</text>
+      <line x1="192" y1="116" x2="280" y2="155" stroke="#e8e0d0" stroke-width="1.1" stroke-dasharray="3 4"/>
+      <!-- === Nam Ban: GIỮA Đà Lạt và sân bay, lệch Tây === -->
+      <circle cx="308" cy="288" r="42" fill="#9d5d38"/>
+      <text x="308" y="283" text-anchor="middle" font-family="Fraunces,serif" font-size="15" fill="#f4efe6">Nam Ban</text>
+      <text x="308" y="299" text-anchor="middle" font-family="Be Vietnam Pro" font-size="9" fill="#f1ece2">Lâm Hà · Loại III</text>
+      <!-- Đà Lạt ↔ Nam Ban -->
+      <line x1="400" y1="208" x2="344" y2="260" stroke="#bb8862" stroke-width="1.8" stroke-dasharray="5 3"/>
+      <text class="cl-dist" x="348" y="228">~30 km</text>
+      <!-- Nam Ban ↔ sân bay -->
+      <line x1="316" y1="328" x2="360" y2="378" stroke="#bb8862" stroke-width="1.8" stroke-dasharray="5 3"/>
+      <text class="cl-dist" x="285" y="372">~20 km</text>
+      <!-- Đà Lạt ↔ sân bay (trục chính) -->
+      <line x1="450" y1="222" x2="400" y2="370" stroke="#e1d9c8" stroke-width="1.3"/>
+      <!-- === Sân bay Liên Khương (Nam, thẳng dưới Đà Lạt) === -->
+      <circle class="cl-node" cx="388" cy="390" r="28" stroke="#9d5d38" stroke-width="1.4"/>
+      <path d="M375,390 l22,-7 l-5,7 l5,7 z" fill="#9d5d38"/>
+      <text x="388" y="430" text-anchor="middle" font-family="Fraunces,serif" font-size="12.5" fill="#2f4034">Sân bay Liên Khương</text>
+      <!-- Nam Ban lợi thế: nằm trên cả 2 trục -->
+      <text x="186" y="310" font-family="Be Vietnam Pro" font-size="10" fill="#9d5d38" font-style="italic" text-anchor="middle">lợi thế kép:</text>
+      <text x="186" y="324" font-family="Be Vietnam Pro" font-size="10" fill="#9d5d38" font-style="italic" text-anchor="middle">giữa 2 cửa ngõ</text>
     </svg>
     <figcaption>Mạng lưới đô thị quanh Đà Lạt — Bắc hướng lên.</figcaption>
   </figure>
@@ -165,6 +172,11 @@
 
   <hr>
 
+  
+<figure class="hero-photo" style="margin:32px auto;">
+  <img src="images/nam-ban-thung-lung.jpg" alt="Toàn cảnh thung lũng Nam Ban mùa cà phê trổ hoa — vườn tược và núi đồi cao nguyên" loading="lazy">
+  <figcaption>Mùa cà phê trổ hoa — thung lũng Nam Ban nhìn từ trên đồi.</figcaption>
+</figure>
   <div class="section-head">
     <span class="eyebrow">03 — Hạ tầng</span>
     <h2>Cái gì thật sự kết nối Nam Ban?</h2>
@@ -254,7 +266,7 @@
 <footer>
   <div class="manifesto">We don't sell Namban. We help you see the whole picture.</div>
   <div class="contact-line">
-    Liên hệ qua thư ký:
+    Liên hệ:
     <a href="mailto:nambanpanorama@gmail.com">nambanpanorama@gmail.com</a>
     &nbsp;·&nbsp;
     <a href="tel:0978758788">0978 758 788</a>
