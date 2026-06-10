@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Namban Index · Tháng 6/2026 — Namban Panorama</title>
+<meta name="description" content="Namban Index tháng 6/2026: mặt bằng giá thực tế, tín hiệu thị trường, xu hướng cư dân và nhận định độc lập từ người quan sát Nam Ban – Lâm Hà.">
+<link rel="canonical" href="https://nambanpanorama.com/namban-index.html">
+<meta property="og:title" content="Namban Index · Tháng 6/2026">
+<meta property="og:description" content="Không phải giá rao. Không phải tin đồn. Những gì thực sự đang xảy ra ở Nam Ban tháng này.">
+<meta property="og:image" content="https://nambanpanorama.com/images/nam-ban-thung-lung.jpg">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Be+Vietnam+Pro:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1815;--paper:#f1ece2;--card:#faf6ee;
+  --forest:#2f4034;--forest-deep:#1e2a20;
+  --clay:#9d5d38;--clay-soft:#bb8862;
+  --stone:#a79c87;--muted:#6e6759;--line:#e1d9c8;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Be Vietnam Pro',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-weight:300;-webkit-font-smoothing:antialiased;}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+.navin{max-width:1080px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.logo{font-family:'Fraunces',serif;font-weight:500;font-size:19px;letter-spacing:.5px;text-decoration:none;color:var(--ink);}
+.logo .sub{font-family:'Be Vietnam Pro';font-weight:400;font-size:9.5px;letter-spacing:3px;color:var(--stone);margin-left:8px;text-transform:uppercase;}
+.back{font-size:12.5px;color:var(--muted);text-decoration:none;letter-spacing:.5px;}
+.back:hover{color:var(--ink);}
+
+/* Header */
+.idx-header{background:var(--forest);color:#f4efe6;padding:72px 40px 56px;}
+.idx-header-inner{max-width:820px;margin:0 auto;}
+.idx-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--clay-soft);margin-bottom:18px;}
+.idx-header h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,4.5vw,48px);line-height:1.1;letter-spacing:-.8px;margin-bottom:18px;}
+.idx-header p{font-size:16px;color:#c8c0b0;line-height:1.65;max-width:58ch;}
+.idx-meta{margin-top:32px;display:flex;gap:32px;flex-wrap:wrap;}
+.idx-meta span{font-size:11.5px;letter-spacing:.5px;color:#8a8070;}
+.idx-meta b{color:var(--clay-soft);font-weight:500;}
+
+/* Body */
+.idx-body{max-width:820px;margin:0 auto;padding:56px 40px 72px;}
+.idx-body hr{border:0;border-top:1px solid var(--line);margin:48px 0;}
+
+/* Section heading */
+.idx-section-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--clay);font-weight:500;margin-bottom:10px;}
+.idx-section-title{font-family:'Fraunces',serif;font-weight:400;font-size:24px;letter-spacing:-.3px;margin-bottom:22px;}
+
+/* Price grid */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden;margin:24px 0;}
+.price-cell{background:var(--card);padding:24px 20px;}
+.price-tier{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--stone);margin-bottom:10px;font-weight:500;}
+.price-range{font-family:'Fraunces',serif;font-size:22px;color:var(--forest);line-height:1.1;margin-bottom:8px;}
+.price-unit{font-size:12px;color:var(--clay);margin-bottom:10px;font-weight:500;}
+.price-desc{font-size:13px;color:var(--muted);line-height:1.5;}
+.price-total{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:12px;color:var(--stone);font-style:italic;}
+
+/* Signal cards */
+.signals{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden;margin:24px 0;}
+.signal{background:var(--card);padding:22px 20px;}
+.signal-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:8px;vertical-align:middle;}
+.signal-dot.green{background:#4a7c59;}
+.signal-dot.amber{background:#c4832a;}
+.signal-dot.grey{background:var(--stone);}
+.signal-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);margin-bottom:10px;font-weight:500;}
+.signal-title{font-size:15px;font-weight:500;margin-bottom:6px;color:var(--ink);}
+.signal-body{font-size:13.5px;color:var(--muted);line-height:1.55;}
+
+/* Trend commentary */
+.trend-block{background:var(--forest);color:#e9e3d5;padding:36px 40px;border-radius:2px;margin:36px 0;}
+.trend-block p{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(17px,2.3vw,21px);line-height:1.45;margin-bottom:16px;}
+.trend-block p:last-child{margin:0;}
+.trend-block em{color:var(--clay-soft);}
+
+/* Observation list */
+.obs{border-top:1px solid var(--line);}
+.obs-item{padding:20px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:28px 1fr;gap:14px;align-items:start;}
+.obs-n{font-family:'Fraunces',serif;font-size:13px;color:var(--stone);}
+.obs-text{font-size:15px;color:var(--ink);line-height:1.6;}
+.obs-text b{font-weight:500;}
+
+/* Disclaimer */
+.disclaimer{background:var(--paper);border:1px dashed var(--stone);border-radius:2px;padding:18px 22px;margin-top:40px;font-size:13px;color:var(--muted);font-style:italic;line-height:1.55;}
+
+/* CTA strip */
+.cta-strip{background:var(--card);border-top:1px solid var(--line);padding:48px 40px;text-align:center;}
+.cta-strip h3{font-family:'Fraunces',serif;font-weight:400;font-size:24px;margin-bottom:10px;}
+.cta-strip p{font-size:14.5px;color:var(--muted);margin-bottom:24px;max-width:44ch;margin-left:auto;margin-right:auto;}
+.cta-strip .links a{display:inline-block;margin:4px 6px;font-size:13px;color:var(--clay);text-decoration:none;border:1px solid var(--clay);padding:10px 20px;border-radius:2px;letter-spacing:.3px;transition:all .2s;}
+.cta-strip .links a:hover{background:var(--clay);color:var(--paper);}
+
+footer{background:var(--ink);color:#cabfab;padding:44px 24px;text-align:center;}
+footer .manifesto{font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:var(--paper);margin-bottom:10px;}
+footer .contact-line{font-size:12.5px;color:#b3a892;margin-bottom:14px;letter-spacing:.3px;}
+footer .contact-line a{color:var(--clay-soft);text-decoration:none;}
+footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
+
+@media(max-width:680px){
+  .navin,.idx-header,.idx-body,.cta-strip{padding-left:24px;padding-right:24px;}
+  .price-grid{grid-template-columns:1fr;}
+  .signals{grid-template-columns:1fr;}
+  .idx-meta{gap:16px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="navin">
+    <a class="logo" href="index.html">Namban Panorama<span class="sub">Intelligence</span></a>
+    <a class="back" href="index.html">← Trang chủ</a>
+  </div>
+</nav>
+
+<div class="idx-header">
+  <div class="idx-header-inner">
+    <div class="idx-eyebrow">Namban Index</div>
+    <h1>Những gì thực sự đang xảy ra ở Nam Ban<br>tháng 6, 2026</h1>
+    <p>Không phải giá rao. Không phải tin đồn. Đây là những gì chúng tôi quan sát từ thực địa — mặt bằng giá thực tế, tín hiệu thị trường và xu hướng đang hình thành mà bảng giá không nói được.</p>
+    <div class="idx-meta">
+      <span>Cập nhật <b>Tháng 6/2026</b></span>
+      <span>Dữ liệu từ <b>thực địa Nam Ban – Lâm Hà</b></span>
+      <span>Tổng hợp bởi <b>Namban Panorama</b></span>
+    </div>
+  </div>
+</div>
+
+<div class="idx-body">
+
+  <!-- 01 GIÁ -->
+  <div class="idx-section-label">01 — Mặt bằng giá</div>
+  <div class="idx-section-title">Giá tham khảo theo phân khúc</div>
+  <p style="font-size:15px;color:var(--muted);margin-bottom:4px;">Đây là khoảng giá thực tế từ các giao dịch và thông tin thị trường mà chúng tôi thu thập. Không phải giá niêm yết, không phải giá môi giới chào. Mỗi lô cụ thể sẽ khác nhau tùy vị trí, pháp lý và thương lượng.</p>
+
+  <div class="price-grid">
+    <div class="price-cell">
+      <div class="price-tier">Đất nông nghiệp diện tích lớn</div>
+      <div class="price-range">1,8 – 3 tr</div>
+      <div class="price-unit">đồng / m²</div>
+      <div class="price-desc">Thường từ 3.000m² trở lên, chưa tách thửa, hạ tầng cơ bản. Phù hợp vườn canh tác hoặc giữ dài hạn. Cần kiểm tra kỹ lộ giới và khả năng chuyển đổi.</div>
+      <div class="price-total">Tổng giá phổ biến: 500 tr – 1,2 tỷ</div>
+    </div>
+    <div class="price-cell">
+      <div class="price-tier">Khu tách thửa nhỏ, có thổ cư</div>
+      <div class="price-range">3 – 4,5 tr</div>
+      <div class="price-unit">đồng / m²</div>
+      <div class="price-desc">Diện tích thường 500–2.000m², có một phần thổ cư, hạ tầng điện nước đã có hoặc đang hoàn thiện. Phù hợp xây dựng lưu trú nhỏ hoặc nhà vườn cuối tuần.</div>
+      <div class="price-total">Tổng giá phổ biến: 800 tr – 1,5 tỷ</div>
+    </div>
+    <div class="price-cell">
+      <div class="price-tier">Đặc biệt — view đồi, view hồ</div>
+      <div class="price-range">4 – 6 tr</div>
+      <div class="price-unit">đồng / m²</div>
+      <div class="price-desc">Vị trí có tầm nhìn ra hồ hoặc đồi trà, thường sát trung tâm hoặc trục đường chính. Đây là phân khúc thanh khoản tốt nhất nếu sau này muốn bán lại.</div>
+      <div class="price-total">Tổng giá phổ biến: 1,2 – 1,8 tỷ / lô</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- 02 TÍN HIỆU -->
+  <div class="idx-section-label">02 — Tín hiệu thị trường</div>
+  <div class="idx-section-title">6 tháng đầu năm 2026 — những gì đang diễn ra</div>
+
+  <div class="signals">
+    <div class="signal">
+      <div class="signal-label"><span class="signal-dot green"></span>Tín hiệu tích cực</div>
+      <div class="signal-title">Trục đường 725 đang lên dịch vụ</div>
+      <div class="signal-body">Nhiều quán ăn, cafe và cửa hàng dịch vụ mới khai trương dọc mặt tiền đường tỉnh lộ 725. Đây thường là chỉ báo sớm của một khu vực đang có dòng người đến tăng lên — thương mại theo chân dân cư, không phải ngược lại.</div>
+    </div>
+    <div class="signal">
+      <div class="signal-label"><span class="signal-dot green"></span>Tín hiệu tích cực</div>
+      <div class="signal-title">Homestay mới vào vận hành</div>
+      <div class="signal-body">Một số homestay mới được hoàn thiện và bắt đầu đón khách trong giai đoạn này. Điều đáng chú ý hơn là nhu cầu thuê nhà dài hạn tại Nam Ban — không phải du lịch ngắn ngày — đang tăng. Đây là tín hiệu khác về chất lượng cầu.</div>
+    </div>
+    <div class="signal">
+      <div class="signal-label"><span class="signal-dot green"></span>Tín hiệu tích cực</div>
+      <div class="signal-title">Nhu cầu thuê dài hạn xuất hiện</div>
+      <div class="signal-body">Nhiều người bắt đầu tìm thuê nhà hoặc phòng ở Nam Ban để sinh sống, làm việc từ xa và trải nghiệm dài ngày — không chỉ nghỉ cuối tuần. Đây là sự khác biệt so với 2–3 năm trước, khi nhu cầu chủ yếu từ khách du lịch.</div>
+    </div>
+    <div class="signal">
+      <div class="signal-label"><span class="signal-dot amber"></span>Cần theo dõi</div>
+      <div class="signal-title">Nguồn cung sẽ tăng theo quy hoạch</div>
+      <div class="signal-body">Khi Quyết định 2786/QĐ-UBND (6/6/2026) được công bố rộng rãi hơn, nhiều chủ đất sẽ ra hàng. Điều này tốt cho người mua có thông tin — nhưng cũng tăng nguy cơ bị định giá không đúng nếu thiếu cơ sở so sánh.</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- 03 NHẬN ĐỊNH -->
+  <div class="idx-section-label">03 — Nhận định tháng này</div>
+  <div class="idx-section-title">Điều bảng giá không nói được</div>
+
+  <div class="trend-block">
+    <p>Người ta thường nói Nam Ban là <em>"phiên bản rẻ hơn của Đà Lạt"</em>. Tôi nghĩ đó là cách nhìn nguy hiểm — và về lâu dài, sẽ là cách nhìn sai.</p>
+    <p>Vì nếu Nam Ban chỉ là Đà Lạt giá rẻ, thì ngày mai sẽ luôn có một nơi khác rẻ hơn. Một vùng đất không thể xây tương lai bằng cách rẻ hơn người khác.</p>
+  </div>
+
+  <p style="font-size:16px;line-height:1.75;margin-bottom:24px;">Trong những lần đi lại giữa TP.HCM và Nam Ban, điều khiến tôi chú ý không phải giá đất. Mà là <strong style="font-weight:500;">con người đang đến đây và lý do họ đến</strong>.</p>
+
+  <div class="obs">
+    <div class="obs-item">
+      <div class="obs-n">01</div>
+      <div class="obs-text">Những người rời thành phố sau nhiều năm làm doanh nghiệp — không phải về hưu, mà đang tìm <b>nhịp sống khác</b> để tiếp tục làm việc.</div>
+    </div>
+    <div class="obs-item">
+      <div class="obs-n">02</div>
+      <div class="obs-text">Những gia đình muốn con lớn lên gần cây cối, gần vườn — không phải gần trung tâm thương mại. <b>Bán kính 30 phút từ Đà Lạt</b> là khoảng cách vừa đủ để có cả hai.</div>
+    </div>
+    <div class="obs-item">
+      <div class="obs-n">03</div>
+      <div class="obs-text">Những người làm việc từ xa — designer, developer, founder startup nhỏ — đang <b>thuê dài hạn</b> thay vì nghỉ ngắn ngày. Nhu cầu này chưa có đủ nguồn cung phù hợp.</div>
+    </div>
+    <div class="obs-item">
+      <div class="obs-n">04</div>
+      <div class="obs-text">Điều đáng chú ý nhất: <b>phần lớn họ không đến vì đầu tư</b>. Họ đến vì một câu hỏi lớn hơn — "Mình muốn sống như thế nào trong 10 năm tới?" Nam Ban đang trở thành một trong những câu trả lời.</div>
+    </div>
+    <div class="obs-item">
+      <div class="obs-n">05</div>
+      <div class="obs-text">Và nhiều người trong số họ <b>không đăng lên mạng xã hội</b>. Không quay TikTok. Không livestream. Nhiều người thậm chí không muốn ai biết. Điều đó có nghĩa là: nếu chỉ nhìn giá đất hay quy hoạch, bạn sẽ bỏ qua sự dịch chuyển quan trọng nhất đang diễn ra.</div>
+    </div>
+  </div>
+
+  <p style="font-size:15.5px;color:var(--muted);line-height:1.7;margin-top:28px;">Khi dịch vụ bắt đầu mọc lên — quán cà phê, homestay, cửa hàng tiện lợi — đó không phải nguyên nhân của sự phát triển. Đó là <em>hệ quả</em>. Dịch vụ theo chân người. Người đến trước khi tiện ích có mặt. Và thường, đến lúc tiện ích đủ đầy thì giá đã khác.</p>
+
+  <hr>
+
+  <!-- 04 KẾT LUẬN -->
+  <div class="idx-section-label">04 — Góc nhìn</div>
+  <div class="idx-section-title">Nam Ban đang trở thành điều gì?</div>
+
+  <p style="font-size:16px;line-height:1.75;margin-bottom:20px;">Nếu Đà Lạt là điểm đến du lịch — nơi người ta ghé qua rồi về — thì Nam Ban đang có cơ hội trở thành điều khác: <strong style="font-weight:500;">nơi người ta thực sự sống</strong>.</p>
+
+  <p style="font-size:16px;line-height:1.75;margin-bottom:20px;">Đó là lý do tôi không quá chú trọng vào câu hỏi "giá đất sẽ tăng bao nhiêu phần trăm." Câu hỏi tôi thấy đáng hơn là: <em>"Khi những người đang âm thầm đến đây trở thành cộng đồng — điều gì sẽ xảy ra với vùng đất này?"</em></p>
+
+  <p style="font-size:16px;line-height:1.75;">Chúng tôi sẽ tiếp tục quan sát và ghi chép. Tháng sau, Index sẽ cập nhật những thay đổi mới nhất.</p>
+
+  <div class="disclaimer">Namban Index là tổng hợp quan sát thực địa và thông tin thị trường, mang tính tham khảo độc lập. Không phải khuyến nghị đầu tư cá nhân. Giá cả thay đổi theo thời gian, vị trí và điều kiện cụ thể của từng tài sản — luôn thẩm định trực tiếp trước mọi giao dịch.</div>
+
+</div>
+
+<div class="cta-strip">
+  <h3>Đọc thêm từ Namban Panorama</h3>
+  <p>Phân tích quy hoạch, tiềm năng đầu tư và bản đồ hành chính sau sáp nhập.</p>
+  <div class="links">
+    <a href="quy-hoach-2050.html">Quy hoạch 2050 →</a>
+    <a href="tiem-nang-dau-tu.html">Tiềm năng đầu tư →</a>
+    <a href="brief-01.html">Bản đồ mới →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="manifesto">We don't sell Namban. We help you see the whole picture.</div>
+  <div class="contact-line">
+    Liên hệ: <a href="mailto:nambanpanorama@gmail.com">nambanpanorama@gmail.com</a>
+    &nbsp;·&nbsp; <a href="tel:0978758788">0978 758 788</a>
+  </div>
+  <div class="meta">NAMBAN PANORAMA &nbsp;·&nbsp; nambanpanorama.com</div>
+</footer>
+
+</body>
+</html>
