@@ -58,7 +58,7 @@
   .lede{font-size:clamp(15px,1.7vw,18px);color:var(--muted);max-width:540px;margin:0 auto 34px;}
   .capture{display:flex;justify-content:center;max-width:440px;margin:0 auto;border:1px solid var(--ink);border-radius:2px;overflow:hidden;background:rgba(250,246,238,.7);}
   /* ── Mini-quiz ── */
-  .quiz-wrap{max-width:520px;margin:0 auto;}
+  .quiz-wrap{max-width:520px;margin:0 auto;position:relative;z-index:3;}
   .quiz-card{background:#fff;border:1px solid var(--line);border-radius:4px;padding:24px 22px;box-shadow:0 2px 12px rgba(26,24,21,.07);}
   .quiz-label{font-size:15px;color:var(--ink);margin-bottom:16px;font-family:'Fraunces',serif;font-style:italic;font-weight:400;line-height:1.4;}
   .quiz-opts{display:flex;flex-direction:column;gap:9px;}
@@ -81,7 +81,7 @@
   .capture button{border:0;background:var(--clay);color:var(--paper);padding:0 22px;font-family:inherit;font-size:12.5px;letter-spacing:.5px;cursor:pointer;transition:background .3s;}
   .capture button:hover{background:#84481f;}
   .hero-foot{font-size:12px;color:var(--muted);margin-top:14px;letter-spacing:.3px;}
-  .ridges{position:absolute;left:0;right:0;bottom:0;width:100%;height:300px;z-index:1;}
+  .ridges{position:absolute;left:0;right:0;bottom:0;width:100%;height:300px;z-index:1;pointer-events:none;}
 
   /* LAYERS STRIP */
   .layers{background:var(--forest);color:#e9e3d5;}
@@ -309,19 +309,19 @@
     <p style="font-size:14.5px;color:var(--muted);max-width:54ch;margin-bottom:28px;line-height:1.65;">Những người địa phương, chủ farm, người mới chuyển đến — cùng chia sẻ thông tin về Nam Ban. Một cộng đồng đang lớn dần, rất chậm, rất có chọn lọc.</p>
     <div class="members">
       <div class="mcell">
-        <div class="mhead"><div class="avatar" style="background:var(--forest)">D</div><div><div class="mname">Dũng</div><div class="verified">✔ Verified</div></div></div>
-        <div class="mrole" style="margin-bottom:6px;">Môi giới · 5 năm</div>
-        <div class="mstat">Chuyên đất view rừng<br>40 giao dịch · 85 điểm uy tín</div>
+        <div class="mhead"><div class="avatar" style="background:var(--forest)">L</div><div><div class="mname">Luật sư</div><div class="verified">✔ Verified</div></div></div>
+        <div class="mrole" style="margin-bottom:6px;">Luật sư · 9 năm</div>
+        <div class="mstat">Chuyên hỗ trợ pháp lý<br>85 điểm uy tín</div>
       </div>
       <div class="mcell">
-        <div class="mhead"><div class="avatar" style="background:var(--clay)">L</div><div><div class="mname">Lan</div><div class="verified">✔ Verified</div></div></div>
-        <div class="mrole" style="margin-bottom:6px;">Chủ farm · 8 năm</div>
-        <div class="mstat">Cà phê &amp; farmstay<br>12 bài đóng góp · 92 điểm</div>
+        <div class="mhead"><div class="avatar" style="background:var(--clay)">H</div><div><div class="mname">Chủ Homestay</div><div class="verified">✔ Verified</div></div></div>
+        <div class="mrole" style="margin-bottom:6px;">Chủ Homestay · 4 năm</div>
+        <div class="mstat">Cà phê &amp; farmstay<br>5 bài đóng góp · 92 điểm</div>
       </div>
       <div class="mcell">
         <div class="feed-h">Bảng tin đóng góp</div>
-        <div class="feed-item"><span class="d" style="background:var(--forest)"></span>Tuấn xác minh tuyến đường Hà Bắc đang nâng cấp, thảm nhựa</div>
-        <div class="feed-item"><span class="d" style="background:var(--clay)"></span>Mai chia sẻ giá giao dịch thật xung quanh Hồ Bãi Công — trung tâm Nam Ban</div>
+        <div class="feed-item"><span class="d" style="background:var(--forest)"></span>Anh Tuấn xác minh tuyến đường Hà Bắc đang nâng cấp, thảm nhựa</div>
+        <div class="feed-item"><span class="d" style="background:var(--clay)"></span>Chị Mai chia sẻ giá giao dịch thật xung quanh Hồ Bãi Công — trung tâm Nam Ban</div>
         <div class="feed-item"><span class="d" style="background:var(--clay-soft)"></span>Cần 1 bạn chia sẻ: Hồ Đông Thanh quy hoạch ra sao, khi nào triển khai</div>
         <div class="feed-item"><span class="d" style="background:var(--stone)"></span>Cầu Tổng Đội khi nào mới bắt đầu sửa chữa?</div>
       </div>
