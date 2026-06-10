@@ -47,6 +47,13 @@
   .navlinks{display:flex;gap:30px;align-items:center;font-size:13px;color:var(--muted);font-weight:400;}
   .navlinks a{color:inherit;text-decoration:none;transition:color .25s;}
   .navlinks a:hover{color:var(--ink);}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+  .hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:all .25s;}
+  .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--paper);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{font-family:'Fraunces',serif;font-size:22px;font-weight:400;color:var(--ink);text-decoration:none;letter-spacing:.3px;transition:color .2s;}
+  .mobile-menu a:hover{color:var(--clay);}
+  .mobile-close{position:absolute;top:28px;right:28px;font-size:28px;color:var(--stone);cursor:pointer;background:none;border:none;line-height:1;}
   .btn{background:var(--forest);color:var(--paper);padding:10px 22px;border-radius:2px;font-size:12.5px;letter-spacing:.5px;text-decoration:none;transition:background .3s;}
   .btn:hover{background:var(--forest-deep);}
 
@@ -162,7 +169,8 @@
 
   @media(max-width:780px){
     .wrap{padding:0 24px;}
-    .navlinks a:not(.cta-link){display:none;}
+    .navlinks{display:none;}
+    .hamburger{display:flex;}
     .grid2,.sel-split{grid-template-columns:1fr;}
     .sel-col:first-child{border-right:0;border-bottom:1px solid var(--line);}
     .members{grid-template-columns:1fr;}
@@ -183,7 +191,8 @@
 <nav>
   <div class="wrap navin">
     <a href="/" class="logo" style="text-decoration:none;color:inherit;">Namban Panorama<span class="sub">Est. 2026</span></a>
-    <div class="navlinks">
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="navlinks" id="navlinks">
       <a href="/">Toàn cảnh</a>
       <a href="quy-hoach-2050.html">Quy hoạch</a>
       <a href="namban-index.html">Index</a>
@@ -192,13 +201,22 @@
       <a href="trao-doi.html">Trao đổi</a>
     </div>
   </div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMenu()">×</button>
+  <a href="/" onclick="toggleMenu()">Toàn cảnh</a>
+  <a href="quy-hoach-2050.html" onclick="toggleMenu()">Quy hoạch</a>
+  <a href="namban-index.html" onclick="toggleMenu()">Index</a>
+  <a href="#society" onclick="toggleMenu()">Câu chuyện</a>
+  <a href="trao-doi.html" onclick="toggleMenu()">Trao đổi</a>
+</div>
 </nav>
 
 <header>
   <div class="wrap">
     <div class="kicker fu" style="animation-delay:.05s">Góc nhìn độc lập · Nam Ban – Lâm Hà, Lâm Đồng</div>
     <h1 class="fu" style="animation-delay:.15s">Thấy <em>toàn cảnh</em> Nam Ban trước khi xuống tiền.</h1>
-    <p class="lede fu" style="animation-delay:.3s">Chúng tôi không bán đất. Không đại diện chủ đất. Phân tích độc lập — để bạn ra quyết định tốt hơn. Đôi khi, quyết định đúng là không mua gì cả.</p>
+    <p class="lede fu" style="animation-delay:.3s">Chúng tôi chủ trương phân tích độc lập — để bạn ra quyết định tốt hơn. Đôi khi, quyết định đúng là không mua gì cả.</p>
     <div id="brief-signup" class="quiz-wrap fu" style="animation-delay:.42s">
 
       <div class="quiz-q" id="q1">
@@ -286,7 +304,7 @@
         <a href="brief-01.html" class="link">Đọc · 10 phút</a>
       </div>
       <div>
-        <div class="kicker" style="display:block;margin-bottom:6px;">Kho tri thức Nam Ban</div>
+        <div class="kicker" style="display:block;margin-bottom:6px;">Đọc chậm</div>
         <div class="kb">
           <a href="quy-hoach-2050.html"><span><span class="kb-t">Quy hoạch 2050</span><br><span class="kb-s">Nam Ban trên bản đồ mới của Lâm Đồng</span></span><span class="kb-n">→</span></a>
           <a href="tiem-nang-dau-tu.html"><span><span class="kb-t">Tiềm năng đầu tư</span><br><span class="kb-s">Cơ hội &amp; rủi ro, đọc qua lăng kính toàn cảnh</span></span><span class="kb-n">→</span></a>
@@ -309,7 +327,7 @@
     <p style="font-size:14.5px;color:var(--muted);max-width:54ch;margin-bottom:28px;line-height:1.65;">Những người địa phương, chủ farm, người mới chuyển đến — cùng chia sẻ thông tin về Nam Ban. Một cộng đồng đang lớn dần, rất chậm, rất có chọn lọc.</p>
     <div class="members">
       <div class="mcell">
-        <div class="mhead"><div class="avatar" style="background:var(--forest)">L</div><div><div class="mname">&nbsp;</div><div class="verified">✔ Verified</div></div></div>
+        <div class="mhead"><div class="avatar" style="background:var(--forest)">P</div><div><div class="mname">Anh Phong</div><div class="verified">✔ Verified</div></div></div>
         <div class="mrole" style="margin-bottom:6px;">Luật sư · 9 năm</div>
         <div class="mstat">Chuyên hỗ trợ pháp lý<br>85 điểm uy tín</div>
       </div>
@@ -341,7 +359,7 @@
     <div class="sechead"><span class="idx">03</span><span class="kicker">Panorama Selection · cơ hội VÀ rủi ro</span></div>
     <div class="sel">
       <div class="sel-top">
-        <div class="sel-t">Selection 07 — 2.300m², 400m² thổ cư · view hồ · 5,75 tỷ</div>
+        <div class="sel-t">Selection 02 — 2.300m², 400m² thổ cư · view hồ · 5,75 tỷ</div>
         <div class="sel-b" style="font-style:italic;color:var(--muted);font-size:13.5px;margin-top:6px;">Trong khoảng 80 tài sản được xem qua trong 3 tháng, tôi chú ý lô này vì một lý do: nó nằm ở ranh giới giữa "khu tách thửa bình thường" và "view hồ thật sự" — đủ gần để hưởng cảnh quan, đủ xa để giá chưa bị đẩy theo cảm xúc.</div>
       </div>
       <div class="sel-split">
@@ -376,9 +394,16 @@
   <div class="meta">NAMBAN PANORAMA &nbsp;·&nbsp; Góc nhìn toàn cảnh, độc lập &amp; trung thực về Nam Ban – Lâm Hà</div>
 </footer>
 
-<div class="note">Bản thiết kế web v2 — màu, phông và nội dung mẫu chỉ để hình dung. Mọi con số là minh hoạ.</div>
 
 
+
+<script>
+function toggleMenu(){
+  var m = document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+  document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
+}
+</script>
 <script>
 var _q1ans = '';
 var _results = {
