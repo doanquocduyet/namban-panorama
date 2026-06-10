@@ -59,28 +59,28 @@
   .capture{display:flex;justify-content:center;max-width:440px;margin:0 auto;border:1px solid var(--ink);border-radius:2px;overflow:hidden;background:rgba(250,246,238,.7);}
   /* ── Mini-quiz ── */
   .quiz-wrap{max-width:520px;margin:0 auto;}
-  .quiz-card{background:rgba(255,255,255,.08);border:1px solid rgba(241,236,226,.18);border-radius:4px;padding:24px 22px;}
-  .quiz-label{font-size:15px;color:#f1ece2;margin-bottom:16px;font-family:'Fraunces',serif;font-style:italic;font-weight:400;line-height:1.4;}
+  .quiz-card{background:#fff;border:1px solid var(--line);border-radius:4px;padding:24px 22px;box-shadow:0 2px 12px rgba(26,24,21,.07);}
+  .quiz-label{font-size:15px;color:var(--ink);margin-bottom:16px;font-family:'Fraunces',serif;font-style:italic;font-weight:400;line-height:1.4;}
   .quiz-opts{display:flex;flex-direction:column;gap:9px;}
-  .qopt{background:transparent;border:1px solid rgba(241,236,226,.22);color:rgba(241,236,226,.82);padding:13px 18px;text-align:left;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;font-size:14px;font-weight:300;line-height:1.45;border-radius:3px;transition:all .18s;letter-spacing:.1px;}
-  .qopt:hover{background:rgba(241,236,226,.1);border-color:rgba(241,236,226,.45);color:#f1ece2;}
+  .qopt{background:var(--card);border:1px solid var(--line);color:var(--muted);padding:13px 18px;text-align:left;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;font-size:14px;font-weight:300;line-height:1.45;border-radius:3px;transition:all .18s;letter-spacing:.1px;}
+  .qopt:hover{background:var(--paper);border-color:var(--stone);color:var(--ink);}
   .qopt.chosen{background:var(--clay);border-color:var(--clay);color:#fff;}
   .quiz-result{padding:4px 0;}
-  .quiz-result-card{background:rgba(255,255,255,.07);border:1px solid rgba(241,236,226,.18);border-radius:4px;padding:20px 22px;margin-bottom:14px;}
-  .quiz-result-text{font-size:14.5px;color:#e5ddd0;line-height:1.68;}
-  .quiz-email-row{display:flex;gap:0;border:1px solid rgba(241,236,226,.25);border-radius:3px;overflow:hidden;margin-top:14px;}
-  .quiz-email-row input{flex:1;background:rgba(0,0,0,.18);border:0;padding:12px 15px;font-family:inherit;font-size:14px;color:#f1ece2;outline:none;}
-  .quiz-email-row input::placeholder{color:rgba(241,236,226,.35);}
+  .quiz-result-card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:20px 22px;margin-bottom:14px;}
+  .quiz-result-text{font-size:14.5px;color:var(--ink);line-height:1.68;}
+  .quiz-email-row{display:flex;gap:0;border:1px solid var(--line);border-radius:3px;overflow:hidden;margin-top:14px;}
+  .quiz-email-row input{flex:1;background:var(--paper);border:0;padding:12px 15px;font-family:inherit;font-size:14px;color:var(--ink);outline:none;}
+  .quiz-email-row input::placeholder{color:var(--stone);}
   .quiz-email-row button{background:var(--clay);border:0;color:#fff;padding:0 20px;font-family:inherit;font-size:12.5px;letter-spacing:.5px;cursor:pointer;white-space:nowrap;}
-  .quiz-skip{display:block;text-align:center;margin-top:10px;font-size:12px;color:rgba(241,236,226,.3);cursor:pointer;letter-spacing:.3px;}
-  .quiz-skip:hover{color:rgba(241,236,226,.55);}
-  .quiz-step{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(241,236,226,.35);margin-bottom:12px;}
+  .quiz-skip{display:block;text-align:center;margin-top:10px;font-size:12px;color:var(--stone);cursor:pointer;letter-spacing:.3px;}
+  .quiz-skip:hover{color:var(--muted);}
+  .quiz-step{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);margin-bottom:12px;}
 
   .capture input{flex:1;border:0;background:transparent;padding:14px 18px;font-family:inherit;font-size:14px;font-weight:300;color:var(--ink);outline:none;}
   .capture input::placeholder{color:var(--stone);}
   .capture button{border:0;background:var(--clay);color:var(--paper);padding:0 22px;font-family:inherit;font-size:12.5px;letter-spacing:.5px;cursor:pointer;transition:background .3s;}
   .capture button:hover{background:#84481f;}
-  .hero-foot{font-size:12px;color:var(--stone);margin-top:14px;}
+  .hero-foot{font-size:12px;color:var(--muted);margin-top:14px;letter-spacing:.3px;}
   .ridges{position:absolute;left:0;right:0;bottom:0;width:100%;height:300px;z-index:1;}
 
   /* LAYERS STRIP */
@@ -169,6 +169,12 @@
     .layers .wrap{justify-content:flex-start;}
     .layer-sep{display:none;}
     .pulse-item .cat{display:none;}
+    /* panorama image strip — giữ tỉ lệ trên mobile */
+    div[style*="aspect-ratio:3/1"] img{object-fit:cover;object-position:center 40%;height:100%;width:100%;}
+    /* quiz card trên mobile */
+    .quiz-wrap{max-width:100%;}
+    .quiz-card{padding:18px 16px;}
+    .qopt{padding:11px 14px;font-size:13.5px;}
   }
 </style>
 </head>
@@ -239,7 +245,7 @@
     <div class="layer-sep"></div>
     <div class="layer"><b>Selection</b><span>Cơ hội tuyển chọn</span></div>
     <div class="layer-sep"></div>
-    <div class="layer"><b>Advisory</b><span>Góc nhìn độc lập · bên bạn</span></div>
+    <div class="layer"><b>Advisory</b><span>Góc nhìn độc lập</span></div>
     
   </div>
 </div>
@@ -285,14 +291,14 @@
 </section>
 
 <!-- 02 COMMUNITY -->
-<div style="width:100%;height:380px;overflow:hidden;margin:0;">
-  <img src="images/nam-ban-aerial.jpg" alt="Toàn cảnh thung lũng Nam Ban nhìn từ trên cao — đất đỏ, vườn xanh, núi và hồ" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;filter:saturate(.88) brightness(.97);">
+<div style="width:100%;height:clamp(220px,35vw,420px);overflow:hidden;margin:0;">
+  <img src="images/nam-ban-aerial.jpg" alt="Toàn cảnh thung lũng Nam Ban nhìn từ trên cao — đất đỏ, vườn xanh, núi và hồ" style="width:100%;height:100%;min-height:180px;object-fit:cover;object-position:center 45%;filter:saturate(.88) brightness(.97);">
 </div>
 <section class="alt" id="society">
   <div class="wrap">
     <div class="sechead"><span class="idx">02</span><span class="kicker">Cộng đồng · đang hình thành tự nhiên</span></div>
-    <h3 class="serif" style="font-weight:400;font-size:24px;letter-spacing:-.3px;margin-bottom:8px;color:var(--ink);">Những người thật, ở một vùng đất thật</h3>
-    <p style="font-size:14.5px;color:var(--muted);max-width:54ch;margin-bottom:28px;line-height:1.65;">Không phải cộng đồng được xây từ trên xuống. Đây là những người địa phương, chủ farm, người mới chuyển đến — cùng chia sẻ thông tin thật về Nam Ban. Đang lớn dần, rất chậm, rất có chọn lọc.</p>
+    <h3 class="serif" style="font-weight:400;font-size:24px;letter-spacing:-.3px;margin-bottom:8px;color:var(--ink);">Những con người thật, ở một vùng đất thật</h3>
+    <p style="font-size:14.5px;color:var(--muted);max-width:54ch;margin-bottom:28px;line-height:1.65;">Những người địa phương, chủ farm, người mới chuyển đến — cùng chia sẻ thông tin thật về Nam Ban. Một nơi đang lớn dần, rất chậm, rất có chọn lọc.</p>
     <div class="members">
       <div class="mcell">
         <div class="mhead"><div class="avatar" style="background:var(--forest)">D</div><div><div class="mname">Dũng</div><div class="verified">✔ Verified</div></div></div>
@@ -309,7 +315,7 @@
         <div class="feed-item"><span class="d" style="background:var(--forest)"></span>Tuấn xác minh tuyến đường Hà Bắc đang nâng cấp, thảm nhựa</div>
         <div class="feed-item"><span class="d" style="background:var(--clay)"></span>Mai chia sẻ giá giao dịch thật xung quanh Hồ Bãi Công — trung tâm Nam Ban</div>
         <div class="feed-item"><span class="d" style="background:var(--clay-soft)"></span>Cần 1 bạn chia sẻ: Hồ Đông Thanh quy hoạch ra sao, khi nào triển khai</div>
-          <div class="chat-msg">Cầu Tổng Đội khi nào mới bắt đầu sửa chữa?</div>
+        <div class="feed-item"><span class="d" style="background:var(--stone)"></span>Cầu Tổng Đội khi nào mới bắt đầu sửa chữa?</div>
       </div>
     </div>
     <div class="tiers">
@@ -340,8 +346,8 @@
         <div class="sel-col">
           <div class="sel-k risk">Điều tôi thấy cần xem kỹ</div>
           <div class="sel-li">Ngay ranh giới chuyển đổi quy hoạch đang lấy ý kiến — cần xác minh phạm vi ảnh hưởng cụ thể</div>
-          <div class="sel-li">Thủ tục chuyển thêm thổ cư hiện tạm ngưng nhận hồ sơ — ảnh hưởng kế hoạch xây dựng ngắn hạn</div>
-          <div class="sel-li">Phù hợp người giữ 3–5 năm. Không hợp nếu cần thanh khoản nhanh</div>
+          <div class="sel-li">Thủ tục chuyển thêm thổ cư hiện tạm ngưng nhận hồ sơ — ảnh hưởng kế hoạch ngắn hạn</div>
+          <div class="sel-li">Phù hợp người đầu tư 6 tháng – 1 năm. Không hợp nếu cần thanh khoản nhanh</div>
         </div>
       </div>
       <div style="padding:14px 0 4px;font-size:13px;color:var(--stone);font-style:italic;border-top:1px solid var(--line);margin-top:8px;">Ai phù hợp: người muốn tài sản có view thật, dùng được thực tế, pháp lý rõ — và không cần bán trong 3 năm tới. Ai không phù hợp: người cần thanh khoản hoặc đang chờ quy hoạch chi tiết được chốt.</div>
@@ -358,7 +364,6 @@
 </div>
 
 <footer>
-  <div class="manifesto">We don't sell Namban.<br>We help you see the whole picture.</div>
   <div class="contact-line">Liên hệ: <a href="mailto:nambanpanorama@gmail.com">nambanpanorama@gmail.com</a> &nbsp;·&nbsp; <a href="tel:0978758788">0978 758 788</a></div>
   <div class="meta">NAMBAN PANORAMA &nbsp;·&nbsp; Góc nhìn toàn cảnh, độc lập &amp; trung thực về Nam Ban – Lâm Hà</div>
 </footer>
@@ -374,7 +379,7 @@ var _results = {
   'a3': 'Mặt bằng giá ở Nam Ban vẫn thấp hơn Đà Lạt đáng kể — nhưng khoảng cách đang thu hẹp. Câu hỏi quan trọng hơn: mục tiêu của bạn là dùng thực hay giữ tăng giá? Hai mục tiêu đó dẫn đến hai loại tài sản rất khác nhau.',
   'a4': 'Rủi ro lớn nhất ở Nam Ban hiện tại không phải giá hay quy hoạch — mà là pháp lý chưa hoàn chỉnh và thanh khoản mỏng. Tài sản tốt nhất vẫn là tài sản bạn có thể giữ ít nhất 3–5 năm mà không cần bán gấp.',
   'b1': 'Quy hoạch vừa được phê duyệt ngày 6/6/2026 xếp Nam Ban Lâm Hà là đô thị loại III — trong vành đai phát triển lấy Đà Lạt làm hạt nhân. Đây là nền tảng để vùng được ưu tiên đầu tư hạ tầng, không phải chỉ là định danh hành chính.',
-  'b2': 'Giá giao dịch thực ở Nam Ban: đất nông nghiệp lớn từ 1,8–3 tr/m², khu tách thửa có thổ cư từ 3–4,5 tr/m², view hồ từ 4–6 tr/m². Tổng giá một lô phổ biến dao động 800 triệu đến 1,8 tỷ — thấp hơn Đà Lạt cùng phân khúc từ 2 đến 4 lần.',
+  'b2': 'Giá giao dịch thực ở Nam Ban (T6/2026): đất nông nghiệp diện tích lớn 1,7–2,8 tr/m², khu tách thửa có thổ cư 3–4,5 tr/m², view hồ hoặc toàn cảnh 4–6 tr/m². Tổng giá phổ biến một lô từ 500 triệu đến 1,8 tỷ — thấp hơn Đà Lạt cùng phân khúc từ 2 đến 4 lần.',
   'b3': 'Với mục tiêu trốn thành phố cuối tuần, tài sản phù hợp nhất thường là đất 1.000–3.000m² trên đồi, có nước điện, đủ xa trung tâm để yên tĩnh nhưng không quá xa để đi lại. Đây cũng là phân khúc thanh khoản tốt nhất nếu sau này muốn bán.',
   'b4': 'Rủi ro cần biết cho tài sản dùng thực: thủ tục xây dựng chưa đồng bộ ở một số khu, một số vùng đang trong vùng chờ quy hoạch chi tiết. Nên ưu tiên đất đã có sổ riêng và nằm trong khu dân cư hiện hữu.',
   'c1': 'Quy hoạch 2050 đặt Nam Ban trong nhóm đô thị vệ tinh của Đà Lạt, định hướng du lịch sinh thái – nghỉ dưỡng – nông nghiệp công nghệ cao. Đây là kịch bản tích cực nhưng tiến độ hiện thực hóa phụ thuộc nhiều vào hạ tầng được triển khai ra sao.',
