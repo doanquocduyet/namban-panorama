@@ -57,6 +57,21 @@
   header h1 em{font-style:italic;color:var(--forest);}
   .lede{font-size:clamp(15px,1.7vw,18px);color:var(--muted);max-width:540px;margin:0 auto 34px;}
   .capture{display:flex;justify-content:center;max-width:440px;margin:0 auto;border:1px solid var(--ink);border-radius:2px;overflow:hidden;background:rgba(250,246,238,.7);}
+  /* ── Mini-quiz ── */
+  .quiz-wrap{max-width:480px;margin:0 auto;}
+  .quiz-label{font-size:14px;color:rgba(241,236,226,.75);margin-bottom:12px;font-style:italic;}
+  .quiz-opts{display:flex;flex-direction:column;gap:8px;}
+  .qopt{background:rgba(241,236,226,.08);border:1px solid rgba(241,236,226,.2);color:#f1ece2;padding:12px 16px;text-align:left;cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:300;line-height:1.4;border-radius:2px;transition:all .2s;}
+  .qopt:hover,.qopt.chosen{background:var(--clay);border-color:var(--clay);color:#fff;}
+  .quiz-result{background:rgba(241,236,226,.1);border:1px solid rgba(241,236,226,.2);border-radius:2px;padding:20px;}
+  .quiz-result-text{font-size:14px;color:#e9e3d5;line-height:1.65;margin-bottom:16px;}
+  .quiz-email-row{display:flex;gap:0;border:1px solid rgba(241,236,226,.3);border-radius:2px;overflow:hidden;}
+  .quiz-email-row input{flex:1;background:rgba(0,0,0,.2);border:0;padding:11px 14px;font-family:inherit;font-size:13.5px;color:#f1ece2;outline:none;}
+  .quiz-email-row input::placeholder{color:rgba(241,236,226,.4);}
+  .quiz-email-row button{background:var(--clay);border:0;color:#fff;padding:0 18px;font-family:inherit;font-size:12px;letter-spacing:.5px;cursor:pointer;}
+  .quiz-skip{display:block;text-align:center;margin-top:10px;font-size:12px;color:rgba(241,236,226,.35);cursor:pointer;}
+  .quiz-skip:hover{color:rgba(241,236,226,.6);}
+
   .capture input{flex:1;border:0;background:transparent;padding:14px 18px;font-family:inherit;font-size:14px;font-weight:300;color:var(--ink);outline:none;}
   .capture input::placeholder{color:var(--stone);}
   .capture button{border:0;background:var(--clay);color:var(--paper);padding:0 22px;font-family:inherit;font-size:12.5px;letter-spacing:.5px;cursor:pointer;transition:background .3s;}
@@ -161,9 +176,10 @@
     <div class="navlinks">
       <a href="#">Toàn cảnh</a>
       <a href="quy-hoach-2050.html">Quy hoạch</a>
+      <a href="namban-index.html">Index</a>
       <a href="#society">Câu chuyện</a>
       
-      <a href="#brief-signup">Tham gia</a>
+      <a href="trao-doi.html">Trao đổi</a>
     </div>
   </div>
 </nav>
@@ -172,12 +188,29 @@
   <div class="wrap">
     <div class="kicker fu" style="animation-delay:.05s">Góc nhìn độc lập · Nam Ban – Lâm Hà, Lâm Đồng</div>
     <h1 class="fu" style="animation-delay:.15s">Thấy <em>toàn cảnh</em> Nam Ban trước khi xuống tiền.</h1>
-    <p class="lede fu" style="animation-delay:.3s">Chúng tôi không bán đất. Chúng tôi cho bạn bức tranh đầy đủ — cả cơ hội lẫn rủi ro — để bạn tự quyết định đúng. Đôi khi, quyết định đúng là không mua gì cả.</p>
-    <form id="brief-signup" class="capture fu" style="animation-delay:.42s" onsubmit="return false;">
-      <input type="email" placeholder="Email của bạn">
-      <button type="submit">Nhận Panorama Brief</button>
-    </form>
-    <div class="hero-foot fu" style="animation-delay:.5s">Bản tin hằng tháng · miễn phí · hủy bất cứ lúc nào</div>
+    <p class="lede fu" style="animation-delay:.3s">Chúng tôi không bán đất. Không đại diện chủ đất. Phân tích độc lập — để bạn ra quyết định tốt hơn. Đôi khi, quyết định đúng là không mua gì cả.</p>
+    <div id="brief-signup" class="quiz-wrap fu" style="animation-delay:.42s">
+      <div class="quiz-q" id="q1">
+        <p class="quiz-label">Bạn đang nhìn Nam Ban theo góc nào?</p>
+        <div class="quiz-opts">
+          <button class="qopt" onclick="quizNext(this,'a')">Tôi đang tìm hiểu vùng đất này, chưa có kế hoạch cụ thể</button>
+          <button class="qopt" onclick="quizNext(this,'b')">Tôi muốn có một chỗ để trốn khỏi thành phố cuối tuần</button>
+          <button class="qopt" onclick="quizNext(this,'c')">Tôi đang cân nhắc đầu tư, muốn hiểu rõ trước khi quyết định</button>
+          <button class="qopt" onclick="quizNext(this,'d')">Tôi đang tìm một tài sản cụ thể để nghiên cứu</button>
+        </div>
+      </div>
+      <div class="quiz-q" id="q2" style="display:none;">
+        <p class="quiz-label">Điều bạn muốn biết rõ nhất về Nam Ban là gì?</p>
+        <div class="quiz-opts">
+          <button class="qopt" onclick="quizResult(this,'1')">Quy hoạch và định hướng phát triển vùng</button>
+          <button class="qopt" onclick="quizResult(this,'2')">Mặt bằng giá thực tế — không phải giá rao</button>
+          <button class="qopt" onclick="quizResult(this,'3')">Loại tài sản nào phù hợp với mục tiêu của tôi</button>
+          <button class="qopt" onclick="quizResult(this,'4')">Rủi ro thật sự của thị trường này</button>
+        </div>
+      </div>
+      <div class="quiz-result" id="qresult" style="display:none;"></div>
+    </div>
+    <div class="hero-foot fu" style="animation-delay:.5s">2 câu hỏi · nhận góc nhìn phù hợp · không cần đăng ký</div>
   </div>
   <svg class="ridges" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
     <g fill="none" stroke="#2f4034" stroke-width="1" opacity="0.12">
@@ -238,6 +271,7 @@
         <div class="kb">
           <a href="quy-hoach-2050.html"><span><span class="kb-t">Quy hoạch 2050</span><br><span class="kb-s">Nam Ban trên bản đồ mới của Lâm Đồng</span></span><span class="kb-n">→</span></a>
           <a href="tiem-nang-dau-tu.html"><span><span class="kb-t">Tiềm năng đầu tư</span><br><span class="kb-s">Cơ hội &amp; rủi ro, đọc qua lăng kính toàn cảnh</span></span><span class="kb-n">→</span></a>
+          <a href="namban-index.html"><span><span class="kb-t">Namban Index · T6/2026</span><br><span class="kb-s">Giá thực tế, tín hiệu và nhận định tháng này</span></span><span class="kb-n">→</span></a>
           <a href="brief-01.html"><span><span class="kb-t">Bản đồ hành chính</span><br><span class="kb-s">Ranh giới mới sau sáp nhập</span></span><span class="kb-n">→</span></a>
         </div>
       </div>
@@ -251,8 +285,8 @@
 </div>
 <section class="alt" id="society">
   <div class="wrap">
-    <div class="sechead"><span class="idx">02</span><span class="kicker">Người kiến tạo Nam Ban · sắp ra mắt</span></div>
-    <h3 class="serif" style="font-weight:400;font-size:30px;letter-spacing:-.4px;margin-bottom:6px;">Một mạng lưới nhỏ, được tuyển chọn</h3>
+    <div class="sechead"><span class="idx">02</span><span class="kicker">Người kiến tạo Nam Ban · đang hình thành</span></div>
+    <h3 class="serif" style="font-weight:400;font-size:26px;letter-spacing:-.4px;margin-bottom:6px;">Một mạng lưới nhỏ, được tuyển chọn</h3>
     <p style="font-size:15px;color:var(--muted);max-width:50ch;margin-bottom:34px;">Những người làm nghề tử tế — nơi uy tín được tích lũy qua từng đóng góp. Bắt đầu từ một nhóm sáng lập rất yêu vùng đất này.</p>
     <div class="members">
       <div class="mcell">
@@ -288,23 +322,24 @@
     <div class="sechead"><span class="idx">03</span><span class="kicker">Panorama Selection · cơ hội VÀ rủi ro</span></div>
     <div class="sel">
       <div class="sel-top">
-        <div class="sel-t">Selection 07 — 2.300m², 400m² thổ cư, view hồ, 5,75 tỷ</div>
-        <div class="sel-b">Gần khu tách thửa mới đang bán 4–5 tr/m² · pháp lý rõ ràng, sổ 2017</div>
+        <div class="sel-t">Selection 07 — 2.300m², 400m² thổ cư · view hồ · 5,75 tỷ</div>
+        <div class="sel-b" style="font-style:italic;color:var(--muted);font-size:13.5px;margin-top:6px;">Trong khoảng 80 tài sản được xem qua trong 3 tháng, tôi chú ý lô này vì một lý do: nó nằm ở ranh giới giữa "khu tách thửa bình thường" và "view hồ thật sự" — đủ gần để hưởng cảnh quan, đủ xa để giá chưa bị đẩy theo cảm xúc.</div>
       </div>
       <div class="sel-split">
         <div class="sel-col">
-          <div class="sel-k good">Điểm mạnh</div>
-          <div class="sel-li">Dòng tiền từ thu hoạch cà phê khả thi</div>
-          <div class="sel-li">Pháp lý sạch, sổ riêng</div>
-          <div class="sel-li">Gần hạ tầng đang hình thành</div>
+          <div class="sel-k good">Điều tôi thấy tốt</div>
+          <div class="sel-li">Pháp lý rõ ràng, sổ từ 2017 — không phải đất mới chuyển đổi</div>
+          <div class="sel-li">Dòng tiền từ vườn cà phê có thể đủ chi phí vận hành trong khi chờ tăng giá</div>
+          <div class="sel-li">Gần khu tách thửa đang bán 4–5 tr/m² — có cơ sở so sánh rõ ràng</div>
         </div>
         <div class="sel-col">
-          <div class="sel-k risk">Rủi ro cần biết</div>
-          <div class="sel-li">Ngay ranh chuyển đổi quy hoạch đang được lấy ý kiến</div>
-          <div class="sel-li">Phải chuyển thêm thổ cư, đang tạm ngưng nhận hồ sơ</div>
-          <div class="sel-li">Không hợp đầu cơ ngắn hạn</div>
+          <div class="sel-k risk">Điều tôi thấy cần xem kỹ</div>
+          <div class="sel-li">Ngay ranh giới chuyển đổi quy hoạch đang lấy ý kiến — cần xác minh phạm vi ảnh hưởng cụ thể</div>
+          <div class="sel-li">Thủ tục chuyển thêm thổ cư hiện tạm ngưng nhận hồ sơ — ảnh hưởng kế hoạch xây dựng ngắn hạn</div>
+          <div class="sel-li">Phù hợp người giữ 3–5 năm. Không hợp nếu cần thanh khoản nhanh</div>
         </div>
       </div>
+      <div style="padding:14px 0 4px;font-size:13px;color:var(--stone);font-style:italic;border-top:1px solid var(--line);margin-top:8px;">Ai phù hợp: người muốn tài sản có view thật, dùng được thực tế, pháp lý rõ — và không cần bán trong 3 năm tới. Ai không phù hợp: người cần thanh khoản hoặc đang chờ quy hoạch chi tiết được chốt.</div>
     </div>
   </div>
 </section>
@@ -325,5 +360,50 @@
 
 <div class="note">Bản thiết kế web v2 — màu, phông và nội dung mẫu chỉ để hình dung. Mọi con số là minh hoạ.</div>
 
+
+<script>
+var _q1ans = '';
+var _results = {
+  'a1': 'Nam Ban đang trong giai đoạn đủ sớm để tìm hiểu không bị áp lực. Điều nên làm trước: đọc bản đồ quy hoạch mới (QĐ 2786/2026) — nó định hình vùng đất này trong 25 năm tới. Namban Index tháng này có tóm tắt những gì quan trọng nhất.',
+  'a2': 'Giá đất đã được điều chỉnh lên đáng kể sau khi quy hoạch tỉnh được phê duyệt. Lô đất view hồ hiện từ 4–6 tr/m², nhưng không phải tất cả đều xứng giá đó. Cần so sánh với giao dịch thực, không phải giá rao.',
+  'a3': 'Mặt bằng giá ở Nam Ban vẫn thấp hơn Đà Lạt đáng kể — nhưng khoảng cách đang thu hẹp. Câu hỏi quan trọng hơn: mục tiêu của bạn là dùng thực hay giữ tăng giá? Hai mục tiêu đó dẫn đến hai loại tài sản rất khác nhau.',
+  'a4': 'Rủi ro lớn nhất ở Nam Ban hiện tại không phải giá hay quy hoạch — mà là pháp lý chưa hoàn chỉnh và thanh khoản mỏng. Tài sản tốt nhất vẫn là tài sản bạn có thể giữ ít nhất 3–5 năm mà không cần bán gấp.',
+  'b1': 'Quy hoạch vừa được phê duyệt ngày 6/6/2026 xếp Nam Ban Lâm Hà là đô thị loại III — trong vành đai phát triển lấy Đà Lạt làm hạt nhân. Đây là nền tảng để vùng được ưu tiên đầu tư hạ tầng, không phải chỉ là định danh hành chính.',
+  'b2': 'Giá giao dịch thực ở Nam Ban: đất nông nghiệp lớn từ 1,8–3 tr/m², khu tách thửa có thổ cư từ 3–4,5 tr/m², view hồ từ 4–6 tr/m². Tổng giá một lô phổ biến dao động 800 triệu đến 1,8 tỷ — thấp hơn Đà Lạt cùng phân khúc từ 2 đến 4 lần.',
+  'b3': 'Với mục tiêu trốn thành phố cuối tuần, tài sản phù hợp nhất thường là đất 1.000–3.000m² trên đồi, có nước điện, đủ xa trung tâm để yên tĩnh nhưng không quá xa để đi lại. Đây cũng là phân khúc thanh khoản tốt nhất nếu sau này muốn bán.',
+  'b4': 'Rủi ro cần biết cho tài sản dùng thực: thủ tục xây dựng chưa đồng bộ ở một số khu, một số vùng đang trong vùng chờ quy hoạch chi tiết. Nên ưu tiên đất đã có sổ riêng và nằm trong khu dân cư hiện hữu.',
+  'c1': 'Quy hoạch 2050 đặt Nam Ban trong nhóm đô thị vệ tinh của Đà Lạt, định hướng du lịch sinh thái – nghỉ dưỡng – nông nghiệp công nghệ cao. Đây là kịch bản tích cực nhưng tiến độ hiện thực hóa phụ thuộc nhiều vào hạ tầng được triển khai ra sao.',
+  'c2': 'Mặt bằng giá Nam Ban đang ở vùng đáy chu kỳ so với Đà Lạt và Bảo Lộc. Nhưng "rẻ" không tự nhiên thành cơ hội — cần xem xét cùng với thanh khoản, pháp lý và thời gian giữ. Namban Index cập nhật giá giao dịch thực mỗi tháng.',
+  'c3': 'Để đầu tư, tài sản có dòng tiền (farmstay, vườn cà phê có thể cho thuê) thường bền hơn tài sản chỉ chờ tăng giá — nhất là trong giai đoạn thị trường còn mỏng. Đây là phân khúc chúng tôi phân tích kỹ trong Panorama Selection.',
+  'c4': 'Rủi ro thật sự ở Nam Ban: thanh khoản mỏng (bán được nhưng mất thời gian), quy hoạch chi tiết cấp xã chưa được công bố đầy đủ, và một số khu đang bị định giá theo kỳ vọng thay vì giá trị thực. Bài phân tích tiềm năng đầu tư của chúng tôi liệt kê 6 rủi ro cụ thể.',
+  'd1': 'Quy hoạch tỉnh đã được phê duyệt — nhưng quy hoạch chi tiết cấp xã và phân khu chức năng vẫn đang trong quá trình lập. Điều đó có nghĩa: không ai có thể nói chắc một thửa đất cụ thể sẽ rơi vào vùng gì cho đến khi quy hoạch chi tiết được công bố.',
+  'd2': 'Giá rao bán và giá giao dịch thực ở Nam Ban hiện chênh nhau đáng kể ở một số khu. Namban Index tháng này có khoảng giá tham khảo theo phân khúc — từ đất nông nghiệp đến view hồ.',
+  'd3': 'Để tìm được tài sản phù hợp, câu hỏi quan trọng hơn giá là: ai phù hợp với loại tài sản này và ai không? Đó là cách Panorama Selection trình bày mỗi cơ hội — không phải chỉ liệt kê thông tin.',
+  'd4': 'Rủi ro cần kiểm tra kỹ với mỗi tài sản cụ thể: pháp lý (mục đích sử dụng, khả năng chuyển đổi), thanh khoản (ai sẽ mua lại và trong bao lâu), và vị trí so với ranh giới quy hoạch. Không có tài sản nào hoàn hảo — câu hỏi là rủi ro đó có phù hợp với bạn không.'
+};
+function quizNext(btn, ans) {
+  btn.classList.add('chosen');
+  _q1ans = ans;
+  setTimeout(function(){
+    document.getElementById('q1').style.display='none';
+    document.getElementById('q2').style.display='block';
+  }, 280);
+}
+function quizResult(btn, q2ans) {
+  btn.classList.add('chosen');
+  var key = _q1ans + q2ans;
+  var text = _results[key] || _results['a1'];
+  setTimeout(function(){
+    document.getElementById('q2').style.display='none';
+    var r = document.getElementById('qresult');
+    r.innerHTML = '<p class="quiz-result-text">' + text + '</p>'
+      + '<div class="quiz-email-row">'
+      + '<input type="email" placeholder="Email để nhận Panorama Brief hàng tháng">'
+      + '<button>Gửi</button></div>'
+      + '<span class="quiz-skip" onclick="this.parentElement.style.display='none'">Không, cảm ơn — chỉ muốn đọc thôi</span>';
+    r.style.display='block';
+  }, 280);
+}
+</script>
 </body>
 </html>
