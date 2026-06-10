@@ -58,19 +58,23 @@
   .lede{font-size:clamp(15px,1.7vw,18px);color:var(--muted);max-width:540px;margin:0 auto 34px;}
   .capture{display:flex;justify-content:center;max-width:440px;margin:0 auto;border:1px solid var(--ink);border-radius:2px;overflow:hidden;background:rgba(250,246,238,.7);}
   /* ── Mini-quiz ── */
-  .quiz-wrap{max-width:480px;margin:0 auto;}
-  .quiz-label{font-size:14px;color:rgba(241,236,226,.75);margin-bottom:12px;font-style:italic;}
-  .quiz-opts{display:flex;flex-direction:column;gap:8px;}
-  .qopt{background:rgba(241,236,226,.08);border:1px solid rgba(241,236,226,.2);color:#f1ece2;padding:12px 16px;text-align:left;cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:300;line-height:1.4;border-radius:2px;transition:all .2s;}
-  .qopt:hover,.qopt.chosen{background:var(--clay);border-color:var(--clay);color:#fff;}
-  .quiz-result{background:rgba(241,236,226,.1);border:1px solid rgba(241,236,226,.2);border-radius:2px;padding:20px;}
-  .quiz-result-text{font-size:14px;color:#e9e3d5;line-height:1.65;margin-bottom:16px;}
-  .quiz-email-row{display:flex;gap:0;border:1px solid rgba(241,236,226,.3);border-radius:2px;overflow:hidden;}
-  .quiz-email-row input{flex:1;background:rgba(0,0,0,.2);border:0;padding:11px 14px;font-family:inherit;font-size:13.5px;color:#f1ece2;outline:none;}
-  .quiz-email-row input::placeholder{color:rgba(241,236,226,.4);}
-  .quiz-email-row button{background:var(--clay);border:0;color:#fff;padding:0 18px;font-family:inherit;font-size:12px;letter-spacing:.5px;cursor:pointer;}
-  .quiz-skip{display:block;text-align:center;margin-top:10px;font-size:12px;color:rgba(241,236,226,.35);cursor:pointer;}
-  .quiz-skip:hover{color:rgba(241,236,226,.6);}
+  .quiz-wrap{max-width:520px;margin:0 auto;}
+  .quiz-card{background:rgba(255,255,255,.08);border:1px solid rgba(241,236,226,.18);border-radius:4px;padding:24px 22px;}
+  .quiz-label{font-size:15px;color:#f1ece2;margin-bottom:16px;font-family:'Fraunces',serif;font-style:italic;font-weight:400;line-height:1.4;}
+  .quiz-opts{display:flex;flex-direction:column;gap:9px;}
+  .qopt{background:transparent;border:1px solid rgba(241,236,226,.22);color:rgba(241,236,226,.82);padding:13px 18px;text-align:left;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;font-size:14px;font-weight:300;line-height:1.45;border-radius:3px;transition:all .18s;letter-spacing:.1px;}
+  .qopt:hover{background:rgba(241,236,226,.1);border-color:rgba(241,236,226,.45);color:#f1ece2;}
+  .qopt.chosen{background:var(--clay);border-color:var(--clay);color:#fff;}
+  .quiz-result{padding:4px 0;}
+  .quiz-result-card{background:rgba(255,255,255,.07);border:1px solid rgba(241,236,226,.18);border-radius:4px;padding:20px 22px;margin-bottom:14px;}
+  .quiz-result-text{font-size:14.5px;color:#e5ddd0;line-height:1.68;}
+  .quiz-email-row{display:flex;gap:0;border:1px solid rgba(241,236,226,.25);border-radius:3px;overflow:hidden;margin-top:14px;}
+  .quiz-email-row input{flex:1;background:rgba(0,0,0,.18);border:0;padding:12px 15px;font-family:inherit;font-size:14px;color:#f1ece2;outline:none;}
+  .quiz-email-row input::placeholder{color:rgba(241,236,226,.35);}
+  .quiz-email-row button{background:var(--clay);border:0;color:#fff;padding:0 20px;font-family:inherit;font-size:12.5px;letter-spacing:.5px;cursor:pointer;white-space:nowrap;}
+  .quiz-skip{display:block;text-align:center;margin-top:10px;font-size:12px;color:rgba(241,236,226,.3);cursor:pointer;letter-spacing:.3px;}
+  .quiz-skip:hover{color:rgba(241,236,226,.55);}
+  .quiz-step{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(241,236,226,.35);margin-bottom:12px;}
 
   .capture input{flex:1;border:0;background:transparent;padding:14px 18px;font-family:inherit;font-size:14px;font-weight:300;color:var(--ink);outline:none;}
   .capture input::placeholder{color:var(--stone);}
@@ -190,23 +194,25 @@
     <h1 class="fu" style="animation-delay:.15s">Thấy <em>toàn cảnh</em> Nam Ban trước khi xuống tiền.</h1>
     <p class="lede fu" style="animation-delay:.3s">Chúng tôi không bán đất. Không đại diện chủ đất. Phân tích độc lập — để bạn ra quyết định tốt hơn. Đôi khi, quyết định đúng là không mua gì cả.</p>
     <div id="brief-signup" class="quiz-wrap fu" style="animation-delay:.42s">
-      <div class="quiz-q" id="q1">
+      <div class="quiz-q" id="q1"><div class="quiz-card">
+        <div class="quiz-step">Câu 1 / 2</div>
         <p class="quiz-label">Bạn đang nhìn Nam Ban theo góc nào?</p>
         <div class="quiz-opts">
           <button class="qopt" onclick="quizNext(this,'a')">Tôi đang tìm hiểu vùng đất này, chưa có kế hoạch cụ thể</button>
           <button class="qopt" onclick="quizNext(this,'b')">Tôi muốn có một chỗ để trốn khỏi thành phố cuối tuần</button>
           <button class="qopt" onclick="quizNext(this,'c')">Tôi đang cân nhắc đầu tư, muốn hiểu rõ trước khi quyết định</button>
           <button class="qopt" onclick="quizNext(this,'d')">Tôi đang tìm một tài sản cụ thể để nghiên cứu</button>
-        </div>
+        </div></div>
       </div>
-      <div class="quiz-q" id="q2" style="display:none;">
+      <div class="quiz-q" id="q2" style="display:none;"><div class="quiz-card">
+        <div class="quiz-step">Câu 2 / 2</div>
         <p class="quiz-label">Điều bạn muốn biết rõ nhất về Nam Ban là gì?</p>
         <div class="quiz-opts">
           <button class="qopt" onclick="quizResult(this,'1')">Quy hoạch và định hướng phát triển vùng</button>
           <button class="qopt" onclick="quizResult(this,'2')">Mặt bằng giá thực tế — không phải giá rao</button>
           <button class="qopt" onclick="quizResult(this,'3')">Loại tài sản nào phù hợp với mục tiêu của tôi</button>
           <button class="qopt" onclick="quizResult(this,'4')">Rủi ro thật sự của thị trường này</button>
-        </div>
+        </div></div>
       </div>
       <div class="quiz-result" id="qresult" style="display:none;"></div>
     </div>
@@ -233,9 +239,8 @@
     <div class="layer-sep"></div>
     <div class="layer"><b>Selection</b><span>Cơ hội tuyển chọn</span></div>
     <div class="layer-sep"></div>
-    <div class="layer"><b>Advisory</b><span>Tư vấn độc lập bên mua</span></div>
-    <div class="layer-sep"></div>
-    <div class="layer"><b>Society</b><span>Cộng đồng · giai đoạn sau</span></div>
+    <div class="layer"><b>Advisory</b><span>Góc nhìn độc lập · bên bạn</span></div>
+    
   </div>
 </div>
 
@@ -245,13 +250,13 @@
     <span class="pulse-label">Toàn cảnh tuần này</span>
     <span class="pulse-item"><span class="cat">Quy hoạch</span>2 thay đổi mới được ghi nhận</span>
     <span class="pulse-item"><span class="cat">Hạ tầng</span>Tuyến kết nối Đà Lạt cập nhật</span>
-    <span class="pulse-item"><span class="cat">Giá</span>Vùng A điều chỉnh −2%</span>
-    <span class="pulse-item"><span class="cat">Cảnh báo</span>1 khu đang bị thổi giá</span>
+    <span class="pulse-item"><span class="cat">Giá</span>Giá đất hôm nay</span>
+    <span class="pulse-item"><span class="cat">CẢNH BÁO</span>Thông tin mới nhất v/v chuyển thổ cư</span>
     <span class="pulse-label">Toàn cảnh tuần này</span>
     <span class="pulse-item"><span class="cat">Quy hoạch</span>2 thay đổi mới được ghi nhận</span>
     <span class="pulse-item"><span class="cat">Hạ tầng</span>Tuyến kết nối Đà Lạt cập nhật</span>
-    <span class="pulse-item"><span class="cat">Giá</span>Vùng A điều chỉnh −2%</span>
-    <span class="pulse-item"><span class="cat">Cảnh báo</span>1 khu đang bị thổi giá</span>
+    <span class="pulse-item"><span class="cat">Giá</span>Giá đất hôm nay</span>
+    <span class="pulse-item"><span class="cat">CẢNH BÁO</span>Thông tin mới nhất v/v chuyển thổ cư</span>
   </div>
 </div>
 
@@ -281,13 +286,13 @@
 
 <!-- 02 COMMUNITY -->
 <div style="width:100%;height:380px;overflow:hidden;margin:0;">
-  <img src="images/nam-ban-thung-lung.jpg" alt="Thung lũng Nam Ban mùa cà phê trổ hoa" style="width:100%;height:100%;object-fit:cover;object-position:center 55%;filter:saturate(.92);">
+  <img src="images/nam-ban-aerial.jpg" alt="Toàn cảnh thung lũng Nam Ban nhìn từ trên cao — đất đỏ, vườn xanh, núi và hồ" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;filter:saturate(.88) brightness(.97);">
 </div>
 <section class="alt" id="society">
   <div class="wrap">
-    <div class="sechead"><span class="idx">02</span><span class="kicker">Người kiến tạo Nam Ban · đang hình thành</span></div>
-    <h3 class="serif" style="font-weight:400;font-size:26px;letter-spacing:-.4px;margin-bottom:6px;">Một mạng lưới nhỏ, được tuyển chọn</h3>
-    <p style="font-size:15px;color:var(--muted);max-width:50ch;margin-bottom:34px;">Những người làm nghề tử tế — nơi uy tín được tích lũy qua từng đóng góp. Bắt đầu từ một nhóm sáng lập rất yêu vùng đất này.</p>
+    <div class="sechead"><span class="idx">02</span><span class="kicker">Cộng đồng · đang hình thành tự nhiên</span></div>
+    <h3 class="serif" style="font-weight:400;font-size:24px;letter-spacing:-.3px;margin-bottom:8px;color:var(--ink);">Những người thật, ở một vùng đất thật</h3>
+    <p style="font-size:14.5px;color:var(--muted);max-width:54ch;margin-bottom:28px;line-height:1.65;">Không phải cộng đồng được xây từ trên xuống. Đây là những người địa phương, chủ farm, người mới chuyển đến — cùng chia sẻ thông tin thật về Nam Ban. Đang lớn dần, rất chậm, rất có chọn lọc.</p>
     <div class="members">
       <div class="mcell">
         <div class="mhead"><div class="avatar" style="background:var(--forest)">D</div><div><div class="mname">Dũng</div><div class="verified">✔ Verified</div></div></div>
@@ -396,11 +401,11 @@ function quizResult(btn, q2ans) {
   setTimeout(function(){
     document.getElementById('q2').style.display='none';
     var r = document.getElementById('qresult');
-    r.innerHTML = '<p class="quiz-result-text">' + text + '</p>'
+    r.innerHTML = '<div class="quiz-result-card"><p class="quiz-result-text">' + text + '</p></div>'
       + '<div class="quiz-email-row">'
       + '<input type="email" placeholder="Email để nhận Panorama Brief hàng tháng">'
       + '<button>Gửi</button></div>'
-      + '<span class="quiz-skip" onclick="this.parentElement.style.display='none'">Không, cảm ơn — chỉ muốn đọc thôi</span>';
+      + '<span class="quiz-skip" onclick="this.parentNode.style.display='none'">Chỉ muốn đọc thôi — không cần đăng ký</span>';
     r.style.display='block';
   }, 280);
 }
