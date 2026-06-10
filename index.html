@@ -309,14 +309,14 @@
     <p style="font-size:14.5px;color:var(--muted);max-width:54ch;margin-bottom:28px;line-height:1.65;">Những người địa phương, chủ farm, người mới chuyển đến — cùng chia sẻ thông tin về Nam Ban. Một cộng đồng đang lớn dần, rất chậm, rất có chọn lọc.</p>
     <div class="members">
       <div class="mcell">
-        <div class="mhead"><div class="avatar" style="background:var(--forest)">L</div><div><div class="mname">Luật sư</div><div class="verified">✔ Verified</div></div></div>
+        <div class="mhead"><div class="avatar" style="background:var(--forest)">L</div><div><div class="mname">&nbsp;</div><div class="verified">✔ Verified</div></div></div>
         <div class="mrole" style="margin-bottom:6px;">Luật sư · 9 năm</div>
         <div class="mstat">Chuyên hỗ trợ pháp lý<br>85 điểm uy tín</div>
       </div>
       <div class="mcell">
-        <div class="mhead"><div class="avatar" style="background:var(--clay)">H</div><div><div class="mname">Chủ Homestay</div><div class="verified">✔ Verified</div></div></div>
+        <div class="mhead"><div class="avatar" style="background:var(--clay)">T</div><div><div class="mname">Chị Thanh</div><div class="verified">✔ Verified</div></div></div>
         <div class="mrole" style="margin-bottom:6px;">Chủ Homestay · 4 năm</div>
-        <div class="mstat">Cà phê &amp; farmstay<br>5 bài đóng góp · 92 điểm</div>
+        <div class="mstat">Cà phê &amp; farmstay<br>5 bài đóng góp · 32 điểm</div>
       </div>
       <div class="mcell">
         <div class="feed-h">Bảng tin đóng góp</div>
@@ -400,27 +400,48 @@ var _results = {
   'd4': 'Rủi ro cần kiểm tra kỹ với mỗi tài sản cụ thể: pháp lý (mục đích sử dụng, khả năng chuyển đổi), thanh khoản (ai sẽ mua lại và trong bao lâu), và vị trí so với ranh giới quy hoạch. Không có tài sản nào hoàn hảo — câu hỏi là rủi ro đó có phù hợp với bạn không.'
 };
 function quizNext(btn, ans) {
+  var opts = btn.parentNode.querySelectorAll('.qopt');
+  for (var i = 0; i < opts.length; i++) opts[i].classList.remove('chosen');
   btn.classList.add('chosen');
   _q1ans = ans;
   setTimeout(function(){
-    document.getElementById('q1').style.display='none';
-    document.getElementById('q2').style.display='block';
-  }, 280);
+    document.getElementById('q1').style.display = 'none';
+    document.getElementById('q2').style.display = 'block';
+  }, 260);
 }
 function quizResult(btn, q2ans) {
   btn.classList.add('chosen');
   var key = _q1ans + q2ans;
   var text = _results[key] || _results['a1'];
   setTimeout(function(){
-    document.getElementById('q2').style.display='none';
+    document.getElementById('q2').style.display = 'none';
     var r = document.getElementById('qresult');
-    r.innerHTML = '<div class="quiz-result-card"><p class="quiz-result-text">' + text + '</p></div>'
-      + '<div class="quiz-email-row">'
-      + '<input type="email" placeholder="Email để nhận Panorama Brief hàng tháng">'
-      + '<button>Gửi</button></div>'
-      + '<span class="quiz-skip" onclick="this.parentNode.style.display='none'">Chỉ muốn đọc thôi — không cần đăng ký</span>';
-    r.style.display='block';
-  }, 280);
+    var card = document.createElement('div');
+    card.className = 'quiz-result-card';
+    var p = document.createElement('p');
+    p.className = 'quiz-result-text';
+    p.textContent = text;
+    card.appendChild(p);
+    var row = document.createElement('div');
+    row.className = 'quiz-email-row';
+    var inp = document.createElement('input');
+    inp.type = 'email';
+    inp.placeholder = 'Email \u0111\u1ec3 nh\u1eadn Panorama Brief h\u00e0ng th\u00e1ng';
+    var bt = document.createElement('button');
+    bt.textContent = 'G\u1eedi';
+    bt.onclick = function(){ bt.textContent = '\u0110\u00e3 nh\u1eadn'; bt.style.background = '#4a7c59'; };
+    row.appendChild(inp);
+    row.appendChild(bt);
+    var skip = document.createElement('span');
+    skip.className = 'quiz-skip';
+    skip.textContent = 'Ch\u1ec9 mu\u1ed1n \u0111\u1ecdc th\u00f4i \u2014 kh\u00f4ng c\u1ea7n \u0111\u0103ng k\u00fd';
+    skip.onclick = function(){ r.style.display = 'none'; };
+    r.innerHTML = '';
+    r.appendChild(card);
+    r.appendChild(row);
+    r.appendChild(skip);
+    r.style.display = 'block';
+  }, 260);
 }
 </script>
 </body>
