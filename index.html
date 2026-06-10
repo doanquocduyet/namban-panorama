@@ -160,10 +160,10 @@
     <div class="logo">Namban Panorama<span class="sub">Est. 2026</span></div>
     <div class="navlinks">
       <a href="#">Toàn cảnh</a>
-      <a href="#">Quy hoạch</a>
-      <a href="#">Câu chuyện</a>
-      <a href="#">Thành viên</a>
-      <a href="#" class="btn cta-link">Tham gia</a>
+      <a href="quy-hoach-2050.html">Quy hoạch</a>
+      <a href="#society">Câu chuyện</a>
+      
+      <a href="#brief-signup">Tham gia</a>
     </div>
   </div>
 </nav>
@@ -173,7 +173,7 @@
     <div class="kicker fu" style="animation-delay:.05s">Góc nhìn độc lập · Nam Ban – Lâm Hà, Lâm Đồng</div>
     <h1 class="fu" style="animation-delay:.15s">Thấy <em>toàn cảnh</em> Nam Ban trước khi xuống tiền.</h1>
     <p class="lede fu" style="animation-delay:.3s">Chúng tôi không bán đất. Chúng tôi cho bạn bức tranh đầy đủ — cả cơ hội lẫn rủi ro — để bạn tự quyết định đúng. Đôi khi, quyết định đúng là không mua gì cả.</p>
-    <form class="capture fu" style="animation-delay:.42s" onsubmit="return false;">
+    <form id="brief-signup" class="capture fu" style="animation-delay:.42s" onsubmit="return false;">
       <input type="email" placeholder="Email của bạn">
       <button type="submit">Nhận Panorama Brief</button>
     </form>
@@ -246,11 +246,14 @@
 </section>
 
 <!-- 02 COMMUNITY -->
-<section class="alt">
+<div style="width:100%;height:380px;overflow:hidden;margin:0;">
+  <img src="images/nam-ban-thung-lung.jpg" alt="Thung lũng Nam Ban mùa cà phê trổ hoa" style="width:100%;height:100%;object-fit:cover;object-position:center 55%;filter:saturate(.92);">
+</div>
+<section class="alt" id="society">
   <div class="wrap">
     <div class="sechead"><span class="idx">02</span><span class="kicker">Người kiến tạo Nam Ban · sắp ra mắt</span></div>
     <h3 class="serif" style="font-weight:400;font-size:30px;letter-spacing:-.4px;margin-bottom:6px;">Một mạng lưới nhỏ, được tuyển chọn</h3>
-    <p style="font-size:15px;color:var(--muted);max-width:50ch;margin-bottom:34px;">Không phải ai cũng vào. Những người làm nghề tử tế — nơi danh tiếng được tích lũy qua đóng góp, không phải mua. Bắt đầu từ một nhóm sáng lập rất nhỏ.</p>
+    <p style="font-size:15px;color:var(--muted);max-width:50ch;margin-bottom:34px;">Những người làm nghề tử tế — nơi uy tín được tích lũy qua từng đóng góp. Bắt đầu từ một nhóm sáng lập rất yêu vùng đất này.</p>
     <div class="members">
       <div class="mcell">
         <div class="mhead"><div class="avatar" style="background:var(--forest)">D</div><div><div class="mname">Dũng</div><div class="verified">✔ Verified</div></div></div>
@@ -264,9 +267,10 @@
       </div>
       <div class="mcell">
         <div class="feed-h">Bảng tin đóng góp</div>
-        <div class="feed-item"><span class="d" style="background:var(--forest)"></span>Tuấn xác minh tuyến đường mới ở khu B</div>
-        <div class="feed-item"><span class="d" style="background:var(--clay)"></span>Mai chia sẻ giá giao dịch thật vùng A</div>
-        <div class="feed-item"><span class="d" style="background:var(--clay-soft)"></span>Câu hỏi: khu C quy hoạch ra sao?</div>
+        <div class="feed-item"><span class="d" style="background:var(--forest)"></span>Tuấn xác minh tuyến đường Hà Bắc đang nâng cấp, thảm nhựa</div>
+        <div class="feed-item"><span class="d" style="background:var(--clay)"></span>Mai chia sẻ giá giao dịch thật xung quanh Hồ Bãi Công — trung tâm Nam Ban</div>
+        <div class="feed-item"><span class="d" style="background:var(--clay-soft)"></span>Cần 1 bạn chia sẻ: Hồ Đông Thanh quy hoạch ra sao, khi nào triển khai</div>
+          <div class="chat-msg">Cầu Tổng Đội khi nào mới bắt đầu sửa chữa?</div>
       </div>
     </div>
     <div class="tiers">
@@ -284,20 +288,20 @@
     <div class="sechead"><span class="idx">03</span><span class="kicker">Panorama Selection · cơ hội VÀ rủi ro</span></div>
     <div class="sel">
       <div class="sel-top">
-        <div class="sel-t">Selection 07 — 5.200m², view hồ</div>
-        <div class="sel-b">Cách tuyến cao tốc tương lai 12 phút · pháp lý rõ ràng. Mỗi cơ hội luôn được trình bày cả hai mặt — đó là cách chúng tôi xây niềm tin.</div>
+        <div class="sel-t">Selection 07 — 2.300m², 400m² thổ cư, view hồ, 5,75 tỷ</div>
+        <div class="sel-b">Gần khu tách thửa mới đang bán 4–5 tr/m² · pháp lý rõ ràng, sổ 2017</div>
       </div>
       <div class="sel-split">
         <div class="sel-col">
           <div class="sel-k good">Điểm mạnh</div>
-          <div class="sel-li">Dòng tiền farmstay khả thi</div>
+          <div class="sel-li">Dòng tiền từ thu hoạch cà phê khả thi</div>
           <div class="sel-li">Pháp lý sạch, sổ riêng</div>
           <div class="sel-li">Gần hạ tầng đang hình thành</div>
         </div>
         <div class="sel-col">
           <div class="sel-k risk">Rủi ro cần biết</div>
-          <div class="sel-li">Quy hoạch tỉnh mới chưa chốt</div>
-          <div class="sel-li">Thanh khoản mỏng, khó thoát nhanh</div>
+          <div class="sel-li">Ngay ranh chuyển đổi quy hoạch đang được lấy ý kiến</div>
+          <div class="sel-li">Phải chuyển thêm thổ cư, đang tạm ngưng nhận hồ sơ</div>
           <div class="sel-li">Không hợp đầu cơ ngắn hạn</div>
         </div>
       </div>
@@ -315,7 +319,7 @@
 
 <footer>
   <div class="manifesto">We don't sell Namban.<br>We help you see the whole picture.</div>
-  <div class="contact-line">Liên hệ qua thư ký: <a href="mailto:nambanpanorama@gmail.com">nambanpanorama@gmail.com</a> &nbsp;·&nbsp; <a href="tel:0978758788">0978 758 788</a></div>
+  <div class="contact-line">Liên hệ: <a href="mailto:nambanpanorama@gmail.com">nambanpanorama@gmail.com</a> &nbsp;·&nbsp; <a href="tel:0978758788">0978 758 788</a></div>
   <div class="meta">NAMBAN PANORAMA &nbsp;·&nbsp; Góc nhìn toàn cảnh, độc lập &amp; trung thực về Nam Ban – Lâm Hà</div>
 </footer>
 
