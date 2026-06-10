@@ -1,8 +1,7 @@
 <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-  <rect width="64" height="64" rx="13" fill="#2f4034"/>
-  <!-- panorama ridges: layered hills receding -->
-  <path d="M0,52 L14,40 L26,48 L40,34 L52,45 L64,37 L64,64 L0,64 Z" fill="#9d5d38" opacity="0.9"/>
-  <path d="M0,57 L12,49 L24,55 L37,44 L49,53 L64,46 L64,64 L0,64 Z" fill="#bb8862"/>
-  <path d="M0,64 L16,55 L30,61 L44,53 L58,60 L64,57 L64,64 Z" fill="#f1ece2"/>
-  <circle cx="46" cy="20" r="6" fill="#f1ece2" opacity="0.92"/>
+  <rect width="64" height="64" rx="12" fill="#2f4034"/>
+  <text x="32" y="44" text-anchor="middle"
+    font-family="Georgia,serif" font-size="38" font-weight="400"
+    fill="#f1ece2" letter-spacing="-1">N</text>
+  <line x1="10" y1="54" x2="54" y2="54" stroke="#9d5d38" stroke-width="2.2"/>
 </svg>
