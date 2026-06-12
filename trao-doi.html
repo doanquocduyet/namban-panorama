@@ -80,10 +80,15 @@ footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
   <h1>Kể cho tôi nghe bạn đang tìm gì ở Nam Ban</h1>
   <p class="standfirst">Không phải buổi tư vấn. Không phải pitch bất động sản. Chỉ là cuộc trò chuyện thật — để tôi hiểu bạn đang đứng ở đâu, và bạn hiểu rõ hơn mình đang tìm gì.</p>
 
-  <form class="conv-form" onsubmit="handleSubmit(event)">
+  
+    <form class="conv-form" action="https://formsubmit.co/nambanpanorama@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="Nam Ban Panorama - Yêu cầu trao đổi mới">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://nambanpanorama.com/trao-doi.html?sent=1">
     <div class="field">
       <label>Bạn đang nhìn Nam Ban theo góc nào?</label>
-      <select>
+      <select name="goc_nhin">
         <option value="">— chọn một góc nhìn —</option>
         <option>Tìm hiểu vùng đất, chưa có kế hoạch cụ thể</option>
         <option>Muốn có chỗ trốn khỏi thành phố cuối tuần</option>
@@ -95,12 +100,12 @@ footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
 
     <div class="field">
       <label>Điều bạn muốn làm rõ nhất trong cuộc trò chuyện này là gì?</label>
-      <textarea placeholder="Ví dụ: tôi đang xem một lô 1.500m² gần hồ, có sổ riêng nhưng chưa rõ giá đang ở lớp nào và rủi ro pháp lý ra sao..."></textarea>
+      <textarea name="muon_lam_ro" placeholder="Ví dụ: tôi đang xem một lô 1.500m² gần hồ, có sổ riêng nhưng chưa rõ giá đang ở lớp nào và rủi ro pháp lý ra sao..."></textarea>
     </div>
 
     <div class="field">
       <label>Thời gian bạn dự kiến có thể hành động (nếu mọi thứ rõ ràng)?</label>
-      <select>
+      <select name="thoi_gian">
         <option value="">— chọn —</option>
         <option>Trong 1–3 tháng tới</option>
         <option>Trong 3–6 tháng tới</option>
@@ -111,7 +116,7 @@ footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
 
     <div class="field">
       <label>Tên và số điện thoại</label>
-      <input type="text" placeholder="Tên · số điện thoại · Zalo">
+      <input type="text" name="ten_sdt" placeholder="Tên · số điện thoại · Zalo">
     </div>
 
     <div>
@@ -139,12 +144,9 @@ footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
 </footer>
 
 <script>
-function handleSubmit(e){
-  e.preventDefault();
-  var btn = e.target.querySelector('.submit-btn');
-  btn.textContent = 'Đã nhận — tôi sẽ liên hệ sớm';
-  btn.style.background = '#4a7c59';
-  btn.disabled = true;
+if(window.location.search.indexOf('sent=1') > -1){
+  var f = document.querySelector('.conv-form');
+  if(f) f.innerHTML = '<div style="text-align:center;padding:40px 0;"><p style="font-family:Fraunces,serif;font-size:22px;margin-bottom:12px;">Đã nhận</p><p style="color:var(--muted);font-size:15px;">Cảm ơn bạn — tôi sẽ phản hồi trong thời gian sớm nhất.</p></div>';
 }
 </script>
 </body>
