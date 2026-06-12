@@ -139,3 +139,9 @@ footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
 .uncertainty{margin:32px 0;padding:20px 24px;border:1px dashed var(--stone);border-radius:3px;background:transparent;}
 .uncertainty .uc-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--stone);font-weight:500;margin-bottom:10px;}
 .uncertainty p{font-size:14px;color:var(--muted);line-height:1.6;margin:0;}
+
+/* ── A Better Question ── */
+.better-question{margin:36px 0;padding:22px 28px;background:var(--card);border:1px solid var(--line);border-radius:3px;}
+.better-question .bq-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--clay);font-weight:500;margin-bottom:14px;}
+.better-question .bq-instead{font-size:13.5px;color:var(--stone);margin-bottom:6px;font-style:italic;}
+.better-question .bq-ask{font-family:'Fraunces',serif;font-size:16.5px;color:var(--ink);line-height:1.45;margin:0;font-style:italic;}
