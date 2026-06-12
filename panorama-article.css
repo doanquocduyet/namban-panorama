@@ -125,3 +125,17 @@ footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
   .compare{font-size:13px;}
   .compare th,.compare td{padding:9px 8px;}
 }
+
+/* ── Panorama View box ── */
+.pano-view{margin:40px 0;padding:24px 28px;border-left:3px solid var(--forest);background:rgba(47,64,52,.04);}
+.pano-view .pv-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--forest);font-weight:500;margin-bottom:12px;}
+.pano-view p{font-size:14.5px;color:var(--ink);line-height:1.65;margin:0;}
+
+/* ── Memory Quote — điều đáng nhớ ── */
+.memory-quote{margin:44px 0 32px;padding:0;text-align:center;}
+.memory-quote p{font-family:'Fraunces',serif;font-style:italic;font-size:17px;color:var(--muted);line-height:1.55;max-width:48ch;margin:0 auto;letter-spacing:.1px;}
+
+/* ── Uncertainty box — điều chưa chắc ── */
+.uncertainty{margin:32px 0;padding:20px 24px;border:1px dashed var(--stone);border-radius:3px;background:transparent;}
+.uncertainty .uc-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--stone);font-weight:500;margin-bottom:10px;}
+.uncertainty p{font-size:14px;color:var(--muted);line-height:1.6;margin:0;}
