@@ -461,11 +461,8 @@ function quizResult(btn, q2ans) {
       fd.append('entry.418514546', 'Q1=' + _q1ans + ' Q2=' + q2ans);
       fetch('https://docs.google.com/forms/d/e/1FAIpQLSejyXVjRk8TQCtNIrZijGeZxaoJaeA3VCccpW4PAi87BRVAzg/formResponse', {method:'POST', mode:'no-cors', body:fd});
       setTimeout(function(){
-        bt.textContent = '\u0110\u00e3 nh\u1eadn \u2714';
-        bt.style.background = '#4a7c59';
-        inp.value = '';
-        inp.disabled = false;
-      }, 800);
+        row.innerHTML = '<div style="text-align:center;padding:14px 0;width:100%;"><span style="font-family:Fraunces,serif;font-size:15px;color:#4a7c59;">\u2714 \u0110\u00e3 \u0111\u0103ng k\u00fd th\u00e0nh c\u00f4ng</span><br><span style="font-size:12.5px;color:#8a8276;">B\u1ea1n s\u1ebd nh\u1eadn Panorama Brief h\u00e0ng th\u00e1ng.</span></div>';
+      }, 700);
     };
     row.appendChild(inp);
     row.appendChild(bt);
