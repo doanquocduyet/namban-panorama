@@ -451,21 +451,21 @@ function quizResult(btn, q2ans) {
     bt.textContent = 'G\u1eedi';
     bt.onclick = function(){
       var email = inp.value;
-      if(!email || email.indexOf('@')===-1) return;
+      if(!email || email.indexOf('@')===-1){inp.style.border='1px solid #c44';return;}
       bt.textContent = '\u0110ang g\u1eedi...';
       bt.disabled = true;
+      inp.disabled = true;
       var fd = new FormData();
-      fd.append('entry.260173030', 'Quiz: ' + _q1ans + q2ans);
+      fd.append('entry.260173030', 'Quiz ' + _q1ans + q2ans);
       fd.append('entry.2084374895', email);
       fd.append('entry.418514546', 'Q1=' + _q1ans + ' Q2=' + q2ans);
       fetch('https://docs.google.com/forms/d/e/1FAIpQLSejyXVjRk8TQCtNIrZijGeZxaoJaeA3VCccpW4PAi87BRVAzg/formResponse', {method:'POST', mode:'no-cors', body:fd});
-      fetch('https://formsubmit.co/ajax/nambanpanorama@gmail.com', {
-        method:'POST',
-        headers:{'Content-Type':'application/json','Accept':'application/json'},
-        body:JSON.stringify({email:email, quiz_q1:_q1ans, quiz_q2:q2ans, _subject:'Nam Ban Panorama - Lead moi tu Quiz', _template:'table', _captcha:'false'})
-      })
-      .then(function(){ bt.textContent = '\u0110\u00e3 nh\u1eadn \u2714'; bt.style.background='#4a7c59'; })
-      .catch(function(){ bt.textContent = '\u0110\u00e3 nh\u1eadn \u2714'; bt.style.background='#4a7c59'; });
+      setTimeout(function(){
+        bt.textContent = '\u0110\u00e3 nh\u1eadn \u2714';
+        bt.style.background = '#4a7c59';
+        inp.value = '';
+        inp.disabled = false;
+      }, 800);
     };
     row.appendChild(inp);
     row.appendChild(bt);
