@@ -454,16 +454,14 @@ function quizResult(btn, q2ans) {
       if(!email || email.indexOf('@')===-1) return;
       bt.textContent = '\u0110ang g\u1eedi...';
       bt.disabled = true;
-      var fd = new FormData();
-      fd.append('email', email);
-      fd.append('quiz_q1', _q1ans);
-      fd.append('quiz_q2', q2ans);
-      fd.append('_subject', 'Nam Ban Panorama - Lead m\u1edbi t\u1eeb Quiz');
-      fd.append('_template', 'table');
-      fd.append('_captcha', 'false');
-      fetch('https://formsubmit.co/nambanpanorama@gmail.com', {method:'POST', body:fd})
-        .then(function(){ bt.textContent = '\u0110\u00e3 nh\u1eadn \u2714'; bt.style.background='#4a7c59'; })
-        .catch(function(){ bt.textContent = 'G\u1eedi'; bt.disabled=false; });
+      fetch('https://formsubmit.co/ajax/nambanpanorama@gmail.com', {
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify({email:email, quiz_q1:_q1ans, quiz_q2:q2ans, _subject:'Nam Ban Panorama - Lead moi tu Quiz', _template:'table', _captcha:'false'})
+      })
+      .then(function(r){return r.json();})
+      .then(function(d){ bt.textContent = '\u0110\u00e3 nh\u1eadn \u2714'; bt.style.background='#4a7c59'; })
+      .catch(function(){ bt.textContent = 'G\u1eedi'; bt.disabled=false; });
     };
     row.appendChild(inp);
     row.appendChild(bt);
