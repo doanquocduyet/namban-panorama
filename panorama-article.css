@@ -127,7 +127,7 @@ footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
 }
 
 /* ── Panorama View box ── */
-.pano-view{margin:40px 0;padding:24px 28px;border-left:3px solid var(--forest);background:rgba(47,64,52,.04);}
+.pano-view{margin:40px 0;padding:22px 26px;border-left:2px solid var(--forest);background:rgba(47,64,52,.03);}
 .pano-view .pv-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--forest);font-weight:500;margin-bottom:12px;}
 .pano-view p{font-size:14.5px;color:var(--ink);line-height:1.65;margin:0;}
 
