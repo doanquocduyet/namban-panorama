@@ -185,9 +185,40 @@
     .quiz-card{padding:18px 16px;}
     .qopt{padding:11px 14px;font-size:13.5px;}
   }
+
+  /* ── Geo Banner ── */
+  .geo-banner{display:none;background:var(--forest);color:#f1ece2;padding:0;overflow:hidden;position:relative;}
+  .geo-banner.show{display:block;animation:geoSlide .5s ease;}
+  @keyframes geoSlide{from{max-height:0;opacity:0;}to{max-height:200px;opacity:1;}}
+  .geo-inner{max-width:920px;margin:0 auto;padding:16px 40px;display:flex;align-items:center;gap:16px;}
+  .geo-icon{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:rgba(241,236,226,.12);display:flex;align-items:center;justify-content:center;font-size:18px;}
+  .geo-text{flex:1;}
+  .geo-title{font-family:'Fraunces',serif;font-size:15.5px;font-weight:500;margin-bottom:2px;letter-spacing:.2px;}
+  .geo-sub{font-size:13px;color:rgba(241,236,226,.78);line-height:1.45;}
+  .geo-cta{flex-shrink:0;background:var(--clay);color:#fff;padding:9px 18px;border-radius:3px;font-size:12.5px;letter-spacing:.3px;text-decoration:none;white-space:nowrap;transition:background .25s;}
+  .geo-cta:hover{background:#b06a40;}
+  .geo-close{flex-shrink:0;background:none;border:0;color:rgba(241,236,226,.5);font-size:20px;cursor:pointer;padding:0 4px;line-height:1;}
+  .geo-close:hover{color:#f1ece2;}
+  @media(max-width:680px){
+    .geo-inner{padding:14px 22px;flex-wrap:wrap;gap:10px;}
+    .geo-cta{width:100%;text-align:center;order:3;}
+    .geo-icon{display:none;}
+  }
 </style>
 </head>
 <body>
+
+<div class="geo-banner" id="geoBanner">
+  <div class="geo-inner">
+    <div class="geo-icon" id="geoIcon">📍</div>
+    <div class="geo-text">
+      <div class="geo-title" id="geoTitle"></div>
+      <div class="geo-sub" id="geoSub"></div>
+    </div>
+    <a href="#" class="geo-cta" id="geoCta"></a>
+    <button class="geo-close" onclick="closeGeo()" aria-label="Đóng">×</button>
+  </div>
+</div>
 
 <nav>
   <div class="wrap navin">
@@ -473,6 +504,89 @@ function quizResult(btn, q2ans) {
     // skip removed
     r.style.display = 'block';
   }, 260);
+}
+</script>
+
+<script>
+(function(){
+  // Đã đóng banner trong session này thì không hiện lại
+  if(sessionStorage.getItem('geoClosed')==='1') return;
+
+  var banner = document.getElementById('geoBanner');
+  var title = document.getElementById('geoTitle');
+  var sub = document.getElementById('geoSub');
+  var cta = document.getElementById('geoCta');
+  var icon = document.getElementById('geoIcon');
+
+  // 3 kịch bản thông điệp
+  var MSG = {
+    // Đang ở Lâm Đồng / rất gần Nam Ban — khoảnh khắc vàng
+    onsite: {
+      icon: '📍',
+      title: 'Bạn đang ở gần Nam Ban?',
+      sub: 'Nếu đang đứng xem một lô đất — đây là vài điều nên kiểm tra trước khi đặt cọc.',
+      cta: 'Đọc nhanh trước khi cọc',
+      link: 'quy-hoach-2050.html'
+    },
+    // Ở các tỉnh lân cận (cùng vùng Tây Nguyên / Nam Trung Bộ)
+    nearby: {
+      icon: '🌄',
+      title: 'Đang trên đường tìm hiểu Nam Ban?',
+      sub: 'Xem mặt bằng giá thực tế và những gì đang thực sự diễn ra ở đây — cập nhật tháng này.',
+      cta: 'Xem Namban Index',
+      link: 'namban-index.html'
+    },
+    // Ở xa (TP.HCM, Hà Nội...) — tò mò, tìm hiểu từ xa
+    faraway: {
+      icon: '🧭',
+      title: 'Tìm hiểu Nam Ban từ xa?',
+      sub: 'Bắt đầu từ bức tranh toàn cảnh — quy hoạch, giá, và liệu nơi này có hợp với bạn không.',
+      cta: 'Bắt đầu từ đây',
+      link: 'quy-hoach-2050.html'
+    }
+  };
+
+  function showBanner(type){
+    var m = MSG[type];
+    icon.textContent = m.icon;
+    title.textContent = m.title;
+    sub.textContent = m.sub;
+    cta.textContent = m.cta;
+    cta.href = m.link;
+    banner.classList.add('show');
+  }
+
+  // Gọi IP geolocation miễn phí (ipapi.co - không cần key, không xin quyền)
+  fetch('https://ipapi.co/json/')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var region = (d.region || '').toLowerCase();
+      var city = (d.city || '').toLowerCase();
+      var country = (d.country_code || '');
+
+      if(country !== 'VN'){ return; } // ngoài VN thì không hiện
+
+      // Lâm Đồng = đang ở rất gần Nam Ban
+      if(region.indexOf('lam dong')>-1 || region.indexOf('lâm đồng')>-1 ||
+         city.indexOf('da lat')>-1 || city.indexOf('bao loc')>-1 || city.indexOf('di linh')>-1){
+        showBanner('onsite');
+      }
+      // Các tỉnh Tây Nguyên / lân cận
+      else if(['dak lak','dak nong','gia lai','kon tum','ninh thuan','binh thuan','dong nai','khanh hoa']
+              .some(function(p){ return region.indexOf(p)>-1; })){
+        showBanner('nearby');
+      }
+      // Còn lại trong VN = ở xa
+      else {
+        showBanner('faraway');
+      }
+    })
+    .catch(function(){ /* lỗi mạng thì im lặng, không hiện gì */ });
+})();
+
+function closeGeo(){
+  document.getElementById('geoBanner').classList.remove('show');
+  sessionStorage.setItem('geoClosed','1');
 }
 </script>
 </body>
