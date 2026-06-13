@@ -63,7 +63,6 @@
   header h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(38px,6.4vw,64px);line-height:1.04;letter-spacing:-1px;margin:24px auto 20px;max-width:14ch;}
   header h1 em{font-style:italic;color:var(--forest);}
   .lede{font-size:clamp(15px,1.7vw,18px);color:var(--muted);max-width:540px;margin:0 auto 34px;}
-  .positioning{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(15px,1.8vw,18px);color:var(--forest);max-width:560px;margin:0 auto 34px;line-height:1.5;}
   .capture{display:flex;justify-content:center;max-width:440px;margin:0 auto;border:1px solid var(--ink);border-radius:2px;overflow:hidden;background:rgba(250,246,238,.7);}
   /* ── Mini-quiz ── */
   .quiz-wrap{max-width:520px;margin:0 auto;position:relative;z-index:3;}
@@ -187,82 +186,17 @@
   }
 
   /* ── Geo Banner ── */
-  .geo-banner{display:none;background:var(--forest);color:#f1ece2;padding:0;overflow:hidden;position:relative;}
-  .geo-banner.show{display:block;animation:geoSlide .5s ease;}
-  @keyframes geoSlide{from{max-height:0;opacity:0;}to{max-height:200px;opacity:1;}}
-  .geo-inner{max-width:920px;margin:0 auto;padding:16px 40px;display:flex;align-items:center;gap:16px;}
-  .geo-icon{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:rgba(241,236,226,.12);display:flex;align-items:center;justify-content:center;font-size:18px;}
-  .geo-text{flex:1;}
-  .geo-title{font-family:'Fraunces',serif;font-size:15.5px;font-weight:500;margin-bottom:2px;letter-spacing:.2px;}
-  .geo-sub{font-size:13px;color:rgba(241,236,226,.78);line-height:1.45;}
-  .geo-cta{flex-shrink:0;background:var(--clay);color:#fff;padding:9px 18px;border-radius:3px;font-size:12.5px;letter-spacing:.3px;text-decoration:none;white-space:nowrap;transition:background .25s;}
-  .geo-cta:hover{background:#b06a40;}
-  .geo-close{flex-shrink:0;background:none;border:0;color:rgba(241,236,226,.5);font-size:20px;cursor:pointer;padding:0 4px;line-height:1;}
-  .geo-close:hover{color:#f1ece2;}
-  @media(max-width:680px){
-    .geo-inner{padding:14px 22px;flex-wrap:wrap;gap:10px;}
-    .geo-cta{width:100%;text-align:center;order:3;}
-    .geo-icon{display:none;}
-  }
+
+  /* ── Geo note ── */
+  .geo-note{display:none;font-size:13.5px;font-style:italic;color:var(--muted);margin:-20px auto 28px;max-width:540px;text-align:center;line-height:1.5;animation:geoFade .8s ease;}
+  .geo-note a{color:var(--forest);text-decoration:none;border-bottom:1px solid rgba(47,64,52,.25);}
+  .geo-note a:hover{border-color:var(--forest);}
+  .geo-note.show{display:block;}
+  @keyframes geoFade{from{opacity:0;}to{opacity:1;}}
 </style>
 </head>
 <body>
 
-<div class="geo-banner" id="geoBanner">
-  <div class="geo-inner">
-    <div class="geo-icon" id="geoIcon">📍</div>
-    <div class="geo-text">
-      <div class="geo-title" id="geoTitle"></div>
-      <div class="geo-sub" id="geoSub"></div>
-    </div>
-    <a href="#" class="geo-cta" id="geoCta"></a>
-    <button class="geo-close" onclick="closeGeo()" aria-label="Đóng">×</button>
-  </div>
-</div>
-
-<nav>
-  <div class="wrap navin">
-    <a href="/" class="logo" style="text-decoration:none;color:inherit;">Namban Panorama</a>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
-    <div class="navlinks" id="navlinks">
-      <a href="/">Toàn cảnh</a>
-      <a href="quy-hoach-2050.html">Quy hoạch</a>
-      <a href="namban-index.html">Index</a>
-      <a href="#society">Câu chuyện</a>
-      
-      <a href="trao-doi.html">Trao đổi</a>
-    </div>
-  </div>
-
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" onclick="toggleMenu()">×</button>
-  <a href="/" onclick="toggleMenu()">Toàn cảnh</a>
-  <a href="quy-hoach-2050.html" onclick="toggleMenu()">Quy hoạch</a>
-  <a href="namban-index.html" onclick="toggleMenu()">Index</a>
-  <a href="#society" onclick="toggleMenu()">Câu chuyện</a>
-  <a href="trao-doi.html" onclick="toggleMenu()">Trao đổi</a>
-</div>
-</nav>
-
-<header>
-  <div class="wrap">
-    <div class="kicker fu" style="animation-delay:.05s">Góc nhìn độc lập · Nam Ban – Lâm Hà, Lâm Đồng</div>
-    <h1 class="fu" style="animation-delay:.15s">Thấy <em>toàn cảnh</em> Nam Ban trước khi xuống tiền.</h1>
-    <p class="lede fu" style="animation-delay:.3s">Chúng tôi chủ trương phân tích độc lập — để bạn ra quyết định tốt hơn. Đôi khi, quyết định đúng là không mua gì cả.</p>
-    <div id="brief-signup" class="quiz-wrap fu" style="animation-delay:.42s">
-
-      <div class="quiz-q" id="q1">
-        <div class="quiz-card">
-          <div class="quiz-step">Câu 1 / 2</div>
-          <p class="quiz-label">Bạn đang nhìn Nam Ban theo góc nào?</p>
-          <div class="quiz-opts">
-            <button class="qopt" onclick="quizNext(this,'a')">Tôi đang tìm hiểu vùng đất này, chưa có kế hoạch cụ thể</button>
-            <button class="qopt" onclick="quizNext(this,'b')">Tôi muốn có một chỗ để trốn khỏi thành phố cuối tuần</button>
-            <button class="qopt" onclick="quizNext(this,'c')">Tôi đang cân nhắc đầu tư, muốn hiểu rõ trước khi quyết định</button>
-            <button class="qopt" onclick="quizNext(this,'d')">Tôi đang tìm một tài sản cụ thể để nghiên cứu</button>
-          </div>
-        </div>
-      </div>
 
       <div class="quiz-q" id="q2" style="display:none;">
         <div class="quiz-card">
@@ -507,87 +441,48 @@ function quizResult(btn, q2ans) {
 }
 </script>
 
+
+
 <script>
 (function(){
-  // Đã đóng banner trong session này thì không hiện lại
-  if(sessionStorage.getItem('geoClosed')==='1') return;
+  if(sessionStorage.getItem('geoShown')==='1') return;
+  var note = document.getElementById('geoNote');
+  var params = new URLSearchParams(window.location.search);
+  var forceGeo = params.get('geo');
 
-  var banner = document.getElementById('geoBanner');
-  var title = document.getElementById('geoTitle');
-  var sub = document.getElementById('geoSub');
-  var cta = document.getElementById('geoCta');
-  var icon = document.getElementById('geoIcon');
-
-  // 3 kịch bản thông điệp
-  var MSG = {
-    // Đang ở Lâm Đồng / rất gần Nam Ban — khoảnh khắc vàng
-    onsite: {
-      icon: '📍',
-      title: 'Bạn đang ở gần Nam Ban?',
-      sub: 'Nếu đang đứng xem một lô đất — đây là vài điều nên kiểm tra trước khi đặt cọc.',
-      cta: 'Đọc nhanh trước khi cọc',
-      link: 'quy-hoach-2050.html'
-    },
-    // Ở các tỉnh lân cận (cùng vùng Tây Nguyên / Nam Trung Bộ)
-    nearby: {
-      icon: '🌄',
-      title: 'Đang trên đường tìm hiểu Nam Ban?',
-      sub: 'Xem mặt bằng giá thực tế và những gì đang thực sự diễn ra ở đây — cập nhật tháng này.',
-      cta: 'Xem Namban Index',
-      link: 'namban-index.html'
-    },
-    // Ở xa (TP.HCM, Hà Nội...) — tò mò, tìm hiểu từ xa
-    faraway: {
-      icon: '🧭',
-      title: 'Tìm hiểu Nam Ban từ xa?',
-      sub: 'Bắt đầu từ bức tranh toàn cảnh — quy hoạch, giá, và liệu nơi này có hợp với bạn không.',
-      cta: 'Bắt đầu từ đây',
-      link: 'quy-hoach-2050.html'
-    }
-  };
-
-  function showBanner(type){
-    var m = MSG[type];
-    icon.textContent = m.icon;
-    title.textContent = m.title;
-    sub.textContent = m.sub;
-    cta.textContent = m.cta;
-    cta.href = m.link;
-    banner.classList.add('show');
+  function show(html){
+    note.innerHTML = html;
+    note.classList.add('show');
+    sessionStorage.setItem('geoShown','1');
   }
 
-  // Gọi IP geolocation miễn phí (ipapi.co - không cần key, không xin quyền)
+  if(forceGeo){
+    if(forceGeo==='onsite') show('N\u1ebfu b\u1ea1n \u0111ang \u0111\u1ee9ng xem \u0111\u1ea5t \u2014 <a href="quy-hoach-2050.html">\u0111\u1ecdc b\u00e0i quy ho\u1ea1ch</a> tr\u01b0\u1edbc khi quy\u1ebft \u0111\u1ecbnh.');
+    else if(forceGeo==='nearby') show('B\u1ea1n \u0111ang t\u00ecm hi\u1ec3u v\u1ec1 Nam Ban? <a href="namban-index.html">Xem gi\u00e1 th\u1ef1c t\u1ebf v\u00e0 nh\u1eefng g\u00ec \u0111ang di\u1ec5n ra</a> \u2014 c\u1eadp nh\u1eadt th\u00e1ng n\u00e0y.');
+    else show('T\u00ecm hi\u1ec3u Nam Ban t\u1eeb xa? <a href="quy-hoach-2050.html">B\u1eaft \u0111\u1ea7u t\u1eeb b\u1ee9c tranh to\u00e0n c\u1ea3nh</a> \u2014 quy ho\u1ea1ch, gi\u00e1, v\u00e0 li\u1ec7u n\u01a1i n\u00e0y c\u00f3 h\u1ee3p v\u1edbi b\u1ea1n kh\u00f4ng.');
+    return;
+  }
+
   fetch('https://ipapi.co/json/')
-    .then(function(r){ return r.json(); })
+    .then(function(r){return r.json();})
     .then(function(d){
-      var region = (d.region || '').toLowerCase();
-      var city = (d.city || '').toLowerCase();
-      var country = (d.country_code || '');
+      var region = (d.region||'').toLowerCase();
+      var city = (d.city||'').toLowerCase();
 
-      if(country !== 'VN'){ return; } // ngoài VN thì không hiện
-
-      // Lâm Đồng = đang ở rất gần Nam Ban
-      if(region.indexOf('lam dong')>-1 || region.indexOf('lâm đồng')>-1 ||
-         city.indexOf('da lat')>-1 || city.indexOf('bao loc')>-1 || city.indexOf('di linh')>-1){
-        showBanner('onsite');
+      if(region.indexOf('lam dong')>-1 || region.indexOf('l\u00e2m \u0111\u1ed3ng')>-1 ||
+         city.indexOf('da lat')>-1 || city.indexOf('bao loc')>-1){
+        show('N\u1ebfu b\u1ea1n \u0111ang \u0111\u1ee9ng xem \u0111\u1ea5t \u2014 <a href="quy-hoach-2050.html">\u0111\u1ecdc b\u00e0i quy ho\u1ea1ch</a> tr\u01b0\u1edbc khi quy\u1ebft \u0111\u1ecbnh.');
       }
-      // Các tỉnh Tây Nguyên / lân cận
       else if(['dak lak','dak nong','gia lai','kon tum','ninh thuan','binh thuan','dong nai','khanh hoa']
-              .some(function(p){ return region.indexOf(p)>-1; })){
-        showBanner('nearby');
+              .some(function(p){return region.indexOf(p)>-1;})){
+        show('B\u1ea1n \u0111ang t\u00ecm hi\u1ec3u v\u1ec1 Nam Ban? <a href="namban-index.html">Xem gi\u00e1 th\u1ef1c t\u1ebf v\u00e0 nh\u1eefng g\u00ec \u0111ang di\u1ec5n ra</a> \u2014 c\u1eadp nh\u1eadt th\u00e1ng n\u00e0y.');
       }
-      // Còn lại trong VN = ở xa
       else {
-        showBanner('faraway');
+        show('T\u00ecm hi\u1ec3u Nam Ban t\u1eeb xa? <a href="quy-hoach-2050.html">B\u1eaft \u0111\u1ea7u t\u1eeb b\u1ee9c tranh to\u00e0n c\u1ea3nh</a> \u2014 quy ho\u1ea1ch, gi\u00e1, v\u00e0 li\u1ec7u n\u01a1i n\u00e0y c\u00f3 h\u1ee3p v\u1edbi b\u1ea1n kh\u00f4ng.');
       }
     })
-    .catch(function(){ /* lỗi mạng thì im lặng, không hiện gì */ });
+    .catch(function(){});
 })();
-
-function closeGeo(){
-  document.getElementById('geoBanner').classList.remove('show');
-  sessionStorage.setItem('geoClosed','1');
-}
 </script>
 </body>
 </html>
