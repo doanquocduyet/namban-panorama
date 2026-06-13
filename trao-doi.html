@@ -81,11 +81,8 @@ footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
   <p class="standfirst">Không phải buổi tư vấn. Không phải pitch bất động sản. Chỉ là cuộc trò chuyện thật — để tôi hiểu bạn đang đứng ở đâu, và bạn hiểu rõ hơn mình đang tìm gì.</p>
 
   
-    <form class="conv-form" action="https://formsubmit.co/nambanpanorama@gmail.com" method="POST">
-    <input type="hidden" name="_subject" value="Nam Ban Panorama - Yêu cầu trao đổi mới">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://nambanpanorama.com/trao-doi.html?sent=1">
+    <form class="conv-form" id="traodoi-form" onsubmit="return submitForm(event)">
+
     <div class="field">
       <label>Bạn đang nhìn Nam Ban theo góc nào?</label>
       <select name="goc_nhin">
@@ -110,8 +107,8 @@ footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
       <input type="text" name="ten_sdt" placeholder="Tên · số điện thoại · Zalo">
     </div>
 
-    <div class="field" style="text-align:center;margin-top:8px;">
-      <button type="submit" class="submit-btn" style="width:100%;">Gửi — phản hồi ngắn gọn, thẳng vào việc</button>
+    <div class="field" style="margin-top:12px;">
+      <button type="submit" class="submit-btn">Gửi — phản hồi ngắn gọn, thẳng vào việc</button>
     </div>
   </form>
 
@@ -137,24 +134,30 @@ footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
   </div>
 </footer>
 
-<script>
-if(window.location.search.indexOf('sent=1') > -1){
-  var f = document.querySelector('.conv-form');
-  if(f) f.innerHTML = '<div style="text-align:center;padding:40px 0;"><p style="font-family:Fraunces,serif;font-size:22px;margin-bottom:12px;">Đã nhận</p><p style="color:var(--muted);font-size:15px;">Cảm ơn bạn — tôi sẽ phản hồi trong thời gian sớm nhất.</p></div>';
-}
-</script>
+
+
 
 <script>
-document.querySelector('.conv-form').addEventListener('submit', function(){
-  var ten = document.querySelector('[name="ten_sdt"]').value || '';
-  var goc = document.querySelector('[name="goc_nhin"]').value || '';
-  var nhu = document.querySelector('[name="muon_lam_ro"]').value || '';
+function submitForm(e){
+  e.preventDefault();
+  var f = document.getElementById('traodoi-form');
+  var ten = f.querySelector('[name="ten_sdt"]').value || '';
+  var goc = f.querySelector('[name="goc_nhin"]').value || '';
+  var nhu = f.querySelector('[name="muon_lam_ro"]').value || '';
+  var btn = f.querySelector('.submit-btn');
+  if(!ten){f.querySelector('[name="ten_sdt"]').style.border='1px solid #c44';return false;}
+  btn.textContent = 'Đang gửi...';
+  btn.disabled = true;
   var fd = new FormData();
   fd.append("entry.260173030", ten);
   fd.append("entry.2084374895", ten);
   fd.append("entry.418514546", goc + ' | ' + nhu);
   fetch("https://docs.google.com/forms/d/e/1FAIpQLSejyXVjRk8TQCtNIrZijGeZxaoJaeA3VCccpW4PAi87BRVAzg/formResponse", {method:"POST", mode:"no-cors", body:fd});
-});
+  setTimeout(function(){
+    f.innerHTML = '<div style="text-align:center;padding:48px 0;"><p style="font-family:Fraunces,serif;font-size:24px;color:var(--ink);margin-bottom:12px;">Đã nhận</p><p style="color:var(--muted);font-size:15px;line-height:1.6;">Cảm ơn bạn — tôi sẽ phản hồi trong thời gian sớm nhất.</p></div>';
+  }, 800);
+  return false;
+}
 </script>
 </body>
 </html>
