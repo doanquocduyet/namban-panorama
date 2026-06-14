@@ -71,13 +71,16 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   </div>
 </nav>
 
-<article>
-  <div class="article-head">
-    <div class="kicker">So sánh · Lâm Đồng</div>
-    <h1>Nam Ban hay Bảo Lộc, Đà Lạt?</h1>
-    <p class="standfirst">Một câu hỏi rất hay gặp — và gần như luôn bị trả lời sai, vì người ta đi tìm "nơi tốt nhất". Thực ra không có nơi tốt nhất. Chỉ có nơi hợp nhất với cách bạn muốn sống.</p>
+<div class="art-header">
+  <div class="issue-line">
+    <span class="issue-badge">So sánh · Lâm Đồng</span>
+    <span class="issue-date">Tháng 6, 2026</span>
   </div>
+  <h1>Nam Ban hay<br>Bảo Lộc, Đà Lạt?</h1>
+  <p class="standfirst">Một câu hỏi rất hay gặp — và gần như luôn bị trả lời sai, vì người ta đi tìm "nơi tốt nhất". Thực ra không có nơi tốt nhất. Chỉ có nơi hợp nhất với cách bạn muốn sống.</p>
+</div>
 
+<div class="art-body">
   <p>Ba cái tên này thường xuất hiện cùng nhau khi ai đó bắt đầu nghĩ đến chuyện rời thành phố hoặc tìm một mảnh đất ở Lâm Đồng. Chúng cùng khí hậu cao nguyên, cùng đất đỏ bazan, cùng nằm trên hành trình từ TP.HCM lên. Nhưng sống ở mỗi nơi là một trải nghiệm khác hẳn.</p>
 
   <p>Thay vì xếp hạng nơi nào "hơn", chúng tôi đặt ba nơi cạnh nhau theo những thứ thực sự ảnh hưởng đến quyết định của bạn.</p>
@@ -100,8 +103,9 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   <div class="pano-view">
     <p>Câu hỏi không phải "nơi nào tốt nhất" — mà là bạn muốn buổi sáng thức dậy nhìn thấy gì, và buổi chiều thứ Ba sau 5 năm nữa bạn muốn làm gì ở đó. Bảo Lộc cho bạn tiện nghi. Đà Lạt cho bạn sự sôi động. Nam Ban cho bạn sự yên tĩnh và khoảng cách gần Đà Lạt — đổi lại là ít tiện ích hơn. Không có lựa chọn sai, chỉ có lựa chọn hợp hoặc không hợp với cách bạn sống.</p>
   </div>
+</div>
 
-  <div class="next-read">
+<div class="next-read">
     <div class="next-read-progress">Hành trình hiểu Nam Ban</div>
     <div class="next-read-done">Bạn vừa hiểu: <b>Nam Ban khác Bảo Lộc và Đà Lạt ở đâu</b></div>
     <a href="namban-index.html" class="next-card">
@@ -116,8 +120,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
       <div class="next-card-desc">Cơ hội, rủi ro và những sai lầm khiến người mua hối tiếc.</div>
       <span class="next-card-arrow">→</span>
     </a>
-  </div>
-</article>
+</div>
 
 <footer>
   <div class="contact-line">
