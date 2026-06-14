@@ -204,8 +204,55 @@
   @keyframes geoFade{from{opacity:0;}to{opacity:1;}}
 </style>
   <script defer data-domain="nambanpanorama.com" src="https://plausible.io/js/script.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Namban Panorama",
+  "url": "https://nambanpanorama.com",
+  "description": "Góc nhìn độc lập, trung thực về quy hoạch, bất động sản và đầu tư tại Nam Ban, Lâm Hà (Lâm Đồng).",
+  "areaServed": {"@type":"Place","name":"Nam Ban, Lâm Hà, Lâm Đồng, Việt Nam"},
+  "knowsAbout": ["Bất động sản Nam Ban","Quy hoạch Lâm Hà","Đầu tư đất Lâm Đồng","Giá đất Nam Ban"]
+}
+</script>
 </head>
 <body>
+
+<script>
+/* ── Panorama Memory: ghi nhớ hành vi người đọc ── */
+var PM = {
+  get: function(k){ try{ return JSON.parse(localStorage.getItem('pm_'+k)); }catch(e){ return null; } },
+  set: function(k,v){ try{ localStorage.setItem('pm_'+k, JSON.stringify(v)); }catch(e){} },
+
+  init: function(){
+    // Đếm lượt thăm
+    var visits = this.get('visits') || 0;
+    var lastVisit = this.get('lastVisit');
+    var now = Date.now();
+    // Chỉ tính là lượt mới nếu cách nhau > 30 phút
+    if(!lastVisit || (now - lastVisit) > 1800000){
+      visits++;
+      this.set('visits', visits);
+    }
+    this.set('lastVisit', now);
+
+    // Ghi nhớ trang đã đọc
+    var page = location.pathname.split('/').pop() || 'index.html';
+    var read = this.get('read') || [];
+    if(read.indexOf(page) === -1){ read.push(page); this.set('read', read); }
+
+    return { visits: visits, read: read, intent: this.get('intent') };
+  },
+
+  // Lưu ý định từ quiz: q1 (a=tìm hiểu, b=nghỉ dưỡng, c=đầu tư, d=tài sản cụ thể), q2 (lo gì)
+  saveIntent: function(q1, q2){
+    this.set('intent', {q1:q1, q2:q2, ts:Date.now()});
+  }
+};
+
+window.PM_STATE = PM.init();
+</script>
 
 
       <div class="quiz-q" id="q2" style="display:none;">
@@ -405,6 +452,8 @@ function quizNext(btn, ans) {
   }, 260);
 }
 function quizResult(btn, q2ans) {
+  if(window.PM) PM.saveIntent(_q1ans, q2ans);
+  else if(window.PM_STATE){ try{ localStorage.setItem('pm_intent', JSON.stringify({q1:_q1ans, q2:q2ans, ts:Date.now()})); }catch(e){} }
   btn.classList.add('chosen');
   var key = _q1ans + q2ans;
   var text = _results[key] || _results['a1'];
@@ -457,6 +506,20 @@ function quizResult(btn, q2ans) {
 (function(){
   if(sessionStorage.getItem('geoShown')==='1') return;
   var note = document.getElementById('geoNote');
+
+  // Ưu tiên: người quay lại nhiều lần đã đọc khá nhiều → gợi ý trao đổi
+  try {
+    var st = window.PM_STATE || {};
+    var visits = st.visits || 0;
+    var readCount = (st.read || []).length;
+    if(visits >= 3 || readCount >= 3){
+      note.innerHTML = 'B\u1ea1n \u0111\u00e3 \u0111\u1ecdc kh\u00e1 nhi\u1ec1u v\u1ec1 Nam Ban. N\u1ebfu \u0111ang xem m\u1ed9t t\u00e0i s\u1ea3n c\u1ee5 th\u1ec3 \u2014 <a href="trao-doi.html">trao \u0111\u1ed5i tr\u1ef1c ti\u1ebfp</a> c\u00f3 th\u1ec3 nhanh h\u01a1n.';
+      note.classList.add('show');
+      sessionStorage.setItem('geoShown','1');
+      return;
+    }
+  } catch(e){}
+
   var params = new URLSearchParams(window.location.search);
   var forceGeo = params.get('geo');
 
