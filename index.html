@@ -19,10 +19,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Namban Panorama">
-  <meta property="og:locale" content="vi_VN">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Namban Panorama — Toàn cảnh Nam Ban trước khi đầu tư">
-  <meta name="twitter:description" content="Góc nhìn độc lập, trung thực về quy hoạch, bất động sản và đầu tư tại Nam Ban, Lâm Hà.">
   <meta name="twitter:image" content="https://nambanpanorama.com/og-image.jpg">
   <meta property="og:url" content="https://nambanpanorama.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,6 +69,7 @@
   header h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(38px,6.4vw,64px);line-height:1.04;letter-spacing:-1px;margin:24px auto 20px;max-width:14ch;}
   header h1 em{font-style:italic;color:var(--forest);}
   .lede{font-size:clamp(15px,1.7vw,18px);color:var(--muted);max-width:540px;margin:0 auto 34px;}
+  .positioning{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(15px,1.8vw,18px);color:var(--forest);max-width:560px;margin:0 auto 34px;line-height:1.5;}
   .capture{display:flex;justify-content:center;max-width:440px;margin:0 auto;border:1px solid var(--ink);border-radius:2px;overflow:hidden;background:rgba(250,246,238,.7);}
   /* ── Mini-quiz ── */
   .quiz-wrap{max-width:520px;margin:0 auto;position:relative;z-index:3;}
@@ -194,14 +192,6 @@
     .qopt{padding:11px 14px;font-size:13.5px;}
   }
 
-  /* ── Geo Banner ── */
-
-  /* ── Geo note ── */
-  .geo-note{display:none;font-size:13.5px;font-style:italic;color:var(--muted);margin:-20px auto 28px;max-width:540px;text-align:center;line-height:1.5;animation:geoFade .8s ease;}
-  .geo-note a{color:var(--forest);text-decoration:none;border-bottom:1px solid rgba(47,64,52,.25);}
-  .geo-note a:hover{border-color:var(--forest);}
-  .geo-note.show{display:block;}
-  @keyframes geoFade{from{opacity:0;}to{opacity:1;}}
 </style>
   <script defer data-domain="nambanpanorama.com" src="https://plausible.io/js/script.js"></script>
 
@@ -211,49 +201,70 @@
   "@type": "Organization",
   "name": "Namban Panorama",
   "url": "https://nambanpanorama.com",
-  "description": "Góc nhìn độc lập, trung thực về quy hoạch, bất động sản và đầu tư tại Nam Ban, Lâm Hà (Lâm Đồng).",
+  "description": "Góc nhìn độc lập, trung thực về quy hoạch, bất động sản và đầu tư tại Nam Ban, Lâm Hà.",
   "areaServed": {"@type":"Place","name":"Nam Ban, Lâm Hà, Lâm Đồng, Việt Nam"},
   "knowsAbout": ["Bất động sản Nam Ban","Quy hoạch Lâm Hà","Đầu tư đất Lâm Đồng","Giá đất Nam Ban"]
 }
 </script>
 </head>
 <body>
-
 <script>
-/* ── Panorama Memory: ghi nhớ hành vi người đọc ── */
-var PM = {
-  get: function(k){ try{ return JSON.parse(localStorage.getItem('pm_'+k)); }catch(e){ return null; } },
-  set: function(k,v){ try{ localStorage.setItem('pm_'+k, JSON.stringify(v)); }catch(e){} },
-
-  init: function(){
-    // Đếm lượt thăm
-    var visits = this.get('visits') || 0;
-    var lastVisit = this.get('lastVisit');
-    var now = Date.now();
-    // Chỉ tính là lượt mới nếu cách nhau > 30 phút
-    if(!lastVisit || (now - lastVisit) > 1800000){
-      visits++;
-      this.set('visits', visits);
-    }
-    this.set('lastVisit', now);
-
-    // Ghi nhớ trang đã đọc
-    var page = location.pathname.split('/').pop() || 'index.html';
-    var read = this.get('read') || [];
-    if(read.indexOf(page) === -1){ read.push(page); this.set('read', read); }
-
-    return { visits: visits, read: read, intent: this.get('intent') };
-  },
-
-  // Lưu ý định từ quiz: q1 (a=tìm hiểu, b=nghỉ dưỡng, c=đầu tư, d=tài sản cụ thể), q2 (lo gì)
-  saveIntent: function(q1, q2){
-    this.set('intent', {q1:q1, q2:q2, ts:Date.now()});
-  }
-};
-
-window.PM_STATE = PM.init();
+var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}catch(e){return null;}},set:function(k,v){try{localStorage.setItem('pm_'+k,JSON.stringify(v));}catch(e){}}};
+(function(){
+  var visits=PM.get('visits')||0,last=PM.get('lastVisit'),now=Date.now();
+  if(!last||(now-last)>1800000){visits++;PM.set('visits',visits);}
+  PM.set('lastVisit',now);
+  var page=location.pathname.split('/').pop()||'index.html';
+  var read=PM.get('read')||[];
+  if(read.indexOf(page)===-1){read.push(page);PM.set('read',read);}
+  window.PM_STATE={visits:visits,read:read,intent:PM.get('intent')};
+})();
 </script>
 
+<nav>
+  <div class="wrap navin">
+    <a href="/" class="logo" style="text-decoration:none;color:inherit;">Namban Panorama</a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="navlinks" id="navlinks">
+      <a href="/">Toàn cảnh</a>
+      <a href="quy-hoach-2050.html">Quy hoạch</a>
+      <a href="namban-index.html">Index</a>
+      <a href="#society">Câu chuyện</a>
+      
+      <a href="trao-doi.html">Trao đổi</a>
+    </div>
+  </div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMenu()">×</button>
+  <a href="/" onclick="toggleMenu()">Toàn cảnh</a>
+  <a href="quy-hoach-2050.html" onclick="toggleMenu()">Quy hoạch</a>
+  <a href="namban-index.html" onclick="toggleMenu()">Index</a>
+  <a href="#society" onclick="toggleMenu()">Câu chuyện</a>
+  <a href="trao-doi.html" onclick="toggleMenu()">Trao đổi</a>
+</div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="kicker fu" style="animation-delay:.05s">Góc nhìn độc lập · Nam Ban – Lâm Hà, Lâm Đồng</div>
+    <h1 class="fu" style="animation-delay:.15s">Thấy <em>toàn cảnh</em> Nam Ban trước khi xuống tiền.</h1>
+    <p class="lede fu" style="animation-delay:.3s">Chúng tôi chủ trương phân tích độc lập — để bạn ra quyết định tốt hơn. Đôi khi, quyết định đúng là không mua gì cả.</p>
+    <div class="geo-note" id="geoNote"></div>
+    <div id="brief-signup" class="quiz-wrap fu" style="animation-delay:.42s">
+
+      <div class="quiz-q" id="q1">
+        <div class="quiz-card">
+          <div class="quiz-step">Câu 1 / 2</div>
+          <p class="quiz-label">Bạn đang nhìn Nam Ban theo góc nào?</p>
+          <div class="quiz-opts">
+            <button class="qopt" onclick="quizNext(this,'a')">Tôi đang tìm hiểu vùng đất này, chưa có kế hoạch cụ thể</button>
+            <button class="qopt" onclick="quizNext(this,'b')">Tôi muốn có một chỗ để trốn khỏi thành phố cuối tuần</button>
+            <button class="qopt" onclick="quizNext(this,'c')">Tôi đang cân nhắc đầu tư, muốn hiểu rõ trước khi quyết định</button>
+            <button class="qopt" onclick="quizNext(this,'d')">Tôi đang tìm một tài sản cụ thể để nghiên cứu</button>
+          </div>
+        </div>
+      </div>
 
       <div class="quiz-q" id="q2" style="display:none;">
         <div class="quiz-card">
@@ -452,8 +463,7 @@ function quizNext(btn, ans) {
   }, 260);
 }
 function quizResult(btn, q2ans) {
-  if(window.PM) PM.saveIntent(_q1ans, q2ans);
-  else if(window.PM_STATE){ try{ localStorage.setItem('pm_intent', JSON.stringify({q1:_q1ans, q2:q2ans, ts:Date.now()})); }catch(e){} }
+  try{ localStorage.setItem("pm_intent", JSON.stringify({q1:_q1ans,q2:q2ans,ts:Date.now()})); }catch(e){}
   btn.classList.add('chosen');
   var key = _q1ans + q2ans;
   var text = _results[key] || _results['a1'];
@@ -501,60 +511,37 @@ function quizResult(btn, q2ans) {
 </script>
 
 
-
 <script>
 (function(){
   if(sessionStorage.getItem('geoShown')==='1') return;
-  var note = document.getElementById('geoNote');
+  var note=document.getElementById('geoNote');
+  if(!note) return;
+  function show(html){note.innerHTML=html;note.classList.add('show');sessionStorage.setItem('geoShown','1');}
 
-  // Ưu tiên: người quay lại nhiều lần đã đọc khá nhiều → gợi ý trao đổi
-  try {
-    var st = window.PM_STATE || {};
-    var visits = st.visits || 0;
-    var readCount = (st.read || []).length;
-    if(visits >= 3 || readCount >= 3){
-      note.innerHTML = 'B\u1ea1n \u0111\u00e3 \u0111\u1ecdc kh\u00e1 nhi\u1ec1u v\u1ec1 Nam Ban. N\u1ebfu \u0111ang xem m\u1ed9t t\u00e0i s\u1ea3n c\u1ee5 th\u1ec3 \u2014 <a href="trao-doi.html">trao \u0111\u1ed5i tr\u1ef1c ti\u1ebfp</a> c\u00f3 th\u1ec3 nhanh h\u01a1n.';
-      note.classList.add('show');
-      sessionStorage.setItem('geoShown','1');
+  // Người quay lại nhiều / đọc nhiều → gợi ý trao đổi
+  try{
+    var st=window.PM_STATE||{};
+    if((st.visits||0)>=3 || (st.read||[]).length>=3){
+      show('B\u1ea1n \u0111\u00e3 \u0111\u1ecdc kh\u00e1 nhi\u1ec1u v\u1ec1 Nam Ban. N\u1ebfu \u0111ang xem m\u1ed9t t\u00e0i s\u1ea3n c\u1ee5 th\u1ec3 \u2014 <a href="trao-doi.html">trao \u0111\u1ed5i tr\u1ef1c ti\u1ebfp</a> c\u00f3 th\u1ec3 nhanh h\u01a1n.');
       return;
     }
-  } catch(e){}
+  }catch(e){}
 
-  var params = new URLSearchParams(window.location.search);
-  var forceGeo = params.get('geo');
+  var params=new URLSearchParams(location.search);
+  var fg=params.get('geo');
+  var MSG={
+    onsite:'N\u1ebfu b\u1ea1n \u0111ang \u0111\u1ee9ng xem \u0111\u1ea5t \u2014 <a href="quy-hoach-2050.html">\u0111\u1ecdc b\u00e0i quy ho\u1ea1ch</a> tr\u01b0\u1edbc khi quy\u1ebft \u0111\u1ecbnh.',
+    nearby:'B\u1ea1n \u0111ang t\u00ecm hi\u1ec3u v\u1ec1 Nam Ban? <a href="namban-index.html">Xem gi\u00e1 th\u1ef1c t\u1ebf v\u00e0 nh\u1eefng g\u00ec \u0111ang di\u1ec5n ra</a> \u2014 c\u1eadp nh\u1eadt th\u00e1ng n\u00e0y.',
+    far:'T\u00ecm hi\u1ec3u Nam Ban t\u1eeb xa? <a href="quy-hoach-2050.html">B\u1eaft \u0111\u1ea7u t\u1eeb b\u1ee9c tranh to\u00e0n c\u1ea3nh</a> \u2014 quy ho\u1ea1ch, gi\u00e1, v\u00e0 li\u1ec7u n\u01a1i n\u00e0y c\u00f3 h\u1ee3p v\u1edbi b\u1ea1n kh\u00f4ng.'
+  };
+  if(fg && MSG[fg]){ show(MSG[fg]); return; }
 
-  function show(html){
-    note.innerHTML = html;
-    note.classList.add('show');
-    sessionStorage.setItem('geoShown','1');
-  }
-
-  if(forceGeo){
-    if(forceGeo==='onsite') show('N\u1ebfu b\u1ea1n \u0111ang \u0111\u1ee9ng xem \u0111\u1ea5t \u2014 <a href="quy-hoach-2050.html">\u0111\u1ecdc b\u00e0i quy ho\u1ea1ch</a> tr\u01b0\u1edbc khi quy\u1ebft \u0111\u1ecbnh.');
-    else if(forceGeo==='nearby') show('B\u1ea1n \u0111ang t\u00ecm hi\u1ec3u v\u1ec1 Nam Ban? <a href="namban-index.html">Xem gi\u00e1 th\u1ef1c t\u1ebf v\u00e0 nh\u1eefng g\u00ec \u0111ang di\u1ec5n ra</a> \u2014 c\u1eadp nh\u1eadt th\u00e1ng n\u00e0y.');
-    else show('T\u00ecm hi\u1ec3u Nam Ban t\u1eeb xa? <a href="quy-hoach-2050.html">B\u1eaft \u0111\u1ea7u t\u1eeb b\u1ee9c tranh to\u00e0n c\u1ea3nh</a> \u2014 quy ho\u1ea1ch, gi\u00e1, v\u00e0 li\u1ec7u n\u01a1i n\u00e0y c\u00f3 h\u1ee3p v\u1edbi b\u1ea1n kh\u00f4ng.');
-    return;
-  }
-
-  fetch('https://ipapi.co/json/')
-    .then(function(r){return r.json();})
-    .then(function(d){
-      var region = (d.region||'').toLowerCase();
-      var city = (d.city||'').toLowerCase();
-
-      if(region.indexOf('lam dong')>-1 || region.indexOf('l\u00e2m \u0111\u1ed3ng')>-1 ||
-         city.indexOf('da lat')>-1 || city.indexOf('bao loc')>-1){
-        show('N\u1ebfu b\u1ea1n \u0111ang \u0111\u1ee9ng xem \u0111\u1ea5t \u2014 <a href="quy-hoach-2050.html">\u0111\u1ecdc b\u00e0i quy ho\u1ea1ch</a> tr\u01b0\u1edbc khi quy\u1ebft \u0111\u1ecbnh.');
-      }
-      else if(['dak lak','dak nong','gia lai','kon tum','ninh thuan','binh thuan','dong nai','khanh hoa']
-              .some(function(p){return region.indexOf(p)>-1;})){
-        show('B\u1ea1n \u0111ang t\u00ecm hi\u1ec3u v\u1ec1 Nam Ban? <a href="namban-index.html">Xem gi\u00e1 th\u1ef1c t\u1ebf v\u00e0 nh\u1eefng g\u00ec \u0111ang di\u1ec5n ra</a> \u2014 c\u1eadp nh\u1eadt th\u00e1ng n\u00e0y.');
-      }
-      else {
-        show('T\u00ecm hi\u1ec3u Nam Ban t\u1eeb xa? <a href="quy-hoach-2050.html">B\u1eaft \u0111\u1ea7u t\u1eeb b\u1ee9c tranh to\u00e0n c\u1ea3nh</a> \u2014 quy ho\u1ea1ch, gi\u00e1, v\u00e0 li\u1ec7u n\u01a1i n\u00e0y c\u00f3 h\u1ee3p v\u1edbi b\u1ea1n kh\u00f4ng.');
-      }
-    })
-    .catch(function(){});
+  fetch('https://ipapi.co/json/').then(function(r){return r.json();}).then(function(d){
+    var region=(d.region||'').toLowerCase(), city=(d.city||'').toLowerCase();
+    if(region.indexOf('lam dong')>-1||city.indexOf('da lat')>-1||city.indexOf('bao loc')>-1) show(MSG.onsite);
+    else if(['dak lak','dak nong','gia lai','kon tum','ninh thuan','binh thuan','dong nai','khanh hoa'].some(function(p){return region.indexOf(p)>-1;})) show(MSG.nearby);
+    else show(MSG.far);
+  }).catch(function(){});
 })();
 </script>
 </body>
