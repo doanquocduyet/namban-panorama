@@ -116,8 +116,36 @@
 </style>
 <link rel="stylesheet" href="panorama-article.css">
   <script defer data-domain="nambanpanorama.com" src="https://plausible.io/js/script.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Ai đang mua Nam Ban",
+  "description": "Các nhóm người đang mua đất Nam Ban và nhóm nào mua đúng.",
+  "datePublished": "2026-06-01",
+  "dateModified": "2026-06-14",
+  "author": {"@type":"Organization","name":"Namban Panorama"},
+  "publisher": {"@type":"Organization","name":"Namban Panorama","url":"https://nambanpanorama.com"},
+  "about": {"@type":"Place","name":"Nam Ban, Lâm Hà, Lâm Đồng"},
+  "image": "https://nambanpanorama.com/og-image.jpg"
+}
+</script>
 </head>
 <body>
+
+<script>
+var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}catch(e){return null;}},set:function(k,v){try{localStorage.setItem('pm_'+k,JSON.stringify(v));}catch(e){}}};
+(function(){
+  var visits=PM.get('visits')||0, last=PM.get('lastVisit'), now=Date.now();
+  if(!last||(now-last)>1800000){visits++;PM.set('visits',visits);}
+  PM.set('lastVisit',now);
+  var page=location.pathname.split('/').pop()||'index.html';
+  var read=PM.get('read')||[];
+  if(read.indexOf(page)===-1){read.push(page);PM.set('read',read);}
+  window.PM_STATE={visits:visits,read:read,intent:PM.get('intent')};
+})();
+</script>
 
 <nav>
   <div class="navin">
@@ -293,5 +321,45 @@
   <div class="meta">NAMBAN PANORAMA &nbsp;·&nbsp; nambanpanorama.com</div>
 </footer>
 
+
+<script>
+/* ── Cá nhân hóa Đọc gì tiếp theo theo hành vi ── */
+(function(){
+  var st = window.PM_STATE || {};
+  var read = st.read || [];
+  var intent = st.intent;
+  var cur = location.pathname.split('/').pop() || 'index.html';
+
+  // 1. Ẩn next-card trỏ tới bài đã đọc rồi
+  var cards = document.querySelectorAll('.next-card');
+  var hidden = 0;
+  cards.forEach(function(c){
+    var href = c.getAttribute('href');
+    if(read.indexOf(href) > -1 && href !== 'trao-doi.html'){
+      c.style.opacity = '0.5';
+      var step = c.querySelector('.next-card-step');
+      if(step) step.textContent = '\u0110\u00e3 \u0111\u1ecdc \u2713';
+    }
+  });
+
+  // 2. Người đã đọc >= 3 bài → thêm gợi ý trao đổi cuối hành trình
+  if(read.length >= 3){
+    var nr = document.querySelector('.next-read');
+    if(nr && !document.getElementById('pm-ready')){
+      var box = document.createElement('a');
+      box.href = 'trao-doi.html';
+      box.id = 'pm-ready';
+      box.className = 'next-card';
+      box.style.borderColor = 'var(--clay)';
+      box.style.background = 'rgba(157,93,56,.05)';
+      box.innerHTML = '<div class="next-card-step" style="color:var(--clay)">B\u1ea1n \u0111\u00e3 \u0111i kh\u00e1 s\u00e2u</div>'
+        + '<div class="next-card-title">S\u1eb5n s\u00e0ng trao \u0111\u1ed5i tr\u1ef1c ti\u1ebfp?</div>'
+        + '<div class="next-card-desc">B\u1ea1n \u0111\u00e3 \u0111\u1ecdc ' + read.length + ' b\u00e0i. N\u1ebfu \u0111ang nh\u1eafm m\u1ed9t t\u00e0i s\u1ea3n c\u1ee5 th\u1ec3, m\u1ed9t cu\u1ed9c trao \u0111\u1ed5i ng\u1eafn c\u00f3 th\u1ec3 ti\u1ebft ki\u1ec7m nhi\u1ec1u th\u1eddi gian.</div>'
+        + '<span class="next-card-arrow">\u2192</span>';
+      nr.appendChild(box);
+    }
+  }
+})();
+</script>
 </body>
 </html>
