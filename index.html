@@ -192,6 +192,11 @@
     .qopt{padding:11px 14px;font-size:13.5px;}
   }
 
+  .geo-note{display:none;font-size:13.5px;font-style:italic;color:var(--muted);margin:0 auto 30px;max-width:520px;text-align:center;line-height:1.55;padding:14px 20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .geo-note a{color:var(--forest);text-decoration:none;border-bottom:1px solid rgba(47,64,52,.3);}
+  .geo-note a:hover{border-color:var(--forest);}
+  .geo-note.show{display:block;animation:geoFade .6s ease;}
+  @keyframes geoFade{from{opacity:0;}to{opacity:1;}}
 </style>
   <script defer data-domain="nambanpanorama.com" src="https://plausible.io/js/script.js"></script>
 
@@ -516,32 +521,15 @@ function quizResult(btn, q2ans) {
   if(sessionStorage.getItem('geoShown')==='1') return;
   var note=document.getElementById('geoNote');
   if(!note) return;
-  function show(html){note.innerHTML=html;note.classList.add('show');sessionStorage.setItem('geoShown','1');}
-
-  // Người quay lại nhiều / đọc nhiều → gợi ý trao đổi
+  // CHỈ hiện cho người đã đọc nhiều / quay lại nhiều — đúng người, đúng lúc
   try{
     var st=window.PM_STATE||{};
     if((st.visits||0)>=3 || (st.read||[]).length>=3){
-      show('B\u1ea1n \u0111\u00e3 \u0111\u1ecdc kh\u00e1 nhi\u1ec1u v\u1ec1 Nam Ban. N\u1ebfu \u0111ang xem m\u1ed9t t\u00e0i s\u1ea3n c\u1ee5 th\u1ec3 \u2014 <a href="trao-doi.html">trao \u0111\u1ed5i tr\u1ef1c ti\u1ebfp</a> c\u00f3 th\u1ec3 nhanh h\u01a1n.');
-      return;
+      note.innerHTML='B\u1ea1n \u0111\u00e3 \u0111\u1ecdc kh\u00e1 nhi\u1ec1u v\u1ec1 Nam Ban. N\u1ebfu \u0111ang xem m\u1ed9t t\u00e0i s\u1ea3n c\u1ee5 th\u1ec3 \u2014 <a href="trao-doi.html">trao \u0111\u1ed5i tr\u1ef1c ti\u1ebfp</a> c\u00f3 th\u1ec3 nhanh h\u01a1n.';
+      note.classList.add('show');
+      sessionStorage.setItem('geoShown','1');
     }
   }catch(e){}
-
-  var params=new URLSearchParams(location.search);
-  var fg=params.get('geo');
-  var MSG={
-    onsite:'N\u1ebfu b\u1ea1n \u0111ang \u0111\u1ee9ng xem \u0111\u1ea5t \u2014 <a href="quy-hoach-2050.html">\u0111\u1ecdc b\u00e0i quy ho\u1ea1ch</a> tr\u01b0\u1edbc khi quy\u1ebft \u0111\u1ecbnh.',
-    nearby:'B\u1ea1n \u0111ang t\u00ecm hi\u1ec3u v\u1ec1 Nam Ban? <a href="namban-index.html">Xem gi\u00e1 th\u1ef1c t\u1ebf v\u00e0 nh\u1eefng g\u00ec \u0111ang di\u1ec5n ra</a> \u2014 c\u1eadp nh\u1eadt th\u00e1ng n\u00e0y.',
-    far:'T\u00ecm hi\u1ec3u Nam Ban t\u1eeb xa? <a href="quy-hoach-2050.html">B\u1eaft \u0111\u1ea7u t\u1eeb b\u1ee9c tranh to\u00e0n c\u1ea3nh</a> \u2014 quy ho\u1ea1ch, gi\u00e1, v\u00e0 li\u1ec7u n\u01a1i n\u00e0y c\u00f3 h\u1ee3p v\u1edbi b\u1ea1n kh\u00f4ng.'
-  };
-  if(fg && MSG[fg]){ show(MSG[fg]); return; }
-
-  fetch('https://ipapi.co/json/').then(function(r){return r.json();}).then(function(d){
-    var region=(d.region||'').toLowerCase(), city=(d.city||'').toLowerCase();
-    if(region.indexOf('lam dong')>-1||city.indexOf('da lat')>-1||city.indexOf('bao loc')>-1) show(MSG.onsite);
-    else if(['dak lak','dak nong','gia lai','kon tum','ninh thuan','binh thuan','dong nai','khanh hoa'].some(function(p){return region.indexOf(p)>-1;})) show(MSG.nearby);
-    else show(MSG.far);
-  }).catch(function(){});
 })();
 </script>
 </body>
