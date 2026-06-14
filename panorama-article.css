@@ -145,3 +145,18 @@ footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
 .better-question .bq-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--clay);font-weight:500;margin-bottom:14px;}
 .better-question .bq-instead{font-size:13.5px;color:var(--stone);margin-bottom:6px;font-style:italic;}
 .better-question .bq-ask{font-family:'Fraunces',serif;font-size:16.5px;color:var(--ink);line-height:1.45;margin:0;font-style:italic;}
+
+/* ── Đọc gì tiếp theo — hành trình nhận thức ── */
+.next-read{max-width:680px;margin:48px auto 0;padding:0 40px;}
+.next-read-progress{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);margin-bottom:6px;}
+.next-read-done{font-size:14px;color:var(--muted);margin-bottom:24px;font-style:italic;}
+.next-read-done b{color:var(--forest);font-style:normal;font-weight:500;}
+.next-card{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:4px;padding:20px 24px;margin-bottom:12px;transition:all .2s;}
+.next-card:hover{border-color:var(--forest);transform:translateX(2px);}
+.next-card-step{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--clay);margin-bottom:6px;}
+.next-card-title{font-family:'Fraunces',serif;font-size:18px;color:var(--ink);margin-bottom:4px;letter-spacing:-.2px;}
+.next-card-desc{font-size:13.5px;color:var(--muted);line-height:1.5;}
+.next-card-arrow{float:right;color:var(--stone);font-size:18px;margin-top:-44px;}
+@media(max-width:680px){
+  .next-read{padding:0 24px;}
+}
