@@ -118,7 +118,8 @@
   /* SECTIONS */
   section{padding:76px 0;}
   .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:38px;}
-  .grid2{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start;}
+  .grid2{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:stretch;}
+  .grid2 .feature{display:flex;flex-direction:column;justify-content:center;}
   .feature .idx{display:block;margin-bottom:14px;}
   .feature h3{font-family:'Fraunces',serif;font-weight:400;font-size:30px;line-height:1.2;letter-spacing:-.4px;margin-bottom:16px;}
   .feature p{font-size:15px;color:var(--muted);margin-bottom:22px;max-width:46ch;}
@@ -350,8 +351,6 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
           <a href="tiem-nang-dau-tu.html"><span><span class="kb-t">Tiềm năng đầu tư</span><br><span class="kb-s">Cơ hội &amp; rủi ro, đọc qua lăng kính toàn cảnh</span></span><span class="kb-n">→</span></a>
           <a href="namban-index.html"><span><span class="kb-t">Namban Index · T6/2026</span><br><span class="kb-s">Giá thực tế, tín hiệu và nhận định tháng này</span></span><span class="kb-n">→</span></a>
           <a href="brief-01.html"><span><span class="kb-t">Brief #01</span><br><span class="kb-s">Ai đang mua Nam Ban — và ai đang mua đúng</span></span><span class="kb-n">→</span></a>
-          <a href="so-sanh-nam-ban-bao-loc-da-lat.html"><span><span class="kb-t">Nam Ban hay Bảo Lộc, Đà Lạt?</span><br><span class="kb-s">So sánh thẳng thắn — nơi nào hợp với bạn</span></span><span class="kb-n">→</span></a>
-          <a href="truoc-khi-xuong-tien.html"><span><span class="kb-t">Trước khi xuống tiền</span><br><span class="kb-s">Vài điều người ở lâu thường thấy mà người mới chưa để ý</span></span><span class="kb-n">→</span></a>
         </div>
       </div>
     </div>
