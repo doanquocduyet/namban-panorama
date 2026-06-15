@@ -233,23 +233,23 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
     <div class="navlinks" id="navlinks">
       <a href="/">Toàn cảnh</a>
-      <a href="quy-hoach-2050.html">Quy hoạch</a>
-      <a href="namban-index.html">Index</a>
-      <a href="hoi-nhanh.html">Hỏi &amp; đáp</a>
+      <a href="quy-hoach-2050">Quy hoạch</a>
+      <a href="namban-index">Index</a>
+      <a href="hoi-nhanh">Hỏi &amp; đáp</a>
       <a href="#society">Câu chuyện</a>
       
-      <a href="trao-doi.html">Trao đổi</a>
+      <a href="trao-doi">Trao đổi</a>
     </div>
   </div>
 
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" onclick="toggleMenu()">×</button>
   <a href="/" onclick="toggleMenu()">Toàn cảnh</a>
-  <a href="quy-hoach-2050.html" onclick="toggleMenu()">Quy hoạch</a>
-  <a href="namban-index.html" onclick="toggleMenu()">Index</a>
-  <a href="hoi-nhanh.html" onclick="toggleMenu()">Hỏi &amp; đáp</a>
+  <a href="quy-hoach-2050" onclick="toggleMenu()">Quy hoạch</a>
+  <a href="namban-index" onclick="toggleMenu()">Index</a>
+  <a href="hoi-nhanh" onclick="toggleMenu()">Hỏi &amp; đáp</a>
   <a href="#society" onclick="toggleMenu()">Câu chuyện</a>
-  <a href="trao-doi.html" onclick="toggleMenu()">Trao đổi</a>
+  <a href="trao-doi" onclick="toggleMenu()">Trao đổi</a>
 </div>
 </nav>
 
@@ -343,16 +343,16 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
         <span class="idx">Panorama Brief · Số 01</span>
         <h3>Nam Ban không còn là Nam Ban? Bản đồ vừa được vẽ lại</h3>
         <p>Từ 1/7/2025, thị trấn Nam Ban hợp nhất thành xã Nam Ban Lâm Hà, thuộc tỉnh Lâm Đồng mới. Bức tranh đầy đủ: điều này đổi gì với túi tiền của bạn, vùng nào hưởng lợi, và vùng nào rủi ro bất định cao mà phần lớn nhà đầu tư chưa nhìn ra.</p>
-        <a href="brief-01.html" class="link">Đọc · 10 phút</a>
+        <a href="brief-01" class="link">Đọc · 10 phút</a>
       </div>
       <div>
         <div class="kicker" style="display:block;margin-bottom:4px;">Đọc chậm</div>
         <p style="font-size:13px;color:var(--stone);margin:0 0 16px;font-style:italic;">Đọc trước khi xuống tiền — bốn góc nhìn nên biết.</p>
         <div class="kb">
-          <a href="quy-hoach-2050.html"><span><span class="kb-t">Quy hoạch 2050</span><br><span class="kb-s">Nam Ban trên bản đồ mới của Lâm Đồng</span></span><span class="kb-n">→</span></a>
-          <a href="tiem-nang-dau-tu.html"><span><span class="kb-t">Tiềm năng đầu tư</span><br><span class="kb-s">Cơ hội &amp; rủi ro, đọc qua lăng kính toàn cảnh</span></span><span class="kb-n">→</span></a>
-          <a href="namban-index.html"><span><span class="kb-t">Namban Index · T6/2026</span><br><span class="kb-s">Giá thực tế, tín hiệu và nhận định tháng này</span></span><span class="kb-n">→</span></a>
-          <a href="brief-01.html"><span><span class="kb-t">Brief #01</span><br><span class="kb-s">Ai đang mua Nam Ban — và ai đang mua đúng</span></span><span class="kb-n">→</span></a>
+          <a href="quy-hoach-2050"><span><span class="kb-t">Quy hoạch 2050</span><br><span class="kb-s">Nam Ban trên bản đồ mới của Lâm Đồng</span></span><span class="kb-n">→</span></a>
+          <a href="tiem-nang-dau-tu"><span><span class="kb-t">Tiềm năng đầu tư</span><br><span class="kb-s">Cơ hội &amp; rủi ro, đọc qua lăng kính toàn cảnh</span></span><span class="kb-n">→</span></a>
+          <a href="namban-index"><span><span class="kb-t">Namban Index · T6/2026</span><br><span class="kb-s">Giá thực tế, tín hiệu và nhận định tháng này</span></span><span class="kb-n">→</span></a>
+          <a href="brief-01"><span><span class="kb-t">Brief #01</span><br><span class="kb-s">Ai đang mua Nam Ban — và ai đang mua đúng</span></span><span class="kb-n">→</span></a>
         </div>
       </div>
     </div>
@@ -528,7 +528,7 @@ function quizResult(btn, q2ans) {
   try{
     var st=window.PM_STATE||{};
     if((st.visits||0)>=3 || (st.read||[]).length>=3){
-      note.innerHTML='B\u1ea1n \u0111\u00e3 \u0111\u1ecdc kh\u00e1 nhi\u1ec1u v\u1ec1 Nam Ban. N\u1ebfu \u0111ang xem m\u1ed9t t\u00e0i s\u1ea3n c\u1ee5 th\u1ec3 \u2014 <a href="trao-doi.html">trao \u0111\u1ed5i tr\u1ef1c ti\u1ebfp</a> c\u00f3 th\u1ec3 nhanh h\u01a1n.';
+      note.innerHTML='B\u1ea1n \u0111\u00e3 \u0111\u1ecdc kh\u00e1 nhi\u1ec1u v\u1ec1 Nam Ban. N\u1ebfu \u0111ang xem m\u1ed9t t\u00e0i s\u1ea3n c\u1ee5 th\u1ec3 \u2014 <a href="trao-doi">trao \u0111\u1ed5i tr\u1ef1c ti\u1ebfp</a> c\u00f3 th\u1ec3 nhanh h\u01a1n.';
       note.classList.add('show');
       sessionStorage.setItem('geoShown','1');
     }
