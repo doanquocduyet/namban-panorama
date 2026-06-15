@@ -1,0 +1,21 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/quy-hoach-nam-ban", "destination": "/quy-hoach-2050", "permanent": true },
+    { "source": "/gia-dat-nam-ban", "destination": "/namban-index", "permanent": true },
+    { "source": "/co-nen-mua-dat-nam-ban", "destination": "/tiem-nang-dau-tu", "permanent": true },
+    { "source": "/ai-dang-mua-nam-ban", "destination": "/brief-01", "permanent": true },
+    { "source": "/nam-ban-hay-bao-loc", "destination": "/so-sanh-nam-ban-bao-loc-da-lat", "permanent": true },
+    { "source": "/truoc-khi-mua-dat-nam-ban", "destination": "/truoc-khi-xuong-tien", "permanent": true },
+    { "source": "/cau-hoi-thuong-gap", "destination": "/hoi-nhanh", "permanent": true },
+    { "source": "/song-o-nam-ban", "destination": "/hoi-nhanh", "permanent": true },
+    { "source": "/bo-pho-ve-nam-ban", "destination": "/hoi-nhanh", "permanent": true },
+    { "source": "/second-home-gan-da-lat", "destination": "/so-sanh-nam-ban-bao-loc-da-lat", "permanent": true },
+    { "source": "/dau-tu-dat-nam-ban", "destination": "/tiem-nang-dau-tu", "permanent": true },
+    { "source": "/nam-ban-co-dang-song", "destination": "/hoi-nhanh", "permanent": true },
+    { "source": "/khi-hau-nam-ban", "destination": "/hoi-nhanh", "permanent": true },
+    { "source": "/nam-ban-o-dau", "destination": "/quy-hoach-2050", "permanent": true },
+    { "source": "/nam-ban-cach-da-lat-bao-xa", "destination": "/so-sanh-nam-ban-bao-loc-da-lat", "permanent": true }
+  ]
+}
