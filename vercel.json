@@ -121,6 +121,21 @@
       "source": "/doc-nhanh-nam-ban",
       "destination": "/doc-nhanh",
       "permanent": true
+    },
+    {
+      "source": "/cau-chuyen",
+      "destination": "/cau-chuyen-nam-ban",
+      "permanent": true
+    },
+    {
+      "source": "/nguoi-nam-ban",
+      "destination": "/cau-chuyen-nam-ban",
+      "permanent": true
+    },
+    {
+      "source": "/people-of-namban",
+      "destination": "/cau-chuyen-nam-ban",
+      "permanent": true
     }
   ]
 }
