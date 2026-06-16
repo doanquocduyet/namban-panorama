@@ -117,6 +117,7 @@
   }
 </style>
 <link rel="stylesheet" href="panorama-article.css">
+<link rel="stylesheet" href="nav.css">
   <script defer data-domain="nambanpanorama.com" src="https://plausible.io/js/script.js"></script>
 
 <script type="application/ld+json">
@@ -150,7 +151,6 @@
   ]
 }
 </script>
-<style>.logo-intel{font-family:'Be Vietnam Pro',sans-serif;font-style:normal;font-weight:400;font-size:9.5px;letter-spacing:3px;text-transform:uppercase;color:var(--stone);margin-left:7px;opacity:1;vertical-align:middle;}</style>
 </head>
 <body>
 
@@ -170,9 +170,27 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <nav>
   <div class="navin">
     <a class="logo" href="/">Namban Panorama<span class="logo-intel">Intelligence</span></a>
-    <a class="back" href="/">← Trang chủ</a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="navlinks" id="navlinks">
+      <a href="quy-hoach-2050">Quy hoạch</a>
+      <a href="namban-index">Giá đất</a>
+      <a href="doc-nhanh">Đọc nhanh</a>
+      <a href="cau-chuyen-nam-ban">Câu chuyện</a>
+      <a href="trao-doi">Trao đổi</a>
+    </div>
   </div>
 </nav>
+
+<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+<button class="mobile-close" id="mobileClose" onclick="toggleMenu()" aria-label="Đóng">×</button>
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-logo">Panorama</span>
+  <a href="quy-hoach-2050" onclick="toggleMenu()">Quy hoạch</a>
+  <a href="namban-index" onclick="toggleMenu()">Giá đất</a>
+  <a href="doc-nhanh" onclick="toggleMenu()">Đọc nhanh</a>
+  <a href="cau-chuyen-nam-ban" onclick="toggleMenu()">Câu chuyện</a>
+  <a href="trao-doi" onclick="toggleMenu()">Trao đổi</a>
+</div>
 
 <div class="art-header">
   <div class="issue-line">
@@ -380,6 +398,22 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
     }
   }
 })();
+</script>
+<script>
+function toggleMenu(){
+  var m=document.getElementById('mobileMenu');
+  var ov=document.getElementById('menuOverlay');
+  var cl=document.getElementById('mobileClose');
+  var hb=document.querySelector('.hamburger');
+  var open=m.classList.toggle('open');
+  if(ov)ov.classList.toggle('open',open);
+  if(cl)cl.classList.toggle('open',open);
+  if(hb)hb.classList.toggle('is-open',open);
+  document.body.style.overflow=open?'hidden':'';
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){var m=document.getElementById('mobileMenu');if(m&&m.classList.contains('open'))toggleMenu();}
+});
 </script>
 </body>
 </html>
