@@ -110,8 +110,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.88);backdrop-
 .cta-box .cta-links a:hover{background:var(--clay);border-color:var(--clay);}
 
 footer{background:var(--ink);color:#cabfab;padding:48px 24px;text-align:center;}
-footer .manifesto{font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:var(--paper);margin-bottom:10px;}
-footer .contact-line{font-size:12.5px;color:#b3a892;margin-bottom:14px;letter-spacing:.3px;}
+footer footer .contact-line{font-size:12.5px;color:#b3a892;margin-bottom:14px;letter-spacing:.3px;}
 footer .contact-line a{color:var(--clay-soft);text-decoration:none;}
 footer .contact-line a:hover{color:var(--paper);}
 footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
@@ -128,25 +127,16 @@ footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
 
 /* ── Panorama View box ── */
 .pano-view{margin:40px 0;padding:22px 26px;border-left:2px solid var(--forest);background:rgba(47,64,52,.03);}
-.pano-view .pv-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--forest);font-weight:500;margin-bottom:12px;}
-.pano-view p{font-size:14.5px;color:var(--ink);line-height:1.65;margin:0;}
+.pano-view .pano-view p{font-size:14.5px;color:var(--ink);line-height:1.65;margin:0;}
 
 /* ── Memory Quote — điều đáng nhớ ── */
-.memory-quote{margin:44px 0 32px;padding:0;text-align:center;}
 .memory-quote p{font-family:'Fraunces',serif;font-style:italic;font-size:17px;color:var(--muted);line-height:1.55;max-width:48ch;margin:0 auto;letter-spacing:.1px;}
 
 /* ── Uncertainty box — điều chưa chắc ── */
-.uncertainty{margin:32px 0;padding:20px 24px;border:1px dashed var(--stone);border-radius:3px;background:transparent;}
-.uncertainty .uc-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--stone);font-weight:500;margin-bottom:10px;}
-.uncertainty p{font-size:14px;color:var(--muted);line-height:1.6;margin:0;}
+.uncertainty .uncertainty p{font-size:14px;color:var(--muted);line-height:1.6;margin:0;}
 
 /* ── A Better Question ── */
-.better-question{margin:36px 0;padding:22px 28px;background:var(--card);border:1px solid var(--line);border-radius:3px;}
-.better-question .bq-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--clay);font-weight:500;margin-bottom:14px;}
-.better-question .bq-instead{font-size:13.5px;color:var(--stone);margin-bottom:6px;font-style:italic;}
-.better-question .bq-ask{font-family:'Fraunces',serif;font-size:16.5px;color:var(--ink);line-height:1.45;margin:0;font-style:italic;}
-
-/* ── Đọc gì tiếp theo — hành trình nhận thức ── */
+.better-question .better-question .better-question /* ── Đọc gì tiếp theo — hành trình nhận thức ── */
 .next-read{max-width:680px;margin:48px auto 0;padding:0 40px;}
 .next-read-progress{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);margin-bottom:6px;}
 .next-read-done{font-size:14px;color:var(--muted);margin-bottom:24px;font-style:italic;}
@@ -160,3 +150,5 @@ footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
 @media(max-width:680px){
   .next-read{padding:0 24px;}
 }
+
+.ds-p{font-size:16.5px;line-height:1.7;color:var(--ink);margin-bottom:20px;}
