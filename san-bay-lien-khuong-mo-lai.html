@@ -50,6 +50,7 @@
   ]
 }
 </script>
+<style>.logo-intel{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:0.62em;color:var(--clay);letter-spacing:.3px;opacity:.85;}</style>
 </head>
 <body>
 <script>
@@ -67,13 +68,13 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 <nav>
   <div class="navin">
-    <a class="logo" href="/">Namban Panorama</a>
+    <a class="logo" href="/">Namban Panorama<span class="logo-intel"> intelligence</span></a>
     <a class="back" href="/">← Trang chủ</a>
   </div>
 </nav>
 
-<figure style="max-width:1000px;margin:0 auto 8px;padding:0 24px;">
-  <img loading="eager" decoding="async" src="images/lien-khuong-mo-lai.jpg" alt="Sân bay Liên Khương sắp mở cửa trở lại cuối tháng 8/2026 — nhìn qua cửa sổ máy bay xuống thung lũng cao nguyên Lâm Đồng" style="width:100%;height:auto;border-radius:4px;">
+<figure style="max-width:680px;margin:0 auto 8px;padding:0 24px;">
+  <img loading="eager" decoding="async" src="images/lien-khuong-mo-lai.jpg" alt="Sân bay Liên Khương sắp mở cửa trở lại cuối tháng 8/2026 — nhìn qua cửa sổ máy bay xuống thung lũng cao nguyên Lâm Đồng" style="width:100%;height:auto;border-radius:6px;box-shadow:0 2px 16px rgba(30,42,32,.12);">
 </figure>
 
 <div class="art-header">
@@ -93,8 +94,10 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
   <p>Khi cửa ngõ đó đóng, mọi thứ xa thêm một chút. Khi nó mở lại, mọi thứ gần lại một chút.</p>
 
-  <figure style="margin:36px auto;max-width:560px;">
-    <img loading="lazy" decoding="async" src="images/van-ban-lien-khuong.jpg" alt="Văn bản số 2042 của Tổng công ty Cảng hàng không Việt Nam về việc khai thác trở lại Cảng hàng không quốc tế Liên Khương từ 00h00 ngày 19/8/2026" style="width:100%;height:auto;border:1px solid var(--line);border-radius:4px;">
+  <figure style="margin:32px auto;max-width:420px;">
+    <div style="border:1px solid var(--line);border-radius:8px;padding:14px;background:var(--card);box-shadow:0 1px 10px rgba(30,42,32,.06);">
+      <img loading="lazy" decoding="async" src="images/van-ban-lien-khuong.jpg" alt="Văn bản số 2042 của Tổng công ty Cảng hàng không Việt Nam về việc khai thác trở lại Cảng hàng không quốc tế Liên Khương từ 00h00 ngày 19/8/2026" style="width:100%;height:auto;border-radius:4px;display:block;">
+    </div>
     <figcaption style="font-size:12.5px;color:var(--stone);text-align:center;margin-top:10px;font-style:italic;">Văn bản của Tổng công ty Cảng hàng không Việt Nam, ký ngày 12/6/2026.</figcaption>
   </figure>
 
@@ -125,7 +128,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <div class="next-read">
   <div class="next-read-progress">Đọc gì tiếp theo</div>
   <div class="next-read-done">Bạn vừa đọc: <b>Sân bay Liên Khương mở lại</b></div>
-  <a href="nam-ban-co-hop-voi-ban-khong" class="next-card">
+  <a href="nam-ban-co-hop-voi-ban" class="next-card">
     <div class="next-card-step">Nếu bạn đang nghĩ tới chuyện ghé Nam Ban</div>
     <div class="next-card-title">Nam Ban có hợp với bạn không?</div>
     <div class="next-card-desc">Không phải bài về Nam Ban — mà về điều bạn đang tìm ở một nơi như thế này.</div>
