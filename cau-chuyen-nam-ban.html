@@ -7,14 +7,14 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>Câu chuyện Nam Ban — những con người thật ở một vùng đất | Namban Panorama</title>
-<meta name="description" content="Những con người thật đã chọn Nam Ban: vì sao họ đến, điều gì giữ họ ở lại, và họ đã học được gì. Câu chuyện của người rời phố lên cao nguyên.">
-<meta name="keywords" content="câu chuyện Nam Ban, người Nam Ban, người Sài Gòn lên Nam Ban, bỏ phố về Nam Ban, người thật ở Nam Ban, cuộc sống Nam Ban">
+<meta name="description" content="Những câu chuyện thật về người Nam Ban: người rời thành phố lên cao nguyên, người ở lại, người chọn một nhịp sống khác. Chân dung và câu chuyện cộng đồng.">
+<meta name="keywords" content="câu chuyện Nam Ban, người Nam Ban, người rời Sài Gòn lên Nam Ban, cuộc sống Nam Ban, bỏ phố về Nam Ban, người thật Nam Ban">
 <meta name="geo.placename" content="Nam Ban, Lâm Hà, Lâm Đồng">
 <meta name="geo.region" content="VN-LB">
 <link rel="canonical" href="https://nambanpanorama.com/cau-chuyen-nam-ban">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Câu chuyện Nam Ban — những con người thật">
-<meta property="og:description" content="Vì sao họ đến, điều gì giữ họ ở lại. Những con người thật đã chọn một vùng đất.">
+<meta property="og:description" content="Người rời thành phố lên cao nguyên, người ở lại, người chọn một nhịp sống khác. Những câu chuyện thật ở Nam Ban.">
 <meta property="og:image" content="https://nambanpanorama.com/og-image.jpg">
 <meta property="og:url" content="https://nambanpanorama.com/cau-chuyen-nam-ban">
 <meta property="og:site_name" content="Namban Panorama">
@@ -27,6 +27,7 @@
 <script defer data-domain="nambanpanorama.com" src="https://plausible.io/js/script.js"></script>
 <style>
   .idx-wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .idx-list{margin:8px 0 0;}
   .idx-card{display:block;text-decoration:none;color:inherit;padding:26px 0;border-bottom:1px solid var(--line);transition:padding-left .25s ease;}
   .idx-card:hover{padding-left:8px;}
   .idx-card:last-child{border-bottom:none;}
@@ -35,9 +36,9 @@
   .idx-card:hover .idx-title{color:var(--forest);}
   .idx-desc{font-size:14.5px;line-height:1.6;color:var(--muted);}
   .idx-meta{font-size:12.5px;color:var(--stone);margin-top:9px;font-style:italic;font-family:'Fraunces',serif;}
-  .coming{max-width:760px;margin:40px auto 0;padding:24px;border:1px dashed var(--line);border-radius:10px;text-align:center;}
-  .coming-t{font-family:'Fraunces',serif;font-style:italic;font-size:17px;color:var(--forest);margin-bottom:6px;}
-  .coming-d{font-size:13.5px;color:var(--muted);line-height:1.6;}
+  .cs-soon{margin-top:14px;padding:22px 24px;background:var(--card);border:1px solid var(--line);border-radius:10px;}
+  .cs-soon-label{font-family:'Be Vietnam Pro',sans-serif;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--stone);margin-bottom:8px;}
+  .cs-soon p{font-size:14.5px;line-height:1.65;color:var(--muted);margin:0;}
   @media(max-width:680px){ .idx-title{font-size:21px;} }
 </style>
 </head>
@@ -55,27 +56,9 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <nav>
   <div class="navin">
     <a class="logo" href="/">Namban Panorama</a>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
-    <div class="navlinks" id="navlinks">
-      <a href="quy-hoach-2050">Quy hoạch</a>
-      <a href="namban-index">Giá đất</a>
-      <a href="doc-nhanh">Đọc nhanh</a>
-      <a href="cau-chuyen-nam-ban">Câu chuyện</a>
-      <a href="trao-doi">Trao đổi</a>
-    </div>
+    <a class="back" href="/">← Trang chủ</a>
   </div>
 </nav>
-
-<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
-<button class="mobile-close" id="mobileClose" onclick="toggleMenu()" aria-label="Đóng">×</button>
-<div class="mobile-menu" id="mobileMenu">
-  <span class="mobile-logo">Panorama</span>
-  <a href="quy-hoach-2050" onclick="toggleMenu()">Quy hoạch</a>
-  <a href="namban-index" onclick="toggleMenu()">Giá đất</a>
-  <a href="doc-nhanh" onclick="toggleMenu()">Đọc nhanh</a>
-  <a href="cau-chuyen-nam-ban" onclick="toggleMenu()">Câu chuyện</a>
-  <a href="trao-doi" onclick="toggleMenu()">Trao đổi</a>
-</div>
 
 <div class="art-header">
   <div class="issue-line">
@@ -83,7 +66,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
     <span class="issue-date">Nam Ban · Lâm Hà</span>
   </div>
   <h1>Câu chuyện Nam Ban</h1>
-  <p class="standfirst">Một vùng đất được kể rõ nhất qua những con người đã chọn nó. Vì sao họ đến, điều gì giữ họ ở lại, và họ đã học được gì sau khi rời thành phố lên cao nguyên.</p>
+  <p class="standfirst">Một vùng đất được làm nên bởi những con người ở đó. Đây là chuyện của họ — người rời thành phố lên cao nguyên, người ở lại, người chọn một nhịp sống khác với phần còn lại.</p>
 </div>
 
 <div class="idx-wrap">
@@ -93,24 +76,30 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
       <div class="idx-kicker">Người Nam Ban · 01</div>
       <div class="idx-title">Người rời Sài Gòn và mảnh vườn anh không tính trước</div>
       <div class="idx-desc">Một người làm phần mềm ở Sài Gòn chọn Nam Ban thay vì Đà Lạt. Chuyện bỏ phố, làm cà phê, và một nhịp sống khác.</div>
-      <div class="idx-meta">6 phút đọc</div>
+      <div class="idx-meta">Chân dung · 6 phút đọc</div>
     </a>
 
   </div>
 
-  <div class="coming">
-    <div class="coming-t">Còn nhiều câu chuyện đang được viết tiếp</div>
-    <div class="coming-d">Người Nhật chọn Nam Ban, gia đình trẻ đưa con lên cao nguyên, người về hưu tìm một nơi an yên, người làm vườn từ con số không. Mỗi người một lý do — và Panorama sẽ kể dần.</div>
+  <div class="cs-soon">
+    <div class="cs-soon-label">Đang viết tiếp</div>
+    <p>Panorama đang gặp và ghi lại câu chuyện của những người Nam Ban khác — người Hà Nội giữ nghề tơ tằm mấy chục năm, gia đình trẻ đưa con lên cao nguyên, người về hưu chọn một buổi sáng yên. Những câu chuyện thật, từ người thật, sẽ lần lượt xuất hiện ở đây.</p>
   </div>
 </div>
 
 <div class="next-read" style="margin-top:48px;">
   <div class="next-read-progress">Đọc gì tiếp theo</div>
-  <div class="next-read-done">Những câu chuyện này có thể khiến bạn tự hỏi:</div>
+  <div class="next-read-done">Nếu bạn đang tự hỏi liệu Nam Ban có hợp với mình:</div>
   <a href="nam-ban-co-hop-voi-ban" class="next-card">
-    <div class="next-card-step">Câu hỏi cho chính bạn</div>
+    <div class="next-card-step">Tự soi</div>
     <div class="next-card-title">Không phải ai cũng hợp với Nam Ban</div>
-    <div class="next-card-desc">Nơi này có dành cho bạn không — đọc trước khi quyết định.</div>
+    <div class="next-card-desc">Dành cho ai đang cân nhắc chuyển từ thành phố lên cao nguyên.</div>
+    <span class="next-card-arrow">→</span>
+  </a>
+  <a href="doc-nhanh" class="next-card">
+    <div class="next-card-step">Hoặc</div>
+    <div class="next-card-title">Đọc nhanh — vài phút để hiểu Nam Ban</div>
+    <div class="next-card-desc">Một ngày ở Nam Ban, có đáng sống không, đặc sản và tin tức.</div>
     <span class="next-card-arrow">→</span>
   </a>
 </div>
@@ -127,21 +116,5 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   <div class="meta">NAMBAN PANORAMA &nbsp;·&nbsp; nambanpanorama.com</div>
 </footer>
 
-<script>
-function toggleMenu(){
-  var m=document.getElementById('mobileMenu');
-  var ov=document.getElementById('menuOverlay');
-  var cl=document.getElementById('mobileClose');
-  var hb=document.querySelector('.hamburger');
-  var open=m.classList.toggle('open');
-  if(ov)ov.classList.toggle('open',open);
-  if(cl)cl.classList.toggle('open',open);
-  if(hb)hb.classList.toggle('is-open',open);
-  document.body.style.overflow=open?'hidden':'';
-}
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'){var m=document.getElementById('mobileMenu');if(m&&m.classList.contains('open'))toggleMenu();}
-});
-</script>
 </body>
 </html>
