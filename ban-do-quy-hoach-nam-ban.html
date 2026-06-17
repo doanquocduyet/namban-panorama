@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Bản đồ quy hoạch Nam Ban 2050 — vùng nào nên và không nên xuống tiền | Namban Panorama</title>
+<meta name="description" content="Báo cáo đọc quy hoạch chung Nam Ban đến 2050: 4 phân khu, vùng nào được xây nhà ở, vùng nào bảo tồn rừng không nên mua. Nhận bản đầy đủ kèm bản đồ phân vùng.">
+<meta name="keywords" content="quy hoạch Nam Ban, quy hoạch Nam Ban 2050, quy hoạch Lâm Hà, đô thị loại III Nam Ban, quy hoạch có làm tăng giá đất">
+<meta name="geo.placename" content="Nam Ban, Lâm Hà, Lâm Đồng">
+<meta name="geo.region" content="VN-LB">
+<link rel="canonical" href="https://nambanpanorama.com/ban-do-quy-hoach-nam-ban">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bản đồ quy hoạch Nam Ban 2050 — vùng nào nên/không nên xuống tiền">
+<meta property="og:description" content="Đọc quy hoạch để tránh mua nhầm đất không xây được. Báo cáo + bản đồ 4 phân khu.">
+<meta property="og:image" content="https://nambanpanorama.com/images/nam-ban-toan-canh.jpg">
+<meta property="og:url" content="https://nambanpanorama.com/ban-do-quy-hoach-nam-ban">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Be+Vietnam+Pro:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="panorama-article.css">
+<link rel="stylesheet" href="nav.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Quy hoạch Nam Ban đến 2050 chia thành mấy phân khu?","acceptedAnswer":{"@type":"Answer","text":"Theo hồ sơ quy hoạch chung xã Nam Ban Lâm Hà đến 2050 đang lấy ý kiến, khu vực được tổ chức thành 4 phân khu: trung tâm hành chính - văn hóa; sinh thái Núi Voi (nghỉ dưỡng, thiền định); cửa ngõ phía Nam phát triển đô thị mới; và sinh thái phía Đông Bắc bảo tồn rừng."}},
+{"@type":"Question","name":"Mua đất Nam Ban ở đâu thì xây nhà ở được?","acceptedAnswer":{"@type":"Answer","text":"Đất ở tập trung mật độ cao tại lõi thị trấn Nam Ban cũ và dọc trục đường ĐT.725, đang lan tỏa sang khu giáp ranh. Các khu thuộc phân khu bảo tồn rừng phía Đông Bắc về nguyên tắc không phát triển đất ở. Nên đối chiếu vị trí lô đất với bản đồ phân khu trước khi mua."}},
+{"@type":"Question","name":"Nam Ban có lên thành phố/phường không?","acceptedAnswer":{"@type":"Answer","text":"Hồ sơ quy hoạch định hướng Nam Ban Lâm Hà trở thành xã nông thôn mới hiện đại, định hướng lên Phường và đô thị loại III trong tương lai. Đây là định hướng quy hoạch, chưa phải mốc thời gian đã chốt."}}
+]}
+</script>
+<style>
+.wrap{max-width:1080px;margin:0 auto;padding:0 40px;}
+/* NAV */
+  nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+.navin{display:flex;align-items:center;justify-content:space-between;height:72px;}
+.logo{font-family:'Fraunces',serif;font-weight:500;font-size:20px;letter-spacing:1.8px;}
+.logo i{font-style:normal;color:var(--clay);}
+.navlinks{display:flex;gap:38px;align-items:center;font-size:13px;color:var(--muted);font-weight:400;letter-spacing:.3px;}
+.navlinks a{position:relative;transition:color .25s ease;padding-bottom:2px;}
+.navlinks a:hover{color:var(--forest);}
+.navlinks a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--clay);transition:width .28s ease;}
+.navlinks a:hover::after{width:100%;}
+.navlinks a{color:inherit;text-decoration:none;transition:color .25s;}
+.navlinks a:hover{color:var(--ink);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:transform .3s ease,opacity .2s ease;trans-origin:center;}
+.hamburger.is-open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.hamburger.is-open span:nth-child(2){opacity:0;}
+.hamburger.is-open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+/* Overlay tối nhẹ phủ toàn trang khi mở menu */
+  .menu-overlay{position:fixed;inset:0;background:rgba(26,24,21,.28);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);z-index:999;opacity:0;visibility:hidden;transition:opacity .4s ease,visibility .4s;}
+.menu-overlay.open{opacity:1;visibility:visible;}
+/* Panel trượt từ phải, chiếm ~70% rộng, nền mờ kính */
+  .mobile-menu{position:fixed;top:0;right:0;bottom:0;width:72%;max-width:340px;height:100vh;height:100dvh;background:rgba(244,240,232,.86);backdrop-filter:blur(22px) saturate(1.2);-webkit-backdrop-filter:blur(22px) saturate(1.2);border-left:1px solid rgba(157,93,56,.14);box-shadow:-18px 0 50px rgba(26,24,21,.16);z-index:1000;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:0;padding:0 0 0 40px;opacity:1;visibility:hidden;transform:translateX(100%);transition:transform .44s cubic-bezier(.22,.61,.36,1),visibility .44s;}
+.mobile-menu.open{visibility:visible;transform:translateX(0);}
+.mobile-logo{font-family:'Fraunces',serif;font-style:italic;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:var(--clay);margin-bottom:34px;opacity:0;transition:opacity .5s ease .2s;}
+.mobile-menu.open .mobile-logo{opacity:1;}
+.mobile-menu a{font-family:'Fraunces',serif;font-size:25px;font-weight:300;color:var(--ink);text-decoration:none;letter-spacing:.2px;padding:15px 0;opacity:0;transform:translateX(18px);transition:opacity .5s ease,transform .5s cubic-bezier(.22,.61,.36,1),color .2s;}
+.mobile-menu.open a{opacity:1;transform:translateX(0);}
+.mobile-menu.open a:nth-of-type(1){transition-delay:.14s;}
+.mobile-menu.open a:nth-of-type(2){transition-delay:.20s;}
+.mobile-menu.open a:nth-of-type(3){transition-delay:.26s;}
+.mobile-menu.open a:nth-of-type(4){transition-delay:.32s;}
+.mobile-menu.open a:nth-of-type(5){transition-delay:.38s;}
+.mobile-menu a:active,.mobile-menu a:hover{color:var(--clay);}
+.mobile-close{position:fixed;top:20px;right:22px;width:42px;height:42px;font-size:26px;color:var(--ink);cursor:pointer;background:rgba(244,240,232,.6);border:1px solid rgba(157,93,56,.18);border-radius:50%;line-height:0;padding:0;z-index:1001;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .4s ease .1s,visibility .4s,transform .3s;}
+.mobile-close.open{opacity:1;visibility:visible;}
+.mobile-close:active{transform:rotate(90deg);}
+.wrap{padding:0 24px;}
+.navlinks{display:none;}
+.hamburger{display:flex;}
+</style>
+</head>
+<nav>
+  <div class="navin">
+    <a class="logo" href="/">Namban Panorama<span class="logo-intel">Intelligence</span></a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="navlinks" id="navlinks">
+      <a href="quy-hoach-2050">Quy hoạch</a>
+      <a href="namban-index">Giá đất</a>
+      <a href="doc-nhanh">Đọc nhanh</a>
+      <a href="cau-chuyen-nam-ban">Câu chuyện</a>
+      <a href="trao-doi">Trao đổi</a>
+    </div>
+  </div>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+<button class="mobile-close" id="mobileClose" onclick="toggleMenu()" aria-label="Đóng">×</button>
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-logo">Panorama</span>
+  <a href="quy-hoach-2050" onclick="toggleMenu()">Quy hoạch</a>
+  <a href="namban-index" onclick="toggleMenu()">Giá đất</a>
+  <a href="doc-nhanh" onclick="toggleMenu()">Đọc nhanh</a>
+  <a href="cau-chuyen-nam-ban" onclick="toggleMenu()">Câu chuyện</a>
+  <a href="trao-doi" onclick="toggleMenu()">Trao đổi</a>
+</div>
+<article class="art-body">
+<div class="art-header">
+  <div class="issue-line">
+    <span class="issue-badge">Báo cáo · Quy hoạch</span>
+    <span class="issue-date">Cập nhật tháng 6, 2026</span>
+  </div>
+  <h1>Bản đồ quy hoạch Nam Ban đến 2050:<br>vùng nào nên, vùng nào không nên xuống tiền</h1>
+  <p class="art-subtitle" style="font-size:14px;color:var(--stone);margin:-8px 0 18px;letter-spacing:.2px;">Đọc quy hoạch trước khi mua, để không mua nhầm đất không xây được nhà.</p>
+  <p class="standfirst">Phần lớn người mua đất ở Nam Ban xem cảnh trước, xem quy hoạch sau — hoặc không xem. Báo cáo này làm ngược lại: đặt tấm bản đồ quy hoạch lên bàn trước, rồi mới nói chuyện lô đất. Vì một lô đẹp nằm sai phân khu có thể là lô không bao giờ xây được nhà.</p>
+</div>
+
+<p>Hồ sơ <strong>Quy hoạch chung xã Nam Ban Lâm Hà, tỉnh Lâm Đồng đến năm 2050</strong> hiện đang trong giai đoạn lấy ý kiến các sở, ban ngành. Đây là tài liệu định hình Nam Ban sẽ phát triển ra sao trong 25 năm tới — và quan trọng với người mua đất: nó cho biết khu vực nào được phép phát triển đất ở, khu vực nào để bảo tồn rừng, khu vực nào dành cho nghỉ dưỡng.</p>
+
+<p>Dưới đây là phần cốt lõi người chuẩn bị xuống tiền cần biết. Lưu ý: vì hồ sơ đang lấy ý kiến, các ranh giới có thể còn điều chỉnh trước khi phê duyệt cuối — nên đây là tài liệu để <em>tham khảo và đặt câu hỏi đúng</em>, không phải để kết luận thay cho việc kiểm tra pháp lý từng lô.</p>
+
+<h2 style="font-family:'Fraunces',serif;font-weight:500;font-size:26px;margin:38px 0 16px;">Nam Ban trong quy hoạch mới: con số nền</h2>
+
+<p>Sau sáp nhập, xã Nam Ban Lâm Hà gồm các khu vực Đông Thanh, Mê Linh, Gia Lâm và thị trấn Nam Ban cũ, với:</p>
+
+<p>• Diện tích tự nhiên: <strong>117,53 km²</strong> (11.753 ha).<br>
+• Dân số: <strong>32.770 người</strong> (số liệu 2025), trong đó đồng bào dân tộc thiểu số 3.189 người (9,75%).<br>
+• Độ cao: <strong>800–1.000m</strong> so với mực nước biển, trên thềm chuyển tiếp giữa cao nguyên và bình nguyên.<br>
+• Khí hậu: nhiệt độ trung bình năm <strong>18–25°C</strong>, thấp nhất khoảng 12°C (tháng 12–1), đất đỏ bazan phì nhiêu.<br>
+• Định hướng: trở thành xã nông thôn mới hiện đại, <strong>định hướng lên Phường và đô thị loại III</strong> trong tương lai.</p>
+
+<p class="pull">Quy hoạch không chia Nam Ban thành "đất đẹp" và "đất xấu". Nó chia thành các phân khu có chức năng khác nhau — và đó mới là thứ quyết định bạn xây được gì trên mảnh đất của mình.</p>
+
+<h2 style="font-family:'Fraunces',serif;font-weight:500;font-size:26px;margin:38px 0 16px;">Bốn phân khu — và ý nghĩa với người mua đất</h2>
+
+<p>Quy hoạch tổ chức không gian Nam Ban thành <strong>bốn phân khu chức năng</strong>. Hiểu lô đất mình quan tâm thuộc phân khu nào là bước đầu tiên, trước cả chuyện giá:</p>
+
+<p><strong>1. Phân khu trung tâm hành chính – chính trị – văn hóa.</strong> Khu vực lõi quanh thị trấn Nam Ban cũ, giữ vai trò hạt nhân hành chính. Đây là nơi mật độ đô thị hóa cao nhất, hạ tầng tập trung nhất.</p>
+
+<p><strong>2. Phân khu sinh thái Núi Voi.</strong> Định hướng nghỉ dưỡng, thiền định, chăm sóc sức khỏe. Đây là vùng gắn với cảnh quan Núi Voi – Thác Voi, phù hợp loại hình lưu trú sinh thái hơn là phân lô ở dày đặc.</p>
+
+<p><strong>3. Phân khu cửa ngõ phía Nam.</strong> Định hướng phát triển đô thị mới và dân cư tập trung. Đây là hướng mở rộng đô thị — khu vực đáng chú ý với người tìm đất ở có khả năng lên thổ cư theo lộ trình đô thị hóa.</p>
+
+<p><strong>4. Phân khu sinh thái phía Đông Bắc.</strong> Bảo tồn rừng và phát triển kinh tế dưới tán rừng. Đây là vùng cần <strong>thận trọng nhất</strong> với mục đích mua để xây nhà ở: chức năng chính là bảo tồn, không phải phát triển đất ở.</p>
+
+<p>Một điểm thực tế quan trọng từ hồ sơ: đất ở hiện tập trung mật độ cao tại <strong>lõi thị trấn Nam Ban cũ và dọc trục đường ĐT.725</strong>, và đang có sự lan tỏa đô thị hóa sang các khu giáp ranh. Nói cách khác, càng gần lõi và trục ĐT.725, khả năng là đất ở / lên thổ cư càng rõ; càng xa về phía vùng bảo tồn, rủi ro "đất không xây được" càng cao.</p>
+
+<h2 style="font-family:'Fraunces',serif;font-weight:500;font-size:26px;margin:38px 0 16px;">Hiện trạng đất: vì sao đất ở Nam Ban khan và đắt dần</h2>
+
+<p>Cơ cấu sử dụng đất hiện tại giải thích vì sao đất ở được giá. Trên tổng 11.753 ha:</p>
+
+<p>• Đất nông nghiệp: <strong>10.559 ha (89,84%)</strong> — phần lớn là đất trồng cây lâu năm (6.784 ha, chủ yếu cà phê) và đất lâm nghiệp (2.894 ha).<br>
+• Đất phi nông nghiệp: chỉ <strong>1.185 ha (10,08%)</strong> — và đây là nhóm "có giá trị kinh tế cao, biến động mạnh nhất".<br>
+• Trong đó <strong>đất ở chỉ 472,69 ha (4,02%)</strong> toàn xã — chia ra đất ở nông thôn 306 ha và đất ở đô thị 166,5 ha.</p>
+
+<p>Con số 4% đất ở trên toàn xã nói lên nhiều điều: đất để xây nhà ở Nam Ban là phần rất nhỏ và đang chịu áp lực đô thị hóa. Đây là lý do thật khiến đất thổ cư gần trung tâm có giá, và cũng là lý do người mua dễ bị chào "đất nông nghiệp giá rẻ" rồi tưởng sẽ lên thổ cư dễ dàng — trong khi điều đó phụ thuộc hoàn toàn vào việc lô đất nằm ở phân khu nào.</p>
+
+<h2 style="font-family:'Fraunces',serif;font-weight:500;font-size:26px;margin:38px 0 16px;">Báo cáo đầy đủ gồm gì</h2>
+
+<p>Phần trên là bản tóm tắt. Báo cáo đầy đủ Panorama gửi riêng cho bạn gồm:</p>
+
+<p>• <strong>Bản đồ phân vùng 4 phân khu</strong> chú thích rõ ranh giới và chức năng từng vùng (đang cập nhật từ hồ sơ gốc).<br>
+• Bảng <strong>"nên / cân nhắc / thận trọng"</strong> theo mục đích mua (để ở, đầu tư giữ đất, làm nghỉ dưỡng).<br>
+• Danh sách <strong>câu hỏi pháp lý cần hỏi</strong> trước khi đặt cọc bất kỳ lô nào (quy hoạch, thổ cư, đường, hành lang).<br>
+• Các <strong>dấu hiệu nhận biết</strong> lô đất bị thổi giá hoặc quảng cáo sai về khả năng lên thổ cư.</p>
+
+<div class="lead-form" id="leadForm" style="background:var(--card);border:1px solid var(--line);border-radius:12px;padding:34px 30px;margin:34px 0 10px;">
+  <div style="font-family:'Fraunces',serif;font-size:23px;font-weight:500;margin-bottom:8px;">Nhận báo cáo đầy đủ + bản đồ phân khu</div>
+  <p style="font-size:14.5px;color:var(--muted);line-height:1.65;margin-bottom:22px;">Để lại tên và số điện thoại (Zalo). Panorama gửi riêng cho bạn báo cáo đầy đủ kèm bản đồ phân vùng, và sẵn sàng trả lời câu hỏi về lô đất cụ thể bạn đang cân nhắc. Không gửi rác, không làm phiền.</p>
+  <input type="text" id="lm-ten" placeholder="Tên của bạn" style="width:100%;padding:13px 16px;margin-bottom:13px;border:1px solid var(--line);background:var(--paper);font-family:inherit;font-size:15px;border-radius:7px;">
+  <input type="tel" id="lm-sdt" placeholder="Số điện thoại / Zalo" style="width:100%;padding:13px 16px;margin-bottom:13px;border:1px solid var(--line);background:var(--paper);font-family:inherit;font-size:15px;border-radius:7px;">
+  <input type="text" id="lm-vung" placeholder="Bạn đang quan tâm khu nào? (không bắt buộc)" style="width:100%;padding:13px 16px;margin-bottom:18px;border:1px solid var(--line);background:var(--paper);font-family:inherit;font-size:15px;border-radius:7px;">
+  <button onclick="submitLead()" style="background:var(--forest-deep);color:var(--paper);border:none;padding:14px 30px;font-family:inherit;font-size:14.5px;letter-spacing:.4px;cursor:pointer;border-radius:7px;transition:background .2s;width:100%;">Gửi cho tôi báo cáo</button>
+  <p id="lm-thanks" style="display:none;color:var(--forest);margin-top:16px;font-size:14.5px;line-height:1.6;">Đã nhận thông tin của bạn. Panorama sẽ gửi báo cáo qua Zalo/điện thoại trong thời gian sớm nhất. Cảm ơn bạn đã quan tâm.</p>
+</div>
+
+<p style="font-size:13px;color:var(--stone);line-height:1.6;margin-top:18px;">Lưu ý: thông tin trong báo cáo dựa trên hồ sơ quy hoạch chung Nam Ban đến 2050 đang trong giai đoạn lấy ý kiến. Đây là tài liệu tham khảo để đặt câu hỏi đúng, không thay thế cho việc kiểm tra pháp lý chính thức từng thửa đất tại cơ quan có thẩm quyền.</p>
+
+<div class="next-read">
+  <div class="next-read-progress">Đọc tiếp</div>
+  <div class="next-read-done">Trước khi quyết định, đọc thêm:</div>
+  <a href="truoc-khi-xuong-tien" class="next-card">
+    <div class="next-card-step">Cẩm nang</div>
+    <div class="next-card-title">Những điều cần biết trước khi xuống tiền mua đất Nam Ban</div>
+    <div class="next-card-desc">Các bước kiểm tra pháp lý và rủi ro thường gặp.</div>
+    <span class="next-card-arrow">→</span>
+  </a>
+  <a href="quy-hoach-2050" class="next-card">
+    <div class="next-card-step">Phân tích</div>
+    <div class="next-card-title">Quy hoạch Nam Ban 2050 có làm giá đất tăng không?</div>
+    <div class="next-card-desc">Đọc định hướng phát triển và tác động lên giá đất.</div>
+    <span class="next-card-arrow">→</span>
+  </a>
+</div>
+</article>
+
+<footer>
+  <div class="contact-line">
+    <a href="trao-doi" style="color:var(--clay-soft);text-decoration:none;font-size:13px;letter-spacing:.3px;">Trao đổi trực tiếp →</a>
+    &nbsp;·&nbsp;
+    Liên hệ:
+    <a href="mailto:nambanpanorama@gmail.com">nambanpanorama@gmail.com</a>
+    &nbsp;·&nbsp;
+    <a href="tel:0978758788">0978 758 788</a>
+  </div>
+  <div class="meta">NAMBAN PANORAMA &nbsp;·&nbsp; nambanpanorama.com</div>
+</footer>
+
+<script>
+function submitLead(){
+  var ten=document.getElementById('lm-ten').value.trim();
+  var sdt=document.getElementById('lm-sdt').value.trim();
+  var vung=document.getElementById('lm-vung').value.trim();
+  if(!ten||!sdt){ alert('Vui lòng nhập tên và số điện thoại.'); return; }
+  fetch('https://docs.google.com/forms/d/e/1FAIpQLSejyXVjRk8TQCtNIrZijGeZxaoJaeA3VCccpW4PAi87BRVAzg/formResponse',{
+    method:'POST', mode:'no-cors',
+    headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    body:new URLSearchParams({'entry.260173030':ten,'entry.2084374895':sdt,'entry.418514546':'[Lead Magnet quy hoạch] '+(vung||'')})
+  });
+  setTimeout(function(){
+    document.getElementById('lm-thanks').style.display='block';
+    document.getElementById('lm-ten').value='';
+    document.getElementById('lm-sdt').value='';
+    document.getElementById('lm-vung').value='';
+  },700);
+}
+</script>
+</body>
+</html>
