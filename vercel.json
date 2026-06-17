@@ -151,6 +151,21 @@
       "source": "/dat-nam-ban-co-xay-duoc-khong",
       "destination": "/ban-do-quy-hoach-nam-ban",
       "permanent": true
+    },
+    {
+      "source": "/doc-lo",
+      "destination": "/doc-lo-dat",
+      "permanent": true
+    },
+    {
+      "source": "/danh-gia-lo-dat",
+      "destination": "/doc-lo-dat",
+      "permanent": true
+    },
+    {
+      "source": "/panorama-selection",
+      "destination": "/doc-lo-dat",
+      "permanent": true
     }
   ]
 }
