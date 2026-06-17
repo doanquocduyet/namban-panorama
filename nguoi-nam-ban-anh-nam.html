@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Anh Nam — người ở lại Nam Ban sau mùa cà phê đầu tiên | Câu chuyện Namban Panorama</title>
+<meta name="description" content="Chân dung anh Nam — một người đến Nam Ban định ở thử một mùa, rồi ở lại. Câu chuyện thật về chọn đất, chọn nhịp sống, và những gì không ai nói trước.">
+<meta name="keywords" content="người Sài Gòn lên Nam Ban, bỏ phố về Nam Ban, cuộc sống ở Nam Ban, người bỏ phố lên rừng, làm vườn ở Nam Ban">
+<meta name="geo.placename" content="Nam Ban, Lâm Hà, Lâm Đồng">
+<meta name="geo.region" content="VN-LB">
+<link rel="canonical" href="https://nambanpanorama.com/nguoi-nam-ban-anh-nam">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Anh Nam — người ở lại Nam Ban sau mùa đầu tiên">
+<meta property="og:description" content="Đến để thử một mùa, rồi ở lại. Câu chuyện thật về một người chọn Nam Ban.">
+<meta property="og:image" content="https://nambanpanorama.com/og-image.jpg">
+<meta property="og:url" content="https://nambanpanorama.com/nguoi-nam-ban-anh-nam">
+<meta property="og:site_name" content="Namban Panorama">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nambanpanorama.com/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Be+Vietnam+Pro:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="panorama-article.css">
+<link rel="stylesheet" href="nav.css">
+<script defer data-domain="nambanpanorama.com" src="https://plausible.io/js/script.js"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Sống ở Nam Ban có buồn không?","acceptedAnswer":{"@type":"Answer","text":"Nam Ban yên và chậm, ít chỗ giải trí. Với người quen nhịp thành phố, vài tuần đầu có thể thấy trống. Nhưng nhiều người ở lại lâu lại thấy đó là cái họ cần. Buồn hay yên tùy vào điều bạn đang tìm."}},
+{"@type":"Question","name":"Người thành phố lên Nam Ban sống cần chuẩn bị gì?","acceptedAnswer":{"@type":"Answer","text":"Quan trọng nhất là thử ở thật một thời gian trước khi mua đất hay chuyển hẳn. Một mùa mưa, một mùa khô, để biết mình có hợp nhịp sống ở đây không, trước khi xuống tiền."}}
+]}
+</script>
+<style>
+.wrap{max-width:1080px;margin:0 auto;padding:0 40px;}
+/* NAV */
+  nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+.navin{display:flex;align-items:center;justify-content:space-between;height:72px;}
+.logo{font-family:'Fraunces',serif;font-weight:500;font-size:20px;letter-spacing:1.8px;}
+.logo i{font-style:normal;color:var(--clay);}
+.navlinks{display:flex;gap:38px;align-items:center;font-size:13px;color:var(--muted);font-weight:400;letter-spacing:.3px;}
+.navlinks a{position:relative;transition:color .25s ease;padding-bottom:2px;}
+.navlinks a:hover{color:var(--forest);}
+.navlinks a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--clay);transition:width .28s ease;}
+.navlinks a:hover::after{width:100%;}
+.navlinks a{color:inherit;text-decoration:none;transition:color .25s;}
+.navlinks a:hover{color:var(--ink);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:transform .3s ease,opacity .2s ease;trans-origin:center;}
+.hamburger.is-open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.hamburger.is-open span:nth-child(2){opacity:0;}
+.hamburger.is-open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+/* Overlay tối nhẹ phủ toàn trang khi mở menu */
+  .menu-overlay{position:fixed;inset:0;background:rgba(26,24,21,.28);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);z-index:999;opacity:0;visibility:hidden;transition:opacity .4s ease,visibility .4s;}
+.menu-overlay.open{opacity:1;visibility:visible;}
+/* Panel trượt từ phải, chiếm ~70% rộng, nền mờ kính */
+  .mobile-menu{position:fixed;top:0;right:0;bottom:0;width:72%;max-width:340px;height:100vh;height:100dvh;background:rgba(244,240,232,.86);backdrop-filter:blur(22px) saturate(1.2);-webkit-backdrop-filter:blur(22px) saturate(1.2);border-left:1px solid rgba(157,93,56,.14);box-shadow:-18px 0 50px rgba(26,24,21,.16);z-index:1000;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:0;padding:0 0 0 40px;opacity:1;visibility:hidden;transform:translateX(100%);transition:transform .44s cubic-bezier(.22,.61,.36,1),visibility .44s;}
+.mobile-menu.open{visibility:visible;transform:translateX(0);}
+.mobile-logo{font-family:'Fraunces',serif;font-style:italic;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:var(--clay);margin-bottom:34px;opacity:0;transition:opacity .5s ease .2s;}
+.mobile-menu.open .mobile-logo{opacity:1;}
+.mobile-menu a{font-family:'Fraunces',serif;font-size:25px;font-weight:300;color:var(--ink);text-decoration:none;letter-spacing:.2px;padding:15px 0;opacity:0;transform:translateX(18px);transition:opacity .5s ease,transform .5s cubic-bezier(.22,.61,.36,1),color .2s;}
+.mobile-menu.open a{opacity:1;transform:translateX(0);}
+.mobile-menu.open a:nth-of-type(1){transition-delay:.14s;}
+.mobile-menu.open a:nth-of-type(2){transition-delay:.20s;}
+.mobile-menu.open a:nth-of-type(3){transition-delay:.26s;}
+.mobile-menu.open a:nth-of-type(4){transition-delay:.32s;}
+.mobile-menu.open a:nth-of-type(5){transition-delay:.38s;}
+.mobile-menu a:active,.mobile-menu a:hover{color:var(--clay);}
+.mobile-close{position:fixed;top:20px;right:22px;width:42px;height:42px;font-size:26px;color:var(--ink);cursor:pointer;background:rgba(244,240,232,.6);border:1px solid rgba(157,93,56,.18);border-radius:50%;line-height:0;padding:0;z-index:1001;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .4s ease .1s,visibility .4s,transform .3s;}
+.mobile-close.open{opacity:1;visibility:visible;}
+.mobile-close:active{transform:rotate(90deg);}
+.wrap{padding:0 24px;}
+.navlinks{display:none;}
+.hamburger{display:flex;}
+</style>
+</head>
+<nav>
+  <div class="navin">
+    <a class="logo" href="/">Namban Panorama</a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="navlinks" id="navlinks">
+      <a href="quy-hoach-2050">Quy hoạch</a>
+      <a href="namban-index">Giá đất</a>
+      <a href="doc-nhanh">Đọc nhanh</a>
+      <a href="cau-chuyen-nam-ban">Câu chuyện</a>
+      <a href="trao-doi">Trao đổi</a>
+    </div>
+  </div>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+<button class="mobile-close" id="mobileClose" onclick="toggleMenu()" aria-label="Đóng">×</button>
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-logo">Panorama</span>
+  <a href="quy-hoach-2050" onclick="toggleMenu()">Quy hoạch</a>
+  <a href="namban-index" onclick="toggleMenu()">Giá đất</a>
+  <a href="doc-nhanh" onclick="toggleMenu()">Đọc nhanh</a>
+  <a href="cau-chuyen-nam-ban" onclick="toggleMenu()">Câu chuyện</a>
+  <a href="trao-doi" onclick="toggleMenu()">Trao đổi</a>
+</div>
+<article class="art-body">
+<div class="art-header">
+  <div class="issue-line">
+    <span class="issue-badge">Người Nam Ban · 02</span>
+    <span class="issue-date">Tháng 6, 2026</span>
+  </div>
+  <h1>Anh Nam,<br>và mùa cà phê khiến anh ở lại</h1>
+  <p class="art-subtitle" style="font-size:14px;color:var(--stone);margin:-8px 0 18px;letter-spacing:.2px;">Một người đến Nam Ban định ở thử một mùa. Rồi anh không về nữa.</p>
+  <p class="standfirst">Có người đến Nam Ban để mua đất. Có người đến chỉ để xem thử mình sống ở đây được không. Anh Nam thuộc nhóm thứ hai — và đó có lẽ là lý do anh ở lại được.</p>
+</div>
+
+<p>Anh Nam đến Nam Ban lần đầu không phải để tìm đất. Anh đến để nghỉ vài hôm, sau một quãng dài thấy mình mệt với nhịp sống cũ — <span style="color:var(--stone)">[chú điền: anh Nam trước làm gì, ở đâu — ví dụ "làm xây dựng ở Bình Dương", "buôn bán ở Sài Gòn"]</span>. Anh nói anh không có ý định gì lớn lao. Chỉ là muốn xem một nơi yên tĩnh thì sống ra sao.</p>
+
+<p>Điều giữ anh lại không phải một khung cảnh đẹp. Nam Ban có cảnh, nhưng cảnh thì nơi nào trên cao nguyên cũng có. Cái khác, theo lời anh, là <strong>nhịp</strong>. Buổi sáng ở đây không ai vội. Người ta ra vườn sớm, làm tới trưa, nghỉ, rồi chiều làm tiếp. Một ngày dài hơn, nhưng nhẹ hơn.</p>
+
+<p class="pull">"Tôi tưởng mình cần nghỉ ngơi. Hóa ra tôi cần một nhịp sống khác. Hai cái đó không giống nhau."</p>
+
+<p>Anh kể mùa đầu tiên không dễ. <span style="color:var(--stone)">[chú điền: khó khăn thật của anh Nam mùa đầu — ví dụ "mưa kéo dài cả tháng", "chưa quen việc vườn", "nhớ tiện nghi thành phố"]</span>. Có lúc anh đã nghĩ hay là về. Nhưng anh quyết định ở thêm — anh muốn biết cảm giác trống trải ban đầu là vì nơi này không hợp, hay chỉ vì mình chưa quen.</p>
+
+<p>Qua mùa mưa, anh có câu trả lời. Không phải nơi này thiếu gì — mà là trước đây anh quen lấp đầy mọi khoảng trống bằng việc bận rộn. Khi không còn gì để vội, anh phải học cách ở yên. Anh nói đó là thứ khó nhất, và cũng là thứ đáng giá nhất anh học được ở Nam Ban.</p>
+
+<p>Về chuyện đất, anh làm chậm. Anh không mua ngay trong chuyến đầu — anh thuê ở thử <span style="color:var(--stone)">[chú điền: anh ở thử bao lâu trước khi mua — ví dụ "gần một năm"]</span> rồi mới quyết. Anh bảo anh thấy nhiều người lên đây mua vội vì thích cảnh, rồi vài tháng sau bán lại vì không sống nổi. Anh không muốn thành một trong số đó.</p>
+
+<p>Khi anh mua, anh chọn <span style="color:var(--stone)">[chú điền: loại đất/khu anh Nam chọn và vì sao — ví dụ "một lô gần trung tâm để tiện đi lại, không phải lô view xa đẹp nhưng vắng"]</span>. Anh nói đất đẹp để ngắm và đất hợp để sống là hai chuyện khác nhau — và anh chọn cái thứ hai.</p>
+
+<p>Bây giờ <span style="color:var(--stone)">[chú điền: hiện anh Nam làm gì ở Nam Ban — trồng gì, sống thế nào]</span>. Anh không nói mình đã tìm thấy thiên đường. Anh chỉ nói anh thấy ngày của mình bây giờ có nghĩa hơn ngày trước kia. Với anh, vậy là đủ.</p>
+
+<p>Hỏi anh có khuyên người khác lên Nam Ban không, anh ngần ngừ. Rồi anh nói: đừng lên vì một tấm ảnh đẹp. Hãy lên ở thử đã. Nếu sau một mùa bạn vẫn thấy dễ thở, thì hẵng tính chuyện lâu dài. Còn nếu thấy bứt rứt, thì biết sớm còn hơn.</p>
+
+<p>Đó có lẽ là lời thật nhất một người ở Nam Ban có thể nói với người đang phân vân: nơi này không dành cho tất cả mọi người, và cách duy nhất để biết bạn có thuộc về nó không, là đến và ở lại đủ lâu.</p>
+
+<div class="next-read">
+  <div class="next-read-progress">Đọc tiếp</div>
+  <div class="next-read-done">Câu chuyện của một người khác, ở cùng vùng đất:</div>
+  <a href="roi-sai-gon-len-nam-ban" class="next-card">
+    <div class="next-card-step">Người Nam Ban · 01</div>
+    <div class="next-card-title">Người rời Sài Gòn và mảnh vườn anh không tính trước</div>
+    <div class="next-card-desc">Một người làm phần mềm chọn Nam Ban thay vì Đà Lạt.</div>
+    <span class="next-card-arrow">→</span>
+  </a>
+  <a href="nam-ban-co-hop-voi-ban" class="next-card">
+    <div class="next-card-step">Tự soi</div>
+    <div class="next-card-title">Không phải ai cũng hợp với Nam Ban</div>
+    <div class="next-card-desc">Dành cho ai đang cân nhắc một nhịp sống khác.</div>
+    <span class="next-card-arrow">→</span>
+  </a>
+</div>
+</article>
+
+<footer>
+  <div class="contact-line">
+    <a href="trao-doi" style="color:var(--clay-soft);text-decoration:none;font-size:13px;letter-spacing:.3px;">Trao đổi trực tiếp →</a>
+    &nbsp;·&nbsp;
+    Liên hệ:
+    <a href="mailto:nambanpanorama@gmail.com">nambanpanorama@gmail.com</a>
+    &nbsp;·&nbsp;
+    <a href="tel:0978758788">0978 758 788</a>
+  </div>
+  <div class="meta">NAMBAN PANORAMA &nbsp;·&nbsp; nambanpanorama.com</div>
+</footer>
+
+</body>
+</html>
