@@ -136,6 +136,21 @@
       "source": "/people-of-namban",
       "destination": "/cau-chuyen-nam-ban",
       "permanent": true
+    },
+    {
+      "source": "/ban-do-quy-hoach",
+      "destination": "/ban-do-quy-hoach-nam-ban",
+      "permanent": true
+    },
+    {
+      "source": "/quy-hoach-phan-khu",
+      "destination": "/ban-do-quy-hoach-nam-ban",
+      "permanent": true
+    },
+    {
+      "source": "/dat-nam-ban-co-xay-duoc-khong",
+      "destination": "/ban-do-quy-hoach-nam-ban",
+      "permanent": true
     }
   ]
 }
