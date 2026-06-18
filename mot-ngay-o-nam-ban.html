@@ -218,6 +218,16 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   </a>
 </div>
 
+<div class="share-row">
+  <button class="share-btn" onclick="panoramaShare(this)" aria-label="Chia sẻ bài viết">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle>
+      <line x1="8.6" y1="13.5" x2="15.4" y2="17.5"></line><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"></line>
+    </svg>
+    <span class="share-label">Share</span>
+  </button>
+</div>
+
 <footer>
   <div class="contact-line">
     <a href="trao-doi" style="color:var(--clay-soft);text-decoration:none;font-size:13px;letter-spacing:.3px;">Trao đổi trực tiếp →</a>
@@ -254,6 +264,9 @@ function toggleMenu(){
 document.addEventListener('keydown',function(e){
   if(e.key==='Escape'){var m=document.getElementById('mobileMenu');if(m&&m.classList.contains('open'))toggleMenu();}
 });
+</script>
+<script>
+function panoramaShare(btn){var url=window.location.href;var title=document.title;if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});}else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){var lbl=btn.querySelector('.share-label');if(!lbl)return;var old=lbl.textContent;lbl.textContent='Đã sao chép';setTimeout(function(){lbl.textContent=old;},2000);}).catch(function(){});}}
 </script>
 </body>
 </html>
