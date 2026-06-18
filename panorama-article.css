@@ -152,3 +152,12 @@ footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
 }
 
 .ds-p{font-size:16.5px;line-height:1.7;color:var(--ink);margin-bottom:20px;}
+
+
+/* === Nút Share cuối bài (PHIẾU 01) === */
+.share-row{display:flex;justify-content:center;margin:40px 0 8px;}
+.share-btn{display:inline-flex;align-items:center;gap:9px;background:transparent;border:1px solid var(--line);color:var(--muted);font-family:'Be Vietnam Pro',sans-serif;font-weight:400;font-size:13px;letter-spacing:.4px;padding:10px 22px;border-radius:999px;cursor:pointer;transition:color .25s,border-color .25s,background .25s;}
+.share-btn:hover{color:var(--forest);border-color:var(--clay-soft);background:var(--card);}
+.share-btn svg{opacity:.75;transition:opacity .25s;}
+.share-btn:hover svg{opacity:1;}
+.share-label{line-height:1;}
