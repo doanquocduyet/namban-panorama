@@ -1,0 +1,37 @@
+name: IndexNow ping
+on:
+  push:
+    branches: [main]
+    paths: ['**/*.html']
+permissions:
+  contents: read
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Submit changed URLs to IndexNow
+        run: |
+          set -e
+          HOST="nambanpanorama.com"
+          KEY="15ab1e4bb51370bfbbfb7e62f63ea85f"
+          BEFORE="${{ github.event.before }}"
+          SHA="${{ github.sha }}"
+          if git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
+            CHANGED=$(git diff --name-only "$BEFORE" "$SHA" -- '*.html')
+          else
+            CHANGED=$(git diff --name-only HEAD~1 HEAD -- '*.html' || true)
+          fi
+          URLS=""
+          for f in $CHANGED; do
+            [ -f "$f" ] || continue
+            slug="${f%.html}"
+            if [ "$slug" = "index" ]; then u="https://$HOST/"; else u="https://$HOST/$slug"; fi
+            if [ -z "$URLS" ]; then URLS="\"$u\""; else URLS="$URLS,\"$u\""; fi
+          done
+          if [ -z "$URLS" ]; then echo "No HTML changes to submit"; exit 0; fi
+          BODY="{\"host\":\"$HOST\",\"key\":\"$KEY\",\"keyLocation\":\"https://$HOST/$KEY.txt\",\"urlList\":[$URLS]}"
+          echo "Body: $BODY"
+          curl -sS -X POST "https://api.indexnow.org/indexnow" -H "Content-Type: application/json; charset=utf-8" -d "$BODY" -w "\nHTTP %{http_code}\n"
