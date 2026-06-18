@@ -113,7 +113,7 @@ footer{background:var(--ink);color:#cabfab;padding:48px 24px;text-align:center;}
 footer footer .contact-line{font-size:12.5px;color:#b3a892;margin-bottom:14px;letter-spacing:.3px;}
 footer .contact-line a{color:var(--clay-soft);text-decoration:none;}
 footer .contact-line a:hover{color:var(--paper);}
-footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
+footer .meta{font-size:11px;letter-spacing:.8px;opacity:.34;}
 
 @media(max-width:680px){
   .art-header,.art-body,.hero-photo{padding-left:24px;padding-right:24px;}
