@@ -166,6 +166,26 @@
       "source": "/panorama-selection",
       "destination": "/doc-lo-dat",
       "permanent": true
+    },
+    {
+      "source": "/index-good",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/namban-panorama-v2",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/namban-intelligence-homepage",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/namban-intelligence-homepage-v2",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }
