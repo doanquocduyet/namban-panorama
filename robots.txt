@@ -1,7 +1,17 @@
 # robots.txt — Namban Panorama
-# Mở cho mọi search engine + AI crawler (web nội dung, muốn được trích nguồn)
+# Mục tiêu: ĐƯỢC TÌM THẤY TỐI ĐA.
+# Mở cho mọi công cụ tìm kiếm (Google, Bing, Coc Coc, Yandex...) + bot chia sẻ link
+# (Zalo, Facebook, Messenger) + bot AI có trích nguồn. Chỉ chặn các bot SEO/scraper
+# tào lao: không mang khách, chỉ cào ăn tài nguyên.
 
+# ---- Bot AI: MỞ (được AI trích nguồn = thêm một kênh được tìm thấy) ----
 User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
 Allow: /
 
 User-agent: ClaudeBot
@@ -16,12 +26,42 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-User-agent: Bingbot
-Allow: /
-
 User-agent: Applebot-Extended
 Allow: /
 
+# ---- Công cụ tìm kiếm: MỞ ----
+User-agent: Bingbot
+Allow: /
+
+User-agent: coccocbot
+Allow: /
+
+# ---- CHẶN bot SEO/scraper tào lao (không giúp được tìm thấy, chỉ tốn tài nguyên) ----
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: rogerbot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+# ---- Mặc định: CHO PHÉP TẤT CẢ (Google, Coc Coc, Zalo, Facebook, Messenger...) ----
 User-agent: *
 Allow: /
 
