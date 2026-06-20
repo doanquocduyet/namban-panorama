@@ -179,6 +179,16 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   </div>
 </div>
 
+<div class="share-row">
+  <button class="share-btn" onclick="panoramaShare(this)" aria-label="Chia sẻ bài viết">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle>
+      <line x1="8.6" y1="13.5" x2="15.4" y2="17.5"></line><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"></line>
+    </svg>
+    <span class="share-label">Share</span>
+  </button>
+</div>
+
 <div class="next-read" style="margin-top:48px;">
   <div class="next-read-progress">Muốn đi sâu hơn?</div>
   <div class="next-read-done">Đây là những bài đọc nhanh. Khi cần phân tích kỹ hơn:</div>
@@ -190,15 +200,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   </a>
 </div>
 
-<div class="share-row">
-  <button class="share-btn" onclick="panoramaShare(this)" aria-label="Chia sẻ bài viết">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle>
-      <line x1="8.6" y1="13.5" x2="15.4" y2="17.5"></line><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"></line>
-    </svg>
-    <span class="share-label">Share</span>
-  </button>
-</div>
+
 
 <footer>
   <div class="contact-line">
