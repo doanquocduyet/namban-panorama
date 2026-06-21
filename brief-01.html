@@ -424,7 +424,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   var hidden = 0;
   cards.forEach(function(c){
     var href = c.getAttribute('href');
-    if(read.indexOf(href) > -1 && href !== 'trao-doi.html'){
+    if(read.indexOf(href) > -1 && href !== 'trao-doi'){
       c.style.opacity = '0.5';
       var step = c.querySelector('.next-card-step');
       if(step) step.textContent = '\u0110\u00e3 \u0111\u1ecdc \u2713';
@@ -436,7 +436,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
     var nr = document.querySelector('.next-read');
     if(nr && !document.getElementById('pm-ready')){
       var box = document.createElement('a');
-      box.href = 'trao-doi.html';
+      box.href = 'trao-doi';
       box.id = 'pm-ready';
       box.className = 'next-card';
       box.style.borderColor = 'var(--clay)';
