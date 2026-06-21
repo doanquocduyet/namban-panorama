@@ -167,3 +167,11 @@ footer .meta{font-size:11px;letter-spacing:.8px;opacity:.34;}
 .art-back{max-width:720px;margin:0 auto;padding:20px 40px 0;}
 .art-back a{display:inline-flex;align-items:center;gap:6px;font-family:'Be Vietnam Pro',sans-serif;font-size:13px;color:var(--muted);text-decoration:none;letter-spacing:.2px;transition:color .2s;}
 .art-back a:hover{color:var(--forest);}
+
+/* Nut lien he noi - trang y dinh cao */
+.fab-contact{position:fixed;right:18px;bottom:18px;z-index:90;width:54px;height:54px;border-radius:50%;background:rgba(30,42,32,.70);border:1.5px solid var(--forest-deep);display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 6px 18px rgba(26,24,21,.16);transition:transform .25s,box-shadow .25s;}
+.fab-contact:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(26,24,21,.24);}
+.fab-contact svg{width:23px;height:23px;}
+.fab-contact .fab-lbl{position:absolute;right:62px;top:50%;transform:translateY(-50%);background:var(--ink);color:#f3eee3;font-family:'Be Vietnam Pro',sans-serif;font-size:11.5px;letter-spacing:.3px;padding:6px 11px;border-radius:3px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .25s;}
+.fab-contact:hover .fab-lbl{opacity:.96;}
+@media(max-width:780px){.fab-contact{width:50px;height:50px;right:14px;bottom:14px;}.fab-contact .fab-lbl{display:none;}}
