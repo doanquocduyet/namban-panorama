@@ -94,6 +94,7 @@
 .hamburger{display:flex;}
 </style>
 <link rel="alternate" type="application/rss+xml" title="Namban Panorama" href="https://nambanpanorama.com/feed.xml">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://nambanpanorama.com/"}, {"@type": "ListItem", "position": 2, "name": "Không phải ai cũng hợp với Nam Ban", "item": "https://nambanpanorama.com/nam-ban-co-hop-voi-ban"}]}</script>
 </head>
 <body>
 <script>
@@ -136,6 +137,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   <a href="trao-doi" onclick="toggleMenu()">Trao đổi</a>
 </div>
 
+<div class="art-back"><a href="/" onclick="if(document.referrer&&document.referrer.indexOf(location.hostname)>-1){history.back();return false;}">← Quay lại</a></div>
 <div class="art-header">
   <div class="issue-line">
     <span class="issue-badge">Có thể không dành cho bạn</span>
