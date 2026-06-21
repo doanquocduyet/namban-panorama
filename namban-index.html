@@ -219,7 +219,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
       <a href="quy-hoach-2050">Quy hoạch</a>
       <a href="namban-index">Giá đất</a>
       <a href="doc-lo-dat">Đọc lô đất</a>
-      <a href="doc-nhanh">Đọc nhanh</a>
+      <a href="bat-dau">Bắt đầu từ đây</a>
       <a href="cau-chuyen-nam-ban">Câu chuyện</a>
       <a href="trao-doi">Trao đổi</a>
     </div>
@@ -233,7 +233,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   <a href="quy-hoach-2050" onclick="toggleMenu()">Quy hoạch</a>
   <a href="namban-index" onclick="toggleMenu()">Giá đất</a>
   <a href="doc-lo-dat" onclick="toggleMenu()">Đọc lô đất</a>
-  <a href="doc-nhanh" onclick="toggleMenu()">Đọc nhanh</a>
+  <a href="bat-dau" onclick="toggleMenu()">Bắt đầu từ đây</a>
   <a href="cau-chuyen-nam-ban" onclick="toggleMenu()">Câu chuyện</a>
   <a href="trao-doi" onclick="toggleMenu()">Trao đổi</a>
 </div>
@@ -463,5 +463,6 @@ document.addEventListener('keydown',function(e){
 <script>
 function panoramaShare(btn){var url=window.location.href;var title=document.title;if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});}else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){var lbl=btn.querySelector('.share-label');if(!lbl)return;var old=lbl.textContent;lbl.textContent='Đã sao chép';setTimeout(function(){lbl.textContent=old;},2000);}).catch(function(){});}}
 </script>
+<a href="trao-doi" class="fab-contact" aria-label="Trao đổi với người ở đây"><span class="fab-lbl">Trao đổi với người ở đây</span><span class="fab-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#e7e0d2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a7.5 7.5 0 0 1-10.9 6.7L4 19.5l1.3-4.1A7.5 7.5 0 1 1 20 11.5Z"/></svg></span></a>
 </body>
 </html>
