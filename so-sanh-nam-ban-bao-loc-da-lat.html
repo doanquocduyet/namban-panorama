@@ -223,7 +223,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   var st=window.PM_STATE||{};var read=st.read||[];
   document.querySelectorAll('.next-card').forEach(function(c){
     var href=c.getAttribute('href');
-    if(read.indexOf(href)>-1&&href!=='trao-doi.html'){c.style.opacity='0.5';var s=c.querySelector('.next-card-step');if(s)s.textContent='Đã đọc ✓';}
+    if(read.indexOf(href)>-1&&href!=='trao-doi'){c.style.opacity='0.5';var s=c.querySelector('.next-card-step');if(s)s.textContent='Đã đọc ✓';}
   });
 })();
 </script>
