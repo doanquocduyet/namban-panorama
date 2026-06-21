@@ -228,6 +228,10 @@
 .fab-contact .fab-lbl{position:absolute;right:62px;top:50%;transform:translateY(-50%);background:var(--ink);color:#f3eee3;font-family:'Be Vietnam Pro',sans-serif;font-size:11.5px;letter-spacing:.3px;padding:6px 11px;border-radius:3px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .25s;}
 .fab-contact:hover .fab-lbl{opacity:.96;}
 @media(max-width:780px){.fab-contact{width:50px;height:50px;right:14px;bottom:14px;}.fab-contact .fab-lbl{display:none;}}
+
+@media(max-width:780px){.qopt{padding:9px 13px;font-size:12.5px;line-height:1.34;font-weight:400;letter-spacing:0;}}
+@media(min-width:781px) and (max-width:1080px){.wrap{max-width:880px;}}
+.nav-cta{border:1px solid var(--clay);color:var(--clay)!important;padding:4px 14px;border-radius:20px;}
 </style>
   <script defer data-domain="nambanpanorama.com" src="https://plausible.io/js/script.js"></script>
 
@@ -267,7 +271,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
       <a href="namban-index">Giá đất</a>
       <a href="bat-dau">Bắt đầu từ đây</a>
       <a href="cau-chuyen-nam-ban">Câu chuyện</a>
-      <a href="trao-doi">Trao đổi</a>
+      <a href="trao-doi" class="nav-cta">Trao đổi</a>
     </div>
   </div>
 
@@ -296,10 +300,10 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
           <div class="quiz-step">Câu 1 / 2</div>
           <p class="quiz-label">Bạn đang nhìn Nam Ban theo góc nào?</p>
           <div class="quiz-opts">
-            <button class="qopt" onclick="quizNext(this,'a')">Tôi đang tìm hiểu vùng đất này, chưa có kế hoạch cụ thể</button>
-            <button class="qopt" onclick="quizNext(this,'b')">Tôi muốn có một chỗ để trốn khỏi thành phố cuối tuần</button>
-            <button class="qopt" onclick="quizNext(this,'c')">Tôi đang cân nhắc đầu tư, muốn hiểu rõ trước khi quyết định</button>
-            <button class="qopt" onclick="quizNext(this,'d')">Tôi đang tìm một tài sản cụ thể để nghiên cứu</button>
+            <button class="qopt" onclick="quizNext(this,'a')">Đang tìm hiểu vùng đất này, chưa có kế hoạch cụ thể</button>
+            <button class="qopt" onclick="quizNext(this,'b')">Tìm chỗ trốn thành phố cuối tuần</button>
+            <button class="qopt" onclick="quizNext(this,'c')">Đang cân nhắc đầu tư, muốn hiểu rõ trước khi quyết định</button>
+            <button class="qopt" onclick="quizNext(this,'d')">Xem vài tài sản cụ thể để tham khảo</button>
           </div>
         </div>
       </div>
