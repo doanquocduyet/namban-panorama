@@ -213,6 +213,21 @@
   .geo-note a:hover{border-color:var(--forest);}
   .geo-note.show{display:block;animation:geoFade .6s ease;}
   @keyframes geoFade{from{opacity:0;}to{opacity:1;}}
+
+.reco-pick{display:flex;align-items:center;justify-content:space-between;gap:14px;text-decoration:none;background:#fff;border:1px solid var(--line);border-left:2px solid var(--clay);border-radius:4px;padding:15px 17px;margin-top:14px;transition:transform .25s,box-shadow .25s;}
+.reco-pick:hover{transform:translateX(3px);box-shadow:0 4px 16px rgba(26,24,21,.08);}
+.reco-pick .rp-k{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--clay);display:block;margin-bottom:5px;}
+.reco-pick .rp-t{font-family:'Fraunces',serif;font-size:16px;color:var(--ink);line-height:1.3;}
+.reco-pick .rp-a{font-family:'Fraunces',serif;font-size:19px;color:var(--clay);flex-shrink:0;}
+.reco-urgent{border-left-color:var(--forest);background:var(--card);}
+.reco-urgent .rp-k{color:var(--forest);}
+.quiz-cap{font-size:11.5px;color:var(--stone);margin:9px 2px 0;font-style:italic;}
+.fab-contact{position:fixed;right:18px;bottom:18px;z-index:90;width:54px;height:54px;border-radius:50%;background:rgba(30,42,32,.70);border:1.5px solid var(--forest-deep);display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 6px 18px rgba(26,24,21,.16);transition:transform .25s,box-shadow .25s;}
+.fab-contact:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(26,24,21,.24);}
+.fab-contact svg{width:23px;height:23px;}
+.fab-contact .fab-lbl{position:absolute;right:62px;top:50%;transform:translateY(-50%);background:var(--ink);color:#f3eee3;font-family:'Be Vietnam Pro',sans-serif;font-size:11.5px;letter-spacing:.3px;padding:6px 11px;border-radius:3px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .25s;}
+.fab-contact:hover .fab-lbl{opacity:.96;}
+@media(max-width:780px){.fab-contact{width:50px;height:50px;right:14px;bottom:14px;}.fab-contact .fab-lbl{display:none;}}
 </style>
   <script defer data-domain="nambanpanorama.com" src="https://plausible.io/js/script.js"></script>
 
@@ -498,51 +513,52 @@ function quizNext(btn, ans) {
     document.getElementById('q2').style.display = 'block';
   }, 260);
 }
+var _reco = {
+  '1': {url:'quy-hoach-2050', k:'\u0110\u1ecdc ti\u1ebfp \u00b7 quy ho\u1ea1ch', t:'Quy ho\u1ea1ch Nam Ban 2050'},
+  '2': {url:'namban-index', k:'\u0110\u1ecdc ti\u1ebfp \u00b7 gi\u00e1 \u0111\u1ea5t', t:'Gi\u00e1 \u0111\u1ea5t Nam Ban 2026'},
+  '3': {url:'tiem-nang-dau-tu', k:'\u0110\u1ecdc ti\u1ebfp \u00b7 c\u01a1 h\u1ed9i & r\u1ee7i ro', t:'C\u00f3 n\u00ean mua \u0111\u1ea5t Nam Ban 2026?'},
+  '4': {url:'truoc-khi-xuong-tien', k:'\u0110\u1ecdc ti\u1ebfp \u00b7 tr\u01b0\u1edbc khi xu\u1ed1ng ti\u1ec1n', t:'V\u00e0i \u0111i\u1ec1u n\u00ean bi\u1ebft tr\u01b0\u1edbc khi mua \u0111\u1ea5t Nam Ban'}
+};
 function quizResult(btn, q2ans) {
   try{ localStorage.setItem("pm_intent", JSON.stringify({q1:_q1ans,q2:q2ans,ts:Date.now()})); }catch(e){}
   btn.classList.add('chosen');
   var key = _q1ans + q2ans;
   var text = _results[key] || _results['a1'];
+  var reco = _reco[q2ans] || _reco['1'];
+  var urgent = (_q1ans === 'd');
   setTimeout(function(){
     document.getElementById('q2').style.display = 'none';
-    var r = document.getElementById('qresult');
-    var card = document.createElement('div');
-    card.className = 'quiz-result-card';
-    var p = document.createElement('p');
-    p.className = 'quiz-result-text';
-    p.textContent = text;
-    card.appendChild(p);
-    var row = document.createElement('div');
-    row.className = 'quiz-email-row';
-    var inp = document.createElement('input');
-    inp.type = 'email';
-    inp.placeholder = 'Email \u0111\u1ec3 nh\u1eadn Panorama Brief h\u00e0ng th\u00e1ng';
-    var bt = document.createElement('button');
-    bt.textContent = 'G\u1eedi';
-    bt.onclick = function(){
-      var email = inp.value;
-      if(!email || email.indexOf('@')===-1){inp.style.border='1px solid #c44';return;}
-      bt.textContent = '\u0110ang g\u1eedi...';
-      bt.disabled = true;
-      inp.disabled = true;
-      var fd = new FormData();
-      fd.append('entry.260173030', 'Quiz ' + _q1ans + q2ans);
-      fd.append('entry.2084374895', email);
-      fd.append('entry.418514546', 'Q1=' + _q1ans + ' Q2=' + q2ans);
-      fetch('https://docs.google.com/forms/d/e/1FAIpQLSejyXVjRk8TQCtNIrZijGeZxaoJaeA3VCccpW4PAi87BRVAzg/formResponse', {method:'POST', mode:'no-cors', body:fd});
-      setTimeout(function(){
-        row.innerHTML = '<div style="text-align:center;padding:14px 0;width:100%;"><span style="font-family:Fraunces,serif;font-size:15px;color:#4a7c59;">\u2714 \u0110\u00e3 \u0111\u0103ng k\u00fd th\u00e0nh c\u00f4ng</span><br><span style="font-size:12.5px;color:#8a8276;">B\u1ea1n s\u1ebd nh\u1eadn Panorama Brief h\u00e0ng th\u00e1ng.</span></div>';
-      }, 700);
+    var r = document.getElementById('qresult'); r.style.display='block';
+    var card = document.createElement('div'); card.className='quiz-result-card';
+    var p = document.createElement('p'); p.className='quiz-result-text'; p.textContent=text; card.appendChild(p);
+    var rp = document.createElement('a'); rp.className='reco-pick'; rp.href=reco.url;
+    rp.innerHTML='<span><span class="rp-k">'+reco.k+'</span><span class="rp-t">'+reco.t+'</span></span><span class="rp-a">\u2192</span>';
+    card.appendChild(rp);
+    if(urgent){
+      var cta=document.createElement('a'); cta.className='reco-pick reco-urgent'; cta.href='trao-doi';
+      cta.innerHTML='<span><span class="rp-k">B\u1ea1n \u0111ang t\u00ecm m\u1ed9t t\u00e0i s\u1ea3n c\u1ee5 th\u1ec3</span><span class="rp-t">C\u00e1ch nhanh nh\u1ea5t l\u00e0 n\u00f3i chuy\u1ec7n th\u1eb3ng v\u1edbi ng\u01b0\u1eddi \u1edf \u0111\u00e2y</span></span><span class="rp-a">\u2192</span>';
+      card.appendChild(cta);
+      var fb=document.getElementById('fabContact'); if(fb) fb.style.display='flex';
+    }
+    var row=document.createElement('div'); row.className='quiz-email-row';
+    var inp=document.createElement('input'); inp.type='tel'; inp.placeholder='S\u1ed1 \u0111i\u1ec7n tho\u1ea1i \u2014 nh\u1eadn Brief qua Zalo';
+    var bt=document.createElement('button'); bt.textContent='G\u1eedi';
+    bt.onclick=function(){
+      var phone=(inp.value||'').replace(/[^0-9]/g,'');
+      if(phone.length<9){inp.style.border='1px solid #c44';return;}
+      bt.textContent='\u0110ang g\u1eedi...'; bt.disabled=true; inp.disabled=true;
+      var fd=new FormData();
+      fd.append('entry.260173030','Quiz '+key);
+      fd.append('entry.2084374895', inp.value);
+      fd.append('entry.418514546','Q1='+_q1ans+' Q2='+q2ans);
+      fetch('https://docs.google.com/forms/d/e/1FAIpQLSejyXVjRk8TQCtNIrZijGeZxaoJaeA3VCccpW4PAi87BRVAzg/formResponse',{method:'POST',mode:'no-cors',body:fd});
+      setTimeout(function(){ row.innerHTML='<div style="text-align:center;padding:14px 0;width:100%;"><span style="font-family:Fraunces,serif;font-size:15px;color:#4a7c59;">\u2714 \u0110\u00e3 ghi nh\u1eadn</span><br><span style="font-size:12.5px;color:#6e6759;">Brief s\u1ebd t\u1edbi Zalo c\u1ee7a b\u1ea1n m\u1ed7i th\u00e1ng m\u1ed9t l\u1ea7n.</span></div>'; },600);
     };
-    row.appendChild(inp);
-    row.appendChild(bt);
-    // skip link removed
-    r.innerHTML = '';
+    row.appendChild(inp); row.appendChild(bt); card.appendChild(row);
+    var cap=document.createElement('p'); cap.className='quiz-cap'; cap.textContent='Brief g\u1eedi qua Zalo, m\u1ed7i th\u00e1ng m\u1ed9t l\u1ea7n \u2014 kh\u00f4ng g\u1ecdi l\u00e0m phi\u1ec1n, kh\u00f4ng spam.';
+    card.appendChild(cap);
     r.appendChild(card);
-    r.appendChild(row);
-    // skip removed
-    r.style.display = 'block';
-  }, 260);
+  }, 280);
 }
 </script>
 
@@ -588,5 +604,6 @@ function quizResult(btn, q2ans) {
   },10000);
 })();
 </script>
+<a href="trao-doi" class="fab-contact" id="fabContact" style="display:none" aria-label="Trao đổi với người ở đây"><span class="fab-lbl">Trao đổi với người ở đây</span><span class="fab-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#e7e0d2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a7.5 7.5 0 0 1-10.9 6.7L4 19.5l1.3-4.1A7.5 7.5 0 1 1 20 11.5Z"/></svg></span></a>
 </body>
 </html>
