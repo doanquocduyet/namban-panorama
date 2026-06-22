@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
-<title>Demo ảnh — A B C D E</title>
+<title>Demo ảnh — A B C D E F G</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Be+Vietnam+Pro:wght@300;400;500&display=swap" rel="stylesheet">
@@ -40,66 +40,66 @@ p.intro{font-size:14.5px;color:var(--muted);max-width:54ch;margin:0;line-height:
 .c-cap em{font-family:'Fraunces',serif;font-style:italic;color:var(--stone);}
 .band-d{background:var(--paper);}
 .fade-d{position:absolute;inset:0;background:linear-gradient(to bottom,var(--paper) 0%,rgba(241,236,226,0) 14%,rgba(241,236,226,0) 80%,var(--paper) 100%);}
+.fblock{position:relative;max-width:960px;margin:0 auto;padding:18px;}
+.fblock .pic{position:relative;width:100%;aspect-ratio:21/9;overflow:hidden;}
+.fblock .pic img{width:100%;height:100%;object-fit:cover;object-position:center 48%;display:block;}
+.fblock .pic .vfade{position:absolute;inset:0;box-shadow:inset 0 0 40px 20px var(--paper);pointer-events:none;}
+.fblock-f{border:1px solid #b6ab95;}
+.cnr{position:absolute;width:26px;height:26px;border:0 solid var(--stone);pointer-events:none;}
+.cnr.tl{top:0;left:0;border-top-width:1.5px;border-left-width:1.5px;}
+.cnr.tr{top:0;right:0;border-top-width:1.5px;border-right-width:1.5px;}
+.cnr.bl{bottom:0;left:0;border-bottom-width:1.5px;border-left-width:1.5px;}
+.cnr.br{bottom:0;right:0;border-bottom-width:1.5px;border-right-width:1.5px;}
 .e-band{position:relative;width:100%;min-height:clamp(360px,46vw,520px);display:flex;align-items:flex-end;overflow:hidden;background:var(--forest-deep);}
 .e-band>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 46%;filter:saturate(.96) contrast(1.02);}
 .e-shade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,28,22,.30) 0%,rgba(20,28,22,.04) 38%,rgba(16,20,15,.55) 78%,rgba(16,20,15,.82) 100%);}
 .e-inner{position:relative;padding:44px 0;width:100%;}
 .e-band .idx{color:#cdbfa6;}.e-band .kicker{color:#dca77a;}.e-band h3.title{color:#f4efe4;font-size:27px;}.e-band p.intro{color:#dad4c5;}
-@media(max-width:780px){.wrap{padding:0 22px;}h3.title{font-size:21px;}.e-band h3.title{font-size:22px;}.slot{padding:36px 0 14px;}}
+@media(max-width:780px){.wrap{padding:0 22px;}h3.title{font-size:21px;}.e-band h3.title{font-size:22px;}.slot{padding:36px 0 14px;}.fblock{padding:14px;}}
 </style>
 </head>
 <body>
-<div class="note"><div class="wrap">⚠️ <b>Trang demo tạm</b> — 5 cách xử lý bức ảnh trang chủ: <b>A · B · C · D · E</b>. Cháu dựng sẵn hết, Chú chỉ việc xem rồi báo chọn cái nào (ghép cũng được, vd A+D). Chọn xong Cháu đưa vào web thật và xoá trang này.</div></div>
+<div class="note"><div class="wrap">⚠️ <b>Trang demo tạm</b> — các cách xử lý bức ảnh trang chủ: <b>A B C D E</b> và 2 bản ghép mới <b>F, G</b> (mép tan vào giấy + khung). Cháu dựng sẵn hết, Chú xem rồi báo chọn cái nào. Chọn xong Cháu đưa vào web thật và xoá trang này.</div></div>
 
 <section class="slot"><div class="wrap"><span class="tag">A — ảnh có lời (caption)</span></div></section>
-<div class="band">
-  <img class="ph" src="/images/nam-ban-aerial.jpg" alt="Toàn cảnh Nam Ban">
-  <div class="shade-a"></div>
-  <div class="cap-a"><div class="wrap">
-    <p class="cl">Thung lũng Nam Ban nhìn từ trên cao — đất đỏ, vườn xanh, hồ và núi vẫn còn nhìn thấy nhau.</p>
-    <p class="cr">Ảnh: Panorama</p>
-  </div></div>
+<div class="band"><img class="ph" src="/images/nam-ban-aerial.jpg" alt="Toàn cảnh Nam Ban"><div class="shade-a"></div>
+  <div class="cap-a"><div class="wrap"><p class="cl">Thung lũng Nam Ban nhìn từ trên cao — đất đỏ, vườn xanh, hồ và núi vẫn còn nhìn thấy nhau.</p><p class="cr">Ảnh: Panorama</p></div></div>
 </div>
 <div class="divider"></div>
 
 <section class="slot"><div class="wrap"><span class="tag">B — nhuộm tông giấy (matte)</span></div></section>
-<div class="band">
-  <img class="ph ph-matte" src="/images/nam-ban-aerial.jpg" alt="Toàn cảnh Nam Ban">
-  <div class="veil-b"></div>
-</div>
+<div class="band"><img class="ph ph-matte" src="/images/nam-ban-aerial.jpg" alt="Toàn cảnh Nam Ban"><div class="veil-b"></div></div>
 <div class="divider"></div>
 
 <section class="slot"><div class="wrap"><span class="tag">C — ảnh trong cột (khung + chú thích)</span></div></section>
-<section style="padding:0 0 40px;"><div class="wrap">
-  <div class="c-figure">
-    <div class="c-frame"><img src="/images/nam-ban-aerial.jpg" alt="Toàn cảnh Nam Ban"></div>
-    <div class="c-cap"><span><em>Thung lũng Nam Ban nhìn từ trên cao</em> — đất đỏ, vườn xanh, hồ và núi vẫn còn nhìn thấy nhau.&nbsp;&nbsp;<span style="color:var(--stone)">Ảnh: Panorama</span></span></div>
-  </div>
-</div></section>
-<section class="alt"><div class="wrap">
-  <div class="sechead" style="margin-bottom:14px;"><span class="idx">02</span><span class="kicker">Cộng đồng · đang hình thành tự nhiên</span></div>
-  <h3 class="title">Những con người thật, ở một vùng đất thật</h3>
-  <p class="hint">(mục Cộng đồng đứng ngay sau ảnh — đây là cách ảnh hoà vào mạch bài)</p>
-</div></section>
+<section style="padding:0 0 40px;"><div class="wrap"><div class="c-figure">
+  <div class="c-frame"><img src="/images/nam-ban-aerial.jpg" alt="Toàn cảnh Nam Ban"></div>
+  <div class="c-cap"><span><em>Thung lũng Nam Ban nhìn từ trên cao</em> — đất đỏ, vườn xanh, hồ và núi vẫn còn nhìn thấy nhau.&nbsp;&nbsp;<span style="color:var(--stone)">Ảnh: Panorama</span></span></div>
+</div></div></section>
+<section class="alt"><div class="wrap"><div class="sechead" style="margin-bottom:14px;"><span class="idx">02</span><span class="kicker">Cộng đồng · đang hình thành tự nhiên</span></div><h3 class="title">Những con người thật, ở một vùng đất thật</h3><p class="hint">(mục Cộng đồng đứng ngay sau ảnh)</p></div></section>
 <div class="divider"></div>
 
 <section class="slot"><div class="wrap"><span class="tag">D — mép tan vào giấy</span></div></section>
-<div class="band band-d">
-  <img class="ph" src="/images/nam-ban-aerial.jpg" alt="Toàn cảnh Nam Ban">
-  <div class="fade-d"></div>
-</div>
+<div class="band band-d"><img class="ph" src="/images/nam-ban-aerial.jpg" alt="Toàn cảnh Nam Ban"><div class="fade-d"></div></div>
+<div class="divider"></div>
+
+<section class="slot"><div class="wrap"><span class="tag">F — mép tan vào giấy + viền khung mỏng</span></div></section>
+<section style="padding:4px 0 40px;"><div class="wrap"><div class="fblock fblock-f">
+  <div class="pic"><img src="/images/nam-ban-aerial.jpg" alt="Toàn cảnh Nam Ban"><div class="vfade"></div></div>
+</div></div></section>
+<div class="divider"></div>
+
+<section class="slot"><div class="wrap"><span class="tag">G — mép tan vào giấy + 4 góc rời (không nối)</span></div></section>
+<section style="padding:4px 0 40px;"><div class="wrap"><div class="fblock">
+  <div class="pic"><img src="/images/nam-ban-aerial.jpg" alt="Toàn cảnh Nam Ban"><div class="vfade"></div></div>
+  <span class="cnr tl"></span><span class="cnr tr"></span><span class="cnr bl"></span><span class="cnr br"></span>
+</div></div></section>
 <div class="divider"></div>
 
 <section class="slot"><div class="wrap"><span class="tag">E — ảnh thành nền tiêu đề mục 02</span></div></section>
-<div class="e-band">
-  <img src="/images/nam-ban-aerial.jpg" alt="Toàn cảnh Nam Ban">
-  <div class="e-shade"></div>
-  <div class="e-inner"><div class="wrap">
-    <div class="sechead" style="margin-bottom:14px;"><span class="idx">02</span><span class="kicker">Cộng đồng · đang hình thành tự nhiên</span></div>
-    <h3 class="title">Những con người thật, ở một vùng đất thật</h3>
-    <p class="intro">Những người địa phương, chủ farm, người mới chuyển đến — cùng chia sẻ thông tin về Nam Ban.</p>
-  </div></div>
+<div class="e-band"><img src="/images/nam-ban-aerial.jpg" alt="Toàn cảnh Nam Ban"><div class="e-shade"></div>
+  <div class="e-inner"><div class="wrap"><div class="sechead" style="margin-bottom:14px;"><span class="idx">02</span><span class="kicker">Cộng đồng · đang hình thành tự nhiên</span></div><h3 class="title">Những con người thật, ở một vùng đất thật</h3><p class="intro">Những người địa phương, chủ farm, người mới chuyển đến — cùng chia sẻ thông tin về Nam Ban.</p></div></div>
 </div>
-<section class="alt"><div class="wrap"><p class="hint" style="margin:0;">(các thẻ cộng đồng tiếp tục bên dưới trên nền giấy như cũ)</p></div></section>
+<section class="alt"><div class="wrap"><p class="hint" style="margin:0;">(các thẻ cộng đồng tiếp tục bên dưới như cũ)</p></div></section>
 </body>
 </html>
