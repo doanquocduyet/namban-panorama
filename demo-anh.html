@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Demo ảnh — Phương án C & E</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Be+Vietnam+Pro:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1815;--paper:#f1ece2;--card:#faf6ee;--forest:#2f4034;--forest-deep:#1e2a20;--clay:#9d5d38;--clay-soft:#bb8862;--stone:#a79c87;--muted:#6e6759;--line:#e1d9c8;}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Be Vietnam Pro',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 40px;}
+.serif{font-family:'Fraunces',serif;}
+section{padding:64px 0;}
+.sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:24px;}
+.idx{font-family:'Fraunces',serif;font-weight:300;font-style:italic;color:var(--stone);font-size:15px;}
+.kicker{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--clay);font-weight:500;}
+.alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+h3.title{font-weight:400;font-size:24px;letter-spacing:-.3px;margin:0 0 8px;color:var(--ink);}
+p.intro{font-size:14.5px;color:var(--muted);max-width:54ch;margin:0 0 8px;line-height:1.65;}
+.note{background:var(--forest-deep);color:#e8e2d4;padding:15px 0;font-size:13px;line-height:1.55;}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:#fff;background:var(--clay);padding:5px 12px;border-radius:3px;font-weight:600;margin-bottom:6px;}
+.divider{height:1px;background:var(--line);}
+/* C */
+.c-figure{max-width:840px;margin:26px auto 0;}
+.c-frame{background:var(--card);padding:10px;border:1px solid var(--line);}
+.c-frame img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center 48%;}
+.c-cap{display:flex;gap:8px;align-items:flex-start;margin-top:12px;font-size:12.5px;color:var(--muted);line-height:1.55;}
+.c-cap::before{content:"";flex:0 0 18px;height:1px;background:var(--clay);position:relative;top:9px;}
+.c-cap em{font-family:'Fraunces',serif;font-style:italic;color:var(--stone);}
+/* E */
+.e-band{position:relative;width:100%;min-height:clamp(360px,46vw,520px);display:flex;align-items:flex-end;overflow:hidden;background:var(--forest-deep);}
+.e-band>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 46%;filter:saturate(.96) contrast(1.02);}
+.e-shade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,28,22,.30) 0%,rgba(20,28,22,.04) 38%,rgba(16,20,15,.55) 78%,rgba(16,20,15,.82) 100%);}
+.e-inner{position:relative;padding:44px 0;width:100%;}
+.e-band .idx{color:#cdbfa6;}
+.e-band .kicker{color:#dca77a;}
+.e-band h3.title{color:#f4efe4;font-size:27px;}
+.e-band p.intro{color:#dad4c5;}
+@media(max-width:780px){.wrap{padding:0 22px;}h3.title{font-size:21px;}.e-band h3.title{font-size:22px;}}
+</style>
+</head>
+<body>
+<div class="note"><div class="wrap">⚠️ <b>Trang demo tạm</b> — chỉ để xem thử 2 cách xử lý bức ảnh trang chủ. Xem xong báo Cháu chọn <b>C</b> hay <b>E</b> → Cháu dựng vào web thật rồi xoá trang này. (A, B, D Chú đưa GPT vẽ bằng 3 prompt riêng.)</div></div>
+
+<section>
+  <div class="wrap">
+    <span class="tag">Phương án C — ảnh đưa vào trong cột</span>
+    <div class="c-figure">
+      <div class="c-frame"><img src="/images/nam-ban-aerial.jpg" alt="Toàn cảnh Nam Ban từ trên cao"></div>
+      <div class="c-cap"><span><em>Thung lũng Nam Ban nhìn từ trên cao</em> — đất đỏ, vườn xanh, hồ và núi vẫn còn nhìn thấy nhau.&nbsp;&nbsp;<span style="color:var(--stone)">Ảnh: Panorama</span></span></div>
+    </div>
+  </div>
+</section>
+<section class="alt">
+  <div class="wrap">
+    <div class="sechead"><span class="idx">02</span><span class="kicker">Cộng đồng · đang hình thành tự nhiên</span></div>
+    <h3 class="serif title">Những con người thật, ở một vùng đất thật</h3>
+    <p class="intro">Những người địa phương, chủ farm, người mới chuyển đến — cùng chia sẻ thông tin về Nam Ban. Một cộng đồng đang lớn dần, rất chậm, rất có chọn lọc.</p>
+    <p style="font-size:12.5px;color:var(--stone);font-style:italic;font-family:'Fraunces',serif;margin:0;">(các thẻ cộng đồng tiếp tục bên dưới như cũ)</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section style="padding-bottom:28px;">
+  <div class="wrap"><span class="tag">Phương án E — ảnh thành nền tiêu đề mục 02</span></div>
+</section>
+<div class="e-band">
+  <img src="/images/nam-ban-aerial.jpg" alt="Toàn cảnh Nam Ban từ trên cao">
+  <div class="e-shade"></div>
+  <div class="e-inner"><div class="wrap">
+    <div class="sechead" style="margin-bottom:14px;"><span class="idx">02</span><span class="kicker">Cộng đồng · đang hình thành tự nhiên</span></div>
+    <h3 class="serif title">Những con người thật, ở một vùng đất thật</h3>
+    <p class="intro">Những người địa phương, chủ farm, người mới chuyển đến — cùng chia sẻ thông tin về Nam Ban.</p>
+  </div></div>
+</div>
+<section class="alt" style="padding-top:38px;">
+  <div class="wrap"><p style="font-size:12.5px;color:var(--stone);font-style:italic;font-family:'Fraunces',serif;margin:0;">(các thẻ cộng đồng tiếp tục bên dưới trên nền giấy như cũ)</p></div>
+</section>
+</body>
+</html>
