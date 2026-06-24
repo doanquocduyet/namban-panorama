@@ -268,5 +268,6 @@ document.addEventListener('keydown',function(e){
 function panoramaShare(btn){var url=window.location.href;var title=document.title;if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});}else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){var lbl=btn.querySelector('.share-label');if(!lbl)return;var old=lbl.textContent;lbl.textContent='Đã sao chép';setTimeout(function(){lbl.textContent=old;},2000);}).catch(function(){});}}
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/panorama-utils.js"></script>
 </body>
 </html>
