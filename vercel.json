@@ -38,11 +38,6 @@
       "permanent": true
     },
     {
-      "source": "/nam-ban-co-gi",
-      "destination": "/hoi-nhanh",
-      "permanent": true
-    },
-    {
       "source": "/song-o-nam-ban",
       "destination": "/nam-ban-co-dang-song",
       "permanent": true
