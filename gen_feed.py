@@ -8,9 +8,7 @@ SITE  = "https://nambanpanorama.com"
 TITLE = "Namban Panorama"
 DESC  = "Phan tich doc lap ve bat dong san va doi song vung Nam Ban, Lam Ha, Lam Dong. Doc rui ro, khong ban giac mo."
 EXCLUDE = {
-    "index.html","index-good.html","namban-panorama-v2.html",
-    "namban-intelligence-homepage.html","namban-intelligence-homepage-v2.html",
-    "doc-nhanh.html","trao-doi.html","nguoi-nam-ban-01.html",
+    "index.html","doc-nhanh.html","trao-doi.html",
 }
 
 def og(s, prop):
