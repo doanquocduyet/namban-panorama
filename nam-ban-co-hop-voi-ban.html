@@ -33,9 +33,25 @@
   "description": "Câu hỏi quan trọng nhất về Nam Ban không phải giá đất hay quy hoạch, mà là nó có hợp với bạn không.",
   "datePublished": "2026-06-15",
   "dateModified": "2026-06-15",
-  "author": {"@type":"Organization","name":"Namban Panorama"},
-  "publisher": {"@type":"Organization","name":"Namban Panorama","url":"https://nambanpanorama.com"},
-  "about": {"@type":"Place","name":"Nam Ban, Lâm Hà, Lâm Đồng"},
+  "author": {
+    "@type": "Person",
+    "@id": "https://nambanpanorama.com/#founder",
+    "name": "Đoàn Quốc Duyệt"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://nambanpanorama.com/#organization",
+    "name": "Namban Panorama",
+    "founder": {
+      "@type": "Person",
+      "@id": "https://nambanpanorama.com/#founder",
+      "name": "Đoàn Quốc Duyệt"
+    }
+  },
+  "about": {
+    "@type": "Place",
+    "name": "Nam Ban, Lâm Hà, Lâm Đồng"
+  },
   "image": "https://nambanpanorama.com/images/nam-ban-co-hop-voi-ban.jpg"
 }
 </script>
@@ -44,9 +60,30 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"Nam Ban có đáng sống không?","acceptedAnswer":{"@type":"Answer","text":"Tùy bạn đang tìm gì. Nam Ban hợp với người muốn nhịp sống chậm hơn, nhiều cây xanh, ít tiếng còi xe. Nó không hợp với người cần trung tâm thương mại, dịch vụ 24/7 hay nhiều lựa chọn mỗi tối. Câu hỏi quan trọng không phải Nam Ban có đáng sống không, mà bạn đang muốn rời khỏi điều gì và tiến về điều gì."}},
-    {"@type":"Question","name":"Ai hợp sống ở Nam Ban?","acceptedAnswer":{"@type":"Answer","text":"Người muốn sống chậm hơn, người làm việc từ xa, gia đình muốn con lớn lên gần thiên nhiên, người tìm second home hoặc nơi nghỉ hưu mát mẻ, người thích có một mảnh vườn. Điểm chung là họ không cần thành phố vận hành liên tục quanh mình."}},
-    {"@type":"Question","name":"Ai không nên chuyển lên Nam Ban?","acceptedAnswer":{"@type":"Answer","text":"Người cần nhiều lựa chọn mỗi tối, cần dịch vụ và tiện ích đô thị dày đặc, hoặc thấy một buổi chiều không có việc gì là lãng phí. Với những người này, Nam Ban dễ tạo cảm giác thiếu thốn hơn là bình yên."}}
+    {
+      "@type": "Question",
+      "name": "Nam Ban có đáng sống không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tùy bạn đang tìm gì. Nam Ban hợp với người muốn nhịp sống chậm hơn, nhiều cây xanh, ít tiếng còi xe. Nó không hợp với người cần trung tâm thương mại, dịch vụ 24/7 hay nhiều lựa chọn mỗi tối. Câu hỏi quan trọng không phải Nam Ban có đáng sống không, mà bạn đang muốn rời khỏi điều gì và tiến về điều gì."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ai hợp sống ở Nam Ban?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Người muốn sống chậm hơn, người làm việc từ xa, gia đình muốn con lớn lên gần thiên nhiên, người tìm second home hoặc nơi nghỉ hưu mát mẻ, người thích có một mảnh vườn. Điểm chung là họ không cần thành phố vận hành liên tục quanh mình."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ai không nên chuyển lên Nam Ban?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Người cần nhiều lựa chọn mỗi tối, cần dịch vụ và tiện ích đô thị dày đặc, hoặc thấy một buổi chiều không có việc gì là lãng phí. Với những người này, Nam Ban dễ tạo cảm giác thiếu thốn hơn là bình yên."
+      }
+    }
   ]
 }
 </script>
@@ -93,7 +130,89 @@
 .hamburger{display:flex;}
 </style>
 <link rel="alternate" type="application/rss+xml" title="Namban Panorama" href="https://nambanpanorama.com/feed.xml">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://nambanpanorama.com/"}, {"@type": "ListItem", "position": 2, "name": "Không phải ai cũng hợp với Nam Ban", "item": "https://nambanpanorama.com/nam-ban-co-hop-voi-ban"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://nambanpanorama.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Không phải ai cũng hợp với Nam Ban",
+      "item": "https://nambanpanorama.com/nam-ban-co-hop-voi-ban"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://nambanpanorama.com/#founder",
+      "name": "Đoàn Quốc Duyệt",
+      "jobTitle": "Người sáng lập & biên tập Namban Panorama",
+      "description": "Người theo dõi và phân tích bất động sản, quy hoạch và đời sống vùng Nam Ban – Lâm Hà, Lâm Đồng. Trực tiếp khảo sát và đọc rủi ro từng lô đất trước khi người mua xuống tiền.",
+      "telephone": "+84978758788",
+      "worksFor": {
+        "@id": "https://nambanpanorama.com/#organization"
+      },
+      "workLocation": {
+        "@id": "https://nambanpanorama.com/#namban"
+      },
+      "knowsAbout": [
+        "Bất động sản Nam Ban",
+        "Quy hoạch Nam Ban – Lâm Hà",
+        "Giá đất Nam Ban",
+        "Pháp lý đất Lâm Đồng",
+        "Đời sống Nam Ban"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://nambanpanorama.com/#organization",
+      "name": "Namban Panorama",
+      "url": "https://nambanpanorama.com",
+      "logo": "https://nambanpanorama.com/logo-nav.png",
+      "telephone": "+84978758788",
+      "founder": {
+        "@id": "https://nambanpanorama.com/#founder"
+      },
+      "areaServed": {
+        "@id": "https://nambanpanorama.com/#namban"
+      }
+    },
+    {
+      "@type": "Place",
+      "@id": "https://nambanpanorama.com/#namban",
+      "name": "Nam Ban, Lâm Hà, Lâm Đồng, Việt Nam",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Xã Nam Ban",
+        "addressRegion": "Lâm Đồng",
+        "addressCountry": "VN"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://nambanpanorama.com/#website",
+      "name": "Namban Panorama",
+      "url": "https://nambanpanorama.com",
+      "inLanguage": "vi",
+      "publisher": {
+        "@id": "https://nambanpanorama.com/#organization"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <script>

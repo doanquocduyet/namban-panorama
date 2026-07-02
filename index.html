@@ -242,11 +242,105 @@
   "name": "Namban Panorama",
   "url": "https://nambanpanorama.com",
   "description": "Góc nhìn độc lập, trung thực về quy hoạch, bất động sản và đầu tư tại Nam Ban, Lâm Hà.",
-  "areaServed": {"@type":"Place","name":"Nam Ban, Lâm Hà, Lâm Đồng, Việt Nam"},
-  "knowsAbout": ["Bất động sản Nam Ban","Quy hoạch Lâm Hà","Đầu tư đất Lâm Đồng","Giá đất Nam Ban"]
+  "areaServed": {
+    "@type": "Place",
+    "name": "Nam Ban, Lâm Hà, Lâm Đồng, Việt Nam"
+  },
+  "knowsAbout": [
+    "Bất động sản Nam Ban",
+    "Quy hoạch Lâm Hà",
+    "Đầu tư đất Lâm Đồng",
+    "Giá đất Nam Ban"
+  ],
+  "@id": "https://nambanpanorama.com/#organization",
+  "founder": {
+    "@type": "Person",
+    "@id": "https://nambanpanorama.com/#founder",
+    "name": "Đoàn Quốc Duyệt"
+  }
 }
 </script>
 <link rel="alternate" type="application/rss+xml" title="Namban Panorama" href="https://nambanpanorama.com/feed.xml">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://nambanpanorama.com/#founder",
+      "name": "Đoàn Quốc Duyệt",
+      "jobTitle": "Người sáng lập & biên tập Namban Panorama",
+      "description": "Người theo dõi và phân tích bất động sản, quy hoạch và đời sống vùng Nam Ban – Lâm Hà, Lâm Đồng. Trực tiếp khảo sát và đọc rủi ro từng lô đất trước khi người mua xuống tiền.",
+      "telephone": "+84978758788",
+      "worksFor": {
+        "@id": "https://nambanpanorama.com/#organization"
+      },
+      "workLocation": {
+        "@id": "https://nambanpanorama.com/#namban"
+      },
+      "knowsAbout": [
+        "Bất động sản Nam Ban",
+        "Quy hoạch Nam Ban – Lâm Hà",
+        "Giá đất Nam Ban",
+        "Pháp lý đất Lâm Đồng",
+        "Đời sống Nam Ban"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://nambanpanorama.com/#organization",
+      "name": "Namban Panorama",
+      "url": "https://nambanpanorama.com",
+      "logo": "https://nambanpanorama.com/logo-nav.png",
+      "telephone": "+84978758788",
+      "founder": {
+        "@id": "https://nambanpanorama.com/#founder"
+      },
+      "areaServed": {
+        "@id": "https://nambanpanorama.com/#namban"
+      }
+    },
+    {
+      "@type": "Place",
+      "@id": "https://nambanpanorama.com/#namban",
+      "name": "Nam Ban, Lâm Hà, Lâm Đồng, Việt Nam",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Xã Nam Ban",
+        "addressRegion": "Lâm Đồng",
+        "addressCountry": "VN"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://nambanpanorama.com/#website",
+      "name": "Namban Panorama",
+      "url": "https://nambanpanorama.com",
+      "inLanguage": "vi",
+      "publisher": {
+        "@id": "https://nambanpanorama.com/#organization"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://nambanpanorama.com/#homepage",
+  "url": "https://nambanpanorama.com",
+  "isPartOf": {
+    "@id": "https://nambanpanorama.com/#website"
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1"
+    ]
+  }
+}
+</script>
 </head>
 <body>
 <script>

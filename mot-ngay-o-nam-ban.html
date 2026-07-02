@@ -33,9 +33,25 @@
   "description": "Gợi ý một ngày ở Nam Ban theo sáng, trưa, chiều, tối từ góc nhìn địa phương.",
   "datePublished": "2026-06-15",
   "dateModified": "2026-06-15",
-  "author": {"@type":"Organization","name":"Namban Panorama"},
-  "publisher": {"@type":"Organization","name":"Namban Panorama","url":"https://nambanpanorama.com"},
-  "about": {"@type":"Place","name":"Nam Ban, Lâm Hà, Lâm Đồng"},
+  "author": {
+    "@type": "Person",
+    "@id": "https://nambanpanorama.com/#founder",
+    "name": "Đoàn Quốc Duyệt"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://nambanpanorama.com/#organization",
+    "name": "Namban Panorama",
+    "founder": {
+      "@type": "Person",
+      "@id": "https://nambanpanorama.com/#founder",
+      "name": "Đoàn Quốc Duyệt"
+    }
+  },
+  "about": {
+    "@type": "Place",
+    "name": "Nam Ban, Lâm Hà, Lâm Đồng"
+  },
   "image": "https://nambanpanorama.com/images/mot-ngay-o-nam-ban.jpg"
 }
 </script>
@@ -44,12 +60,54 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"Nam Ban có gì chơi?","acceptedAnswer":{"@type":"Answer","text":"Nam Ban hợp với kiểu đi chậm. Đáng ghé nhất là Thiền viện Linh Ẩn (từ đây ngắm được thác Voi và thung lũng), các vườn cà phê và làng nghề dâu tằm ươm tơ ở Đông Anh, cùng những quán cà phê có gu như Reng Reng (có cà phê Yellow Bourbon tự trồng), Nghiêng bên suối, hay Chabon'te. Buổi sáng sương và buổi chiều nắng nhẹ thường để lại ấn tượng nhiều hơn bất kỳ điểm check-in nào."}},
-    {"@type":"Question","name":"Nam Ban ăn gì?","acceptedAnswer":{"@type":"Answer","text":"Đáng thử có cơm niêu ở Cơm Niêu Sen Việt (có view thung lũng), bún chả kiểu Hà Nội, bún cá rô đồng và miến lươn gần Thiền viện Linh Ẩn, đặc biệt là gà thả vườn nuôi bắp thịt vàng ngọt. Một bữa cơm địa phương thường cho cảm nhận về Nam Ban rõ hơn một điểm ăn uống đông khách."}},
-    {"@type":"Question","name":"Buổi tối ở Nam Ban làm gì?","acceptedAnswer":{"@type":"Answer","text":"Buổi tối Nam Ban yên hơn Đà Lạt nhiều — ít quán mở khuya, ít lựa chọn hơn, nhưng cũng tĩnh hơn. Phù hợp với người muốn một buổi tối chậm rãi. Nhiều người lần đầu thấy hơi buồn, nhưng đến lần thứ ba lại thích chính điều đó."}},
-    {"@type":"Question","name":"Đi từ sân bay Liên Khương tới Nam Ban bao lâu?","acceptedAnswer":{"@type":"Answer","text":"Nam Ban cách sân bay Liên Khương khoảng 22km, đi xe chừng 35-45 phút. Đây là sân bay gần Nam Ban nhất, khai thác trở lại từ 19/8/2026."}},
-    {"@type":"Question","name":"Vì sao Nam Ban có nhiều món ăn kiểu Hà Nội?","acceptedAnswer":{"@type":"Answer","text":"Nam Ban thuộc huyện Lâm Hà — tên ghép từ Lâm Đồng và Hà Nội — vì mấy chục năm trước người Hà Nội vào đây khai khẩn lập nghiệp. Vì vậy giọng nói, món ăn và nếp sống mang đậm chất Bắc. Bữa sáng phổ biến là bún chả, gần Thiền viện Linh Ẩn có bún cá rô đồng và miến lươn."}},
-    {"@type":"Question","name":"Nam Ban có gì đặc biệt để ghé?","acceptedAnswer":{"@type":"Answer","text":"Đáng ghé nhất là Thiền viện Linh Ẩn (ngắm được thác Voi và thung lũng từ trên), các vườn cà phê như Tám Trình, làng nghề dâu tằm ươm tơ ở Đông Anh, và Dreamer's Garden ngắm hoàng hôn. Đèo Tà Nung trên đường từ Đà Lạt sang cũng là một trải nghiệm."}}
+    {
+      "@type": "Question",
+      "name": "Nam Ban có gì chơi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nam Ban hợp với kiểu đi chậm. Đáng ghé nhất là Thiền viện Linh Ẩn (từ đây ngắm được thác Voi và thung lũng), các vườn cà phê và làng nghề dâu tằm ươm tơ ở Đông Anh, cùng những quán cà phê có gu như Reng Reng (có cà phê Yellow Bourbon tự trồng), Nghiêng bên suối, hay Chabon'te. Buổi sáng sương và buổi chiều nắng nhẹ thường để lại ấn tượng nhiều hơn bất kỳ điểm check-in nào."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nam Ban ăn gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đáng thử có cơm niêu ở Cơm Niêu Sen Việt (có view thung lũng), bún chả kiểu Hà Nội, bún cá rô đồng và miến lươn gần Thiền viện Linh Ẩn, đặc biệt là gà thả vườn nuôi bắp thịt vàng ngọt. Một bữa cơm địa phương thường cho cảm nhận về Nam Ban rõ hơn một điểm ăn uống đông khách."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Buổi tối ở Nam Ban làm gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Buổi tối Nam Ban yên hơn Đà Lạt nhiều — ít quán mở khuya, ít lựa chọn hơn, nhưng cũng tĩnh hơn. Phù hợp với người muốn một buổi tối chậm rãi. Nhiều người lần đầu thấy hơi buồn, nhưng đến lần thứ ba lại thích chính điều đó."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Đi từ sân bay Liên Khương tới Nam Ban bao lâu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nam Ban cách sân bay Liên Khương khoảng 22km, đi xe chừng 35-45 phút. Đây là sân bay gần Nam Ban nhất, khai thác trở lại từ 19/8/2026."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vì sao Nam Ban có nhiều món ăn kiểu Hà Nội?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nam Ban thuộc huyện Lâm Hà — tên ghép từ Lâm Đồng và Hà Nội — vì mấy chục năm trước người Hà Nội vào đây khai khẩn lập nghiệp. Vì vậy giọng nói, món ăn và nếp sống mang đậm chất Bắc. Bữa sáng phổ biến là bún chả, gần Thiền viện Linh Ẩn có bún cá rô đồng và miến lươn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nam Ban có gì đặc biệt để ghé?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đáng ghé nhất là Thiền viện Linh Ẩn (ngắm được thác Voi và thung lũng từ trên), các vườn cà phê như Tám Trình, làng nghề dâu tằm ươm tơ ở Đông Anh, và Dreamer's Garden ngắm hoàng hôn. Đèo Tà Nung trên đường từ Đà Lạt sang cũng là một trải nghiệm."
+      }
+    }
   ]
 }
 </script>
@@ -101,7 +159,89 @@
 .hamburger{display:flex;}
 </style>
 <link rel="alternate" type="application/rss+xml" title="Namban Panorama" href="https://nambanpanorama.com/feed.xml">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://nambanpanorama.com/"}, {"@type": "ListItem", "position": 2, "name": "Nếu chỉ có một ngày ở Nam Ban", "item": "https://nambanpanorama.com/mot-ngay-o-nam-ban"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://nambanpanorama.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Nếu chỉ có một ngày ở Nam Ban",
+      "item": "https://nambanpanorama.com/mot-ngay-o-nam-ban"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://nambanpanorama.com/#founder",
+      "name": "Đoàn Quốc Duyệt",
+      "jobTitle": "Người sáng lập & biên tập Namban Panorama",
+      "description": "Người theo dõi và phân tích bất động sản, quy hoạch và đời sống vùng Nam Ban – Lâm Hà, Lâm Đồng. Trực tiếp khảo sát và đọc rủi ro từng lô đất trước khi người mua xuống tiền.",
+      "telephone": "+84978758788",
+      "worksFor": {
+        "@id": "https://nambanpanorama.com/#organization"
+      },
+      "workLocation": {
+        "@id": "https://nambanpanorama.com/#namban"
+      },
+      "knowsAbout": [
+        "Bất động sản Nam Ban",
+        "Quy hoạch Nam Ban – Lâm Hà",
+        "Giá đất Nam Ban",
+        "Pháp lý đất Lâm Đồng",
+        "Đời sống Nam Ban"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://nambanpanorama.com/#organization",
+      "name": "Namban Panorama",
+      "url": "https://nambanpanorama.com",
+      "logo": "https://nambanpanorama.com/logo-nav.png",
+      "telephone": "+84978758788",
+      "founder": {
+        "@id": "https://nambanpanorama.com/#founder"
+      },
+      "areaServed": {
+        "@id": "https://nambanpanorama.com/#namban"
+      }
+    },
+    {
+      "@type": "Place",
+      "@id": "https://nambanpanorama.com/#namban",
+      "name": "Nam Ban, Lâm Hà, Lâm Đồng, Việt Nam",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Xã Nam Ban",
+        "addressRegion": "Lâm Đồng",
+        "addressCountry": "VN"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://nambanpanorama.com/#website",
+      "name": "Namban Panorama",
+      "url": "https://nambanpanorama.com",
+      "inLanguage": "vi",
+      "publisher": {
+        "@id": "https://nambanpanorama.com/#organization"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <script>

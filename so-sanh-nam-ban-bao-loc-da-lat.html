@@ -33,9 +33,25 @@
   "description": "So sánh Nam Ban, Bảo Lộc và Đà Lạt về khoảng cách, giá đất, khí hậu và kiểu sống.",
   "datePublished": "2026-06-14",
   "dateModified": "2026-06-14",
-  "author": {"@type":"Organization","name":"Namban Panorama"},
-  "publisher": {"@type":"Organization","name":"Namban Panorama","url":"https://nambanpanorama.com"},
-  "about": {"@type":"Place","name":"Nam Ban, Lâm Hà, Lâm Đồng"},
+  "author": {
+    "@type": "Person",
+    "@id": "https://nambanpanorama.com/#founder",
+    "name": "Đoàn Quốc Duyệt"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://nambanpanorama.com/#organization",
+    "name": "Namban Panorama",
+    "founder": {
+      "@type": "Person",
+      "@id": "https://nambanpanorama.com/#founder",
+      "name": "Đoàn Quốc Duyệt"
+    }
+  },
+  "about": {
+    "@type": "Place",
+    "name": "Nam Ban, Lâm Hà, Lâm Đồng"
+  },
   "image": "https://nambanpanorama.com/images/so-sanh-nam-ban-bao-loc-da-lat.jpg"
 }
 </script>
@@ -44,8 +60,22 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"Nên mua đất Nam Ban hay Bảo Lộc?","acceptedAnswer":{"@type":"Answer","text":"Tùy ưu tiên. Bảo Lộc đã phát triển hơn, hạ tầng và dịch vụ đầy đủ hơn, giá cũng cao hơn. Nam Ban gần Đà Lạt hơn (khoảng 27km), khí hậu mát hơn do ở cao, mặt bằng giá còn dễ tiếp cận hơn nhưng tiện ích ít hơn. Người ưu tiên khí hậu và gần Đà Lạt thường chọn Nam Ban; người ưu tiên tiện ích và thanh khoản thường chọn Bảo Lộc."}},
-    {"@type":"Question","name":"Nam Ban và Đà Lạt khác nhau thế nào?","acceptedAnswer":{"@type":"Answer","text":"Nam Ban cách Đà Lạt khoảng 27km về phía Tây Nam qua đèo Tà Nung. Đà Lạt là đô thị du lịch đã trưởng thành, giá đất cao và đông đúc. Nam Ban yên tĩnh hơn, giá thấp hơn nhiều, khí hậu tương đồng nhưng ít sương mù dày đặc hơn Đà Lạt. Nam Ban hợp người muốn gần Đà Lạt mà tránh sự đông đúc và giá cao."}}
+    {
+      "@type": "Question",
+      "name": "Nên mua đất Nam Ban hay Bảo Lộc?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tùy ưu tiên. Bảo Lộc đã phát triển hơn, hạ tầng và dịch vụ đầy đủ hơn, giá cũng cao hơn. Nam Ban gần Đà Lạt hơn (khoảng 27km), khí hậu mát hơn do ở cao, mặt bằng giá còn dễ tiếp cận hơn nhưng tiện ích ít hơn. Người ưu tiên khí hậu và gần Đà Lạt thường chọn Nam Ban; người ưu tiên tiện ích và thanh khoản thường chọn Bảo Lộc."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nam Ban và Đà Lạt khác nhau thế nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nam Ban cách Đà Lạt khoảng 27km về phía Tây Nam qua đèo Tà Nung. Đà Lạt là đô thị du lịch đã trưởng thành, giá đất cao và đông đúc. Nam Ban yên tĩnh hơn, giá thấp hơn nhiều, khí hậu tương đồng nhưng ít sương mù dày đặc hơn Đà Lạt. Nam Ban hợp người muốn gần Đà Lạt mà tránh sự đông đúc và giá cao."
+      }
+    }
   ]
 }
 </script>
@@ -92,7 +122,89 @@
 .hamburger{display:flex;}
 </style>
 <link rel="alternate" type="application/rss+xml" title="Namban Panorama" href="https://nambanpanorama.com/feed.xml">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://nambanpanorama.com/"}, {"@type": "ListItem", "position": 2, "name": "Nam Ban hay Bảo Lộc, Đà Lạt?", "item": "https://nambanpanorama.com/so-sanh-nam-ban-bao-loc-da-lat"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://nambanpanorama.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Nam Ban hay Bảo Lộc, Đà Lạt?",
+      "item": "https://nambanpanorama.com/so-sanh-nam-ban-bao-loc-da-lat"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://nambanpanorama.com/#founder",
+      "name": "Đoàn Quốc Duyệt",
+      "jobTitle": "Người sáng lập & biên tập Namban Panorama",
+      "description": "Người theo dõi và phân tích bất động sản, quy hoạch và đời sống vùng Nam Ban – Lâm Hà, Lâm Đồng. Trực tiếp khảo sát và đọc rủi ro từng lô đất trước khi người mua xuống tiền.",
+      "telephone": "+84978758788",
+      "worksFor": {
+        "@id": "https://nambanpanorama.com/#organization"
+      },
+      "workLocation": {
+        "@id": "https://nambanpanorama.com/#namban"
+      },
+      "knowsAbout": [
+        "Bất động sản Nam Ban",
+        "Quy hoạch Nam Ban – Lâm Hà",
+        "Giá đất Nam Ban",
+        "Pháp lý đất Lâm Đồng",
+        "Đời sống Nam Ban"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://nambanpanorama.com/#organization",
+      "name": "Namban Panorama",
+      "url": "https://nambanpanorama.com",
+      "logo": "https://nambanpanorama.com/logo-nav.png",
+      "telephone": "+84978758788",
+      "founder": {
+        "@id": "https://nambanpanorama.com/#founder"
+      },
+      "areaServed": {
+        "@id": "https://nambanpanorama.com/#namban"
+      }
+    },
+    {
+      "@type": "Place",
+      "@id": "https://nambanpanorama.com/#namban",
+      "name": "Nam Ban, Lâm Hà, Lâm Đồng, Việt Nam",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Xã Nam Ban",
+        "addressRegion": "Lâm Đồng",
+        "addressCountry": "VN"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://nambanpanorama.com/#website",
+      "name": "Namban Panorama",
+      "url": "https://nambanpanorama.com",
+      "inLanguage": "vi",
+      "publisher": {
+        "@id": "https://nambanpanorama.com/#organization"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <script>

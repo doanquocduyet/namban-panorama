@@ -33,9 +33,25 @@
   "description": "Các nông sản đặc trưng của Nam Ban, Lâm Hà: cà phê, dâu tằm tơ lụa, bơ 034, hồng, rau hoa cao nguyên.",
   "datePublished": "2026-06-15",
   "dateModified": "2026-06-15",
-  "author": {"@type":"Organization","name":"Namban Panorama"},
-  "publisher": {"@type":"Organization","name":"Namban Panorama","url":"https://nambanpanorama.com"},
-  "about": {"@type":"Place","name":"Nam Ban, Lâm Hà, Lâm Đồng"},
+  "author": {
+    "@type": "Person",
+    "@id": "https://nambanpanorama.com/#founder",
+    "name": "Đoàn Quốc Duyệt"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://nambanpanorama.com/#organization",
+    "name": "Namban Panorama",
+    "founder": {
+      "@type": "Person",
+      "@id": "https://nambanpanorama.com/#founder",
+      "name": "Đoàn Quốc Duyệt"
+    }
+  },
+  "about": {
+    "@type": "Place",
+    "name": "Nam Ban, Lâm Hà, Lâm Đồng"
+  },
   "image": "https://nambanpanorama.com/images/dac-san-nam-ban.jpg"
 }
 </script>
@@ -44,10 +60,38 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"Nam Ban có đặc sản gì?","acceptedAnswer":{"@type":"Answer","text":"Nam Ban nổi tiếng nhất với cà phê (đặc biệt dòng Arabica hạt vàng Yellow Bourbon) và nghề trồng dâu nuôi tằm, ươm tơ dệt lụa. Ngoài ra còn có gà thả vườn nuôi bắp thịt vàng ngọt, rượu nhà tự nấu, bơ 034, hồng, rau và hoa ôn đới, cùng trái cây vườn như sầu riêng, mít, bưởi."}},
-    {"@type":"Question","name":"Cà phê Nam Ban có gì đặc biệt?","acceptedAnswer":{"@type":"Answer","text":"Ngoài cà phê Lâm Đồng có chỉ dẫn địa lý, quanh Nam Ban có dòng Arabica hạt vàng Yellow Bourbon — giống arabica cho quả chín vàng, được hái chín chọn lọc làm cà phê đặc sản, vị ngọt hậu và thanh hơn robusta đại trà."}},
-    {"@type":"Question","name":"Mùa nào đến Nam Ban có gì ăn?","acceptedAnswer":{"@type":"Answer","text":"Hoa cà phê nở trắng khoảng tháng 2–3. Bơ 034 chính vụ tháng 9–11, trái vụ tháng 3–5. Dâu tằm và tơ lụa quanh năm. Gà nuôi bắp, rượu nhà nấu và rau hoa ôn đới có quanh năm."}},
-    {"@type":"Question","name":"Vì sao đất Nam Ban trồng được nhiều loại cây?","acceptedAnswer":{"@type":"Answer","text":"Nam Ban có đất bazan màu mỡ và khí hậu cận ôn đới mát quanh năm (khoảng 11–25°C), độ cao 800–1.000m. Thổ nhưỡng và khí hậu này hợp với cả cây công nghiệp dài ngày như cà phê, dâu tằm lẫn trái cây và rau hoa ôn đới."}}
+    {
+      "@type": "Question",
+      "name": "Nam Ban có đặc sản gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nam Ban nổi tiếng nhất với cà phê (đặc biệt dòng Arabica hạt vàng Yellow Bourbon) và nghề trồng dâu nuôi tằm, ươm tơ dệt lụa. Ngoài ra còn có gà thả vườn nuôi bắp thịt vàng ngọt, rượu nhà tự nấu, bơ 034, hồng, rau và hoa ôn đới, cùng trái cây vườn như sầu riêng, mít, bưởi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cà phê Nam Ban có gì đặc biệt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ngoài cà phê Lâm Đồng có chỉ dẫn địa lý, quanh Nam Ban có dòng Arabica hạt vàng Yellow Bourbon — giống arabica cho quả chín vàng, được hái chín chọn lọc làm cà phê đặc sản, vị ngọt hậu và thanh hơn robusta đại trà."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mùa nào đến Nam Ban có gì ăn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hoa cà phê nở trắng khoảng tháng 2–3. Bơ 034 chính vụ tháng 9–11, trái vụ tháng 3–5. Dâu tằm và tơ lụa quanh năm. Gà nuôi bắp, rượu nhà nấu và rau hoa ôn đới có quanh năm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vì sao đất Nam Ban trồng được nhiều loại cây?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nam Ban có đất bazan màu mỡ và khí hậu cận ôn đới mát quanh năm (khoảng 11–25°C), độ cao 800–1.000m. Thổ nhưỡng và khí hậu này hợp với cả cây công nghiệp dài ngày như cà phê, dâu tằm lẫn trái cây và rau hoa ôn đới."
+      }
+    }
   ]
 }
 </script>
@@ -100,7 +144,89 @@
 .hamburger{display:flex;}
 </style>
 <link rel="alternate" type="application/rss+xml" title="Namban Panorama" href="https://nambanpanorama.com/feed.xml">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://nambanpanorama.com/"}, {"@type": "ListItem", "position": 2, "name": "Nam Ban có đặc sản gì?", "item": "https://nambanpanorama.com/dac-san-nam-ban"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://nambanpanorama.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Nam Ban có đặc sản gì?",
+      "item": "https://nambanpanorama.com/dac-san-nam-ban"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://nambanpanorama.com/#founder",
+      "name": "Đoàn Quốc Duyệt",
+      "jobTitle": "Người sáng lập & biên tập Namban Panorama",
+      "description": "Người theo dõi và phân tích bất động sản, quy hoạch và đời sống vùng Nam Ban – Lâm Hà, Lâm Đồng. Trực tiếp khảo sát và đọc rủi ro từng lô đất trước khi người mua xuống tiền.",
+      "telephone": "+84978758788",
+      "worksFor": {
+        "@id": "https://nambanpanorama.com/#organization"
+      },
+      "workLocation": {
+        "@id": "https://nambanpanorama.com/#namban"
+      },
+      "knowsAbout": [
+        "Bất động sản Nam Ban",
+        "Quy hoạch Nam Ban – Lâm Hà",
+        "Giá đất Nam Ban",
+        "Pháp lý đất Lâm Đồng",
+        "Đời sống Nam Ban"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://nambanpanorama.com/#organization",
+      "name": "Namban Panorama",
+      "url": "https://nambanpanorama.com",
+      "logo": "https://nambanpanorama.com/logo-nav.png",
+      "telephone": "+84978758788",
+      "founder": {
+        "@id": "https://nambanpanorama.com/#founder"
+      },
+      "areaServed": {
+        "@id": "https://nambanpanorama.com/#namban"
+      }
+    },
+    {
+      "@type": "Place",
+      "@id": "https://nambanpanorama.com/#namban",
+      "name": "Nam Ban, Lâm Hà, Lâm Đồng, Việt Nam",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Xã Nam Ban",
+        "addressRegion": "Lâm Đồng",
+        "addressCountry": "VN"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://nambanpanorama.com/#website",
+      "name": "Namban Panorama",
+      "url": "https://nambanpanorama.com",
+      "inLanguage": "vi",
+      "publisher": {
+        "@id": "https://nambanpanorama.com/#organization"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <script>

@@ -33,9 +33,25 @@
   "description": "Sân bay Liên Khương khai thác trở lại từ 00h00 ngày 19/8/2026 theo văn bản Tổng công ty Cảng hàng không Việt Nam ký 12/6/2026.",
   "datePublished": "2026-06-15",
   "dateModified": "2026-06-15",
-  "author": {"@type":"Organization","name":"Namban Panorama"},
-  "publisher": {"@type":"Organization","name":"Namban Panorama","url":"https://nambanpanorama.com"},
-  "about": {"@type":"Place","name":"Nam Ban, Lâm Hà, Lâm Đồng"},
+  "author": {
+    "@type": "Person",
+    "@id": "https://nambanpanorama.com/#founder",
+    "name": "Đoàn Quốc Duyệt"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://nambanpanorama.com/#organization",
+    "name": "Namban Panorama",
+    "founder": {
+      "@type": "Person",
+      "@id": "https://nambanpanorama.com/#founder",
+      "name": "Đoàn Quốc Duyệt"
+    }
+  },
+  "about": {
+    "@type": "Place",
+    "name": "Nam Ban, Lâm Hà, Lâm Đồng"
+  },
   "image": "https://nambanpanorama.com/images/lien-khuong-mo-lai.jpg"
 }
 </script>
@@ -44,9 +60,30 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"Sân bay Liên Khương khi nào hoạt động trở lại?","acceptedAnswer":{"@type":"Answer","text":"Theo văn bản của Tổng công ty Cảng hàng không Việt Nam ký ngày 12/6/2026, các đường bay đi và đến sân bay quốc tế Liên Khương sẽ khai thác trở lại từ 00h00 ngày 19/8/2026, sau thời gian tạm đóng để sửa chữa đường cất hạ cánh và đường lăn."}},
-    {"@type":"Question","name":"Sân bay Liên Khương cách Nam Ban bao xa?","acceptedAnswer":{"@type":"Answer","text":"Nam Ban cách sân bay Liên Khương khoảng 22km. Từ TP.HCM hay Hà Nội bay đến Liên Khương buổi sáng, đi thêm khoảng 35-45 phút là tới Nam Ban."}},
-    {"@type":"Question","name":"Những hãng nào khai thác lại đường bay Liên Khương?","acceptedAnswer":{"@type":"Answer","text":"Văn bản gửi tới Vietnam Airlines, Vietjet Air, Bamboo Airways, Vietravel Airlines và Pacific Airlines để phối hợp khai thác trở lại các đường bay đi và đến Liên Khương."}}
+    {
+      "@type": "Question",
+      "name": "Sân bay Liên Khương khi nào hoạt động trở lại?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Theo văn bản của Tổng công ty Cảng hàng không Việt Nam ký ngày 12/6/2026, các đường bay đi và đến sân bay quốc tế Liên Khương sẽ khai thác trở lại từ 00h00 ngày 19/8/2026, sau thời gian tạm đóng để sửa chữa đường cất hạ cánh và đường lăn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sân bay Liên Khương cách Nam Ban bao xa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nam Ban cách sân bay Liên Khương khoảng 22km. Từ TP.HCM hay Hà Nội bay đến Liên Khương buổi sáng, đi thêm khoảng 35-45 phút là tới Nam Ban."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Những hãng nào khai thác lại đường bay Liên Khương?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Văn bản gửi tới Vietnam Airlines, Vietjet Air, Bamboo Airways, Vietravel Airlines và Pacific Airlines để phối hợp khai thác trở lại các đường bay đi và đến Liên Khương."
+      }
+    }
   ]
 }
 </script>
@@ -93,7 +130,89 @@
 .hamburger{display:flex;}
 </style>
 <link rel="alternate" type="application/rss+xml" title="Namban Panorama" href="https://nambanpanorama.com/feed.xml">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://nambanpanorama.com/"}, {"@type": "ListItem", "position": 2, "name": "Sân bay Liên Khương mở lại từ 19/8/2026", "item": "https://nambanpanorama.com/san-bay-lien-khuong-mo-lai"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://nambanpanorama.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Sân bay Liên Khương mở lại từ 19/8/2026",
+      "item": "https://nambanpanorama.com/san-bay-lien-khuong-mo-lai"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://nambanpanorama.com/#founder",
+      "name": "Đoàn Quốc Duyệt",
+      "jobTitle": "Người sáng lập & biên tập Namban Panorama",
+      "description": "Người theo dõi và phân tích bất động sản, quy hoạch và đời sống vùng Nam Ban – Lâm Hà, Lâm Đồng. Trực tiếp khảo sát và đọc rủi ro từng lô đất trước khi người mua xuống tiền.",
+      "telephone": "+84978758788",
+      "worksFor": {
+        "@id": "https://nambanpanorama.com/#organization"
+      },
+      "workLocation": {
+        "@id": "https://nambanpanorama.com/#namban"
+      },
+      "knowsAbout": [
+        "Bất động sản Nam Ban",
+        "Quy hoạch Nam Ban – Lâm Hà",
+        "Giá đất Nam Ban",
+        "Pháp lý đất Lâm Đồng",
+        "Đời sống Nam Ban"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://nambanpanorama.com/#organization",
+      "name": "Namban Panorama",
+      "url": "https://nambanpanorama.com",
+      "logo": "https://nambanpanorama.com/logo-nav.png",
+      "telephone": "+84978758788",
+      "founder": {
+        "@id": "https://nambanpanorama.com/#founder"
+      },
+      "areaServed": {
+        "@id": "https://nambanpanorama.com/#namban"
+      }
+    },
+    {
+      "@type": "Place",
+      "@id": "https://nambanpanorama.com/#namban",
+      "name": "Nam Ban, Lâm Hà, Lâm Đồng, Việt Nam",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Xã Nam Ban",
+        "addressRegion": "Lâm Đồng",
+        "addressCountry": "VN"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://nambanpanorama.com/#website",
+      "name": "Namban Panorama",
+      "url": "https://nambanpanorama.com",
+      "inLanguage": "vi",
+      "publisher": {
+        "@id": "https://nambanpanorama.com/#organization"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <script>

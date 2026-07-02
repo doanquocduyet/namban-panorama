@@ -29,6 +29,37 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
+User-agent: CCBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+# Bytespider (ByteDance/TikTok AI) — mở theo định hướng GEO 6/2026: Doubao/TikTok search là kênh tìm thấy ở VN
+User-agent: Bytespider
+Allow: /
+
 # ---- Công cụ tìm kiếm: MỞ ----
 User-agent: Bingbot
 Allow: /
@@ -56,9 +87,6 @@ User-agent: DataForSeoBot
 Disallow: /
 
 User-agent: rogerbot
-Disallow: /
-
-User-agent: Bytespider
 Disallow: /
 
 # ---- Mặc định: CHO PHÉP TẤT CẢ (Google, Coc Coc, Zalo, Facebook, Messenger...) ----

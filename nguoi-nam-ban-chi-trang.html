@@ -26,10 +26,28 @@
 <link rel="stylesheet" href="panorama-article.css">
 <link rel="stylesheet" href="nav.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Đưa con nhỏ lên Nam Ban sống có ổn không?","acceptedAnswer":{"@type":"Answer","text":"Nam Ban có trường học, chợ, y tế cơ bản. Nhịp sống chậm và không khí trong lành hợp cho trẻ nhỏ. Nhưng tiện ích và lựa chọn giáo dục ít hơn thành phố nhiều — nên nhiều gia đình cân nhắc kỹ độ tuổi của con trước khi chuyển."}},
-{"@type":"Question","name":"Cả gia đình chuyển từ thành phố lên Nam Ban cần lưu ý gì?","acceptedAnswer":{"@type":"Answer","text":"Quan trọng nhất là cả nhà cùng thử ở thật một thời gian, nhất là người bạn đời và con. Một người thích nhịp sống ở đây không có nghĩa cả nhà đều hợp. Nên thử trước khi bán nhà phố hay mua đất."}}
-]}
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Đưa con nhỏ lên Nam Ban sống có ổn không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nam Ban có trường học, chợ, y tế cơ bản. Nhịp sống chậm và không khí trong lành hợp cho trẻ nhỏ. Nhưng tiện ích và lựa chọn giáo dục ít hơn thành phố nhiều — nên nhiều gia đình cân nhắc kỹ độ tuổi của con trước khi chuyển."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cả gia đình chuyển từ thành phố lên Nam Ban cần lưu ý gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quan trọng nhất là cả nhà cùng thử ở thật một thời gian, nhất là người bạn đời và con. Một người thích nhịp sống ở đây không có nghĩa cả nhà đều hợp. Nên thử trước khi bán nhà phố hay mua đất."
+      }
+    }
+  ]
+}
 </script>
 <style>
 .wrap{max-width:1080px;margin:0 auto;padding:0 40px;}
@@ -74,7 +92,115 @@
 .hamburger{display:flex;}
 </style>
 <link rel="alternate" type="application/rss+xml" title="Namban Panorama" href="https://nambanpanorama.com/feed.xml">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://nambanpanorama.com/"}, {"@type": "ListItem", "position": 2, "name": "Chị Trang", "item": "https://nambanpanorama.com/nguoi-nam-ban-chi-trang"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://nambanpanorama.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Chị Trang",
+      "item": "https://nambanpanorama.com/nguoi-nam-ban-chi-trang"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://nambanpanorama.com/#founder",
+      "name": "Đoàn Quốc Duyệt",
+      "jobTitle": "Người sáng lập & biên tập Namban Panorama",
+      "description": "Người theo dõi và phân tích bất động sản, quy hoạch và đời sống vùng Nam Ban – Lâm Hà, Lâm Đồng. Trực tiếp khảo sát và đọc rủi ro từng lô đất trước khi người mua xuống tiền.",
+      "telephone": "+84978758788",
+      "worksFor": {
+        "@id": "https://nambanpanorama.com/#organization"
+      },
+      "workLocation": {
+        "@id": "https://nambanpanorama.com/#namban"
+      },
+      "knowsAbout": [
+        "Bất động sản Nam Ban",
+        "Quy hoạch Nam Ban – Lâm Hà",
+        "Giá đất Nam Ban",
+        "Pháp lý đất Lâm Đồng",
+        "Đời sống Nam Ban"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://nambanpanorama.com/#organization",
+      "name": "Namban Panorama",
+      "url": "https://nambanpanorama.com",
+      "logo": "https://nambanpanorama.com/logo-nav.png",
+      "telephone": "+84978758788",
+      "founder": {
+        "@id": "https://nambanpanorama.com/#founder"
+      },
+      "areaServed": {
+        "@id": "https://nambanpanorama.com/#namban"
+      }
+    },
+    {
+      "@type": "Place",
+      "@id": "https://nambanpanorama.com/#namban",
+      "name": "Nam Ban, Lâm Hà, Lâm Đồng, Việt Nam",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Xã Nam Ban",
+        "addressRegion": "Lâm Đồng",
+        "addressCountry": "VN"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://nambanpanorama.com/#website",
+      "name": "Namban Panorama",
+      "url": "https://nambanpanorama.com",
+      "inLanguage": "vi",
+      "publisher": {
+        "@id": "https://nambanpanorama.com/#organization"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Chị Trang — đưa cả gia đình rời phố lên Nam Ban | Câu chuyện Namban Panorama",
+  "mainEntityOfPage": "https://nambanpanorama.com/nguoi-nam-ban-chi-trang",
+  "inLanguage": "vi",
+  "author": {
+    "@type": "Person",
+    "@id": "https://nambanpanorama.com/#founder",
+    "name": "Đoàn Quốc Duyệt"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://nambanpanorama.com/#organization",
+    "name": "Namban Panorama",
+    "founder": {
+      "@type": "Person",
+      "@id": "https://nambanpanorama.com/#founder",
+      "name": "Đoàn Quốc Duyệt"
+    }
+  },
+  "datePublished": "2026-06-16",
+  "image": "https://nambanpanorama.com/og-image.jpg"
+}
+</script>
 </head>
 <nav>
   <div class="navin">
