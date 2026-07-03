@@ -441,8 +441,9 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 
 
-<div style="width:100%;height:clamp(250px,38vw,420px);overflow:hidden;background:var(--ink);">
+<div style="position:relative;width:100%;height:clamp(250px,38vw,420px);overflow:hidden;background:var(--paper);">
   <img src="images/nam-ban-aerial.jpg" loading="lazy" decoding="async" alt="Một chiếc view ôm trọn thị trấn Nam Ban" style="width:100%;height:100%;object-fit:cover;object-position:center 48%;display:block;">
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,var(--paper) 0%,rgba(241,236,226,0) 13%,rgba(241,236,226,0) 87%,var(--paper) 100%);pointer-events:none;"></div>
 </div>
 <div class="wrap" style="text-align:center;padding-top:11px;"><span style="font-family:'Fraunces',serif;font-style:italic;font-size:13.5px;color:var(--muted);letter-spacing:.2px;">Một chiếc view ôm trọn thị trấn Nam Ban</span></div>
 <!-- MINI-QUIZ (chuyển từ hero xuống) -->
@@ -519,10 +520,6 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 </div>
 <!-- 02 COMMUNITY -->
 
-<div style="max-width:680px;margin:2px auto 0;padding:0 24px;text-align:center;">
-  <p style="font-family:'Fraunces',serif;font-style:italic;font-weight:400;color:#463f34;font-size:clamp(15px,2vw,18.5px);line-height:1.6;margin:0;">Một chiếc view ôm trọn thị trấn Nam Ban</p>
-</div>
-
 <section class="alt" id="cong-dong" style="padding-top:46px;">
   <div class="wrap">
     <div class="sechead"><span class="idx">02</span><span class="kicker">Cộng đồng · đang hình thành tự nhiên</span></div>
@@ -572,7 +569,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 <footer>
   <div class="contact-line">Liên hệ: <a href="mailto:nambanpanorama@gmail.com">nambanpanorama@gmail.com</a> &nbsp;·&nbsp; <a href="tel:0978758788">0978 758 788</a></div>
-  <div class="meta">NAMBAN PANORAMA &nbsp;·&nbsp; Góc nhìn toàn cảnh, độc lập &amp; trung thực về Nam Ban – Lâm Hà</div>
+  <div class="meta"><span style="display:block;letter-spacing:2px;font-weight:500;color:var(--ink);">NAMBAN PANORAMA</span><span style="display:block;margin-top:7px;">Góc nhìn toàn cảnh, độc lập &amp; trung thực về Nam Ban – Lâm Hà</span></div>
 </footer>
 
 
