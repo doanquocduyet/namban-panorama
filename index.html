@@ -402,7 +402,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 <header>
   <div class="wrap">
-    <div class="kicker fu" style="animation-delay:.05s">Góc nhìn độc lập · Nam Ban – Lâm Hà, Lâm Đồng · gần Đà Lạt</div>
+    <div class="kicker fu" style="animation-delay:.05s">Nam Ban · Lâm Hà, Lâm Đồng — gần Đà Lạt</div>
     <h1 class="fu" style="animation-delay:.15s">Thấy <em>toàn cảnh</em><br>Nam Ban<br><span class="h1-l3">trước khi xuống tiền</span></h1>
     <p class="lede fu" style="animation-delay:.3s">Chúng tôi chủ trương phân tích độc lập — để bạn ra quyết định tốt hơn.</p>
     <div class="geo-note" id="geoNote"></div>
@@ -536,10 +536,12 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 
 
-<div style="position:relative;width:100%;height:clamp(300px,44vw,500px);overflow:hidden;background:var(--ink);">
+<div style="position:relative;width:100%;height:clamp(300px,44vw,500px);overflow:hidden;background:var(--paper);">
   <img src="images/hien-nha-thung-lung.jpg" loading="lazy" decoding="async" alt="Hiên quán cà phê nhìn ra thung lũng và tượng Phật, Nam Ban" style="width:100%;height:100%;object-fit:cover;object-position:center 62%;display:block;">
   <div style="position:absolute;inset:0;background:rgba(26,24,21,.06);pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,var(--paper) 0%,rgba(241,236,226,0) 13%,rgba(241,236,226,0) 87%,var(--paper) 100%);pointer-events:none;"></div>
 </div>
+<div class="wrap" style="text-align:center;padding-top:11px;"><span style="font-family:'Fraunces',serif;font-style:italic;font-size:13.5px;color:var(--muted);letter-spacing:.2px;">View từ quán cà phê Tám Trình — Nam Ban</span></div>
 <!-- 03 SELECTION — both sides -->
 <section>
   <div class="wrap">
