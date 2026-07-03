@@ -135,8 +135,28 @@
 .mobile-close.open{opacity:1;visibility:visible;}
 .mobile-close:active{transform:rotate(90deg);}
 .wrap{padding:0 24px;}
+@media(max-width:900px){
 .navlinks{display:none;}
 .hamburger{display:flex;}
+}
+
+/* ==== Menu PC bài viết: progress + breadcrumb + shrink ==== */
+.read-progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--clay);z-index:1002;transition:width .12s linear;}
+nav{transition:box-shadow .3s ease;}
+.navin{transition:height .3s ease;}
+.crumb{display:flex;align-items:center;gap:8px;padding:16px 0 2px;font-size:12px;color:var(--stone);letter-spacing:.3px;flex-wrap:wrap;}
+.crumb a{color:var(--muted);text-decoration:none;transition:color .2s;}
+.crumb a:hover{color:var(--clay);}
+.crumb .sep{color:var(--line);}
+.crumb .cur{color:var(--ink);}
+.navlinks .nav-cta{border:1px solid var(--clay);color:var(--clay);padding:7px 16px;border-radius:3px;transition:background .2s,color .2s;}
+.navlinks .nav-cta::after{display:none;}
+.navlinks .nav-cta:hover{background:var(--clay);color:var(--paper);}
+@media(min-width:901px){
+  nav.scrolled .navin{height:54px;}
+  nav.scrolled{box-shadow:0 1px 14px rgba(26,24,21,.07);}
+}
+@media(max-width:900px){.crumb{display:none;}}
 </style>
 <link rel="alternate" type="application/rss+xml" title="Namban Panorama" href="https://nambanpanorama.com/feed.xml">
 <script type="application/ld+json">
@@ -230,6 +250,7 @@
 </script>
 </head>
 <body>
+<div class="read-progress"></div>
 <script>
 var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}catch(e){return null;}},set:function(k,v){try{localStorage.setItem('pm_'+k,JSON.stringify(v));}catch(e){}}};
 (function(){
@@ -257,6 +278,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
     </div>
   </div>
 </nav>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="/">Trang chủ</a><span class="sep">›</span><span class="cur">Không phải ai cũng hợp với Nam Ban</span></nav></div>
 
 <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
 <button class="mobile-close" id="mobileClose" onclick="toggleMenu()" aria-label="Đóng">×</button>
@@ -392,5 +414,17 @@ function panoramaShare(btn){var url=window.location.href;var title=document.titl
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/panorama-utils.js"></script>
+
+<script>
+(function(){
+  var nav=document.querySelector('nav'),pb=document.querySelector('.read-progress');
+  function onScroll(){
+    var st=window.scrollY||document.documentElement.scrollTop||0;
+    if(nav){st>40?nav.classList.add('scrolled'):nav.classList.remove('scrolled');}
+    if(pb){var h=document.documentElement.scrollHeight-window.innerHeight;pb.style.width=(h>0?(st/h*100):0)+'%';}
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+</script>
 </body>
 </html>
