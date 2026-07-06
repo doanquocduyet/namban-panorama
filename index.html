@@ -241,6 +241,11 @@
 
 @media(min-width:901px){.mobile-menu{display:none !important;}.hamburger{display:none !important;}.menu-overlay{display:none !important;}}
 html{overflow-x:clip;}
+
+/* ==== Scroll-reveal (mượt khi cuộn tới) ==== */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1);}
+.reveal.in{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
 </style>
 
 <script type="application/ld+json">
@@ -487,7 +492,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 </div>
 
 <!-- 01 NOTES + BRIEF -->
-<section>
+<section class="reveal">
   <div class="wrap">
     <div class="sechead"><span class="idx">01</span><span class="kicker">Panorama Notes &amp; Brief</span></div>
     <div class="grid2">
@@ -516,7 +521,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 
 
-<div style="position:relative;width:100%;height:clamp(280px,40vw,440px);overflow:hidden;background:var(--paper);">
+<div class="reveal" style="position:relative;width:100%;height:clamp(280px,40vw,440px);overflow:hidden;background:var(--paper);">
   <img src="images/hien-nha-thung-lung.jpg" loading="lazy" decoding="async" alt="Hiên quán cà phê nhìn ra thung lũng và tượng Phật, Nam Ban" style="width:100%;height:100%;object-fit:cover;object-position:center 62%;display:block;">
   <div style="position:absolute;inset:0;background:rgba(26,24,21,.06);pointer-events:none;"></div>
   <div style="position:absolute;inset:0;background:linear-gradient(to bottom,var(--paper) 0%,rgba(241,236,226,0) 13%,rgba(241,236,226,0) 87%,var(--paper) 100%);pointer-events:none;"></div>
@@ -541,7 +546,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 
 <!-- 03 SELECTION — both sides -->
-<section>
+<section class="reveal">
   <div class="wrap">
     <div class="sechead"><span class="idx">03</span><span class="kicker">Panorama Selection · cơ hội VÀ rủi ro</span></div>
     <div class="sel">
@@ -554,7 +559,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 
 
-<div style="position:relative;width:100%;height:clamp(370px,53vw,600px);overflow:hidden;background:var(--ink);">
+<div class="reveal" style="position:relative;width:100%;height:clamp(370px,53vw,600px);overflow:hidden;background:var(--ink);">
   <img src="images/deo-ta-nung.jpg" loading="lazy" decoding="async" alt="Đường đèo Tà Nung uốn giữa rừng thông" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
   <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,24,21,.62) 0%,rgba(26,24,21,.08) 48%);pointer-events:none;"></div>
   <div style="position:absolute;left:0;right:0;bottom:clamp(26px,5vw,54px);display:flex;flex-direction:column;gap:12px;padding:0 clamp(24px,7vw,90px);"><span style="font-family:'Be Vietnam Pro',sans-serif;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#d9b28f;">Đường về Nam Ban</span><span style="font-family:'Fraunces',serif;font-weight:400;color:#f3eee3;line-height:1.32;font-size:clamp(23px,3.8vw,36px);max-width:18ch;">Qua đèo Tà Nung — ~23km từ Đà Lạt</span></div>
@@ -563,7 +568,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 
 <!-- CHÂN TRANG (B: tối → kem chuyển mượt) -->
-<div style="background:var(--forest-deep);padding:54px 30px 40px;text-align:center;">
+<div class="reveal" style="background:var(--forest-deep);padding:54px 30px 40px;text-align:center;">
   <div class="kicker" style="color:var(--clay-soft);font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:22px;">Lời hứa của chúng tôi</div>
   <p style="font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(18px,2.4vw,21px);line-height:1.55;color:#f3eee3;max-width:560px;margin:0 auto;">“Chúng tôi cho bạn thấy toàn cảnh Nam Ban — kể cả những điều khiến bạn quyết định <em style="color:var(--clay-soft);font-style:italic;">không mua</em>.”</p>
 </div>
@@ -729,6 +734,17 @@ function quizResult(btn, q2ans) {
 (function(){var f=document.getElementById('fabContact');if(!f)return;
 function s(){if((window.scrollY||0)>700){f.style.display='flex';requestAnimationFrame(function(){f.classList.add('on');});window.removeEventListener('scroll',s);}}
 window.addEventListener('scroll',s,{passive:true});s();})();
+</script>
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){obs.observe(el);});
+  }
+  // fallback: sau 2.5s mọi khối chưa hiện thì hiện luôn
+  setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in');});},2500);
+})();
 </script>
 </body>
 </html>
