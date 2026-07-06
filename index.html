@@ -10,13 +10,13 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>Namban Panorama — Hiểu toàn cảnh Nam Ban trước khi xuống tiền</title>
-  <meta name="description" content="Góc nhìn độc lập, trung thực về Nam Ban, Lâm Hà: quy hoạch, giá đất, cơ hội và rủi ro. Hiểu toàn cảnh trước khi quyết định. Gần Đà Lạt ~23km, sân bay Liên Khương ~20km.">
+  <meta name="description" content="Toàn cảnh Nam Ban – Lâm Hà: quy hoạch, giá đất thực tế, cơ hội và rủi ro. Đọc kỹ trước khi xuống tiền, cho người đang cân nhắc vùng đất gần Đà Lạt.">
   <meta name="keywords" content="Nam Ban, Nam Ban Lâm Hà, đất Nam Ban, mua đất Nam Ban, giá đất Nam Ban, quy hoạch Nam Ban, đầu tư Nam Ban, có nên mua đất Nam Ban">
   <meta name="geo.placename" content="Nam Ban, Lâm Hà, Lâm Đồng">
   <link rel="canonical" href="https://nambanpanorama.com/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Namban Panorama — Hiểu toàn cảnh Nam Ban trước khi xuống tiền">
-  <meta property="og:description" content="Góc nhìn độc lập, không ăn hoa hồng — kể cả những lý do không nên mua. Giá thật, quy hoạch thật, rủi ro thật. Đọc trước khi quyết định về Nam Ban.">
+  <meta property="og:description" content="Quy hoạch, giá thực tế, cơ hội và rủi ro của đất Nam Ban — đọc trước khi xuống tiền.">
   <meta property="og:image" content="https://nambanpanorama.com/images/og-home.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -151,7 +151,7 @@
   .kb .kb-s{font-size:12.5px;color:var(--muted);}
   .kb .kb-n{font-family:'Fraunces',serif;font-style:italic;color:var(--stone);font-size:14px;}
 
-  .alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .alt{background:#ece5d7;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-left:4px solid var(--clay);}
   .members{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:36px;}
   .mcell{background:var(--card);padding:26px 24px;}
   .mhead{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
@@ -225,13 +225,13 @@
 .reco-urgent{border-left-color:var(--forest);background:var(--card);}
 .reco-urgent .rp-k{color:var(--forest);}
 .quiz-cap{font-size:11.5px;color:var(--stone);margin:9px 2px 0;font-style:italic;}
-.fab-contact{opacity:0;pointer-events:none;position:fixed;right:18px;bottom:18px;z-index:90;width:54px;height:54px;border-radius:50%;background:rgba(30,42,32,.70);border:1.5px solid var(--forest-deep);display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 6px 18px rgba(26,24,21,.16);transition:transform .25s,box-shadow .25s;}
+.fab-contact{opacity:0;pointer-events:none;position:fixed;right:18px;bottom:18px;z-index:90;width:44px;height:44px;border-radius:50%;background:rgba(47,64,52,.14);border:1px solid rgba(47,64,52,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--forest);display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:none;transition:transform .3s,background .3s,color .3s,border-color .3s;}
 .fab-contact.on{opacity:1;pointer-events:auto;transition:opacity .6s ease,transform .25s,box-shadow .25s;}
-.fab-contact:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(26,24,21,.24);}
-.fab-contact svg{width:23px;height:23px;}
+.fab-contact:hover{transform:translateY(-2px);background:rgba(47,64,52,.9);color:#fff;border-color:transparent;box-shadow:none;}
+.fab-contact svg{width:18px;height:18px;stroke:currentColor;}
 .fab-contact .fab-lbl{position:absolute;right:62px;top:50%;transform:translateY(-50%);background:var(--ink);color:#f3eee3;font-family:'Be Vietnam Pro',sans-serif;font-size:11.5px;letter-spacing:.3px;padding:6px 11px;border-radius:3px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .25s;}
 .fab-contact:hover .fab-lbl{opacity:.96;}
-@media(max-width:780px){.fab-contact{width:50px;height:50px;right:14px;bottom:14px;}.fab-contact .fab-lbl{display:none;}}
+@media(max-width:780px){.fab-contact{width:44px;height:44px;right:14px;bottom:14px;}.fab-contact .fab-lbl{display:none;}}
 
 @media(max-width:780px){.qopt{padding:9px 13px;font-size:12.5px;line-height:1.34;font-weight:400;letter-spacing:0;}}
 @media(min-width:781px) and (max-width:1080px){.wrap{max-width:880px;}}
@@ -452,7 +452,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 <div style="position:relative;width:100%;height:clamp(230px,33vw,360px);overflow:hidden;background:var(--paper);">
   <img src="images/nam-ban-aerial.jpg" loading="lazy" decoding="async" alt="Một chiếc view ôm trọn thị trấn Nam Ban" style="width:100%;height:100%;object-fit:cover;object-position:center 48%;display:block;">
-  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,var(--paper) 0%,rgba(241,236,226,0) 13%,rgba(241,236,226,0) 87%,var(--paper) 100%);pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,var(--paper) 0%,rgba(241,236,226,0) 8%,rgba(241,236,226,0) 92%,var(--paper) 100%);pointer-events:none;"></div>
 </div>
 <div class="wrap" style="text-align:center;padding-top:11px;"><span style="font-family:'Fraunces',serif;font-style:italic;font-size:13.5px;color:var(--muted);letter-spacing:.2px;">Một chiếc view ôm trọn thị trấn Nam Ban</span></div>
 <!-- MINI-QUIZ -->
@@ -523,9 +523,9 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 
 <div class="reveal" style="position:relative;width:100%;height:clamp(280px,40vw,440px);overflow:hidden;background:var(--paper);">
-  <img src="images/hien-nha-thung-lung.jpg" loading="lazy" decoding="async" alt="Hiên quán cà phê nhìn ra thung lũng và tượng Phật, Nam Ban" style="width:100%;height:100%;object-fit:cover;object-position:center 62%;display:block;">
-  <div style="position:absolute;inset:0;background:rgba(26,24,21,.06);pointer-events:none;"></div>
-  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,var(--paper) 0%,rgba(241,236,226,0) 13%,rgba(241,236,226,0) 87%,var(--paper) 100%);pointer-events:none;"></div>
+  <img src="images/hien-nha-thung-lung.jpg" loading="lazy" decoding="async" alt="Hiên quán cà phê nhìn ra thung lũng và tượng Phật, Nam Ban" style="width:100%;height:100%;object-fit:cover;object-position:center 62%;display:block;filter:contrast(1.12) saturate(1.08) brightness(.97);">
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,25,20,.10),rgba(20,25,20,.26));pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,var(--paper) 0%,rgba(241,236,226,0) 8%,rgba(241,236,226,0) 92%,var(--paper) 100%);pointer-events:none;"></div>
 </div>
 <div class="wrap" style="text-align:center;padding-top:11px;"><span style="font-family:'Fraunces',serif;font-style:italic;font-size:13.5px;color:var(--muted);letter-spacing:.2px;">View từ quán cà phê Tám Trình — Nam Ban</span></div>
 <!-- 02 COMMUNITY -->
