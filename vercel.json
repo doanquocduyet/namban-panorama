@@ -3,6 +3,16 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/quy-hoach",
+      "destination": "/quy-hoach-2050",
+      "permanent": true
+    },
+    {
+      "source": "/nam-ban-vs-da-lat",
+      "destination": "/so-sanh-nam-ban-bao-loc-da-lat",
+      "permanent": true
+    },
+    {
       "source": "/nam-ban-co-hop-voi-ban-khong",
       "destination": "/nam-ban-co-hop-voi-ban",
       "permanent": true
