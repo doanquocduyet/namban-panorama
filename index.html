@@ -196,7 +196,9 @@
   .selc-arrow{color:var(--clay);font-size:19px;line-height:1;align-self:center;}
 
   /* Khung ảnh Tám Trình — mat kem + keyline mảnh + tên khắc dưới (chữ nhẹ) */
-  .tt-frame{max-width:720px;margin:0 auto;background:var(--card);border:1px solid var(--line);padding:15px 15px 17px;}
+  .tt-frame{max-width:850px;margin:0 auto;background:var(--card);border:1px solid var(--line);padding:13px 13px 16px;}
+  .wrap.tt-wrap{padding-left:26px;padding-right:26px;}
+  @media(max-width:780px){.wrap.tt-wrap{padding-left:15px;padding-right:15px;}.tt-frame{padding:10px 10px 13px;}}
   .tt-kl{border:1px solid rgba(26,24,21,.15);line-height:0;}
   .tt-kl img{width:100%;height:auto;display:block;filter:contrast(1.06) saturate(1.04) brightness(.99);}
   .tt-plate{display:block;text-align:center;margin-top:14px;}
@@ -575,7 +577,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 
 
-<div class="wrap" style="margin-top:-30px;padding-bottom:2px;">
+<div class="wrap tt-wrap" style="margin-top:-30px;padding-bottom:2px;">
   <figure class="tt-frame reveal">
     <div class="tt-kl"><img src="images/view-tam-trinh-nam-ban.jpg" loading="lazy" decoding="async" alt="Toàn cảnh Nam Ban nhìn từ quán cà phê Tám Trình — sen đá, bàn gỗ, tượng Quan Âm, thác nước và thị trấn giữa thung lũng"></div>
     <figcaption class="tt-plate"><span class="tt-tick"></span><span class="tt-cap">View từ quán cà phê Tám Trình</span><span class="tt-place">Nam Ban · Lâm Hà</span></figcaption>
