@@ -195,6 +195,15 @@
   .selc-price{font-family:'Fraunces',serif;font-size:clamp(16px,2vw,18px);color:var(--ink);white-space:nowrap;}
   .selc-arrow{color:var(--clay);font-size:19px;line-height:1;align-self:center;}
 
+  /* Khung ảnh Tám Trình — mat kem + keyline mảnh + tên khắc dưới (chữ nhẹ) */
+  .tt-frame{max-width:720px;margin:0 auto;background:var(--card);border:1px solid var(--line);padding:15px 15px 17px;}
+  .tt-kl{border:1px solid rgba(26,24,21,.15);line-height:0;}
+  .tt-kl img{width:100%;height:auto;display:block;filter:contrast(1.06) saturate(1.04) brightness(.99);}
+  .tt-plate{display:block;text-align:center;margin-top:14px;}
+  .tt-tick{display:block;width:20px;height:1px;background:var(--clay);opacity:.5;margin:0 auto 10px;}
+  .tt-cap{display:block;font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:13.5px;color:var(--muted);letter-spacing:.2px;}
+  .tt-place{display:block;font-size:9.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-top:7px;}
+
   .promise{background:var(--forest);color:#e9e3d5;padding:88px 0;text-align:center;}
   .promise-q{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(22px,3.2vw,33px);line-height:1.42;max-width:26ch;margin:0 auto;color:var(--paper);}
   .promise-q em{color:var(--clay-soft);}
@@ -566,12 +575,12 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 
 
-<div class="reveal" style="position:relative;width:100%;overflow:hidden;background:var(--paper);">
-  <img src="images/view-tam-trinh-nam-ban.jpg" loading="lazy" decoding="async" alt="Toàn cảnh Nam Ban nhìn từ quán cà phê Tám Trình — sen đá, bàn gỗ, tượng Quan Âm, thác nước và thị trấn giữa thung lũng" style="width:100%;height:auto;display:block;filter:contrast(1.07) saturate(1.05) brightness(.98);">
-  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,25,20,.10),rgba(20,25,20,.26));pointer-events:none;"></div>
-  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,var(--paper) 0%,rgba(241,236,226,0) 8%,rgba(241,236,226,0) 92%,var(--paper) 100%);pointer-events:none;"></div>
+<div class="wrap" style="margin-top:-30px;padding-bottom:2px;">
+  <figure class="tt-frame reveal">
+    <div class="tt-kl"><img src="images/view-tam-trinh-nam-ban.jpg" loading="lazy" decoding="async" alt="Toàn cảnh Nam Ban nhìn từ quán cà phê Tám Trình — sen đá, bàn gỗ, tượng Quan Âm, thác nước và thị trấn giữa thung lũng"></div>
+    <figcaption class="tt-plate"><span class="tt-tick"></span><span class="tt-cap">View từ quán cà phê Tám Trình</span><span class="tt-place">Nam Ban · Lâm Hà</span></figcaption>
+  </figure>
 </div>
-<div class="wrap" style="text-align:center;padding-top:11px;"><span style="font-family:'Fraunces',serif;font-style:italic;font-size:13.5px;color:var(--muted);letter-spacing:.2px;">View từ quán cà phê Tám Trình — Nam Ban</span></div>
 <!-- 02 COMMUNITY -->
 
 <section class="alt" id="cong-dong" style="padding-top:46px;">
