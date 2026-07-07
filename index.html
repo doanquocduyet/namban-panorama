@@ -183,6 +183,18 @@
   .sel-k.risk{color:var(--clay);}
   .sel-li{font-size:13px;color:var(--muted);padding:4px 0;}
 
+  /* Selection 03 — thẻ tuyển chọn gọn */
+  .selc{border:1px solid var(--line);border-radius:6px;background:var(--card);padding:22px 24px;}
+  .selc-lead{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(14.5px,1.9vw,16.5px);line-height:1.55;color:var(--forest);max-width:54ch;margin:0 0 17px;}
+  .selc-item{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:16px;border-top:1px solid var(--line);text-decoration:none;color:var(--ink);transition:padding-left .25s ease;}
+  .selc-item:hover{padding-left:6px;}
+  .selc-info{display:flex;flex-direction:column;gap:5px;min-width:0;}
+  .selc-k{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--clay);}
+  .selc-t{font-family:'Fraunces',serif;font-size:clamp(17px,2.2vw,20px);line-height:1.2;color:var(--ink);}
+  .selc-right{display:flex;align-items:baseline;gap:13px;flex-shrink:0;}
+  .selc-price{font-family:'Fraunces',serif;font-size:clamp(16px,2vw,18px);color:var(--ink);white-space:nowrap;}
+  .selc-arrow{color:var(--clay);font-size:19px;line-height:1;align-self:center;}
+
   .promise{background:var(--forest);color:#e9e3d5;padding:88px 0;text-align:center;}
   .promise-q{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(22px,3.2vw,33px);line-height:1.42;max-width:26ch;margin:0 auto;color:var(--paper);}
   .promise-q em{color:var(--clay-soft);}
@@ -272,9 +284,6 @@ html{overflow-x:clip;}
   /* VIỆC 1 — khối 02: 2 cột, cụm phải thẳng đỉnh tiêu đề trái */
   #cong-dong .c02-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:56px;align-items:start;}
   #cong-dong .c02-r .feed{margin-top:0 !important;}
-  /* VIỆC 2 — khối 03: kéo intro sát card, bớt khoảng trống */
-  #sel03 .sel > div{margin-bottom:8px !important;}
-  #sel03 .sel > a{padding-top:9px !important;}
   /* VIỆC 4a — ảnh đèo: cao hơn, thấy trọn đường + chữ khắc góc dưới-trái */
   .closing-photo{min-height:520px;background-position:left bottom;}
   /* VIỆC 4b — khối info chân trang căn trái */
@@ -590,9 +599,12 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <section class="reveal" id="sel03">
   <div class="wrap">
     <div class="sechead"><span class="idx">03</span><span class="kicker">Panorama Selection · cơ hội VÀ rủi ro</span></div>
-    <div class="sel" style="border:1px solid var(--line);border-radius:4px;overflow:hidden;padding:22px 22px 6px;">
-      <div style="font-family:'Fraunces',serif;font-style:italic;font-size:clamp(15px,2vw,17px);line-height:1.6;color:var(--forest);max-width:56ch;margin-bottom:20px;">Mỗi tháng, một vài tài sản được xem tận nơi — đọc kỹ pháp lý, dòng tiền và rủi ro trước khi nhắc tới.</div>
-      <a href="doc-lo-dat-02-view-ho" style="display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 0 4px;border-top:1px solid var(--line);text-decoration:none;color:var(--ink);"><span style="font-family:'Fraunces',serif;font-size:clamp(16px,2.2vw,19px);line-height:1.3;">Selection 02 — view hồ · 5,75 tỷ</span><span style="color:var(--clay);font-size:19px;flex-shrink:0;">→</span></a>
+    <div class="selc">
+      <p class="selc-lead">Mỗi tháng, một vài tài sản được xem tận nơi — đọc kỹ pháp lý, dòng tiền và rủi ro trước khi nhắc tới.</p>
+      <a class="selc-item" href="doc-lo-dat-02-view-ho">
+        <span class="selc-info"><span class="selc-k">Selection 02</span><span class="selc-t">View hồ</span></span>
+        <span class="selc-right"><span class="selc-price">5,75 tỷ</span><span class="selc-arrow">→</span></span>
+      </a>
     </div>
   </div>
 </section>
