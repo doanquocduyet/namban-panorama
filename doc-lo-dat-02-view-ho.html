@@ -49,6 +49,7 @@
 }
 </script>
 <style>
+html{overflow-x:clip;}
 .wrap{max-width:1080px;margin:0 auto;padding:0 40px;}
 /* NAV */
   nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
@@ -242,11 +243,9 @@ nav{transition:box-shadow .3s ease;}
     <a class="logo" href="/">Namban Panorama<span class="logo-intel">Intelligence</span></a>
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
     <div class="navlinks" id="navlinks">
-      <a href="bat-dau">Bắt đầu từ đây</a>
-      <a href="quy-hoach-2050">Quy hoạch</a>
-      <a href="namban-index">Giá đất</a>
-      <a href="doc-lo-dat">Đọc lô đất</a>
-      <a href="cau-chuyen-nam-ban">Câu chuyện</a>
+      <a href="nam-ban">Về Nam Ban</a>
+      <a href="dat">Đất</a>
+      <a href="dau-tu">Đầu tư</a>
       <a href="trao-doi" class="nav-cta">Trao đổi</a>
     </div>
   </div>
@@ -258,11 +257,9 @@ nav{transition:box-shadow .3s ease;}
 <button class="mobile-close" id="mobileClose" onclick="toggleMenu()" aria-label="Đóng">×</button>
 <div class="mobile-menu" id="mobileMenu">
   <span class="mobile-logo">Panorama</span>
-  <a href="bat-dau" onclick="toggleMenu()">Bắt đầu từ đây</a>
-  <a href="quy-hoach-2050" onclick="toggleMenu()">Quy hoạch</a>
-  <a href="namban-index" onclick="toggleMenu()">Giá đất</a>
-  <a href="doc-lo-dat" onclick="toggleMenu()">Đọc lô đất</a>
-  <a href="cau-chuyen-nam-ban" onclick="toggleMenu()">Câu chuyện</a>
+  <a href="nam-ban" onclick="toggleMenu()">Về Nam Ban</a>
+  <a href="dat" onclick="toggleMenu()">Đất</a>
+  <a href="dau-tu" onclick="toggleMenu()">Đầu tư</a>
   <a href="trao-doi" onclick="toggleMenu()">Trao đổi</a>
 </div>
 <article class="art-body">

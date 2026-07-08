@@ -121,18 +121,33 @@
   .hero-foot{font-size:12px;color:var(--muted);margin-top:14px;letter-spacing:.3px;}
   .ridges{position:absolute;left:0;right:0;bottom:0;width:100%;height:300px;z-index:1;pointer-events:none;}
 
-  /* LAYERS STRIP */
-  .layers{background:var(--forest);color:#e9e3d5;}
-  .layers .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;padding-top:22px;padding-bottom:22px;}
-  .layer{display:flex;flex-direction:column;gap:2px;}
-  .layer b{font-family:'Fraunces',serif;font-weight:400;font-size:15px;}
-  .layer span{font-size:11px;color:var(--clay-soft);letter-spacing:.3px;}
-  .layer-sep{width:1px;align-self:stretch;background:rgba(255,255,255,.12);}
+  /* SLOGAN — quiet luxury */
+  .slogan{padding:44px 30px;text-align:center;background:var(--card);}
+  .slogan .s{font-family:'Fraunces',serif;font-weight:300;font-size:22px;color:#4a4034;letter-spacing:.05em;white-space:nowrap;display:inline-flex;align-items:center;gap:22px;}
+  .slogan .s::before,.slogan .s::after{content:"";width:36px;height:1px;background:var(--clay-soft);opacity:.6;}
+  @media(max-width:640px){
+    .slogan{padding:28px 20px;}
+    .slogan .s{font-size:16px;gap:14px;white-space:normal;}
+    .slogan .s::before,.slogan .s::after{width:20px;}
+  }
 
-  /* PULSE */
-  .reco{background:var(--forest-deep);color:#e9e3d5;text-align:center;padding:16px 24px;min-height:22px;}
-  .reco #reco-line{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:15px;letter-spacing:.2px;color:#e9e3d5;opacity:0;transition:opacity .6s ease;line-height:1.5;}
-  .reco #reco-line.show{opacity:.92;}
+  /* BẮT ĐẦU TỪ ĐÂY — Journey Navigator */
+  .jn{padding:50px 0 54px;}
+  .jn-head{text-align:center;margin-bottom:28px;}
+  .jn-q{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(20px,2.6vw,26px);letter-spacing:-.3px;margin-top:10px;}
+  .jn-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr;gap:14px;}
+  .jn-card{display:flex;flex-direction:column;min-height:172px;background:var(--card);border:1px solid var(--line);border-radius:4px;padding:20px 18px;text-decoration:none;color:var(--ink);transition:transform .25s ease,box-shadow .25s ease,border-color .25s;}
+  .jn-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(26,24,21,.08);border-color:var(--stone);}
+  .jn-num{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:14px;color:var(--stone);margin-bottom:10px;}
+  .jn-t{font-family:'Fraunces',serif;font-size:17.5px;line-height:1.25;margin-bottom:7px;}
+  .jn-d{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:14px;}
+  .jn-go{margin-top:auto;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--clay);font-weight:500;}
+  @media(max-width:780px){.jn{padding:36px 0 40px;}.jn-grid{grid-template-columns:1fr 1fr;gap:10px;}.jn-card{min-height:150px;padding:15px 13px;}.jn-t{font-size:15px;}.jn-d{font-size:11.5px;}}
+
+  /* Ô CHẠY CHỮ */
+  .marq{padding:13px 40px;text-align:center;background:#e4dcca;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;}
+  .marq .t{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:16px;color:#57503f;}
+  @media(max-width:640px){.marq{padding:11px 20px;}.marq .t{font-size:14px;}}
 
   /* SECTIONS */
   section{padding:76px 0;}
@@ -192,7 +207,6 @@
   .selc-k{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--clay);}
   .selc-t{font-family:'Fraunces',serif;font-size:clamp(17px,2.2vw,20px);line-height:1.2;color:var(--ink);}
   .selc-right{display:flex;align-items:baseline;gap:13px;flex-shrink:0;}
-  .selc-price{font-family:'Fraunces',serif;font-size:clamp(16px,2vw,18px);color:var(--ink);white-space:nowrap;}
   .selc-arrow{color:var(--clay);font-size:19px;line-height:1;align-self:center;}
 
   /* Khung ảnh Tám Trình — mat kem + keyline mảnh + tên khắc dưới (chữ nhẹ) */
@@ -224,8 +238,6 @@
     .grid2,.sel-split{grid-template-columns:1fr;}
     .sel-col:first-child{border-right:0;border-bottom:1px solid var(--line);}
     .members{grid-template-columns:1fr;}
-    .layers .wrap{justify-content:flex-start;flex-wrap:nowrap;gap:6px;align-items:flex-start;}.layer{flex:1 1 0;min-width:0;}.layer b{font-size:13.5px;line-height:1.25;}.layer span{font-size:9.5px;font-weight:300;line-height:1.3;}
-    .layer-sep{display:none;}
     /* panorama image strip — giữ tỉ lệ trên mobile */
     div[style*="aspect-ratio:3/1"] img{object-fit:cover;object-position:center 40%;height:100%;width:100%;}
     /* quiz card trên mobile */
@@ -275,10 +287,10 @@ html{overflow-x:clip;}
 .closing{padding:0;}
 .closing-photo{position:relative;min-height:340px;background-image:url('images/deo-ta-nung.jpg');background-size:cover;background-position:left 48%;}
 .closing-photo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(to bottom,transparent,rgba(20,25,20,.4));}
-.closing-body{background:linear-gradient(to bottom,#2f4034 0%,#2f4034 28%,#1e2a20 55%,#0d0f0b 100%);}
+.closing-body{background:linear-gradient(to bottom,#2f4034 0%,#2f4034 28%,#2b322e 55%,#20241f 100%);}
 .closing-green{padding:44px 30px 30px;text-align:center;border-top:2px solid rgba(232,185,138,.32);}
+.closing-lead{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:15.5px;line-height:1.5;color:#e8b98a;max-width:520px;margin:0 auto 13px;}
 .closing-quote{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:20px;line-height:1.5;color:#f5f1e8;max-width:520px;margin:0 auto;}
-.closing-br{display:block;margin-top:6px;}
 .closing-quote em{color:#e8b98a;font-style:italic;}
 .closing-dark{padding:0 30px 38px;text-align:center;}
 .closing-sep{width:28px;height:1px;background:rgba(232,185,138,.45);margin:32px auto 24px;}
@@ -289,7 +301,7 @@ html{overflow-x:clip;}
 .closing-phone a{color:#d9b896;text-decoration:none;}
 .closing-mail{font-size:11px;letter-spacing:.4px;margin-top:7px;}
 .closing-mail a{color:#a6b09c;text-decoration:none;}
-@media(max-width:640px){.closing-quote{font-size:18px;}.closing-photo{min-height:260px;}}
+@media(max-width:640px){.closing-quote{font-size:18px;}.closing-photo{min-height:260px;}.closing-lead{font-size:12.5px;}}
 
 /* ==== Tinh chỉnh CHỈ desktop (min-width:1024) — mobile & tablet giữ nguyên ==== */
 @media(min-width:1024px){
@@ -444,10 +456,9 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
     <a href="/" class="logo" style="text-decoration:none;color:inherit;">Namban Panorama</a>
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
     <div class="navlinks" id="navlinks">
-      <a href="nam-ban-co-dang-song">Sống ở Nam Ban</a>
-      <a href="namban-index">Giá đất</a>
-      <a href="quy-hoach-2050">Quy hoạch</a>
-      <a href="sap-nhap-nam-ban-dat">Sáp nhập &amp; vùng đất</a>
+      <a href="nam-ban">Về Nam Ban</a>
+      <a href="dat">Đất</a>
+      <a href="dau-tu">Đầu tư</a>
       <a href="trao-doi" class="nav-cta">Trao đổi</a>
     </div>
   </div>
@@ -456,10 +467,9 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <button class="mobile-close" id="mobileClose" onclick="toggleMenu()" aria-label="Đóng">×</button>
 <div class="mobile-menu" id="mobileMenu">
   <span class="mobile-logo">Panorama</span>
-  <a href="nam-ban-co-dang-song" onclick="toggleMenu()">Sống ở Nam Ban</a>
-  <a href="namban-index" onclick="toggleMenu()">Giá đất</a>
-  <a href="quy-hoach-2050" onclick="toggleMenu()">Quy hoạch</a>
-  <a href="sap-nhap-nam-ban-dat" onclick="toggleMenu()">Sáp nhập &amp; vùng đất</a>
+  <a href="nam-ban" onclick="toggleMenu()">Về Nam Ban</a>
+  <a href="dat" onclick="toggleMenu()">Đất</a>
+  <a href="dau-tu" onclick="toggleMenu()">Đầu tư</a>
   <a href="trao-doi" onclick="toggleMenu()">Trao đổi</a>
 </div>
 </nav>
@@ -485,22 +495,44 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   </svg>
 </header>
 
-<!-- LAYERS / ECOSYSTEM -->
-<div class="layers">
+<!-- SLOGAN -->
+<div class="slogan"><div class="s">Hiểu vùng đất trước khi hiểu giá đất</div></div>
+
+<!-- BẮT ĐẦU TỪ ĐÂY — Journey Navigator -->
+<div class="jn">
   <div class="wrap">
-    <div class="layer"><b>Notes</b><span>Ghi chép thực địa</span></div>
-    <div class="layer-sep"></div>
-    <div class="layer"><b>Brief</b><span>Bản tin tháng</span></div>
-    <div class="layer-sep"></div>
-    <div class="layer"><b>Selection</b><span>Cơ hội tuyển chọn</span></div>
-    <div class="layer-sep"></div>
-    <div class="layer"><b>Advisory</b><span>Góc nhìn độc lập</span></div>
-    
+    <div class="jn-head">
+      <span class="kicker">Bắt đầu từ đây</span>
+      <div class="jn-q">Bạn đang ở đâu trong hành trình?</div>
+    </div>
+    <div class="jn-grid">
+      <a class="jn-card" href="nam-ban">
+        <span class="jn-num">01</span>
+        <span class="jn-t">Mới nghe tới Nam Ban</span>
+        <span class="jn-d">Đáng sống không, khác gì Đà Lạt.</span>
+        <span class="jn-go">Hiểu vùng đất →</span>
+      </a>
+      <a class="jn-card" href="dat">
+        <span class="jn-num">02</span>
+        <span class="jn-t">Đang cân nhắc mua</span>
+        <span class="jn-d">Giá, pháp lý, sai lầm nên tránh.</span>
+        <span class="jn-go">Hiểu giá đất →</span>
+      </a>
+      <a class="jn-card" href="dau-tu">
+        <span class="jn-num">03</span>
+        <span class="jn-t">Muốn biết có nên đầu tư</span>
+        <span class="jn-d">Quy hoạch, chu kỳ, rủi ro.</span>
+        <span class="jn-go">Xem phân tích →</span>
+      </a>
+      <a class="jn-card" href="trao-doi">
+        <span class="jn-num">04</span>
+        <span class="jn-t">Sẵn sàng trao đổi</span>
+        <span class="jn-d">Một góc nhìn độc lập cho bạn.</span>
+        <span class="jn-go">Trao đổi →</span>
+      </a>
+    </div>
   </div>
 </div>
-
-<!-- PULSE -->
-<div class="reco"><span id="reco-line"></span></div>
 
 
 
@@ -510,43 +542,9 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   <div style="position:absolute;inset:0;background:linear-gradient(to bottom,var(--paper) 0%,rgba(241,236,226,0) 8%,rgba(241,236,226,0) 92%,var(--paper) 100%);pointer-events:none;"></div>
 </div>
 <div class="wrap" style="text-align:center;padding-top:11px;"><span style="font-family:'Fraunces',serif;font-style:italic;font-size:13.5px;color:var(--muted);letter-spacing:.2px;">Một chiếc view ôm trọn thị trấn Nam Ban</span></div>
-<!-- MINI-QUIZ -->
-<div class="wrap" style="padding:40px 24px 4px;">
-  <div style="text-align:center;margin-bottom:20px;"><span style="font-family:'Fraunces',serif;font-style:italic;font-size:clamp(15px,2vw,17px);line-height:1.55;color:var(--forest);">Trả lời hai câu, chúng tôi chỉ bạn nên bắt đầu đọc từ đâu.</span></div>
-<div id="brief-signup" class="quiz-wrap fu" style="animation-delay:.42s">
 
-      <div class="quiz-q" id="q1">
-        <div class="quiz-card">
-          <div class="quiz-step">Câu 1 / 2</div>
-          <p class="quiz-label">Bạn đang nhìn Nam Ban theo góc nào?</p>
-          <div class="quiz-opts">
-            <button class="qopt" onclick="quizNext(this,'a')">Đang tìm hiểu vùng đất này, chưa có kế hoạch cụ thể</button>
-            <button class="qopt" onclick="quizNext(this,'b')">Tìm chỗ trốn thành phố cuối tuần</button>
-            <button class="qopt" onclick="quizNext(this,'c')">Đang cân nhắc đầu tư, muốn hiểu rõ trước khi quyết định</button>
-            <button class="qopt" onclick="quizNext(this,'d')">Xem vài tài sản cụ thể để tham khảo</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="quiz-q" id="q2" style="display:none;">
-        <div class="quiz-card">
-          <div class="quiz-step">Câu 2 / 2</div>
-          <p class="quiz-label">Điều bạn muốn biết rõ nhất về Nam Ban là gì?</p>
-          <div class="quiz-opts">
-            <button class="qopt" onclick="quizResult(this,'1')">Quy hoạch và định hướng phát triển vùng</button>
-            <button class="qopt" onclick="quizResult(this,'2')">Mặt bằng giá thực tế — không phải giá rao</button>
-            <button class="qopt" onclick="quizResult(this,'3')">Loại tài sản nào phù hợp với mục tiêu của tôi</button>
-            <button class="qopt" onclick="quizResult(this,'4')">Rủi ro thật sự của thị trường này</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="quiz-result" id="qresult" style="display:none;"></div>
-
-    </div>
-
-</div>
-
+<!-- Ô CHẠY CHỮ -->
+<div class="marq" style="margin-top:26px;"><span class="t">Một nơi đáng sống thường hiện ra chậm hơn một nơi đáng bán.</span></div>
 <!-- 01 NOTES + BRIEF -->
 <section class="reveal">
   <div class="wrap">
@@ -577,7 +575,44 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 
 
-<div class="wrap tt-wrap" style="margin-top:-30px;padding-bottom:2px;">
+<!-- MINI-QUIZ (dời xuống sau Khối 01) -->
+<div class="wrap" style="padding:6px 24px 4px;">
+  <div style="text-align:center;margin-bottom:20px;"><span style="font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(15px,2vw,17px);line-height:1.55;color:var(--forest);">Chúng tôi sẽ giúp bạn nhanh hơn</span></div>
+<div id="brief-signup" class="quiz-wrap fu" style="animation-delay:.42s">
+
+      <div class="quiz-q" id="q1">
+        <div class="quiz-card">
+          <div class="quiz-step">Câu 1 / 2</div>
+          <p class="quiz-label">Bạn đang quan tâm điều gì nhất?</p>
+          <div class="quiz-opts">
+            <button class="qopt" onclick="quizNext(this,'a')">Đang tìm hiểu vùng đất này, chưa có kế hoạch cụ thể</button>
+            <button class="qopt" onclick="quizNext(this,'b')">Tìm chỗ trốn thành phố cuối tuần</button>
+            <button class="qopt" onclick="quizNext(this,'c')">Đang cân nhắc đầu tư, muốn hiểu rõ trước khi quyết định</button>
+            <button class="qopt" onclick="quizNext(this,'d')">Xem vài tài sản cụ thể để tham khảo</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz-q" id="q2" style="display:none;">
+        <div class="quiz-card">
+          <div class="quiz-step">Câu 2 / 2</div>
+          <p class="quiz-label">Điều bạn muốn biết rõ nhất về Nam Ban là gì?</p>
+          <div class="quiz-opts">
+            <button class="qopt" onclick="quizResult(this,'1')">Quy hoạch và định hướng phát triển vùng</button>
+            <button class="qopt" onclick="quizResult(this,'2')">Mặt bằng giá thực tế — không phải giá rao</button>
+            <button class="qopt" onclick="quizResult(this,'3')">Loại tài sản nào phù hợp với mục tiêu của tôi</button>
+            <button class="qopt" onclick="quizResult(this,'4')">Rủi ro thật sự của thị trường này</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz-result" id="qresult" style="display:none;"></div>
+
+    </div>
+
+</div>
+
+<div class="wrap tt-wrap" style="margin-top:14px;padding-bottom:2px;">
   <figure class="tt-frame reveal">
     <div class="tt-kl"><img src="images/view-tam-trinh-nam-ban.jpg" loading="lazy" decoding="async" alt="Toàn cảnh Nam Ban nhìn từ quán cà phê Tám Trình — sen đá, bàn gỗ, tượng Quan Âm, thác nước và thị trấn giữa thung lũng"></div>
     <figcaption class="tt-plate"><span class="tt-tick"></span><span class="tt-cap">View từ quán cà phê Tám Trình</span><span class="tt-place">Nam Ban · Lâm Hà</span></figcaption>
@@ -614,8 +649,8 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
     <div class="selc">
       <p class="selc-lead">Mỗi tháng, một vài tài sản được xem tận nơi — đọc kỹ pháp lý, dòng tiền và rủi ro trước khi nhắc tới.</p>
       <a class="selc-item" href="doc-lo-dat-02-view-ho">
-        <span class="selc-info"><span class="selc-k">Selection 02</span><span class="selc-t">View hồ</span></span>
-        <span class="selc-right"><span class="selc-price">5,75 tỷ</span><span class="selc-arrow">→</span></span>
+        <span class="selc-info"><span class="selc-k">Selection 02</span><span class="selc-t">Lô view hồ — đọc rủi ro</span></span>
+        <span class="selc-right"><span class="selc-arrow">→</span></span>
       </a>
     </div>
   </div>
@@ -633,7 +668,8 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   <div class="closing-photo"></div>
   <div class="closing-body">
     <div class="closing-green">
-      <p class="closing-quote">Chúng tôi cho bạn thấy toàn cảnh Nam Ban — kể cả những điều khiến bạn quyết định<span class="closing-br"><em>không mua.</em></span></p>
+      <p class="closing-lead">Một quyết định tốt luôn bắt đầu từ một góc nhìn đầy đủ.</p>
+      <p class="closing-quote">Chúng tôi cho bạn thấy toàn cảnh Nam Ban — kể cả những điều khiến bạn quyết định <em>không mua.</em></p>
     </div>
     <div class="closing-dark">
       <div class="closing-sep"></div>
@@ -766,30 +802,6 @@ function quizResult(btn, q2ans) {
       sessionStorage.setItem('geoShown','1');
     }
   }catch(e){}
-})();
-</script>
-<script>
-(function(){
-  var q=[
-    "Đất nhìn ngày nắng, sống ngày mưa.",
-    "Có những thứ không nằm trong sổ đỏ nhưng ảnh hưởng tới cuộc sống mỗi ngày.",
-    "Một nơi đáng sống thường hiện ra chậm hơn một nơi đáng bán.",
-    "Có những người rất hợp với Nam Ban. Và có những người hoàn toàn không.",
-    "Cảnh đẹp là thứ người ta chụp ảnh. Cuộc sống mới là thứ khiến người ta quay lại.",
-    "Không phải ai lên Nam Ban cũng đang tìm đất.",
-    "Có những ngày ở Nam Ban rất bình thường. Nhiều người lại thích điều đó.",
-    "Một con đường đẹp ngày nắng có thể là một câu chuyện khác vào tháng Bảy.",
-    "Người xem nhiều đất nhất thường là người mua chậm nhất."
-  ];
-  var el=document.getElementById('reco-line');
-  if(!el)return;
-  var i=Math.floor(Math.random()*q.length);
-  function show(){el.textContent=q[i];el.classList.add('show');}
-  setTimeout(show,200);
-  setInterval(function(){
-    el.classList.remove('show');
-    setTimeout(function(){i=(i+1)%q.length;el.textContent=q[i];el.classList.add('show');},650);
-  },10000);
 })();
 </script>
 <a href="trao-doi" class="fab-contact" id="fabContact" style="display:none" aria-label="Trao đổi với người ở đây"><span class="fab-lbl">Trao đổi với người ở đây</span><span class="fab-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#e7e0d2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a7.5 7.5 0 0 1-10.9 6.7L4 19.5l1.3-4.1A7.5 7.5 0 1 1 20 11.5Z"/></svg></span></a>
