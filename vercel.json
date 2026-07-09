@@ -123,16 +123,6 @@
       "permanent": true
     },
     {
-      "source": "/google-maps-khong-noi-ve-nam-ban",
-      "destination": "/nam-ban-co-dang-song",
-      "permanent": true
-    },
-    {
-      "source": "/nam-ban-co-hop-voi-ban-khong",
-      "destination": "/nam-ban-co-hop-voi-ban",
-      "permanent": true
-    },
-    {
       "source": "/doc-nhanh-nam-ban",
       "destination": "/doc-nhanh",
       "permanent": true
