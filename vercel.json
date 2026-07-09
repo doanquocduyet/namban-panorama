@@ -3,21 +3,6 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/nam-ban",
-      "destination": "/nam-ban-co-dang-song",
-      "permanent": false
-    },
-    {
-      "source": "/dat",
-      "destination": "/namban-index",
-      "permanent": false
-    },
-    {
-      "source": "/dau-tu",
-      "destination": "/tiem-nang-dau-tu",
-      "permanent": false
-    },
-    {
       "source": "/quy-hoach",
       "destination": "/quy-hoach-2050",
       "permanent": true

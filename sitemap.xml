@@ -190,4 +190,7 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://nambanpanorama.com/ja/nam-ban-zou-no-taki"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nambanpanorama.com/elephant-waterfall-nam-ban"/>
   </url>
+  <url><loc>https://nambanpanorama.com/nam-ban</loc><lastmod>2026-07-07</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://nambanpanorama.com/dat</loc><lastmod>2026-07-07</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://nambanpanorama.com/dau-tu</loc><lastmod>2026-07-07</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
 </urlset>
