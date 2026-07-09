@@ -128,6 +128,9 @@ header .lede{font-size:clamp(15px,1.7vw,17.5px);color:#443d33;max-width:560px;ma
 main{padding:8px 0 40px;}
 .hgroup{margin-bottom:44px;}
 .heye{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--stone);margin-bottom:6px;}
+.hgroup .heye{font-family:'Fraunces',serif;font-size:21px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--ink);margin-bottom:15px;}
+.hgroup .heye::before{content:'';display:block;width:24px;height:2px;background:var(--clay);border-radius:1px;margin-bottom:13px;}
+@media(max-width:640px){.hgroup .heye{font-size:19px;}}
 .kb{border-top:1px solid var(--line);}
 .kb a{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:17px 2px;border-bottom:1px solid var(--line);transition:padding-left .35s cubic-bezier(.22,1,.36,1);}
 .kb a:hover{padding-left:10px;}
@@ -178,7 +181,7 @@ a,button{touch-action:manipulation;}
 <body>
 <nav>
   <div class="navin">
-    <a href="/" class="logo">Namban <i style="font-style:normal;color:var(--clay);">Panorama</i><span style="font-family:'Be Vietnam Pro',sans-serif;font-size:.46em;font-weight:400;letter-spacing:2px;text-transform:uppercase;color:var(--stone);margin-left:9px;vertical-align:middle;">intelligence</span></a>
+    <a href="/" class="logo">Namban Panorama<span style="font-family:'Be Vietnam Pro',sans-serif;font-size:.46em;font-weight:400;letter-spacing:2px;text-transform:uppercase;color:var(--stone);margin-left:9px;vertical-align:middle;">intelligence</span></a>
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
     <div class="navlinks">
       <a href="/nam-ban">Về Nam Ban</a>
