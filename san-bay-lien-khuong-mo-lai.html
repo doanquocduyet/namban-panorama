@@ -112,7 +112,7 @@ html{overflow-x:clip;}
 .navlinks a:hover::after{width:100%;}
 .navlinks a{color:inherit;text-decoration:none;transition:color .25s;}
 .navlinks a:hover{color:var(--ink);}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:14px 10px;margin-right:-10px;background:none;border:none;}
 .hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:transform .3s ease,opacity .2s ease;trans-origin:center;}
 .hamburger.is-open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
 .hamburger.is-open span:nth-child(2){opacity:0;}
@@ -291,7 +291,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 </div>
 
 <figure style="max-width:680px;margin:0 auto 8px;padding:0 24px;">
-  <img loading="eager" decoding="async" src="images/lien-khuong-mo-lai.jpg" alt="Sân bay Liên Khương sắp mở cửa trở lại cuối tháng 8/2026 — nhìn qua cửa sổ máy bay xuống thung lũng cao nguyên Lâm Đồng" style="width:100%;height:auto;border-radius:6px;box-shadow:0 2px 16px rgba(30,42,32,.12);">
+  <img width="1600" height="840" loading="eager" decoding="async" src="images/lien-khuong-mo-lai.jpg" alt="Sân bay Liên Khương sắp mở cửa trở lại cuối tháng 8/2026 — nhìn qua cửa sổ máy bay xuống thung lũng cao nguyên Lâm Đồng" style="width:100%;height:auto;border-radius:6px;box-shadow:0 2px 16px rgba(30,42,32,.12);">
 </figure>
 
 <div class="art-back"><a href="/" onclick="if(document.referrer&&document.referrer.indexOf(location.hostname)>-1){history.back();return false;}">← Quay lại</a></div>
@@ -314,7 +314,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
   <figure style="margin:32px auto;max-width:420px;">
     <div style="border:1px solid var(--line);border-radius:8px;padding:14px;background:var(--card);box-shadow:0 1px 10px rgba(30,42,32,.06);">
-      <img loading="lazy" decoding="async" src="images/van-ban-lien-khuong.jpg" alt="Văn bản số 2042 của Tổng công ty Cảng hàng không Việt Nam về việc khai thác trở lại Cảng hàng không quốc tế Liên Khương từ 00h00 ngày 19/8/2026" style="width:100%;height:auto;border-radius:4px;display:block;">
+      <img width="943" height="1680" loading="lazy" decoding="async" src="images/van-ban-lien-khuong.jpg" alt="Văn bản số 2042 của Tổng công ty Cảng hàng không Việt Nam về việc khai thác trở lại Cảng hàng không quốc tế Liên Khương từ 00h00 ngày 19/8/2026" style="width:100%;height:auto;border-radius:4px;display:block;">
     </div>
     <figcaption style="font-size:12.5px;color:var(--stone);text-align:center;margin-top:10px;font-style:italic;">Văn bản của Tổng công ty Cảng hàng không Việt Nam, ký ngày 12/6/2026.</figcaption>
   </figure>

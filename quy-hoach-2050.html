@@ -99,7 +99,7 @@ html{overflow-x:clip;}
 .navlinks a:hover::after{width:100%;}
 .navlinks a{color:inherit;text-decoration:none;transition:color .25s;}
 .navlinks a:hover{color:var(--ink);}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:14px 10px;margin-right:-10px;background:none;border:none;}
 .hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:transform .3s ease,opacity .2s ease;trans-origin:center;}
 .hamburger.is-open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
 .hamburger.is-open span:nth-child(2){opacity:0;}
@@ -299,7 +299,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 </div>
 
 <figure class="hero-photo">
-  <img loading="lazy" decoding="async" src="images/nam-ban-toan-canh.jpg" alt="Toàn cảnh Nam Ban Lâm Hà — thị trấn, thác Voi, tượng Đức Mẹ giữa vùng nông nghiệp cao nguyên" loading="lazy">
+  <img width="800" height="450" loading="lazy" decoding="async" src="images/nam-ban-toan-canh.jpg" alt="Toàn cảnh Nam Ban Lâm Hà — thị trấn, thác Voi, tượng Đức Mẹ giữa vùng nông nghiệp cao nguyên" loading="lazy">
   <figcaption>Nam Ban nhìn từ trên cao — thác Voi và vành đai nông nghiệp xanh, đúng hình hài "đô thị sinh thái cao nguyên" mà quy hoạch hướng tới.</figcaption>
 </figure>
 
@@ -420,7 +420,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
   
 <figure class="hero-photo" style="margin:32px auto;">
-  <img loading="lazy" decoding="async" src="images/nam-ban-thung-lung.jpg" alt="Toàn cảnh thung lũng Nam Ban mùa cà phê trổ hoa — vườn tược và núi đồi cao nguyên" loading="lazy">
+  <img width="1280" height="720" loading="lazy" decoding="async" src="images/nam-ban-thung-lung.jpg" alt="Toàn cảnh thung lũng Nam Ban mùa cà phê trổ hoa — vườn tược và núi đồi cao nguyên" loading="lazy">
   <figcaption>Mùa cà phê trổ hoa — thung lũng Nam Ban nhìn từ trên đồi.</figcaption>
 </figure>
   <div class="section-head">
