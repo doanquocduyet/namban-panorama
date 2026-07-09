@@ -122,6 +122,15 @@
   .hero-foot{font-size:12px;color:var(--muted);margin-top:14px;letter-spacing:.3px;}
   .ridges{position:absolute;left:0;right:0;bottom:0;width:100%;height:300px;z-index:1;pointer-events:none;}
 
+  /* LAYERS — dải 4 mục Notes/Brief/Selection/Advisory */
+  .layers{background:var(--forest);color:#e9e3d5;}
+  .layers .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;padding-top:22px;padding-bottom:22px;}
+  .layer{display:flex;flex-direction:column;gap:2px;}
+  .layer b{font-family:'Fraunces',serif;font-weight:400;font-size:15px;}
+  .layer span{font-size:11px;color:#e8b98a;letter-spacing:.3px;}
+  .layer-sep{width:1px;align-self:stretch;background:rgba(255,255,255,.12);}
+  @media(max-width:640px){.layers .wrap{justify-content:flex-start;flex-wrap:nowrap;gap:6px;align-items:flex-start;}.layer{flex:1 1 0;min-width:0;}.layer b{font-size:13.5px;line-height:1.25;}.layer span{font-size:9.5px;font-weight:300;line-height:1.3;}.layer-sep{display:none;}}
+
   /* SLOGAN — quiet luxury */
   .slogan{padding:44px 30px;text-align:center;background:var(--card);}
   .slogan .s{font-family:'Fraunces',serif;font-weight:300;font-size:22px;color:#4a4034;letter-spacing:.05em;white-space:nowrap;display:inline-flex;align-items:center;gap:22px;}
@@ -517,6 +526,19 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
     <path d="M0,300 L0,272 C220,260 420,286 640,272 C880,256 1040,288 1200,270 L1200,300 Z" fill="#2f4034" opacity="0.9"/>
   </svg>
 </header>
+
+<!-- LAYERS / ECOSYSTEM -->
+<div class="layers">
+  <div class="wrap">
+    <div class="layer"><b>Notes</b><span>Ghi chép thực địa</span></div>
+    <div class="layer-sep"></div>
+    <div class="layer"><b>Brief</b><span>Bản tin tháng</span></div>
+    <div class="layer-sep"></div>
+    <div class="layer"><b>Selection</b><span>Cơ hội tuyển chọn</span></div>
+    <div class="layer-sep"></div>
+    <div class="layer"><b>Advisory</b><span>Góc nhìn độc lập</span></div>
+  </div>
+</div>
 
 <!-- SLOGAN -->
 <div class="slogan"><div class="s">Hiểu vùng đất trước khi hiểu giá đất</div></div>
