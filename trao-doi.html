@@ -22,6 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,400&family=Be+Vietnam+Pro:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+html{overflow-x:clip;}
 :root{
   --ink:#1a1815;--paper:#f1ece2;--card:#faf6ee;
   --forest:#2f4034;--clay:#9d5d38;--clay-soft:#bb8862;
@@ -214,24 +215,21 @@ footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
     <a href="/" class="logo" style="text-decoration:none;color:inherit;">Namban Panorama</a>
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
     <div class="navlinks" id="navlinks">
-      <a href="bat-dau">Bắt đầu từ đây</a>
-      <a href="quy-hoach-2050">Quy hoạch</a>
-      <a href="namban-index">Giá đất</a>
-      <a href="doc-lo-dat">Đọc lô đất</a>
-      <a href="cau-chuyen-nam-ban">Câu chuyện</a>
+      <a href="nam-ban">Về Nam Ban</a>
+      <a href="dat">Đất</a>
+      <a href="dau-tu">Đầu tư</a>
       <a href="trao-doi" class="nav-cta">Trao đổi</a>
     </div>
   </div>
+</nav>
 
 <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
 <button class="mobile-close" id="mobileClose" onclick="toggleMenu()" aria-label="Đóng">×</button>
 <div class="mobile-menu" id="mobileMenu">
   <span class="mobile-logo">Panorama</span>
-  <a href="bat-dau" onclick="toggleMenu()">Bắt đầu từ đây</a>
-  <a href="quy-hoach-2050" onclick="toggleMenu()">Quy hoạch</a>
-  <a href="namban-index" onclick="toggleMenu()">Giá đất</a>
-  <a href="doc-lo-dat" onclick="toggleMenu()">Đọc lô đất</a>
-  <a href="cau-chuyen-nam-ban" onclick="toggleMenu()">Câu chuyện</a>
+  <a href="nam-ban" onclick="toggleMenu()">Về Nam Ban</a>
+  <a href="dat" onclick="toggleMenu()">Đất</a>
+  <a href="dau-tu" onclick="toggleMenu()">Đầu tư</a>
   <a href="trao-doi" onclick="toggleMenu()">Trao đổi</a>
 </div>
 
