@@ -134,6 +134,11 @@
   /* AERIAL — ảnh toàn cảnh: mobile tràn viền, PC luôn có lề */
   .aer-band{position:relative;width:100%;height:clamp(230px,33vw,360px);overflow:hidden;background:var(--paper);}
   @media(min-width:781px){.aer-band{max-width:1280px;width:calc(100% - 80px);margin:0 auto;}}
+  .aer-band img{width:100%;height:100%;object-fit:cover;object-position:center 48%;display:block;transition:transform 1.5s cubic-bezier(.16,.5,.2,1);}
+  .js .aer-band img{transform:scale(1.09);}
+  .aer-band.in img{transform:scale(1);}
+  @media(hover:hover){.aer-band.in:hover img{transform:scale(1.05);transition:transform 5s cubic-bezier(.16,.5,.2,1);}}
+  .aer-fade{position:absolute;inset:0;background:linear-gradient(to bottom,var(--paper) 0%,rgba(241,236,226,0) 8%,rgba(241,236,226,0) 92%,var(--paper) 100%);pointer-events:none;}
 
   /* LAYERS — dải 4 mục Notes/Brief/Selection/Advisory */
   .layers{background:var(--forest);color:#e9e3d5;}
@@ -620,10 +625,9 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 
 
-<div class="wrap tt-wrap" style="margin-top:8px;">
-  <figure class="tt-frame reveal">
-    <div class="tt-kl"><img width="1600" height="520" src="images/nam-ban-aerial.webp" loading="lazy" decoding="async" alt="Toàn cảnh thị trấn Nam Ban nhìn từ trên cao — thung lũng, ruộng vườn và núi đồi cao nguyên"></div>
-  </figure>
+<div class="aer-band reveal">
+  <img width="1600" height="520" src="images/nam-ban-aerial.webp" loading="lazy" decoding="async" alt="Toàn cảnh thị trấn Nam Ban nhìn từ trên cao — thung lũng, ruộng vườn và núi đồi cao nguyên">
+  <div class="aer-fade"></div>
 </div>
 
 <!-- Ô CHẠY CHỮ -->
