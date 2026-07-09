@@ -141,6 +141,24 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 .fab-contact{position:fixed;right:18px;bottom:18px;z-index:90;width:44px;height:44px;border-radius:50%;background:rgba(47,64,52,.14);border:1px solid rgba(47,64,52,.35);backdrop-filter:blur(10px);color:var(--forest);display:flex;align-items:center;justify-content:center;transition:transform .3s,background .3s,color .3s;}
 .fab-contact:hover{transform:translateY(-2px);background:rgba(47,64,52,.9);color:#fff;border-color:transparent;}
 .fab-contact svg{width:18px;height:18px;stroke:currentColor;}
+.hub-end{max-width:900px;margin:8px auto 0;padding:0 40px;}
+.hub-end .heye{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--clay);font-weight:500;margin-bottom:16px;}
+.hub-cross{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.hub-cross a{display:block;background:var(--card);border:1px solid var(--line);border-radius:3px;padding:22px 24px;text-decoration:none;transition:border-color .3s,transform .3s;}
+.hub-cross a:hover{border-color:var(--clay);transform:translateY(-2px);}
+.hub-cross .hc-t{font-family:'Fraunces',serif;font-size:19px;color:var(--ink);display:block;margin-bottom:6px;}
+.hub-cross .hc-s{font-size:13px;color:var(--muted);line-height:1.5;}
+.hub-invite{max-width:900px;margin:40px auto 0;padding:0 40px;}
+.hub-invite-in{background:var(--forest);border-radius:3px;padding:30px 34px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;}
+.hub-invite-t{font-family:'Fraunces',serif;font-size:18px;color:#f1ece2;line-height:1.55;max-width:560px;}
+.hub-invite-t span{color:#e8b98a;}
+.hub-invite a{flex-shrink:0;font-family:'Be Vietnam Pro',sans-serif;font-size:13px;letter-spacing:.4px;color:#f1ece2;border:1px solid rgba(241,236,226,.5);border-radius:999px;padding:11px 26px;text-decoration:none;transition:.3s;}
+.hub-invite a:hover{background:#f1ece2;color:var(--forest);border-color:transparent;}
+.share-row{display:flex;justify-content:center;margin:44px 0 8px;}
+.share-btn{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:none;color:var(--muted);font-family:'Be Vietnam Pro',sans-serif;font-size:13px;letter-spacing:.4px;padding:11px 24px;border-radius:999px;cursor:pointer;transition:.3s;}
+.share-btn:hover{border-color:var(--forest);background:var(--card);color:var(--forest);}
+.share-btn svg{width:15px;height:15px;}
+@media(max-width:640px){.hub-end,.hub-invite{padding-left:24px;padding-right:24px;}.hub-cross{grid-template-columns:1fr;}.hub-invite-in{flex-direction:column;align-items:flex-start;}}
 @media(min-width:901px){.mobile-menu,.hamburger,.menu-overlay,.mobile-close{display:none!important;}}
 @media(max-width:900px){.navlinks{display:none;}.hamburger{display:flex;}}
 @media(max-width:640px){.wrap{padding:0 24px;}.navin{padding:0 24px;}header{padding:52px 0 30px;}.hgroup{margin-bottom:34px;}}
@@ -202,6 +220,28 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
   </div>
 </main>
 
+<section class="hub-end">
+  <div class="heye">Đọc tiếp theo hướng khác</div>
+  <div class="hub-cross">
+    <a href="/nam-ban"><span class="hc-t">Về Nam Ban</span><span class="hc-s">Vùng đất, đời sống, con người, du lịch.</span></a>
+    <a href="/dat"><span class="hc-t">Đất</span><span class="hc-s">Giá, đọc lô, pháp lý &amp; sáp nhập.</span></a>
+  </div>
+</section>
+
+<div class="hub-invite">
+  <div class="hub-invite-in">
+    <div class="hub-invite-t">Cân nhắc xuống tiền ở Nam Ban? <span>Chúng tôi nói cả rủi ro và dòng tiền thực — không thúc mua.</span></div>
+    <a href="/trao-doi">Trao đổi →</a>
+  </div>
+</div>
+
+<div class="share-row">
+  <button class="share-btn" onclick="panoramaShare(this)" aria-label="Chia sẻ">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.4"></circle><circle cx="6" cy="12" r="2.4"></circle><circle cx="18" cy="19" r="2.4"></circle><path d="M8.1 10.8l7.8-4.6M8.1 13.2l7.8 4.6"></path></svg>
+    <span class="share-label">Chia sẻ trang này</span>
+  </button>
+</div>
+
 <footer>
   <div class="wrap">
     <div class="foot-brand">Namban <span>Panorama</span></div>
@@ -217,6 +257,12 @@ function toggleMenu(){
   if(ov)ov.classList.toggle('open',open);
   if(cl)cl.classList.toggle('open',open);
   document.body.style.overflow=open?'hidden':'';
+}
+function panoramaShare(btn){
+  var url=window.location.href,title=document.title;
+  if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});}
+  else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){
+    var l=btn.querySelector('.share-label'),o=l.textContent;l.textContent='Đã sao chép';setTimeout(function(){l.textContent=o;},2000);});}
 }
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){var m=document.getElementById('mobileMenu');if(m&&m.classList.contains('open'))toggleMenu();}});
 </script>
