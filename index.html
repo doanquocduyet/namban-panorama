@@ -122,6 +122,10 @@
   .hero-foot{font-size:12px;color:var(--muted);margin-top:14px;letter-spacing:.3px;}
   .ridges{position:absolute;left:0;right:0;bottom:0;width:100%;height:300px;z-index:1;pointer-events:none;}
 
+  /* AERIAL — ảnh toàn cảnh: mobile tràn viền, PC luôn có lề */
+  .aer-band{position:relative;width:100%;height:clamp(230px,33vw,360px);overflow:hidden;background:var(--paper);}
+  @media(min-width:781px){.aer-band{max-width:1280px;width:calc(100% - 80px);margin:0 auto;}}
+
   /* LAYERS — dải 4 mục Notes/Brief/Selection/Advisory */
   .layers{background:var(--forest);color:#e9e3d5;}
   .layers .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;padding-top:22px;padding-bottom:22px;}
@@ -606,7 +610,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 
 
-<div style="position:relative;width:100%;max-width:1520px;margin:0 auto;height:clamp(230px,33vw,360px);overflow:hidden;background:var(--paper);">
+<div class="aer-band">
   <img width="1600" height="520" src="images/nam-ban-aerial.jpg" loading="lazy" decoding="async" alt="Một chiếc view ôm trọn thị trấn Nam Ban" style="width:100%;height:100%;object-fit:cover;object-position:center 48%;display:block;">
   <div style="position:absolute;inset:0;background:linear-gradient(to bottom,var(--paper) 0%,rgba(241,236,226,0) 8%,rgba(241,236,226,0) 92%,var(--paper) 100%);pointer-events:none;"></div>
 </div>
