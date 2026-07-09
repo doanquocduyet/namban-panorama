@@ -38,6 +38,14 @@ html{overflow-x:clip;}
   .idx-desc{font-size:14.5px;line-height:1.6;color:var(--muted);}
   .idx-meta{font-size:12.5px;color:var(--stone);margin-top:9px;font-style:italic;font-family:'Fraunces',serif;}
   @media(max-width:680px){ .idx-title{font-size:21px;} }
+
+/* — polish: micro-typography & touch feel — */
+::selection{background:#2f4034;color:#f1ece2;}
+h1,h2,h3{text-wrap:balance;}
+p,li,figcaption{text-wrap:pretty;}
+body{text-rendering:optimizeLegibility;font-kerning:normal;-webkit-tap-highlight-color:transparent;}
+a,button{touch-action:manipulation;}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}html{scroll-behavior:auto!important;}}
 </style>
 <style>
 

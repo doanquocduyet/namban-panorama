@@ -154,6 +154,14 @@ footer .wrap{max-width:1080px;display:flex;justify-content:space-between;align-i
   .hero{padding:52px 0 32px;}p.body{font-size:16px;}.pull{font-size:19px;padding-left:20px;}
   .note{padding:22px 22px;}.contact-inner{padding-top:32px;}
 }
+
+/* — polish: micro-typography & touch feel — */
+::selection{background:#2f4034;color:#f1ece2;}
+h1,h2,h3{text-wrap:balance;}
+p,li,figcaption{text-wrap:pretty;}
+body{text-rendering:optimizeLegibility;font-kerning:normal;-webkit-tap-highlight-color:transparent;}
+a,button{touch-action:manipulation;}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}html{scroll-behavior:auto!important;}}
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://nambanpanorama.com/"}, {"@type": "ListItem", "position": 2, "name": "在南班生活是什么感觉——大叻旁的高原小镇", "item": "https://nambanpanorama.com/zh/zai-nam-ban-shenghuo"}]}

@@ -235,6 +235,14 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 @media(min-width:901px){.mobile-menu,.hamburger,.menu-overlay,.mobile-close{display:none!important;}}
 @media(max-width:900px){.navlinks{display:none;}.hamburger{display:flex;}}
 @media(max-width:640px){.wrap{padding:0 24px;}.navin{padding:0 24px;}header{padding:52px 0 30px;}.hgroup{margin-bottom:34px;}}
+
+/* — polish: micro-typography & touch feel — */
+::selection{background:#2f4034;color:#f1ece2;}
+h1,h2,h3{text-wrap:balance;}
+p,li,figcaption{text-wrap:pretty;}
+body{text-rendering:optimizeLegibility;font-kerning:normal;-webkit-tap-highlight-color:transparent;}
+a,button{touch-action:manipulation;}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}html{scroll-behavior:auto!important;}}
 </style>
 </head>
 <body>

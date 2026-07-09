@@ -92,7 +92,8 @@
   header .wrap{position:relative;z-index:2;padding-bottom:60px;}
   header h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(38px,6.4vw,64px);line-height:1.04;letter-spacing:-1px;margin:24px auto 20px;max-width:14ch;}
   header h1 em{font-style:normal;color:var(--forest);}
-  .lede{font-size:clamp(15px,1.7vw,18px);color:#443d33;max-width:540px;margin:0 auto 34px;}
+  header h1 .h1-l3{display:inline-block;font-size:.62em;white-space:nowrap;letter-spacing:-.2px;}
+  .lede{font-size:clamp(15px,1.7vw,18px);color:#443d33;max-width:540px;margin:0 auto 34px;text-wrap:balance;}
   .positioning{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(15px,1.8vw,18px);color:var(--forest);max-width:560px;margin:0 auto 34px;line-height:1.5;}
   .capture{display:flex;justify-content:center;max-width:440px;margin:0 auto;border:1px solid var(--ink);border-radius:2px;overflow:hidden;background:rgba(250,246,238,.7);}
   /* ── Mini-quiz ── */
@@ -136,13 +137,13 @@
   .jn-head{text-align:center;margin-bottom:28px;}
   .jn-q{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(20px,2.6vw,26px);letter-spacing:-.3px;margin-top:10px;}
   .jn-grid{display:grid;grid-template-columns:repeat(4,1fr);align-items:start;gap:14px;}
-  .jn-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:box-shadow .25s ease,border-color .25s;}
-  .jn-card:hover{box-shadow:0 8px 22px rgba(26,24,21,.08);border-color:var(--stone);}
+  .jn-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:box-shadow .3s ease,border-color .3s,transform .3s ease;}
+  @media(hover:hover){.jn-card:hover{box-shadow:0 10px 26px rgba(26,24,21,.09);border-color:var(--stone);transform:translateY(-3px);}}
   .jn-btn,.jn-link{display:flex;flex-direction:column;min-height:172px;padding:20px 18px;text-align:left;cursor:pointer;font-family:inherit;color:var(--ink);text-decoration:none;width:100%;}
   .jn-btn{background:none;border:0;}
   .jn-num{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:14px;color:var(--stone);margin-bottom:10px;}
-  .jn-t{font-family:'Fraunces',serif;font-size:17.5px;line-height:1.25;margin-bottom:7px;}
-  .jn-d{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:14px;}
+  .jn-t{font-family:'Fraunces',serif;font-size:17.5px;line-height:1.25;margin-bottom:7px;text-wrap:balance;}
+  .jn-d{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:14px;text-wrap:pretty;}
   .jn-go{margin-top:auto;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--clay);font-weight:500;display:flex;align-items:center;gap:6px;}
   .jn-go i{font-style:normal;font-size:15px;transition:transform .3s ease;line-height:1;}
   .jn-card.open .jn-go i{transform:rotate(90deg);}
@@ -162,7 +163,7 @@
   @media(max-width:640px){.marq{padding:11px 20px;}.marq .t{font-size:14px;}}
 
   /* SECTIONS */
-  section{padding:76px 0;}
+  section{padding:88px 0;}
   .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:38px;}
   .grid2{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:stretch;}
   .grid2 .feature{display:flex;flex-direction:column;justify-content:center;}
@@ -225,8 +226,9 @@
   .tt-frame{max-width:850px;margin:0 auto;background:var(--card);border:1px solid var(--line);padding:13px 13px 16px;}
   .wrap.tt-wrap{padding-left:26px;padding-right:26px;}
   @media(max-width:780px){.wrap.tt-wrap{padding-left:15px;padding-right:15px;}.tt-frame{padding:10px 10px 13px;}}
-  .tt-kl{border:1px solid rgba(26,24,21,.15);line-height:0;}
+  .tt-kl{border:1px solid rgba(26,24,21,.15);line-height:0;overflow:hidden;}
   .tt-kl img{width:100%;height:auto;display:block;filter:contrast(1.06) saturate(1.04) brightness(.99);}
+  @media(hover:hover){.tt-kl img{transition:transform 5s cubic-bezier(.16,.5,.2,1);}.tt-frame:hover .tt-kl img{transform:scale(1.028);}}
   .tt-plate{display:block;text-align:center;margin-top:14px;}
   .tt-tick{display:block;width:20px;height:1px;background:var(--clay);opacity:.5;margin:0 auto 10px;}
   .tt-cap{display:block;font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:13.5px;color:var(--muted);letter-spacing:.2px;}
@@ -326,6 +328,14 @@ html{overflow-x:clip;}
   .closing-dark{text-align:left;}
   .closing-sep{margin-left:0;margin-right:auto;}
 }
+
+/* — polish: micro-typography & touch feel — */
+::selection{background:#2f4034;color:#f1ece2;}
+h1,h2,h3{text-wrap:balance;}
+p,li,figcaption{text-wrap:pretty;}
+body{text-rendering:optimizeLegibility;font-kerning:normal;-webkit-tap-highlight-color:transparent;}
+a,button{touch-action:manipulation;}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}html{scroll-behavior:auto!important;}}
 </style>
 
 <script type="application/ld+json">
@@ -488,9 +498,9 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 <header>
   <div class="wrap">
-    <div class="kicker fu" style="animation-delay:.05s">Nam Ban · Lâm Hà, Lâm Đồng — gần Đà Lạt</div>
+    <div class="kicker fu" style="animation-delay:.05s">Nam Ban · Lâm Hà, Lâm&nbsp;Đồng — gần&nbsp;Đà&nbsp;Lạt</div>
     <h1 class="fu" style="animation-delay:.15s">Thấy <em>toàn cảnh</em><br>Nam Ban<br><span class="h1-l3">trước khi xuống tiền</span></h1>
-    <p class="lede fu" style="animation-delay:.3s">Chúng tôi chủ trương phân tích độc lập — để bạn ra quyết định tốt hơn.</p>
+    <p class="lede fu" style="animation-delay:.3s">Chúng tôi chủ trương phân tích độc&nbsp;lập — để bạn ra quyết định tốt&nbsp;hơn.</p>
     <div class="geo-note" id="geoNote"></div>
 
     

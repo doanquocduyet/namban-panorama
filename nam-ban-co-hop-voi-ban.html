@@ -159,6 +159,14 @@ nav{transition:box-shadow .3s ease;}
   nav.scrolled{box-shadow:0 1px 14px rgba(26,24,21,.07);}
 }
 @media(max-width:900px){.crumb{display:none;}}
+
+/* — polish: micro-typography & touch feel — */
+::selection{background:#2f4034;color:#f1ece2;}
+h1,h2,h3{text-wrap:balance;}
+p,li,figcaption{text-wrap:pretty;}
+body{text-rendering:optimizeLegibility;font-kerning:normal;-webkit-tap-highlight-color:transparent;}
+a,button{touch-action:manipulation;}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}html{scroll-behavior:auto!important;}}
 </style>
 <link rel="alternate" type="application/rss+xml" title="Namban Panorama" href="https://nambanpanorama.com/feed.xml">
 <script type="application/ld+json">
