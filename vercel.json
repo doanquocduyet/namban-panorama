@@ -3,6 +3,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/bat-dau",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/quy-hoach",
       "destination": "/quy-hoach-2050",
       "permanent": true

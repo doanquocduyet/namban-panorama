@@ -131,18 +131,30 @@
     .slogan .s::before,.slogan .s::after{width:20px;}
   }
 
-  /* BẮT ĐẦU TỪ ĐÂY — Journey Navigator */
+  /* BẮT ĐẦU TỪ ĐÂY — Journey Navigator (thẻ gọn, bấm mới xổ bài) */
   .jn{padding:50px 0 54px;}
   .jn-head{text-align:center;margin-bottom:28px;}
   .jn-q{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(20px,2.6vw,26px);letter-spacing:-.3px;margin-top:10px;}
-  .jn-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr;gap:14px;}
-  .jn-card{display:flex;flex-direction:column;min-height:172px;background:var(--card);border:1px solid var(--line);border-radius:4px;padding:20px 18px;text-decoration:none;color:var(--ink);transition:transform .25s ease,box-shadow .25s ease,border-color .25s;}
-  .jn-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(26,24,21,.08);border-color:var(--stone);}
+  .jn-grid{display:grid;grid-template-columns:repeat(4,1fr);align-items:start;gap:14px;}
+  .jn-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:box-shadow .25s ease,border-color .25s;}
+  .jn-card:hover{box-shadow:0 8px 22px rgba(26,24,21,.08);border-color:var(--stone);}
+  .jn-btn,.jn-link{display:flex;flex-direction:column;min-height:172px;padding:20px 18px;text-align:left;cursor:pointer;font-family:inherit;color:var(--ink);text-decoration:none;width:100%;}
+  .jn-btn{background:none;border:0;}
   .jn-num{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:14px;color:var(--stone);margin-bottom:10px;}
   .jn-t{font-family:'Fraunces',serif;font-size:17.5px;line-height:1.25;margin-bottom:7px;}
   .jn-d{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:14px;}
-  .jn-go{margin-top:auto;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--clay);font-weight:500;}
-  @media(max-width:780px){.jn{padding:36px 0 40px;}.jn-grid{grid-template-columns:1fr 1fr;gap:10px;}.jn-card{min-height:150px;padding:15px 13px;}.jn-t{font-size:15px;}.jn-d{font-size:11.5px;}}
+  .jn-go{margin-top:auto;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--clay);font-weight:500;display:flex;align-items:center;gap:6px;}
+  .jn-go i{font-style:normal;font-size:15px;transition:transform .3s ease;line-height:1;}
+  .jn-card.open .jn-go i{transform:rotate(90deg);}
+  .jn-link:hover .jn-go,.jn-btn:hover .jn-go{color:var(--forest);}
+  .jn-panel{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+  .jn-card.open .jn-panel{max-height:360px;}
+  .jn-panel-in{padding:0 18px 16px;border-top:1px solid var(--line);}
+  .jn-panel-in a{display:block;font-family:'Fraunces',serif;font-size:14px;line-height:1.3;color:var(--ink);text-decoration:none;padding:9px 0;border-bottom:1px solid var(--line);transition:color .2s,padding-left .2s;}
+  .jn-panel-in a:hover{color:var(--clay);padding-left:5px;}
+  .jn-panel-in .jn-all{border-bottom:0;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--clay);font-weight:500;padding-top:12px;}
+  .jn-panel-in .jn-all:hover{color:var(--forest);padding-left:0;}
+  @media(max-width:780px){.jn{padding:36px 0 40px;}.jn-grid{grid-template-columns:1fr 1fr;gap:10px;}.jn-btn,.jn-link{min-height:150px;padding:15px 14px;}.jn-t{font-size:15.5px;}.jn-d{font-size:11.5px;}.jn-panel-in{padding:0 14px 13px;}}
 
   /* Ô CHẠY CHỮ */
   .marq{padding:13px 40px;text-align:center;background:#e4dcca;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;}
@@ -506,25 +518,52 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
       <div class="jn-q">Bạn đang ở đâu trong hành trình?</div>
     </div>
     <div class="jn-grid">
-      <a class="jn-card" href="nam-ban">
-        <span class="jn-num">01</span>
-        <span class="jn-t">Mới nghe tới Nam Ban</span>
-        <span class="jn-d">Đáng sống không, khác gì Đà Lạt.</span>
-        <span class="jn-go">Hiểu vùng đất →</span>
-      </a>
-      <a class="jn-card" href="dat">
-        <span class="jn-num">02</span>
-        <span class="jn-t">Đang cân nhắc mua</span>
-        <span class="jn-d">Giá, pháp lý, sai lầm nên tránh.</span>
-        <span class="jn-go">Hiểu giá đất →</span>
-      </a>
-      <a class="jn-card" href="dau-tu">
-        <span class="jn-num">03</span>
-        <span class="jn-t">Muốn biết có nên đầu tư</span>
-        <span class="jn-d">Quy hoạch, chu kỳ, rủi ro.</span>
-        <span class="jn-go">Xem phân tích →</span>
-      </a>
-      <a class="jn-card" href="trao-doi">
+      <div class="jn-card">
+        <button class="jn-btn" type="button" onclick="jnToggle(this)" aria-expanded="false">
+          <span class="jn-num">01</span>
+          <span class="jn-t">Mới nghe tới Nam Ban</span>
+          <span class="jn-d">Đáng sống không, khác gì Đà Lạt.</span>
+          <span class="jn-go">Gợi ý đọc <i>›</i></span>
+        </button>
+        <div class="jn-panel"><div class="jn-panel-in">
+          <a href="doc-nhanh">Đọc nhanh — hiểu Nam Ban trong vài phút</a>
+          <a href="nam-ban-co-dang-song">Sống ở Nam Ban thực sự như thế nào</a>
+          <a href="so-sanh-nam-ban-bao-loc-da-lat">Nam Ban hay Bảo Lộc, Đà Lạt?</a>
+          <a href="nam-ban-co-gi">Nam Ban có gì — thác Voi, chùa, săn mây</a>
+          <a class="jn-all" href="nam-ban">Tất cả về Nam Ban →</a>
+        </div></div>
+      </div>
+      <div class="jn-card">
+        <button class="jn-btn" type="button" onclick="jnToggle(this)" aria-expanded="false">
+          <span class="jn-num">02</span>
+          <span class="jn-t">Đang cân nhắc mua</span>
+          <span class="jn-d">Giá, pháp lý, sai lầm nên tránh.</span>
+          <span class="jn-go">Gợi ý đọc <i>›</i></span>
+        </button>
+        <div class="jn-panel"><div class="jn-panel-in">
+          <a href="truoc-khi-xuong-tien">Vài điều nên biết trước khi mua</a>
+          <a href="namban-index">Giá đất Nam Ban 2026 — bảng giá thực</a>
+          <a href="mua-dat-nam-ban">Mua đất — hỏi &amp; đáp pháp lý, loại đất</a>
+          <a href="doc-lo-dat">Đọc lô đất — Panorama đọc thẳng</a>
+          <a class="jn-all" href="dat">Tất cả về đất →</a>
+        </div></div>
+      </div>
+      <div class="jn-card">
+        <button class="jn-btn" type="button" onclick="jnToggle(this)" aria-expanded="false">
+          <span class="jn-num">03</span>
+          <span class="jn-t">Muốn biết có nên đầu tư</span>
+          <span class="jn-d">Quy hoạch, chu kỳ, rủi ro.</span>
+          <span class="jn-go">Gợi ý đọc <i>›</i></span>
+        </button>
+        <div class="jn-panel"><div class="jn-panel-in">
+          <a href="tiem-nang-dau-tu">Có nên mua đất Nam Ban 2026?</a>
+          <a href="quy-hoach-2050">Quy hoạch 2050 có làm giá tăng?</a>
+          <a href="ban-do-quy-hoach-nam-ban">Bản đồ quy hoạch — 4 phân khu</a>
+          <a href="san-bay-lien-khuong-mo-lai">Sân bay Liên Khương mở lại</a>
+          <a class="jn-all" href="dau-tu">Tất cả về đầu tư →</a>
+        </div></div>
+      </div>
+      <a class="jn-card jn-link" href="trao-doi">
         <span class="jn-num">04</span>
         <span class="jn-t">Sẵn sàng trao đổi</span>
         <span class="jn-d">Một góc nhìn độc lập cho bạn.</span>
@@ -686,6 +725,11 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 
 <script>
+function jnToggle(btn){
+  var card = btn.closest('.jn-card');
+  var open = card.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
 function toggleMenu(){
   var m = document.getElementById('mobileMenu');
   var ov = document.getElementById('menuOverlay');
