@@ -502,7 +502,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
     <div class="navlinks" id="navlinks">
       <a href="nam-ban">Về Nam Ban</a>
-      <a href="dat">Đất</a>
+      <a href="dat">Về Đất</a>
       <a href="dau-tu">Đầu tư</a>
       <a href="trao-doi" class="nav-cta">Trao đổi</a>
     </div>
@@ -513,7 +513,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <div class="mobile-menu" id="mobileMenu">
   <span class="mobile-logo">Panorama</span>
   <a href="nam-ban" onclick="toggleMenu()">Về Nam Ban</a>
-  <a href="dat" onclick="toggleMenu()">Đất</a>
+  <a href="dat" onclick="toggleMenu()">Về Đất</a>
   <a href="dau-tu" onclick="toggleMenu()">Đầu tư</a>
   <a href="trao-doi" onclick="toggleMenu()">Trao đổi</a>
 </div>
@@ -620,11 +620,11 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 
 
-<div class="aer-band">
-  <img width="1600" height="520" src="images/nam-ban-aerial.webp" loading="lazy" decoding="async" alt="Một chiếc view ôm trọn thị trấn Nam Ban" style="width:100%;height:100%;object-fit:cover;object-position:center 48%;display:block;">
-  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,var(--paper) 0%,rgba(241,236,226,0) 8%,rgba(241,236,226,0) 92%,var(--paper) 100%);pointer-events:none;"></div>
+<div class="wrap tt-wrap" style="margin-top:8px;">
+  <figure class="tt-frame reveal">
+    <div class="tt-kl"><img width="1600" height="520" src="images/nam-ban-aerial.webp" loading="lazy" decoding="async" alt="Toàn cảnh thị trấn Nam Ban nhìn từ trên cao — thung lũng, ruộng vườn và núi đồi cao nguyên"></div>
+  </figure>
 </div>
-<div class="wrap" style="text-align:center;padding-top:11px;"><span style="font-family:'Fraunces',serif;font-style:italic;font-size:13.5px;color:var(--muted);letter-spacing:.2px;">Một chiếc view ôm trọn thị trấn Nam Ban</span></div>
 
 <!-- Ô CHẠY CHỮ -->
 <div class="marq" style="margin-top:26px;"><span class="t">Một nơi đáng sống thường hiện ra chậm hơn một nơi đáng bán.</span></div>
