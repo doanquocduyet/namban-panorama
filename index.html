@@ -101,7 +101,7 @@
   .quiz-card{background:#fff;border:1px solid var(--line);border-radius:4px;padding:24px 22px;box-shadow:0 2px 12px rgba(26,24,21,.07);}
   .quiz-label{font-size:15px;color:var(--ink);margin-bottom:16px;font-family:'Fraunces',serif;font-style:italic;font-weight:400;line-height:1.4;}
   .quiz-opts{display:flex;flex-direction:column;gap:9px;}
-  .qopt{background:var(--card);border:1px solid var(--line);color:var(--muted);padding:13px 18px;text-align:left;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;font-size:14px;font-weight:300;line-height:1.45;border-radius:3px;transition:all .18s;letter-spacing:.1px;}
+  .qopt{background:var(--card);border:1px solid var(--line);color:var(--muted);padding:13px 18px;text-align:left;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;font-size:14px;font-weight:300;line-height:1.45;border-radius:3px;transition:all .28s cubic-bezier(.22,1,.36,1);letter-spacing:.1px;}
   .qopt:hover{background:var(--paper);border-color:var(--stone);color:var(--ink);}
   .qopt.chosen{background:var(--clay);border-color:var(--clay);color:#fff;}
   .quiz-result{padding:4px 0;}
@@ -150,7 +150,7 @@
   .jn-head{text-align:center;margin-bottom:28px;}
   .jn-q{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(20px,2.6vw,26px);letter-spacing:-.3px;margin-top:10px;}
   .jn-grid{display:grid;grid-template-columns:repeat(4,1fr);align-items:start;gap:14px;}
-  .jn-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:box-shadow .3s ease,border-color .3s,transform .3s ease;}
+  .jn-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:box-shadow .45s cubic-bezier(.22,1,.36,1),border-color .45s cubic-bezier(.22,1,.36,1),transform .45s cubic-bezier(.22,1,.36,1);}
   @media(hover:hover){.jn-card:hover{box-shadow:0 10px 26px rgba(26,24,21,.09);border-color:var(--stone);transform:translateY(-3px);}}
   .jn-btn,.jn-link{display:flex;flex-direction:column;min-height:172px;padding:20px 18px;text-align:left;cursor:pointer;font-family:inherit;color:var(--ink);text-decoration:none;width:100%;}
   .jn-btn{background:none;border:0;}
@@ -297,7 +297,7 @@
 
 @media(max-width:780px){.qopt{padding:9px 13px;font-size:12.5px;line-height:1.34;font-weight:400;letter-spacing:0;}}
 @media(min-width:781px) and (max-width:1080px){.wrap{max-width:880px;}}
-@media(min-width:1300px){.wrap{max-width:1200px;}.tt-frame{max-width:980px;}.quiz-wrap{max-width:560px;}}
+@media(min-width:1300px){.wrap{max-width:1200px;}.tt-frame{max-width:980px;}.quiz-wrap{max-width:560px;}section{padding:108px 0;}header h1{font-size:72px;}.slogan{padding:64px 30px;}.slogan .s{font-size:26px;}}
 .nav-cta{border:1px solid var(--clay);color:var(--clay)!important;padding:4px 14px;border-radius:20px;}
 
 .nb{white-space:nowrap;}
@@ -313,7 +313,7 @@ html{overflow-x:clip;}
 
 /* ==== Chân trang: đèo → xanh → đen ==== */
 .closing{padding:0;}
-.closing-photo{position:relative;min-height:340px;background-image:url('images/deo-ta-nung.jpg');background-size:cover;background-position:left 48%;}
+.closing-photo{position:relative;min-height:340px;background-image:url('images/deo-ta-nung.webp');background-size:cover;background-position:left 48%;}
 .closing-photo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(to bottom,transparent,rgba(20,25,20,.4));}
 .closing-body{background:linear-gradient(to bottom,#2f4034 0%,#2f4034 28%,#2b322e 55%,#20241f 100%);}
 .closing-green{padding:44px 30px 30px;text-align:center;border-top:2px solid rgba(232,185,138,.32);}
@@ -611,7 +611,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 
 <div class="aer-band">
-  <img width="1600" height="520" src="images/nam-ban-aerial.jpg" loading="lazy" decoding="async" alt="Một chiếc view ôm trọn thị trấn Nam Ban" style="width:100%;height:100%;object-fit:cover;object-position:center 48%;display:block;">
+  <img width="1600" height="520" src="images/nam-ban-aerial.webp" loading="lazy" decoding="async" alt="Một chiếc view ôm trọn thị trấn Nam Ban" style="width:100%;height:100%;object-fit:cover;object-position:center 48%;display:block;">
   <div style="position:absolute;inset:0;background:linear-gradient(to bottom,var(--paper) 0%,rgba(241,236,226,0) 8%,rgba(241,236,226,0) 92%,var(--paper) 100%);pointer-events:none;"></div>
 </div>
 <div class="wrap" style="text-align:center;padding-top:11px;"><span style="font-family:'Fraunces',serif;font-style:italic;font-size:13.5px;color:var(--muted);letter-spacing:.2px;">Một chiếc view ôm trọn thị trấn Nam Ban</span></div>
@@ -687,7 +687,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 <div class="wrap tt-wrap" style="margin-top:14px;padding-bottom:2px;">
   <figure class="tt-frame reveal">
-    <div class="tt-kl"><img width="1600" height="766" src="images/view-tam-trinh-nam-ban.jpg" loading="lazy" decoding="async" alt="Toàn cảnh Nam Ban nhìn từ quán cà phê Tám Trình — sen đá, bàn gỗ, tượng Quan Âm, thác nước và thị trấn giữa thung lũng"></div>
+    <div class="tt-kl"><img width="1600" height="766" src="images/view-tam-trinh-nam-ban.webp" loading="lazy" decoding="async" alt="Toàn cảnh Nam Ban nhìn từ quán cà phê Tám Trình — sen đá, bàn gỗ, tượng Quan Âm, thác nước và thị trấn giữa thung lũng"></div>
     <figcaption class="tt-plate"><span class="tt-tick"></span><span class="tt-cap">View từ quán cà phê Tám Trình</span><span class="tt-place">Nam Ban · Lâm Hà</span></figcaption>
   </figure>
 </div>
