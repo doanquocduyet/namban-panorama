@@ -857,6 +857,23 @@ var _reco = {
   '3': {url:'tiem-nang-dau-tu', k:'\u0110\u1ecdc ti\u1ebfp \u00b7 c\u01a1 h\u1ed9i & r\u1ee7i ro', t:'C\u00f3 n\u00ean mua \u0111\u1ea5t Nam Ban 2026?'},
   '4': {url:'truoc-khi-xuong-tien', k:'\u0110\u1ecdc ti\u1ebfp \u00b7 tr\u01b0\u1edbc khi xu\u1ed1ng ti\u1ec1n', t:'V\u00e0i \u0111i\u1ec1u n\u00ean bi\u1ebft tr\u01b0\u1edbc khi mua \u0111\u1ea5t Nam Ban'}
 };
+var _q1lbl={a:'Đang tìm hiểu vùng đất',b:'Tìm chỗ nghỉ cuối tuần',c:'Cân nhắc đầu tư',d:'Đang xem tài sản cụ thể'};
+var _q2lbl={'1':'Quy hoạch','2':'Giá đất','3':'Loại tài sản phù hợp','4':'Rủi ro thị trường'};
+var _q1pri={a:'Đang nuôi',b:'Đang nuôi',c:'Ấm',d:'🔥 Nóng'};
+function _leadTag(q1,q2){
+  return (_q1pri[q1]||'Đang nuôi')+' · '+(_q1lbl[q1]||'—')+' · quan tâm '+(_q2lbl[q2]||'—');
+}
+function _leadContext(q1,q2){
+  var out='Q1='+q1+' Q2='+q2;
+  try{
+    var st=window.PM_STATE||{};
+    var read=st.read||[];
+    var page=(location.pathname.split('/').pop()||'index.html');
+    out+=' | ghé '+(st.visits||1)+' lần · đọc '+read.length+' bài · từ: '+page;
+    if(read.length) out+=' · lịch sử: '+read.slice(-6).join(', ');
+  }catch(e){}
+  return out;
+}
 function quizResult(btn, q2ans) {
   try{ localStorage.setItem("pm_intent", JSON.stringify({q1:_q1ans,q2:q2ans,ts:Date.now()})); }catch(e){}
   btn.classList.add('chosen');
@@ -886,9 +903,9 @@ function quizResult(btn, q2ans) {
       if(phone.length<9){inp.style.border='1px solid #c44';return;}
       bt.textContent='\u0110ang g\u1eedi...'; bt.disabled=true; inp.disabled=true;
       var fd=new FormData();
-      fd.append('entry.260173030','Quiz '+key);
+      fd.append('entry.260173030', _leadTag(_q1ans,q2ans));
       fd.append('entry.2084374895', inp.value);
-      fd.append('entry.418514546','Q1='+_q1ans+' Q2='+q2ans);
+      fd.append('entry.418514546', _leadContext(_q1ans,q2ans));
       fetch('https://docs.google.com/forms/d/e/1FAIpQLSejyXVjRk8TQCtNIrZijGeZxaoJaeA3VCccpW4PAi87BRVAzg/formResponse',{method:'POST',mode:'no-cors',body:fd});
       setTimeout(function(){ row.innerHTML='<div style="text-align:center;padding:14px 0;width:100%;"><span style="font-family:Fraunces,serif;font-size:15px;color:#4a7c59;">\u2714 \u0110\u00e3 ghi nh\u1eadn</span><br><span style="font-size:12.5px;color:#6e6759;">Brief s\u1ebd t\u1edbi Zalo c\u1ee7a b\u1ea1n m\u1ed7i th\u00e1ng m\u1ed9t l\u1ea7n.</span></div>'; },600);
     };
