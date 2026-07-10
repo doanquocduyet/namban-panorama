@@ -63,6 +63,10 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
    không đoán. Cần thì web-search kiểm.
 7. **Số đang dùng (quyết định cuối)**: Đà Lạt **~23km**, sân bay Liên Khương **~20km**.
    KHÔNG dùng số cũ 27km/22km trừ khi Chú yêu cầu đổi lại.
+   **Tên địa danh (Chú chốt)**: tiếng Việt gọi **"Thiền Viện Linh Ẩn"** (KHÔNG dùng "chùa Linh
+   Ẩn"). Thác cạnh bên = **thác Voi** (25km — vị trí cụ thể). Bài ngoại ngữ tạm giữ
+   "Linh An Pagoda / 灵隐寺 / 린안 사원 / リンアン寺" vì đó là từ khóa khách nước ngoài search
+   (đổi khi Chú yêu cầu).
 8. **Dám nói "đừng mua"**. Xây trust bằng đọc rủi ro, không bán giấc mơ. Kết bài nhẹ, an
    yên — không hô "mua ngay".
 9. Nút **"Chia sẻ"** trầm cuối bài = GIỮ (chuẩn tờ báo). Khác với CTA bán.
