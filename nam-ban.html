@@ -256,6 +256,51 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 
 @media(min-width:1300px){.wrap{max-width:1140px;}.hub-end,.hub-invite,.brief-hub{max-width:1020px;}}
 
+/* — HERO — */
+.hero{position:relative;height:460px;overflow:hidden;background:linear-gradient(160deg,#3a4d3e 0%,#243a2e 55%,#16241b 100%);}
+.hero-img{position:absolute;inset:0;background-size:cover;background-position:center;}
+.hero-scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,18,12,.72) 0%,rgba(10,18,12,.28) 42%,rgba(10,18,12,.08) 70%,transparent 100%);}
+.hero-in{position:absolute;left:0;right:0;bottom:0;padding-bottom:52px;z-index:2;}
+.hero-txt{max-width:640px;}
+.hero-kicker{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.72);font-weight:500;margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(36px,5vw,52px);line-height:1.05;letter-spacing:-.5px;color:#fff;margin:0 0 16px;}
+.hero-lede{font-size:clamp(15px,1.7vw,16.5px);line-height:1.55;color:rgba(255,255,255,.85);max-width:560px;}
+/* — TẦNG 1 · bài dẫn — */
+.lead-art{padding:46px 0 6px;}
+.lead-art .kicker{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--clay);font-weight:500;margin-bottom:14px;}
+.lead-art h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(25px,3.4vw,32px);line-height:1.14;letter-spacing:-.3px;color:var(--ink);margin:0 0 12px;max-width:720px;transition:color .3s;}
+.lead-art p{font-size:15px;line-height:1.62;color:var(--muted);max-width:600px;margin:0 0 16px;}
+.lead-art .go{display:inline-block;font-size:13px;letter-spacing:.4px;color:var(--clay);}
+.lead-art a:hover h2{color:var(--forest);}
+/* — TẦNG 2 · nhóm chọn — */
+.pick-sec{padding:26px 0 8px;}
+.pick-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+.pick-grid a{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:24px 26px;transition:border-color .4s cubic-bezier(.22,1,.36,1),background .3s,transform .4s cubic-bezier(.22,1,.36,1);}
+.pick-grid a:hover{background:#fff;border-color:var(--clay);transform:translateY(-2px);}
+.pick-grid .pk-t{font-family:'Fraunces',serif;font-size:20px;line-height:1.24;color:var(--ink);display:block;margin-bottom:8px;}
+.pick-grid .pk-s{font-size:13px;color:var(--muted);line-height:1.5;}
+/* — NHỊP THỞ · câu trích / nguyên tắc — */
+.breath{text-align:center;margin:46px 0;padding:0 10px;}
+.breath .bq{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(21px,2.6vw,26px);line-height:1.42;color:var(--forest);max-width:760px;margin:0 auto;}
+.breath .bsrc{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--clay);margin-top:16px;}
+/* — NHỊP THỞ · dải dữ kiện — */
+.facts{display:flex;margin:46px 0;border:1px solid var(--line);border-radius:3px;overflow:hidden;background:var(--card);}
+.facts .fct{flex:1;padding:22px 18px;text-align:center;border-right:1px solid var(--line);}
+.facts .fct:last-child{border-right:0;}
+.facts .fn{font-family:'Fraunces',serif;font-size:clamp(19px,2.4vw,23px);color:var(--forest);line-height:1.1;}
+.facts .fl{font-size:12px;color:var(--stone);margin-top:7px;letter-spacing:.3px;}
+/* — TẦNG 3 · danh mục (dòng mỏng) — */
+.kb a>span:first-child{flex:1;min-width:0;}
+.kb .kb-cat{font-family:'Be Vietnam Pro',sans-serif;font-size:12px;letter-spacing:.4px;color:var(--stone);flex-shrink:0;}
+@media(max-width:640px){
+  .hero{height:400px;}
+  .lead-art{padding:34px 0 4px;}
+  .pick-grid{grid-template-columns:1fr;}
+  .breath{margin:34px 0;}
+  .facts{flex-wrap:wrap;margin:34px 0;}
+  .facts .fct{flex:1 1 50%;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .facts .fct:nth-child(even){border-right:0;}
+}
 /* — polish: micro-typography & touch feel — */
 ::selection{background:#2f4034;color:#f1ece2;}
 h1,h2,h3{text-wrap:balance;}
@@ -291,54 +336,75 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   </div>
 </nav>
 
-<header>
-  <div class="wrap">
-    <div class="kicker">Hiểu vùng đất</div>
-    <h1>Về Nam Ban</h1>
-    <p class="lede">Vùng đất, đời sống, con người và du lịch Nam Ban — hiểu nơi này trước khi nghĩ tới giá đất.</p>
+<section class="hero">
+  <!-- TODO HERO IMG: thay gradient bằng ảnh Nam Ban thật của Chú (host trong /images/, KHÔNG URL ngoài).
+       Ráp bằng 1 dòng ngay dưới đây, giữ nguyên scrim:
+       <div class="hero-img" style="background-image:url('/images/ten-anh.webp')"></div> -->
+  <div class="hero-scrim"></div>
+  <div class="hero-in">
+    <div class="wrap">
+      <div class="hero-txt">
+        <div class="hero-kicker">Namban Panorama · Hiểu vùng</div>
+        <h1>Về Nam Ban</h1>
+        <p class="hero-lede">Vùng đất, đời sống, con người và du lịch Nam Ban — hiểu nơi này trước khi nghĩ tới giá đất.</p>
+      </div>
+    </div>
   </div>
-</header>
+</section>
 
 <main>
   <div class="wrap">
-    <div class="hgroup">
-      <div class="heye">Vùng đất &amp; đời sống</div>
-      <div class="kb">
-      <a href="/nam-ban-co-dang-song"><span><span class="kb-t">Sống ở Nam Ban thực sự như thế nào</span><br><span class="kb-s">Khí hậu, nhịp sống, ưu và nhược điểm — nhìn thẳng.</span></span><span class="kb-n">→</span></a>
-      <a href="/dat-gan-da-lat"><span><span class="kb-t">Đất gần Đà Lạt — vì sao nhiều người tìm về</span><br><span class="kb-s">Nam Ban trong lựa chọn của người rời phố.</span></span><span class="kb-n">→</span></a>
-      <a href="/nam-ban-co-hop-voi-ban"><span><span class="kb-t">Nam Ban có hợp với bạn không</span><br><span class="kb-s">Không phải ai lên đây cũng nên ở lại.</span></span><span class="kb-n">→</span></a>
-      <a href="/dieu-de-lai-cho-con"><span><span class="kb-t">Điều để lại cho con</span><br><span class="kb-s">Có những mảnh đất sinh lời bằng cảm giác muốn quay về.</span></span><span class="kb-n">→</span></a>
-      <a href="/mua-bo-nam-ban"><span><span class="kb-t">Mùa bơ Nam Ban — và một bài học</span><br><span class="kb-s">Từ tháng 6 đến tháng 11, đọc vùng đất qua một mùa quả.</span></span><span class="kb-n">→</span></a>
-      <a href="/google-maps-khong-noi-ve-nam-ban"><span><span class="kb-t">Những điều Google Maps không nói</span><br><span class="kb-s">Thứ chỉ thấy khi đứng tận nơi.</span></span><span class="kb-n">→</span></a>
-      <a href="/doc-nhanh"><span><span class="kb-t">Đọc nhanh — vài phút để hiểu Nam Ban</span><br><span class="kb-s">Bản tóm tắt cho người mới nghe tới.</span></span><span class="kb-n">→</span></a>
+
+    <section class="lead-art">
+      <div class="kicker">Nên đọc trước</div>
+      <a href="/nam-ban-co-dang-song">
+        <h2>Sống ở Nam Ban thực sự như thế nào</h2>
+        <p>Khí hậu, nhịp sống, ưu và nhược điểm — nhìn thẳng, không tô hồng. Bài nên đọc đầu tiên nếu bạn mới nghe tới vùng đất này.</p>
+        <span class="go">Đọc bài →</span>
+      </a>
+    </section>
+
+    <section class="pick-sec">
+      <div class="heye">Đọc chọn lọc</div>
+      <div class="pick-grid">
+        <a href="/nam-ban-co-hop-voi-ban"><span class="pk-t">Nam Ban có hợp với bạn không</span><span class="pk-s">Không phải ai lên đây cũng nên ở lại.</span></a>
+        <a href="/google-maps-khong-noi-ve-nam-ban"><span class="pk-t">Những điều Google Maps không nói</span><span class="pk-s">Thứ chỉ thấy khi đứng tận nơi.</span></a>
+        <a href="/doc-nhanh"><span class="pk-t">Đọc nhanh — vài phút hiểu Nam Ban</span><span class="pk-s">Bản tóm tắt cho người mới nghe tới.</span></a>
       </div>
+    </section>
+
+    <!-- NHỊP THỞ · câu trích thật rút từ bài "Sống ở Nam Ban" (không tự chế) -->
+    <div class="breath">
+      <p class="bq">Người ở đây nói cái được lớn nhất là thời gian.</p>
+      <div class="bsrc">Từ bài · Sống ở Nam Ban thực sự như thế nào</div>
     </div>
-    <div class="hgroup">
-      <div class="heye">Du lịch &amp; đặc sản</div>
+
+    <section class="hgroup">
+      <div class="heye">Tất cả bài về Nam Ban</div>
       <div class="kb">
-      <a href="/nam-ban-co-gi"><span><span class="kb-t">Nam Ban có gì — thác Voi, chùa Linh Ẩn, săn mây</span><br><span class="kb-s">Những điểm đáng ghé của vùng.</span></span><span class="kb-n">→</span></a>
-      <a href="/thac-voi-nam-ban"><span><span class="kb-t">Thác Voi — nên biết trước khi đi</span><br><span class="kb-s">Thác cao 30m, cách Đà Lạt 25km qua đèo Tà Nung.</span></span><span class="kb-n">→</span></a>
-      <a href="/mot-ngay-o-nam-ban"><span><span class="kb-t">Một ngày ở Nam Ban — đi đâu, ăn gì</span><br><span class="kb-s">Lịch trình từ sáng tới tối.</span></span><span class="kb-n">→</span></a>
-      <a href="/dac-san-nam-ban"><span><span class="kb-t">Đặc sản Nam Ban</span><br><span class="kb-s">Cà phê, dâu tằm, bơ và sản vật bản địa.</span></span><span class="kb-n">→</span></a>
+      <a href="/dat-gan-da-lat"><span><span class="kb-t">Đất gần Đà Lạt — vì sao nhiều người tìm về</span><br><span class="kb-s">Nam Ban trong lựa chọn của người rời phố.</span></span><span class="kb-cat">Vùng đất</span></a>
+      <a href="/dieu-de-lai-cho-con"><span><span class="kb-t">Điều để lại cho con</span><br><span class="kb-s">Có những mảnh đất sinh lời bằng cảm giác muốn quay về.</span></span><span class="kb-cat">Đời sống</span></a>
+      <a href="/mua-bo-nam-ban"><span><span class="kb-t">Mùa bơ Nam Ban — và một bài học</span><br><span class="kb-s">Từ tháng 6 đến tháng 11, đọc vùng đất qua một mùa quả.</span></span><span class="kb-cat">Đời sống</span></a>
+      <a href="/nam-ban-co-gi"><span><span class="kb-t">Nam Ban có gì — thác Voi, chùa Linh Ẩn, săn mây</span><br><span class="kb-s">Những điểm đáng ghé của vùng.</span></span><span class="kb-cat">Du lịch</span></a>
+      <a href="/thac-voi-nam-ban"><span><span class="kb-t">Thác Voi — nên biết trước khi đi</span><br><span class="kb-s">Thác cao 30m, cách Đà Lạt 25km qua đèo Tà Nung.</span></span><span class="kb-cat">Du lịch</span></a>
+      <a href="/mot-ngay-o-nam-ban"><span><span class="kb-t">Một ngày ở Nam Ban — đi đâu, ăn gì</span><br><span class="kb-s">Lịch trình từ sáng tới tối.</span></span><span class="kb-cat">Du lịch</span></a>
+      <a href="/dac-san-nam-ban"><span><span class="kb-t">Đặc sản Nam Ban</span><br><span class="kb-s">Cà phê, dâu tằm, bơ và sản vật bản địa.</span></span><span class="kb-cat">Đặc sản</span></a>
+      <a href="/cau-chuyen-nam-ban"><span><span class="kb-t">Câu chuyện Nam Ban</span><br><span class="kb-s">Những con người thật ở một vùng đất thật.</span></span><span class="kb-cat">Con người</span></a>
+      <a href="/nguoi-nam-ban-anh-nam"><span><span class="kb-t">Anh Nam — người ở lại sau mùa cà phê đầu</span><br><span class="kb-s">Chân dung một người chọn ở lại.</span></span><span class="kb-cat">Con người</span></a>
+      <a href="/nguoi-nam-ban-chi-trang"><span><span class="kb-t">Chị Trang — đưa cả gia đình rời phố</span><br><span class="kb-s">Vì sao một gia đình chọn Nam Ban.</span></span><span class="kb-cat">Con người</span></a>
+      <a href="/roi-sai-gon-len-nam-ban"><span><span class="kb-t">Người rời Sài Gòn lên Nam Ban</span><br><span class="kb-s">Chuyện bỏ phố, làm cà phê.</span></span><span class="kb-cat">Con người</span></a>
+      <a href="/so-sanh-nam-ban-bao-loc-da-lat"><span><span class="kb-t">Nam Ban hay Bảo Lộc, Đà Lạt</span><br><span class="kb-s">So sánh thẳng về giá, khí hậu, hạ tầng.</span></span><span class="kb-cat">So sánh</span></a>
+      <a href="/nam-ban-hay-di-linh"><span><span class="kb-t">Nam Ban hay Di Linh</span><br><span class="kb-s">Một người Sài Gòn đi về nhiều năm kể lại.</span></span><span class="kb-cat">So sánh</span></a>
+      <a href="/hoi-nhanh"><span><span class="kb-t">Những câu hỏi hay gặp về Nam Ban</span><br><span class="kb-s">Hỏi nhanh — đáp gọn (2026).</span></span><span class="kb-cat">Hỏi đáp</span></a>
       </div>
+    </section>
+
+    <div class="facts">
+      <div class="fct"><div class="fn">800–1000m</div><div class="fl">Độ cao</div></div>
+      <div class="fct"><div class="fn">18–25°C</div><div class="fl">Nhiệt độ</div></div>
+      <div class="fct"><div class="fn">Tháng 5–11</div><div class="fl">Mùa mưa</div></div>
     </div>
-    <div class="hgroup">
-      <div class="heye">Con người</div>
-      <div class="kb">
-      <a href="/cau-chuyen-nam-ban"><span><span class="kb-t">Câu chuyện Nam Ban</span><br><span class="kb-s">Những con người thật ở một vùng đất thật.</span></span><span class="kb-n">→</span></a>
-      <a href="/nguoi-nam-ban-anh-nam"><span><span class="kb-t">Anh Nam — người ở lại sau mùa cà phê đầu</span><br><span class="kb-s">Chân dung một người chọn ở lại.</span></span><span class="kb-n">→</span></a>
-      <a href="/nguoi-nam-ban-chi-trang"><span><span class="kb-t">Chị Trang — đưa cả gia đình rời phố</span><br><span class="kb-s">Vì sao một gia đình chọn Nam Ban.</span></span><span class="kb-n">→</span></a>
-      <a href="/roi-sai-gon-len-nam-ban"><span><span class="kb-t">Người rời Sài Gòn lên Nam Ban</span><br><span class="kb-s">Chuyện bỏ phố, làm cà phê.</span></span><span class="kb-n">→</span></a>
-      </div>
-    </div>
-    <div class="hgroup">
-      <div class="heye">So sánh &amp; câu hỏi</div>
-      <div class="kb">
-      <a href="/so-sanh-nam-ban-bao-loc-da-lat"><span><span class="kb-t">Nam Ban hay Bảo Lộc, Đà Lạt</span><br><span class="kb-s">So sánh thẳng về giá, khí hậu, hạ tầng.</span></span><span class="kb-n">→</span></a>
-      <a href="/nam-ban-hay-di-linh"><span><span class="kb-t">Nam Ban hay Di Linh</span><br><span class="kb-s">Một người Sài Gòn đi về nhiều năm kể lại.</span></span><span class="kb-n">→</span></a>
-      <a href="/hoi-nhanh"><span><span class="kb-t">Những câu hỏi hay gặp về Nam Ban</span><br><span class="kb-s">Hỏi nhanh — đáp gọn (2026).</span></span><span class="kb-n">→</span></a>
-      </div>
-    </div>
+
   </div>
 </main>
 

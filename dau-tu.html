@@ -184,6 +184,51 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 
 @media(min-width:1300px){.wrap{max-width:1140px;}.hub-end,.hub-invite,.brief-hub{max-width:1020px;}}
 
+/* — HERO — */
+.hero{position:relative;height:460px;overflow:hidden;background:linear-gradient(160deg,#3a4d3e 0%,#243a2e 55%,#16241b 100%);}
+.hero-img{position:absolute;inset:0;background-size:cover;background-position:center;}
+.hero-scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,18,12,.72) 0%,rgba(10,18,12,.28) 42%,rgba(10,18,12,.08) 70%,transparent 100%);}
+.hero-in{position:absolute;left:0;right:0;bottom:0;padding-bottom:52px;z-index:2;}
+.hero-txt{max-width:640px;}
+.hero-kicker{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.72);font-weight:500;margin-bottom:14px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(36px,5vw,52px);line-height:1.05;letter-spacing:-.5px;color:#fff;margin:0 0 16px;}
+.hero-lede{font-size:clamp(15px,1.7vw,16.5px);line-height:1.55;color:rgba(255,255,255,.85);max-width:560px;}
+/* — TẦNG 1 · bài dẫn — */
+.lead-art{padding:46px 0 6px;}
+.lead-art .kicker{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--clay);font-weight:500;margin-bottom:14px;}
+.lead-art h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(25px,3.4vw,32px);line-height:1.14;letter-spacing:-.3px;color:var(--ink);margin:0 0 12px;max-width:720px;transition:color .3s;}
+.lead-art p{font-size:15px;line-height:1.62;color:var(--muted);max-width:600px;margin:0 0 16px;}
+.lead-art .go{display:inline-block;font-size:13px;letter-spacing:.4px;color:var(--clay);}
+.lead-art a:hover h2{color:var(--forest);}
+/* — TẦNG 2 · nhóm chọn — */
+.pick-sec{padding:26px 0 8px;}
+.pick-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+.pick-grid a{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:24px 26px;transition:border-color .4s cubic-bezier(.22,1,.36,1),background .3s,transform .4s cubic-bezier(.22,1,.36,1);}
+.pick-grid a:hover{background:#fff;border-color:var(--clay);transform:translateY(-2px);}
+.pick-grid .pk-t{font-family:'Fraunces',serif;font-size:20px;line-height:1.24;color:var(--ink);display:block;margin-bottom:8px;}
+.pick-grid .pk-s{font-size:13px;color:var(--muted);line-height:1.5;}
+/* — NHỊP THỞ · câu trích / nguyên tắc — */
+.breath{text-align:center;margin:46px 0;padding:0 10px;}
+.breath .bq{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(21px,2.6vw,26px);line-height:1.42;color:var(--forest);max-width:760px;margin:0 auto;}
+.breath .bsrc{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--clay);margin-top:16px;}
+/* — NHỊP THỞ · dải dữ kiện — */
+.facts{display:flex;margin:46px 0;border:1px solid var(--line);border-radius:3px;overflow:hidden;background:var(--card);}
+.facts .fct{flex:1;padding:22px 18px;text-align:center;border-right:1px solid var(--line);}
+.facts .fct:last-child{border-right:0;}
+.facts .fn{font-family:'Fraunces',serif;font-size:clamp(19px,2.4vw,23px);color:var(--forest);line-height:1.1;}
+.facts .fl{font-size:12px;color:var(--stone);margin-top:7px;letter-spacing:.3px;}
+/* — TẦNG 3 · danh mục (dòng mỏng) — */
+.kb a>span:first-child{flex:1;min-width:0;}
+.kb .kb-cat{font-family:'Be Vietnam Pro',sans-serif;font-size:12px;letter-spacing:.4px;color:var(--stone);flex-shrink:0;}
+@media(max-width:640px){
+  .hero{height:400px;}
+  .lead-art{padding:34px 0 4px;}
+  .pick-grid{grid-template-columns:1fr;}
+  .breath{margin:34px 0;}
+  .facts{flex-wrap:wrap;margin:34px 0;}
+  .facts .fct{flex:1 1 50%;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .facts .fct:nth-child(even){border-right:0;}
+}
 /* — polish: micro-typography & touch feel — */
 ::selection{background:#2f4034;color:#f1ece2;}
 h1,h2,h3{text-wrap:balance;}
@@ -200,7 +245,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 </script>
 <nav>
   <div class="navin">
-    <a href="/" class="logo">Namban Panorama<span style="font-family:'Be Vietnam Pro',sans-serif;font-size:.46em;font-weight:400;letter-spacing:2px;text-transform:uppercase;color:var(--stone);margin-left:9px;vertical-align:middle;">intelligence</span></a>
+    <a href="/" class="logo">Namban Panorama <span style="font-family:'Be Vietnam Pro',sans-serif;font-size:.46em;font-weight:400;letter-spacing:2px;text-transform:uppercase;color:var(--stone);margin-left:7px;vertical-align:middle;">intelligence</span></a>
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
     <div class="navlinks">
       <a href="/nam-ban">Về Nam Ban</a>
@@ -219,37 +264,57 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   </div>
 </nav>
 
-<header>
-  <div class="wrap">
-    <div class="kicker">Xem phân tích</div>
-    <h1>Đầu tư Nam Ban</h1>
-    <p class="lede">Quy hoạch, hạ tầng, cơ hội và rủi ro — góc nhìn độc lập cho người cân nhắc đầu tư Nam Ban.</p>
+<section class="hero">
+  <!-- TODO HERO IMG: thay gradient bằng ảnh Nam Ban thật của Chú (host trong /images/, KHÔNG URL ngoài).
+       Ráp bằng 1 dòng ngay dưới đây, giữ nguyên scrim:
+       <div class="hero-img" style="background-image:url('/images/ten-anh.webp')"></div> -->
+  <div class="hero-scrim"></div>
+  <div class="hero-in">
+    <div class="wrap">
+      <div class="hero-txt">
+        <div class="hero-kicker">Namban Panorama · Đọc rủi ro</div>
+        <h1>Đầu tư Nam Ban</h1>
+        <p class="hero-lede">Quy hoạch, hạ tầng, cơ hội và rủi ro — góc nhìn độc lập cho người cân nhắc đầu tư Nam Ban.</p>
+      </div>
+    </div>
   </div>
-</header>
+</section>
 
 <main>
   <div class="wrap">
-    <div class="hgroup">
-      <div class="heye">Cơ hội &amp; rủi ro</div>
-      <div class="kb">
-      <a href="/tiem-nang-dau-tu"><span><span class="kb-t">Có nên mua đất Nam Ban 2026</span><br><span class="kb-s">Cơ hội, rủi ro và sai lầm hay gặp.</span></span><span class="kb-n">→</span></a>
-      <a href="/brief-01"><span><span class="kb-t">Ai đang mua đất Nam Ban — và ai mua đúng</span><br><span class="kb-s">Chân dung người mua và người mua đúng.</span></span><span class="kb-n">→</span></a>
+
+    <section class="lead-art">
+      <div class="kicker">Nên đọc trước</div>
+      <a href="/tiem-nang-dau-tu">
+        <h2>Có nên mua đất Nam Ban 2026</h2>
+        <p>Cơ hội, rủi ro và những sai lầm hay gặp — đặt Nam Ban cạnh các thị trường đi trước để đọc còn bao nhiêu đường tăng trưởng.</p>
+        <span class="go">Đọc bài →</span>
+      </a>
+    </section>
+
+    <section class="pick-sec">
+      <div class="heye">Đọc chọn lọc</div>
+      <div class="pick-grid">
+        <a href="/quy-hoach-2050"><span class="pk-t">Quy hoạch 2050 có làm giá đất tăng không</span><span class="pk-s">Quy hoạch không tự làm giá tăng.</span></a>
+        <a href="/ban-do-quy-hoach-nam-ban"><span class="pk-t">Bản đồ quy hoạch 2050 — 4 phân khu</span><span class="pk-s">Vùng nào nên / không nên mua.</span></a>
+        <a href="/brief-01"><span class="pk-t">Ai đang mua đất Nam Ban — và ai mua đúng</span><span class="pk-s">Chân dung người mua và người mua đúng.</span></a>
       </div>
+    </section>
+
+    <!-- NHỊP THỞ · nguyên tắc thật rút từ bài "Có nên mua đất Nam Ban 2026" (không tự chế) -->
+    <div class="breath">
+      <p class="bq">Rủi ro phải tính trước: thanh khoản chậm, giá đi theo năm chứ không theo tháng.</p>
+      <div class="bsrc">Từ bài · Có nên mua đất Nam Ban 2026</div>
     </div>
-    <div class="hgroup">
-      <div class="heye">Quy hoạch &amp; hạ tầng</div>
+
+    <section class="hgroup">
+      <div class="heye">Tất cả bài phân tích</div>
       <div class="kb">
-      <a href="/quy-hoach-2050"><span><span class="kb-t">Quy hoạch 2050 có làm giá đất tăng không</span><br><span class="kb-s">Quy hoạch không tự làm giá tăng.</span></span><span class="kb-n">→</span></a>
-      <a href="/ban-do-quy-hoach-nam-ban"><span><span class="kb-t">Bản đồ quy hoạch 2050 — 4 phân khu</span><br><span class="kb-s">Vùng nào nên / không nên mua.</span></span><span class="kb-n">→</span></a>
-      <a href="/san-bay-lien-khuong-mo-lai"><span><span class="kb-t">Sân bay Liên Khương mở lại</span><br><span class="kb-s">Từ 19/8/2026 — nghĩa gì với Nam Ban.</span></span><span class="kb-n">→</span></a>
+      <a href="/san-bay-lien-khuong-mo-lai"><span><span class="kb-t">Sân bay Liên Khương mở lại</span><br><span class="kb-s">Từ 19/8/2026 — nghĩa gì với Nam Ban.</span></span><span class="kb-cat">Hạ tầng</span></a>
+      <a href="/vuon-bo-loi-bao-nhieu"><span><span class="kb-t">Một sào bơ cho bao nhiêu tiền</span><br><span class="kb-s">Bóc phép tính dòng tiền thật.</span></span><span class="kb-cat">Dòng tiền</span></a>
       </div>
-    </div>
-    <div class="hgroup">
-      <div class="heye">Dòng tiền thực</div>
-      <div class="kb">
-      <a href="/vuon-bo-loi-bao-nhieu"><span><span class="kb-t">Một sào bơ cho bao nhiêu tiền</span><br><span class="kb-s">Bóc phép tính dòng tiền thật.</span></span><span class="kb-n">→</span></a>
-      </div>
-    </div>
+    </section>
+
   </div>
 </main>
 
