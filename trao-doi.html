@@ -214,6 +214,10 @@ footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
 </script>
 </head>
 <body>
+<script>
+var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}catch(e){return null;}},set:function(k,v){try{localStorage.setItem('pm_'+k,JSON.stringify(v));}catch(e){}}};
+(function(){var visits=PM.get('visits')||0,last=PM.get('lastVisit'),now=Date.now();if(!last||(now-last)>1800000){visits++;PM.set('visits',visits);}PM.set('lastVisit',now);var page=location.pathname.split('/').pop()||'index.html';var read=PM.get('read')||[];if(read.indexOf(page)===-1){read.push(page);PM.set('read',read);}window.PM_STATE={visits:visits,read:read,intent:PM.get('intent')};})();
+</script>
 
 <nav>
   <div class="wrap navin">

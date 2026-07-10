@@ -230,6 +230,16 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 .hub-cross .hc-t{font-family:'Fraunces',serif;font-size:19px;color:var(--ink);display:block;margin-bottom:6px;}
 .hub-cross .hc-s{font-size:13px;color:var(--muted);line-height:1.5;}
 .hub-invite{max-width:900px;margin:40px auto 0;padding:0 40px;}
+.brief-hub{max-width:900px;margin:40px auto 0;padding:34px 40px;background:var(--card);border:1px solid var(--line);border-radius:3px;}
+.brief-hub .bh-eye{display:block;font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--clay);font-weight:500;margin-bottom:12px;}
+.brief-hub .bh-t{font-family:'Fraunces',serif;font-size:18px;line-height:1.55;color:var(--ink);max-width:600px;margin:0 0 18px;}
+.bh-form{display:flex;gap:10px;flex-wrap:wrap;max-width:520px;margin:0;}
+.bh-form input{flex:1;min-width:220px;font-family:'Be Vietnam Pro',sans-serif;font-size:14px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:999px;padding:12px 20px;}
+.bh-form input:focus{outline:none;border-color:var(--forest);}
+.bh-form button{flex-shrink:0;font-family:'Be Vietnam Pro',sans-serif;font-size:13px;letter-spacing:.4px;color:#f1ece2;background:var(--forest);border:0;border-radius:999px;padding:12px 26px;cursor:pointer;transition:.3s;}
+.bh-form button:hover{background:var(--forest-deep);}
+.brief-hub .bh-cap{display:block;font-size:12px;color:var(--muted);margin-top:12px;}
+@media(max-width:640px){.brief-hub{padding:26px 24px;}.bh-form input{min-width:0;}}
 .hub-invite-in{background:var(--forest);border-radius:3px;padding:30px 34px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;}
 .hub-invite-t{font-family:'Fraunces',serif;font-size:18px;color:#f1ece2;line-height:1.55;max-width:560px;}
 .hub-invite-t span{color:#e8b98a;}
@@ -244,7 +254,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 @media(max-width:900px){.navlinks{display:none;}.hamburger{display:flex;}}
 @media(max-width:640px){.wrap{padding:0 24px;}.navin{padding:0 24px;}header{padding:52px 0 30px;}.hgroup{margin-bottom:34px;}}
 
-@media(min-width:1300px){.wrap{max-width:1140px;}.hub-end,.hub-invite{max-width:1020px;}}
+@media(min-width:1300px){.wrap{max-width:1140px;}.hub-end,.hub-invite,.brief-hub{max-width:1020px;}}
 
 /* — polish: micro-typography & touch feel — */
 ::selection{background:#2f4034;color:#f1ece2;}
@@ -256,6 +266,10 @@ a,button{touch-action:manipulation;}
 </style>
 </head>
 <body>
+<script>
+var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}catch(e){return null;}},set:function(k,v){try{localStorage.setItem('pm_'+k,JSON.stringify(v));}catch(e){}}};
+(function(){var visits=PM.get('visits')||0,last=PM.get('lastVisit'),now=Date.now();if(!last||(now-last)>1800000){visits++;PM.set('visits',visits);}PM.set('lastVisit',now);var page=location.pathname.split('/').pop()||'index.html';var read=PM.get('read')||[];if(read.indexOf(page)===-1){read.push(page);PM.set('read',read);}window.PM_STATE={visits:visits,read:read,intent:PM.get('intent')};})();
+</script>
 <nav>
   <div class="navin">
     <a href="/" class="logo">Namban Panorama</a>
@@ -343,6 +357,16 @@ a,button{touch-action:manipulation;}
   </div>
 </div>
 
+<div class="brief-hub">
+  <span class="bh-eye">Brief Nam Ban</span>
+  <p class="bh-t">Mỗi tháng một lá thư ngắn về vùng đất này — quy hoạch, mặt bằng giá thực, vài điều đáng chú ý. Trầm như một tờ báo.</p>
+  <form class="bh-form" onsubmit="return briefSignup(this,'Vùng đất & đời sống')">
+    <input type="tel" name="phone" placeholder="Số điện thoại — nhận Brief qua Zalo" aria-label="Số điện thoại nhận Brief">
+    <button type="submit">Nhận Brief</button>
+  </form>
+  <span class="bh-cap">Không gọi làm phiền, không spam. Huỷ nhận bất cứ lúc nào.</span>
+</div>
+
 <div class="share-row">
   <button class="share-btn" onclick="panoramaShare(this)" aria-label="Chia sẻ">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.4"></circle><circle cx="6" cy="12" r="2.4"></circle><circle cx="18" cy="19" r="2.4"></circle><path d="M8.1 10.8l7.8-4.6M8.1 13.2l7.8 4.6"></path></svg>
@@ -365,6 +389,21 @@ function toggleMenu(){
   if(ov)ov.classList.toggle('open',open);
   if(cl)cl.classList.toggle('open',open);
   document.body.style.overflow=open?'hidden':'';
+}
+function briefSignup(f,topic){
+  var inp=f.querySelector('input'),btn=f.querySelector('button');
+  var phone=(inp.value||'').replace(/[^0-9]/g,'');
+  if(phone.length<9){inp.style.borderColor='#c44';return false;}
+  btn.textContent='Đang gửi...';btn.disabled=true;inp.disabled=true;
+  var ctx='';
+  try{var st=window.PM_STATE||{};var read=st.read||[];var page=(location.pathname.split('/').pop()||'');ctx='ghé '+(st.visits||1)+' lần · đọc '+read.length+' bài · từ: '+page;if(read.length)ctx+=' · lịch sử: '+read.slice(-6).join(', ');}catch(e){}
+  var fd=new FormData();
+  fd.append('entry.260173030','Đang nuôi · Brief · '+topic);
+  fd.append('entry.2084374895',inp.value);
+  fd.append('entry.418514546','Nguồn=Brief hub | '+ctx);
+  fetch('https://docs.google.com/forms/d/e/1FAIpQLSejyXVjRk8TQCtNIrZijGeZxaoJaeA3VCccpW4PAi87BRVAzg/formResponse',{method:'POST',mode:'no-cors',body:fd});
+  setTimeout(function(){var box=f.closest('.brief-hub');if(box)box.innerHTML='<span class="bh-eye">Brief Nam Ban</span><p class="bh-t" style="margin:0;">✔ Đã ghi nhận. Brief sẽ tới Zalo của bạn mỗi tháng một lần.</p>';},500);
+  return false;
 }
 function panoramaShare(btn){
   var url=window.location.href,title=document.title;
