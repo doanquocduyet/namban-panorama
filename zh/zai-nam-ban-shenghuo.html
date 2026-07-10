@@ -335,5 +335,10 @@ document.querySelector('.hamburger').addEventListener('click',function(){
   var l=document.querySelector('.nav-links');l.style.display=(l.style.display==='flex')?'none':'flex';});
 </script>
 
+<script>
+/* prefetch bản ngôn ngữ khi rê/chạm — bấm là hiện tức thì */
+(function(){var d={};function pf(u){if(d[u])return;d[u]=1;var l=document.createElement('link');l.rel='prefetch';l.href=u;document.head.appendChild(l);}
+document.querySelectorAll('.l10n a').forEach(function(a){['mouseenter','touchstart'].forEach(function(e){a.addEventListener(e,function(){pf(a.href);},{passive:true});});});})();
+</script>
 </body>
 </html>
