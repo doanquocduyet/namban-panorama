@@ -193,7 +193,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 /* — HERO — */
 .hero{position:relative;height:460px;overflow:hidden;background:linear-gradient(160deg,#3a4d3e 0%,#243a2e 55%,#16241b 100%);}
 .hero-img{position:absolute;inset:0;background-size:cover;background-position:center;}
-.hero-scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,18,12,.72) 0%,rgba(10,18,12,.28) 42%,rgba(10,18,12,.08) 70%,transparent 100%);}
+.hero-scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,18,12,.82) 0%,rgba(10,18,12,.42) 38%,rgba(10,18,12,.13) 66%,transparent 100%),linear-gradient(to right,rgba(10,18,12,.5) 0%,rgba(10,18,12,.15) 44%,transparent 66%);}
 .hero-in{position:absolute;left:0;right:0;bottom:0;padding-bottom:52px;z-index:2;}
 .hero-txt{max-width:640px;}
 .hero-kicker{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.72);font-weight:500;margin-bottom:14px;}
@@ -271,9 +271,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 </nav>
 
 <section class="hero">
-  <!-- TODO HERO IMG: thay gradient bằng ảnh Nam Ban thật của Chú (host trong /images/, KHÔNG URL ngoài).
-       Ráp bằng 1 dòng ngay dưới đây, giữ nguyên scrim:
-       <div class="hero-img" style="background-image:url('/images/ten-anh.webp')"></div> -->
+  <div class="hero-img" style="background-image:url('/images/toan-canh-nam-ban-thac-voi-tuong-phat.webp');background-position:center 46%;" role="img" aria-label="Toàn cảnh Nam Ban — tượng Phật chùa Linh Ẩn và thác Voi giữa thung lũng"></div>
   <div class="hero-scrim"></div>
   <div class="hero-in">
     <div class="wrap">
