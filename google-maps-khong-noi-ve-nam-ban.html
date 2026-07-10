@@ -70,7 +70,7 @@
 }
 </script>
 <style>
-html{overflow-x:clip;}.logo-intel{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:0.62em;color:var(--clay);letter-spacing:.3px;opacity:.85;}
+html{overflow-x:clip;}nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}.logo-intel{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:0.62em;color:var(--clay);letter-spacing:.3px;opacity:.85;}
 /* — polish: micro-typography & touch feel — */
 ::selection{background:#2f4034;color:#f1ece2;}
 h1,h2,h3{text-wrap:balance;}
@@ -258,6 +258,15 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 </div>
 
 
+
+<div style="max-width:720px;margin:8px auto 0;padding:26px 40px 0;border-top:1px solid var(--line);text-align:center;">
+  <div style="font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--clay);font-weight:500;margin-bottom:14px;">Đọc theo chủ đề</div>
+  <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-family:'Fraunces',serif;font-size:17px;">
+    <a href="/nam-ban" style="color:var(--ink);text-decoration:none;">Về Nam Ban</a>
+    <a href="/dat" style="color:var(--ink);text-decoration:none;">Về Đất</a>
+    <a href="/dau-tu" style="color:var(--ink);text-decoration:none;">Đầu tư</a>
+  </div>
+</div>
 
 <footer>
   <div class="contact-line">
