@@ -18,7 +18,7 @@
   for(var i=0;i<scripts.length;i++){
     try{var d=JSON.parse(scripts[i].textContent);if(d['@type']==='BreadcrumbList'){bc=d;break;}}catch(e){}
   }
-  if(bc&&bc.itemListElement&&bc.itemListElement.length){
+  if(bc&&bc.itemListElement&&bc.itemListElement.length&&!document.querySelector('.crumb')){
     var items=bc.itemListElement.slice().sort(function(a,b){return a.position-b.position;});
     var html=items.map(function(it,idx){
       var sep=idx>0?'<span class="sep">›</span>':'';
