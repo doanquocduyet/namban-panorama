@@ -217,7 +217,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 .kb a>span:first-child{flex:1;min-width:0;}
 @media(max-width:640px){
   .hero{height:470px;}
-  .hero-img{background-position:20% 55%!important;}
+  .hero-img{background-position:20% 55%!important;transform:none!important;}
   .hero-in{padding-bottom:60px;}
   .lead-art{padding:34px 0 4px;}
   .pick-grid{grid-template-columns:1fr;}
@@ -262,7 +262,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 </nav>
 
 <section class="hero">
-  <div class="hero-img" style="background-image:url('/images/ca-phe-nam-ban-dau-tu.webp');background-position:center 72%;" role="img" aria-label="Ly cà phê pha thủ công trên bàn gỗ — quán cà phê ở Nam Ban"></div>
+  <div class="hero-img" style="background-image:url('/images/ca-phe-nam-ban-dau-tu.webp');background-position:center 82%;transform:scaleX(-1);" role="img" aria-label="Ly cà phê pha thủ công trên bàn gỗ — quán cà phê ở Nam Ban"></div>
   <div class="hero-scrim"></div>
   <div class="hero-in">
     <div class="wrap">
