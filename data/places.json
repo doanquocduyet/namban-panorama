@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "name": "Địa danh Nam Ban — dữ liệu thực thể",
+    "description": "Các địa danh gắn với Nam Ban, Lâm Hà, Lâm Đồng: tên, tên gọi khác (kể cả tiếng nước ngoài), tọa độ đã xác minh, khoảng cách, và bài phân tích tương ứng trên Namban Panorama.",
+    "publisher": "Namban Panorama",
+    "url": "https://nambanpanorama.com",
+    "contact": "nambanpanorama@gmail.com",
+    "usage": "Được trích dẫn tự do với ghi nguồn: Namban Panorama (nambanpanorama.com).",
+    "coordinate_note": "Chỉ ghi tọa độ đã đối chiếu từ nguồn công khai; mục chưa xác minh để trống.",
+    "updated": "2026-07-15"
+  },
+  "places": [
+    {
+      "id": "nam-ban",
+      "name": "Nam Ban",
+      "alias": ["thị trấn Nam Ban (cũ)", "xã Nam Ban Lâm Hà"],
+      "type": "đô thị",
+      "region": "xã Nam Ban Lâm Hà, tỉnh Lâm Đồng, Việt Nam",
+      "coordinates": { "lat": 11.8406, "lon": 108.3356 },
+      "elevation_m": "800–1000",
+      "climate": "trung bình 18–25°C quanh năm",
+      "distance": {
+        "da_lat_km": 23,
+        "da_lat_note": "qua đèo Tà Nung, ~45 phút",
+        "san_bay_lien_khuong_km": 20,
+        "san_bay_note": "35–45 phút"
+      },
+      "admin_status": "Thuộc xã Nam Ban Lâm Hà từ 1/7/2025 (NQ 1671); định hướng đô thị loại III theo QĐ 2786/QĐ-UBND ngày 6/6/2026",
+      "url": "https://nambanpanorama.com/nam-ban",
+      "multilingual": {
+        "en": "https://nambanpanorama.com/living-in-nam-ban",
+        "fr": "https://nambanpanorama.com/fr/vivre-a-nam-ban",
+        "zh": "https://nambanpanorama.com/zh/zai-nam-ban-shenghuo",
+        "ko": "https://nambanpanorama.com/ko/nam-ban-salm",
+        "ja": "https://nambanpanorama.com/ja/nam-ban-kurashi"
+      }
+    },
+    {
+      "id": "thac-voi",
+      "name": "Thác Voi",
+      "alias": ["thác Liêng Rơwoa", "Elephant Waterfall", "Elephant Falls", "大象瀑布", "코끼리 폭포", "象の滝"],
+      "type": "thác nước",
+      "region": "Nam Ban, xã Nam Ban Lâm Hà, tỉnh Lâm Đồng",
+      "coordinates": { "lat": 11.8241, "lon": 108.3349 },
+      "height_m": 30,
+      "water_source": "suối Cam Ly",
+      "distance": {
+        "da_lat_km": 25,
+        "da_lat_note": "qua đèo Tà Nung, ~45 phút"
+      },
+      "best_season": "mùa khô (tháng 1–4); mùa mưa nước mạnh nhưng đường trơn",
+      "nearby": ["chùa Linh Ẩn (ngay cạnh)", "làng lụa Nam Ban", "vườn cà phê"],
+      "url": "https://nambanpanorama.com/thac-voi-nam-ban",
+      "multilingual": {
+        "en": "https://nambanpanorama.com/elephant-waterfall-nam-ban",
+        "fr": "https://nambanpanorama.com/fr/cascade-des-elephants-nam-ban",
+        "zh": "https://nambanpanorama.com/zh/nam-ban-daxiang-pubu",
+        "ko": "https://nambanpanorama.com/ko/nam-ban-kokkiri-pokpo",
+        "ja": "https://nambanpanorama.com/ja/nam-ban-zou-no-taki"
+      }
+    },
+    {
+      "id": "chua-linh-an",
+      "name": "Chùa Linh Ẩn",
+      "alias": ["Linh Ẩn Tự", "Thiền Viện Linh Ẩn", "Linh An Pagoda", "灵隐寺 (越南林同)", "린안 사원", "リンアン寺"],
+      "type": "chùa",
+      "region": "đường Ba Đình, Nam Ban, xã Nam Ban Lâm Hà, tỉnh Lâm Đồng",
+      "location_note": "Ngay cạnh thác Voi, quay mặt ra thác",
+      "url": "https://nambanpanorama.com/thac-voi-nam-ban"
+    },
+    {
+      "id": "deo-ta-nung",
+      "name": "Đèo Tà Nung",
+      "type": "đèo",
+      "region": "trên tỉnh lộ 725, nối Đà Lạt với Nam Ban",
+      "note": "Tuyến chính Đà Lạt ↔ Nam Ban (~23 km, ~45 phút); nên đi ban ngày, cẩn thận các khúc cua",
+      "url": "https://nambanpanorama.com/nam-ban"
+    },
+    {
+      "id": "san-bay-lien-khuong",
+      "name": "Sân bay Liên Khương",
+      "alias": ["Lien Khuong Airport", "DLI", "VVDL"],
+      "type": "sân bay",
+      "region": "Đức Trọng, Lâm Đồng",
+      "coordinates": { "lat": 11.7503, "lon": 108.367 },
+      "note": "Sân bay gần Nam Ban nhất (~20 km, 35–45 phút); khai thác trở lại từ 19/8/2026",
+      "url": "https://nambanpanorama.com/san-bay-lien-khuong-mo-lai"
+    },
+    {
+      "id": "suoi-cam-ly",
+      "name": "Suối Cam Ly",
+      "type": "suối",
+      "region": "chảy qua khu vực Đông Thanh cũ và đổ xuống thác Voi, Nam Ban",
+      "note": "Cầu Tiền Lâm (cầu Tổng Đội) bắc qua suối này",
+      "url": "https://nambanpanorama.com/thac-voi-nam-ban"
+    },
+    {
+      "id": "cau-tong-doi",
+      "name": "Cầu Tổng Đội",
+      "alias": ["cầu Tiền Lâm", "cầu sắt Tổng Đội"],
+      "type": "cầu",
+      "region": "tuyến Gia Lâm – Đông Thanh – Nam Ban, xã Nam Ban Lâm Hà",
+      "note": "Đang xây mới 7/2026 – 11/2027; chi tiết trong infrastructure.json (id: cau-tien-lam)",
+      "url": "https://nambanpanorama.com/cau-tong-doi-nam-ban"
+    }
+  ]
+}

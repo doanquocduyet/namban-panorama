@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "name": "Hạ tầng Nam Ban — dữ liệu công trình",
+    "description": "Dữ liệu các công trình hạ tầng ảnh hưởng trực tiếp tới Nam Ban, Lâm Hà, Lâm Đồng — số liệu từ văn bản chính thức và khảo sát hiện trường của Namban Panorama.",
+    "publisher": "Namban Panorama",
+    "url": "https://nambanpanorama.com",
+    "contact": "nambanpanorama@gmail.com",
+    "usage": "Được trích dẫn tự do với ghi nguồn: Namban Panorama (nambanpanorama.com).",
+    "updated": "2026-07-15"
+  },
+  "items": [
+    {
+      "id": "cau-tien-lam",
+      "name": "Cầu Tiền Lâm",
+      "alias": ["cầu Tổng Đội", "cầu sắt Tổng Đội"],
+      "type": "cầu",
+      "status": "đang thi công",
+      "location": "Bắc qua suối Cam Ly, tuyến Gia Lâm – Đông Thanh – Nam Ban (Km6+680 – Km7+010), xã Nam Ban Lâm Hà, Lâm Đồng",
+      "article": "https://nambanpanorama.com/cau-tong-doi-nam-ban",
+      "old_bridge": {
+        "built": 1998,
+        "structure": "cầu sắt, mặt cầu 11 tấm lưới sắt ghép bulong",
+        "length_m": 33,
+        "width_m": 4.3,
+        "condition_2026": "xuống cấp sau 28 năm, đã cấm ô tô từ đầu 2026"
+      },
+      "new_bridge": {
+        "structure": "bê tông cốt thép vĩnh cửu, một nhịp dầm chữ T bê tông cốt thép dự ứng lực dài 33 m",
+        "length_m": 41,
+        "width_m": 8.5,
+        "deck_note": "mặt cầu 7,5 m + hai lề mỗi bên 0,5 m",
+        "foundation": "cọc khoan nhồi đường kính 1 m",
+        "load_standard": "HL.93 (xe tải qua được)",
+        "route_length_m": 331,
+        "extras": "365 m đường gom dân sinh; 90 m đường dọc sông; tường chắn taluy; 9 trụ đèn LED cao 9 m",
+        "budget_vnd": 26750000000,
+        "contractor": "Công ty cổ phần Xây dựng và Tư vấn Đầu tư 18",
+        "start_date": "2026-07-14",
+        "expected_completion": "2027-11-10"
+      },
+      "construction_note": "Theo thiết kế, cầu cũ được tận dụng làm cầu tạm; do bồi thường giải phóng mặt bằng chưa xong nên chưa có cầu tạm — người dân tạm chọn tuyến khác trong lúc thi công.",
+      "sources": [
+        "Thông báo số 55/TB-BQLDALH ngày 10/7/2026 — Ban Quản lý dự án đầu tư xây dựng khu vực Lâm Hà",
+        "Bản tin UBND xã Nam Ban Lâm Hà ngày 14/7/2026",
+        "Khảo sát và ảnh hiện trường Namban Panorama, 14/7/2026"
+      ]
+    },
+    {
+      "id": "san-bay-lien-khuong",
+      "name": "Sân bay Liên Khương",
+      "alias": ["Lien Khuong Airport", "DLI", "VVDL"],
+      "type": "sân bay",
+      "status": "khai thác trở lại từ 00h00 ngày 19/8/2026",
+      "location": "Đức Trọng, Lâm Đồng",
+      "coordinates": { "lat": 11.7503, "lon": 108.367 },
+      "distance_from_nam_ban_km": 20,
+      "travel_time_from_nam_ban": "35–45 phút",
+      "article": "https://nambanpanorama.com/san-bay-lien-khuong-mo-lai",
+      "note": "Tạm đóng để sửa đường cất hạ cánh và đường lăn; định hướng nâng cấp chuẩn 4E theo điều chỉnh Quy hoạch tỉnh Lâm Đồng (QĐ 2786/QĐ-UBND).",
+      "sources": [
+        "Văn bản Tổng công ty Cảng hàng không Việt Nam ký ngày 12/6/2026",
+        "Quyết định 2786/QĐ-UBND ngày 6/6/2026 — UBND tỉnh Lâm Đồng"
+      ]
+    },
+    {
+      "id": "tinh-lo-725",
+      "name": "Tỉnh lộ 725 (DT725)",
+      "type": "đường",
+      "status": "đang khai thác",
+      "location": "Trục nối Đà Lạt – đèo Tà Nung – Nam Ban",
+      "note": "Tuyến chính từ Đà Lạt về Nam Ban (~23 km, ~45 phút qua đèo Tà Nung). Nửa đầu 2026 dịch vụ mới (quán ăn, cafe, cửa hàng) mở dọc mặt tiền đoạn Nam Ban.",
+      "sources": [
+        "Khảo sát thực địa Namban Panorama, 2026"
+      ]
+    },
+    {
+      "id": "tuyen-gia-lam-dong-thanh-nam-ban",
+      "name": "Tuyến Gia Lâm – Đông Thanh – Nam Ban",
+      "type": "đường",
+      "status": "đang khai thác; đoạn cầu Tiền Lâm đang thi công",
+      "location": "Đường liên xã, xã Nam Ban Lâm Hà",
+      "note": "Đường huyết mạch của khu vực Đông Thanh cũ; cầu Tiền Lâm nằm tại Km6+680 – Km7+010 trên tuyến này.",
+      "sources": [
+        "Thông báo số 55/TB-BQLDALH ngày 10/7/2026"
+      ]
+    }
+  ]
+}

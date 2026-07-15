@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "name": "Dòng thời gian Nam Ban — mốc hành chính & hạ tầng",
+    "description": "Các mốc đã kiểm chứng về hành chính, quy hoạch và hạ tầng ảnh hưởng trực tiếp tới Nam Ban, Lâm Hà, Lâm Đồng.",
+    "publisher": "Namban Panorama",
+    "url": "https://nambanpanorama.com/quy-hoach-2050",
+    "usage": "Được trích dẫn tự do với ghi nguồn: Namban Panorama (nambanpanorama.com).",
+    "updated": "2026-07-15"
+  },
+  "events": [
+    {
+      "date": "1998",
+      "title": "Cầu sắt Tổng Đội được xây",
+      "detail": "Cầu sắt bắc qua suối Cam Ly trên đường huyết mạch của xã Đông Thanh (cũ) — dài 33 m, rộng 4,3 m.",
+      "status": "đã diễn ra",
+      "source": "Thông báo 55/TB-BQLDALH ngày 10/7/2026"
+    },
+    {
+      "date": "2025-07-01",
+      "title": "Hợp nhất thành xã Nam Ban Lâm Hà",
+      "detail": "Nam Ban + Đông Thanh + Gia Lâm + Mê Linh nhập thành xã Nam Ban Lâm Hà, tỉnh Lâm Đồng (NQ 1671). Sổ đỏ giữ nguyên giá trị.",
+      "status": "đã hiệu lực",
+      "source": "Nghị quyết 1671"
+    },
+    {
+      "date": "2026-06-06",
+      "title": "Nam Ban được định hướng đô thị loại III",
+      "detail": "UBND tỉnh Lâm Đồng ký QĐ 2786/QĐ-UBND — điều chỉnh Quy hoạch tỉnh thời kỳ 2021–2030, tầm nhìn 2050; Nam Ban Lâm Hà xếp đô thị loại III.",
+      "status": "đã ký",
+      "source": "Quyết định 2786/QĐ-UBND ngày 6/6/2026"
+    },
+    {
+      "date": "2026-07-14",
+      "title": "Khởi công xây mới cầu Tiền Lâm (cầu Tổng Đội)",
+      "detail": "Cầu bê tông cốt thép vĩnh cửu dài 41 m, rộng 8,5 m, tải trọng HL.93, vốn 26,75 tỷ đồng. Trong lúc thi công chưa có cầu tạm.",
+      "status": "đang thi công",
+      "source": "Thông báo 55/TB-BQLDALH; bản tin UBND xã Nam Ban Lâm Hà 14/7/2026"
+    },
+    {
+      "date": "2026-08-19",
+      "title": "Sân bay Liên Khương khai thác trở lại",
+      "detail": "Các đường bay đi/đến Liên Khương hoạt động lại từ 00h00 ngày 19/8/2026 sau thời gian sửa đường cất hạ cánh và đường lăn.",
+      "status": "đã có văn bản, chưa tới ngày",
+      "source": "Văn bản Tổng công ty Cảng hàng không Việt Nam ký 12/6/2026"
+    },
+    {
+      "date": "2026",
+      "title": "Quy hoạch chung Nam Ban đến 2050 — đang lấy ý kiến",
+      "detail": "Bốn phân khu: trung tâm hành chính; sinh thái Núi Voi (nghỉ dưỡng); cửa ngõ phía Nam (đô thị mới); sinh thái Đông Bắc (bảo tồn rừng). Đất ở chiếm 4,02% diện tích xã.",
+      "status": "dự thảo — chưa phê duyệt",
+      "source": "Hồ sơ quy hoạch chung Nam Ban đến 2050 (đang lấy ý kiến)"
+    },
+    {
+      "date": "2027-11-10",
+      "title": "Cầu Tiền Lâm dự kiến hoàn thành",
+      "detail": "Xe tải qua được suối Cam Ly; tuyến Gia Lâm – Đông Thanh – Nam Ban thông suốt; có đèn đường và đường gom dân sinh.",
+      "status": "dự kiến",
+      "source": "Thông báo 55/TB-BQLDALH ngày 10/7/2026"
+    }
+  ]
+}

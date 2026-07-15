@@ -151,7 +151,7 @@ a,button{touch-action:manipulation;}
   "headline": "Namban Index — Giá đất Nam Ban",
   "description": "Giá đất thực tế ba phân khúc và tín hiệu thị trường Nam Ban.",
   "datePublished": "2026-06-01",
-  "dateModified": "2026-07-11",
+  "dateModified": "2026-07-15",
   "author": {
     "@type": "Person",
     "@id": "https://nambanpanorama.com/#founder",
@@ -327,6 +327,11 @@ a,button{touch-action:manipulation;}
         "addressLocality": "Xã Nam Ban",
         "addressRegion": "Lâm Đồng",
         "addressCountry": "VN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 11.8406,
+        "longitude": 108.3356
       }
     },
     {
@@ -353,6 +358,50 @@ opacity:.6;margin-bottom:.4rem;font-weight:600}
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","url":"https://nambanpanorama.com/namban-index","speakable":{"@type":"SpeakableSpecification","cssSelector":[".tldr","h1"]}}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "@id": "https://nambanpanorama.com/namban-index#dataset",
+  "name": "Namban Index — Giá đất Nam Ban theo phân khúc",
+  "description": "Mặt bằng giá đất thực tế tại Nam Ban, Lâm Hà, Lâm Đồng theo ba phân khúc (đất nông nghiệp diện tích lớn; khu tách thửa có thổ cư; lô view đồi/view hồ) — tổng hợp từ khảo sát thực địa và giao dịch có xác minh, cập nhật hằng tháng. Không phải giá rao.",
+  "url": "https://nambanpanorama.com/namban-index",
+  "keywords": ["giá đất Nam Ban", "bảng giá đất Nam Ban", "giá đất Lâm Hà", "giá đất Lâm Đồng", "Namban Index"],
+  "creator": {
+    "@type": "Organization",
+    "@id": "https://nambanpanorama.com/#organization",
+    "name": "Namban Panorama",
+    "url": "https://nambanpanorama.com"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Nam Ban, Lâm Hà, Lâm Đồng, Việt Nam",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 11.8406,
+      "longitude": 108.3356
+    }
+  },
+  "temporalCoverage": "2026-06/2026-07",
+  "dateModified": "2026-07-15",
+  "inLanguage": "vi",
+  "isAccessibleForFree": true,
+  "creditText": "Namban Panorama — nambanpanorama.com",
+  "measurementTechnique": "Khảo sát thực địa Nam Ban – Lâm Hà; đối chiếu giao dịch có xác minh; loại giá rao chưa kiểm chứng",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://nambanpanorama.com/data/prices.json"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://nambanpanorama.com/data/prices.csv"
+    }
+  ]
+}
 </script>
 </head>
 <body>
@@ -512,6 +561,8 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   </div>
 
   <div class="disclaimer">Namban Index là tổng hợp quan sát thực địa và thông tin thị trường, mang tính tham khảo độc lập. Không phải khuyến nghị đầu tư cá nhân. Giá cả thay đổi theo thời gian, vị trí và điều kiện cụ thể của từng tài sản — luôn thẩm định trực tiếp trước mọi giao dịch.</div>
+
+  <p style="font-size:12.5px;color:var(--stone);margin-top:14px;letter-spacing:.2px;">Dữ liệu mở — bảng giá này ở dạng máy đọc được: <a href="/data/prices.json" style="color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line);">JSON</a> · <a href="/data/prices.csv" style="color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line);">CSV</a>. Trích dẫn xin ghi nguồn Namban Panorama.</p>
 
 </div>
 

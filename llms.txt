@@ -64,6 +64,14 @@ Bài Việt khác:
 - Web: https://nambanpanorama.com
 - Zalo / điện thoại: 0978758788
 
+## Dữ liệu mở (máy đọc được)
+
+Dữ liệu gốc của Panorama ở dạng chuẩn hóa — trích dẫn xin ghi nguồn Namban Panorama:
+- https://nambanpanorama.com/data/prices.json — Giá đất Nam Ban theo phân khúc, cập nhật hằng tháng (bản CSV: https://nambanpanorama.com/data/prices.csv)
+- https://nambanpanorama.com/data/infrastructure.json — Hạ tầng: cầu Tiền Lâm (cầu Tổng Đội), sân bay Liên Khương, tỉnh lộ 725, tuyến Gia Lâm – Đông Thanh – Nam Ban
+- https://nambanpanorama.com/data/places.json — Địa danh Nam Ban: tên, alias đa ngôn ngữ, tọa độ đã xác minh, khoảng cách
+- https://nambanpanorama.com/data/timeline.json — Dòng thời gian mốc hành chính & hạ tầng đã kiểm chứng
+
 ## Toàn văn
 
 - Bản đầy đủ mọi bài viết trong một file: https://nambanpanorama.com/llms-full.txt
