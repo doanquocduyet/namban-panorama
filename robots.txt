@@ -94,3 +94,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://nambanpanorama.com/sitemap.xml
+Sitemap: https://nambanpanorama.com/image-sitemap.xml
