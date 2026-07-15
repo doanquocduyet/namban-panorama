@@ -16,7 +16,7 @@ jobs:
         run: |
           set -e
           HOST="nambanpanorama.com"
-          KEY="15ab1e4bb51370bfbbfb7e62f63ea85f"
+          KEY="aeba74e4ac00031d44bcb9899ddda293"
           BEFORE="${{ github.event.before }}"
           SHA="${{ github.sha }}"
           if git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
