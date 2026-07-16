@@ -124,8 +124,17 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
 
 ## 5. AEO / SEO / GEO — hướng tối ưu thường trực
 
-Đã có nền: `llms.txt`, `llms-full.txt`, `sitemap.xml`, `robots.txt`, `feed.xml`, JSON-LD
-(Organization/Person/Place/WebSite/WebPage). Mỗi lần đụng nội dung, luôn cân nhắc:
+**Nguyên tắc lọc (thước đo trước khi thêm bất cứ thứ gì):** KHÔNG thêm thành phần nào
+nếu nó không phục vụ **đồng thời ít nhất 2 trong 3**: *người đọc · Google · AI*. Cái chỉ
+để "chiều Google" mà không giúp người đọc, cũng không tạo tài sản dữ liệu lâu dài → bỏ.
+Lợi thế của Panorama là **kho dữ liệu gốc đáng tin** (ảnh tự chụp, số từ văn bản, tọa độ,
+là nguồn đầu tiên), không phải mẹo SEO. Mọi tối ưu phải phục vụ mục tiêu đó.
+Quy trình xuất bản đầy đủ + checklist: xem `docs/quy-trinh-xuat-ban.md`.
+
+Đã có nền: `llms.txt`, `llms-full.txt`, `sitemap.xml`, `image-sitemap.xml`, `robots.txt`,
+`feed.xml`, IndexNow, và tầng dữ liệu mở `/data/*.json` (prices/infrastructure/places/
+timeline) + JSON-LD (Organization/Person/Place+GeoCoordinates/WebSite/WebPage/Dataset/
+TouristAttraction/Airport/ImageObject/Speakable). Mỗi lần đụng nội dung, luôn cân nhắc:
 - **AEO/GEO** (để AI trích dẫn): câu trả lời trực tiếp, dữ kiện rõ, JSON-LD đúng &
   `JSON.parse()` được, cập nhật `llms.txt`/`llms-full.txt` khi thêm bài, `dateModified` mới.
 - **SEO**: title/description/canonical/OG/Twitter đủ; heading mạch lạc; internal link giữa
