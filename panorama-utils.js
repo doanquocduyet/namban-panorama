@@ -1,3 +1,20 @@
+/* SỐ ĐIỆN THOẠI → ZALO TRÊN PC (mobile giữ gọi) */
+(function(){
+  try{
+    var isPhone=/Android|iPhone|iPod|Windows Phone|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(navigator.userAgent||'');
+    if(isPhone)return; /* điện thoại: giữ tel: để bấm gọi */
+    var ZALO='https://zalo.me/0978758788';
+    var links=document.querySelectorAll('a[href^="tel:0978758788"]');
+    for(var i=0;i<links.length;i++){
+      var a=links[i];
+      a.setAttribute('href',ZALO);
+      a.setAttribute('target','_blank');
+      a.setAttribute('rel','noopener');
+      a.setAttribute('title','Nhắn Zalo 0978 758 788');
+    }
+  }catch(e){}
+})();
+
 (function(){
   if(!document.querySelector('.art-body'))return;
 

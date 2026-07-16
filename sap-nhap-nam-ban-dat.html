@@ -454,5 +454,6 @@ document.querySelector('.hamburger').addEventListener('click', function(){
 function toggleMenu(){var m=document.getElementById('mobileMenu');var ov=document.getElementById('menuOverlay');var cl=document.getElementById('mobileClose');var hb=document.querySelector('.hamburger');var open=m.classList.toggle('open');if(ov)ov.classList.toggle('open',open);if(cl)cl.classList.toggle('open',open);if(hb)hb.classList.toggle('is-open',open);document.body.style.overflow=open?'hidden':'';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){var m=document.getElementById('mobileMenu');if(m&&m.classList.contains('open'))toggleMenu();}});
 </script>
+<script defer src="/panorama-utils.js"></script>
 </body>
 </html>
