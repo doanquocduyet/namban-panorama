@@ -30,7 +30,7 @@
 html{overflow-x:clip;}
 :root{
   --ink:#1a1815;--paper:#f1ece2;--card:#faf6ee;
-  --forest:#2f4034;--clay:#9d5d38;--clay-soft:#bb8862;
+  --forest:#2f4034;--forest-deep:#1e2a20;--clay:#9d5d38;--clay-soft:#bb8862;
   --stone:#a79c87;--muted:#6e6759;--line:#e1d9c8;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -43,43 +43,76 @@ nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.92);backdrop-
 .back{font-size:12.5px;color:var(--muted);text-decoration:none;letter-spacing:.5px;}
 .back:hover{color:var(--ink);}
 
-.wrap{max-width:680px;margin:0 auto;padding:72px 40px 80px;}
+/* ===== TRAO ĐỔI — dựng lại (mobile khối · PC hai cột) ===== */
+.td-main{max-width:920px;margin:0 auto;padding:64px 40px 56px;}
+.td-eyebrow{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--clay);margin-bottom:16px;}
+.td-h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(28px,4vw,40px);line-height:1.12;letter-spacing:-.6px;color:var(--ink);margin-bottom:18px;}
+.td-quote{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(16px,2.4vw,18px);color:var(--muted);line-height:1.5;border-left:2px solid var(--clay-soft);padding-left:18px;}
 
-.eyebrow{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--clay);margin-bottom:18px;}
-h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(28px,4vw,42px);line-height:1.1;letter-spacing:-.6px;margin-bottom:22px;}
-.standfirst{font-size:17px;color:var(--muted);line-height:1.65;font-style:italic;border-left:3px solid var(--clay);padding-left:20px;margin-bottom:44px;}
+.td-grid{display:block;}
+.td-left,.td-right{display:flex;flex-direction:column;}
+.td-right{margin-top:34px;}
 
-/* Form */
-.conv-form{display:flex;flex-direction:column;gap:22px;}
-.field label{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--stone);margin-bottom:8px;font-weight:500;}
-.field input,.field textarea,.field select{width:100%;background:var(--card);border:1px solid var(--line);border-radius:2px;padding:13px 16px;font-family:inherit;font-size:15px;font-weight:300;color:var(--ink);outline:none;transition:border-color .2s;}
-.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--clay);}
-.field textarea{height:110px;resize:vertical;line-height:1.6;}
-.field select{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23a79c87' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;}
+/* Ô nhập */
+.td-form{display:flex;flex-direction:column;gap:20px;}
+.td-field label{display:block;font-family:'Be Vietnam Pro',sans-serif;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--stone);margin-bottom:8px;font-weight:500;}
+.td-field select,.td-field textarea,.td-field input{width:100%;background:var(--card);border:1px solid var(--line);border-radius:7px;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:300;color:var(--ink);outline:none;transition:border-color .2s;}
+.td-field select,.td-field input{height:46px;padding:0 15px;}
+.td-field textarea{min-height:80px;padding:12px 15px;resize:vertical;line-height:1.6;}
+.td-field select:focus,.td-field textarea:focus,.td-field input:focus{border-color:var(--clay);}
+.td-field ::placeholder{color:var(--stone);opacity:1;}
+.td-field select{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23a79c87' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:38px;}
+.td-hint{font-size:12.5px;color:var(--muted);margin-top:7px;line-height:1.5;}
 
-.submit-btn{background:var(--forest);color:var(--paper);border:0;padding:15px 32px;font-family:inherit;font-size:14px;font-weight:400;letter-spacing:.5px;cursor:pointer;border-radius:2px;transition:background .2s;align-self:flex-start;}
-.submit-btn:hover{background:#1e2a20;}
+/* Nút chung */
+.td-btn{display:flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:7px;font-family:'Be Vietnam Pro',sans-serif;font-size:14.5px;font-weight:400;letter-spacing:.3px;cursor:pointer;text-decoration:none;transition:background .2s,transform .15s;}
+.td-btn svg{flex:none;}
+.td-send{width:100%;height:48px;background:var(--forest);color:var(--paper);}
+.td-send:hover{background:var(--forest-deep,#1e2a20);}
+.td-send:disabled{opacity:.7;cursor:default;}
 
-.note-small{font-size:13px;color:var(--stone);font-style:italic;line-height:1.6;margin-top:4px;}
+/* Nhắn nhanh (mobile) */
+.td-quick-label{text-align:center;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--stone);margin:22px 0 12px;}
+.td-two{display:grid;grid-template-columns:1fr 1fr;gap:11px;}
+.td-zalo{height:50px;background:var(--forest);color:var(--paper);border-radius:8px;font-family:'Fraunces',serif;font-size:15px;}
+.td-zalo:hover{background:var(--forest-deep,#1e2a20);}
+.td-call{height:50px;background:var(--line);color:var(--forest);border:.5px solid var(--stone);border-radius:8px;font-family:'Fraunces',serif;font-size:15px;}
+.td-call:hover{filter:brightness(.96);}
 
-/* What to expect */
-.expect{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:28px 28px;margin-top:44px;}
-.expect h3{font-family:'Fraunces',serif;font-weight:400;font-size:18px;margin-bottom:16px;}
-.expect-item{display:grid;grid-template-columns:20px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--muted);line-height:1.5;}
-.expect-item:last-child{border:0;}
-.expect-check{color:var(--clay);font-size:13px;margin-top:2px;}
+/* Khối Zalo cột trái (chỉ PC) */
+.td-pc-zalo{display:none;}
+.td-divider{border-top:1px solid var(--line);margin:26px 0 16px;}
+.td-zalo-lead{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:16px;}
 
-/* Honesty strip -->
-.honesty{background:var(--forest);color:#d4cfc5;padding:28px 28px;border-radius:2px;margin-top:28px;font-size:14px;line-height:1.65;}
-.honesty strong{color:#f1ece2;font-weight:500;}
+/* Màn xác nhận sau khi gửi */
+.td-done{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:44px 20px;gap:10px;min-height:180px;}
+.td-done-h{font-family:'Fraunces',serif;font-size:22px;color:var(--ink);line-height:1.35;}
+.td-done-p{font-size:14px;color:var(--muted);}
+.td-done .td-zalo{width:auto;padding:0 26px;height:48px;margin-top:6px;}
 
-footer{background:var(--ink);color:#cabfab;padding:44px 24px;text-align:center;margin-top:0;}
-footer .manifesto{font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:var(--paper);margin-bottom:10px;}
-footer .contact-line{font-size:12.5px;color:#b3a892;margin-bottom:14px;}
-footer .contact-line a{color:var(--clay-soft);text-decoration:none;}
-footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
+/* Chân trang */
+.td-foot{border-top:1px solid var(--line);text-align:center;padding:30px 24px 42px;margin-top:10px;}
+.td-foot .fn{font-family:'Fraunces',serif;font-size:16px;letter-spacing:1.5px;color:var(--ink);margin-bottom:8px;}
+.td-foot .fc{font-size:13px;color:var(--stone);}
+.td-foot .fc a{color:inherit;text-decoration:none;}
 
-@media(max-width:680px){.navin,.wrap{padding-left:24px;padding-right:24px;}}
+/* ===== PC ≥768px: hai cột ===== */
+@media(min-width:768px){
+  .td-grid{display:grid;grid-template-columns:0.82fr 1fr;gap:60px;align-items:stretch;}
+  .td-right{margin-top:0;}
+  .td-h1{font-size:40px;}
+  .td-quote{font-size:18px;}
+  .td-left{padding-bottom:32px;} /* khớp padding đáy thẻ form → hai nút thẳng hàng đáy */
+  .td-pc-zalo{display:flex;flex-direction:column;margin-top:auto;}
+  .td-pc-zalo .td-zalo{height:52px;font-size:15px;}
+  .td-quick{display:none;}
+  .td-card{background:var(--card);border:.5px solid var(--line);border-radius:11px;padding:32px 28px;flex:1;}
+  .td-card .td-field select,.td-card .td-field input{background:#fff;height:48px;}
+  .td-card .td-field textarea{background:#fff;min-height:116px;}
+  .td-card .td-send{margin-top:auto;height:52px;}
+  .td-done{flex:1;background:var(--card);border:.5px solid var(--line);border-radius:11px;}
+}
+@media(max-width:680px){.td-main{padding-left:24px;padding-right:24px;}}
 </style>
 <style>
 .wrap{max-width:1080px;margin:0 auto;padding:0 40px;}
@@ -247,61 +280,66 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   <a href="trao-doi" onclick="toggleMenu()">Trao đổi</a>
 </div>
 
-<div class="wrap">
-  <div class="eyebrow">Trao đổi</div>
-  <h1>Kể cho Panorama nghe</h1>
-  <p class="standfirst">Không phải một buổi tư vấn. Chỉ là cuộc trò chuyện thật — để tôi hiểu bạn đang có góc nhìn gì, và bạn hiểu rõ hơn mình đang tìm gì.</p>
+<div class="td-main">
+  <div class="td-grid">
 
-  
-    <form class="conv-form" id="traodoi-form" onsubmit="return submitForm(event)">
+    <div class="td-left">
+      <div class="td-eyebrow">Trao đổi</div>
+      <h1 class="td-h1">Kể cho Panorama nghe</h1>
+      <p class="td-quote">Một cuộc trò chuyện nhỏ, để bạn hiểu rõ hơn mình đang muốn điều gì.</p>
 
-    <div class="field">
-      <label>Bạn đang tìm gì ở Nam Ban</label>
-      <select name="goc_nhin">
-        <option value="">— chọn một góc nhìn —</option>
-        <option>Tìm hiểu vùng đất, chưa có kế hoạch cụ thể</option>
-        <option>Muốn có chỗ trốn khỏi thành phố cuối tuần</option>
-        <option>Cân nhắc đầu tư, muốn hiểu rõ trước khi quyết định</option>
-        <option>Đang xem một tài sản cụ thể và muốn thẩm định kỹ</option>
-        <option>Đang muốn bán / chuyển nhượng tài sản tại Nam Ban</option>
-      </select>
+      <div class="td-pc-zalo">
+        <div class="td-divider"></div>
+        <p class="td-zalo-lead">Muốn nhắn nhanh, không cần điền form? Gửi thẳng một tin qua Zalo — thường được trả lời trong buổi.</p>
+        <a class="td-btn td-zalo" href="https://zalo.me/0978758788" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a7.5 7.5 0 0 1-10.9 6.7L4 19.5l1.3-4.1A7.5 7.5 0 1 1 20 11.5Z"/></svg>Nhắn Zalo</a>
+      </div>
     </div>
 
-    <div class="field">
-      <label>Điều bạn muốn làm rõ nhất trong cuộc trò chuyện này là gì?</label>
-      <textarea name="muon_lam_ro" placeholder="Ví dụ: tôi đang xem một lô 1.500m² gần hồ, có sổ riêng nhưng chưa rõ giá đang ở lớp nào và rủi ro pháp lý ra sao..."></textarea>
+    <div class="td-right">
+      <form class="td-card td-form" id="traodoi-form" onsubmit="return submitForm(event)">
+        <div class="td-field">
+          <label>Bạn đang tính chuyện gì với đất Nam Ban?</label>
+          <select name="goc_nhin">
+            <option value="">– chọn một dòng –</option>
+            <option>Tìm hiểu vùng đất, chưa có kế hoạch cụ thể</option>
+            <option>Muốn có chỗ trốn khỏi thành phố cuối tuần</option>
+            <option>Cân nhắc đầu tư, muốn hiểu rõ trước khi quyết định</option>
+            <option>Đang xem một tài sản cụ thể, muốn thẩm định kỹ</option>
+            <option>Đã có đất ở Nam Ban, cần người trông coi hoặc chăm sóc</option>
+            <option>Đang muốn bán / chuyển nhượng tài sản tại Nam Ban</option>
+          </select>
+        </div>
+
+        <div class="td-field">
+          <label>Điều bạn muốn hỏi</label>
+          <textarea name="muon_lam_ro" placeholder="Ví dụ: tôi đang xem một lô 1.500m² gần hồ, có sổ riêng nhưng chưa rõ giá đang ở lớp nào và rủi ro pháp lý ra sao…"></textarea>
+        </div>
+
+        <div class="td-field">
+          <label>Tên và số điện thoại</label>
+          <input type="text" name="ten_sdt" placeholder="Tên · số điện thoại · Zalo">
+          <div class="td-hint" id="td-hint"></div>
+        </div>
+
+        <button type="submit" class="td-btn td-send">Gửi — phản hồi ngắn gọn, thẳng việc</button>
+      </form>
+
+      <div class="td-quick">
+        <div class="td-quick-label">Nhắn nhanh</div>
+        <div class="td-two">
+          <a class="td-btn td-zalo" href="https://zalo.me/0978758788" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a7.5 7.5 0 0 1-10.9 6.7L4 19.5l1.3-4.1A7.5 7.5 0 1 1 20 11.5Z"/></svg>Nhắn Zalo</a>
+          <a class="td-btn td-call" href="tel:0978758788"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>Gọi trực tiếp</a>
+        </div>
+      </div>
     </div>
 
-    <div class="field">
-      <label>Tên và số điện thoại</label>
-      <input type="text" name="ten_sdt" placeholder="Tên · số điện thoại · Zalo">
-    </div>
-
-    <div class="field" style="margin-top:12px;">
-      <button type="submit" class="submit-btn">Gửi — phản hồi ngắn gọn, thẳng vào việc</button>
-    </div>
-  </form>
-
-  <div class="expect">
-    <h3>Panorama làm được gì cho bạn</h3>
-    <div class="expect-item"><span class="expect-check">→</span><span>Không có bảng giá, không có danh sách đất. Tôi sẽ hỏi thêm để hiểu bạn đang cần gì thật sự.</span></div>
-    <div class="expect-item"><span class="expect-check">→</span><span>Nếu Nam Ban không phù hợp với bạn lúc này, tôi sẽ nói thẳng. Đó cũng là câu trả lời có giá trị.</span></div>
-    <div class="expect-item"><span class="expect-check">→</span><span>Nếu có tài sản hoặc khu vực cụ thể đáng xem, tôi sẽ chia sẻ — cùng với cả điểm cần cân nhắc.</span></div>
-    <div class="expect-item"><span class="expect-check">→</span><span>Thời lượng thường 20–30 phút. Không kéo dài không cần thiết.</span></div>
   </div>
-
 </div>
 
-<footer style="border-top:1px solid var(--line);padding:32px 0;margin-top:48px;">
-  <div style="text-align:center;">
-    <div style="font-family:'Fraunces',serif;font-size:16px;letter-spacing:1.8px;color:var(--ink);margin-bottom:10px;">Namban Panorama</div>
-    <div style="font-size:13px;color:var(--stone);margin-bottom:6px;">
-      <a href="mailto:nambanpanorama@gmail.com" style="color:inherit;text-decoration:none;">nambanpanorama@gmail.com</a>
-      &nbsp;·&nbsp;
-      <a href="tel:0978758788" style="color:inherit;text-decoration:none;">0978 758 788</a>
-    </div>
-  </div>
-</footer>
+<div class="td-foot">
+  <div class="fn">Namban Panorama</div>
+  <div class="fc"><a href="mailto:nambanpanorama@gmail.com">nambanpanorama@gmail.com</a> · <a href="tel:0978758788">0978 758 788</a></div>
+</div>
 
 
 
@@ -310,12 +348,20 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 function submitForm(e){
   e.preventDefault();
   var f = document.getElementById('traodoi-form');
-  var ten = f.querySelector('[name="ten_sdt"]').value || '';
+  var inp = f.querySelector('[name="ten_sdt"]');
+  var ten = (inp.value || '').trim();
   var goc = f.querySelector('[name="goc_nhin"]').value || '';
   var nhu = f.querySelector('[name="muon_lam_ro"]').value || '';
-  var btn = f.querySelector('.submit-btn');
-  if(!ten){f.querySelector('[name="ten_sdt"]').style.border='1px solid #c44';return false;}
-  btn.textContent = 'Đang gửi...';
+  var btn = f.querySelector('.td-send');
+  var hint = document.getElementById('td-hint');
+  /* nhắc mềm (không đỏ gắt): cần tên/sđt để còn nhắn lại */
+  if(!ten){
+    inp.style.borderColor = 'var(--clay)';
+    if(hint) hint.textContent = 'Để lại tên và số để tụi mình nhắn lại được nhé.';
+    inp.focus();
+    return false;
+  }
+  btn.textContent = 'Đang gửi…';
   btn.disabled = true;
   var fd = new FormData();
   fd.append("entry.260173030", ten);
@@ -323,8 +369,13 @@ function submitForm(e){
   fd.append("entry.418514546", goc + ' | ' + nhu);
   fetch("https://docs.google.com/forms/d/e/1FAIpQLSejyXVjRk8TQCtNIrZijGeZxaoJaeA3VCccpW4PAi87BRVAzg/formResponse", {method:"POST", mode:"no-cors", body:fd});
   setTimeout(function(){
-    f.innerHTML = '<div style="text-align:center;padding:48px 0;"><p style="font-family:Fraunces,serif;font-size:24px;color:var(--ink);margin-bottom:12px;">Đã nhận</p><p style="color:var(--muted);font-size:15px;line-height:1.6;">Cảm ơn bạn — tôi sẽ phản hồi trong thời gian sớm nhất.</p></div>';
-  }, 800);
+    var right = f.closest('.td-right') || f.parentNode;
+    right.innerHTML = '<div class="td-done">'
+      + '<p class="td-done-h">Đã nhận. Chúng tôi sẽ nhắn lại trong buổi.</p>'
+      + '<p class="td-done-p">Nếu gấp, nhắn Zalo:</p>'
+      + '<a class="td-btn td-zalo" href="https://zalo.me/0978758788" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a7.5 7.5 0 0 1-10.9 6.7L4 19.5l1.3-4.1A7.5 7.5 0 1 1 20 11.5Z"/></svg>Nhắn Zalo</a>'
+      + '</div>';
+  }, 700);
   return false;
 }
 </script>
