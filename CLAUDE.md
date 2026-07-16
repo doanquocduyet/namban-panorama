@@ -141,3 +141,15 @@ TouristAttraction/Airport/ImageObject/Speakable). Mỗi lần đụng nội dung
   các bài; ảnh có `alt` mô tả thật; `sitemap.xml` + `feed.xml` cập nhật khi thêm/xóa bài.
 - **UX/UI**: tốc độ (ảnh optimize, `loading=lazy`), không CLS, không tràn ngang, chạm tốt
   trên mobile, contrast đạt. Ưu tiên trải nghiệm đọc "im lặng mà sang".
+
+**Entity graph (stable @id):** mỗi thực thể chính có `@id` cố định KHÔNG BAO GIỜ đổi —
+`#namban`, `#thac-voi`, `#cau-tong-doi`, `#san-bay-lien-khuong`, `#founder`, `#organization`,
+`#website`. Bài về địa danh nối vào graph bằng `containedInPlace`/`about` trỏ `@id` (vd thác
+Voi `containedInPlace` → `#namban`). `data/places.json` giữ `schema_id` map tới đúng @id đó.
+Đây là "Knowledge Graph" làm đúng cách của site tĩnh — KHÔNG cần API/backend.
+
+**Tách FACT với ANALYSIS (giữ trust, AI thích):** dữ kiện đã kiểm chứng (có văn bản/ảnh/
+tọa độ) ghi thẳng; còn suy đoán/dự phóng của Panorama (giá sẽ tăng, tác động…) phải gắn
+nhãn rõ "đây là phân tích của Panorama, không phải dữ kiện đã xác nhận". Trong `/data`,
+mốc/dữ kiện ghi `status`/nguồn thật ("đã ký" · "đang thi công" · "dự thảo" · "dự kiến") —
+KHÔNG bịa điểm tin cậy dạng số (vd "98/100") vì đó là số tự chấm, sai luật mục 6.

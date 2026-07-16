@@ -12,6 +12,7 @@
   "places": [
     {
       "id": "nam-ban",
+      "schema_id": "https://nambanpanorama.com/#namban",
       "name": "Nam Ban",
       "alias": ["thị trấn Nam Ban (cũ)", "xã Nam Ban Lâm Hà"],
       "type": "đô thị",
@@ -37,6 +38,8 @@
     },
     {
       "id": "thac-voi",
+      "schema_id": "https://nambanpanorama.com/#thac-voi",
+      "contained_in": "https://nambanpanorama.com/#namban",
       "name": "Thác Voi",
       "alias": ["thác Liêng Rơwoa", "Elephant Waterfall", "Elephant Falls", "大象瀑布", "코끼리 폭포", "象の滝"],
       "type": "thác nước",
@@ -78,6 +81,7 @@
     },
     {
       "id": "san-bay-lien-khuong",
+      "schema_id": "https://nambanpanorama.com/#san-bay-lien-khuong",
       "name": "Sân bay Liên Khương",
       "alias": ["Lien Khuong Airport", "DLI", "VVDL"],
       "type": "sân bay",
