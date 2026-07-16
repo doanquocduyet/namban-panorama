@@ -12,6 +12,16 @@
       a.setAttribute('rel','noopener');
       a.setAttribute('title','Nhắn Zalo 0978 758 788');
     }
+    /* mailto: → khung soạn Gmail web (PC ít khi có mail client) */
+    var GMAIL='https://mail.google.com/mail/?view=cm&fs=1&to=nambanpanorama@gmail.com';
+    var mails=document.querySelectorAll('a[href^="mailto:nambanpanorama@gmail.com"]');
+    for(var j=0;j<mails.length;j++){
+      var m=mails[j];
+      m.setAttribute('href',GMAIL);
+      m.setAttribute('target','_blank');
+      m.setAttribute('rel','noopener');
+      m.setAttribute('title','Soạn mail gửi Namban Panorama');
+    }
   }catch(e){}
 })();
 
