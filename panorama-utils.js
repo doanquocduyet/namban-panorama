@@ -28,6 +28,45 @@
   }catch(e){}
 })();
 
+/* "CẬP NHẬT LẦN CUỐI" — lấy ngày THẬT từ JSON-LD dateModified (không thể lùi khống) */
+(function(){
+  try{
+    if(document.getElementById('pm-updated'))return;
+    var pub=null, mod=null;
+    var S=document.querySelectorAll('script[type="application/ld+json"]');
+    for(var i=0;i<S.length;i++){
+      var d; try{d=JSON.parse(S[i].textContent);}catch(e){continue;}
+      var arr=d['@graph']?d['@graph']:[d];
+      for(var j=0;j<arr.length;j++){
+        var o=arr[j], ty=o&&o['@type'];
+        if(ty==='Article'||ty==='NewsArticle'||ty==='BlogPosting'){
+          if(o.datePublished) pub=String(o.datePublished).slice(0,10);
+          if(o.dateModified) mod=String(o.dateModified).slice(0,10);
+        }
+      }
+    }
+    if(!mod) return;                 /* không có ngày sửa → không hiện */
+    if(pub && mod<=pub) return;       /* chưa sửa sau khi đăng → chỉ giữ ngày đăng */
+    var p=mod.split('-');
+    var label='Cập nhật '+parseInt(p[2],10)+'/'+parseInt(p[1],10)+'/'+p[0];
+    var idate=document.querySelector('.issue-date');
+    if(idate){
+      var s=document.createElement('span');
+      s.id='pm-updated'; s.textContent=label;
+      s.style.cssText='font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--clay,#9d5d38);margin-left:14px;';
+      idate.parentNode.insertBefore(s, idate.nextSibling);
+      return;
+    }
+    var h1=document.querySelector('.art-header h1,.idx-header h1,h1');
+    if(h1){
+      var dv=document.createElement('div');
+      dv.id='pm-updated'; dv.textContent=label;
+      dv.style.cssText='font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--stone,#a79c87);margin-top:8px;';
+      h1.parentNode.insertBefore(dv, h1.nextSibling);
+    }
+  }catch(e){}
+})();
+
 (function(){
   if(!document.querySelector('.art-body'))return;
 
