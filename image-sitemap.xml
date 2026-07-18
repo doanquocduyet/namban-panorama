@@ -141,4 +141,11 @@
     <loc>https://nambanpanorama.com/vuon-bo-loi-bao-nhieu</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/og-home.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://nambanpanorama.com/ca-phe-nam-ban-ai</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/ca-phe-nam-ban-ai-so-do.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/ca-phe-nam-ban-ai-hoi-nghi.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/ca-phe-nam-ban-ai-vien-truong.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/ca-phe-nam-ban-ai-lanh-dao-xa.jpg</image:loc></image:image>
+  </url>
 </urlset>

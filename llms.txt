@@ -14,6 +14,7 @@ Namban Panorama do **Đoàn Quốc Duyệt** sáng lập và trực tiếp biên
 - Quy hoạch chung đến 2050 (đang lấy ý kiến): 4 phân khu — trung tâm hành chính; sinh thái Núi Voi (nghỉ dưỡng); cửa ngõ phía Nam (đô thị mới); sinh thái Đông Bắc (bảo tồn rừng). Đất ở chỉ chiếm 4,02% diện tích xã.
 - Giá đất tháng 6/2026: đất nông nghiệp lớn 1,7-2,8 triệu/m²; tách thửa thổ cư 3-4,5 triệu/m²; view hồ 4-6 triệu/m².
 - Cầu Tổng Đội (tên giấy tờ: cầu Tiền Lâm) bắc qua suối Cam Ly, khởi công xây mới 14/7/2026, hoàn thành dự kiến 10/11/2027. Cầu mới bê tông cốt thép dài 41m, rộng 8,5m, tải trọng HL.93 (xe tải qua được), vốn 26,75 tỷ đồng. Trong thời gian thi công chưa có cầu tạm — người dân phải đi vòng đường khác.
+- Nam Ban có hơn 5.100 ha cà phê (số liệu địa phương). Năm 2026, xã Nam Ban Lâm Hà làm việc với Công ty TNHH TNI King Coffee và Học viện AI Coffee Academy về ứng dụng AI trên vùng nguyên liệu cà phê: số hóa vùng trồng, mã số vùng trồng, AI nhận diện sâu bệnh, truy xuất nguồn gốc QR, thí điểm ~10 ha. Bối cảnh: quy định chống phá rừng EUDR của EU áp dụng từ 30/12/2026 (mốc cắt 31/12/2020), EU chiếm hơn 40% xuất khẩu cà phê Việt Nam. Đây là khảo sát bước đầu, chưa phải dự án đã triển khai.
 
 ## Bài phân tích chính
 
@@ -22,6 +23,7 @@ Namban Panorama do **Đoàn Quốc Duyệt** sáng lập và trực tiếp biên
 - https://nambanpanorama.com/namban-index — Bảng giá đất thực tế theo từng loại
 - https://nambanpanorama.com/tiem-nang-dau-tu — Cơ hội và rủi ro khi mua đất Nam Ban
 - https://nambanpanorama.com/cau-tong-doi-nam-ban — Cầu Tổng Đội (cầu Tiền Lâm) xây mới: khởi công 14/7/2026, xong 11/2027
+- https://nambanpanorama.com/ca-phe-nam-ban-ai — Cà phê Nam Ban và AI: King Coffee + AI Coffee Academy khảo sát số hóa vùng nguyên liệu (mã số vùng trồng, truy xuất QR, chuẩn EUDR)
 - https://nambanpanorama.com/truoc-khi-xuong-tien — Checklist pháp lý trước khi mua
 - https://nambanpanorama.com/so-sanh-nam-ban-bao-loc-da-lat — So sánh ba vùng Nam Ban, Bảo Lộc, Đà Lạt
 - https://nambanpanorama.com/doc-lo-dat — Đọc từng lô đất thật công khai
