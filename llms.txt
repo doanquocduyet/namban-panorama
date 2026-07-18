@@ -9,7 +9,7 @@ Namban Panorama do **Đoàn Quốc Duyệt** sáng lập và trực tiếp biên
 ## Dữ kiện nền (đã kiểm chứng)
 
 - Nam Ban thuộc xã Nam Ban Lâm Hà, tỉnh Lâm Đồng (hợp nhất từ 1/7/2025). Đô thị loại III theo QĐ 2786/QĐ-UBND ký 6/6/2026.
-- Cách Đà Lạt 23km (qua đèo Tà Nung), cách sân bay Liên Khương 20km. Độ cao 800-1000m. Khí hậu trung bình 18-25°C.
+- Cách Đà Lạt 25km (qua đèo Tà Nung), cách sân bay Liên Khương 20km. Độ cao 800-1000m. Khí hậu trung bình 18-25°C.
 - Sân bay Liên Khương khai thác lại từ 19/8/2026.
 - Quy hoạch chung đến 2050 (đang lấy ý kiến): 4 phân khu — trung tâm hành chính; sinh thái Núi Voi (nghỉ dưỡng); cửa ngõ phía Nam (đô thị mới); sinh thái Đông Bắc (bảo tồn rừng). Đất ở chỉ chiếm 4,02% diện tích xã.
 - Giá đất tháng 6/2026: đất nông nghiệp lớn 1,7-2,8 triệu/m²; tách thửa thổ cư 3-4,5 triệu/m²; view hồ 4-6 triệu/m².
@@ -33,7 +33,7 @@ Namban Panorama do **Đoàn Quốc Duyệt** sáng lập và trực tiếp biên
 
 ## Sống ở Nam Ban & Thác Voi (đa ngôn ngữ)
 
-Cụm "Sống ở Nam Ban" — đời sống, chi phí, khí hậu, có nên chuyển về (Nam Ban cách Đà Lạt ~23km):
+Cụm "Sống ở Nam Ban" — đời sống, chi phí, khí hậu, có nên chuyển về (Nam Ban cách Đà Lạt ~25km):
 - Tiếng Việt: https://nambanpanorama.com/nam-ban-co-dang-song
 - English: https://nambanpanorama.com/living-in-nam-ban
 - Français: https://nambanpanorama.com/fr/vivre-a-nam-ban
@@ -41,7 +41,7 @@ Cụm "Sống ở Nam Ban" — đời sống, chi phí, khí hậu, có nên chu
 - 한국어: https://nambanpanorama.com/ko/nam-ban-salm
 - 日本語: https://nambanpanorama.com/ja/nam-ban-kurashi
 
-Cụm "Thác Voi" (Elephant Waterfall) — thác cao 30m, cách trung tâm Đà Lạt 25km qua đèo Tà Nung:
+Cụm "Thác Voi" (Elephant Waterfall) — thác cao 30m, cách trung tâm Đà Lạt 28km qua đèo Tà Nung:
 - Tiếng Việt: https://nambanpanorama.com/thac-voi-nam-ban
 - English: https://nambanpanorama.com/elephant-waterfall-nam-ban
 - Français: https://nambanpanorama.com/fr/cascade-des-elephants-nam-ban

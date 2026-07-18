@@ -21,7 +21,7 @@
       "elevation_m": "800–1000",
       "climate": "trung bình 18–25°C quanh năm",
       "distance": {
-        "da_lat_km": 23,
+        "da_lat_km": 25,
         "da_lat_note": "qua đèo Tà Nung, ~45 phút",
         "san_bay_lien_khuong_km": 20,
         "san_bay_note": "35–45 phút"
@@ -48,7 +48,7 @@
       "height_m": 30,
       "water_source": "suối Cam Ly",
       "distance": {
-        "da_lat_km": 25,
+        "da_lat_km": 28,
         "da_lat_note": "qua đèo Tà Nung, ~45 phút"
       },
       "best_season": "mùa khô (tháng 1–4); mùa mưa nước mạnh nhưng đường trơn",
@@ -76,7 +76,7 @@
       "name": "Đèo Tà Nung",
       "type": "đèo",
       "region": "trên tỉnh lộ 725, nối Đà Lạt với Nam Ban",
-      "note": "Tuyến chính Đà Lạt ↔ Nam Ban (~23 km, ~45 phút); nên đi ban ngày, cẩn thận các khúc cua",
+      "note": "Tuyến chính Đà Lạt ↔ Nam Ban (~25 km, ~45 phút); nên đi ban ngày, cẩn thận các khúc cua",
       "url": "https://nambanpanorama.com/nam-ban"
     },
     {
