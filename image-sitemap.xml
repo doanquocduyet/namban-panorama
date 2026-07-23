@@ -148,4 +148,11 @@
     <image:image><image:loc>https://nambanpanorama.com/images/ca-phe-nam-ban-ai-vien-truong.jpg</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/ca-phe-nam-ban-ai-lanh-dao-xa.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://nambanpanorama.com/cay-xang-petro-moi-o-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/cay-xang-petrolimex-nam-ban.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/cay-xang-petrolimex-128-thi-cong.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/cay-xang-petrolimex-hanh-thanh.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/cay-xang-truc-725-bien-bao.jpg</image:loc></image:image>
+  </url>
 </urlset>
