@@ -198,3 +198,158 @@
     if(typeof window.toggleMenu!=='function')window.toggleMenu=toggle;
   }catch(e){}
 })();
+
+/* NGHE BÀI (đọc audio) — dùng Web Speech API của trình duyệt, miễn phí, không backend.
+   Chèn nút trầm ở đầu bài; đọc H1 + thân bài, giọng theo ngôn ngữ trang.
+   Đọc theo từng câu (chunk) để tránh lỗi cắt của Chrome; có tạm dừng + đổi tốc độ. */
+(function(){
+  try{
+    if(!('speechSynthesis' in window))return;                 /* trình duyệt không hỗ trợ → ẩn */
+    var body=document.querySelector('.art-body')||document.querySelector('article');
+    if(!body)return;
+    if(document.getElementById('pm-audio'))return;
+
+    var lang=(document.documentElement.getAttribute('lang')||'vi').slice(0,2).toLowerCase();
+    var L={
+      vi:{play:'Nghe bài',pause:'Tạm dừng',reading:'Đang đọc',replay:'Nghe lại',unit:'phút',aria:'Nghe bài viết'},
+      en:{play:'Listen',pause:'Pause',reading:'Playing',replay:'Replay',unit:'min',aria:'Listen to article'},
+      fr:{play:'Écouter',pause:'Pause',reading:'Lecture',replay:'Réécouter',unit:'min',aria:'Écouter l’article'},
+      zh:{play:'朗读',pause:'暂停',reading:'播放中',replay:'重听',unit:'分钟',aria:'朗读文章'},
+      ko:{play:'듣기',pause:'일시정지',reading:'재생 중',replay:'다시 듣기',unit:'분',aria:'기사 듣기'},
+      ja:{play:'記事を聴く',pause:'一時停止',reading:'再生中',replay:'もう一度',unit:'分',aria:'記事を聴く'}
+    }[lang]||null;
+    if(!L)L={play:'Nghe bài',pause:'Tạm dừng',reading:'Đang đọc',replay:'Nghe lại',unit:'phút',aria:'Nghe bài viết'};
+
+    /* --- gom văn bản: H1 + các đoạn trong thân bài --- */
+    var chunks=[];
+    function pushText(t){
+      t=(t||'').replace(/\s+/g,' ').trim(); if(!t)return;
+      /* tách câu để mỗi utterance ngắn, đọc mượt + tránh lỗi cắt */
+      var s=t.match(/[^.!?…。！？]+[.!?…。！？]*\s*/g)||[t];
+      for(var i=0;i<s.length;i++){var c=s[i].trim(); if(c)chunks.push(c);}
+    }
+    var h1=document.querySelector('.art-header h1')||body.querySelector('h1')||document.querySelector('h1');
+    if(h1)pushText(h1.textContent);
+    var nodes=body.querySelectorAll('h2,h3,p,li,blockquote');
+    for(var i=0;i<nodes.length;i++){
+      var n=nodes[i];
+      if(n.closest('.pm-endcontact,.art-breadcrumb,.pm-audio,figure'))continue;
+      if(n.tagName==='LI'&&n.querySelector('a'))continue;         /* bỏ list link "Đọc gì tiếp" */
+      var t=(n.textContent||'').trim();
+      if(!t||t==='Đọc gì tiếp:'||/^Đọc gì tiếp/i.test(t))continue;
+      pushText(t);
+    }
+    if(chunks.length<2)return;
+
+    /* ước lượng phút đọc (CJK tính theo ký tự vì không tách bằng dấu cách) */
+    var mins;
+    if(lang==='zh'||lang==='ja'||lang==='ko'){
+      var ch=0; for(var w=0;w<chunks.length;w++)ch+=chunks[w].length;
+      mins=Math.max(1,Math.round(ch/380));
+    } else {
+      var words=0; for(var w2=0;w2<chunks.length;w2++)words+=chunks[w2].split(/\s+/).length;
+      mins=Math.max(1,Math.round(words/170));
+    }
+
+    /* --- CSS --- */
+    var st=document.createElement('style');
+    st.textContent=[
+".pm-audio{display:inline-flex;align-items:center;gap:11px;margin:2px 0 26px;padding:7px 8px 7px 7px;border:1px solid var(--line,#e1d9c8);border-radius:999px;background:var(--card,#faf6ee);}",
+".pm-audio-btn{flex:0 0 auto;width:38px;height:38px;border-radius:50%;border:none;cursor:pointer;background:var(--forest,#2f4034);display:flex;align-items:center;justify-content:center;transition:background .2s,transform .15s;padding:0;}",
+".pm-audio-btn:hover{background:var(--forest-deep,#1e2a20);}",
+".pm-audio-btn:active{transform:scale(.94);}",
+".pm-audio-btn svg{width:15px;height:15px;display:block;fill:#f1ece2;}",
+".pm-audio-lbl{font-size:13.5px;color:var(--ink,#1a1815);letter-spacing:.2px;font-weight:500;}",
+".pm-audio-time{font-size:12px;color:var(--muted,#6e6759);}",
+".pm-audio-speed{font-family:'Fraunces',serif;font-size:12.5px;color:var(--muted,#6e6759);background:none;border:1px solid var(--line,#e1d9c8);border-radius:20px;padding:2px 9px;margin-left:2px;margin-right:4px;cursor:pointer;transition:color .2s,border-color .2s;}",
+".pm-audio-speed:hover{color:var(--clay,#9d5d38);border-color:var(--clay-soft,#bb8862);}",
+".pm-audio.pm-on .pm-audio-lbl{color:var(--forest,#2f4034);}"
+    ].join("");
+    document.head.appendChild(st);
+
+    /* --- UI --- */
+    var ICON_PLAY='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+    var ICON_PAUSE='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+    var wrap=document.createElement('div');
+    wrap.className='pm-audio'; wrap.id='pm-audio'; wrap.setAttribute('role','group'); wrap.setAttribute('aria-label',L.aria);
+    wrap.innerHTML=
+      '<button class="pm-audio-btn" type="button" aria-label="'+L.play+'">'+ICON_PLAY+'</button>'+
+      '<span class="pm-audio-lbl">'+L.play+'</span>'+
+      '<span class="pm-audio-time">~'+mins+' '+L.unit+'</span>'+
+      '<button class="pm-audio-speed" type="button" aria-label="Tốc độ đọc">1×</button>';
+    body.insertBefore(wrap, body.firstChild);
+
+    var btn=wrap.querySelector('.pm-audio-btn'),
+        lbl=wrap.querySelector('.pm-audio-lbl'),
+        spd=wrap.querySelector('.pm-audio-speed'),
+        timeEl=wrap.querySelector('.pm-audio-time');
+    var ICON_PLAY2=ICON_PLAY, ICON_PAUSE2=ICON_PAUSE;
+    function setIcon(playing){ btn.innerHTML=playing?ICON_PAUSE2:ICON_PLAY2; }
+    var rate=1;
+    function cycleRate(){ rate=(rate===1)?1.25:(rate===1.25?1.5:1); spd.textContent=(rate===1?'1×':(rate===1.25?'1.25×':'1.5×')); return rate; }
+
+    /* ƯU TIÊN MP3 giọng thật (khai báo bằng <meta name="pm-audio" content="/audio/slug.mp3">) */
+    var mp3=(document.querySelector('meta[name="pm-audio"]')||{}).content||'';
+
+    if(mp3){
+      /* ---- CHẾ ĐỘ MP3 (giọng Chú qua ElevenLabs): phát thật, chạy nền/màn hình khoá ---- */
+      var audio=new Audio(); audio.preload='metadata'; audio.src=mp3;
+      function fmt(s){ if(!isFinite(s))return ''; s=Math.round(s); return Math.floor(s/60)+':'+('0'+(s%60)).slice(-2); }
+      audio.addEventListener('loadedmetadata',function(){ if(audio.duration)timeEl.textContent=fmt(audio.duration); });
+      audio.addEventListener('timeupdate',function(){ if(audio.duration)timeEl.textContent=fmt(audio.duration-audio.currentTime); });
+      audio.addEventListener('play',function(){ setIcon(true); lbl.textContent=L.reading; wrap.classList.add('pm-on'); });
+      audio.addEventListener('pause',function(){ if(!audio.ended){ setIcon(false); lbl.textContent=L.pause; } });
+      audio.addEventListener('ended',function(){ setIcon(false); wrap.classList.remove('pm-on'); lbl.textContent=L.replay; if(audio.duration)timeEl.textContent=fmt(audio.duration); });
+      btn.addEventListener('click',function(){ if(audio.paused){ if(audio.ended)audio.currentTime=0; audio.play(); } else audio.pause(); });
+      spd.addEventListener('click',function(){ audio.playbackRate=cycleRate(); });
+      if('mediaSession' in navigator){
+        try{
+          navigator.mediaSession.metadata=new MediaMetadata({
+            title:(h1?h1.textContent.trim():document.title),
+            artist:'Đoàn Quốc Duyệt — Namban Panorama',
+            album:'Namban Panorama'
+          });
+          navigator.mediaSession.setActionHandler('play',function(){ audio.play(); });
+          navigator.mediaSession.setActionHandler('pause',function(){ audio.pause(); });
+          navigator.mediaSession.setActionHandler('seekbackward',function(){ audio.currentTime=Math.max(0,audio.currentTime-15); });
+          navigator.mediaSession.setActionHandler('seekforward',function(){ audio.currentTime=Math.min(audio.duration||1e9,audio.currentTime+15); });
+        }catch(e){}
+      }
+      return;
+    }
+
+    /* ---- CHẾ ĐỘ FALLBACK: giọng máy trình duyệt (Web Speech API) ---- */
+    var synth=window.speechSynthesis;
+    var state='idle', idx=0, voice=null, keepAlive=null;
+    function pickVoice(){
+      var vs=synth.getVoices()||[]; var partial=null;
+      for(var i=0;i<vs.length;i++){ var vl=(vs[i].lang||'').toLowerCase().replace('_','-'); if(vl.indexOf(lang)===0){partial=partial||vs[i];} }
+      return partial||null;
+    }
+    function speakNext(){
+      if(idx>=chunks.length){ stopAll(true); return; }
+      var u=new SpeechSynthesisUtterance(chunks[idx]);
+      u.lang=document.documentElement.getAttribute('lang')||'vi';
+      if(voice)u.voice=voice; u.rate=rate;
+      u.onend=function(){ if(state==='playing'){ idx++; speakNext(); } };
+      u.onerror=function(){ if(state==='playing'){ idx++; speakNext(); } };
+      synth.speak(u);
+    }
+    function startKeepAlive(){ stopKeepAlive(); keepAlive=setInterval(function(){ if(state==='playing'&&synth.speaking){ synth.pause(); synth.resume(); } },9000); }
+    function stopKeepAlive(){ if(keepAlive){clearInterval(keepAlive);keepAlive=null;} }
+    function play(){ if(!voice)voice=pickVoice(); synth.cancel(); state='playing'; setIcon(true); lbl.textContent=L.reading; wrap.classList.add('pm-on'); speakNext(); startKeepAlive(); }
+    function pause(){ state='paused'; try{synth.pause();}catch(e){} setIcon(false); lbl.textContent=L.pause; stopKeepAlive(); }
+    function resume(){ state='playing'; setIcon(true); lbl.textContent=L.reading; try{synth.resume();}catch(e){} startKeepAlive(); }
+    function stopAll(done){ state='idle'; stopKeepAlive(); try{synth.cancel();}catch(e){} setIcon(false); wrap.classList.remove('pm-on'); lbl.textContent=done?L.replay:L.play; if(done)idx=0; }
+    btn.addEventListener('click',function(){
+      if(state==='idle'){ idx=(lbl.textContent===L.replay)?0:idx; play(); }
+      else if(state==='playing'){ pause(); }
+      else { resume(); }
+    });
+    spd.addEventListener('click',function(){ cycleRate(); if(state==='playing'){ synth.cancel(); speakNext(); } });
+    window.addEventListener('beforeunload',function(){ try{synth.cancel();}catch(e){} });
+    if(synth.getVoices().length===0 && typeof synth.addEventListener==='function'){
+      synth.addEventListener('voiceschanged',function(){ if(!voice)voice=pickVoice(); },{once:true});
+    }
+  }catch(e){}
+})();

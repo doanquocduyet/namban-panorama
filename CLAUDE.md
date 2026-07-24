@@ -113,6 +113,15 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
   ("ĐƯỜNG VỀ NAM BAN — Qua đèo Tà Nung") → dùng `object-position:left bottom` để không cắt
   chữ khi `cover` crop ở cả 2 khổ.
 
+### Nghe bài (audio) — `panorama-utils.js` tự chèn nút `#pm-audio` đầu mỗi bài
+- Nút trầm (nút tròn forest + "Nghe bài" + ~phút + tốc độ 1×/1.25×/1.5×), chèn đầu
+  `.art-body`/`article`; giọng + nhãn theo `<html lang>` (vi/en/fr/zh/ko/ja).
+- **Ưu tiên MP3 giọng thật (ElevenLabs của Chú)**: bài nào có `<meta name="pm-audio"
+  content="/audio/<slug>.mp3">` thì player phát MP3 thật + bật MediaSession (điều khiển
+  màn hình khoá → nghe khi lái xe). Bài chưa có MP3 → fallback giọng máy (Web Speech API).
+- Thêm giọng Chú cho 1 bài = tạo MP3 → bỏ vào `/audio/<slug>.mp3` → thêm đúng 1 dòng
+  `<meta name="pm-audio">` vào bài đó. Không cần sửa gì khác.
+
 ---
 
 ## 4. DEPLOY & MÔI TRƯỜNG
