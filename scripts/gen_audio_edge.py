@@ -96,12 +96,22 @@ def article_files():
     return sorted(out)
 
 async def synth_to(text, path):
-    import edge_tts
+    import edge_tts, asyncio
+    async def _one(c):
+        com=edge_tts.Communicate(c, VOICE, rate=RATE)
+        d=b""
+        async for ch in com.stream():
+            if ch["type"]=="audio": d+=ch["data"]
+        return d
     data=b""
     for c in chunk(text, MAX_CHARS):
-        com=edge_tts.Communicate(c, VOICE, rate=RATE)
-        async for ch in com.stream():
-            if ch["type"]=="audio": data+=ch["data"]
+        for attempt in range(3):
+            try:
+                data += await asyncio.wait_for(_one(c), timeout=90)   # không bao giờ treo quá 90s/khúc
+                break
+            except Exception as e:
+                print("    khúc lỗi, thử lại:", str(e)[:80]); await asyncio.sleep(2)
+        await asyncio.sleep(0.5)   # nghỉ nhẹ, tránh bị chặn tốc độ
     open(path,"wb").write(data)
     return len(data)
 
