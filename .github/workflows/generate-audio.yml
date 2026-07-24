@@ -1,0 +1,50 @@
+name: Tạo audio giọng thật (ElevenLabs)
+
+# Chạy thủ công: tab Actions → "Tạo audio giọng thật" → Run workflow
+on:
+  workflow_dispatch:
+    inputs:
+      voice_id:
+        description: "Voice ID giọng của Chú trên ElevenLabs"
+        required: true
+        type: string
+      scope:
+        description: "Bài nào? (all = tất cả · hoặc slug · hoặc nhiều slug cách nhau dấu phẩy)"
+        required: false
+        default: "dat-nam-ban-trong-cay-gi"
+        type: string
+      overwrite:
+        description: "Tạo lại kể cả bài đã có mp3?"
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Tạo audio bằng ElevenLabs
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ github.event.inputs.voice_id }}
+          SCOPE: ${{ github.event.inputs.scope }}
+          OVERWRITE: ${{ github.event.inputs.overwrite == 'true' && '1' || '0' }}
+        run: python3 scripts/gen_audio.py
+      - name: Commit & push kết quả
+        run: |
+          git config user.name "namban-audio-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add audio/*.mp3 *.html fr/*.html zh/*.html ko/*.html ja/*.html 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Không có audio mới."
+          else
+            git commit -m "Audio giọng thật: cập nhật MP3 + gắn meta pm-audio"
+            git push
+          fi
