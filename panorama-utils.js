@@ -10,7 +10,7 @@
       "mua-vuon-ca-phe-nam-ban","vua-mua-dat-nam-ban-lam-gi","sap-nhap-nam-ban-dat","nam-ban-thuoc-xa-nao",
       "dat-gan-da-lat","nam-ban-hay-di-linh","dau-tam-nam-ban","cau-tong-doi-nam-ban",
       "cay-xang-petro-moi-o-nam-ban","san-bay-lien-khuong-mo-lai","homestay-nam-ban-co-lai-khong",
-      "vuon-bo-loi-bao-nhieu"];
+      "vuon-bo-loi-bao-nhieu","dat-nam-ban-trong-cay-gi","rau-hoa-cay-do-la-nam-ban"];
     var slug=(location.pathname||"").replace(/\/+$/,"").split("/").pop().replace(/\.html$/,"");
     if(slug===""||IN.indexOf(slug)===-1)return;
     if(document.getElementById("pm-endcontact"))return;
