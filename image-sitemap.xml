@@ -155,4 +155,8 @@
     <image:image><image:loc>https://nambanpanorama.com/images/cay-xang-petrolimex-hanh-thanh.jpg</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/cay-xang-truc-725-bien-bao.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://nambanpanorama.com/dau-tam-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/dau-tam-nam-ban.jpg</image:loc></image:image>
+  </url>
 </urlset>
