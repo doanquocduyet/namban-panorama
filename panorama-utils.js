@@ -1,3 +1,44 @@
+/* KHỐI LIÊN HỆ TRẦM CUỐI BÀI — chỉ bài đất/mua bán/thị trường/BĐS/index.
+   Đặt sau nội dung, trước footer. Chữ trầm, không nút, không "ngay".
+   Chạy TRƯỚC bước rewrite tel→Zalo bên dưới để số trong khối cũng được rewrite. */
+(function(){
+  try{
+    var IN=["namban-index","tiem-nang-dau-tu","quy-hoach-2050","ban-do-quy-hoach-nam-ban",
+      "truoc-khi-xuong-tien","so-sanh-nam-ban-bao-loc-da-lat","doc-lo-dat","doc-lo-dat-02-view-ho",
+      "khu-nao-o-nam-ban","doc-the-dat-nam-ban","len-tho-cu-het-bao-nhieu-tien","ban-dat-nam-ban",
+      "mua-dat-nam-ban","mua-dat-co-vuon-ca-phe","mua-dat-co-vuon-bo","mua-dat-duong-gia-nam-ban",
+      "mua-vuon-ca-phe-nam-ban","vua-mua-dat-nam-ban-lam-gi","sap-nhap-nam-ban-dat","nam-ban-thuoc-xa-nao",
+      "dat-gan-da-lat","nam-ban-hay-di-linh","dau-tam-nam-ban","cau-tong-doi-nam-ban",
+      "cay-xang-petro-moi-o-nam-ban","san-bay-lien-khuong-mo-lai","homestay-nam-ban-co-lai-khong",
+      "vuon-bo-loi-bao-nhieu"];
+    var slug=(location.pathname||"").replace(/\/+$/,"").split("/").pop().replace(/\.html$/,"");
+    if(slug===""||IN.indexOf(slug)===-1)return;
+    if(document.getElementById("pm-endcontact"))return;
+    var st=document.createElement("style");
+    st.textContent=
+      ".pm-endcontact{max-width:720px;margin:38px auto 8px;padding:22px 24px 0;border-top:1px solid var(--line,#e1d9c8);}"+
+      ".pm-endcontact .pm-ec-q{font-size:14px;color:var(--muted,#6e6759);margin:0 0 6px;letter-spacing:.2px;line-height:1.55;}"+
+      ".pm-endcontact .pm-ec-a{font-family:'Fraunces',serif;font-size:18px;color:var(--forest,#2f4034);margin:0;letter-spacing:.3px;}"+
+      ".pm-endcontact .pm-ec-a a{color:var(--forest,#2f4034);text-decoration:none;border-bottom:1px solid var(--line,#e1d9c8);padding-bottom:1px;transition:color .2s;}"+
+      ".pm-endcontact .pm-ec-a a:hover{color:var(--clay,#9d5d38);}"+
+      ".pm-endcontact .pm-ec-dot{color:var(--stone,#a79c87);margin:0 8px;}"+
+      ".art-body .pm-endcontact{margin-left:0;margin-right:0;padding-left:0;padding-right:0;}";
+    document.head.appendChild(st);
+    var block=document.createElement("div");
+    block.id="pm-endcontact"; block.className="pm-endcontact";
+    block.innerHTML='<p class="pm-ec-q">Có câu hỏi về một khu cụ thể ở Nam Ban?</p>'+
+      '<p class="pm-ec-a"><a href="tel:0978758788">0978 758 788</a>'+
+      '<span class="pm-ec-dot">·</span>'+
+      '<a href="https://zalo.me/0978758788" target="_blank" rel="noopener">Zalo</a></p>';
+    var body=document.querySelector(".art-body");
+    if(body){ body.appendChild(block); }
+    else{
+      var footer=document.querySelector("footer");
+      if(footer){ var w=document.createElement("div"); w.className="wrap"; w.appendChild(block); footer.parentNode.insertBefore(w,footer); }
+    }
+  }catch(e){}
+})();
+
 /* LIÊN HỆ: email → Gmail (mọi máy); số điện thoại → Zalo trên PC (mobile giữ gọi) */
 (function(){
   try{

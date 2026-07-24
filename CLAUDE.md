@@ -50,8 +50,14 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
 
 1. Publication, KHÔNG landing bán. **Cấm CTA bán**: "liên hệ ngay", "mua ngay", "đăng ký
    nhận giá", "trả lời trong ngày", "không cần đăng ký". Giọng "chúng tôi".
-2. Không lôi tên/mặt/SĐT chủ ra giữa trang chủ. Liên hệ **chỉ ở footer** (chữ trầm) +
-   trang `trao-doi`.
+2. Không lôi tên/mặt/SĐT chủ ra giữa trang chủ hay chèn CTA bán giữa bài. Liên hệ nằm ở:
+   (a) footer (chữ trầm) + trang `trao-doi`; (b) **một khối liên hệ trầm cuối bài** — CHỈ ở
+   bài phân tích về đất/mua bán/thị trường/BĐS/index (không phải mọi bài). Khối đặt SAU
+   nội dung/miễn trừ, chữ Fraunces màu forest, vạch mảnh, dạng "Có câu hỏi về một khu cụ
+   thể? — 0978 758 788 · Zalo"; KHÔNG nút, KHÔNG "ngay", KHÔNG màu nóng. Khối này do
+   `panorama-utils.js` tự chèn theo danh sách slug IN (sửa danh sách trong file đó, đừng
+   dán tay từng bài). **Footer:** bài CÓ khối → footer bỏ SĐT (giữ mail + Trao đổi); mọi
+   footer còn lại → **SĐT đứng trước** `nambanpanorama@gmail.com`.
 3. **"Im lặng mà sang"** — thẩm mỹ Aesop/Monocle/Stratechery: khoảng trắng rộng, tiết chế,
    không lòe loẹt, không màu nóng, không nhấp nháy.
 4. **Palette CHỈ các biến này** (không thêm màu thứ hai ngoài clay):
