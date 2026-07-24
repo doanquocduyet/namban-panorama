@@ -322,24 +322,38 @@
     var synth=window.speechSynthesis;
     var state='idle', idx=0, voice=null, keepAlive=null;
     function pickVoice(){
-      var vs=synth.getVoices()||[]; var partial=null;
-      for(var i=0;i<vs.length;i++){ var vl=(vs[i].lang||'').toLowerCase().replace('_','-'); if(vl.indexOf(lang)===0){partial=partial||vs[i];} }
-      return partial||null;
+      var vs=synth.getVoices()||[]; var cand=[];
+      for(var i=0;i<vs.length;i++){ var vl=(vs[i].lang||'').toLowerCase().replace('_','-'); if(vl.indexOf(lang)===0)cand.push(vs[i]); }
+      if(!cand.length)return null;
+      function score(v){
+        var n=((v.name||'')+' '+(v.voiceURI||'')).toLowerCase(), s=0;
+        if(/male|\bnam\b|nathan|david|minh|quan|khanh|william|daniel|liam|george|thomas/.test(n))s+=3; /* gợi ý nam */
+        if(/female|\bn[uữ]\b|linh|hoai|hoài|mai|\bthu\b|karen|samantha|victoria/.test(n))s-=2;         /* gợi ý nữ */
+        if(/google|natural|enhanced|premium|neural|wavenet|siri/.test(n))s+=2;                          /* chất lượng cao */
+        if(v.localService===false)s+=1;                                                                /* giọng cloud thường hay hơn */
+        return s;
+      }
+      cand.sort(function(a,b){return score(b)-score(a);});
+      return cand[0];
     }
     function speakNext(){
       if(idx>=chunks.length){ stopAll(true); return; }
-      var u=new SpeechSynthesisUtterance(chunks[idx]);
+      var text=chunks[idx];
+      var u=new SpeechSynthesisUtterance(text);
       u.lang=document.documentElement.getAttribute('lang')||'vi';
-      if(voice)u.voice=voice; u.rate=rate;
-      u.onend=function(){ if(state==='playing'){ idx++; speakNext(); } };
-      u.onerror=function(){ if(state==='playing'){ idx++; speakNext(); } };
+      if(voice)u.voice=voice;
+      u.rate=Math.max(0.5,rate*0.95);   /* chậm nhẹ cho êm */
+      u.pitch=0.9;                        /* trầm hơn, bớt chát */
+      var gap=/[.!?…。！？]$/.test(text)?260:480;   /* câu: nghỉ ngắn; tiêu đề: nghỉ dài hơn */
+      u.onend=function(){ if(state==='playing'){ idx++; setTimeout(speakNext,gap); } };
+      u.onerror=function(){ if(state==='playing'){ idx++; setTimeout(speakNext,gap); } };
       synth.speak(u);
     }
     function startKeepAlive(){ stopKeepAlive(); keepAlive=setInterval(function(){ if(state==='playing'&&synth.speaking){ synth.pause(); synth.resume(); } },9000); }
     function stopKeepAlive(){ if(keepAlive){clearInterval(keepAlive);keepAlive=null;} }
     function play(){ if(!voice)voice=pickVoice(); synth.cancel(); state='playing'; setIcon(true); lbl.textContent=L.reading; wrap.classList.add('pm-on'); speakNext(); startKeepAlive(); }
     function pause(){ state='paused'; try{synth.pause();}catch(e){} setIcon(false); lbl.textContent=L.pause; stopKeepAlive(); }
-    function resume(){ state='playing'; setIcon(true); lbl.textContent=L.reading; try{synth.resume();}catch(e){} startKeepAlive(); }
+    function resume(){ state='playing'; setIcon(true); lbl.textContent=L.reading; try{synth.resume();}catch(e){} if(!synth.speaking)speakNext(); startKeepAlive(); }
     function stopAll(done){ state='idle'; stopKeepAlive(); try{synth.cancel();}catch(e){} setIcon(false); wrap.classList.remove('pm-on'); lbl.textContent=done?L.replay:L.play; if(done)idx=0; }
     btn.addEventListener('click',function(){
       if(state==='idle'){ idx=(lbl.textContent===L.replay)?0:idx; play(); }
