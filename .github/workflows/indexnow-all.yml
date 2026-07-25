@@ -1,0 +1,30 @@
+name: IndexNow — submit ALL URLs
+# Đẩy TẤT CẢ URL trong sitemap.xml lên IndexNow (Bing, Yandex, Naver, Coc Coc, Seznam...).
+# Dùng khi muốn hích recrawl toàn site (vd sau khi cập nhật hàng loạt). Chạy tay từ tab Actions.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  indexnow-all:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Submit every sitemap URL to IndexNow
+        run: |
+          set -e
+          HOST="nambanpanorama.com"
+          KEY="aeba74e4ac00031d44bcb9899ddda293"
+          # Lấy mọi <loc> trong sitemap.xml
+          URLS=$(grep -oE '<loc>[^<]+</loc>' sitemap.xml | sed -E 's#</?loc>##g')
+          COUNT=$(echo "$URLS" | grep -c . || true)
+          echo "Tổng URL: $COUNT"
+          LIST=""
+          for u in $URLS; do
+            if [ -z "$LIST" ]; then LIST="\"$u\""; else LIST="$LIST,\"$u\""; fi
+          done
+          BODY="{\"host\":\"$HOST\",\"key\":\"$KEY\",\"keyLocation\":\"https://$HOST/$KEY.txt\",\"urlList\":[$LIST]}"
+          echo "$BODY" | head -c 400; echo
+          curl -sS -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "$BODY" -w "\nHTTP %{http_code}\n"
