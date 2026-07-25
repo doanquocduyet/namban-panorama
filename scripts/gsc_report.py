@@ -33,11 +33,86 @@ def sitemap_urls():
     s = open(p, encoding="utf-8").read()
     return re.findall(r"<loc>([^<]+)</loc>", s)
 
+def list_sites(sess):
+    """Hỏi Google: service account này đang có quyền trên property nào?"""
+    try:
+        r = sess.get("https://searchconsole.googleapis.com/webmasters/v3/sites", timeout=60)
+        if r.status_code != 200:
+            return None, f"{r.status_code} — {str(r.text)[:200]}"
+        entries = r.json().get("siteEntry", [])
+        return entries, None
+    except Exception as e:
+        return None, str(e)[:200]
+
+def pick_site(entries, want):
+    """Chọn đúng property cho nambanpanorama.com từ danh sách SA thực sự có quyền."""
+    match = [e for e in entries if "nambanpanorama.com" in e.get("siteUrl", "")]
+    if not match:
+        return None, match
+    # ưu tiên đúng cái env yêu cầu (nếu SA có quyền), rồi tới sc-domain, rồi URL-prefix
+    for e in match:
+        if e.get("siteUrl") == want:
+            return e, match
+    for e in match:
+        if e.get("siteUrl", "").startswith("sc-domain:"):
+            return e, match
+    return match[0], match
+
+def write_config_error(client_email, entries, note):
+    """Ghi báo cáo lỗi cấu hình quyền — hướng dẫn Chú thêm SA vào đúng property."""
+    out = ["# Trạng thái index — Google Search Console\n",
+           "## ⚠️ Chưa đọc được — service account thiếu quyền trên property\n",
+           f"**Email service account cần cấp quyền:** `{client_email}`\n",
+           note + "\n",
+           "### Cách sửa (1 lần, ~1 phút)\n",
+           "1. Vào https://search.google.com/search-console → chọn property **nambanpanorama.com**",
+           "2. **Cài đặt** (bánh răng góc trái dưới) → **Người dùng và quyền** → **Thêm người dùng**",
+           f"3. Dán email trên (`{client_email}`) → Quyền **Toàn quyền (Full)** → **Thêm**",
+           "4. Actions → chạy lại workflow *Báo cáo index Google Search Console* (hoặc chờ em chạy).\n"]
+    if entries is not None:
+        out.append("### Property mà SA đang thấy (Google trả về)\n")
+        if entries:
+            for e in entries:
+                out.append(f"- `{e.get('siteUrl')}` — quyền: {e.get('permissionLevel','?')}")
+        else:
+            out.append("- (trống) — SA chưa được thêm vào bất kỳ property nào.")
+    os.makedirs(os.path.join(ROOT, "docs"), exist_ok=True)
+    open(os.path.join(ROOT, "docs", "gsc-status.md"), "w", encoding="utf-8").write("\n".join(out) + "\n")
+    log("Lỗi cấu hình quyền — đã ghi hướng dẫn vào docs/gsc-status.md")
+
 def main():
+    global SITE
     info = json.loads(SA)
+    client_email = info.get("client_email", "(không đọc được client_email)")
     creds = service_account.Credentials.from_service_account_info(
         info, scopes=["https://www.googleapis.com/auth/webmasters.readonly"])
     sess = AuthorizedSession(creds)
+
+    # Bước 0: hỏi Google xem SA có quyền trên property nào → tự chọn đúng, khỏi đoán kiểu property
+    entries, err = list_sites(sess)
+    if entries is None:
+        write_config_error(client_email, None,
+            f"Không gọi được API danh sách property (lỗi: {err}). "
+            "Thường do **Search Console API chưa bật** trong project Google Cloud "
+            "(bật tại https://console.cloud.google.com/apis/library/searchconsole.googleapis.com).")
+        sys.exit(0)
+    chosen, match = pick_site(entries, SITE)
+    if chosen is None:
+        write_config_error(client_email, entries,
+            f"SA xác thực OK nhưng **chưa được thêm vào property nambanpanorama.com**. "
+            f"Google đang thấy SA có quyền trên {len(entries)} property (liệt kê dưới), "
+            "không có cái nào là nambanpanorama.com.")
+        sys.exit(0)
+    SITE = chosen["siteUrl"]
+    perm = chosen.get("permissionLevel", "?")
+    log(f"Tự chọn property: {SITE} (quyền: {perm})")
+    if perm not in ("siteOwner", "siteFullUser"):
+        write_config_error(client_email, entries,
+            f"SA đã có trong property `{SITE}` nhưng quyền là **{perm}** — "
+            "URL Inspection API cần **Toàn quyền (Full)** hoặc **Chủ sở hữu (Owner)**. "
+            "Vào GSC → Người dùng và quyền → sửa quyền của email SA thành **Toàn quyền**.")
+        sys.exit(0)
+
     urls = sitemap_urls()
     log(f"Kiểm {len(urls)} URL trên property {SITE}")
     rows = []
