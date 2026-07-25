@@ -42,20 +42,28 @@ def main():
     log(f"Kiểm {len(urls)} URL trên property {SITE}")
     rows = []
     tally = {}
+    err_samples = []   # (status, message) — để chẩn đoán
     for u in urls:
         body = {"inspectionUrl": u, "siteUrl": SITE, "languageCode": "vi-VN"}
         try:
             r = sess.post("https://searchconsole.googleapis.com/v1/urlInspection/index:inspect",
                           json=body, timeout=60)
             if r.status_code != 200:
-                rows.append((u, "LỖI-API", r.status_code, str(r.text)[:120])); continue
+                try: msg = r.json().get("error", {}).get("message", "")[:200]
+                except Exception: msg = str(r.text)[:200]
+                rows.append((u, "LỖI-API", f"{r.status_code} — {msg}", ""))
+                if len(err_samples) < 1: err_samples.append((r.status_code, msg))
+                # lỗi 403/401/400 là lỗi hệ thống (quyền/property) → dừng sớm, khỏi quét hết
+                if r.status_code in (400, 401, 403) and len(rows) >= 3:
+                    break
+                continue
             res = r.json().get("inspectionResult", {}).get("indexStatusResult", {})
             verdict = res.get("verdict", "?")                 # PASS / NEUTRAL / FAIL
             coverage = res.get("coverageState", "?")          # "Submitted and indexed" / "Crawled - currently not indexed" ...
             rows.append((u, verdict, coverage, res.get("lastCrawlTime", "")))
             tally[coverage] = tally.get(coverage, 0) + 1
         except Exception as e:
-            rows.append((u, "LỖI", "", str(e)[:120]))
+            rows.append((u, "LỖI", str(e)[:200], ""))
         time.sleep(0.6)   # nhẹ tay với quota
     # ghi báo cáo
     now = os.environ.get("RUN_DATE", "") or "hôm nay"
