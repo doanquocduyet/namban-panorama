@@ -41,6 +41,7 @@
   <url>
     <loc>https://nambanpanorama.com/dieu-de-lai-cho-con</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/og-home.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/homestay-hoang-hon.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/doc-lo-dat-02-view-ho</loc>
@@ -84,6 +85,7 @@
   <url>
     <loc>https://nambanpanorama.com/nam-ban-co-dang-song</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-aerial.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/hien-nha-thung-lung.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/nam-ban-co-gi</loc>
@@ -97,6 +99,7 @@
   <url>
     <loc>https://nambanpanorama.com/nam-ban-co-hop-voi-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-co-hop-voi-ban.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/view-tam-trinh-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/nam-ban-hay-di-linh</loc>
@@ -113,6 +116,7 @@
   <url>
     <loc>https://nambanpanorama.com/roi-sai-gon-len-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/roi-sai-gon-len-nam-ban.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/duong-vao-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/san-bay-lien-khuong-mo-lai</loc>
@@ -215,5 +219,29 @@
   <url>
     <loc>https://nambanpanorama.com/homestay-nam-ban-co-lai-khong</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/villa-khung-go-rung-thong.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/mua-ca-phe-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/ca-phe-trai-chin.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/ca-phe-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/ca-phe-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/tour-ca-phe-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/quan-ca-phe-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/doc-the-dat-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/do-dat-giu-ranh.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/khu-nao-o-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-thung-lung.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/google-maps-khong-noi-ve-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-aerial.webp</image:loc></image:image>
   </url>
 </urlset>
