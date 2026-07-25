@@ -95,10 +95,23 @@ def article_files():
         if 'class="art-body"' in h or '<article' in h: out.append(f)
     return sorted(out)
 
-async def synth_to(text, path):
+LANG_VOICE = {
+    "vi": VOICE,                    # giọng Việt theo lựa chọn (NamMinh/HoaiMy)
+    "en": "en-US-GuyNeural",
+    "fr": "fr-FR-HenriNeural",
+    "zh": "zh-CN-YunxiNeural",
+    "ko": "ko-KR-InJoonNeural",
+    "ja": "ja-JP-KeitaNeural",
+}
+def voice_for(fp):
+    h=open(fp,encoding='utf-8').read()
+    m=re.search(r'<html[^>]*\blang="([a-z]{2})"', h)
+    return LANG_VOICE.get((m.group(1).lower() if m else "vi"), VOICE)
+
+async def synth_to(text, path, voice):
     import edge_tts, asyncio
     async def _one(c):
-        com=edge_tts.Communicate(c, VOICE, rate=RATE)
+        com=edge_tts.Communicate(c, voice, rate=RATE)
         d=b""
         async for ch in com.stream():
             if ch["type"]=="audio": d+=ch["data"]
@@ -132,7 +145,7 @@ def main():
         text=narration(fp)
         if len(text)<80: print("  bỏ (ít nội dung):",slug); continue
         try:
-            n=asyncio.run(synth_to(text, mp3))
+            n=asyncio.run(synth_to(text, mp3, voice_for(fp)))
         except Exception as e:
             print("  LỖI:",slug,e); continue
         add_meta(fp,slug); done+=1
