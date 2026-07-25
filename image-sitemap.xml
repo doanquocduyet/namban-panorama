@@ -27,6 +27,8 @@
   <url>
     <loc>https://nambanpanorama.com/dat</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/og-home.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/ho-bai-cong-ngay.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/do-dat-giu-ranh.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/dat-gan-da-lat</loc>
@@ -37,6 +39,7 @@
   <url>
     <loc>https://nambanpanorama.com/dau-tu</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/og-home.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/cau-tong-doi-le-khoi-cong.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/dieu-de-lai-cho-con</loc>
@@ -81,6 +84,8 @@
   <url>
     <loc>https://nambanpanorama.com/nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/og-home.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-toan-canh-chua.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/thac-voi.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/nam-ban-co-dang-song</loc>
