@@ -106,6 +106,23 @@
       "region": "tuyến Gia Lâm – Đông Thanh – Nam Ban, xã Nam Ban Lâm Hà",
       "note": "Đang xây mới 7/2026 – 11/2027; chi tiết trong infrastructure.json (id: cau-tien-lam)",
       "url": "https://nambanpanorama.com/cau-tong-doi-nam-ban"
+    },
+    {
+      "id": "ho-bai-cong",
+      "schema_id": "https://nambanpanorama.com/#ho-bai-cong",
+      "name": "Hồ Bãi Công",
+      "alias": ["khu Bãi Công", "hồ Thượng", "hồ Hạ"],
+      "type": "hồ chứa thủy lợi",
+      "region": "khu Bãi Công, xã Nam Ban Lâm Hà, tỉnh Lâm Đồng",
+      "coordinates": { "lat": "", "lon": "" },
+      "detail": "Hồ chứa thủy lợi nhân tạo hai tầng: hồ Thượng mặt nước ~21ha, hồ Hạ ~8,6ha (theo danh mục nguồn nước tỉnh Lâm Đồng). Mực nước lên xuống theo mùa và theo điều tiết.",
+      "distance": {
+        "cho_thang_long_km": 1.7,
+        "cho_thang_long_note": "đường bê tông",
+        "duong_ha_bac_t20_km": 0.9
+      },
+      "note": "Khu view hồ giá tham khảo ~4–6 triệu/m²; từ 2025 có nhiều villa hoàn thiện quanh hồ. Tọa độ để trống vì chưa đối chiếu nguồn công khai.",
+      "url": "https://nambanpanorama.com/ho-bai-cong-nam-ban"
     }
   ]
 }
