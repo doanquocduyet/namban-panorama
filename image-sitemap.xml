@@ -159,4 +159,36 @@
     <loc>https://nambanpanorama.com/dau-tam-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/dau-tam-nam-ban.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://nambanpanorama.com/ho-bai-cong-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/ho-bai-cong-hoang-hon.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/ho-bai-cong-toan-canh.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/ho-bai-cong-mat-ho.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/ho-bai-cong-ven-ho.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/ho-bai-cong-duong-t20.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/ho-bai-cong-ngay.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/nam-ban-hay-don-duong</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-thung-lung-pano.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/nam-ban-mua-nao</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/hoa-ca-phe-no-trang.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/suong-nam-ban.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/deo-ta-nung.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/duong-ha-bac-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/ho-bai-cong-duong-t20.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/duong-ha-bac-thi-cong.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/duong-ha-bac-may-xuc.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/nam-ban-va-nam-ha</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/toan-canh-nam-ban-nhin-tu-tren-cao-lam-ha-lam-dong.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/ban-do-nam-ban-lam-ha-lam-dong.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/dia-gioi-nam-ha.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/dia-gioi-nam-ban-nam-ha.jpg</image:loc></image:image>
+  </url>
 </urlset>
