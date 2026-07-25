@@ -9,7 +9,7 @@ Biến môi trường (tùy chọn):
   SCOPE   all | <slug> | nhiều slug cách nhau dấu phẩy  (mặc định 1 bài mẫu)
   OVERWRITE  1 = tạo lại kể cả đã có
 """
-import os, re, glob, sys, html, asyncio
+import os, re, glob, sys, html, asyncio, time
 from html.parser import HTMLParser
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -112,6 +112,8 @@ async def synth_to(text, path):
             except Exception as e:
                 print("    khúc lỗi, thử lại:", str(e)[:80]); await asyncio.sleep(2)
         await asyncio.sleep(0.5)   # nghỉ nhẹ, tránh bị chặn tốc độ
+    if len(data) < 1024:           # sinh hụt (bị chặn) → KHÔNG ghi đè file cũ
+        raise RuntimeError("audio rỗng, có thể bị chặn tốc độ — giữ file cũ")
     open(path,"wb").write(data)
     return len(data)
 
@@ -135,6 +137,7 @@ def main():
             print("  LỖI:",slug,e); continue
         add_meta(fp,slug); done+=1
         print(f"  ✓ {slug}.mp3 ({n//1024} KB)")
+        time.sleep(1)   # giãn giữa các bài, tránh bị chặn tốc độ
     print(f"\nXong: {done} bài.")
 
 if __name__=="__main__":
