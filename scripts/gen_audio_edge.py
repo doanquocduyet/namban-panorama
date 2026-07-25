@@ -105,7 +105,7 @@ LANG_VOICE = {
 }
 def voice_for(fp):
     h=open(fp,encoding='utf-8').read()
-    m=re.search(r'<html[^>]*\blang="([a-z]{2})"', h)
+    m=re.search(r'<html[^>]*\blang="([a-z]{2})', h)   # bắt 2 chữ đầu (zh-Hans -> zh)
     return LANG_VOICE.get((m.group(1).lower() if m else "vi"), VOICE)
 
 async def synth_to(text, path, voice):
