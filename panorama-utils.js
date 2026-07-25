@@ -205,11 +205,12 @@
 (function(){
   try{
     if(!('speechSynthesis' in window))return;                 /* trình duyệt không hỗ trợ → ẩn */
-    var body=document.querySelector('.art-body')||document.querySelector('article');
+    var body=document.querySelector('.art-body')||document.querySelector('article')||document.querySelector('.idx-body');
     if(!body)return;
     if(document.getElementById('pm-audio'))return;
 
     var lang=(document.documentElement.getAttribute('lang')||'vi').slice(0,2).toLowerCase();
+    if(lang!=='vi')return;                                     /* bài ngoại ngữ không cần voice */
     var L={
       vi:{play:'Nghe bài',pause:'Tạm dừng',reading:'Đang đọc',replay:'Nghe lại',unit:'phút',aria:'Nghe bài viết'},
       en:{play:'Listen',pause:'Pause',reading:'Playing',replay:'Replay',unit:'min',aria:'Listen to article'},

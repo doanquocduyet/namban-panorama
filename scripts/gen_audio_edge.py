@@ -28,7 +28,7 @@ class Grab(HTMLParser):
     def handle_starttag(self,tag,attrs):
         a=dict(attrs); cls=a.get('class','')
         if not self.in_body:
-            if (tag=='div' and 'art-body' in cls) or tag=='article':
+            if (tag=='div' and ('art-body' in cls or 'idx-body' in cls)) or tag=='article':
                 self.in_body=True; self.container=tag; self.depth=1
             return
         if tag==self.container: self.depth+=1
@@ -92,7 +92,7 @@ def article_files():
     out=[]
     for f in fs:
         h=open(f,encoding='utf-8').read()
-        if 'class="art-body"' in h or '<article' in h: out.append(f)
+        if 'class="art-body"' in h or 'class="idx-body"' in h or '<article' in h: out.append(f)
     return sorted(out)
 
 LANG_VOICE = {
@@ -142,6 +142,10 @@ def main():
         mp3=os.path.join(AUDIO_DIR, slug+".mp3")
         if os.path.exists(mp3) and not OVERWRITE:
             add_meta(fp,slug); print("  đã có, gắn meta:",slug); continue
+        h0=open(fp,encoding='utf-8').read()
+        lm=re.search(r'<html[^>]*\blang="([a-z]{2})', h0)
+        if (lm.group(1) if lm else 'vi')!='vi':
+            print('  bỏ (ngoại ngữ, không cần voice):',slug); continue
         text=narration(fp)
         if len(text)<80: print("  bỏ (ít nội dung):",slug); continue
         try:
