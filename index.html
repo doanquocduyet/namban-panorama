@@ -278,6 +278,8 @@
 
   @media(max-width:780px){
     .wrap{padding:0 24px;}
+    /* mobile: blur bị tắt khi đang lướt → nền nav phải ĐẶC, kẻo nội dung xuyên qua */
+    nav{background:var(--paper);-webkit-backdrop-filter:none;backdrop-filter:none;}
     .navlinks{display:none;}
     .hamburger{display:flex;}
     .grid2{grid-template-columns:1fr;}

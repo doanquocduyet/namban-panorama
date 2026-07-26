@@ -43,6 +43,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.93);backdrop-
 
 @media(max-width:780px){
   .navin{padding:16px 24px;}
+  /* mobile: blur bị tắt khi đang lướt → nền nav phải ĐẶC, kẻo nội dung xuyên qua */
+  nav{background:var(--paper);-webkit-backdrop-filter:none;backdrop-filter:none;}
   .navlinks{display:none;}
   .hamburger{display:flex;}
 }
