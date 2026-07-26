@@ -95,7 +95,3 @@ Allow: /
 
 Sitemap: https://nambanpanorama.com/sitemap.xml
 Sitemap: https://nambanpanorama.com/image-sitemap.xml
-
-# Bản demo nội bộ — không index
-User-agent: *
-Disallow: /demo-hub
