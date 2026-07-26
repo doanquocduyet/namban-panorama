@@ -104,6 +104,25 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
   (~quality 85), đặt vào `/images/`. File nặng/rác/0-tham-chiếu → xóa.
 - Xong: `git add -A && git commit && git push origin main` → chờ Vercel → **báo link**.
 
+### QUYẾT ĐỊNH ĐÃ CHỐT — ĐỪNG BÀN LẠI (26/7/2026)
+
+**1. CSS trùng lặp giữa 63 trang → ĐỂ YÊN, KHÔNG GOM.**
+Mỗi trang tự chứa ~6,4KB CSS trong `<style>`, trong đó ~5,1KB trùng với trang khác.
+Đã đo thật: máy chủ nén trước khi gửi nên mỗi trang chỉ còn **3,3KB**; gom lại chỉ đỡ
+**1,4KB/trang ≈ 1 mili-giây trên 4G**. Không đáng đổi lấy rủi ro sửa 63 file.
+→ Chỉ gom KHI NÀO làm lại thiết kế toàn site (lúc đó đằng nào cũng mở hết 63 file).
+Hại duy nhất hiện tại là **công bảo trì**: đổi màu/font phải sửa 63 chỗ, dễ sót.
+
+**2. `nav.css` → GIỮ, KHÔNG GỠ.** (đã suýt gỡ nhầm, kiểm mới biết)
+Site có **HAI hệ thanh nav song song**:
+- **Hệ A** — `<nav>` + `.navin` + `.navlinks` · **52 trang** · **CẦN `nav.css`**
+  (nav.css cấp `.navin{max-width:1180px;padding:16px 40px}`, `.logo` màu, `.logo-intel`,
+  `-webkit-backdrop-filter` cho Safari — CSS inline của trang KHÔNG có mấy thứ này)
+- **Hệ B** — `<nav class="nav">` + `.nav-inner` + `.nav-links` · **14 trang** · **KHÔNG cần**
+  (có CSS riêng đầy đủ trong `<style>`)
+Gỡ `nav.css` = vỡ thanh nav 48 trang hệ A. Đây là nợ kỹ thuật (2 template), không phải lỗi.
+Thêm bài mới: theo hệ A thì **nhớ nạp `nav.css`**.
+
 ### Ghi chú ảnh trang chủ (Chú đã chốt — giữ nguyên)
 - 5 khối dưới hero có class `.reveal` (scroll-reveal fade-up, có fallback).
 - Nút chat nổi `.fab-contact` (glass 44px, viền forest, góc phải dưới).
