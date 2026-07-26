@@ -196,6 +196,11 @@ Thêm bài mới: theo hệ A thì **nhớ nạp `nav.css`**.
 ## 4. DEPLOY & MÔI TRƯỜNG
 
 - Push `main` → Vercel tự build production `nambanpanorama.com`.
+- **VERCEL ĐÔI KHI NHỠ WEBHOOK — không tự deploy commit (gặp thật 26/7/2026).** Dấu hiệu: sửa/thêm
+  ảnh rồi mà web không đổi, ảnh mới báo 404 dù đã commit+push đúng (ảnh cũ vẫn sống). Cách chữa:
+  **đẩy 1 commit rỗng ép build** — `git commit --allow-empty -m "ép deploy" && git push origin main`.
+  Vercel nhận commit mới → build lại → mọi thay đổi tồn đọng lên hết. Đây KHÔNG phải lỗi repo,
+  đừng đi sửa code. (Hôm đó Chú test nhiều lần thấy "chưa sửa" thực ra là đang xem bản cũ do nhỡ deploy.)
 - **Nếu push bị `403` / "Resource not accessible by integration"**: GitHub App của Claude
   **chưa có quyền Contents: Write** trên repo (không liên quan public/private). Đây là việc
   Chú phải tự cấp — dán link + hướng dẫn từng bước, rồi chờ Chú xác nhận mới push lại.
