@@ -17,7 +17,7 @@
   /* ── F · TYPE SCALE hai đầu: mobile đọc được → PC báo giấy ── */
   --fs-display:clamp(38px,6vw,64px);   /* hero trang chủ            */
   --fs-h1:clamp(32px,5vw,48px);        /* tiêu đề hub               */
-  --fs-h2:clamp(25px,3.6vw,36px);      /* tiêu đề mục               */
+  --fs-h2:clamp(23px,3vw,31px);        /* tiêu đề mục (hạ từ 36)    */
   --fs-h3:clamp(21px,2.6vw,28px);      /* card dẫn đầu              */
   --fs-body:clamp(17px,1.6vw,20px);    /* thân bài (mobile giữ 17)  */
   --fs-cap:clamp(14px,1.2vw,16px);     /* chú thích, mô tả card     */
@@ -93,28 +93,62 @@ main{padding:var(--s2) 0 var(--s6);}
 
 /* ═══ ② TÔNG RIÊNG TỪNG HUB — chỉ đổi rhythm, không đổi màu ════ */
 
-/* ── ĐẦU TƯ · tông HỒ SƠ (Financial Times) ──
-   VUÔNG hết · gạch chân tiêu đề · đánh số · dòng chặt · KHÔNG bo góc */
-.hub-dossier .facts{border-radius:0;margin:var(--s5) 0;border-width:1px 0;}
-.hub-dossier .facts .fct{padding:var(--s3) var(--s2);}
-.hub-dossier .kb a{padding:var(--s2) 2px;}
-.hub-dossier .kb .kb-t{font-size:19px;}
-.hub-dossier .pick-grid a{border-radius:0;padding:var(--s3);border-width:1px 1px 1px 2px;border-left-color:var(--stone);}
-.hub-dossier .pick-grid a:hover{border-left-color:var(--clay);}
-.hub-dossier .pick-grid .pk-t{font-size:20px;}
-.hub-dossier .pick-grid a.lead{border-left-color:var(--forest);}
-.hub-dossier .hub-band{margin:var(--s5) 0;}
-.hub-dossier .hub-band img{border-radius:0;}
+/* ── ĐẦU TƯ · tông HỒ SƠ (Financial Times) ────────────────────
+   KHÔNG dùng card. Dùng DÒNG KẺ + SỐ TO — như mục lục báo cáo. */
+.hub-dossier .pick-grid{
+  display:block;                       /* huỷ lưới card         */
+  border-top:2px solid var(--ink);
+  margin-top:var(--s3);
+}
+.hub-dossier .pick-grid a{
+  display:grid;grid-template-columns:auto 1fr;gap:var(--s3);align-items:baseline;
+  background:transparent;border:0;border-bottom:1px solid var(--line);
+  border-radius:0;padding:var(--s3) 0;counter-increment:dx;
+}
+.hub-dossier .pick-grid a::before{
+  content:counter(dx,decimal-leading-zero);
+  font-family:'Fraunces',serif;font-size:26px;font-weight:300;
+  color:var(--stone);line-height:1;min-width:2.2ch;
+}
+.hub-dossier .pick-grid a:hover{background:rgba(250,246,238,.7);box-shadow:none;border-bottom-color:var(--clay);}
+.hub-dossier .pick-grid a:hover::before{color:var(--clay);}
+.hub-dossier .pick-grid .pk-t{font-size:20px;line-height:1.28;margin-bottom:4px;}
+.hub-dossier .pick-grid .pk-s{font-size:13.5px;}
+.hub-dossier .pick-sec{counter-reset:dx;padding:var(--s5) 0 var(--s1);}
+.hub-dossier .pick-grid a.lead{
+  border-bottom:2px solid var(--ink);background:transparent;padding:var(--s4) 0;
+}
+.hub-dossier .pick-grid a.lead::before{content:"00";color:var(--forest);font-size:30px;}
 .hub-dossier .heye{
-  border-bottom:1px solid var(--ink);padding-bottom:var(--s1);
-  margin-bottom:var(--s3);color:var(--ink);
+  border-bottom:0;padding-bottom:0;margin-bottom:var(--s1);color:var(--ink);font-weight:500;
 }
+.hub-dossier .facts{border-radius:0;border-width:2px 0 1px;margin:var(--s5) 0;}
+.hub-dossier .hub-band img{border-radius:0;}
+.hub-dossier .kb a{padding:var(--s2) 2px;}
 
-/* ── VỀ NAM BAN · tông PHÓNG SỰ (National Geographic) ──
-   ảnh TRÀN MÉP MÀN · quote lớn · caption giữa · thở rộng nhất site */
-.hub-story .hub-band{
-  margin:var(--s7) calc(50% - 50vw);width:100vw;max-width:100vw;
+/* ── VỀ NAM BAN · tông PHÓNG SỰ (National Geographic) ─────────
+   KHÔNG khung, KHÔNG kẻ. Chữ TO, thở rộng. Ảnh tràn mép màn.  */
+.hub-story .pick-grid{display:block;margin-top:var(--s4);}
+.hub-story .pick-grid a{
+  display:block;background:transparent;border:0;border-radius:0;
+  padding:0;margin-bottom:var(--s6);max-width:34ch;
 }
+.hub-story .pick-grid a:nth-child(even){margin-left:auto;text-align:right;}
+.hub-story .pick-grid a:hover{background:transparent;box-shadow:none;}
+.hub-story .pick-grid a:hover .pk-t{color:var(--clay);}
+.hub-story .pick-grid .pk-t{
+  font-size:var(--fs-h2);line-height:1.16;letter-spacing:-.4px;
+  margin-bottom:var(--s2);transition:color var(--t-hover) ease;
+}
+.hub-story .pick-grid .pk-s{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:300;
+  font-size:var(--fs-cap);line-height:1.6;color:var(--muted);
+}
+.hub-story .pick-grid a.lead{max-width:none;margin-bottom:var(--s7);text-align:left;}
+.hub-story .pick-grid a.lead .pk-t{font-size:var(--fs-h1);}
+.hub-story .pick-sec{padding:var(--s6) 0 var(--s1);}
+.hub-story .heye{text-align:center;letter-spacing:3.4px;margin-bottom:var(--s4);}
+.hub-story .hub-band{margin:var(--s7) calc(50% - 50vw);width:100vw;max-width:100vw;}
 .hub-story .hub-band img{padding:0;border:0;box-shadow:none;border-radius:0;}
 .hub-story .hub-band figcaption{
   font-size:var(--fs-cap);margin-top:var(--s3);max-width:60ch;
@@ -123,15 +157,10 @@ main{padding:var(--s2) 0 var(--s6);}
 .hub-story .breath{margin:var(--s7) 0;}
 .hub-story .breath .bq{font-size:var(--fs-h2);max-width:20ch;}
 .hub-story .kb a{padding:var(--s3) 2px;}
-.hub-story .pick-sec{padding:var(--s5) 0 var(--s1);}
-.hub-story .heye{text-align:center;letter-spacing:3.4px;margin-bottom:var(--s3);}
-.hub-story .pick-grid a{border-color:transparent;background:transparent;padding:var(--s3) 0;border-bottom:1px solid var(--card-bd);border-radius:0;}
-.hub-story .pick-grid a:hover{background:transparent;border-bottom-color:var(--clay);box-shadow:none;}
-.hub-story .pick-grid a.lead{background:linear-gradient(180deg,#fdfbf6 0%,var(--card) 100%);border:1px solid var(--card-bd);padding:var(--s5);}
 
-/* ── ĐẤT · tông CẨM NANG (handbook) ──
-   card gọn · lưới chặt · SỐ THỨ TỰ tra cứu · nhóm đếm bài */
-.hub-guide .pick-grid{gap:var(--s2);counter-reset:none;}
+/* ── ĐẤT · tông CẨM NANG (handbook) ───────────────────────────
+   GIỮ lưới card — đây là hub duy nhất còn khung. Gọn, tra cứu. */
+.hub-guide .pick-grid{gap:var(--s2);}
 .hub-guide .pick-grid a{padding:var(--s3) var(--s3) var(--s4);position:relative;}
 .hub-guide .pick-grid .pk-t{font-size:19px;line-height:1.24;}
 .hub-guide .pick-grid .pk-s{font-size:13.5px;}
@@ -166,7 +195,11 @@ main{padding:var(--s2) 0 var(--s6);}
   .breath,.hub-story .breath{margin:var(--s5) 0;}
   .pick-sec,.hub-guide .pick-sec,.hub-story .pick-sec{padding:var(--s4) 0 var(--s1);}
   .hub-story .hub-band{margin:var(--s5) calc(50% - 50vw);}
-  .hub-story .pick-grid a.lead{padding:var(--s4) var(--s3);}
+  .hub-story .pick-grid a.lead{padding:0;}
+  .hub-story .pick-grid a{max-width:none;margin-bottom:var(--s5);}
+  .hub-story .pick-grid a:nth-child(even){text-align:left;}
+  .hub-dossier .pick-grid a{gap:var(--s2);}
+  .hub-dossier .pick-grid a::before{font-size:21px;}
   .kb a{padding:var(--s2) 2px;}
 }
 
