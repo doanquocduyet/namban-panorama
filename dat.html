@@ -29,7 +29,7 @@
 {
  "@context": "https://schema.org",
  "@type": "CollectionPage",
-  "dateModified": "2026-07-25",
+  "dateModified": "2026-07-26",
  "@id": "https://nambanpanorama.com/dat#page",
  "url": "https://nambanpanorama.com/dat",
  "name": "Đất Nam Ban — Namban Panorama",
@@ -243,8 +243,9 @@ a,button{touch-action:manipulation;}
 .hub-band figcaption{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:13px;color:var(--muted);text-align:center;margin-top:11px;letter-spacing:.2px;line-height:1.5}
 @media(max-width:640px){.hub-band{margin:40px 0}}
 </style>
+<link rel="stylesheet" href="/hub-system.css">
 </head>
-<body>
+<body class="hub hub-guide">
 <script>
 var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}catch(e){return null;}},set:function(k,v){try{localStorage.setItem('pm_'+k,JSON.stringify(v));}catch(e){}}};
 (function(){var visits=PM.get('visits')||0,last=PM.get('lastVisit'),now=Date.now();if(!last||(now-last)>1800000){visits++;PM.set('visits',visits);}PM.set('lastVisit',now);var page=location.pathname.split('/').pop()||'index.html';var read=PM.get('read')||[];if(read.indexOf(page)===-1){read.push(page);PM.set('read',read);}window.PM_STATE={visits:visits,read:read,intent:PM.get('intent')};})();
@@ -298,9 +299,9 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
     <figure class="hub-band"><img src="/images/ho-bai-cong-ngay.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Hồ Bãi Công ở Nam Ban ban ngày, nhà và villa trên đồi bờ bên kia"><figcaption>Hồ Bãi Công — kiểu đất "có mặt nước" mà người mua hay hỏi; bờ bên kia đã có nhà, có villa.</figcaption></figure>
 
     <section class="pick-sec">
-      <div class="heye">Trước khi xuống tiền</div>
+      <div class="heye">Trước khi xuống tiền <span class="gnum">7 bài</span></div>
       <div class="pick-grid">
-        <a href="/truoc-khi-xuong-tien"><span class="pk-t">Mua đất Nam Ban cần lưu ý gì</span><span class="pk-s">6 điều người ở đây thấy, người mới không thấy.</span></a>
+        <a href="/truoc-khi-xuong-tien" class="lead"><span class="pk-k">Đọc trước tiên</span><span class="pk-t">Mua đất Nam Ban cần lưu ý gì</span><span class="pk-s">Sáu điều người sống ở đây nhìn thấy mà người mới thì không — thế đất, đường nước từng đi qua, lối vào mùa mưa, ranh giới thật ngoài thực địa, và cái giá sau khi cộng đủ mọi khoản.</span></a>
         <a href="/mua-dat-nam-ban"><span class="pk-t">Mua đất Nam Ban — hỏi &amp; đáp</span><span class="pk-s">Giá, loại đất, view, pháp lý — gọn.</span></a>
         <a href="/khu-nao-o-nam-ban"><span class="pk-t">Khu nào ở Nam Ban</span><span class="pk-s">Đọc từng khu trước khi đi xem đất.</span></a>
         <a href="/doc-the-dat-nam-ban"><span class="pk-t">Đọc thế đất Nam Ban</span><span class="pk-s">Dốc, taluy, và chỗ nước từng chảy qua.</span></a>
@@ -313,7 +314,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
     <figure class="hub-band"><img src="/images/do-dat-giu-ranh.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="Máy cân bằng laser đo độ dốc trên nền đất đỏ bazan khi xem lô đất ở Nam Ban"><figcaption>Xem lô là mang máy theo — độ dốc, cốt nền, ranh giới đo bằng số, không đoán bằng mắt.</figcaption></figure>
 
     <section class="pick-sec">
-      <div class="heye">Vườn &amp; cây trên đất</div>
+      <div class="heye">Vườn &amp; cây trên đất <span class="gnum">5 bài</span></div>
       <div class="pick-grid">
         <a href="/mua-dat-co-vuon-ca-phe"><span class="pk-t">Mua đất có sẵn vườn cà phê</span><span class="pk-s">Cây tính vào giá hay tính riêng — ghi rõ trước khi ký.</span></a>
         <a href="/mua-dat-co-vuon-bo"><span class="pk-t">Mua đất có sẵn vườn bơ</span><span class="pk-s">Cây bơ cộng thêm bao nhiêu — tùy bạn mua để làm gì.</span></a>
@@ -328,7 +329,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
       <div class="fct"><div class="fn">1,7–2,8tr</div><div class="fl">Đất nông nghiệp /m²</div>
 
     <section class="pick-sec">
-      <div class="heye">Khu vực &amp; ranh giới</div>
+      <div class="heye">Khu vực &amp; ranh giới <span class="gnum">5 bài</span></div>
       <div class="pick-grid">
         <a href="/ho-bai-cong-nam-ban"><span class="pk-t">Hồ Bãi Công ở Nam Ban</span><span class="pk-s">Đường vào, giá đất và khu villa quanh hồ thủy lợi.</span></a>
         <a href="/nam-ban-hay-don-duong"><span class="pk-t">Nam Ban hay Đơn Dương</span><span class="pk-s">Hai vùng ven Đà Lạt, hai hệ sinh thái, hai kiểu người mua.</span></a>

@@ -29,7 +29,7 @@
 {
  "@context": "https://schema.org",
  "@type": "CollectionPage",
-  "dateModified": "2026-07-09",
+  "dateModified": "2026-07-26",
  "@id": "https://nambanpanorama.com/dau-tu#page",
  "url": "https://nambanpanorama.com/dau-tu",
  "name": "Đầu tư Nam Ban — Namban Panorama",
@@ -238,8 +238,9 @@ a,button{touch-action:manipulation;}
 .hub-band figcaption{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:13px;color:var(--muted);text-align:center;margin-top:11px;letter-spacing:.2px;line-height:1.5}
 @media(max-width:640px){.hub-band{margin:40px 0}}
 </style>
+<link rel="stylesheet" href="/hub-system.css">
 </head>
-<body>
+<body class="hub hub-dossier">
 <script>
 var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}catch(e){return null;}},set:function(k,v){try{localStorage.setItem('pm_'+k,JSON.stringify(v));}catch(e){}}};
 (function(){var visits=PM.get('visits')||0,last=PM.get('lastVisit'),now=Date.now();if(!last||(now-last)>1800000){visits++;PM.set('visits',visits);}PM.set('lastVisit',now);var page=location.pathname.split('/').pop()||'index.html';var read=PM.get('read')||[];if(read.indexOf(page)===-1){read.push(page);PM.set('read',read);}window.PM_STATE={visits:visits,read:read,intent:PM.get('intent')};})();
@@ -293,7 +294,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
     <section class="pick-sec">
       <div class="heye">Đọc chọn lọc</div>
       <div class="pick-grid">
-        <a href="/quy-hoach-2050"><span class="pk-t">Quy hoạch 2050 có làm giá đất tăng không</span><span class="pk-s">Quy hoạch không tự làm giá tăng.</span></a>
+        <a href="/quy-hoach-2050" class="lead"><span class="pk-k">Hồ sơ chính</span><span class="pk-t">Quy hoạch 2050 có làm giá đất tăng không</span><span class="pk-s">Quy hoạch không tự làm giá tăng — đường mở mới làm. Đọc thẳng từ văn bản đã ký: mốc nào đã có ngày khởi công, mốc nào còn nằm trên giấy, và khoảng cách giữa hai thứ đó thường là bao nhiêu năm.</span></a>
         <a href="/ban-do-quy-hoach-nam-ban"><span class="pk-t">Bản đồ quy hoạch 2050 — 4 phân khu</span><span class="pk-s">Vùng nào nên / không nên mua.</span></a>
         <a href="/brief-01"><span class="pk-t">Nam Ban sau sáp nhập — điều nhà đầu tư cần biết</span><span class="pk-s">Bản đồ hành chính vừa vẽ lại. Cái gì đổi, cái gì bị thổi phồng.</span></a>
         <a href="/homestay-nam-ban-co-lai-khong"><span class="pk-t">Homestay Nam Ban có lãi không</span><span class="pk-s">Nói thẳng về dòng tiền — và cái bẫy chọn sai vị trí.</span></a>
