@@ -982,7 +982,11 @@ window.addEventListener('scroll',s,{passive:true});s();})();
 </script>
 <script defer src="/panorama-utils.js"></script>
 <script>
-/* Video nền hero — chỉ bật khi ĐỦ điều kiện, không có file thì trang giữ nguyên.
+/* Video nền hero.
+   Luật (Chú chốt): trong MỘT phiên duyệt — lần 1,2,3 vào trang chủ thì video chạy;
+   từ lần 4 chỉ hiện ảnh tĩnh và KHÔNG tải video nữa. Đóng tab / hôm sau vào lại = như lần đầu.
+   Từ lần quay lại thứ 2 trở đi: video hiện NGAY, không hiện dần — vì chính cú hiện dần
+   lặp lại mới gây chú ý, chứ không phải bản thân video.
    Bỏ video: xoá thư mục /video hoặc xoá khối script này. */
 (function(){
   var box=document.getElementById('heroVideo'); if(!box) return;
@@ -991,16 +995,34 @@ window.addEventListener('scroll',s,{passive:true});s();})();
   var c=navigator.connection;
   if(c&&(c.saveData||/2g|slow-2g/.test(c.effectiveType||''))) return;  // mạng yếu hoặc bật tiết kiệm dữ liệu
   /* mobile CÓ video (Chú chốt). Chờ trang vẽ xong mới tải, khỏi tranh băng thông lúc mở trang. */
+
+  var POSTER='/video/hero-poster.jpg', NGUONG=4;                      // lần thứ 4 trở đi: thôi chạy
+  var lan=1;
+  try{                                                                // sessionStorage: hết phiên là quên
+    lan=(parseInt(sessionStorage.getItem('pm_hero_lan'),10)||0)+1;
+    sessionStorage.setItem('pm_hero_lan',lan);
+  }catch(e){}
+
+  function anhTinh(){                                                 // lần 4+: chỉ nền tĩnh, không tải video
+    box.style.backgroundImage='url('+POSTER+')';
+    box.style.backgroundSize='cover';
+    box.style.backgroundPosition='center';
+    box.style.transition='none';
+    box.classList.add('on');
+  }
+  if(lan>=NGUONG){ anhTinh(); return; }
+
   function start(){
     fetch('/video/hero.mp4',{method:'HEAD'}).then(function(r){
       if(!r.ok) return;                                               // chưa có video → không làm gì
       var v=document.createElement('video');
       v.muted=true;v.defaultMuted=true;v.loop=true;v.playsInline=true;
       v.setAttribute('muted','');v.setAttribute('playsinline','');
-      v.preload='auto';v.poster='/video/hero-poster.jpg';v.src='/video/hero.mp4';
+      v.preload='auto';v.poster=POSTER;v.src='/video/hero.mp4';
+      if(lan>1) box.style.transition='none';                          // quay lại: không màn chào lại
       v.addEventListener('playing',function(){box.classList.add('on');},{once:true});
       box.appendChild(v);
-      var p=v.play(); if(p&&p.catch) p.catch(function(){});
+      var p=v.play(); if(p&&p.catch) p.catch(function(){ anhTinh(); });
     }).catch(function(){});
   }
   if('requestIdleCallback' in window) requestIdleCallback(start,{timeout:2500}); else setTimeout(start,1200);
