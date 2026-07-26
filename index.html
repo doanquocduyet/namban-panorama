@@ -954,49 +954,52 @@ window.addEventListener('scroll',s,{passive:true});s();})();
 <script defer src="/panorama-utils.js"></script>
 <script>
 /* Video nền hero.
-   Luật (Chú chốt): trong MỘT phiên duyệt — lần 1,2,3 vào trang chủ thì video chạy;
+   Luật (Chú chốt): trong MỘT phiên duyệt — lần 1,2,3 vào trang chủ thì video CHẠY NGAY;
    từ lần 4 chỉ hiện ảnh tĩnh và KHÔNG tải video nữa. Đóng tab / hôm sau vào lại = như lần đầu.
-   Từ lần quay lại thứ 2 trở đi: video hiện NGAY, không hiện dần — vì chính cú hiện dần
-   lặp lại mới gây chú ý, chứ không phải bản thân video.
+   Vào là poster (khung hình đầu của video) hiện tức thì làm nền → không nháy đen, không nền trơn;
+   video nạp + chạy ngay, lần đầu mờ chồng lên poster (~0.6s), lần quay lại hiện thẳng.
+   Mạng yếu / tiết kiệm dữ liệu / tắt chuyển động → chỉ ảnh tĩnh.
    Bỏ video: xoá thư mục /video hoặc xoá khối script này. */
 (function(){
   var box=document.getElementById('heroVideo'); if(!box) return;
-  var mq=window.matchMedia;
-  if(mq&&mq('(prefers-reduced-motion:reduce)').matches) return;      // tôn trọng người tắt chuyển động
-  var c=navigator.connection;
-  if(c&&(c.saveData||/2g|slow-2g/.test(c.effectiveType||''))) return;  // mạng yếu hoặc bật tiết kiệm dữ liệu
-  /* mobile CÓ video (Chú chốt). Chờ trang vẽ xong mới tải, khỏi tranh băng thông lúc mở trang. */
-
   var POSTER='/video/hero-poster.jpg', NGUONG=4;                      // lần thứ 4 trở đi: thôi chạy
+  var mq=window.matchMedia, c=navigator.connection;
+
   var lan=1;
   try{                                                                // sessionStorage: hết phiên là quên
     lan=(parseInt(sessionStorage.getItem('pm_hero_lan'),10)||0)+1;
     sessionStorage.setItem('pm_hero_lan',lan);
   }catch(e){}
 
-  function anhTinh(){                                                 // lần 4+: chỉ nền tĩnh, không tải video
+  function anhTinh(){                                                 // chỉ nền tĩnh (poster), không video
     box.style.backgroundImage='url('+POSTER+')';
     box.style.backgroundSize='cover';
     box.style.backgroundPosition='center';
     box.style.transition='none';
     box.classList.add('on');
   }
-  if(lan>=NGUONG){ anhTinh(); return; }
 
-  function start(){
-    fetch('/video/hero.mp4',{method:'HEAD'}).then(function(r){
-      if(!r.ok) return;                                               // chưa có video → không làm gì
-      var v=document.createElement('video');
-      v.muted=true;v.defaultMuted=true;v.loop=true;v.playsInline=true;
-      v.setAttribute('muted','');v.setAttribute('playsinline','');
-      v.preload='auto';v.poster=POSTER;v.src='/video/hero.mp4';
-      if(lan>1) box.style.transition='none';                          // quay lại: không màn chào lại
-      v.addEventListener('playing',function(){box.classList.add('on');},{once:true});
-      box.appendChild(v);
-      var p=v.play(); if(p&&p.catch) p.catch(function(){ anhTinh(); });
-    }).catch(function(){});
-  }
-  if('requestIdleCallback' in window) requestIdleCallback(start,{timeout:2500}); else setTimeout(start,1200);
+  // mạng yếu / tiết kiệm dữ liệu / tắt chuyển động / lần 4+ → chỉ ảnh tĩnh, không tải video
+  if((mq&&mq('(prefers-reduced-motion:reduce)').matches) ||
+     (c&&(c.saveData||/2g|slow-2g/.test(c.effectiveType||''))) ||
+     lan>=NGUONG){ anhTinh(); return; }
+
+  // lần 1-3: poster hiện NGAY (khung hình đầu = ảnh đẹp, chống nháy đen), video chạy liền
+  box.style.backgroundImage='url('+POSTER+')';
+  box.style.backgroundSize='cover';
+  box.style.backgroundPosition='center';
+  box.style.transition='none';
+  box.classList.add('on');
+
+  var v=document.createElement('video');
+  v.muted=true;v.defaultMuted=true;v.loop=true;v.playsInline=true;
+  v.setAttribute('muted','');v.setAttribute('playsinline','');
+  v.preload='auto';v.poster=POSTER;v.src='/video/hero.mp4';
+  v.style.opacity=(lan>1?'1':'0');                                    // lần đầu: mờ chồng lên poster; quay lại: hiện thẳng
+  v.style.transition='opacity .6s ease';
+  v.addEventListener('playing',function(){ v.style.opacity='1'; },{once:true});
+  box.appendChild(v);
+  var p=v.play(); if(p&&p.catch) p.catch(function(){});               // lỗi phát → poster giữ nguyên
 })();
 </script>
 </body>
