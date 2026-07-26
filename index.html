@@ -161,7 +161,10 @@
 
   /* AERIAL — ảnh toàn cảnh: mobile tràn viền, PC luôn có lề */
   .aer-band{position:relative;width:100%;height:clamp(230px,33vw,360px);overflow:hidden;background:var(--paper);}
-  @media(min-width:781px){.aer-band{max-width:1280px;width:calc(100% - 80px);margin:0 auto;}}
+  /* khớp đúng lề với .wrap để ảnh thẳng hàng với các khối nội dung */
+  @media(min-width:781px){.aer-band{max-width:1000px;width:calc(100% - 80px);margin:0 auto;}}
+  @media(min-width:781px) and (max-width:1080px){.aer-band{max-width:800px;}}
+  @media(min-width:1300px){.aer-band{max-width:1120px;}}
   .aer-band img{width:100%;height:100%;object-fit:cover;object-position:center 48%;display:block;transition:transform 1.5s cubic-bezier(.16,.5,.2,1);}
   .js .aer-band img{transform:scale(1.09);}
   .aer-band.in img{transform:scale(1);}
@@ -354,6 +357,10 @@ html{overflow-x:clip;}
 /* ==== Scroll-reveal (mượt khi cuộn tới) ==== */
 .js .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1);}
 .reveal.in{opacity:1;transform:none;}
+/* Dải ảnh toàn cảnh: hiện bằng mờ dần THÔI, không dịch xuống.
+   Dịch 24px làm mép dưới ảnh chui xuống dưới dải chạy chữ (nền đục, nằm sau trong trang) → bị che. */
+.js .aer-band.reveal{transform:none;}
+.aer-band{position:relative;z-index:1;}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
 /* Signature moment — vạch gold rơi (cú nín thở) */
 .drop-line{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;height:104px;margin:22px auto 14px;}
