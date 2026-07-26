@@ -149,6 +149,9 @@
   header.video-bold h1 em{color:#e8dcc8;}
   header.video-bold .ridges{opacity:.5;}
   header .wrap{position:relative;z-index:2;}
+  /* Điện thoại: khung hero cao và hẹp nên video bị cắt hai bên, không cắt trên–dưới —
+     đúng chỗ dải mờ của cảnh hoàng hôn nằm. Phóng thêm để đẩy dải mờ ra ngoài khung. */
+  @media(max-width:900px){ .hero-video video{transform:scale(1.38);transform-origin:center 46%;} }
   /* chữ tách khỏi nền video bằng quầng sáng mảnh, không dùng bóng đổ nặng */
   .hero-video.on ~ .wrap .kicker,
   .hero-video.on ~ .wrap h1,
