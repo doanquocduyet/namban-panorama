@@ -12,10 +12,13 @@ Hướng dẫn vận hành cho Claude (tự nạp mỗi phiên). Đọc hết tr
 2. **Việc 100% bắt buộc Chú phải tự tay làm** (cấp quyền, đăng nhập, tài khoản bên thứ ba,
    thanh toán…) → **dán link trực tiếp + hướng dẫn cực chi tiết như cho người mới** (từng
    nút bấm, từng bước). Không nói chung chung.
-3. **BÁO LINK — KHÔNG ĐƯỢC QUÊN (Chú nhắc nhiều lần).** Xong BẤT KỲ việc gì → cuối lượt
-   phải liệt kê **ĐẦY ĐỦ link live** của mọi trang vừa tạo/sửa (dạng `nambanpanorama.com/slug`),
-   gom thành danh sách click được. Làm nhiều đợt nhỏ thì cuối cùng vẫn phải gom LẠI TẤT CẢ, không
-   để Chú tự dò. Đây là mục hay quên nhất — kiểm lại trước khi kết thúc mỗi lượt.
+3. **BÁO LINK — KHÔNG ĐƯỢC QUÊN (Chú nhắc SUỐT CẢ THÁNG, đây là lỗi hay tái phạm nhất).**
+   Xong BẤT KỲ việc gì → cuối lượt phải liệt kê **ĐẦY ĐỦ link live** của mọi trang vừa tạo/sửa.
+   **BẮT BUỘC dạng BẤM ĐƯỢC — markdown `[tên](https://nambanpanorama.com/slug)` — có đủ
+   `https://`.** CẤM đưa link trơn kiểu `nambanpanorama.com/slug` (Chú phải copy dán = SAI,
+   đã bị mắng nhiều lần). Làm nhiều đợt nhỏ thì cuối cùng vẫn phải gom LẠI TẤT CẢ thành 1
+   danh sách bấm-được, không để Chú tự dò. **Trước khi kết thúc mỗi lượt: kiểm lại có danh
+   sách link `[...](https://...)` chưa — chưa có thì CHƯA được kết thúc.**
 3. **Xong bất kỳ việc gì → báo kết quả + link kiểm tra** (link live/preview, ảnh QA,
    commit). Số thật, không hứa suông.
 4. **Luôn QA + tối ưu cả 2 giao diện: PC (1440/1920px) VÀ mobile (390px)** — bằng thiết kế
