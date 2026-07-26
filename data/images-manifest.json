@@ -8,13 +8,26 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 103,
+ "total_images": 118,
  "unused_count": 2,
  "unused": [
   "gia-lam-biet-thu-o-to.webp",
   "me-linh-vuon-doi-cao.webp"
  ],
  "images": {
+  "ban-dat-nam-ban.jpg": {
+   "kb": 155,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "ban-dat-nam-ban.html": [
+     "og",
+     "twitter"
+    ]
+   }
+  },
   "ban-do-nam-ban-lam-ha-lam-dong.jpg": {
    "kb": 237,
    "dims": [
@@ -133,6 +146,19 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "ca-phe-nam-ban.jpg": {
+   "kb": 127,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "ca-phe-nam-ban.html": [
+     "og",
+     "twitter"
     ]
    }
   },
@@ -388,6 +414,19 @@
     ]
    }
   },
+  "chuyen-len-nam-ban-song.jpg": {
+   "kb": 103,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "chuyen-len-nam-ban-song.html": [
+     "og",
+     "twitter"
+    ]
+   }
+  },
   "dac-san-nam-ban.jpg": {
    "kb": 108,
    "dims": [
@@ -582,6 +621,19 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "doc-the-dat-nam-ban.jpg": {
+   "kb": 142,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "doc-the-dat-nam-ban.html": [
+     "og",
+     "twitter"
     ]
    }
   },
@@ -944,6 +996,19 @@
     ]
    }
   },
+  "homestay-nam-ban-co-lai-khong.jpg": {
+   "kb": 284,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "homestay-nam-ban-co-lai-khong.html": [
+     "og",
+     "twitter"
+    ]
+   }
+  },
   "ht86-gia-lam.webp": {
    "kb": 190,
    "dims": [
@@ -953,6 +1018,19 @@
    "used_in": {
     "nen-xem-khu-nao-o-nam-ban.html": [
      "display"
+    ]
+   }
+  },
+  "khu-nao-o-nam-ban.jpg": {
+   "kb": 192,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "khu-nao-o-nam-ban.html": [
+     "og",
+     "twitter"
     ]
    }
   },
@@ -992,6 +1070,19 @@
    "used_in": {
     "nguoi-nam-ban-anh-nam.html": [
      "display"
+    ]
+   }
+  },
+  "len-tho-cu-het-bao-nhieu-tien.jpg": {
+   "kb": 261,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "len-tho-cu-het-bao-nhieu-tien.html": [
+     "og",
+     "twitter"
     ]
    }
   },
@@ -1137,6 +1228,19 @@
     ]
    }
   },
+  "mua-bo-nam-ban.jpg": {
+   "kb": 198,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "mua-bo-nam-ban.html": [
+     "og",
+     "twitter"
+    ]
+   }
+  },
   "mua-bo-thu-hoach.jpg": {
    "kb": 280,
    "dims": [
@@ -1149,6 +1253,71 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "mua-ca-phe-nam-ban.jpg": {
+   "kb": 122,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "mua-ca-phe-nam-ban.html": [
+     "og",
+     "twitter"
+    ]
+   }
+  },
+  "mua-dat-co-vuon-bo.jpg": {
+   "kb": 198,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "mua-dat-co-vuon-bo.html": [
+     "og",
+     "twitter"
+    ]
+   }
+  },
+  "mua-dat-co-vuon-ca-phe.jpg": {
+   "kb": 192,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "mua-dat-co-vuon-ca-phe.html": [
+     "og",
+     "twitter"
+    ]
+   }
+  },
+  "mua-dat-duong-gia-nam-ban.jpg": {
+   "kb": 260,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "mua-dat-duong-gia-nam-ban.html": [
+     "og",
+     "twitter"
+    ]
+   }
+  },
+  "mua-vuon-ca-phe-nam-ban.jpg": {
+   "kb": 130,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "mua-vuon-ca-phe-nam-ban.html": [
+     "og",
+     "twitter"
     ]
    }
   },
@@ -1724,6 +1893,19 @@
     ]
    }
   },
+  "tour-ca-phe-nam-ban.jpg": {
+   "kb": 212,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "tour-ca-phe-nam-ban.html": [
+     "og",
+     "twitter"
+    ]
+   }
+  },
   "trao-doi.jpg": {
    "kb": 90,
    "dims": [
@@ -1799,6 +1981,19 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "vua-mua-dat-nam-ban-lam-gi.jpg": {
+   "kb": 103,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "vua-mua-dat-nam-ban-lam-gi.html": [
+     "og",
+     "twitter"
     ]
    }
   }

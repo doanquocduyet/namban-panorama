@@ -142,6 +142,14 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
   cả 2 định dạng cùng 1 ảnh trừ khi mỗi bản đóng đúng 1 vai (vd `deo-ta-nung`: webp=hiển thị,
   jpg=OG). 2 tấm để dành có chủ đích trong kho: `gia-lam-biet-thu-o-to.webp` (biệt thự người
   khác — lệch làn), `me-linh-vuon-doi-cao.webp` (đồi chè — sai chủ đề cà phê).
+- **CHUẨN og:image (Chú chốt 26/7/2026 — làm VẬY cho MỌI bài từ nay):** ảnh chia sẻ Zalo/FB
+  = **`/images/<slug>.jpg`, cắt chuẩn 1200×630** (tỷ lệ 1.91:1) từ ảnh đẹp của bài,
+  **KHÔNG ghi chữ lên hình** (thiết kế chữ-trên-ảnh không đẹp), có **mờ đen NHẸ mép dưới**
+  (gradient bắt đầu ~60% chiều cao, tối đa ~28%). Chèn 4 thẻ: `og:image` + `og:image:width=1200`
+  + `og:image:height=630` + `twitter:image`. **Bài KHÔNG có ảnh** → lấy ảnh HỢP CHỦ ĐỀ nhất từ
+  kho làm og (bài bơ→ảnh bơ; bài đất→ảnh lô đất/toàn cảnh); không có ảnh hợp thì dùng **ảnh
+  brand mặc định** (`nam-ban-aerial.jpg` / `nam-ban-toan-canh.jpg`) — TRÁNH ảnh lệch làn
+  (villa/HT86). Không để bài nào thẻ share trống.
 - Xong: `git add -A && git commit && git push origin main` → chờ Vercel → **báo link**.
 
 ### QUYẾT ĐỊNH ĐÃ CHỐT — ĐỪNG BÀN LẠI (26/7/2026)
@@ -175,11 +183,13 @@ Thêm bài mới: theo hệ A thì **nhớ nạp `nav.css`**.
 ### Nghe bài (audio) — `panorama-utils.js` tự chèn nút `#pm-audio` đầu mỗi bài
 - Nút trầm (nút tròn forest + "Nghe bài" + ~phút + tốc độ 1×/1.25×/1.5×), chèn đầu
   `.art-body`/`article`; giọng + nhãn theo `<html lang>` (vi/en/fr/zh/ko/ja).
-- **Ưu tiên MP3 giọng thật (ElevenLabs của Chú)**: bài nào có `<meta name="pm-audio"
-  content="/audio/<slug>.mp3">` thì player phát MP3 thật + bật MediaSession (điều khiển
-  màn hình khoá → nghe khi lái xe). Bài chưa có MP3 → fallback giọng máy (Web Speech API).
-- Thêm giọng Chú cho 1 bài = tạo MP3 → bỏ vào `/audio/<slug>.mp3` → thêm đúng 1 dòng
-  `<meta name="pm-audio">` vào bài đó. Không cần sửa gì khác.
+- **GIỌNG ĐÃ CHỐT (26/7/2026): dùng GIỌNG CÓ SẴN — `vi-VN-NamMinhNeural`** (Microsoft Neural,
+  giọng nam Việt, MIỄN PHÍ) qua workflow `.github/workflows/generate-audio-free.yml` (edge-tts).
+  **KHÔNG dùng giọng ElevenLabs cá nhân của Chú nữa.** Bài nào có `<meta name="pm-audio"
+  content="/audio/<slug>.mp3">` thì player phát MP3 + bật MediaSession (điều khiển màn hình
+  khoá → nghe khi lái xe). Bài chưa có MP3 → fallback giọng máy trình duyệt (Web Speech API).
+- Tạo audio cho bài mới/còn thiếu = **chạy workflow `generate-audio-free.yml`** (nó tự sinh MP3
+  NamMinh + tự chèn `<meta name="pm-audio">`). Không cần Chú thu âm tay.
 
 ---
 
