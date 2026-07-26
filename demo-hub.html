@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Demo bố cục hub — 3 phương án | Namban Panorama</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Be+Vietnam+Pro:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1815;--paper:#f1ece2;--card:#faf6ee;--forest:#2f4034;--forest-deep:#1e2a20;--clay:#9d5d38;--clay-soft:#bb8862;--stone:#a79c87;--muted:#6e6759;--line:#e1d9c8;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{overflow-x:clip;scroll-behavior:smooth;}
+body{font-family:'Be Vietnam Pro',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1000px;margin:0 auto;padding:0 40px;}
+a{color:inherit;text-decoration:none;}
+
+/* ---- khung demo ---- */
+.dhead{padding:60px 0 30px;border-bottom:1px solid var(--line);}
+.dhead .dk{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--clay);margin-bottom:12px;}
+.dhead h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(28px,4vw,40px);line-height:1.12;letter-spacing:-.4px;margin-bottom:14px;}
+.dhead p{font-size:15px;color:var(--muted);max-width:620px;line-height:1.6;}
+.dnav{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;}
+.dnav a{font-size:12px;letter-spacing:.4px;border:1px solid var(--line);border-radius:20px;padding:6px 16px;color:var(--muted);transition:border-color .3s,color .3s;}
+.dnav a:hover{border-color:var(--clay);color:var(--clay);}
+
+.opt{padding:56px 0 10px;border-bottom:1px solid var(--line);}
+.opt-n{font-family:'Fraunces',serif;font-size:13px;font-style:italic;color:var(--stone);margin-bottom:4px;}
+.opt h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(24px,3.2vw,31px);line-height:1.2;margin-bottom:10px;}
+.opt .why{font-size:14px;color:var(--muted);max-width:640px;line-height:1.62;margin-bottom:6px;}
+.opt .why b{font-weight:500;color:var(--ink);}
+.tagrow{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px;}
+.tag{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;padding:4px 11px;border-radius:2px;border:1px solid var(--line);color:var(--muted);background:var(--card);}
+.tag.good{border-color:rgba(47,64,52,.3);color:var(--forest);}
+.tag.warn{border-color:rgba(157,93,56,.32);color:var(--clay);}
+
+.ab{margin-top:30px;}
+.ab-lab{font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--stone);margin:30px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line);}
+.ab-lab b{color:var(--clay);font-weight:500;}
+
+/* ---- CSS hub thật (copy nguyên từ dat.html) ---- */
+.heye{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--clay);margin-bottom:6px;}
+.pick-sec{padding:14px 0 8px;}
+.pick-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+.pick-grid a{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:24px 26px;transition:border-color .4s cubic-bezier(.22,1,.36,1),background .3s,transform .4s cubic-bezier(.22,1,.36,1);display:block;}
+.pick-grid a:hover{background:#fff;border-color:var(--clay);transform:translateY(-2px);}
+.pick-grid .pk-t{font-family:'Fraunces',serif;font-size:20px;line-height:1.24;color:var(--ink);display:block;margin-bottom:8px;}
+.pick-grid .pk-s{font-size:13px;color:var(--muted);line-height:1.5;}
+.hub-band{margin:38px 0;}
+.hub-band img{width:100%;height:auto;display:block;border-radius:2px;border:1px solid var(--line);padding:8px;background:var(--card);box-shadow:0 2px 8px rgba(26,24,21,.07);}
+.hub-band figcaption{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:13px;color:var(--muted);text-align:center;margin-top:11px;letter-spacing:.2px;line-height:1.5;}
+.facts{display:flex;margin:34px 0;border:1px solid var(--line);border-radius:3px;overflow:hidden;background:var(--card);}
+.facts .fct{flex:1;padding:22px 18px;text-align:center;border-right:1px solid var(--line);}
+.facts .fct:last-child{border-right:0;}
+.facts .fn{font-family:'Fraunces',serif;font-size:clamp(19px,2.4vw,23px);color:var(--forest);line-height:1.1;}
+.facts .fl{font-size:12px;color:var(--stone);margin-top:7px;letter-spacing:.3px;}
+.kb{border-top:1px solid var(--line);}
+.kb a{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:17px 2px;border-bottom:1px solid var(--line);transition:padding-left .35s cubic-bezier(.22,1,.36,1);}
+.kb a:hover{padding-left:10px;}
+.kb a>span:first-child{flex:1;min-width:0;}
+.kb .kb-t{font-family:'Fraunces',serif;font-size:18px;line-height:1.3;display:block;}
+.kb .kb-s{font-size:12.5px;color:var(--muted);}
+.kb .kb-n{font-family:'Fraunces',serif;font-style:italic;color:var(--stone);font-size:15px;flex-shrink:0;}
+
+/* ===== ① CARD DẪN ĐẦU — bất đối xứng ===== */
+.pick-grid a.lead{grid-column:1 / -1;padding:34px 34px 32px;background:linear-gradient(180deg,#fdfbf6 0%,var(--card) 100%);}
+.pick-grid a.lead .pk-t{font-size:clamp(26px,3.4vw,32px);line-height:1.14;letter-spacing:-.4px;margin-bottom:11px;}
+.pick-grid a.lead .pk-s{font-size:14.5px;line-height:1.6;max-width:56ch;}
+.pick-grid a.lead .pk-k{font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:var(--clay);display:block;margin-bottom:11px;}
+
+/* ===== ② TÔNG RIÊNG TỪNG HUB ===== */
+.tone{border:1px solid var(--line);border-radius:3px;padding:0 0 26px;margin-top:26px;background:#fbf8f2;overflow:hidden;}
+.tone-hd{padding:16px 26px;border-bottom:1px solid var(--line);background:var(--card);display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
+.tone-hd .tn{font-family:'Fraunces',serif;font-size:17px;}
+.tone-hd .td{font-size:12px;color:var(--muted);}
+.tone-bd{padding:22px 26px 0;}
+
+/* Đầu tư — tông HỒ SƠ: số dẫn đầu, chặt, viền vuông, không bo */
+.t-invest .facts{margin:0 0 22px;border-radius:0;}
+.t-invest .kb a{padding:13px 2px;}
+.t-invest .kb .kb-t{font-size:16.5px;}
+.t-invest .heye{color:var(--forest);}
+
+/* Nam Ban — tông PHÓNG SỰ: ảnh lớn, quote thở, rộng rãi */
+.t-story .hub-band{margin:0 0 22px;}
+.t-story .hub-band img{padding:0;border:0;box-shadow:none;border-radius:2px;}
+.t-story .breath{text-align:center;margin:26px 0;}
+.t-story .breath .bq{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(19px,2.4vw,23px);line-height:1.44;color:var(--forest);max-width:600px;margin:0 auto;}
+.t-story .breath .bsrc{font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--clay);margin-top:13px;}
+.t-story .kb a{padding:15px 2px;}
+
+/* Đất — tông CẨM NANG: nhóm có tựa, card đều, tra cứu được */
+.t-guide .pick-grid{gap:12px;margin-top:10px;}
+.t-guide .pick-grid a{padding:18px 20px;}
+.t-guide .pick-grid .pk-t{font-size:17px;}
+.t-guide .pick-grid .pk-s{font-size:12.5px;}
+.t-guide .gnum{font-family:'Fraunces',serif;font-style:italic;color:var(--stone);font-size:13px;margin-left:8px;}
+
+/* ===== ③ SỤP ĐỔ PHÂN CẤP ===== */
+.collapse{margin:30px 0;padding:64px 0;background:var(--forest-deep);border-radius:3px;text-align:center;}
+.collapse .cq{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(27px,4.4vw,44px);line-height:1.22;color:#f4efe6;max-width:15ch;margin:0 auto;letter-spacing:-.5px;}
+.collapse .cs{font-size:12px;color:rgba(244,239,230,.6);margin-top:24px;letter-spacing:1.4px;text-transform:uppercase;}
+.collapse.light{background:transparent;padding:52px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0;}
+.collapse.light .cq{color:var(--forest);font-size:clamp(24px,3.6vw,36px);max-width:19ch;}
+.collapse.light .cs{color:var(--clay);}
+
+.verdict{margin:34px 0 0;padding:22px 26px;border-left:2px solid var(--clay);background:var(--card);}
+.verdict .vh{font-family:'Fraunces',serif;font-size:16px;margin-bottom:7px;color:var(--forest);}
+.verdict p{font-size:14px;color:var(--muted);line-height:1.62;}
+.verdict p+p{margin-top:9px;}
+
+footer{padding:50px 0 70px;text-align:center;}
+footer p{font-size:12.5px;color:var(--stone);letter-spacing:.3px;}
+
+@media(max-width:640px){
+  .wrap{padding:0 24px;}
+  .pick-grid{grid-template-columns:1fr;}
+  .pick-grid a.lead{padding:26px 24px;}
+  .tone-bd{padding:18px 20px 0;}
+  .tone-hd{padding:14px 20px;}
+  .facts{flex-direction:column;}
+  .facts .fct{border-right:0;border-bottom:1px solid var(--line);}
+  .facts .fct:last-child{border-bottom:0;}
+  .collapse{padding:48px 22px;}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="dhead">
+    <div class="dk">Bản demo nội bộ · không index</div>
+    <h1>Ba phương án bố cục hub</h1>
+    <p>Dựng bằng đúng CSS thật của hub Panorama — cùng palette, cùng font, cùng cỡ chữ. Mỗi phương án đặt <b>trước / sau</b> cạnh nhau để so bằng mắt. Xem thử trên cả điện thoại và máy tính.</p>
+    <div class="dnav">
+      <a href="#o1">① Card dẫn đầu</a>
+      <a href="#o2">② Tông riêng từng hub</a>
+      <a href="#o3">③ Sụp đổ phân cấp</a>
+    </div>
+  </header>
+
+  <!-- ═══════════ ① ═══════════ -->
+  <section class="opt" id="o1">
+    <div class="opt-n">Phương án một</div>
+    <h2>Card dẫn đầu — sức nặng bất đối xứng</h2>
+    <p class="why">Bài quan trọng nhất mỗi nhóm chiếm <b>trọn chiều ngang</b>, chữ lớn gần gấp rưỡi. Các card còn lại giữ nguyên. Đây chính là <b>“sức nặng typographic bất đối xứng”</b> + <b>“tương phản kích thước”</b> — hai trong bốn mẫu lặp ở ba mươi tạp chí.</p>
+    <div class="tagrow">
+      <span class="tag good">không thêm ảnh</span>
+      <span class="tag good">không thêm màu</span>
+      <span class="tag good">rủi ro thấp</span>
+      <span class="tag">~15 phút</span>
+    </div>
+
+    <div class="ab">
+      <div class="ab-lab">Trước — sáu card đều tăm tắp, mắt không có điểm vào</div>
+      <div class="pick-sec">
+        <div class="heye">Trước khi xuống tiền</div>
+        <div class="pick-grid">
+          <a href="#"><span class="pk-t">Mua đất Nam Ban cần lưu ý gì</span><span class="pk-s">6 điều người ở đây nhìn trước khi xuống tiền.</span></a>
+          <a href="#"><span class="pk-t">Mua đất Nam Ban — hỏi &amp; đáp</span><span class="pk-s">Giá, loại đất, view, pháp lý — hỏi gì đáp nấy.</span></a>
+          <a href="#"><span class="pk-t">Khu nào ở Nam Ban</span><span class="pk-s">Đọc từng khu trước khi đi xem đất.</span></a>
+          <a href="#"><span class="pk-t">Đọc thế đất Nam Ban</span><span class="pk-s">Dốc, taluy, và chỗ nước từng đi qua.</span></a>
+          <a href="#"><span class="pk-t">Lên thổ cư hết bao nhiêu tiền</span><span class="pk-s">Cái “giảm 70%” thật ra tính thế nào.</span></a>
+          <a href="#"><span class="pk-t">Bán đất Nam Ban</span><span class="pk-s">Vì sao lô này ra hàng, lô kia nằm mãi.</span></a>
+        </div>
+      </div>
+
+      <div class="ab-lab">Sau — <b>một card dẫn</b> mở nhóm, năm card còn lại đỡ phía dưới</div>
+      <div class="pick-sec">
+        <div class="heye">Trước khi xuống tiền</div>
+        <div class="pick-grid">
+          <a href="#" class="lead"><span class="pk-k">Đọc trước tiên</span><span class="pk-t">Mua đất Nam Ban cần lưu ý gì</span><span class="pk-s">Sáu điều người sống ở đây nhìn trước khi xuống tiền — thế đất, nước, đường vào, ranh, pháp lý và cái giá thật sau khi cộng đủ.</span></a>
+          <a href="#"><span class="pk-t">Mua đất Nam Ban — hỏi &amp; đáp</span><span class="pk-s">Giá, loại đất, view, pháp lý — hỏi gì đáp nấy.</span></a>
+          <a href="#"><span class="pk-t">Khu nào ở Nam Ban</span><span class="pk-s">Đọc từng khu trước khi đi xem đất.</span></a>
+          <a href="#"><span class="pk-t">Đọc thế đất Nam Ban</span><span class="pk-s">Dốc, taluy, và chỗ nước từng đi qua.</span></a>
+          <a href="#"><span class="pk-t">Lên thổ cư hết bao nhiêu tiền</span><span class="pk-s">Cái “giảm 70%” thật ra tính thế nào.</span></a>
+          <a href="#"><span class="pk-t">Bán đất Nam Ban</span><span class="pk-s">Vì sao lô này ra hàng, lô kia nằm mãi.</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="verdict">
+      <div class="vh">Em thấy gì</div>
+      <p>Mắt có chỗ đáp xuống. Nhóm đọc ra thành <b>một bài chính + phần đọc thêm</b> thay vì sáu thứ ngang hàng — đúng cách một trang tạp chí mở mục.</p>
+      <p>Rủi ro: nếu áp cho <b>cả ba nhóm</b> ở hub Đất thì thành ba card to liên tiếp, lại đều lần nữa. Em đề nghị chỉ dùng cho <b>nhóm đầu mỗi hub</b>.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════ ② ═══════════ -->
+  <section class="opt" id="o2">
+    <div class="opt-n">Phương án hai</div>
+    <h2>Tông riêng cho từng hub — bằng cấu trúc, không bằng màu</h2>
+    <p class="why">Nghiên cứu nói <b>“tông thị giác riêng biệt cho từng mục”</b>. Palette Panorama khoá cứng nên em <b>không đụng màu</b> — em đổi <b>nhịp và mật độ</b>. Ba hub dưới đây dùng y hệt bộ màu, khác nhau ở cách xếp.</p>
+    <div class="tagrow">
+      <span class="tag good">giữ nguyên palette</span>
+      <span class="tag good">giữ nguyên font</span>
+      <span class="tag warn">sửa 3 file</span>
+      <span class="tag">~45 phút</span>
+    </div>
+
+    <div class="tone t-invest">
+      <div class="tone-hd"><span class="tn">Đầu tư</span><span class="td">tông <b>hồ sơ</b> — số dẫn đầu, dòng chặt, viền vuông, nghiêm</span></div>
+      <div class="tone-bd">
+        <div class="facts">
+          <div class="fct"><div class="fn">14/7/2026</div><div class="fl">khởi công cầu Tổng Đội</div></div>
+          <div class="fct"><div class="fn">~20km</div><div class="fl">tới sân bay Liên Khương</div></div>
+          <div class="fct"><div class="fn">8,85km</div><div class="fl">đường Hà Bắc (T-20)</div></div>
+        </div>
+        <div class="heye">Hồ sơ hạ tầng</div>
+        <div class="kb">
+          <a href="#"><span><span class="kb-t">Cầu Tổng Đội — đã khởi công</span><span class="kb-s">Ngày, vốn, đơn vị thi công</span></span><span class="kb-n">01</span></a>
+          <a href="#"><span><span class="kb-t">Quy hoạch Lâm Hà 2050</span><span class="kb-s">Trích từ văn bản đã ký</span></span><span class="kb-n">02</span></a>
+          <a href="#"><span><span class="kb-t">Đường Hà Bắc, tuyến T-20</span><span class="kb-s">8,85km liên thôn</span></span><span class="kb-n">03</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tone t-story">
+      <div class="tone-hd"><span class="tn">Về Nam Ban</span><span class="td">tông <b>phóng sự</b> — ảnh tràn, quote thở, dòng rộng</span></div>
+      <div class="tone-bd">
+        <figure class="hub-band"><img src="/images/nam-ban-toan-canh-chua.jpg" loading="lazy" decoding="async" alt="Toàn cảnh Nam Ban nhìn từ trên cao, chùa Linh Ẩn giữa vùng đồi cà phê"><figcaption>Nam Ban nhìn từ trên cao — thị trấn nằm gọn giữa đồi cà phê.</figcaption></figure>
+        <div class="breath">
+          <div class="bq">“Chỗ này không có gì để khoe. Chỉ có sương, cà phê, và một cái thác ngay giữa phố.”</div>
+          <div class="bsrc">Ghi ở Nam Ban</div>
+        </div>
+        <div class="kb">
+          <a href="#"><span><span class="kb-t">Nam Ban thuộc xã nào sau sáp nhập</span><span class="kb-s">Ranh giới hành chính mới</span></span></a>
+          <a href="#"><span><span class="kb-t">Nên đi Nam Ban mùa nào</span><span class="kb-s">Mùa sương, mùa cà phê chín</span></span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tone t-guide">
+      <div class="tone-hd"><span class="tn">Đất</span><span class="td">tông <b>cẩm nang</b> — nhóm có tựa, card gọn, tra cứu được</span></div>
+      <div class="tone-bd">
+        <div class="pick-sec">
+          <div class="heye">Trước khi xuống tiền <span class="gnum">7 bài</span></div>
+          <div class="pick-grid">
+            <a href="#"><span class="pk-t">Mua đất cần lưu ý gì</span><span class="pk-s">6 điều nhìn trước khi xuống tiền.</span></a>
+            <a href="#"><span class="pk-t">Hỏi &amp; đáp mua đất</span><span class="pk-s">Giá, loại đất, view, pháp lý.</span></a>
+          </div>
+        </div>
+        <div class="pick-sec">
+          <div class="heye">Vườn &amp; cây trên đất <span class="gnum">5 bài</span></div>
+          <div class="pick-grid">
+            <a href="#"><span class="pk-t">Đất có sẵn vườn cà phê</span><span class="pk-s">Cây tính vào giá hay tính riêng.</span></a>
+            <a href="#"><span class="pk-t">Đất có sẵn vườn bơ</span><span class="pk-s">Cây bơ cộng thêm bao nhiêu.</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="verdict">
+      <div class="vh">Em thấy gì</div>
+      <p>Cùng một bộ màu mà ba mục cho ba cảm giác khác nhau thật: Đầu tư <b>nghiêm</b>, Nam Ban <b>thở</b>, Đất <b>tra cứu được</b>. Người đọc nhảy hub sẽ biết mình vừa đổi vùng.</p>
+      <p>Đây là phương án <b>giá trị cao nhất</b> — nhưng cũng động vào nhiều file nhất. Nếu chốt, em làm từng hub một để Chú duyệt dần.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════ ③ ═══════════ -->
+  <section class="opt" id="o3">
+    <div class="opt-n">Phương án ba</div>
+    <h2>Sụp đổ phân cấp — một khối cố tình phá nhịp</h2>
+    <p class="why">Nghiên cứu gọi là <b>“hierarchy collapse buộc người đọc chậm lại”</b>. Giữa hub, chèn một khối chỉ có <b>một câu, cỡ rất lớn, không link, không việc gì phải làm</b>. Đây là chỗ nghỉ thật — nghiên cứu gọi là <b>“cố tình để yên tĩnh”</b>.</p>
+    <div class="tagrow">
+      <span class="tag good">không tốn ảnh</span>
+      <span class="tag warn">dễ thành làm dáng</span>
+      <span class="tag warn">rủi ro cao nhất</span>
+      <span class="tag">~20 phút</span>
+    </div>
+
+    <div class="ab">
+      <div class="ab-lab">Biến thể A — <b>nền tối</b>, chặn cuộn mạnh</div>
+      <div class="collapse">
+        <div class="cq">Đất ở đây không dành cho người vội.</div>
+        <div class="cs">Namban Panorama</div>
+      </div>
+
+      <div class="ab-lab">Biến thể B — <b>hai vạch mảnh</b>, trầm hơn, gần “im lặng mà sang” hơn</div>
+      <div class="collapse light">
+        <div class="cq">Đất ở đây không dành cho người vội.</div>
+        <div class="cs">Namban Panorama</div>
+      </div>
+    </div>
+
+    <div class="verdict">
+      <div class="vh">Em thấy gì — và em vẫn khuyên đừng</div>
+      <p>Biến thể A <b>quá to tiếng</b>. Panorama là tờ báo không hô hào; một khối tối chiếm hết màn hình đọc như khẩu hiệu quảng cáo. Trái luật “im lặng mà sang”.</p>
+      <p>Biến thể B thì <b>dùng được</b> — nhưng nó gần như trùng với khối <code>.breath</code> đã có sẵn ở hub Nam Ban. Thêm nữa là <b>lặp</b>, không phải mới.</p>
+      <p><b>Kết luận em giữ nguyên:</b> phương án ③ <b>không đáng làm</b>. Nếu muốn chỗ nghỉ, dùng <code>.breath</code> sẵn có — đỡ một tầng CSS.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Bản demo nội bộ · nambanpanorama.com/demo-hub · xoá sau khi chốt</p>
+  </footer>
+</div>
+
+</body>
+</html>
