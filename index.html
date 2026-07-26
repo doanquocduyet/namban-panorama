@@ -139,16 +139,22 @@
   /* ── VIDEO NỀN HERO (chỉ hiện khi có /video/hero.mp4) ── */
   .hero-video{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;opacity:0;transition:opacity 1.2s ease;}
   .hero-video.on{opacity:1;}
-  .hero-video video{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92);}
+  .hero-video video{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.72) brightness(1.16) contrast(.93);}
   /* phủ lớp giấy — giữ chữ tối đọc được, video chỉ còn là chuyển động rất nhẹ */
   .hero-video::after{content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(241,236,226,.62) 0%,rgba(241,236,226,.86) 34%,rgba(241,236,226,.90) 62%,rgba(241,236,226,.70) 100%);}
+    background:linear-gradient(180deg,rgba(241,236,226,.30) 0%,rgba(241,236,226,.48) 34%,rgba(241,236,226,.52) 62%,rgba(241,236,226,.34) 100%);}
   /* chế độ RÕ — thêm class video-bold vào thẻ header: video hiện rõ, chữ chuyển trắng */
   header.video-bold .hero-video::after{background:linear-gradient(180deg,rgba(16,24,18,.46) 0%,rgba(16,24,18,.30) 45%,rgba(16,24,18,.62) 100%);}
   header.video-bold .kicker,header.video-bold h1,header.video-bold .lede,header.video-bold .hero-foot{color:#f4efe6;}
   header.video-bold h1 em{color:#e8dcc8;}
   header.video-bold .ridges{opacity:.5;}
   header .wrap{position:relative;z-index:2;}
+  /* chữ tách khỏi nền video bằng quầng sáng mảnh, không dùng bóng đổ nặng */
+  .hero-video.on ~ .wrap .kicker,
+  .hero-video.on ~ .wrap h1,
+  .hero-video.on ~ .wrap .lede{text-shadow:0 1px 2px rgba(241,236,226,.92),0 0 22px rgba(241,236,226,.75);}
+  /* đồi vẽ SVG lùi lại khi có video, khỏi chồng hai lớp hình */
+  .hero-video.on ~ .ridges{opacity:.42;transition:opacity 1.2s ease;}
 
   /* AERIAL — ảnh toàn cảnh: mobile tràn viền, PC luôn có lề */
   .aer-band{position:relative;width:100%;height:clamp(230px,33vw,360px);overflow:hidden;background:var(--paper);}
