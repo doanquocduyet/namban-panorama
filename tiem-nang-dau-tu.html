@@ -109,7 +109,7 @@
 html{overflow-x:clip;}
 .wrap{max-width:1080px;margin:0 auto;padding:0 40px;}
 /* NAV */
-  nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+  nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.93);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
 .navin{display:flex;align-items:center;justify-content:space-between;height:72px;}
 .logo{font-family:'Fraunces',serif;font-weight:500;font-size:20px;letter-spacing:1.8px;}
 .logo i{font-style:normal;color:var(--clay);}
@@ -363,7 +363,11 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
         .ax{stroke:#a79c87;stroke-width:1.4;}
         .gr{stroke:#ece5d6;stroke-width:1;}
         .axlab{font-family:'Be Vietnam Pro',sans-serif;font-size:11px;fill:#6e6759;}
-      </style></defs>
+      
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  nav,.nav{background:rgba(241,236,226,.985)!important;}
+}
+</style></defs>
       <!-- grid -->
       <line class="gr" x1="90" y1="80" x2="90" y2="360"/>
       <line class="gr" x1="250" y1="80" x2="250" y2="360"/>

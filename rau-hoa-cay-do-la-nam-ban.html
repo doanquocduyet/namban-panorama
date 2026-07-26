@@ -176,7 +176,7 @@
 html{overflow-x:clip;}
 .wrap{max-width:1080px;margin:0 auto;padding:0 40px;}
 /* NAV */
-  nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+  nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.93);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
 .navin{display:flex;align-items:center;justify-content:space-between;height:72px;}
 .logo{font-family:'Fraunces',serif;font-weight:500;font-size:20px;letter-spacing:1.8px;}
 .logo i{font-style:normal;color:var(--clay);}
@@ -300,6 +300,10 @@ a,button{touch-action:manipulation;}
 <style id="qa-style">
 .quick-answer{border-left:3px solid var(--clay-soft);background:rgba(157,93,56,.05);padding:14px 18px;margin:18px 0 26px;border-radius:0 4px 4px 0;font-size:16px;line-height:1.72;color:#2b2822;}
 .quick-answer strong{color:var(--forest);}
+
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  nav,.nav{background:rgba(241,236,226,.985)!important;}
+}
 </style>
 </head>
 <body>

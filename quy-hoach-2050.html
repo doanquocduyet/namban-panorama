@@ -94,7 +94,7 @@
 html{overflow-x:clip;}
 .wrap{max-width:1080px;margin:0 auto;padding:0 40px;}
 /* NAV */
-  nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+  nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.93);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
 .navin{display:flex;align-items:center;justify-content:space-between;height:72px;}
 .logo{font-family:'Fraunces',serif;font-weight:500;font-size:20px;letter-spacing:1.8px;}
 .logo i{font-style:normal;color:var(--clay);}
@@ -353,7 +353,11 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
         .cl-lbl{font-family:'Be Vietnam Pro',sans-serif;font-size:12px;fill:#6e6759;}
         .cl-sub{font-family:'Be Vietnam Pro',sans-serif;font-size:9px;fill:#a79c87;}
         .cl-dist{font-family:'Be Vietnam Pro',sans-serif;font-size:10.5px;fill:#9d5d38;font-style:italic;}
-      </style></defs>
+      
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  nav,.nav{background:rgba(241,236,226,.985)!important;}
+}
+</style></defs>
       <!-- contour lines -->
       <path class="cl-line" d="M20,72 Q200,42 420,68 T690,58"/>
       <path class="cl-line" d="M20,110 Q200,82 420,108 T690,98"/>
