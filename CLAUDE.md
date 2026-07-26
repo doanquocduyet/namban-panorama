@@ -106,6 +106,14 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
   luôn nếu không JS (chỉ ẩn khi `<html class="js">`). Không để nội dung biến mất.
 - **Ảnh chỉ dùng file trong `/images/`.** KHÔNG URL ảnh ngoài. Ảnh mới optimize <300KB
   (~quality 85), đặt vào `/images/`. File nặng/rác/0-tham-chiếu → xóa.
+- **BẢN ĐỒ ẢNH — đọc trước, đừng rà tay (tiết kiệm token/time).** Ảnh nào dùng ở đâu, đóng
+  vai gì (`display`/`og`/`twitter`/`schema`), tấm nào chưa dùng → xem `data/images-manifest.json`.
+  Sinh bằng `python3 tools/gen-image-manifest.py`. **Sau mỗi lần thêm/xóa/đổi tên ảnh → chạy
+  lại script rồi commit manifest.** Quy ước site: `.webp` cho ảnh hiển thị (nhẹ, nhanh),
+  `.jpg` cho ảnh `og:image` chia sẻ (Facebook/Zalo — 56 trang theo chuẩn này). Không nuôi
+  cả 2 định dạng cùng 1 ảnh trừ khi mỗi bản đóng đúng 1 vai (vd `deo-ta-nung`: webp=hiển thị,
+  jpg=OG). 2 tấm để dành có chủ đích trong kho: `gia-lam-biet-thu-o-to.webp` (biệt thự người
+  khác — lệch làn), `me-linh-vuon-doi-cao.webp` (đồi chè — sai chủ đề cà phê).
 - Xong: `git add -A && git commit && git push origin main` → chờ Vercel → **báo link**.
 
 ### QUYẾT ĐỊNH ĐÃ CHỐT — ĐỪNG BÀN LẠI (26/7/2026)

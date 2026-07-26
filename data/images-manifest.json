@@ -1,0 +1,1806 @@
+{
+ "_note": "Tự sinh bởi tools/gen-image-manifest.py — ĐỪNG sửa tay. Chạy lại script này sau mỗi lần thêm/xóa/đổi ảnh rồi commit.",
+ "_roles": {
+  "display": "hiện trong <img> ở trang (người đọc thấy)",
+  "og": "og:image — thumbnail chia sẻ Facebook/Zalo",
+  "twitter": "twitter:image",
+  "schema": "JSON-LD image/logo",
+  "css": "nền qua url() trong CSS",
+  "unused": "chưa trỏ ở đâu — dự trữ trong kho"
+ },
+ "total_images": 103,
+ "unused_count": 2,
+ "unused": [
+  "gia-lam-biet-thu-o-to.webp",
+  "me-linh-vuon-doi-cao.webp"
+ ],
+ "images": {
+  "ban-do-nam-ban-lam-ha-lam-dong.jpg": {
+   "kb": 237,
+   "dims": [
+    1200,
+    1611
+   ],
+   "used_in": {
+    "nam-ban-va-nam-ha.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "bo-dong-lanh-may-hut.jpg": {
+   "kb": 229,
+   "dims": [
+    900,
+    1200
+   ],
+   "used_in": {
+    "vuon-bo-loi-bao-nhieu.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "bo-dong-lanh-tui.jpg": {
+   "kb": 200,
+   "dims": [
+    900,
+    1200
+   ],
+   "used_in": {
+    "mua-bo-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "ca-phe-dac-san-nam-ban-dau-tu.webp": {
+   "kb": 274,
+   "dims": [
+    1717,
+    916
+   ],
+   "used_in": {
+    "dau-tu.html": [
+     "css"
+    ]
+   }
+  },
+  "ca-phe-nam-ban-ai-hoi-nghi.jpg": {
+   "kb": 178,
+   "dims": [
+    1119,
+    1280
+   ],
+   "used_in": {
+    "ca-phe-nam-ban-ai.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "ca-phe-nam-ban-ai-lanh-dao-xa.jpg": {
+   "kb": 178,
+   "dims": [
+    1200,
+    900
+   ],
+   "used_in": {
+    "ca-phe-nam-ban-ai.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "ca-phe-nam-ban-ai-so-do.jpg": {
+   "kb": 243,
+   "dims": [
+    1200,
+    1049
+   ],
+   "used_in": {
+    "ca-phe-nam-ban-ai.html": [
+     "display",
+     "og",
+     "ref",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "ca-phe-nam-ban-ai-vien-truong.jpg": {
+   "kb": 148,
+   "dims": [
+    1100,
+    931
+   ],
+   "used_in": {
+    "ca-phe-nam-ban-ai.html": [
+     "display",
+     "ref"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "ca-phe-nam-ban.webp": {
+   "kb": 91,
+   "dims": [
+    1050,
+    896
+   ],
+   "used_in": {
+    "ca-phe-nam-ban.html": [
+     "display"
+    ],
+    "tiem-nang-dau-tu.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "ca-phe-trai-chin.webp": {
+   "kb": 117,
+   "dims": [
+    1400,
+    1050
+   ],
+   "used_in": {
+    "mua-ca-phe-nam-ban.html": [
+     "display"
+    ],
+    "nam-ban-co-gi.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "cafe-chaponte-banh.jpg": {
+   "kb": 189,
+   "dims": [
+    900,
+    1200
+   ],
+   "used_in": {
+    "mot-ngay-o-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "cafe-chaponte-noi-that.jpg": {
+   "kb": 160,
+   "dims": [
+    900,
+    1200
+   ],
+   "used_in": {
+    "mot-ngay-o-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "cau-chuyen-nam-ban.jpg": {
+   "kb": 73,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "cau-chuyen-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "cau-tong-doi-cau-cu.jpg": {
+   "kb": 196,
+   "dims": [
+    900,
+    1200
+   ],
+   "used_in": {
+    "cau-tong-doi-nam-ban.html": [
+     "display",
+     "ref"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "cau-tong-doi-khoi-cong.jpg": {
+   "kb": 229,
+   "dims": [
+    900,
+    1200
+   ],
+   "used_in": {
+    "cau-tong-doi-nam-ban.html": [
+     "display",
+     "ref"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "cau-tong-doi-le-khoi-cong.jpg": {
+   "kb": 168,
+   "dims": [
+    1040,
+    780
+   ],
+   "used_in": {
+    "cau-tong-doi-nam-ban.html": [
+     "display",
+     "og",
+     "ref",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "cau-tong-doi-xe-may-moc.jpg": {
+   "kb": 183,
+   "dims": [
+    900,
+    1200
+   ],
+   "used_in": {
+    "cau-tong-doi-nam-ban.html": [
+     "display",
+     "ref"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "cay-xang-petrolimex-128-thi-cong.jpg": {
+   "kb": 201,
+   "dims": [
+    1200,
+    900
+   ],
+   "used_in": {
+    "cay-xang-petro-moi-o-nam-ban.html": [
+     "display",
+     "ref"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "cay-xang-petrolimex-hanh-thanh.jpg": {
+   "kb": 228,
+   "dims": [
+    1200,
+    900
+   ],
+   "used_in": {
+    "cay-xang-petro-moi-o-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "cay-xang-petrolimex-nam-ban.jpg": {
+   "kb": 203,
+   "dims": [
+    1280,
+    960
+   ],
+   "used_in": {
+    "cay-xang-petro-moi-o-nam-ban.html": [
+     "display",
+     "og",
+     "ref",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "cay-xang-truc-725-bien-bao.jpg": {
+   "kb": 216,
+   "dims": [
+    1200,
+    900
+   ],
+   "used_in": {
+    "cay-xang-petro-moi-o-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "cho-thang-long-nam-ban-2.webp": {
+   "kb": 210,
+   "dims": [
+    1600,
+    1200
+   ],
+   "used_in": {
+    "so-sanh-nam-ban-bao-loc-da-lat.html": [
+     "display"
+    ]
+   }
+  },
+  "cho-thang-long-nam-ban.webp": {
+   "kb": 243,
+   "dims": [
+    1600,
+    1104
+   ],
+   "used_in": {
+    "nam-ban-thuoc-xa-nao.html": [
+     "display"
+    ]
+   }
+  },
+  "chua-linh-an-duong.jpg": {
+   "kb": 299,
+   "dims": [
+    1080,
+    1350
+   ],
+   "used_in": {
+    "nam-ban-co-gi.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "dac-san-nam-ban.jpg": {
+   "kb": 108,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dac-san-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "dai-ngam-nam-ban.jpg": {
+   "kb": 204,
+   "dims": [
+    1600,
+    906
+   ],
+   "used_in": {
+    "dat.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "dau-tam-la-dau.jpg": {
+   "kb": 175,
+   "dims": [
+    601,
+    1200
+   ],
+   "used_in": {
+    "dau-tam-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "dau-tam-nam-ban.jpg": {
+   "kb": 283,
+   "dims": [
+    1440,
+    1080
+   ],
+   "used_in": {
+    "dau-tam-nam-ban.html": [
+     "display",
+     "og",
+     "ref",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "deo-ta-nung.jpg": {
+   "kb": 256,
+   "dims": [
+    1600,
+    900
+   ],
+   "used_in": {
+    "dat-gan-da-lat.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "deo-ta-nung.webp": {
+   "kb": 148,
+   "dims": [
+    1600,
+    900
+   ],
+   "used_in": {
+    "elephant-waterfall-nam-ban.html": [
+     "display"
+    ],
+    "nam-ban-mua-nao.html": [
+     "display"
+    ],
+    "index.html": [
+     "css"
+    ],
+    "dat-gan-da-lat.html": [
+     "display"
+    ],
+    "living-in-nam-ban.html": [
+     "display"
+    ],
+    "ja/nam-ban-kurashi.html": [
+     "display"
+    ],
+    "ja/nam-ban-zou-no-taki.html": [
+     "display"
+    ],
+    "ko/nam-ban-kokkiri-pokpo.html": [
+     "display"
+    ],
+    "ko/nam-ban-salm.html": [
+     "display"
+    ],
+    "fr/cascade-des-elephants-nam-ban.html": [
+     "display"
+    ],
+    "fr/vivre-a-nam-ban.html": [
+     "display"
+    ],
+    "zh/zai-nam-ban-shenghuo.html": [
+     "display"
+    ],
+    "zh/nam-ban-daxiang-pubu.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "dia-gioi-nam-ban-nam-ha.jpg": {
+   "kb": 250,
+   "dims": [
+    1125,
+    817
+   ],
+   "used_in": {
+    "nam-ban-va-nam-ha.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "dia-gioi-nam-ha.jpg": {
+   "kb": 257,
+   "dims": [
+    1015,
+    819
+   ],
+   "used_in": {
+    "nam-ban-va-nam-ha.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "do-dat-giu-ranh.webp": {
+   "kb": 167,
+   "dims": [
+    1400,
+    1050
+   ],
+   "used_in": {
+    "mua-dat-nam-ban.html": [
+     "display"
+    ],
+    "doc-the-dat-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "doc-nhanh.jpg": {
+   "kb": 99,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "doc-nhanh.html": [
+     "og",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "dong-thanh-camping-san-go.webp": {
+   "kb": 277,
+   "dims": [
+    1600,
+    1200
+   ],
+   "used_in": {
+    "nam-ban-hay-di-linh.html": [
+     "display"
+    ]
+   }
+  },
+  "dong-thanh-view-o-to.webp": {
+   "kb": 159,
+   "dims": [
+    1600,
+    1105
+   ],
+   "used_in": {
+    "truoc-khi-xuong-tien.html": [
+     "display"
+    ]
+   }
+  },
+  "duong-dat-do-don-canh.jpg": {
+   "kb": 286,
+   "dims": [
+    1600,
+    1200
+   ],
+   "used_in": {
+    "dat-nam-ban-trong-cay-gi.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "duong-doi-view-thung-lung.jpg": {
+   "kb": 204,
+   "dims": [
+    900,
+    1200
+   ],
+   "used_in": {
+    "chuyen-len-nam-ban-song.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "duong-ha-bac-may-xuc.jpg": {
+   "kb": 282,
+   "dims": [
+    1000,
+    1322
+   ],
+   "used_in": {
+    "duong-ha-bac-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "duong-ha-bac-thi-cong.jpg": {
+   "kb": 289,
+   "dims": [
+    1000,
+    1555
+   ],
+   "used_in": {
+    "duong-ha-bac-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "duong-vao-nam-ban.webp": {
+   "kb": 173,
+   "dims": [
+    1050,
+    1400
+   ],
+   "used_in": {
+    "brief-01.html": [
+     "display"
+    ],
+    "roi-sai-gon-len-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "elephant-waterfall-nam-ban-da-lat.webp": {
+   "kb": 271,
+   "dims": [
+    1537,
+    863
+   ],
+   "used_in": {
+    "elephant-waterfall-nam-ban.html": [
+     "display"
+    ],
+    "thac-voi-nam-ban.html": [
+     "display"
+    ],
+    "ja/nam-ban-zou-no-taki.html": [
+     "display"
+    ],
+    "ko/nam-ban-kokkiri-pokpo.html": [
+     "display"
+    ],
+    "fr/cascade-des-elephants-nam-ban.html": [
+     "display"
+    ],
+    "zh/nam-ban-daxiang-pubu.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "gia-lam-biet-thu-o-to.webp": {
+   "kb": 284,
+   "dims": [
+    1600,
+    946
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
+  "gia-lam-ca-phe-chin.webp": {
+   "kb": 239,
+   "dims": [
+    1200,
+    1600
+   ],
+   "used_in": {
+    "mua-vuon-ca-phe-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
+  "gia-lam-ne-nuoi-tam.webp": {
+   "kb": 281,
+   "dims": [
+    1200,
+    1600
+   ],
+   "used_in": {
+    "dac-san-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
+  "hien-nha-thung-lung.jpg": {
+   "kb": 290,
+   "dims": [
+    1600,
+    900
+   ],
+   "used_in": {
+    "nam-ban-co-dang-song.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "ho-bai-cong-cong-chi-lang.jpg": {
+   "kb": 276,
+   "dims": [
+    1000,
+    1333
+   ],
+   "used_in": {
+    "ho-bai-cong-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "ho-bai-cong-duong-t20.jpg": {
+   "kb": 279,
+   "dims": [
+    1600,
+    1200
+   ],
+   "used_in": {
+    "ho-bai-cong-nam-ban.html": [
+     "display"
+    ],
+    "duong-ha-bac-nam-ban.html": [
+     "display",
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "ho-bai-cong-hoang-hon.jpg": {
+   "kb": 201,
+   "dims": [
+    1600,
+    1200
+   ],
+   "used_in": {
+    "dat.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "ho-bai-cong-mat-ho.jpg": {
+   "kb": 81,
+   "dims": [
+    1267,
+    713
+   ],
+   "used_in": {
+    "ho-bai-cong-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "ho-bai-cong-ngay.jpg": {
+   "kb": 185,
+   "dims": [
+    1600,
+    1200
+   ],
+   "used_in": {
+    "ho-bai-cong-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "ho-bai-cong-toan-canh.jpg": {
+   "kb": 295,
+   "dims": [
+    1600,
+    900
+   ],
+   "used_in": {
+    "ho-bai-cong-nam-ban.html": [
+     "display",
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "ho-bai-cong-ven-ho.jpg": {
+   "kb": 161,
+   "dims": [
+    960,
+    540
+   ],
+   "used_in": {
+    "ho-bai-cong-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "ho-thanh-tri-dong-thanh.webp": {
+   "kb": 281,
+   "dims": [
+    1600,
+    1067
+   ],
+   "used_in": {
+    "quy-hoach-2050.html": [
+     "display"
+    ]
+   }
+  },
+  "hoa-ca-phe-no-trang.jpg": {
+   "kb": 281,
+   "dims": [
+    1400,
+    788
+   ],
+   "used_in": {
+    "nam-ban.html": [
+     "display"
+    ],
+    "nam-ban-mua-nao.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "hoa-ca-phe-thung-lung.jpg": {
+   "kb": 289,
+   "dims": [
+    1600,
+    900
+   ],
+   "used_in": {
+    "mua-dat-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "homestay-hoang-hon.webp": {
+   "kb": 185,
+   "dims": [
+    1280,
+    960
+   ],
+   "used_in": {
+    "tiem-nang-dau-tu.html": [
+     "display"
+    ],
+    "dieu-de-lai-cho-con.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "ht86-gia-lam.webp": {
+   "kb": 190,
+   "dims": [
+    1600,
+    846
+   ],
+   "used_in": {
+    "nen-xem-khu-nao-o-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
+  "khu-nha-trang-dong-thanh-hoang-hon.webp": {
+   "kb": 76,
+   "dims": [
+    1600,
+    849
+   ],
+   "used_in": {
+    "nguoi-nam-ban-chi-trang.html": [
+     "display"
+    ]
+   }
+  },
+  "khu-nha-trang-dong-thanh-toan-canh.webp": {
+   "kb": 167,
+   "dims": [
+    1600,
+    769
+   ],
+   "used_in": {
+    "nen-xem-khu-nao-o-nam-ban.html": [
+     "display",
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
+  "khu-trai-cho-dong-thanh-ho.webp": {
+   "kb": 231,
+   "dims": [
+    1600,
+    1200
+   ],
+   "used_in": {
+    "nguoi-nam-ban-anh-nam.html": [
+     "display"
+    ]
+   }
+  },
+  "lien-khuong-mo-lai.jpg": {
+   "kb": 180,
+   "dims": [
+    1600,
+    840
+   ],
+   "used_in": {
+    "san-bay-lien-khuong-mo-lai.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "lien-khuong-mo-lai.webp": {
+   "kb": 95,
+   "dims": [
+    1600,
+    840
+   ],
+   "used_in": {
+    "san-bay-lien-khuong-mo-lai.html": [
+     "display"
+    ]
+   }
+  },
+  "linh-an-pagoda-lady-buddha-nam-ban.webp": {
+   "kb": 248,
+   "dims": [
+    1600,
+    974
+   ],
+   "used_in": {
+    "elephant-waterfall-nam-ban.html": [
+     "display"
+    ],
+    "living-in-nam-ban.html": [
+     "display"
+    ],
+    "thac-voi-nam-ban.html": [
+     "display"
+    ],
+    "ja/nam-ban-kurashi.html": [
+     "display"
+    ],
+    "ja/nam-ban-zou-no-taki.html": [
+     "display"
+    ],
+    "ko/nam-ban-kokkiri-pokpo.html": [
+     "display"
+    ],
+    "ko/nam-ban-salm.html": [
+     "display"
+    ],
+    "fr/cascade-des-elephants-nam-ban.html": [
+     "display"
+    ],
+    "fr/vivre-a-nam-ban.html": [
+     "display"
+    ],
+    "zh/zai-nam-ban-shenghuo.html": [
+     "display"
+    ],
+    "zh/nam-ban-daxiang-pubu.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "lo-dat-do-thuc-te.jpg": {
+   "kb": 295,
+   "dims": [
+    1400,
+    788
+   ],
+   "used_in": {
+    "mua-dat-nam-ban.html": [
+     "display",
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "me-linh-doi-thong.webp": {
+   "kb": 286,
+   "dims": [
+    1600,
+    1017
+   ],
+   "used_in": {
+    "nen-xem-khu-nao-o-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
+  "me-linh-rung-thong-duong-dat.webp": {
+   "kb": 279,
+   "dims": [
+    900,
+    1200
+   ],
+   "used_in": {
+    "mua-dat-duong-gia-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
+  "me-linh-vuon-doi-cao.webp": {
+   "kb": 275,
+   "dims": [
+    1600,
+    1200
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
+  "mot-ngay-o-nam-ban.jpg": {
+   "kb": 117,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "mot-ngay-o-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "mua-bo-thu-hoach.jpg": {
+   "kb": 280,
+   "dims": [
+    900,
+    1200
+   ],
+   "used_in": {
+    "mua-bo-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "nam-ban-aerial.jpg": {
+   "kb": 200,
+   "dims": [
+    1600,
+    520
+   ],
+   "used_in": {
+    "nam-ban-co-dang-song.html": [
+     "og",
+     "schema"
+    ],
+    "living-in-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "ja/nam-ban-kurashi.html": [
+     "og",
+     "schema"
+    ],
+    "ko/nam-ban-salm.html": [
+     "og",
+     "schema"
+    ],
+    "fr/vivre-a-nam-ban.html": [
+     "og",
+     "schema"
+    ],
+    "zh/zai-nam-ban-shenghuo.html": [
+     "og",
+     "schema"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "nam-ban-aerial.webp": {
+   "kb": 133,
+   "dims": [
+    1600,
+    520
+   ],
+   "used_in": {
+    "google-maps-khong-noi-ve-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "nam-ban-co-hop-voi-ban.jpg": {
+   "kb": 58,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "nam-ban-co-hop-voi-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "nam-ban-thung-lung-pano.jpg": {
+   "kb": 269,
+   "dims": [
+    1500,
+    1125
+   ],
+   "used_in": {
+    "nam-ban-hay-don-duong.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "nam-ban-thung-lung.jpg": {
+   "kb": 219,
+   "dims": [
+    1280,
+    720
+   ],
+   "used_in": {
+    "khu-nao-o-nam-ban.html": [
+     "display"
+    ],
+    "mua-dat-co-vuon-ca-phe.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "nam-ban-toan-canh-chua.jpg": {
+   "kb": 168,
+   "dims": [
+    900,
+    600
+   ],
+   "used_in": {
+    "nam-ban-co-gi.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "nam-ban-toan-canh-chua.webp": {
+   "kb": 129,
+   "dims": [
+    900,
+    600
+   ],
+   "used_in": {
+    "nam-ban-co-gi.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "nam-ban-toan-canh.jpg": {
+   "kb": 135,
+   "dims": [
+    800,
+    450
+   ],
+   "used_in": {
+    "nam-ban-hay-di-linh.html": [
+     "og",
+     "schema"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "nam-ban-toan-canh.webp": {
+   "kb": 120,
+   "dims": [
+    800,
+    450
+   ],
+   "used_in": {
+    "dau-tu.html": [
+     "display"
+    ],
+    "quy-hoach-2050.html": [
+     "display"
+    ],
+    "brief-01.html": [
+     "display"
+    ]
+   }
+  },
+  "nam-ban-vista.jpg": {
+   "kb": 230,
+   "dims": [
+    1600,
+    900
+   ],
+   "used_in": {
+    "doc-lo-dat-02-view-ho.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "nam-ban-vista.webp": {
+   "kb": 136,
+   "dims": [
+    1600,
+    900
+   ],
+   "used_in": {
+    "mua-dat-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "namban-index-gia-dat.jpg": {
+   "kb": 98,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "namban-index.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "nga-tu-dao-nga-nam-ban.webp": {
+   "kb": 288,
+   "dims": [
+    1600,
+    1200
+   ],
+   "used_in": {
+    "nen-xem-khu-nao-o-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
+  "og-home.jpg": {
+   "kb": 113,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dau-tu.html": [
+     "og",
+     "twitter"
+    ],
+    "nam-ban.html": [
+     "og",
+     "twitter"
+    ],
+    "dieu-de-lai-cho-con.html": [
+     "og",
+     "schema"
+    ],
+    "index.html": [
+     "og",
+     "twitter"
+    ],
+    "dat.html": [
+     "og",
+     "twitter"
+    ],
+    "nam-ban-hay-don-duong.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "dat-nam-ban-trong-cay-gi.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "rau-hoa-cay-do-la-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "vuon-bo-loi-bao-nhieu.html": [
+     "og",
+     "schema"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "phac-thao-khu-dat.jpg": {
+   "kb": 220,
+   "dims": [
+    885,
+    1100
+   ],
+   "used_in": {
+    "doc-lo-dat-02-view-ho.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "quan-ca-phe-nam-ban.webp": {
+   "kb": 249,
+   "dims": [
+    1400,
+    933
+   ],
+   "used_in": {
+    "tour-ca-phe-nam-ban.html": [
+     "display"
+    ],
+    "mot-ngay-o-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "quy-hoach-2050.jpg": {
+   "kb": 110,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "quy-hoach-2050.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "ban-do-quy-hoach-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "quy-hoach-2050.webp": {
+   "kb": 52,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "ban-do-quy-hoach-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "roi-sai-gon-len-nam-ban.jpg": {
+   "kb": 133,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "roi-sai-gon-len-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "sau-rieng-nam-ban.jpg": {
+   "kb": 110,
+   "dims": [
+    900,
+    1200
+   ],
+   "used_in": {
+    "dat-nam-ban-trong-cay-gi.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "so-sanh-nam-ban-bao-loc-da-lat.jpg": {
+   "kb": 116,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "so-sanh-nam-ban-bao-loc-da-lat.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "suong-nam-ban.jpg": {
+   "kb": 291,
+   "dims": [
+    1500,
+    1000
+   ],
+   "used_in": {
+    "nam-ban-mua-nao.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "thac-voi-nam-ban.webp": {
+   "kb": 276,
+   "dims": [
+    1600,
+    1063
+   ],
+   "used_in": {
+    "elephant-waterfall-nam-ban.html": [
+     "display"
+    ],
+    "living-in-nam-ban.html": [
+     "display"
+    ],
+    "thac-voi-nam-ban.html": [
+     "display"
+    ],
+    "ja/nam-ban-kurashi.html": [
+     "display"
+    ],
+    "ja/nam-ban-zou-no-taki.html": [
+     "display"
+    ],
+    "ko/nam-ban-kokkiri-pokpo.html": [
+     "display"
+    ],
+    "ko/nam-ban-salm.html": [
+     "display"
+    ],
+    "fr/cascade-des-elephants-nam-ban.html": [
+     "display"
+    ],
+    "fr/vivre-a-nam-ban.html": [
+     "display"
+    ],
+    "zh/zai-nam-ban-shenghuo.html": [
+     "display"
+    ],
+    "zh/nam-ban-daxiang-pubu.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "thac-voi.jpg": {
+   "kb": 179,
+   "dims": [
+    900,
+    600
+   ],
+   "used_in": {
+    "elephant-waterfall-nam-ban.html": [
+     "og",
+     "schema"
+    ],
+    "nam-ban.html": [
+     "display"
+    ],
+    "thac-voi-nam-ban.html": [
+     "og",
+     "schema"
+    ],
+    "ja/nam-ban-zou-no-taki.html": [
+     "og",
+     "schema"
+    ],
+    "ko/nam-ban-kokkiri-pokpo.html": [
+     "og",
+     "schema"
+    ],
+    "fr/cascade-des-elephants-nam-ban.html": [
+     "og",
+     "schema"
+    ],
+    "zh/nam-ban-daxiang-pubu.html": [
+     "og",
+     "schema"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "tiem-nang-dau-tu.jpg": {
+   "kb": 102,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "tiem-nang-dau-tu.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "toan-canh-nam-ban-nhin-tu-tren-cao-lam-ha-lam-dong.jpg": {
+   "kb": 272,
+   "dims": [
+    1600,
+    750
+   ],
+   "used_in": {
+    "nam-ban-va-nam-ha.html": [
+     "og",
+     "ref",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
+  "toan-canh-nam-ban-nhin-tu-tren-cao-lam-ha-lam-dong.webp": {
+   "kb": 245,
+   "dims": [
+    1600,
+    750
+   ],
+   "used_in": {
+    "nam-ban.html": [
+     "css"
+    ],
+    "index.html": [
+     "display"
+    ],
+    "ja/nam-ban-kurashi.html": [
+     "display"
+    ],
+    "ko/nam-ban-salm.html": [
+     "display"
+    ],
+    "fr/vivre-a-nam-ban.html": [
+     "display"
+    ],
+    "zh/zai-nam-ban-shenghuo.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "toan-canh-nam-ban-thac-voi-tuong-phat.webp": {
+   "kb": 259,
+   "dims": [
+    1537,
+    1023
+   ],
+   "used_in": {
+    "dat.html": [
+     "css"
+    ]
+   }
+  },
+  "trao-doi.jpg": {
+   "kb": 90,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "trao-doi.html": [
+     "og",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "truoc-khi-xuong-tien.jpg": {
+   "kb": 98,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "truoc-khi-xuong-tien.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "van-ban-lien-khuong.webp": {
+   "kb": 83,
+   "dims": [
+    943,
+    1680
+   ],
+   "used_in": {
+    "san-bay-lien-khuong-mo-lai.html": [
+     "display"
+    ]
+   }
+  },
+  "view-tam-trinh-nam-ban.webp": {
+   "kb": 262,
+   "dims": [
+    1600,
+    766
+   ],
+   "used_in": {
+    "index.html": [
+     "display"
+    ],
+    "nam-ban-co-hop-voi-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "villa-khung-go-rung-thong.jpg": {
+   "kb": 300,
+   "dims": [
+    1600,
+    900
+   ],
+   "used_in": {
+    "homestay-nam-ban-co-lai-khong.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  }
+ }
+}
