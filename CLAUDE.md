@@ -48,14 +48,18 @@ kết thúc mỗi lượt:
    nhiều bài → gom hết thành 1 danh sách để Chú **lập chỉ mục** (dán vào GSC/IndexNow). Việc
    nào Chú phải tự tay (up ảnh/audio…) → **đưa sẵn link Drive + hướng dẫn từng nút**, đừng
    bắt Chú tự mò.
-2. **AUTO — tự làm tự quyết, đừng bắt duyệt (nhắc 10 lần).** Không "em research → đề xuất →
-   chờ Chú OK". Việc rõ thì LÀM LUÔN rồi báo kết quả + link. Chỉ hỏi khi thật sự mơ hồ và câu
-   trả lời đổi hẳn kết quả. Bài mới → **mặc định tạo audio giọng NAM** (không để giọng máy
-   tiếng Anh). Video trang chủ auto chạy 2-3 lần/phiên (đã chốt).
-3. **LÀM LUÔN, ĐỪNG "NGHIÊN CỨU RỒI ĐỀ XUẤT" (nhắc 8 lần).** Chú ghét kiểu dừng lại trình bày
-   phương án. Có việc → thực thi → đưa số thật + link. (Khác với phản biện khi thấy SAI THẬT.)
-4. **CHỮ ĐƠN GIẢN (nhắc 5 lần).** Caption/tiêu đề ngắn, thẳng: "Ngã tư Đạo Nga." — KHÔNG
-   giải thích lê thê. Bớt chữ, đừng viết dài dòng cho có.
+2. **AUTO với VIỆC RÕ — đừng bắt duyệt từng bước (nhắc 10 lần).** Việc cụ thể, cơ học, sửa
+   theo lệnh rõ (thi công, đổi ảnh, sửa số đã chốt, dọn code…) → **LÀM LUÔN** rồi báo kết
+   quả + link, đừng dừng xin OK từng bước. Bài mới → **mặc định tạo audio giọng NAM** (không
+   để giọng máy tiếng Anh). Video trang chủ auto chạy 2-3 lần/phiên (đã chốt).
+3. **VIỆC LỚN / MỚI / ĐỔI HƯỚNG → RESEARCH → ĐỀ XUẤT → CHÚ DUYỆT MỚI LÀM.** Cái gì đổi
+   thiết kế, thêm thành phần mới, đổi cấu trúc, quyết định chiến lược, hay ảnh hưởng nhiều
+   trang → **KHÔNG tự ý làm**: nghiên cứu kỹ, trình phương án rõ, chờ Chú gật rồi mới thực
+   thi. (Phân biệt với mục 2: việc rõ thì auto; việc lớn/mơ hồ thì hỏi. Sai bên nào cũng bị
+   mắng — auto chuyện lớn, hoặc hỏi chuyện vặt.)
+4. **CHỮ ĐƠN GIẢN — MỘT SỐ TRƯỜNG HỢP, không phải mọi chỗ (nhắc 5 lần).** Caption mốc chỉ
+   đường / ảnh nhận diện nhanh → ngắn gọn: "Ngã tư Đạo Nga." Nhưng caption bài phân tích,
+   câu dẫn, thân bài → vẫn viết ĐỦ Ý, đúng giọng publication; đừng cụt lủn cho có. Tùy ngữ cảnh.
 5. **SỐ ĐÃ CHỐT → ÁP THẲNG, ĐỪNG BÁO CÁO LẠI (nhắc 5 lần).** 25km/28km/20km (mục 2.7) và các
    con số đã quyết: cứ sửa đúng, KHÔNG bàn lại, KHÔNG xin xác nhận từng lần.
 
