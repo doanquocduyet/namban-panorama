@@ -128,7 +128,7 @@
   .ridges{position:absolute;left:0;right:0;bottom:0;width:100%;height:300px;z-index:1;pointer-events:none;}
 
   /* ── VIDEO NỀN HERO (chỉ hiện khi có /video/hero.mp4) ── */
-  .hero-video{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;opacity:0;transition:opacity 1.2s ease;}
+  .hero-video{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:#dfd6c4 url('/video/hero-poster.jpg') center/cover no-repeat;}
   .hero-video.on{opacity:1;}
   .hero-video video{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.72) brightness(1.16) contrast(.93);}
   /* phủ lớp giấy — giữ chữ tối đọc được, video chỉ còn là chuyển động rất nhẹ */
@@ -505,6 +505,7 @@ a,button{touch-action:manipulation;}
   "datePublished": "2026-07-02"
 }
 </script>
+<link rel="preload" as="image" href="/video/hero-poster.jpg" fetchpriority="high">
 </head>
 <body>
 <script>
@@ -542,7 +543,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   <a href="trao-doi" onclick="toggleMenu()">Trao đổi</a>
 </div>
 <header>
-  <div class="hero-video" id="heroVideo" aria-hidden="true"></div>
+  <div class="hero-video on" id="heroVideo" aria-hidden="true"></div>
   <div class="wrap">
     <div class="kicker fu" style="animation-delay:.05s">Nam Ban · Lâm Hà, Lâm&nbsp;Đồng — gần&nbsp;Đà&nbsp;Lạt</div>
     <h1 class="fu" style="animation-delay:.15s">Thấy <em>toàn cảnh</em><br>Nam Ban<br><span class="h1-l3">trước khi xuống tiền</span></h1>
@@ -962,7 +963,7 @@ window.addEventListener('scroll',s,{passive:true});s();})();
    Bỏ video: xoá thư mục /video hoặc xoá khối script này. */
 (function(){
   var box=document.getElementById('heroVideo'); if(!box) return;
-  var POSTER='/video/hero-poster.jpg', NGUONG=4;                      // lần thứ 4 trở đi: thôi chạy
+  var NGUONG=4;                                                       // lần thứ 4 trở đi: thôi chạy video
   var mq=window.matchMedia, c=navigator.connection;
 
   var lan=1;
@@ -971,30 +972,17 @@ window.addEventListener('scroll',s,{passive:true});s();})();
     sessionStorage.setItem('pm_hero_lan',lan);
   }catch(e){}
 
-  function anhTinh(){                                                 // chỉ nền tĩnh (poster), không video
-    box.style.backgroundImage='url('+POSTER+')';
-    box.style.backgroundSize='cover';
-    box.style.backgroundPosition='center';
-    box.style.transition='none';
-    box.classList.add('on');
-  }
-
-  // mạng yếu / tiết kiệm dữ liệu / tắt chuyển động / lần 4+ → chỉ ảnh tĩnh, không tải video
+  // Poster đã là NỀN TĨNH sẵn trong CSS (hiện ngay từ nhịp vẽ đầu, không nền trơn, không chờ JS).
+  // Mạng yếu / tiết kiệm dữ liệu / tắt chuyển động / lần 4+ → giữ nguyên poster, KHÔNG tải video.
   if((mq&&mq('(prefers-reduced-motion:reduce)').matches) ||
      (c&&(c.saveData||/2g|slow-2g/.test(c.effectiveType||''))) ||
-     lan>=NGUONG){ anhTinh(); return; }
+     lan>=NGUONG) return;
 
-  // lần 1-3: poster hiện NGAY (khung hình đầu = ảnh đẹp, chống nháy đen), video chạy liền
-  box.style.backgroundImage='url('+POSTER+')';
-  box.style.backgroundSize='cover';
-  box.style.backgroundPosition='center';
-  box.style.transition='none';
-  box.classList.add('on');
-
+  // lần 1-3: video chạy NGAY, mờ chồng lên poster (lần đầu ~0.6s; quay lại hiện thẳng)
   var v=document.createElement('video');
   v.muted=true;v.defaultMuted=true;v.loop=true;v.playsInline=true;
   v.setAttribute('muted','');v.setAttribute('playsinline','');
-  v.preload='auto';v.poster=POSTER;v.src='/video/hero.mp4';
+  v.preload='auto';v.poster='/video/hero-poster.jpg';v.src='/video/hero.mp4';
   v.style.opacity=(lan>1?'1':'0');                                    // lần đầu: mờ chồng lên poster; quay lại: hiện thẳng
   v.style.transition='opacity .6s ease';
   v.addEventListener('playing',function(){ v.style.opacity='1'; },{once:true});
