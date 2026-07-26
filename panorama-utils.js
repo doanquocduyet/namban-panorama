@@ -178,8 +178,6 @@
     var ov=document.createElement('div');ov.className='pm-menu-overlay';ov.id='menuOverlay';
     var cl=document.createElement('button');cl.className='pm-mobile-close';cl.id='mobileClose';cl.setAttribute('aria-label','Đóng');cl.textContent='×';
     var mm=document.createElement('div');mm.className='pm-mobile-menu';mm.id='mobileMenu';
-
-    function openMenu(){mm.classList.add('open');ov.classList.add('open');cl.classList.add('open');ham2.classList.add('is-open');document.body.style.overflow='hidden';}
     function closeMenu(){mm.classList.remove('open');ov.classList.remove('open');cl.classList.remove('open');ham2.classList.remove('is-open');document.body.style.overflow='';}
     function toggle(){(mm.classList.contains('open')?closeMenu:openMenu)();}
 
