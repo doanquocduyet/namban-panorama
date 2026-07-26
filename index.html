@@ -136,6 +136,20 @@
   .hero-foot{font-size:12px;color:var(--muted);margin-top:14px;letter-spacing:.3px;}
   .ridges{position:absolute;left:0;right:0;bottom:0;width:100%;height:300px;z-index:1;pointer-events:none;}
 
+  /* ── VIDEO NỀN HERO (chỉ hiện khi có /video/hero.mp4) ── */
+  .hero-video{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;opacity:0;transition:opacity 1.2s ease;}
+  .hero-video.on{opacity:1;}
+  .hero-video video{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92);}
+  /* phủ lớp giấy — giữ chữ tối đọc được, video chỉ còn là chuyển động rất nhẹ */
+  .hero-video::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(241,236,226,.90) 0%,rgba(241,236,226,.84) 55%,rgba(241,236,226,.93) 100%);}
+  /* chế độ RÕ — thêm class video-bold vào thẻ header: video hiện rõ, chữ chuyển trắng */
+  header.video-bold .hero-video::after{background:linear-gradient(180deg,rgba(16,24,18,.46) 0%,rgba(16,24,18,.30) 45%,rgba(16,24,18,.62) 100%);}
+  header.video-bold .kicker,header.video-bold h1,header.video-bold .lede,header.video-bold .hero-foot{color:#f4efe6;}
+  header.video-bold h1 em{color:#e8dcc8;}
+  header.video-bold .ridges{opacity:.5;}
+  header .wrap{position:relative;z-index:2;}
+
   /* AERIAL — ảnh toàn cảnh: mobile tràn viền, PC luôn có lề */
   .aer-band{position:relative;width:100%;height:clamp(230px,33vw,360px);overflow:hidden;background:var(--paper);}
   @media(min-width:781px){.aer-band{max-width:1280px;width:calc(100% - 80px);margin:0 auto;}}
@@ -548,6 +562,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   <a href="trao-doi" onclick="toggleMenu()">Trao đổi</a>
 </div>
 <header>
+  <div class="hero-video" id="heroVideo" aria-hidden="true"></div>
   <div class="wrap">
     <div class="kicker fu" style="animation-delay:.05s">Nam Ban · Lâm Hà, Lâm&nbsp;Đồng — gần&nbsp;Đà&nbsp;Lạt</div>
     <h1 class="fu" style="animation-delay:.15s">Thấy <em>toàn cảnh</em><br>Nam Ban<br><span class="h1-l3">trước khi xuống tiền</span></h1>
@@ -957,5 +972,30 @@ window.addEventListener('scroll',s,{passive:true});s();})();
 })();
 </script>
 <script defer src="/panorama-utils.js"></script>
+<script>
+/* Video nền hero — chỉ bật khi ĐỦ điều kiện, không có file thì trang giữ nguyên.
+   Bỏ video: xoá thư mục /video hoặc xoá khối script này. */
+(function(){
+  var box=document.getElementById('heroVideo'); if(!box) return;
+  var mq=window.matchMedia;
+  if(mq&&mq('(prefers-reduced-motion:reduce)').matches) return;      // tôn trọng người tắt chuyển động
+  if(innerWidth<901) return;                                          // mobile: dùng ảnh/SVG, không tốn 4G
+  var c=navigator.connection;
+  if(c&&(c.saveData||/2g|slow-2g/.test(c.effectiveType||''))) return;  // mạng yếu hoặc bật tiết kiệm dữ liệu
+  function start(){
+    fetch('/video/hero.mp4',{method:'HEAD'}).then(function(r){
+      if(!r.ok) return;                                               // chưa có video → không làm gì
+      var v=document.createElement('video');
+      v.muted=true;v.defaultMuted=true;v.loop=true;v.playsInline=true;
+      v.setAttribute('muted','');v.setAttribute('playsinline','');
+      v.preload='auto';v.src='/video/hero.mp4';
+      v.addEventListener('playing',function(){box.classList.add('on');},{once:true});
+      box.appendChild(v);
+      var p=v.play(); if(p&&p.catch) p.catch(function(){});
+    }).catch(function(){});
+  }
+  if('requestIdleCallback' in window) requestIdleCallback(start,{timeout:2500}); else setTimeout(start,1200);
+})();
+</script>
 </body>
 </html>
