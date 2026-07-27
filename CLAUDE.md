@@ -113,6 +113,12 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
 8. **Dám nói "đừng mua"**. Xây trust bằng đọc rủi ro, không bán giấc mơ. Kết bài nhẹ, an
    yên — không hô "mua ngay".
 9. Nút **"Chia sẻ"** trầm cuối bài = GIỮ (chuẩn tờ báo). Khác với CTA bán.
+10. **HƯỚNG LÊN / XUỐNG — theo cao độ, KHÔNG lẫn (Chú chốt).** Đà Lạt là điểm **CAO NHẤT**,
+    **KHÔNG bao giờ "xuống Đà Lạt"** — mọi nơi đều **LÊN Đà Lạt**. Từ đồng bằng (Sài Gòn,
+    Bình Dương, miền Tây…) đi tới vùng cao → **LÊN Nam Ban / LÊN Đà Lạt** (kể cả "lên thẳng
+    Nam Ban", "xe khách lên Nam Ban"). Chỉ khi xuất phát **TỪ Đà Lạt** (cao hơn Nam Ban) mới
+    được **XUỐNG Nam Ban** (đổ đèo Tà Nung). Mỗi bài: rà lại mọi câu "lên/xuống Nam Ban/Đà Lạt"
+    cho đúng chiều cao độ trước khi đăng.
 
 ---
 
