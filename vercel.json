@@ -1,6 +1,11 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "git": {
+    "deploymentEnabled": {
+      "claude/namban-panorama-setup-0oiyb1": false
+    }
+  },
   "headers": [
     {
       "source": "/data/(.*)",
