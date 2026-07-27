@@ -8,13 +8,12 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 133,
- "unused_count": 4,
+ "total_images": 132,
+ "unused_count": 3,
  "unused": [
   "duong-deo-mua-suong-mo.webp",
   "gia-lam-biet-thu-o-to.webp",
-  "me-linh-vuon-doi-cao.webp",
-  "toan-canh-nam-ban-nhin-tu-tren-cao-lam-ha-lam-dong.jpg"
+  "me-linh-vuon-doi-cao.webp"
  ],
  "images": {
   "ban-dat-nam-ban.jpg": {
@@ -1994,15 +1993,6 @@
      "ref"
     ]
    }
-  },
-  "toan-canh-nam-ban-nhin-tu-tren-cao-lam-ha-lam-dong.jpg": {
-   "kb": 272,
-   "dims": [
-    1600,
-    750
-   ],
-   "used_in": {},
-   "status": "unused"
   },
   "toan-canh-nam-ban-nhin-tu-tren-cao-lam-ha-lam-dong.webp": {
    "kb": 245,
