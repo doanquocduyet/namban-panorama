@@ -100,6 +100,15 @@
   .fill .tag{font-family:'Be Vietnam Pro',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--clay);font-weight:500;display:block;margin-bottom:7px;}
   .fill .ex{font-size:14px;color:var(--muted);font-style:italic;line-height:1.65;}
 
+  /* Founder quote — ảnh tròn + câu niềm tin */
+  .fq{max-width:640px;margin:48px auto 0;padding:0 24px;text-align:center;}
+  .fq .pic{width:118px;height:118px;border-radius:50%;margin:0 auto 26px;background:linear-gradient(160deg,#e7ddca,#d8ccb3);border:1px solid rgba(26,24,21,.12);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+  .fq .pic span{font-family:'Fraunces',serif;font-style:italic;font-size:11px;color:var(--muted);padding:0 10px;line-height:1.4;}
+  .fq blockquote{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(19px,2.6vw,25px);line-height:1.55;color:var(--ink);margin:0 0 20px;text-wrap:balance;}
+  .fq blockquote em{font-style:italic;color:var(--forest);}
+  .fq .nm{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);}
+  .fq .nm b{font-weight:600;color:var(--ink);}
+  .fq-sub{font-size:15px;color:var(--muted);line-height:1.7;margin:24px auto 0;max-width:46ch;}
   footer{background:var(--ink);color:#cabfab;padding:60px 24px;text-align:center;margin-top:40px;}
   footer .contact-line{font-size:14px;letter-spacing:.3px;line-height:2;}
   footer a{color:#cabfab;text-decoration:none;}
@@ -143,22 +152,12 @@
   <p class="vp-lede">Viết về đất, cuối cùng vẫn là chuyện tin nhau. Nên xin phép nói vài dòng về mình.</p>
 </div>
 
-<!-- FOUNDER -->
-<div class="vp-founder">
-  <div class="vp-fgrid">
-    <div class="vp-portrait">
-      <div class="frame"><span>Ảnh chân dung thật<br>(Chú gửi — 4:5, ngoài thực địa càng tốt)</span></div>
-      <span class="plate">
-        <span class="tick"></span>
-        <span class="nm">Đoàn Quốc Duyệt</span>
-        <span class="rl">Người sáng lập &amp; biên tập</span>
-      </span>
-    </div>
-    <div class="vp-fbody">
-      <h2>Một người ghi chép, không phải một cái sàn</h2>
-      <p>Không có đội ngũ, không có chiến dịch. Chỉ là một người sống gần vùng này, đi xem đất, đọc quy hoạch, rồi ghi lại cho đúng. Ai đọc thấy hợp thì đọc.</p>
-    </div>
-  </div>
+<!-- FOUNDER — ảnh tròn + câu niềm tin (học Message Coffee, dựng lại kiểu Panorama) -->
+<div class="fq">
+  <div class="pic"><span>Ảnh Chú<br>(tròn · thực địa)</span></div>
+  <blockquote>Tôi tin người mua đất xứng đáng được nghe sự thật — <em>kể cả sự thật "đừng mua".</em> Đó là lý do có Panorama.</blockquote>
+  <div class="nm"><b>Đoàn Quốc Duyệt</b> · Người sáng lập</div>
+  <p class="fq-sub">Không có đội ngũ, không có chiến dịch. Chỉ là một người sống gần vùng này, đi xem đất, đọc quy hoạch, rồi ghi lại cho đúng.</p>
 </div>
 
 <!-- TẠI SAO -->
