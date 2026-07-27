@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 132,
+ "total_images": 147,
  "unused_count": 3,
  "unused": [
   "duong-deo-mua-suong-mo.webp",
@@ -148,10 +148,7 @@
    ],
    "used_in": {
     "ca-phe-nam-ban-ai.html": [
-     "display",
-     "og",
-     "ref",
-     "twitter"
+     "display"
     ],
     "image-sitemap.xml": [
      "ref"
@@ -310,10 +307,7 @@
    ],
    "used_in": {
     "cau-tong-doi-nam-ban.html": [
-     "display",
-     "og",
-     "ref",
-     "twitter"
+     "display"
     ],
     "image-sitemap.xml": [
      "ref"
@@ -375,10 +369,7 @@
    ],
    "used_in": {
     "cay-xang-petro-moi-o-nam-ban.html": [
-     "display",
-     "og",
-     "ref",
-     "twitter"
+     "display"
     ],
     "image-sitemap.xml": [
      "ref"
@@ -549,11 +540,6 @@
     900
    ],
    "used_in": {
-    "dat-gan-da-lat.html": [
-     "og",
-     "schema",
-     "twitter"
-    ],
     "image-sitemap.xml": [
      "ref"
     ]
@@ -1195,11 +1181,6 @@
     840
    ],
    "used_in": {
-    "san-bay-lien-khuong-mo-lai.html": [
-     "og",
-     "schema",
-     "twitter"
-    ],
     "image-sitemap.xml": [
      "ref"
     ]
@@ -1270,10 +1251,7 @@
    ],
    "used_in": {
     "mua-dat-nam-ban.html": [
-     "display",
-     "og",
-     "schema",
-     "twitter"
+     "display"
     ],
     "image-sitemap.xml": [
      "ref"
@@ -1430,15 +1408,6 @@
     520
    ],
    "used_in": {
-    "nam-ban-co-dang-song.html": [
-     "og",
-     "schema"
-    ],
-    "living-in-nam-ban.html": [
-     "og",
-     "schema",
-     "twitter"
-    ],
     "ja/nam-ban-kurashi.html": [
      "og",
      "schema"
@@ -1563,11 +1532,6 @@
     600
    ],
    "used_in": {
-    "nam-ban-co-gi.html": [
-     "og",
-     "schema",
-     "twitter"
-    ],
     "image-sitemap.xml": [
      "ref"
     ]
@@ -1595,10 +1559,6 @@
     450
    ],
    "used_in": {
-    "nam-ban-hay-di-linh.html": [
-     "og",
-     "schema"
-    ],
     "image-sitemap.xml": [
      "ref"
     ]
@@ -1644,11 +1604,6 @@
     900
    ],
    "used_in": {
-    "doc-lo-dat-02-view-ho.html": [
-     "og",
-     "schema",
-     "twitter"
-    ],
     "image-sitemap.xml": [
      "ref"
     ]
@@ -1712,6 +1667,89 @@
     ]
    }
   },
+  "og-ca-phe-nam-ban-ai.jpg": {
+   "kb": 156,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "ca-phe-nam-ban-ai.html": [
+     "og",
+     "ref",
+     "twitter"
+    ]
+   }
+  },
+  "og-cau-tong-doi-nam-ban.jpg": {
+   "kb": 188,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "cau-tong-doi-nam-ban.html": [
+     "og",
+     "ref",
+     "twitter"
+    ]
+   }
+  },
+  "og-cay-xang-petro-moi-o-nam-ban.jpg": {
+   "kb": 135,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "cay-xang-petro-moi-o-nam-ban.html": [
+     "og",
+     "ref",
+     "twitter"
+    ]
+   }
+  },
+  "og-dat-gan-da-lat.jpg": {
+   "kb": 143,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dat-gan-da-lat.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
+  "og-doc-lo-dat-02-view-ho.jpg": {
+   "kb": 115,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "doc-lo-dat-02-view-ho.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
+  "og-elephant-waterfall-nam-ban.jpg": {
+   "kb": 212,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "elephant-waterfall-nam-ban.html": [
+     "og",
+     "schema"
+    ]
+   }
+  },
   "og-home.jpg": {
    "kb": 113,
    "dims": [
@@ -1745,6 +1783,127 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "og-living-in-nam-ban.jpg": {
+   "kb": 155,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "living-in-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
+  "og-mua-dat-nam-ban.jpg": {
+   "kb": 261,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "mua-dat-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
+  "og-nam-ban-co-dang-song.jpg": {
+   "kb": 155,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "nam-ban-co-dang-song.html": [
+     "og",
+     "schema"
+    ]
+   }
+  },
+  "og-nam-ban-co-gi.jpg": {
+   "kb": 195,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "nam-ban-co-gi.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
+  "og-nam-ban-hay-di-linh.jpg": {
+   "kb": 222,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "nam-ban-hay-di-linh.html": [
+     "og",
+     "schema"
+    ]
+   }
+  },
+  "og-nam-ban-thuoc-xa-nao.jpg": {
+   "kb": 126,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "nam-ban-thuoc-xa-nao.html": [
+     "og",
+     "schema"
+    ]
+   }
+  },
+  "og-san-bay-lien-khuong-mo-lai.jpg": {
+   "kb": 118,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "san-bay-lien-khuong-mo-lai.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
+  "og-sap-nhap-nam-ban-dat.jpg": {
+   "kb": 222,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "sap-nhap-nam-ban-dat.html": [
+     "og",
+     "schema"
+    ]
+   }
+  },
+  "og-thac-voi-nam-ban.jpg": {
+   "kb": 212,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "thac-voi-nam-ban.html": [
+     "og",
+     "schema"
     ]
    }
   },
@@ -1945,16 +2104,8 @@
     600
    ],
    "used_in": {
-    "elephant-waterfall-nam-ban.html": [
-     "og",
-     "schema"
-    ],
     "nam-ban.html": [
      "display"
-    ],
-    "thac-voi-nam-ban.html": [
-     "og",
-     "schema"
     ],
     "ja/nam-ban-zou-no-taki.html": [
      "og",
