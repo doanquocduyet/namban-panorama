@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 118,
+ "total_images": 119,
  "unused_count": 2,
  "unused": [
   "gia-lam-biet-thu-o-to.webp",
@@ -519,6 +519,9 @@
     "elephant-waterfall-nam-ban.html": [
      "display"
     ],
+    "duong-di-nam-ban.html": [
+     "display"
+    ],
     "nam-ban-mua-nao.html": [
      "display"
     ],
@@ -673,6 +676,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "duong-di-nam-ban.jpg": {
+   "kb": 192,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "duong-di-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
