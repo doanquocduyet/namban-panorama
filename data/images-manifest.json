@@ -8,12 +8,13 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 124,
- "unused_count": 3,
+ "total_images": 133,
+ "unused_count": 4,
  "unused": [
   "duong-deo-mua-suong-mo.webp",
   "gia-lam-biet-thu-o-to.webp",
-  "me-linh-vuon-doi-cao.webp"
+  "me-linh-vuon-doi-cao.webp",
+  "toan-canh-nam-ban-nhin-tu-tren-cao-lam-ha-lam-dong.jpg"
  ],
  "images": {
   "ban-dat-nam-ban.jpg": {
@@ -484,6 +485,20 @@
     ]
    }
   },
+  "dat-nam-ban-trong-cay-gi.jpg": {
+   "kb": 61,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dat-nam-ban-trong-cay-gi.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
   "dau-tam-la-dau.jpg": {
    "kb": 175,
    "dims": [
@@ -499,6 +514,20 @@
     ]
    }
   },
+  "dau-tam-nam-ban-og.jpg": {
+   "kb": 174,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dau-tam-nam-ban.html": [
+     "og",
+     "ref",
+     "twitter"
+    ]
+   }
+  },
   "dau-tam-nam-ban.jpg": {
    "kb": 283,
    "dims": [
@@ -507,10 +536,7 @@
    ],
    "used_in": {
     "dau-tam-nam-ban.html": [
-     "display",
-     "og",
-     "ref",
-     "twitter"
+     "display"
     ],
     "image-sitemap.xml": [
      "ref"
@@ -757,6 +783,20 @@
     ]
    }
   },
+  "duong-ha-bac-nam-ban.jpg": {
+   "kb": 204,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "duong-ha-bac-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
   "duong-ha-bac-thi-cong.jpg": {
    "kb": 289,
    "dims": [
@@ -906,10 +946,7 @@
      "display"
     ],
     "duong-ha-bac-nam-ban.html": [
-     "display",
-     "og",
-     "schema",
-     "twitter"
+     "display"
     ],
     "image-sitemap.xml": [
      "ref"
@@ -946,6 +983,20 @@
     ]
    }
   },
+  "ho-bai-cong-nam-ban.jpg": {
+   "kb": 156,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "ho-bai-cong-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
   "ho-bai-cong-ngay.jpg": {
    "kb": 185,
    "dims": [
@@ -969,10 +1020,7 @@
    ],
    "used_in": {
     "ho-bai-cong-nam-ban.html": [
-     "display",
-     "og",
-     "schema",
-     "twitter"
+     "display"
     ],
     "image-sitemap.xml": [
      "ref"
@@ -1015,11 +1063,6 @@
    "used_in": {
     "nam-ban.html": [
      "display"
-    ],
-    "nam-ban-mua-nao.html": [
-     "og",
-     "schema",
-     "twitter"
     ],
     "image-sitemap.xml": [
      "ref"
@@ -1117,10 +1160,7 @@
    ],
    "used_in": {
     "nen-xem-khu-nao-o-nam-ban.html": [
-     "display",
-     "og",
-     "schema",
-     "twitter"
+     "display"
     ]
    }
   },
@@ -1453,6 +1493,34 @@
     ]
    }
   },
+  "nam-ban-hay-don-duong.jpg": {
+   "kb": 136,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "nam-ban-hay-don-duong.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
+  "nam-ban-mua-nao.jpg": {
+   "kb": 244,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "nam-ban-mua-nao.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
   "nam-ban-thung-lung-pano.jpg": {
    "kb": 269,
    "dims": [
@@ -1479,6 +1547,9 @@
      "display"
     ],
     "mua-dat-co-vuon-ca-phe.html": [
+     "display"
+    ],
+    "rau-hoa-cay-do-la-nam-ban.html": [
      "display"
     ],
     "image-sitemap.xml": [
@@ -1552,6 +1623,21 @@
     ]
    }
   },
+  "nam-ban-va-nam-ha.jpg": {
+   "kb": 173,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "nam-ban-va-nam-ha.html": [
+     "og",
+     "ref",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
   "nam-ban-vista.jpg": {
    "kb": 230,
    "dims": [
@@ -1601,6 +1687,20 @@
     ]
    }
   },
+  "nen-xem-khu-nao-o-nam-ban.jpg": {
+   "kb": 140,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "nen-xem-khu-nao-o-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
   "nga-tu-dao-nga-nam-ban.webp": {
    "kb": 288,
    "dims": [
@@ -1638,21 +1738,6 @@
     ],
     "dat.html": [
      "og",
-     "twitter"
-    ],
-    "nam-ban-hay-don-duong.html": [
-     "og",
-     "schema",
-     "twitter"
-    ],
-    "dat-nam-ban-trong-cay-gi.html": [
-     "og",
-     "schema",
-     "twitter"
-    ],
-    "rau-hoa-cay-do-la-nam-ban.html": [
-     "og",
-     "schema",
      "twitter"
     ],
     "vuon-bo-loi-bao-nhieu.html": [
@@ -1728,6 +1813,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "rau-hoa-cay-do-la-nam-ban.jpg": {
+   "kb": 192,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "rau-hoa-cay-do-la-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
@@ -1902,14 +2001,8 @@
     1600,
     750
    ],
-   "used_in": {
-    "nam-ban-va-nam-ha.html": [
-     "og",
-     "ref",
-     "schema",
-     "twitter"
-    ]
-   }
+   "used_in": {},
+   "status": "unused"
   },
   "toan-canh-nam-ban-nhin-tu-tren-cao-lam-ha-lam-dong.webp": {
    "kb": 245,
