@@ -141,7 +141,7 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
   `.jpg` cho ảnh `og:image` chia sẻ (Facebook/Zalo — 56 trang theo chuẩn này). Không nuôi
   cả 2 định dạng cùng 1 ảnh trừ khi mỗi bản đóng đúng 1 vai (vd `deo-ta-nung`: webp=hiển thị,
   jpg=OG). 2 tấm để dành có chủ đích trong kho: `gia-lam-biet-thu-o-to.webp` (biệt thự người
-  khác — lệch làn), `me-linh-vuon-doi-cao.webp` (đồi chè — sai chủ đề cà phê).
+  khác — lệch làn), `me-linh-vuon-doi-cao.webp` (đồi chè — sai chủ đề cà phê), `duong-deo-mua-suong-mo.webp` (đường đèo mưa sương mờ — Chú để dành up bài khác).
 - **CHUẨN og:image (Chú chốt 26/7/2026 — làm VẬY cho MỌI bài từ nay):** ảnh chia sẻ Zalo/FB
   = **`/images/<slug>.jpg`, cắt chuẩn 1200×630** (tỷ lệ 1.91:1) từ ảnh đẹp của bài,
   **KHÔNG ghi chữ lên hình** (thiết kế chữ-trên-ảnh không đẹp), có **mờ đen NHẸ mép dưới**

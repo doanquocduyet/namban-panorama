@@ -8,9 +8,10 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 119,
- "unused_count": 2,
+ "total_images": 124,
+ "unused_count": 3,
  "unused": [
+  "duong-deo-mua-suong-mo.webp",
   "gia-lam-biet-thu-o-to.webp",
   "me-linh-vuon-doi-cao.webp"
  ],
@@ -40,6 +41,30 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "ban-do-sai-gon-nam-ban.webp": {
+   "kb": 285,
+   "dims": [
+    1083,
+    1600
+   ],
+   "used_in": {
+    "duong-di-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
+  "ban-do-tuyen-sai-gon-da-lat.webp": {
+   "kb": 136,
+   "dims": [
+    1321,
+    834
+   ],
+   "used_in": {
+    "duong-di-nam-ban.html": [
+     "display"
     ]
    }
   },
@@ -679,6 +704,15 @@
     ]
    }
   },
+  "duong-deo-mua-suong-mo.webp": {
+   "kb": 31,
+   "dims": [
+    1600,
+    909
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
   "duong-di-nam-ban.jpg": {
    "kb": 192,
    "dims": [
@@ -735,6 +769,18 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "duong-len-nam-ban-thi-cong.webp": {
+   "kb": 103,
+   "dims": [
+    1600,
+    863
+   ],
+   "used_in": {
+    "duong-di-nam-ban.html": [
+     "display"
     ]
    }
   },
@@ -1920,6 +1966,18 @@
     "tour-ca-phe-nam-ban.html": [
      "og",
      "twitter"
+    ]
+   }
+  },
+  "tram-dung-chan-deo-dai-ninh.webp": {
+   "kb": 134,
+   "dims": [
+    1600,
+    1200
+   ],
+   "used_in": {
+    "duong-di-nam-ban.html": [
+     "display"
     ]
    }
   },
