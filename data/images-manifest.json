@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 147,
+ "total_images": 158,
  "unused_count": 3,
  "unused": [
   "duong-deo-mua-suong-mo.webp",
@@ -1667,6 +1667,19 @@
     ]
    }
   },
+  "og-brief-01.jpg": {
+   "kb": 195,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "brief-01.html": [
+     "og",
+     "twitter"
+    ]
+   }
+  },
   "og-ca-phe-nam-ban-ai.jpg": {
    "kb": 156,
    "dims": [
@@ -1723,6 +1736,45 @@
     ]
    }
   },
+  "og-dat.jpg": {
+   "kb": 136,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dat.html": [
+     "og",
+     "twitter"
+    ]
+   }
+  },
+  "og-dau-tu.jpg": {
+   "kb": 94,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dau-tu.html": [
+     "og",
+     "twitter"
+    ]
+   }
+  },
+  "og-dieu-de-lai-cho-con.jpg": {
+   "kb": 192,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dieu-de-lai-cho-con.html": [
+     "og",
+     "twitter"
+    ]
+   }
+  },
   "og-doc-lo-dat-02-view-ho.jpg": {
    "kb": 115,
    "dims": [
@@ -1737,6 +1789,19 @@
     ]
    }
   },
+  "og-doc-lo-dat.jpg": {
+   "kb": 261,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "doc-lo-dat.html": [
+     "og",
+     "twitter"
+    ]
+   }
+  },
   "og-elephant-waterfall-nam-ban.jpg": {
    "kb": 212,
    "dims": [
@@ -1746,7 +1811,34 @@
    "used_in": {
     "elephant-waterfall-nam-ban.html": [
      "og",
-     "schema"
+     "schema",
+     "twitter"
+    ]
+   }
+  },
+  "og-google-maps-khong-noi-ve-nam-ban.jpg": {
+   "kb": 187,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "google-maps-khong-noi-ve-nam-ban.html": [
+     "og",
+     "twitter"
+    ]
+   }
+  },
+  "og-hoi-nhanh.jpg": {
+   "kb": 115,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "hoi-nhanh.html": [
+     "og",
+     "twitter"
     ]
    }
   },
@@ -1757,28 +1849,14 @@
     630
    ],
    "used_in": {
-    "dau-tu.html": [
-     "og",
-     "twitter"
-    ],
-    "nam-ban.html": [
-     "og",
-     "twitter"
-    ],
     "dieu-de-lai-cho-con.html": [
-     "og",
      "schema"
     ],
     "index.html": [
      "og",
      "twitter"
     ],
-    "dat.html": [
-     "og",
-     "twitter"
-    ],
     "vuon-bo-loi-bao-nhieu.html": [
-     "og",
      "schema"
     ],
     "image-sitemap.xml": [
@@ -1823,7 +1901,8 @@
    "used_in": {
     "nam-ban-co-dang-song.html": [
      "og",
-     "schema"
+     "schema",
+     "twitter"
     ]
    }
   },
@@ -1850,7 +1929,8 @@
    "used_in": {
     "nam-ban-hay-di-linh.html": [
      "og",
-     "schema"
+     "schema",
+     "twitter"
     ]
    }
   },
@@ -1863,7 +1943,47 @@
    "used_in": {
     "nam-ban-thuoc-xa-nao.html": [
      "og",
-     "schema"
+     "schema",
+     "twitter"
+    ]
+   }
+  },
+  "og-nam-ban.jpg": {
+   "kb": 115,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "nam-ban.html": [
+     "og",
+     "twitter"
+    ]
+   }
+  },
+  "og-nguoi-nam-ban-anh-nam.jpg": {
+   "kb": 101,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "nguoi-nam-ban-anh-nam.html": [
+     "og",
+     "twitter"
+    ]
+   }
+  },
+  "og-nguoi-nam-ban-chi-trang.jpg": {
+   "kb": 153,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "nguoi-nam-ban-chi-trang.html": [
+     "og",
+     "twitter"
     ]
    }
   },
@@ -1890,7 +2010,8 @@
    "used_in": {
     "sap-nhap-nam-ban-dat.html": [
      "og",
-     "schema"
+     "schema",
+     "twitter"
     ]
    }
   },
@@ -1903,7 +2024,21 @@
    "used_in": {
     "thac-voi-nam-ban.html": [
      "og",
-     "schema"
+     "schema",
+     "twitter"
+    ]
+   }
+  },
+  "og-vuon-bo-loi-bao-nhieu.jpg": {
+   "kb": 195,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "vuon-bo-loi-bao-nhieu.html": [
+     "og",
+     "twitter"
     ]
    }
   },
