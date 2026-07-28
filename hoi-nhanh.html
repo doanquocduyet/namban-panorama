@@ -67,7 +67,7 @@ a,button{touch-action:manipulation;}
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-07-12",
+  "dateModified": "2026-07-28",
   "mainEntity": [
     {
       "@type": "Question",
@@ -322,7 +322,7 @@ a,button{touch-action:manipulation;}
       "name": "Taluy là gì?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Là phần mái dốc của đất — chỗ nền đất cao hơn hoặc thấp hơn mặt đường, tạo thành một sườn nghiêng. Taluy dương: đất cao hơn đường, phải kè để không sạt xuống. Taluy âm: đất thấp hơn đường, phải đổ nền lên. Cả hai đều tốn tiền, và tốn trước khi xây được gì. Ở vùng đồi như Nam Ban, đây là khoản người mua lần đầu hay quên tính."
+        "text": "Là phần mái dốc của đất — chỗ nền đất cao hơn hoặc thấp hơn mặt đường hay mặt bằng xây dựng, tạo thành một sườn nghiêng. Taluy dương: đất cao hơn, thường phải kè hoặc gia cố để không sạt xuống. Taluy âm: đất thấp hơn, có thể phải đắp nền hoặc gia cố nếu muốn mở rộng mặt bằng. Cả hai đều tốn tiền, và tốn trước khi xây được gì. Ở vùng đồi như Nam Ban, đây là khoản người mua lần đầu hay quên tính."
       }
     },
     {
@@ -338,7 +338,7 @@ a,button{touch-action:manipulation;}
       "name": "Đất nông nghiệp có xây nhà được không?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Không xây nhà ở kiên cố được, trừ khi đã chuyển một phần sang thổ cư. Được dựng chòi, nhà tạm, công trình phục vụ sản xuất — nhưng đó là chuyện khác với một căn nhà ở, và ranh giới giữa hai thứ do địa phương xác định. Ai định mua đất nông nghiệp để dựng một căn nhỏ nên hỏi rõ chuyện này trước, không phải sau."
+        "text": "Không xây nhà ở kiên cố được, trừ khi đã chuyển một phần sang thổ cư hoặc đủ điều kiện theo quy định. Được dựng chòi, nhà tạm, công trình phục vụ sản xuất — nhưng đó là chuyện khác với một căn nhà ở, và ranh giới giữa hai thứ do địa phương xác định. Ai định mua đất nông nghiệp để dựng một căn nhỏ nên hỏi rõ chuyện này trước, không phải sau."
       }
     },
     {
@@ -354,7 +354,23 @@ a,button{touch-action:manipulation;}
       "name": "Sang tên sổ đỏ mất bao lâu?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Tùy hồ sơ và địa phương, thường tính bằng tuần chứ không phải bằng ngày. Điều kiện: sổ hợp lệ, không tranh chấp, không vướng kê biên, đã hoàn thành nghĩa vụ thuế. Đất sổ chung mà chưa tách thì lâu hơn. Đây là việc nên hỏi rõ tiến độ ngay từ lúc đặt cọc."
+        "text": "Tùy hồ sơ và địa phương, thường từ 10–30 ngày làm việc nếu hồ sơ đầy đủ. Điều kiện: sổ hợp lệ, không tranh chấp, không vướng kê biên, đã hoàn thành nghĩa vụ thuế. Đất sổ chung mà chưa tách thì lâu hơn. Đây là việc nên hỏi rõ tiến độ ngay từ lúc đặt cọc."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Đất Nam Ban có bị ngập không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Phần lớn đất trên đồi cao ít nguy cơ ngập. Điều cần để ý là các lô ở chỗ trũng, gần suối hoặc dưới chân dốc, nơi nước mưa dễ dồn về. Muốn biết chắc, hãy xem đất vào hoặc ngay sau một trận mưa lớn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Đường vào đất có quan trọng không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quan trọng hơn nhiều người nghĩ, và thường là thứ ảnh hưởng giá và sự thoải mái nhất về sau. Một lô đẹp mà đường vào mùa mưa lầy lội, xe không lên nổi, thì vừa khó ở vừa khó bán lại. Ngược lại, đường vào rộng rãi, đổ bê tông sẵn thì lô đất nhẹ nhõm hẳn. Khi đi xem, đừng chỉ nhìn miếng đất — nhìn luôn con đường dẫn tới nó, và nhớ hỏi đường đó đi chung hay đường riêng."
       }
     }
   ]
@@ -660,6 +676,16 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
     <a class="qa-link" href="len-tho-cu-het-bao-nhieu-tien">Lên thổ cư hết bao nhiêu tiền →</a></p>
   </div>
 
+  <div class="qa-item">
+    <div class="qa-q">Đất Nam Ban có bị ngập không?</div>
+    <p class="qa-a">Phần lớn đất trên đồi cao ít nguy cơ ngập. Điều cần để ý là các lô ở chỗ trũng, gần suối hoặc dưới chân dốc, nơi nước mưa dễ dồn về. Muốn biết chắc, hãy xem đất vào hoặc ngay sau một trận mưa lớn.</p>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Đường vào đất có quan trọng không?</div>
+    <p class="qa-a">Quan trọng hơn nhiều người nghĩ, và thường là thứ ảnh hưởng giá và sự thoải mái nhất về sau. Một lô đẹp mà đường vào mùa mưa lầy lội, xe không lên nổi, thì vừa khó ở vừa khó bán lại. Ngược lại, đường vào rộng rãi, đổ bê tông sẵn thì lô đất nhẹ nhõm hẳn. Khi đi xem, đừng chỉ nhìn miếng đất — nhìn luôn con đường dẫn tới nó, và nhớ hỏi đường đó đi chung hay đường riêng.</p>
+  </div>
+
   <div class="qa-group-label">Sống ở Nam Ban</div>
 
   <div class="qa-item">
@@ -801,7 +827,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
   <div class="qa-item">
     <div class="qa-q">Taluy là gì?</div>
-    <p class="qa-a">Là phần mái dốc của đất — chỗ nền đất cao hơn hoặc thấp hơn mặt đường, tạo thành một sườn nghiêng.<br><strong>Taluy dương</strong>: đất cao hơn đường, phải kè để không sạt xuống.<br><strong>Taluy âm</strong>: đất thấp hơn đường, phải đổ nền lên.<br>Cả hai đều tốn tiền, và tốn trước khi xây được gì. Ở vùng đồi như Nam Ban, đây là khoản người mua lần đầu hay quên tính.</p>
+    <p class="qa-a">Là phần mái dốc của đất — chỗ nền đất cao hơn hoặc thấp hơn mặt đường hay mặt bằng xây dựng, tạo thành một sườn nghiêng.<br><strong>Taluy dương</strong>: đất cao hơn, thường phải kè hoặc gia cố để không sạt xuống.<br><strong>Taluy âm</strong>: đất thấp hơn, có thể phải đắp nền hoặc gia cố nếu muốn mở rộng mặt bằng.<br>Cả hai đều tốn tiền, và tốn trước khi xây được gì. Ở vùng đồi như Nam Ban, đây là khoản người mua lần đầu hay quên tính.</p>
   </div>
 
   <div class="qa-item">
@@ -811,7 +837,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
   <div class="qa-item">
     <div class="qa-q">Đất nông nghiệp có xây nhà được không?</div>
-    <p class="qa-a">Không xây nhà ở kiên cố được, trừ khi đã chuyển một phần sang thổ cư.<br><br>Được dựng chòi, nhà tạm, công trình phục vụ sản xuất — nhưng đó là chuyện khác với một căn nhà ở, và ranh giới giữa hai thứ do địa phương xác định.<br><br>Ai định mua đất nông nghiệp để dựng một căn nhỏ nên hỏi rõ chuyện này trước, không phải sau.</p>
+    <p class="qa-a">Không xây nhà ở kiên cố được, trừ khi đã chuyển một phần sang thổ cư hoặc đủ điều kiện theo quy định.<br><br>Được dựng chòi, nhà tạm, công trình phục vụ sản xuất — nhưng đó là chuyện khác với một căn nhà ở, và ranh giới giữa hai thứ do địa phương xác định.<br><br>Ai định mua đất nông nghiệp để dựng một căn nhỏ nên hỏi rõ chuyện này trước, không phải sau.</p>
   </div>
 
   <div class="qa-item">
@@ -821,7 +847,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
   <div class="qa-item">
     <div class="qa-q">Sang tên sổ đỏ mất bao lâu?</div>
-    <p class="qa-a">Tùy hồ sơ và địa phương, thường tính bằng tuần chứ không phải bằng ngày.<br><br>Điều kiện: sổ hợp lệ, không tranh chấp, không vướng kê biên, đã hoàn thành nghĩa vụ thuế. Đất sổ chung mà chưa tách thì lâu hơn.<br><br>Đây là việc nên hỏi rõ tiến độ ngay từ lúc đặt cọc.</p>
+    <p class="qa-a">Tùy hồ sơ và địa phương, thường từ 10–30 ngày làm việc nếu hồ sơ đầy đủ.<br><br>Điều kiện: sổ hợp lệ, không tranh chấp, không vướng kê biên, đã hoàn thành nghĩa vụ thuế. Đất sổ chung mà chưa tách thì lâu hơn.<br><br>Đây là việc nên hỏi rõ tiến độ ngay từ lúc đặt cọc.</p>
   </div>
 
 </div>
