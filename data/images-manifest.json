@@ -8,12 +8,13 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 158,
- "unused_count": 3,
+ "total_images": 161,
+ "unused_count": 4,
  "unused": [
   "duong-deo-mua-suong-mo.webp",
   "gia-lam-biet-thu-o-to.webp",
-  "me-linh-vuon-doi-cao.webp"
+  "me-linh-vuon-doi-cao.webp",
+  "og-ca-phe-nam-ban.jpg"
  ],
  "images": {
   "ban-dat-nam-ban.jpg": {
@@ -199,6 +200,30 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "ca-phe-phoi-gian-nam-ban.webp": {
+   "kb": 235,
+   "dims": [
+    1600,
+    1066
+   ],
+   "used_in": {
+    "ca-phe-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
+  "ca-phe-qua-chin-len-men-nam-ban.webp": {
+   "kb": 67,
+   "dims": [
+    1200,
+    1799
+   ],
+   "used_in": {
+    "ca-phe-nam-ban.html": [
+     "display"
     ]
    }
   },
@@ -1693,6 +1718,15 @@
      "twitter"
     ]
    }
+  },
+  "og-ca-phe-nam-ban.jpg": {
+   "kb": 187,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "og-cau-tong-doi-nam-ban.jpg": {
    "kb": 188,
