@@ -115,6 +115,24 @@ nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.92);-webkit-b
   .td-done{flex:1;background:var(--card);border:.5px solid var(--line);border-radius:11px;}
 }
 @media(max-width:680px){.td-main{padding-left:24px;padding-right:24px;}}
+
+/* ── Người đứng sau + Hợp tác: gọn, trầm, tích hợp trong Trao đổi ── */
+.td-person-wrap{max-width:640px;margin:6px auto 0;padding:0 40px;}
+.person-strip{display:flex;gap:22px;align-items:flex-start;padding:32px 0 28px;border-top:1px solid var(--line);}
+.person-pic{flex:0 0 84px;width:84px;height:84px;border-radius:50%;background:var(--forest);color:var(--paper);font-family:'Fraunces',serif;font-weight:400;font-size:34px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.person-pic img{width:100%;height:100%;object-fit:cover;display:block;}
+.person-tx{flex:1;min-width:0;}
+.person-name{font-family:'Fraunces',serif;font-size:17px;color:var(--ink);margin-bottom:9px;}
+.person-name span{color:var(--muted);font-size:14px;}
+.person-line{font-size:14.5px;color:var(--muted);line-height:1.65;margin-bottom:13px;font-weight:300;}
+.person-sign{font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--forest);line-height:1.5;}
+.collab-strip{padding:28px 0 6px;border-top:1px solid var(--line);}
+.collab-eyebrow{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--clay);margin-bottom:13px;}
+.collab-line{font-size:14.5px;color:var(--muted);line-height:1.65;margin-bottom:13px;font-weight:300;}
+.collab-contact{font-family:'Fraunces',serif;font-size:15px;color:var(--forest);}
+.collab-contact a{color:var(--forest);text-decoration:none;border-bottom:1px solid var(--clay-soft);}
+@media(min-width:768px){.td-person-wrap{max-width:920px;}}
+@media(max-width:600px){.person-strip{gap:16px;}.person-pic{flex:0 0 64px;width:64px;height:64px;font-size:26px;}}
 </style>
 <style>
 .wrap{max-width:1080px;margin:0 auto;padding:0 40px;}
@@ -341,6 +359,26 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
     </div>
 
   </div>
+</div>
+
+<!-- Người đứng sau + Hợp tác — gọn, ngay dưới form -->
+<div class="td-person-wrap">
+
+  <div class="person-strip">
+    <div class="person-pic"><!-- thay bằng <img src="/images/founder.jpg" alt="Đoàn Quốc Duyệt"> khi có ảnh -->Đ</div>
+    <div class="person-tx">
+      <div class="person-name">Đoàn Quốc Duyệt <span>· người viết Panorama</span></div>
+      <p class="person-line">Tôi ở vùng này, đi xem đất Nam Ban gần như mỗi tuần. Ai hỏi về một khu, một lô — tôi nói thật, kể cả khi câu trả lời là “đừng mua”.</p>
+      <p class="person-sign">Panorama không có huy chương — chỉ có dấu chân trên từng lô đất.</p>
+    </div>
+  </div>
+
+  <div class="collab-strip">
+    <div class="collab-eyebrow">Hợp tác</div>
+    <p class="collab-line">Là chủ đất muốn lô của mình được đọc kỹ, khách quan trước khi rao — hoặc muốn một lượt khảo sát độc lập? Nhắn thẳng cho tôi.</p>
+    <p class="collab-contact"><a href="tel:0978758788">0978 758 788</a> · <a href="https://zalo.me/0978758788" target="_blank" rel="noopener">Zalo</a></p>
+  </div>
+
 </div>
 
 <div class="td-foot">
