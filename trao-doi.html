@@ -122,21 +122,24 @@ nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.92);-webkit-b
 .person-signoff::before,.person-signoff::after{content:"";display:block;width:42%;max-width:210px;height:1px;background:var(--line);margin:0 auto;}
 .person-signoff::before{margin-bottom:56px;}
 .person-signoff::after{margin-top:0;}
-.person-pic{width:160px;height:160px;border-radius:50%;overflow:hidden;margin:0 auto 26px;background:var(--card);}
+.person-pic{width:160px;height:160px;border-radius:50%;overflow:hidden;margin:0 auto 24px;background:var(--card);}
 .person-pic img{width:100%;height:100%;object-fit:cover;display:block;}
-.person-name{font-family:'Fraunces',serif;font-weight:400;font-size:33px;color:var(--ink);letter-spacing:.2px;line-height:1.15;}
-.person-role{font-size:13px;letter-spacing:2px;color:var(--muted);margin:10px 0 26px;}
-.person-line{font-size:15px;color:var(--muted);line-height:1.8;font-weight:300;max-width:462px;margin:0 auto 28px;text-wrap:pretty;}
-.person-sign{font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--forest-deep);line-height:1.72;max-width:430px;margin:0 auto 22px;text-wrap:balance;}
-.collab-signoff{padding:22px 0 8px;}
-.collab-lead{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--muted);margin-bottom:16px;text-wrap:balance;}
-.collab-line{font-size:15px;color:var(--muted);line-height:1.8;font-weight:300;max-width:470px;margin:0 auto;text-wrap:pretty;}
-.collab-close{font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--muted);margin:14px auto 0;text-wrap:balance;}
+/* Tầng 1 — xác nhận có người thật (tên là mỏ neo cỡ chữ) */
+.person-name{font-family:'Fraunces',serif;font-weight:400;font-size:38px;color:var(--ink);letter-spacing:.2px;line-height:1.12;}
+.person-role{font-size:13px;letter-spacing:2px;color:var(--muted);margin:12px 0 26px;}
+/* Tầng 2 — xây trust (câu ký giảm 10%, nhường spotlight cho lời mời) */
+.person-line{font-size:15px;color:var(--muted);line-height:1.8;font-weight:300;max-width:462px;margin:0 auto 26px;text-wrap:pretty;}
+.person-sign{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--forest-deep);line-height:1.7;max-width:420px;margin:0 auto 20px;text-wrap:balance;}
+/* Tầng 3 — ĐIỂM RƠI: lời mời, nổi bằng khoảng trắng + cỡ chữ (không nút/không màu nóng) */
+.collab-signoff{padding:46px 0 8px;}
+.collab-lead{font-family:'Fraunces',serif;font-weight:400;font-size:30px;color:var(--forest);line-height:1.24;letter-spacing:.2px;max-width:480px;margin:0 auto 20px;text-wrap:balance;}
+.collab-line{font-size:15px;color:var(--muted);line-height:1.85;font-weight:300;max-width:460px;margin:0 auto;text-wrap:pretty;}
 @media(max-width:600px){
   .person-signoff{padding-top:46px;}
   .person-signoff::before{margin-bottom:44px;}
-  .person-pic{width:96px;height:96px;margin-bottom:22px;}
-  .person-name{font-size:27px;}
+  .person-pic{width:96px;height:96px;margin-bottom:20px;}
+  .person-name{font-size:29px;}
+  .collab-lead{font-size:24px;}
   .person-line,.collab-line{font-size:14.5px;}
 }
 </style>
@@ -380,9 +383,8 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   </div>
 
   <div class="collab-signoff">
-    <p class="collab-lead">Nếu có điều gì đáng cùng làm</p>
-    <p class="collab-line">Nếu bạn có một khu đất cần đọc kỹ, một góc nhìn cần kiểm chứng, hoặc chỉ muốn trao đổi về Nam Ban, cứ nhắn.</p>
-    <p class="collab-close">Nếu giúp được, tôi sẽ trả lời.</p>
+    <p class="collab-lead">Nếu có điều gì đáng cùng làm.<br>Cứ nhắn.</p>
+    <p class="collab-line">Một khu đất cần đọc kỹ. Một góc nhìn cần kiểm chứng. Hay chỉ đơn giản là muốn trao đổi về Nam Ban.</p>
   </div>
 
 </div>
