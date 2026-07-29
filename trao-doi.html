@@ -116,19 +116,24 @@ nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.92);-webkit-b
 }
 @media(max-width:680px){.td-main{padding-left:24px;padding-right:24px;}}
 
-/* ── Người đứng sau + Hợp tác: chữ ký cuối trang, căn TRÁI kiểu lá thư ── */
-.td-person-wrap{max-width:640px;margin:0 auto;padding:0 40px;text-align:left;}
-.person-signoff{padding:64px 0 28px;border-top:1px solid var(--line);}
-.person-pic{width:88px;height:88px;border-radius:50%;background:var(--card);border:1px solid rgba(0,0,0,.06);display:flex;align-items:center;justify-content:center;margin:0 0 16px;overflow:hidden;}
+/* ── Người đứng sau + Hợp tác: colophon tạp chí, căn giữa, nhiều khoảng trắng ── */
+.td-person-wrap{max-width:600px;margin:0 auto;padding:0 40px;text-align:center;}
+.person-signoff{padding:60px 0 54px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.person-pic{width:160px;height:160px;border-radius:50%;overflow:hidden;margin:0 auto 26px;background:var(--card);}
 .person-pic img{width:100%;height:100%;object-fit:cover;display:block;}
-.person-name{font-family:'Fraunces',serif;font-size:23px;color:var(--ink);letter-spacing:.2px;line-height:1.2;}
-.person-role{font-size:14px;color:var(--muted);margin:8px 0 20px;}
-.person-line{font-size:14.5px;color:var(--muted);line-height:1.7;font-weight:300;max-width:468px;margin:0 0 20px;}
-.person-sign{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--forest);line-height:1.55;max-width:440px;margin:0;}
-.collab-signoff{padding:28px 0 6px;border-top:1px solid var(--line);}
-.collab-lead{font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--muted);margin-bottom:14px;}
-.collab-line{font-size:14.5px;color:var(--muted);line-height:1.7;font-weight:300;max-width:468px;margin:0;}
-@media(max-width:600px){.person-pic{width:72px;height:72px;}.person-name{font-size:21px;}}
+.person-name{font-family:'Fraunces',serif;font-weight:400;font-size:33px;color:var(--ink);letter-spacing:.2px;line-height:1.15;}
+.person-role{font-size:13px;letter-spacing:2px;color:var(--muted);margin:10px 0 26px;}
+.person-line{font-size:15px;color:var(--muted);line-height:1.8;font-weight:300;max-width:462px;margin:0 auto 20px;}
+.person-sign{font-family:'Fraunces',serif;font-style:italic;font-size:17px;color:var(--forest);line-height:1.6;max-width:420px;margin:0 auto;}
+.collab-signoff{padding:52px 0 8px;}
+.collab-lead{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--muted);margin-bottom:16px;}
+.collab-line{font-size:15px;color:var(--muted);line-height:1.8;font-weight:300;max-width:470px;margin:0 auto;}
+@media(max-width:600px){
+  .person-signoff{padding:48px 0 44px;}
+  .person-pic{width:96px;height:96px;margin-bottom:22px;}
+  .person-name{font-size:27px;}
+  .person-line,.collab-line{font-size:14.5px;}
+}
 </style>
 <style>
 .wrap{max-width:1080px;margin:0 auto;padding:0 40px;}
@@ -362,7 +367,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <div class="td-person-wrap">
 
   <div class="person-signoff">
-    <div class="person-pic"><img src="/images/founder.webp" width="88" height="88" loading="lazy" decoding="async" alt="Đoàn Quốc Duyệt đứng ngoài thực địa ở Nam Ban, nền thung lũng phía sau"></div>
+    <div class="person-pic"><img src="/images/founder.webp" width="160" height="160" loading="lazy" decoding="async" alt="Đoàn Quốc Duyệt đứng ngoài thực địa ở Nam Ban, nền thung lũng phía sau"></div>
     <div class="person-name">Đoàn Quốc Duyệt</div>
     <div class="person-role">ghi chép tại Nam Ban</div>
     <p class="person-line">Phần lớn thời gian tôi ở ngoài thực địa hoặc đọc hồ sơ. Những gì chưa tự xem hoặc chưa kiểm chứng, tôi sẽ ghi rõ.</p>
