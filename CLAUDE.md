@@ -163,7 +163,9 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
 **0. CÂU CHỦ LỰC (chữ ký) = "Hiểu vùng đất trước khi hiểu giá đất"** (Chú chốt 28/7).
 Dùng nhất quán làm tagline định vị (đã sẵn ở slogan trang chủ). Câu phụ *"Panorama không
 có huy chương — chỉ có dấu chân trên từng lô đất"* Chú rất thích nhưng **chỉ đặt trong ô
-giới thiệu/contact (vd trang Founder), KHÔNG dùng làm slogan.**
+giới thiệu/contact (vd trang Founder), KHÔNG dùng làm slogan.** **Hai biến thể câu ký đều
+được — dùng linh hoạt (Chú chốt 29/7):** *"…trên từng lô đất"* (bám business đất) và *"…trên
+từng nơi đã đi"* (trầm, rộng hơn — đang dùng ở khối founder trang Trao đổi). Chọn theo ngữ cảnh.
 
 **1. CSS trùng lặp giữa 63 trang → ĐỂ YÊN, KHÔNG GOM.**
 Mỗi trang tự chứa ~6,4KB CSS trong `<style>`, trong đó ~5,1KB trùng với trang khác.
