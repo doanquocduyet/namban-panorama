@@ -118,18 +118,23 @@ nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.92);-webkit-b
 
 /* ── Người đứng sau + Hợp tác: colophon tạp chí, căn giữa, nhiều khoảng trắng ── */
 .td-person-wrap{max-width:600px;margin:0 auto;padding:0 40px;text-align:center;}
-.person-signoff{padding:60px 0 54px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.person-signoff{padding:56px 0 0;}
+.person-signoff::before,.person-signoff::after{content:"";display:block;width:42%;max-width:210px;height:1px;background:var(--line);margin:0 auto;}
+.person-signoff::before{margin-bottom:56px;}
+.person-signoff::after{margin-top:0;}
 .person-pic{width:160px;height:160px;border-radius:50%;overflow:hidden;margin:0 auto 26px;background:var(--card);}
 .person-pic img{width:100%;height:100%;object-fit:cover;display:block;}
 .person-name{font-family:'Fraunces',serif;font-weight:400;font-size:33px;color:var(--ink);letter-spacing:.2px;line-height:1.15;}
 .person-role{font-size:13px;letter-spacing:2px;color:var(--muted);margin:10px 0 26px;}
-.person-line{font-size:15px;color:var(--muted);line-height:1.8;font-weight:300;max-width:462px;margin:0 auto 20px;}
-.person-sign{font-family:'Fraunces',serif;font-style:italic;font-size:17px;color:var(--forest);line-height:1.6;max-width:420px;margin:0 auto;}
-.collab-signoff{padding:52px 0 8px;}
-.collab-lead{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--muted);margin-bottom:16px;}
-.collab-line{font-size:15px;color:var(--muted);line-height:1.8;font-weight:300;max-width:470px;margin:0 auto;}
+.person-line{font-size:15px;color:var(--muted);line-height:1.8;font-weight:300;max-width:462px;margin:0 auto 28px;text-wrap:pretty;}
+.person-sign{font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--forest-deep);line-height:1.72;max-width:430px;margin:0 auto 22px;text-wrap:balance;}
+.collab-signoff{padding:22px 0 8px;}
+.collab-lead{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--muted);margin-bottom:16px;text-wrap:balance;}
+.collab-line{font-size:15px;color:var(--muted);line-height:1.8;font-weight:300;max-width:470px;margin:0 auto;text-wrap:pretty;}
+.collab-close{font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--muted);margin:14px auto 0;text-wrap:balance;}
 @media(max-width:600px){
-  .person-signoff{padding:48px 0 44px;}
+  .person-signoff{padding-top:46px;}
+  .person-signoff::before{margin-bottom:44px;}
   .person-pic{width:96px;height:96px;margin-bottom:22px;}
   .person-name{font-size:27px;}
   .person-line,.collab-line{font-size:14.5px;}
@@ -371,12 +376,13 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
     <div class="person-name">Đoàn Quốc Duyệt</div>
     <div class="person-role">ghi chép tại Nam Ban</div>
     <p class="person-line">Phần lớn thời gian tôi ở ngoài thực địa hoặc đọc hồ sơ. Những gì chưa tự xem hoặc chưa kiểm chứng, tôi sẽ ghi rõ.</p>
-    <p class="person-sign">Panorama không có huy chương. Chỉ có dấu chân trên từng nơi đã đi.</p>
+    <p class="person-sign">Panorama không có huy chương.<br>Chỉ có dấu chân trên từng nơi đã đi.</p>
   </div>
 
   <div class="collab-signoff">
     <p class="collab-lead">Nếu có điều gì đáng cùng làm</p>
-    <p class="collab-line">Nếu bạn có một khu đất cần đọc kỹ, một góc nhìn cần kiểm chứng, hoặc chỉ muốn trao đổi về Nam Ban, cứ nhắn. Nếu tôi giúp được, tôi sẽ trả lời.</p>
+    <p class="collab-line">Nếu bạn có một khu đất cần đọc kỹ, một góc nhìn cần kiểm chứng, hoặc chỉ muốn trao đổi về Nam Ban, cứ nhắn.</p>
+    <p class="collab-close">Nếu giúp được, tôi sẽ trả lời.</p>
   </div>
 
 </div>

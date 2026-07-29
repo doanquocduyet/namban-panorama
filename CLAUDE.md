@@ -136,6 +136,15 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
   mở bằng `toggleMenu()`.
 - **WCAG ≥ 4.5.** Số/giá KHÔNG để màu clay/gold trên nền trắng (fail contrast). Chữ trắng
   trên ảnh phải có overlay đủ tối.
+- **VỠ DÒNG CHỮ PHẢI ĐẸP — KHÔNG "RỚT CHỮ" (Chú nhắc SUỐT — bổ sung 29/7, phần UX/UI hay bị bỏ sót).**
+  Mọi câu — nhất là **câu dẫn (standfirst), câu ký/khẩu hiệu, tiêu đề, caption, tên/dòng mô tả** —
+  phải ngắt dòng ĐẸP: **không để 1–2 chữ rơi lẻ xuống dòng cuối** (widow/orphan), **không cắt giữa
+  cụm từ** (vd "Những gì" treo cuối dòng). 3 tầng xử lý: (1) câu ký/khẩu hiệu **2 vế → chủ động
+  `<br>` đúng chỗ ngắt ý** (vd `Panorama không có huy chương.<br>Chỉ có dấu chân trên từng nơi đã đi.`);
+  (2) thêm **`text-wrap:balance`** cho tiêu đề/câu ngắn, **`text-wrap:pretty`** cho thân bài; (3)
+  **`&nbsp;`** giữa 2 chữ cuối để chữ chót không rớt lẻ. **BẮT BUỘC ngó lại chữ đã wrap trên CẢ
+  1440 lẫn 390 (Playwright screenshot) trước khi đăng** — chữ vỡ dòng đẹp là một phần của "im lặng
+  mà sang", đừng để câu hay bị hình thức làm hỏng.
 - **Animation phải có fallback**: khối `.reveal` ẩn tự hiện sau 2.5s nếu observer lỗi; hiện
   luôn nếu không JS (chỉ ẩn khi `<html class="js">`). Không để nội dung biến mất.
 - **Ảnh chỉ dùng file trong `/images/`.** KHÔNG URL ảnh ngoài. Ảnh mới optimize <300KB
