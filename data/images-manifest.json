@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 161,
+ "total_images": 163,
  "unused_count": 4,
  "unused": [
   "duong-deo-mua-suong-mo.webp",
@@ -96,6 +96,18 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "ca-phe-chin-vang-tren-cay-nam-ban.webp": {
+   "kb": 255,
+   "dims": [
+    669,
+    1190
+   ],
+   "used_in": {
+    "ca-phe-nam-ban.html": [
+     "display"
     ]
    }
   },
@@ -211,6 +223,21 @@
    ],
    "used_in": {
     "ca-phe-nam-ban.html": [
+     "display"
+    ],
+    "dat-nam-ban-trong-cay-gi.html": [
+     "display"
+    ]
+   }
+  },
+  "ca-phe-phoi-nhieu-lo-nam-ban.webp": {
+   "kb": 305,
+   "dims": [
+    1200,
+    717
+   ],
+   "used_in": {
+    "tiem-nang-dau-tu.html": [
      "display"
     ]
    }
