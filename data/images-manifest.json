@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 163,
+ "total_images": 164,
  "unused_count": 4,
  "unused": [
   "duong-deo-mua-suong-mo.webp",
@@ -906,6 +906,19 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "founder.webp": {
+   "kb": 15,
+   "dims": [
+    264,
+    264
+   ],
+   "used_in": {
+    "trao-doi.html": [
+     "display",
+     "schema"
     ]
    }
   },
