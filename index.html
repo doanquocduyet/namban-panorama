@@ -64,7 +64,7 @@
   @keyframes fu{to{opacity:1;transform:none;}}
 
   /* NAV */
-  nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.93);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+  nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,1);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
   .navin{display:flex;align-items:center;justify-content:space-between;height:72px;}
   .logo{font-family:'Fraunces',serif;font-weight:500;font-size:20px;letter-spacing:1.8px;}
   .logo i{font-style:normal;color:var(--clay);}
@@ -279,7 +279,7 @@
   @media(max-width:780px){
     .wrap{padding:0 24px;}
     /* mobile: nền nav hé nhẹ 0.95 + mờ kính cho art, vẫn đủ đục để lướt không xuyên */
-    nav{background:rgba(241,236,226,.95);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}
+    nav{background:rgba(241,236,226,1);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}
     .navlinks{display:none;}
     .hamburger{display:flex;}
     .grid2{grid-template-columns:1fr;}
@@ -383,7 +383,7 @@ a,button{touch-action:manipulation;}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}html{scroll-behavior:auto!important;}}
 
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
-  nav,.nav{background:rgba(241,236,226,.985)!important;}
+  nav,.nav{background:rgba(241,236,226,1)!important;}
 }
 </style>
 

@@ -114,7 +114,7 @@
   if(!document.querySelector('.art-body'))return;
 
   /* 1. READING PROGRESS BAR */
-  var bar=document.getElementById('reading-progress');
+  var bar=document.getElementById('reading-progress')||document.querySelector('.read-progress');
   if(!bar){bar=document.createElement('div');bar.id='reading-progress';document.body.prepend(bar);}
   function updateBar(){
     var st=window.scrollY||document.documentElement.scrollTop;

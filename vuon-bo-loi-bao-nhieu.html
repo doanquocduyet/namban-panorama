@@ -105,7 +105,7 @@ html{scroll-behavior:smooth;overflow-x:clip;}
 body{font-family:'Be Vietnam Pro',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased;}
 .serif{font-family:'Fraunces',serif;}
 .wrap{max-width:720px;margin:0 auto;padding:0 40px;}
-.nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,.93);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+.nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,1);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
 .nav-inner{max-width:1080px;margin:0 auto;padding:22px 40px;display:flex;justify-content:space-between;align-items:center;}
 .brand{font-family:'Fraunces',serif;font-size:19px;font-weight:500;letter-spacing:.5px;color:var(--ink);text-decoration:none;}
 .brand span{color:var(--clay);}
@@ -179,7 +179,7 @@ footer .wrap{max-width:1080px;display:flex;justify-content:space-between;align-i
 @media(prefers-reduced-motion:reduce){.fu{animation:none;opacity:1;transform:none;}}
 @media(max-width:720px){
   .wrap,.contact,.next{padding-left:24px;padding-right:24px;}
-  .nav-inner{padding:18px 24px;}.nav{background:rgba(241,236,226,.95);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}.nav-links{display:none;}.hamburger{display:flex;}
+  .nav-inner{padding:18px 24px;}.nav{background:rgba(241,236,226,1);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}.nav-links{display:none;}.hamburger{display:flex;}
   .hero{padding:52px 0 32px;}.answer{padding:24px 22px;}p.body{font-size:16px;}
   .pull{font-size:20px;padding-left:20px;}.note{padding:22px 22px;}.facts{grid-template-columns:1fr;}
   .said{margin-left:16px;}.contact-inner{padding-top:32px;}
@@ -198,7 +198,7 @@ a,button{touch-action:manipulation;}
 .brand span{color:var(--ink);}
 
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
-  nav,.nav{background:rgba(241,236,226,.985)!important;}
+  nav,.nav{background:rgba(241,236,226,1)!important;}
 }
 </style>
 <script type="application/ld+json">
