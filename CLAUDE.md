@@ -149,6 +149,12 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
   luôn nếu không JS (chỉ ẩn khi `<html class="js">`). Không để nội dung biến mất.
 - **Ảnh chỉ dùng file trong `/images/`.** KHÔNG URL ảnh ngoài. Ảnh mới optimize <300KB
   (~quality 85), đặt vào `/images/`. File nặng/rác/0-tham-chiếu → xóa.
+- **CHỌN LỌC ẢNH — KHÔNG NHỒI (Chú chốt 30/7, "ko phải web tạp nham").** Chú đưa cả kho ảnh
+  là để **CHỌN**, không phải nhét hết. Kho hình là **dữ liệu dùng dần cho nhiều bài sau** — cứ để dành.
+  Mỗi bài chỉ gắn **1–2 ảnh thật sự TÔN bài** (đúng nội dung đoạn đó), đặt cách nhau bằng chữ; **cấm
+  2 ảnh cùng loại dính sát nhau** (vd 2 quán café kề nhau → nát bài). Ảnh Chú up **không xóa tấm nào**
+  (mỗi tấm có ý — kể cả đồ ăn/đồ uống = sinh hoạt thường nhật, để dành bài đời sống), chỉ **nén lại**
+  cho web. Thà ít mà tinh (quiet luxury) còn hơn nhiều mà rối. Không chắc ảnh có tôn bài không → để dành.
 - **BẢN ĐỒ ẢNH — đọc trước, đừng rà tay (tiết kiệm token/time).** Ảnh nào dùng ở đâu, đóng
   vai gì (`display`/`og`/`twitter`/`schema`), tấm nào chưa dùng → xem `data/images-manifest.json`.
   Sinh bằng `python3 tools/gen-image-manifest.py`. **Sau mỗi lần thêm/xóa/đổi tên ảnh → chạy
