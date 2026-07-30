@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 164,
+ "total_images": 167,
  "unused_count": 4,
  "unused": [
   "duong-deo-mua-suong-mo.webp",
@@ -96,6 +96,18 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "bo-nam-ban-vao-vu.webp": {
+   "kb": 263,
+   "dims": [
+    1200,
+    862
+   ],
+   "used_in": {
+    "mua-dat-co-vuon-bo.html": [
+     "display"
     ]
    }
   },
@@ -910,10 +922,10 @@
    }
   },
   "founder.webp": {
-   "kb": 15,
+   "kb": 39,
    "dims": [
-    264,
-    264
+    440,
+    440
    ],
    "used_in": {
     "trao-doi.html": [
@@ -1226,6 +1238,18 @@
     ]
    }
   },
+  "khung-cua-nhin-ra-doi-nam-ban.webp": {
+   "kb": 222,
+   "dims": [
+    1400,
+    1050
+   ],
+   "used_in": {
+    "cau-chuyen-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
   "len-tho-cu-het-bao-nhieu-tien.jpg": {
    "kb": 261,
    "dims": [
@@ -1320,6 +1344,18 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "lo-dat-nam-ban-coc-ranh.webp": {
+   "kb": 176,
+   "dims": [
+    1280,
+    720
+   ],
+   "used_in": {
+    "doc-lo-dat.html": [
+     "display"
     ]
    }
   },
