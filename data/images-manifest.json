@@ -1669,6 +1669,10 @@
     450
    ],
    "used_in": {
+    "mua-dat-da-lat-chon-nam-ban.html": [
+     "og",
+     "twitter"
+    ],
     "image-sitemap.xml": [
      "ref"
     ]
