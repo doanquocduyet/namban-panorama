@@ -209,6 +209,12 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 .pick-grid a:hover{background:#fff;border-color:var(--clay);transform:translateY(-2px);}
 .pick-grid .pk-t{font-family:'Fraunces',serif;font-size:20px;line-height:1.24;color:var(--ink);display:block;margin-bottom:8px;}
 .pick-grid .pk-s{font-size:13px;color:var(--muted);line-height:1.5;}
+.hub-track{display:flex;align-items:center;justify-content:space-between;gap:22px;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--clay);border-radius:3px;padding:22px 26px;margin:6px 0 12px;transition:border-color .4s cubic-bezier(.22,1,.36,1),background .3s,transform .4s cubic-bezier(.22,1,.36,1);}
+.hub-track:hover{background:#fff;border-color:var(--clay);border-left-color:var(--clay);transform:translateY(-2px);}
+.hub-track .ht-eye{display:block;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--clay);font-weight:600;margin-bottom:7px;}
+.hub-track .ht-t{display:block;font-family:'Fraunces',serif;font-size:20px;line-height:1.24;color:var(--ink);margin-bottom:6px;}
+.hub-track .ht-s{display:block;font-size:13px;color:var(--muted);line-height:1.5;max-width:640px;}
+.hub-track .ht-n{font-family:'Fraunces',serif;font-style:italic;color:var(--stone);font-size:19px;flex-shrink:0;}
 /* — NHỊP THỞ · câu trích / nguyên tắc — */
 .breath{text-align:center;margin:46px 0;padding:0 10px;}
 .breath .bq{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(21px,2.6vw,26px);line-height:1.42;color:var(--forest);max-width:760px;margin:0 auto;}
@@ -307,13 +313,11 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
     </section>
 
     <section class="pick-sec">
-      <div class="heye">Đọc chọn lọc</div>
+      <div class="heye">Quy hoạch &amp; pháp lý <span class="gnum">3 bài</span></div>
       <div class="pick-grid">
         <a href="/quy-hoach-2050" class="lead"><span class="pk-k">Hồ sơ chính</span><span class="pk-t">Quy hoạch 2050 có làm giá đất tăng không</span><span class="pk-s">Quy hoạch không tự làm giá tăng — đường mở mới làm. Đọc thẳng từ văn bản đã ký: mốc nào đã có ngày khởi công, mốc nào còn nằm trên giấy, và khoảng cách giữa hai thứ đó thường là bao nhiêu năm.</span></a>
         <a href="/ban-do-quy-hoach-nam-ban"><span class="pk-t">Bản đồ quy hoạch 2050 — 4 phân khu</span><span class="pk-s">Vùng nào nên / không nên mua.</span></a>
         <a href="/brief-01"><span class="pk-t">Nam Ban sau sáp nhập — điều nhà đầu tư cần biết</span><span class="pk-s">Bản đồ hành chính vừa vẽ lại. Cái gì đổi, cái gì bị thổi phồng.</span></a>
-        <a href="/homestay-nam-ban-co-lai-khong"><span class="pk-t">Homestay Nam Ban có lãi không</span><span class="pk-s">Nói thẳng về dòng tiền — và cái bẫy chọn sai vị trí.</span></a>
-        <a href="/mua-vuon-ca-phe-nam-ban"><span class="pk-t">Mua vườn cà phê có dòng tiền không</span><span class="pk-s">Dòng tiền thật nhưng nhỏ — giá trị chính nằm ở đất.</span></a>
       </div>
     </section>
 
@@ -323,20 +327,21 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
       <div class="bsrc">Từ bài · Có nên mua đất Nam Ban 2026</div>
     </div>
 
-    <figure class="hub-band"><img src="/images/nam-ban-toan-canh.webp" width="800" height="450" loading="lazy" decoding="async" alt="Toàn cảnh Nam Ban nhìn từ trên cao — vùng đồi cà phê xen nhà cửa ở Lâm Hà, Lâm Đồng"><figcaption>Toàn cảnh Nam Ban — vùng đất mà mọi con số hạ tầng bên dưới đang nói về.</figcaption></figure>
+    <section class="pick-sec">
+      <div class="heye">Dòng tiền thực <span class="gnum">3 bài</span></div>
+      <div class="pick-grid">
+        <a href="/homestay-nam-ban-co-lai-khong" class="lead"><span class="pk-k">Dòng tiền</span><span class="pk-t">Homestay Nam Ban có lãi không</span><span class="pk-s">Nói thẳng về dòng tiền — công suất thật, chi phí vận hành, và cái bẫy chọn sai vị trí khiến phòng để trống nửa năm.</span></a>
+        <a href="/mua-vuon-ca-phe-nam-ban"><span class="pk-t">Mua vườn cà phê có dòng tiền không</span><span class="pk-s">Dòng tiền thật nhưng nhỏ — giá trị chính nằm ở đất.</span></a>
+        <a href="/vuon-bo-loi-bao-nhieu"><span class="pk-t">Một sào bơ cho bao nhiêu tiền</span><span class="pk-s">Bóc phép tính dòng tiền thật của một vườn bơ Nam Ban.</span></a>
+      </div>
+    </section>
 
-    <section class="hgroup">
-      <div class="heye">Quy hoạch &amp; hạ tầng</div>
-      <div class="kb">
-      <a href="/nam-ban-co-gi-moi"><span><span class="kb-t">Nam Ban có gì mới — dòng hạ tầng</span><br><span class="kb-s">Sân bay Liên Khương, cầu Tổng Đội, cây xăng trục 725, đường Hà Bắc — mọi diễn biến hạ tầng đang đỡ giá đất, cập nhật theo mốc.</span></span><span class="kb-n">→</span></a>
-      </div>
-    </section>
-    <section class="hgroup">
-      <div class="heye">Dòng tiền thực</div>
-      <div class="kb">
-      <a href="/vuon-bo-loi-bao-nhieu"><span><span class="kb-t">Một sào bơ cho bao nhiêu tiền</span><br><span class="kb-s">Bóc phép tính dòng tiền thật.</span></span><span class="kb-n">→</span></a>
-      </div>
-    </section>
+    <figure class="hub-band"><img src="/images/nam-ban-toan-canh.webp" width="800" height="450" loading="lazy" decoding="async" alt="Toàn cảnh Nam Ban nhìn từ trên cao — vùng đồi cà phê xen nhà cửa ở Lâm Hà, Lâm Đồng"><figcaption>Toàn cảnh Nam Ban — vùng đất mà mọi con số hạ tầng đang nói về.</figcaption></figure>
+
+    <a class="hub-track" href="/nam-ban-co-gi-moi">
+      <span><span class="ht-eye">Theo dõi hạ tầng</span><span class="ht-t">Nam Ban có gì mới — dòng hạ tầng</span><span class="ht-s">Sân bay Liên Khương, cầu Tổng Đội, cây xăng trục 725, đường Hà Bắc — mọi diễn biến hạ tầng đang đỡ giá đất, cập nhật theo mốc.</span></span>
+      <span class="ht-n">→</span>
+    </a>
 
   </div>
 </main>
