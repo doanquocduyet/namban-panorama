@@ -1,6 +1,6 @@
 # Danh sách bài trên nambanpanorama.com
 
-Tự sinh bằng `tools/gen-slug-list.py`. Tổng: **70** trang. Cột hub = hub thật liệt kê bài (sau dedup mỗi bài về đúng 1 hub). Chạy lại sau mỗi lần thêm/xóa/đổi hub bài.
+Tự sinh bằng `tools/gen-slug-list.py`. Tổng: **71** trang. Cột hub = hub thật liệt kê bài (sau dedup mỗi bài về đúng 1 hub). Chạy lại sau mỗi lần thêm/xóa/đổi hub bài.
 
 | slug | tiêu đề | hub |
 |---|---|---|
@@ -43,6 +43,7 @@ Tự sinh bằng `tools/gen-slug-list.py`. Tổng: **70** trang. Cột hub = hub
 | `/mua-dat-co-vuon-ca-phe` | Mua đất có sẵn vườn cà phê ở Nam Ban: cây tính thế nào? | Về Đất |
 | `/mua-dat-da-lat-chon-nam-ban` | Nhiều người tính mua đất Đà Lạt, cuối cùng lại dừng ở Nam Ban | Về Đất |
 | `/mua-dat-duong-gia-nam-ban` | Mua đất dưỡng già ở Nam Ban: nhà vườn cho vợ chồng về hưu | Về Nam Ban |
+| `/mua-dat-nam-ban-500-trieu-1-ty` | Mua đất Nam Ban: 500 triệu đến 1 tỷ mua được gì? | Đầu tư |
 | `/mua-dat-nam-ban` | Mua đất Nam Ban: hỏi & đáp giá, loại đất, view, pháp lý | Về Đất |
 | `/mua-vuon-ca-phe-nam-ban` | Mua vườn cà phê có dòng tiền thật không? | Đầu tư |
 | `/nam-ban-co-dang-song` | Sống ở Nam Ban thực sự như thế nào? | Về Nam Ban |
