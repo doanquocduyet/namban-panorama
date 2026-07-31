@@ -1,6 +1,6 @@
 # Danh sách bài trên nambanpanorama.com
 
-Tự sinh bằng `tools/gen-slug-list.py`. Tổng: **67** trang. Cột hub = hub thật liệt kê bài (sau dedup mỗi bài về đúng 1 hub). Chạy lại sau mỗi lần thêm/xóa/đổi hub bài.
+Tự sinh bằng `tools/gen-slug-list.py`. Tổng: **68** trang. Cột hub = hub thật liệt kê bài (sau dedup mỗi bài về đúng 1 hub). Chạy lại sau mỗi lần thêm/xóa/đổi hub bài.
 
 | slug | tiêu đề | hub |
 |---|---|---|
@@ -33,6 +33,7 @@ Tự sinh bằng `tools/gen-slug-list.py`. Tổng: **67** trang. Cột hub = hub
 | `/homestay-nam-ban-co-lai-khong` | Kinh doanh homestay ở Nam Ban có lãi không? Nói thẳng về dòng tiền | Đầu tư |
 | `/index` | Namban Panorama | — |
 | `/khu-nao-o-nam-ban` | Khu nào ở Nam Ban? Đọc từng khu trước khi đi xem đất | Về Đất |
+| `/kinh-nghiem-mua-dat-nam-ban` | Kinh nghiệm mua đất Nam Ban: đừng hỏi lô nào đẹp, hãy hỏi lô nào phù hợp | Đầu tư |
 | `/len-tho-cu-het-bao-nhieu-tien` | Lên thổ cư ở Nam Ban hết bao nhiêu tiền? Cái "giảm 70%" không như bạn nghĩ | Về Đất |
 | `/living-in-nam-ban` | Living in Nam Ban: What Is It Really Like? | Về Nam Ban |
 | `/mot-ngay-o-nam-ban` | Một ngày ở Nam Ban: đi đâu, ăn gì, ở lại có đáng không | Về Nam Ban |
