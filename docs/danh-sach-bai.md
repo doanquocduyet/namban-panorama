@@ -1,6 +1,6 @@
 # Danh sách bài trên nambanpanorama.com
 
-Tự sinh bằng `tools/gen-slug-list.py`. Tổng: **71** trang. Cột hub = hub thật liệt kê bài (sau dedup mỗi bài về đúng 1 hub). Chạy lại sau mỗi lần thêm/xóa/đổi hub bài.
+Tự sinh bằng `tools/gen-slug-list.py`. Tổng: **72** trang. Cột hub = hub thật liệt kê bài (sau dedup mỗi bài về đúng 1 hub). Chạy lại sau mỗi lần thêm/xóa/đổi hub bài.
 
 | slug | tiêu đề | hub |
 |---|---|---|
@@ -61,6 +61,7 @@ Tự sinh bằng `tools/gen-slug-list.py`. Tổng: **71** trang. Cột hub = hub
 | `/nen-xem-khu-nao-o-nam-ban` | Nên mua đất khu nào ở Nam Ban? Trung tâm, Đông Thanh, Gia Lâm, Mê Linh | Về Đất |
 | `/nguoi-nam-ban-anh-nam` | Anh Nam | Về Nam Ban |
 | `/nguoi-nam-ban-chi-trang` | Chị Trang | Về Nam Ban |
+| `/o-thu-nam-ban-truoc-khi-mua-dat` | Ở thử Nam Ban trước khi mua đất | Về Đất |
 | `/quy-hoach-2050` | Quy hoạch Nam Ban 2050 có làm giá đất tăng không? (cập nhật 2026) | Cập nhật + Đầu tư |
 | `/rau-hoa-cay-do-la-nam-ban` | Rau, hoa và cây đô la ở Nam Ban | Về Đất |
 | `/roi-sai-gon-len-nam-ban` | Người rời Sài Gòn lên Nam Ban | Về Nam Ban |
