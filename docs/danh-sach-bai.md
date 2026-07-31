@@ -1,6 +1,6 @@
 # Danh sách bài trên nambanpanorama.com
 
-Tự sinh bằng `tools/gen-slug-list.py`. Tổng: **69** trang. Cột hub = hub thật liệt kê bài (sau dedup mỗi bài về đúng 1 hub). Chạy lại sau mỗi lần thêm/xóa/đổi hub bài.
+Tự sinh bằng `tools/gen-slug-list.py`. Tổng: **70** trang. Cột hub = hub thật liệt kê bài (sau dedup mỗi bài về đúng 1 hub). Chạy lại sau mỗi lần thêm/xóa/đổi hub bài.
 
 | slug | tiêu đề | hub |
 |---|---|---|
@@ -51,6 +51,7 @@ Tự sinh bằng `tools/gen-slug-list.py`. Tổng: **69** trang. Cột hub = hub
 | `/nam-ban-co-hop-voi-ban` | Có nên chuyển lên Nam Ban sống? Ai hợp, ai không | Về Nam Ban |
 | `/nam-ban-hay-di-linh` | Nam Ban hay Di Linh? Một người Sài Gòn đi về nhiều năm sẽ chọn nơi nào | Về Nam Ban |
 | `/nam-ban-hay-don-duong` | Nam Ban hay Đơn Dương? Hai vùng ven Đà Lạt cho hai kiểu người | Về Đất |
+| `/nam-ban-hay-dran` | Nam Ban hay D'ran | Về Nam Ban |
 | `/nam-ban-mua-nao` | Nên đi Nam Ban mùa nào? Mùa nào đẹp, mùa nào nên xem đất | Về Nam Ban |
 | `/nam-ban-thuoc-xa-nao` | Nam Ban thuộc xã nào sau sáp nhập? Xã Nam Ban Lâm Hà, sổ đỏ và thủ tục | Cập nhật + Về Đất |
 | `/nam-ban-va-nam-ha` | Nam Ban và Nam Hà khác nhau ở đâu? Hai xã, một gốc | Về Nam Ban |
