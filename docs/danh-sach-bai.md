@@ -1,6 +1,6 @@
 # Danh sách bài trên nambanpanorama.com
 
-Tự sinh bằng `tools/gen-slug-list.py`. Tổng: **68** trang. Cột hub = hub thật liệt kê bài (sau dedup mỗi bài về đúng 1 hub). Chạy lại sau mỗi lần thêm/xóa/đổi hub bài.
+Tự sinh bằng `tools/gen-slug-list.py`. Tổng: **69** trang. Cột hub = hub thật liệt kê bài (sau dedup mỗi bài về đúng 1 hub). Chạy lại sau mỗi lần thêm/xóa/đổi hub bài.
 
 | slug | tiêu đề | hub |
 |---|---|---|
@@ -72,3 +72,4 @@ Tự sinh bằng `tools/gen-slug-list.py`. Tổng: **68** trang. Cột hub = hub
 | `/truoc-khi-xuong-tien` | Mua đất Nam Ban cần lưu ý gì: 6 điều người ở đây thấy, người mới không thấy | Về Đất |
 | `/vua-mua-dat-nam-ban-lam-gi` | Vừa mua đất Nam Ban xong | Về Đất |
 | `/vuon-bo-loi-bao-nhieu` | Một sào bơ ở Nam Ban cho bao nhiêu tiền? Bóc phép tính người ta hay dùng để bán đất | Đầu tư |
+| `/xay-nha-o-nam-ban` | Xây nhà ở Nam Ban | Về Đất |
