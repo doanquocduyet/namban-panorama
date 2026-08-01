@@ -233,8 +233,8 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
     <a href="/en/" class="logo">Namban Panorama</a>
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
     <div class="navlinks">
-      <a href="nam-ban">About Nam Ban</a>
-      <a href="trao-doi" class="nav-cta">Get in touch</a>
+      <a href="/en/nam-ban">About Nam Ban</a>
+      <a href="/en/trao-doi" class="nav-cta">Get in touch</a>
       <span class="langsw"><a href="/nam-ban">VI</a><span class="langsep">·</span><span class="langcur">EN</span></span>
     </div>
   </div>
@@ -242,8 +242,8 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
   <button class="mobile-close" id="mobileClose" onclick="toggleMenu()" aria-label="Đóng">×</button>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="nam-ban" onclick="toggleMenu()">About Nam Ban</a>
-    <a href="trao-doi" onclick="toggleMenu()">Get in touch</a>
+    <a href="/en/nam-ban" onclick="toggleMenu()">About Nam Ban</a>
+    <a href="/en/trao-doi" onclick="toggleMenu()">Get in touch</a>
     <span class="mobile-lang"><a href="/nam-ban">VI</a> · <span>EN</span></span>
   </div>
 <section class="hero">
@@ -291,7 +291,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <div class="hub-invite">
   <div class="hub-invite-in">
     <div class="hub-invite-t">Understand the area, but still have a question of your own? <span>We read the land with you — no pressure to buy.</span></div>
-    <a href="trao-doi">Get in touch →</a>
+    <a href="/en/trao-doi">Get in touch →</a>
   </div>
 </div>
 
@@ -309,7 +309,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   </div>
 </footer>
 
-<a href="trao-doi" class="fab-contact" aria-label="Get in touch"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a7.5 7.5 0 0 1-10.9 6.7L4 19.5l1.3-4.1A7.5 7.5 0 1 1 20 11.5Z"/></svg></a>
+<a href="/en/trao-doi" class="fab-contact" aria-label="Get in touch"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a7.5 7.5 0 0 1-10.9 6.7L4 19.5l1.3-4.1A7.5 7.5 0 1 1 20 11.5Z"/></svg></a>
 <script>
 function toggleMenu(){
   var m=document.getElementById('mobileMenu'),ov=document.getElementById('menuOverlay'),cl=document.getElementById('mobileClose');
