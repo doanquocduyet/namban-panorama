@@ -68,7 +68,7 @@
   .hamburger.is-open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
 
   /* Language switch VI · EN */
-  .langsw{display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.16em;opacity:.8;}
+  .langsw{display:inline-flex;align-items:center;gap:5px;font-size:10px;letter-spacing:.18em;opacity:.6;}
   .langsw a{color:var(--stone);text-decoration:none;transition:color .25s;}
   .langsw a:hover{color:var(--muted);}
   .langsw a::after{display:none;}
@@ -89,8 +89,8 @@
   .mobile-menu.open>a:nth-of-type(3){transition-delay:.26s;}
   .mobile-menu.open>a:nth-of-type(4){transition-delay:.32s;}
   .mobile-menu>a:active,.mobile-menu>a:hover{color:var(--clay);}
-  .mobile-lang{font-family:'Be Vietnam Pro',sans-serif;font-size:13px;letter-spacing:.12em;color:var(--stone);margin-top:26px;padding:14px 0 0;opacity:0;transition:opacity .5s ease .4s;}
-  .mobile-menu.open .mobile-lang{opacity:1;}
+  .mobile-lang{font-family:'Be Vietnam Pro',sans-serif;font-size:11px;letter-spacing:.14em;color:var(--stone);opacity:.7;margin-top:26px;padding:14px 0 0;opacity:0;transition:opacity .5s ease .4s;}
+  .mobile-menu.open .mobile-lang{opacity:.7;}
   .mobile-lang a{color:var(--stone);text-decoration:none;}
   .mobile-lang a:hover{color:var(--clay);}
   .mobile-lang span{color:var(--muted);font-weight:500;}
@@ -136,12 +136,12 @@
 
   /* ═══════════ TẦNG 2 — NGƯỜI (ảnh tràn trái + chữ phải) ═══════════ */
   .t2{padding:60px 0 78px;}
-  .t2-grid{display:grid;grid-template-columns:minmax(0,400px) 1fr;gap:60px;align-items:center;}
+  .t2-grid{display:grid;grid-template-columns:minmax(0,320px) 1fr;gap:56px;align-items:start;}
   .t2-ph{position:relative;overflow:hidden;border-radius:2px;}
   .t2-ph img{width:100%;height:auto;display:block;}
   .t2-ph::after{content:"";position:absolute;top:0;right:0;bottom:0;width:34%;background:linear-gradient(to right,rgba(241,236,226,0),var(--paper));pointer-events:none;}
   .t2-body{padding:0;}
-  .t2-eb{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--stone);font-weight:500;display:block;margin-bottom:18px;}
+  .t2-eb{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--stone);font-weight:500;display:block;margin-bottom:24px;}
   .t2-name{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,3.4vw,40px);letter-spacing:-.4px;margin-bottom:9px;}
   .t2-role{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);margin-bottom:24px;}
   .t2-tick{display:block;width:34px;height:1px;background:var(--line);margin-bottom:24px;}
@@ -407,17 +407,19 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 <!-- ═══ TẦNG 2 — NGƯỜI ═══ -->
 <section class="t2">
-  <div class="wrap t2-grid">
-    <div class="t2-ph rev">
-      <img src="/images/founder.webp" width="440" height="440" loading="lazy" decoding="async" alt="Đoàn Quốc Duyệt đứng ngoài thực địa ở Nam Ban, nhìn ra thung lũng">
-    </div>
-    <div class="t2-body rev">
-      <span class="t2-eb">Người ghi lại những trang này</span>
-      <h2 class="t2-name serif">Đoàn Quốc Duyệt</h2>
-      <p class="t2-role">ghi chép tại Nam Ban</p>
-      <span class="t2-tick"></span>
-      <p class="t2-say">Phần lớn thời gian tôi ở ngoài thực địa hoặc đọc hồ sơ. Những gì chưa tự xem hoặc chưa kiểm chứng, tôi ghi rõ.</p>
-      <p class="t2-brand">Panorama không có huy chương.<br>Chỉ có dấu chân trên từng nơi đã đi.</p>
+  <div class="wrap">
+    <span class="t2-eb">Người ghi lại những trang này</span>
+    <div class="t2-grid">
+      <div class="t2-ph rev">
+        <img src="/images/founder.webp" width="440" height="440" loading="lazy" decoding="async" alt="Đoàn Quốc Duyệt đứng ngoài thực địa ở Nam Ban, nhìn ra thung lũng">
+      </div>
+      <div class="t2-body rev">
+        <h2 class="t2-name serif">Đoàn Quốc Duyệt</h2>
+        <p class="t2-role">ghi chép tại Nam Ban</p>
+        <span class="t2-tick"></span>
+        <p class="t2-say">Phần lớn thời gian tôi ở ngoài thực địa hoặc đọc hồ sơ. Những gì chưa tự xem hoặc chưa kiểm chứng, tôi ghi rõ.</p>
+        <p class="t2-brand">Panorama không có huy chương.<br>Chỉ có dấu chân trên từng nơi đã đi.</p>
+      </div>
     </div>
   </div>
 </section>
