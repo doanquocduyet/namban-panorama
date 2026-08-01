@@ -68,11 +68,11 @@
   .hamburger.is-open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
 
   /* Language switch VI · EN */
-  .langsw{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;letter-spacing:.1em;}
+  .langsw{display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.16em;opacity:.8;}
   .langsw a{color:var(--stone);text-decoration:none;transition:color .25s;}
-  .langsw a:hover{color:var(--ink);}
+  .langsw a:hover{color:var(--muted);}
   .langsw a::after{display:none;}
-  .langsw .langcur{color:var(--ink);font-weight:600;}
+  .langsw .langcur{color:var(--muted);font-weight:400;}
   .langsw .langsep{color:var(--stone);opacity:.5;}
 
   /* Mobile menu system */
@@ -93,7 +93,7 @@
   .mobile-menu.open .mobile-lang{opacity:1;}
   .mobile-lang a{color:var(--stone);text-decoration:none;}
   .mobile-lang a:hover{color:var(--clay);}
-  .mobile-lang span{color:var(--ink);font-weight:600;}
+  .mobile-lang span{color:var(--muted);font-weight:500;}
   .mobile-close{position:fixed;top:20px;right:22px;width:42px;height:42px;font-size:26px;color:var(--ink);cursor:pointer;background:rgba(244,240,232,.6);border:1px solid rgba(157,93,56,.18);border-radius:50%;line-height:0;padding:0;z-index:1001;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .4s ease .1s,visibility .4s,transform .3s;}
   .mobile-close.open{opacity:1;visibility:visible;}
   .mobile-close:active{transform:rotate(90deg);}
@@ -137,8 +137,9 @@
   /* ═══════════ TẦNG 2 — NGƯỜI (ảnh tràn trái + chữ phải) ═══════════ */
   .t2{padding:60px 0 78px;}
   .t2-grid{display:grid;grid-template-columns:minmax(0,400px) 1fr;gap:60px;align-items:center;}
-  .t2-ph{overflow:hidden;border:1px solid var(--line);border-radius:3px;background:var(--card);box-shadow:0 2px 16px rgba(26,24,21,.06);}
+  .t2-ph{position:relative;overflow:hidden;border-radius:2px;}
   .t2-ph img{width:100%;height:auto;display:block;}
+  .t2-ph::after{content:"";position:absolute;top:0;right:0;bottom:0;width:34%;background:linear-gradient(to right,rgba(241,236,226,0),var(--paper));pointer-events:none;}
   .t2-body{padding:0;}
   .t2-eb{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--stone);font-weight:500;display:block;margin-bottom:18px;}
   .t2-name{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,3.4vw,40px);letter-spacing:-.4px;margin-bottom:9px;}
