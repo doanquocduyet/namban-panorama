@@ -104,7 +104,7 @@
   .t1-eb{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--clay);font-weight:500;display:block;margin-bottom:22px;}
   .t1 h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(44px,5vw,62px);line-height:1.04;letter-spacing:-1.4px;}
   .t1-tick{display:block;width:44px;height:1px;background:var(--clay);opacity:.55;margin:30px 0 26px;}
-  .t1-sub{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(17px,1.9vw,19px);line-height:1.5;color:var(--muted);max-width:32ch;}
+  .t1-sub{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(17px,1.9vw,19px);line-height:1.5;color:var(--muted);max-width:32ch;text-wrap:balance;}
   .t1-zalo{margin-top:44px;padding-top:26px;border-top:1px solid var(--line);max-width:34ch;}
   .t1-zalo .zt{font-size:13.5px;line-height:1.65;color:var(--muted);margin-bottom:14px;}
   .t1-zalo a{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--forest);border-bottom:1px solid var(--clay-soft);padding-bottom:3px;transition:border-color .3s,color .3s;}
@@ -135,7 +135,7 @@
   .band-fade{position:absolute;inset:0;background:linear-gradient(to bottom,var(--paper) 0%,rgba(241,236,226,0) 12%,rgba(241,236,226,0) 88%,var(--paper) 100%);pointer-events:none;}
 
   /* ═══════════ TẦNG 2 — NGƯỜI (ảnh tràn trái + chữ phải) ═══════════ */
-  .t2{padding:60px 0 78px;}
+  .t2{padding:60px 0 44px;}
   .t2-grid{display:grid;grid-template-columns:minmax(0,320px) 1fr;gap:56px;align-items:start;}
   .t2-ph{position:relative;overflow:hidden;border-radius:2px;}
   .t2-ph img{width:100%;height:auto;display:block;}
@@ -149,10 +149,10 @@
   .t2-brand{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(19px,2.1vw,22px);line-height:1.5;color:var(--ink);}
 
   /* ═══════════ TẦNG 3 — HỢP TÁC ═══════════ */
-  .t3{border-top:1px solid var(--line);padding:80px 0 88px;text-align:center;}
-  .t3-tick{display:block;width:40px;height:1px;background:var(--clay);opacity:.5;margin:0 auto 30px;}
+  .t3{border-top:1px solid var(--line);padding:52px 0 84px;text-align:center;}
+  .t3-tick{display:block;width:40px;height:1px;background:var(--clay);opacity:.5;margin:0 auto 26px;}
   .t3 h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(26px,3vw,34px);line-height:1.32;letter-spacing:-.4px;margin-bottom:22px;}
-  .t3 p{font-size:15px;line-height:1.8;color:var(--muted);max-width:46ch;margin:0 auto 30px;}
+  .t3 p{font-size:15px;line-height:1.8;color:var(--muted);max-width:44ch;margin:0 auto 30px;text-wrap:balance;}
   .t3-do{display:inline-flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-size:16px;color:var(--forest);border-bottom:1px solid var(--clay-soft);padding-bottom:4px;transition:color .3s,border-color .3s;}
   .t3-do:hover{color:var(--clay);border-color:var(--clay);}
 
@@ -247,7 +247,7 @@
   .person-sign{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--forest-deep);line-height:1.7;max-width:420px;margin:0 auto 20px;}
   .collab-signoff{padding:46px 0 8px;}
   .collab-lead{font-family:'Fraunces',serif;font-weight:400;font-size:24px;color:var(--forest);line-height:1.24;letter-spacing:.2px;max-width:480px;margin:0 auto 20px;}
-  .collab-line{font-size:14.5px;color:var(--muted);line-height:1.85;font-weight:300;max-width:460px;margin:0 auto;}
+  .collab-line{font-size:14.5px;color:var(--muted);line-height:1.85;font-weight:300;max-width:440px;margin:0 auto;text-wrap:balance;}
 </style>
 <link rel="alternate" type="application/rss+xml" title="Namban Panorama" href="https://nambanpanorama.com/feed.xml">
 <script type="application/ld+json">
@@ -429,7 +429,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   <div class="wrap">
     <span class="t3-tick"></span>
     <h2 class="serif">Nếu có điều gì đáng cùng làm.<br>Cứ nhắn.</h2>
-    <p>Một khu đất cần đọc kỹ. Một góc nhìn cần kiểm chứng. Hay chỉ đơn giản là muốn trao đổi về Nam Ban.</p>
+    <p>Một khu đất cần đọc kỹ, một góc nhìn cần kiểm chứng, hay chỉ đơn giản là cùng nhau nói chuyện về Nam&nbsp;Ban.</p>
     <a href="https://zalo.me/0978758788" target="_blank" rel="noopener" class="t3-do">Nhắn cho tôi <span style="font-family:Fraunces,serif;">&rarr;</span></a>
   </div>
 </section>
@@ -500,7 +500,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
     </div>
     <div class="collab-signoff">
       <p class="collab-lead">Nếu có điều gì đáng cùng làm.<br>Cứ nhắn.</p>
-      <p class="collab-line">Một khu đất cần đọc kỹ. Một góc nhìn cần kiểm chứng. Hay chỉ đơn giản là muốn trao đổi về Nam Ban.</p>
+      <p class="collab-line">Một khu đất cần đọc kỹ, một góc nhìn cần kiểm chứng, hay chỉ đơn giản là cùng nhau nói chuyện về Nam&nbsp;Ban.</p>
     </div>
   </div>
 
