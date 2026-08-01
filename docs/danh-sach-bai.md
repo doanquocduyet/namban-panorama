@@ -1,6 +1,6 @@
 # Danh sách bài trên nambanpanorama.com
 
-Tự sinh bằng `tools/gen-slug-list.py`. Tổng: **74** trang. Cột hub = hub thật liệt kê bài (sau dedup mỗi bài về đúng 1 hub). Chạy lại sau mỗi lần thêm/xóa/đổi hub bài.
+Tự sinh bằng `tools/gen-slug-list.py`. Tổng: **75** trang. Cột hub = hub thật liệt kê bài (sau dedup mỗi bài về đúng 1 hub). Chạy lại sau mỗi lần thêm/xóa/đổi hub bài.
 
 | slug | tiêu đề | hub |
 |---|---|---|
@@ -13,6 +13,7 @@ Tự sinh bằng `tools/gen-slug-list.py`. Tổng: **74** trang. Cột hub = hub
 | `/cau-tong-doi-nam-ban` | Cầu Tổng Đội xây mới: khởi công 14/7/2026, xong tháng 11/2027 | Cập nhật + Về Nam Ban |
 | `/cay-xang-petro-moi-o-nam-ban` | 2 cây xăng Petro mới trên trục 725 Nam Ban | Cập nhật |
 | `/chuyen-len-nam-ban-song` | Chuyển lên Nam Ban sống: trường, y tế, internet, và sống bằng gì | Về Nam Ban |
+| `/co-nen-mua-dat-nam-ban-o-xa` | Có nên mua đất Nam Ban để ở? Điều nhiều người chỉ hiểu sau khi lên ở thử | Về Nam Ban |
 | `/dac-san-nam-ban` | Nam Ban có đặc sản gì? Cà phê, dâu tằm, bơ và những thứ đất này làm ra | Về Nam Ban |
 | `/dat-gan-da-lat` | Đất gần Đà Lạt: vì sao nhiều người tìm về Nam Ban | Về Nam Ban |
 | `/dat-nam-ban-trong-cay-gi` | Đất Nam Ban trồng cây gì có dòng tiền? | Về Đất |
