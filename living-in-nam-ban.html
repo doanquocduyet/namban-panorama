@@ -318,32 +318,28 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 <nav>
   <div class="navin">
-    <a class="logo" href="/">Namban Panorama <span class="logo-intel">Intelligence</span></a>
+    <a class="logo" href="/en/">Namban Panorama <span class="logo-intel">Intelligence</span></a>
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
     <div class="navlinks" id="navlinks">
-      <a href="nam-ban">Về Nam Ban</a>
-      <a href="dat">Về Đất</a>
-      <a href="dau-tu">Đầu tư</a>
-      <a href="trao-doi" class="nav-cta">Trao đổi</a>
+      <a href="/en/nam-ban">About Nam Ban</a>
+      <a href="/en/trao-doi" class="nav-cta">Get in touch</a>
     </div>
   </div>
 </nav>
-<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="/">Trang chủ</a><span class="sep">›</span><span class="cur">Living in Nam Ban</span></nav></div>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="/en/">Home</a><span class="sep">›</span><a href="/en/nam-ban">About Nam Ban</a><span class="sep">›</span><span class="cur">Living in Nam Ban</span></nav></div>
 
 <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
 <button class="mobile-close" id="mobileClose" onclick="toggleMenu()" aria-label="Đóng">×</button>
 <div class="mobile-menu" id="mobileMenu">
   <span class="mobile-logo">Panorama</span>
-  <a href="nam-ban" onclick="toggleMenu()">Về Nam Ban</a>
-  <a href="dat" onclick="toggleMenu()">Về Đất</a>
-  <a href="dau-tu" onclick="toggleMenu()">Đầu tư</a>
-  <a href="trao-doi" onclick="toggleMenu()">Trao đổi</a>
+  <a href="/en/nam-ban" onclick="toggleMenu()">About Nam Ban</a>
+  <a href="/en/trao-doi" onclick="toggleMenu()">Get in touch</a>
 </div>
 
-<div class="art-back"><a href="/" onclick="if(document.referrer&&document.referrer.indexOf(location.hostname)>-1){history.back();return false;}">← Back</a></div>
+<div class="art-back"><a href="/en/" onclick="if(document.referrer&&document.referrer.indexOf(location.hostname)>-1){history.back();return false;}">← Back</a></div>
 <div class="art-header">
   <div class="issue-line">
-    <span class="issue-badge">Về Nam Ban</span>
+    <span class="issue-badge">About Nam Ban</span>
     <span class="issue-date">June 2026</span>
   </div>
   <div class="l10n" style="font-family:'Be Vietnam Pro',sans-serif;font-size:11.5px;letter-spacing:.3px;line-height:1.8;margin:0 0 20px;"><span style="text-transform:uppercase;letter-spacing:1.6px;font-size:9.5px;color:#a79c87;margin-right:10px;">Ngôn ngữ</span><a href="/nam-ban-co-dang-song" style="color:#6e6759;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .3s;" onmouseover="this.style.borderColor='#9d5d38'" onmouseout="this.style.borderColor='transparent'">Tiếng Việt</a> <span style="color:#c9bfa9;">·</span> <span style="color:#9d5d38;font-weight:500;">EN</span> <span style="color:#c9bfa9;">·</span> <a href="/fr/vivre-a-nam-ban" style="color:#6e6759;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .3s;" onmouseover="this.style.borderColor='#9d5d38'" onmouseout="this.style.borderColor='transparent'">FR</a> <span style="color:#c9bfa9;">·</span> <a href="/zh/zai-nam-ban-shenghuo" style="color:#6e6759;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .3s;" onmouseover="this.style.borderColor='#9d5d38'" onmouseout="this.style.borderColor='transparent'">中文</a> <span style="color:#c9bfa9;">·</span> <a href="/ko/nam-ban-salm" style="color:#6e6759;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .3s;" onmouseover="this.style.borderColor='#9d5d38'" onmouseout="this.style.borderColor='transparent'">한국어</a> <span style="color:#c9bfa9;">·</span> <a href="/ja/nam-ban-kurashi" style="color:#6e6759;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .3s;" onmouseover="this.style.borderColor='#9d5d38'" onmouseout="this.style.borderColor='transparent'">日本語</a></div>
@@ -406,7 +402,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 </div>
 <footer>
   <div class="contact-line">
-    <a href="trao-doi" style="color:var(--clay-soft);text-decoration:none;font-size:13px;letter-spacing:.3px;">Trao đổi trực tiếp</a><br>
+    <a href="/en/trao-doi" style="color:var(--clay-soft);text-decoration:none;font-size:13px;letter-spacing:.3px;">Get in touch</a><br>
     <a href="tel:0978758788">0978 758 788</a>
     &nbsp;·&nbsp;
     <a href="mailto:nambanpanorama@gmail.com">nambanpanorama@gmail.com</a>
@@ -443,7 +439,7 @@ document.addEventListener('keydown',function(e){
 <script>
 function panoramaShare(btn){var url=window.location.href;var title=document.title;if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});}else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){var lbl=btn.querySelector('.share-label');if(!lbl)return;var old=lbl.textContent;lbl.textContent='Đã sao chép';setTimeout(function(){lbl.textContent=old;},2000);}).catch(function(){});}}
 </script>
-<a href="trao-doi" class="fab-contact" aria-label="Trao đổi với người ở đây"><span class="fab-lbl">Trao đổi với người ở đây</span><span class="fab-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#e7e0d2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a7.5 7.5 0 0 1-10.9 6.7L4 19.5l1.3-4.1A7.5 7.5 0 1 1 20 11.5Z"/></svg></span></a>
+<a href="/en/trao-doi" class="fab-contact" aria-label="Talk to someone who's here"><span class="fab-lbl">Talk to someone who's here</span><span class="fab-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#e7e0d2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a7.5 7.5 0 0 1-10.9 6.7L4 19.5l1.3-4.1A7.5 7.5 0 1 1 20 11.5Z"/></svg></span></a>
 <script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/panorama-utils.js"></script>
 
