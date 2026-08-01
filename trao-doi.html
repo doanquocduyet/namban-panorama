@@ -137,9 +137,9 @@
   /* ═══════════ TẦNG 2 — NGƯỜI (ảnh tràn trái + chữ phải) ═══════════ */
   .t2{padding:20px 0 92px;}
   .t2-grid{display:grid;grid-template-columns:minmax(0,520px) 1fr;gap:0;align-items:center;max-width:1200px;margin:0 auto;}
-  .t2-ph{position:relative;height:560px;margin-left:calc(-50vw + 50%);width:calc(50vw - 50% + 520px);}
-  .t2-ph img{width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:grayscale(.1) contrast(1.04);}
-  .t2-ph::after{content:"";position:absolute;top:0;right:0;bottom:0;width:38%;background:linear-gradient(to right,rgba(241,236,226,0),var(--paper));pointer-events:none;}
+  .t2-ph{position:relative;aspect-ratio:1/1;margin-left:calc(-50vw + 50%);width:calc(50vw - 50% + 520px);}
+  .t2-ph img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+  .t2-ph::after{content:"";position:absolute;top:0;right:0;bottom:0;width:24%;background:linear-gradient(to right,rgba(241,236,226,0),var(--paper));pointer-events:none;}
   .t2-body{padding:0 48px 0 60px;}
   .t2-eb{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--stone);font-weight:500;display:block;margin-bottom:18px;}
   .t2-name{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,3.4vw,40px);letter-spacing:-.4px;margin-bottom:9px;}
@@ -195,6 +195,59 @@
   @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
     nav{background:rgba(241,236,226,1);}
   }
+
+  /* ══════ VIEW TOGGLE: PC = 3 tầng mới · Mobile = bản cũ (ảnh tròn) ══════ */
+  .mob-view{display:none;}
+  @media(max-width:880px){ .pc-view{display:none;} .mob-view{display:block;} }
+
+  /* ══════ OLD LAYOUT (chỉ hiện trên mobile) ══════ */
+  .td-main{max-width:920px;margin:0 auto;padding:56px 24px 48px;}
+  .td-eyebrow{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--clay);margin-bottom:16px;}
+  .td-h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(28px,8vw,40px);line-height:1.12;letter-spacing:-.6px;color:var(--ink);margin-bottom:18px;}
+  .td-quote{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(16px,4.4vw,18px);color:var(--muted);line-height:1.5;border-left:2px solid var(--clay-soft);padding-left:18px;}
+  .td-grid{display:block;}
+  .td-left,.td-right{display:flex;flex-direction:column;}
+  .td-right{margin-top:34px;}
+  .td-form{display:flex;flex-direction:column;gap:20px;}
+  .td-field label{display:block;font-family:'Be Vietnam Pro',sans-serif;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--stone);margin-bottom:8px;font-weight:500;}
+  .td-field select,.td-field textarea,.td-field input{width:100%;background:var(--card);border:1px solid var(--line);border-radius:7px;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:300;color:var(--ink);outline:none;transition:border-color .2s;}
+  .td-field select,.td-field input{height:46px;padding:0 15px;}
+  .td-field textarea{min-height:120px;padding:12px 15px;resize:vertical;line-height:1.6;}
+  .td-field select:focus,.td-field textarea:focus,.td-field input:focus{border-color:var(--clay);}
+  .td-field ::placeholder{color:var(--stone);opacity:1;}
+  .td-field select{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23a79c87' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:38px;}
+  .td-hint{font-size:12.5px;color:var(--clay);margin-top:7px;line-height:1.5;min-height:1em;}
+  .td-btn{display:flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:7px;font-family:'Be Vietnam Pro',sans-serif;font-size:14.5px;font-weight:400;letter-spacing:.3px;cursor:pointer;text-decoration:none;transition:background .2s,transform .15s;}
+  .td-btn svg{flex:none;}
+  .td-send{width:100%;height:48px;background:var(--forest);color:var(--paper);}
+  .td-send:hover{background:var(--forest-deep,#1e2a20);}
+  .td-send:disabled{opacity:.7;cursor:default;}
+  .td-quick-label{text-align:center;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--stone);margin:22px 0 12px;}
+  .td-two{display:grid;grid-template-columns:1fr 1fr;gap:11px;}
+  .td-zalo{height:50px;background:var(--forest);color:var(--paper);border-radius:8px;font-family:'Fraunces',serif;font-size:15px;}
+  .td-zalo:hover{background:var(--forest-deep,#1e2a20);}
+  .td-call{height:50px;background:var(--line);color:var(--forest);border:.5px solid var(--stone);border-radius:8px;font-family:'Fraunces',serif;font-size:15px;}
+  .td-call:hover{filter:brightness(.96);}
+  .td-pc-zalo{display:none;}
+  .td-divider{border-top:1px solid var(--line);margin:26px 0 16px;}
+  .td-zalo-lead{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:16px;}
+  .td-foot{border-top:1px solid var(--line);text-align:center;padding:30px 24px 42px;margin-top:10px;}
+  .td-foot .fn{font-family:'Fraunces',serif;font-size:16px;letter-spacing:1.5px;color:var(--ink);margin-bottom:8px;}
+  .td-foot .fc{font-size:13px;color:var(--stone);}
+  .td-foot .fc a{color:inherit;text-decoration:none;}
+  .td-person-wrap{max-width:600px;margin:0 auto;padding:0 24px;text-align:center;}
+  .person-signoff{padding:46px 0 0;}
+  .person-signoff::before{content:"";display:block;width:42%;max-width:210px;height:1px;background:var(--line);margin:0 auto 44px;}
+  .person-intro{font-family:'Be Vietnam Pro',sans-serif;font-weight:500;font-size:10.5px;color:var(--stone);letter-spacing:2.6px;text-transform:uppercase;margin:0 auto 20px;}
+  .person-pic{width:96px;height:96px;border-radius:50%;overflow:hidden;margin:0 auto 20px;background:var(--card);}
+  .person-pic img{width:100%;height:100%;object-fit:cover;display:block;}
+  .person-name{font-family:'Fraunces',serif;font-weight:400;font-size:29px;color:var(--ink);letter-spacing:.2px;line-height:1.12;}
+  .person-role{font-size:13px;letter-spacing:2px;color:var(--muted);margin:12px 0 26px;}
+  .person-line{font-size:14.5px;color:var(--muted);line-height:1.8;font-weight:300;max-width:462px;margin:0 auto 26px;}
+  .person-sign{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--forest-deep);line-height:1.7;max-width:420px;margin:0 auto 20px;}
+  .collab-signoff{padding:46px 0 8px;}
+  .collab-lead{font-family:'Fraunces',serif;font-weight:400;font-size:24px;color:var(--forest);line-height:1.24;letter-spacing:.2px;max-width:480px;margin:0 auto 20px;}
+  .collab-line{font-size:14.5px;color:var(--muted);line-height:1.85;font-weight:300;max-width:460px;margin:0 auto;}
 </style>
 <link rel="alternate" type="application/rss+xml" title="Namban Panorama" href="https://nambanpanorama.com/feed.xml">
 <script type="application/ld+json">
@@ -301,6 +354,8 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   <span class="mobile-lang"><span>VI</span> · <a href="/en/trao-doi">EN</a></span>
 </div>
 
+<div class="pc-view">
+
 <!-- ═══ TẦNG 1 — LỜI MỜI ═══ -->
 <section class="t1">
   <div class="wrap">
@@ -382,6 +437,77 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   <p class="fc"><a href="tel:0978758788">0978 758 788</a> · <a href="mailto:nambanpanorama@gmail.com">nambanpanorama@gmail.com</a></p>
 </footer>
 
+</div><!-- /pc-view -->
+
+<div class="mob-view">
+  <div class="td-main">
+    <div class="td-grid">
+
+      <div class="td-left">
+        <div class="td-eyebrow">Trao đổi</div>
+        <h1 class="td-h1">Kể cho Panorama nghe</h1>
+        <p class="td-quote">Một cuộc trò chuyện nhỏ, để bạn hiểu rõ hơn mình đang muốn điều gì.</p>
+      </div>
+
+      <div class="td-right">
+        <form class="td-card td-form" id="traodoi-form" onsubmit="return submitForm(event)">
+          <div class="td-field">
+            <label>Bạn đang tính chuyện gì với đất Nam Ban?</label>
+            <select name="goc_nhin">
+              <option value="">– chọn một dòng –</option>
+              <option>Tìm hiểu vùng đất, chưa có kế hoạch cụ thể</option>
+              <option>Muốn có chỗ trốn khỏi thành phố cuối tuần</option>
+              <option>Cân nhắc đầu tư, muốn hiểu rõ trước khi quyết định</option>
+              <option>Đang xem một tài sản cụ thể, muốn thẩm định kỹ</option>
+              <option>Đã có đất ở Nam Ban, cần người trông coi hoặc chăm sóc</option>
+              <option>Đang muốn bán / chuyển nhượng tài sản tại Nam Ban</option>
+            </select>
+          </div>
+          <div class="td-field">
+            <label>Điều bạn muốn hỏi</label>
+            <textarea name="muon_lam_ro" placeholder="Ví dụ: tôi đang xem một lô 1.500m² gần hồ, có sổ riêng nhưng chưa rõ giá đang ở lớp nào và rủi ro pháp lý ra sao…"></textarea>
+          </div>
+          <div class="td-field">
+            <label>Tên và số điện thoại</label>
+            <input type="text" name="ten_sdt" placeholder="Tên · số điện thoại · Zalo">
+            <div class="td-hint" id="td-hint"></div>
+          </div>
+          <button type="submit" class="td-btn td-send">Gửi — phản hồi ngắn gọn, thẳng việc</button>
+        </form>
+
+        <div class="td-quick">
+          <div class="td-quick-label">Nhắn nhanh</div>
+          <div class="td-two">
+            <a class="td-btn td-zalo" href="https://zalo.me/0978758788" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a7.5 7.5 0 0 1-10.9 6.7L4 19.5l1.3-4.1A7.5 7.5 0 1 1 20 11.5Z"/></svg>Nhắn Zalo</a>
+            <a class="td-btn td-call" href="tel:0978758788"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>Gọi trực tiếp</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="td-person-wrap">
+    <div class="person-signoff">
+      <p class="person-intro">người ghi lại những trang này</p>
+      <div class="person-pic"><img src="/images/founder.webp" width="160" height="160" loading="lazy" decoding="async" alt="Đoàn Quốc Duyệt đứng ngoài thực địa ở Nam Ban, nền thung lũng phía sau"></div>
+      <div class="person-name">Đoàn Quốc Duyệt</div>
+      <div class="person-role">ghi chép tại Nam Ban</div>
+      <p class="person-line">Phần lớn thời gian tôi ở ngoài thực địa hoặc đọc hồ sơ. Những gì chưa tự xem hoặc chưa kiểm chứng, tôi ghi rõ.</p>
+      <p class="person-sign">Panorama không có huy chương.<br>Chỉ có dấu chân trên từng nơi đã đi.</p>
+    </div>
+    <div class="collab-signoff">
+      <p class="collab-lead">Nếu có điều gì đáng cùng làm.<br>Cứ nhắn.</p>
+      <p class="collab-line">Một khu đất cần đọc kỹ. Một góc nhìn cần kiểm chứng. Hay chỉ đơn giản là muốn trao đổi về Nam Ban.</p>
+    </div>
+  </div>
+
+  <div class="td-foot">
+    <div class="fn">Namban Panorama</div>
+    <div class="fc"><a href="tel:0978758788">0978 758 788</a> · <a href="mailto:nambanpanorama@gmail.com">nambanpanorama@gmail.com</a></div>
+  </div>
+</div><!-- /mob-view -->
+
 <script>
 function toggleMenu(){
   var m=document.getElementById('mobileMenu'),ov=document.getElementById('menuOverlay'),cl=document.getElementById('mobileClose'),hb=document.querySelector('.hamburger');
@@ -396,15 +522,15 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){var m=docum
 <script>
 function submitForm(e){
   e.preventDefault();
-  var f=document.getElementById('td-form');
+  var f=e.target;
   var inp=f.querySelector('[name="ten_sdt"]');
   var ten=(inp.value||'').trim();
-  var goc=f.querySelector('[name="goc_nhin"]').value||'';
-  var nhu=f.querySelector('[name="muon_lam_ro"]').value||'';
-  var btn=f.querySelector('.fbtn');
-  var hint=document.getElementById('td-hint');
+  var goc=(f.querySelector('[name="goc_nhin"]')||{}).value||'';
+  var nhu=(f.querySelector('[name="muon_lam_ro"]')||{}).value||'';
+  var btn=f.querySelector('button[type="submit"]');
+  var hint=f.querySelector('#td-hint')||f.querySelector('.fhint,.td-hint');
   if(!ten){inp.style.borderColor='var(--clay)';if(hint)hint.textContent='Để lại tên và số để tụi mình nhắn lại được nhé.';inp.focus();return false;}
-  btn.textContent='Đang gửi…';btn.disabled=true;
+  if(btn){btn.textContent='Đang gửi…';btn.disabled=true;}
   var fd=new FormData();
   fd.append("entry.260173030",ten);
   fd.append("entry.2084374895",ten);
