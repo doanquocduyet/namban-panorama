@@ -1,6 +1,6 @@
 # Danh sách bài trên nambanpanorama.com
 
-Tự sinh bằng `tools/gen-slug-list.py`. Tổng: **73** trang. Cột hub = hub thật liệt kê bài (sau dedup mỗi bài về đúng 1 hub). Chạy lại sau mỗi lần thêm/xóa/đổi hub bài.
+Tự sinh bằng `tools/gen-slug-list.py`. Tổng: **74** trang. Cột hub = hub thật liệt kê bài (sau dedup mỗi bài về đúng 1 hub). Chạy lại sau mỗi lần thêm/xóa/đổi hub bài.
 
 | slug | tiêu đề | hub |
 |---|---|---|
@@ -27,6 +27,7 @@ Tự sinh bằng `tools/gen-slug-list.py`. Tổng: **73** trang. Cột hub = hub
 | `/duong-di-nam-ban` | Sài Gòn đi lên Nam Ban bằng đường nào? Từ Đà Lạt, sân bay Liên Khương | Về Nam Ban |
 | `/duong-ha-bac-nam-ban` | Đường Hà Bắc Nam Ban (tuyến T-20): quy mô, tiến độ và ý nghĩa với đất | Cập nhật |
 | `/elephant-waterfall-nam-ban` | Elephant Waterfall (Nam Ban), Da Lat: What to Know Before You Go | — |
+| `/gia-ca-phe-va-gia-dat-nam-ban` | Giá cà phê tăng thì giá đất Nam Ban có tăng theo không? | Về Đất |
 | `/giu-dat-nam-ban-tu-xa` | Mua đất Nam Ban xong, ở xa thì giữ đất kiểu gì | Về Đất |
 | `/google-maps-khong-noi-ve-nam-ban` | Những điều Google Maps không nói về Nam Ban | Về Nam Ban |
 | `/ho-bai-cong-nam-ban` | Hồ Bãi Công Nam Ban: đường vào, giá đất và khu villa quanh hồ | Về Đất |

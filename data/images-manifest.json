@@ -9,12 +9,11 @@
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
  "total_images": 170,
- "unused_count": 4,
+ "unused_count": 3,
  "unused": [
   "duong-deo-mua-suong-mo.webp",
   "gia-lam-biet-thu-o-to.webp",
-  "me-linh-vuon-doi-cao.webp",
-  "og-ca-phe-nam-ban.jpg"
+  "me-linh-vuon-doi-cao.webp"
  ],
  "images": {
   "ban-dat-nam-ban.jpg": {
@@ -1842,8 +1841,12 @@
     1200,
     630
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "gia-ca-phe-va-gia-dat-nam-ban.html": [
+     "og",
+     "twitter"
+    ]
+   }
   },
   "og-cau-tong-doi-nam-ban.jpg": {
    "kb": 188,
