@@ -9,7 +9,7 @@
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
  "total_images": 191,
- "unused_count": 15,
+ "unused_count": 14,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
   "cay-xang-petrolimex-nam-ban.webp",
@@ -20,7 +20,6 @@
   "hoa-vien-tiec-cuoi-ba-dinh-nam-ban.webp",
   "lo-dat-view-thung-lung-me-linh.webp",
   "me-linh-vuon-doi-cao.webp",
-  "nacasco-hill-me-linh.webp",
   "nha-tho-giao-xu-nam-ban.webp",
   "quan-com-sen-viet-nam-ban.webp",
   "quan-com-thanh-hai-nam-ban.webp",
@@ -1657,8 +1656,11 @@
     1600,
     1200
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "nen-xem-khu-nao-o-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "nam-ban-aerial.jpg": {
    "kb": 200,
