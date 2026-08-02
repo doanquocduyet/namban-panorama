@@ -8,12 +8,17 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 170,
- "unused_count": 3,
+ "total_images": 181,
+ "unused_count": 8,
  "unused": [
+  "ban-do-tuyen-me-linh-langbiang.webp",
+  "cong-jong-minh-farm-me-linh.webp",
   "duong-deo-mua-suong-mo.webp",
   "gia-lam-biet-thu-o-to.webp",
-  "me-linh-vuon-doi-cao.webp"
+  "lo-dat-view-thung-lung-me-linh.webp",
+  "me-linh-vuon-doi-cao.webp",
+  "nacasco-hill-me-linh.webp",
+  "xay-nha-tren-doi-me-linh.webp"
  ],
  "images": {
   "ban-dat-nam-ban.jpg": {
@@ -59,6 +64,15 @@
      "display"
     ]
    }
+  },
+  "ban-do-tuyen-me-linh-langbiang.webp": {
+   "kb": 170,
+   "dims": [
+    736,
+    1600
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "ban-do-tuyen-sai-gon-da-lat.webp": {
    "kb": 136,
@@ -507,6 +521,27 @@
     ]
    }
   },
+  "cong-an-xa-nam-ban-me-linh.webp": {
+   "kb": 295,
+   "dims": [
+    1600,
+    1200
+   ],
+   "used_in": {
+    "sap-nhap-nam-ban-dat.html": [
+     "display"
+    ]
+   }
+  },
+  "cong-jong-minh-farm-me-linh.webp": {
+   "kb": 276,
+   "dims": [
+    1280,
+    960
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
   "cong-thien-vien-linh-an-nam-ban.webp": {
    "kb": 246,
    "dims": [
@@ -515,6 +550,18 @@
    ],
    "used_in": {
     "mot-ngay-o-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
+  "cong-trinh-dang-xay-me-linh.webp": {
+   "kb": 289,
+   "dims": [
+    1600,
+    1108
+   ],
+   "used_in": {
+    "xay-nha-o-nam-ban.html": [
      "display"
     ]
    }
@@ -649,6 +696,9 @@
     ],
     "living-in-nam-ban.html": [
      "display"
+    ],
+    "en/index.html": [
+     "css"
     ],
     "ja/nam-ban-kurashi.html": [
      "display"
@@ -947,6 +997,10 @@
     "trao-doi.html": [
      "display",
      "schema"
+    ],
+    "en/trao-doi.html": [
+     "display",
+     "schema"
     ]
    }
   },
@@ -1213,6 +1267,18 @@
     ]
    }
   },
+  "khu-dan-cu-moi-me-linh.webp": {
+   "kb": 290,
+   "dims": [
+    1600,
+    1127
+   ],
+   "used_in": {
+    "mua-dat-nam-ban-500-trieu-1-ty.html": [
+     "display"
+    ]
+   }
+  },
   "khu-nao-o-nam-ban.jpg": {
    "kb": 192,
    "dims": [
@@ -1375,6 +1441,18 @@
     ]
    }
   },
+  "lo-dat-me-linh-lam-mong.webp": {
+   "kb": 272,
+   "dims": [
+    1600,
+    969
+   ],
+   "used_in": {
+    "kinh-nghiem-mua-dat-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
   "lo-dat-nam-ban-coc-ranh.webp": {
    "kb": 176,
    "dims": [
@@ -1386,6 +1464,15 @@
      "display"
     ]
    }
+  },
+  "lo-dat-view-thung-lung-me-linh.webp": {
+   "kb": 238,
+   "dims": [
+    1600,
+    1200
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "me-linh-doi-thong.webp": {
    "kb": 286,
@@ -1529,6 +1616,15 @@
      "twitter"
     ]
    }
+  },
+  "nacasco-hill-me-linh.webp": {
+   "kb": 297,
+   "dims": [
+    1600,
+    1200
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "nam-ban-aerial.jpg": {
    "kb": 200,
@@ -1812,6 +1908,18 @@
     ]
    }
   },
+  "nha-cho-thue-me-linh.webp": {
+   "kb": 286,
+   "dims": [
+    1600,
+    1137
+   ],
+   "used_in": {
+    "o-thu-nam-ban-truoc-khi-mua-dat.html": [
+     "display"
+    ]
+   }
+  },
   "og-brief-01.jpg": {
    "kb": 195,
    "dims": [
@@ -2017,6 +2125,10 @@
     "vuon-bo-loi-bao-nhieu.html": [
      "schema"
     ],
+    "en/index.html": [
+     "og",
+     "twitter"
+    ],
     "image-sitemap.xml": [
      "ref"
     ]
@@ -2114,6 +2226,10 @@
    ],
    "used_in": {
     "nam-ban.html": [
+     "og",
+     "twitter"
+    ],
+    "en/nam-ban.html": [
      "og",
      "twitter"
     ]
@@ -2424,6 +2540,9 @@
     "nam-ban.html": [
      "display"
     ],
+    "en/nam-ban.html": [
+     "display"
+    ],
     "ja/nam-ban-zou-no-taki.html": [
      "og",
      "schema"
@@ -2475,6 +2594,15 @@
     "index.html": [
      "display"
     ],
+    "trao-doi.html": [
+     "display"
+    ],
+    "en/nam-ban.html": [
+     "css"
+    ],
+    "en/index.html": [
+     "display"
+    ],
     "ja/nam-ban-kurashi.html": [
      "display"
     ],
@@ -2501,6 +2629,18 @@
    "used_in": {
     "dat.html": [
      "css"
+    ]
+   }
+  },
+  "toan-canh-thung-lung-me-linh.webp": {
+   "kb": 256,
+   "dims": [
+    1600,
+    1200
+   ],
+   "used_in": {
+    "mua-dat-da-lat-chon-nam-ban.html": [
+     "display"
     ]
    }
   },
@@ -2537,6 +2677,10 @@
    ],
    "used_in": {
     "trao-doi.html": [
+     "og",
+     "twitter"
+    ],
+    "en/trao-doi.html": [
      "og",
      "twitter"
     ],
@@ -2587,6 +2731,9 @@
     "nam-ban-co-hop-voi-ban.html": [
      "display"
     ],
+    "en/index.html": [
+     "display"
+    ],
     "image-sitemap.xml": [
      "ref"
     ]
@@ -2619,6 +2766,15 @@
      "twitter"
     ]
    }
+  },
+  "xay-nha-tren-doi-me-linh.webp": {
+   "kb": 301,
+   "dims": [
+    1280,
+    960
+   ],
+   "used_in": {},
+   "status": "unused"
   }
  }
 }
