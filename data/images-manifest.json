@@ -8,16 +8,23 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 181,
- "unused_count": 8,
+ "total_images": 191,
+ "unused_count": 15,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
+  "cay-xang-petrolimex-nam-ban.webp",
   "cong-jong-minh-farm-me-linh.webp",
+  "dehavi-coffee-nam-ban.webp",
   "duong-deo-mua-suong-mo.webp",
   "gia-lam-biet-thu-o-to.webp",
+  "hoa-vien-tiec-cuoi-ba-dinh-nam-ban.webp",
   "lo-dat-view-thung-lung-me-linh.webp",
   "me-linh-vuon-doi-cao.webp",
   "nacasco-hill-me-linh.webp",
+  "nha-tho-giao-xu-nam-ban.webp",
+  "quan-com-sen-viet-nam-ban.webp",
+  "quan-com-thanh-hai-nam-ban.webp",
+  "tuong-duc-me-nha-tho-nam-ban.webp",
   "xay-nha-tren-doi-me-linh.webp"
  ],
  "images": {
@@ -454,6 +461,15 @@
     ]
    }
   },
+  "cay-xang-petrolimex-nam-ban.webp": {
+   "kb": 246,
+   "dims": [
+    1600,
+    1223
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
   "cay-xang-truc-725-bien-bao.jpg": {
    "kb": 216,
    "dims": [
@@ -659,6 +675,15 @@
      "ref"
     ]
    }
+  },
+  "dehavi-coffee-nam-ban.webp": {
+   "kb": 241,
+   "dims": [
+    1600,
+    1099
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "deo-ta-nung.jpg": {
    "kb": 256,
@@ -1223,6 +1248,15 @@
      "ref"
     ]
    }
+  },
+  "hoa-vien-tiec-cuoi-ba-dinh-nam-ban.webp": {
+   "kb": 223,
+   "dims": [
+    1600,
+    973
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "homestay-hoang-hon.webp": {
    "kb": 185,
@@ -1920,6 +1954,15 @@
     ]
    }
   },
+  "nha-tho-giao-xu-nam-ban.webp": {
+   "kb": 218,
+   "dims": [
+    1600,
+    1111
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
   "og-brief-01.jpg": {
    "kb": 195,
    "dims": [
@@ -2328,6 +2371,18 @@
     ]
    }
   },
+  "quan-banh-canh-ca-loc-nam-ban.webp": {
+   "kb": 245,
+   "dims": [
+    1600,
+    1030
+   ],
+   "used_in": {
+    "nam-ban-co-dang-song.html": [
+     "display"
+    ]
+   }
+  },
   "quan-ca-phe-nam-ban.webp": {
    "kb": 249,
    "dims": [
@@ -2345,6 +2400,24 @@
      "ref"
     ]
    }
+  },
+  "quan-com-sen-viet-nam-ban.webp": {
+   "kb": 237,
+   "dims": [
+    1600,
+    1218
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
+  "quan-com-thanh-hai-nam-ban.webp": {
+   "kb": 294,
+   "dims": [
+    1600,
+    1264
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "quan-thao-men-nam-ban.webp": {
    "kb": 198,
@@ -2482,6 +2555,18 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "tam-trinh-coffee-experiences-nam-ban.webp": {
+   "kb": 243,
+   "dims": [
+    1600,
+    1200
+   ],
+   "used_in": {
+    "tour-ca-phe-nam-ban.html": [
+     "display"
     ]
    }
   },
@@ -2669,6 +2754,18 @@
     ]
    }
   },
+  "tram-y-te-xa-nam-ban.webp": {
+   "kb": 287,
+   "dims": [
+    1600,
+    1200
+   ],
+   "used_in": {
+    "chuyen-len-nam-ban-song.html": [
+     "display"
+    ]
+   }
+  },
   "trao-doi.jpg": {
    "kb": 90,
    "dims": [
@@ -2705,6 +2802,15 @@
      "ref"
     ]
    }
+  },
+  "tuong-duc-me-nha-tho-nam-ban.webp": {
+   "kb": 78,
+   "dims": [
+    1200,
+    1600
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "van-ban-lien-khuong.webp": {
    "kb": 83,
