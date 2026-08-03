@@ -8,8 +8,8 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 191,
- "unused_count": 14,
+ "total_images": 202,
+ "unused_count": 18,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
   "cay-xang-petrolimex-nam-ban.webp",
@@ -23,7 +23,11 @@
   "nha-tho-giao-xu-nam-ban.webp",
   "quan-com-sen-viet-nam-ban.webp",
   "quan-com-thanh-hai-nam-ban.webp",
+  "ruong-bap-nam-ban.webp",
+  "san-vuon-bon-lua-nam-ban.webp",
+  "tram-y-te-xa-nam-ban-mat-truoc.webp",
   "tuong-duc-me-nha-tho-nam-ban.webp",
+  "vuon-xen-canh-du-du-ca-phe-nam-ban.webp",
   "xay-nha-tren-doi-me-linh.webp"
  ],
  "images": {
@@ -334,6 +338,18 @@
     ]
    }
   },
+  "canh-ca-phe-qua-xanh-nam-ban.webp": {
+   "kb": 278,
+   "dims": [
+    1200,
+    1600
+   ],
+   "used_in": {
+    "mua-vuon-ca-phe-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
   "cau-chuyen-nam-ban.jpg": {
    "kb": 73,
    "dims": [
@@ -411,6 +427,18 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "cay-bo-triu-qua-nam-ban.webp": {
+   "kb": 292,
+   "dims": [
+    1600,
+    1200
+   ],
+   "used_in": {
+    "dac-san-nam-ban.html": [
+     "display"
     ]
    }
   },
@@ -565,6 +593,18 @@
    ],
    "used_in": {
     "mot-ngay-o-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
+  "cong-thon-van-hoa-hoan-kiem-nam-ha.webp": {
+   "kb": 216,
+   "dims": [
+    1600,
+    1200
+   ],
+   "used_in": {
+    "nam-ban-va-nam-ha.html": [
      "display"
     ]
    }
@@ -1956,6 +1996,18 @@
     ]
    }
   },
+  "nha-go-farmstay-nam-ban.webp": {
+   "kb": 256,
+   "dims": [
+    1600,
+    1200
+   ],
+   "used_in": {
+    "homestay-nam-ban-co-lai-khong.html": [
+     "display"
+    ]
+   }
+  },
   "nha-tho-giao-xu-nam-ban.webp": {
    "kb": 218,
    "dims": [
@@ -1964,6 +2016,18 @@
    ],
    "used_in": {},
    "status": "unused"
+  },
+  "nuong-dau-tam-nam-ban.webp": {
+   "kb": 239,
+   "dims": [
+    1600,
+    1157
+   ],
+   "used_in": {
+    "dau-tam-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "og-brief-01.jpg": {
    "kb": 195,
@@ -2501,6 +2565,24 @@
     ]
    }
   },
+  "ruong-bap-nam-ban.webp": {
+   "kb": 281,
+   "dims": [
+    1200,
+    1600
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
+  "san-vuon-bon-lua-nam-ban.webp": {
+   "kb": 278,
+   "dims": [
+    1600,
+    1200
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
   "sau-rieng-nam-ban.jpg": {
    "kb": 110,
    "dims": [
@@ -2568,6 +2650,18 @@
    ],
    "used_in": {
     "tour-ca-phe-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
+  "tay-cam-canh-ca-phe-nam-ban.webp": {
+   "kb": 246,
+   "dims": [
+    1200,
+    1600
+   ],
+   "used_in": {
+    "mua-ca-phe-nam-ban.html": [
      "display"
     ]
    }
@@ -2756,6 +2850,15 @@
     ]
    }
   },
+  "tram-y-te-xa-nam-ban-mat-truoc.webp": {
+   "kb": 289,
+   "dims": [
+    1600,
+    1200
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
   "tram-y-te-xa-nam-ban.webp": {
    "kb": 287,
    "dims": [
@@ -2874,6 +2977,27 @@
      "twitter"
     ]
    }
+  },
+  "vuon-ca-phe-non-nam-ban.webp": {
+   "kb": 281,
+   "dims": [
+    1200,
+    1600
+   ],
+   "used_in": {
+    "mua-dat-co-vuon-ca-phe.html": [
+     "display"
+    ]
+   }
+  },
+  "vuon-xen-canh-du-du-ca-phe-nam-ban.webp": {
+   "kb": 293,
+   "dims": [
+    1200,
+    1600
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "xay-nha-tren-doi-me-linh.webp": {
    "kb": 301,
