@@ -9,9 +9,10 @@
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
  "total_images": 202,
- "unused_count": 18,
+ "unused_count": 19,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
+  "canh-ca-phe-qua-xanh-nam-ban.webp",
   "cay-xang-petrolimex-nam-ban.webp",
   "cong-jong-minh-farm-me-linh.webp",
   "dehavi-coffee-nam-ban.webp",
@@ -344,11 +345,8 @@
     1200,
     1600
    ],
-   "used_in": {
-    "mua-vuon-ca-phe-nam-ban.html": [
-     "display"
-    ]
-   }
+   "used_in": {},
+   "status": "unused"
   },
   "cau-chuyen-nam-ban.jpg": {
    "kb": 73,
