@@ -8,8 +8,8 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 202,
- "unused_count": 19,
+ "total_images": 204,
+ "unused_count": 20,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
   "canh-ca-phe-qua-xanh-nam-ban.webp",
@@ -18,6 +18,7 @@
   "dehavi-coffee-nam-ban.webp",
   "duong-deo-mua-suong-mo.webp",
   "gia-lam-biet-thu-o-to.webp",
+  "hat-bo-tach-vo-nam-ban.webp",
   "hoa-vien-tiec-cuoi-ba-dinh-nam-ban.webp",
   "lo-dat-view-thung-lung-me-linh.webp",
   "me-linh-vuon-doi-cao.webp",
@@ -1098,6 +1099,27 @@
      "display"
     ]
    }
+  },
+  "hat-bo-dong-bao-nam-ban.webp": {
+   "kb": 285,
+   "dims": [
+    1125,
+    1500
+   ],
+   "used_in": {
+    "vuon-bo-loi-bao-nhieu.html": [
+     "display"
+    ]
+   }
+  },
+  "hat-bo-tach-vo-nam-ban.webp": {
+   "kb": 257,
+   "dims": [
+    1200,
+    1600
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "hien-nha-thung-lung.jpg": {
    "kb": 290,
