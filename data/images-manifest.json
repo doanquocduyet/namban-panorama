@@ -8,8 +8,8 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 204,
- "unused_count": 20,
+ "total_images": 207,
+ "unused_count": 21,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
   "canh-ca-phe-qua-xanh-nam-ban.webp",
@@ -28,6 +28,7 @@
   "ruong-bap-nam-ban.webp",
   "san-vuon-bon-lua-nam-ban.webp",
   "tram-y-te-xa-nam-ban-mat-truoc.webp",
+  "trang-banh-cuon-cho-gia-lam.webp",
   "tuong-duc-me-nha-tho-nam-ban.webp",
   "vuon-xen-canh-du-du-ca-phe-nam-ban.webp",
   "xay-nha-tren-doi-me-linh.webp"
@@ -94,6 +95,18 @@
    ],
    "used_in": {
     "duong-di-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
+  "banh-cuon-cho-gia-lam-nam-ban.webp": {
+   "kb": 219,
+   "dims": [
+    1317,
+    1600
+   ],
+   "used_in": {
+    "mot-ngay-o-nam-ban.html": [
      "display"
     ]
    }
@@ -1096,6 +1109,18 @@
    ],
    "used_in": {
     "dac-san-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
+  "hang-banh-cuon-cho-gia-lam-toi.webp": {
+   "kb": 212,
+   "dims": [
+    1473,
+    1600
+   ],
+   "used_in": {
+    "mot-ngay-o-nam-ban.html": [
      "display"
     ]
    }
@@ -2890,6 +2915,15 @@
      "display"
     ]
    }
+  },
+  "trang-banh-cuon-cho-gia-lam.webp": {
+   "kb": 224,
+   "dims": [
+    1600,
+    1200
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "trao-doi.jpg": {
    "kb": 90,
