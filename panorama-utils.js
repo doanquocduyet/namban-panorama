@@ -368,3 +368,48 @@
     }
   }catch(e){}
 })();
+
+/* CHỐNG COPY CHỮ & LƯU HÌNH — mức "vừa phải" (Chú chốt):
+   chặn bôi đen/copy chữ + kéo/chuột phải/long-press lưu ảnh trên TOÀN site,
+   NHƯNG CHỪA liên hệ (SĐT/email/Zalo ở footer, khối liên hệ cuối bài, trang Trao đổi)
+   và các ô nhập form — để khách vẫn copy được số mà liên hệ (giữ phễu).
+   Lưu ý: chỉ chặn người dùng phổ thông; KHÔNG ảnh hưởng Google/AI (đọc thẳng HTML nguồn). */
+(function(){
+  try{
+    var EXEMPT='input,textarea,select,[contenteditable="true"],.pm-selectable,'
+      +'footer,footer *,.pm-endcontact,.pm-endcontact *,.contact,.contact *,'
+      +'a[href^="tel:"],a[href^="mailto:"],a[href*="zalo"],a[href*="mail.google.com"]';
+    function exempt(node){
+      for(var el=node; el && el.nodeType; el=(el.parentElement||el.parentNode)){
+        if(el.matches && el.matches(EXEMPT)) return true;
+      }
+      return false;
+    }
+    var css=
+      'body{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}'
+      +'img,figure,picture,svg,video{-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none;-webkit-touch-callout:none;}'
+      +EXEMPT+'{-webkit-user-select:text!important;-moz-user-select:text!important;-ms-user-select:text!important;user-select:text!important;-webkit-touch-callout:default!important;}';
+    var st=document.createElement('style'); st.id='pm-protect'; st.textContent=css;
+    (document.head||document.documentElement).appendChild(st);
+
+    document.addEventListener('contextmenu',function(e){ if(!exempt(e.target)) e.preventDefault(); },{capture:true});
+    document.addEventListener('dragstart',function(e){
+      var t=e.target;
+      if(t && (t.tagName==='IMG' || (t.closest && t.closest('img,figure,picture')))) e.preventDefault();
+    },{capture:true});
+    ['copy','cut'].forEach(function(ev){
+      document.addEventListener(ev,function(e){
+        var s=window.getSelection&&window.getSelection();
+        var node=(s&&s.anchorNode)?s.anchorNode:e.target;
+        if(!exempt(node)) e.preventDefault();
+      },{capture:true});
+    });
+    document.addEventListener('keydown',function(e){
+      var k=(e.key||'').toLowerCase();
+      if((e.ctrlKey||e.metaKey)&&k==='s') e.preventDefault();   /* chặn lưu trang (kèm ảnh) */
+    },{capture:true});
+    function markImgs(){ var im=document.querySelectorAll('img'); for(var i=0;i<im.length;i++) im[i].setAttribute('draggable','false'); }
+    if(document.readyState!=='loading') markImgs();
+    else document.addEventListener('DOMContentLoaded',markImgs);
+  }catch(e){}
+})();
