@@ -392,7 +392,11 @@
     var st=document.createElement('style'); st.id='pm-protect'; st.textContent=css;
     (document.head||document.documentElement).appendChild(st);
 
-    document.addEventListener('contextmenu',function(e){ if(!exempt(e.target)) e.preventDefault(); },{capture:true});
+    document.addEventListener('contextmenu',function(e){
+      var t=e.target;
+      var onImg = t && (t.tagName==='IMG'||t.tagName==='VIDEO'||(t.closest&&t.closest('img,picture,video')));
+      if(onImg) e.preventDefault();   /* chặn chuột phải trên ẢNH (không cho "lưu ảnh"); CHỮ vẫn mở menu để dịch */
+    },{capture:true});
     document.addEventListener('dragstart',function(e){
       var t=e.target;
       if(t && (t.tagName==='IMG' || (t.closest && t.closest('img,figure,picture')))) e.preventDefault();
