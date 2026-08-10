@@ -1,21 +1,17 @@
 # Trạng thái index — Google Search Console
 
-Cập nhật: hôm nay · Property: `https://nambanpanorama.com/` · Tổng URL: 86 · **Đã index (PASS): 78**
+Cập nhật: hôm nay · Property: `https://nambanpanorama.com/` · Tổng URL: 86 · **Đã index (PASS): 83**
 
 ## Tổng hợp theo trạng thái
 
-- **78** — Đã được gửi và lập chỉ mục
-- **8** — Google không xác định được URL
+- **83** — Đã được gửi và lập chỉ mục
+- **2** — Đã phát hiện thấy – hiện chưa được lập chỉ mục
+- **1** — Trang có lệnh chuyển hướng
 
 ## Trang CHƯA index (cần chú ý)
 
 | URL | Verdict | Trạng thái |
 |---|---|---|
-| /en/ | NEUTRAL | Google không xác định được URL |
-| /en/nam-ban | NEUTRAL | Google không xác định được URL |
-| /en/trao-doi | NEUTRAL | Google không xác định được URL |
-| /duong-di-nam-ban | NEUTRAL | Google không xác định được URL |
-| /ban-dat-nam-ban | NEUTRAL | Google không xác định được URL |
-| /vua-mua-dat-nam-ban-lam-gi | NEUTRAL | Google không xác định được URL |
-| /gia-ca-phe-va-gia-dat-nam-ban | NEUTRAL | Google không xác định được URL |
-| /co-nen-mua-dat-nam-ban-o-xa | NEUTRAL | Google không xác định được URL |
+| /en/ | NEUTRAL | Trang có lệnh chuyển hướng |
+| /ban-dat-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục |
+| /vua-mua-dat-nam-ban-lam-gi | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục |
