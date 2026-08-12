@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 213,
+ "total_images": 214,
  "unused_count": 21,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -2160,6 +2160,20 @@
    ],
    "used_in": {},
    "status": "unused"
+  },
+  "nuoc-o-nam-ban.jpg": {
+   "kb": 169,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "nuoc-o-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
   },
   "nuong-dau-tam-nam-ban.webp": {
    "kb": 239,
