@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 210,
+ "total_images": 213,
  "unused_count": 21,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -281,6 +281,9 @@
     ],
     "dat-nam-ban-trong-cay-gi.html": [
      "display"
+    ],
+    "len-lam-dong-song-lam-gi.html": [
+     "display"
     ]
    }
   },
@@ -544,6 +547,9 @@
    ],
    "used_in": {
     "nam-ban-thuoc-xa-nao.html": [
+     "display"
+    ],
+    "lam-dong-co-gi-de-lam-an.html": [
      "display"
     ]
    }
@@ -1475,6 +1481,48 @@
    "used_in": {
     "cau-chuyen-nam-ban.html": [
      "display"
+    ]
+   }
+  },
+  "lam-dong-co-gi-de-lam-an.jpg": {
+   "kb": 190,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "lam-dong-co-gi-de-lam-an.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
+  "len-lam-dong-nen-song-o-dau.jpg": {
+   "kb": 189,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "len-lam-dong-nen-song-o-dau.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
+  "len-lam-dong-song-lam-gi.jpg": {
+   "kb": 201,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "len-lam-dong-song-lam-gi.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
@@ -2872,6 +2920,9 @@
      "display"
     ],
     "index.html": [
+     "display"
+    ],
+    "len-lam-dong-nen-song-o-dau.html": [
      "display"
     ],
     "trao-doi.html": [
