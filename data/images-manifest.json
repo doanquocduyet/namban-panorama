@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 216,
+ "total_images": 219,
  "unused_count": 21,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -1315,7 +1315,7 @@
    }
   },
   "ho-dong-thanh-nam-ban.jpg": {
-   "kb": 242,
+   "kb": 131,
    "dims": [
     1200,
     630
@@ -1325,6 +1325,42 @@
      "og",
      "schema",
      "twitter"
+    ]
+   }
+  },
+  "ho-dong-thanh-sat-truot.webp": {
+   "kb": 92,
+   "dims": [
+    680,
+    390
+   ],
+   "used_in": {
+    "ho-dong-thanh-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
+  "ho-dong-thanh-thap-lay-nuoc.webp": {
+   "kb": 52,
+   "dims": [
+    680,
+    383
+   ],
+   "used_in": {
+    "ho-dong-thanh-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
+  "ho-dong-thanh-tran-xa-lu.webp": {
+   "kb": 72,
+   "dims": [
+    680,
+    383
+   ],
+   "used_in": {
+    "ho-dong-thanh-nam-ban.html": [
+     "display"
     ]
    }
   },
