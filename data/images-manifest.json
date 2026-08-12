@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 207,
+ "total_images": 209,
  "unused_count": 21,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -1325,6 +1325,9 @@
     900
    ],
    "used_in": {
+    "nam-ban-hay-lac-duong.html": [
+     "display"
+    ],
     "mua-dat-nam-ban.html": [
      "display"
     ],
@@ -1815,6 +1818,34 @@
    ],
    "used_in": {
     "nam-ban-hay-don-duong.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
+  "nam-ban-hay-duc-trong.jpg": {
+   "kb": 190,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "nam-ban-hay-duc-trong.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
+  "nam-ban-hay-lac-duong.jpg": {
+   "kb": 210,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "nam-ban-hay-lac-duong.html": [
      "og",
      "schema",
      "twitter"
@@ -2816,6 +2847,9 @@
    "used_in": {
     "nam-ban.html": [
      "css"
+    ],
+    "nam-ban-hay-duc-trong.html": [
+     "display"
     ],
     "index.html": [
      "display"
