@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 215,
+ "total_images": 216,
  "unused_count": 21,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -1311,6 +1311,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "ho-dong-thanh-nam-ban.jpg": {
+   "kb": 242,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "ho-dong-thanh-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
