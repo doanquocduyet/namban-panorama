@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 243,
+ "total_images": 244,
  "unused_count": 25,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -1058,6 +1058,18 @@
    "dims": [
     1600,
     1105
+   ],
+   "used_in": {
+    "truoc-khi-xuong-tien.html": [
+     "display"
+    ]
+   }
+  },
+  "duong-be-tong-doi-nam-ban.webp": {
+   "kb": 172,
+   "dims": [
+    1076,
+    1644
    ],
    "used_in": {
     "truoc-khi-xuong-tien.html": [
