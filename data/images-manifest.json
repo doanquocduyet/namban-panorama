@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 244,
+ "total_images": 250,
  "unused_count": 25,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -791,6 +791,18 @@
     ]
    }
   },
+  "dat-doi-ven-rung-nam-ban.webp": {
+   "kb": 239,
+   "dims": [
+    1500,
+    1125
+   ],
+   "used_in": {
+    "dat-nguon-goc-lam-nghiep-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
   "dat-nam-ban-trong-cay-gi.jpg": {
    "kb": 61,
    "dims": [
@@ -1182,6 +1194,18 @@
    ],
    "used_in": {
     "duong-di-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
+  "duong-vao-khu-dat-xa-nam-ban.webp": {
+   "kb": 242,
+   "dims": [
+    1500,
+    844
+   ],
+   "used_in": {
+    "co-nen-mua-dat-nam-ban-o-xa.html": [
      "display"
     ]
    }
@@ -2114,6 +2138,18 @@
     ]
    }
   },
+  "nam-ban-dong-dat-trien-doi.webp": {
+   "kb": 269,
+   "dims": [
+    1500,
+    844
+   ],
+   "used_in": {
+    "thon-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
   "nam-ban-hay-don-duong.jpg": {
    "kb": 136,
    "dims": [
@@ -2354,6 +2390,18 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "nam-ban-vuon-doi-xa.webp": {
+   "kb": 76,
+   "dims": [
+    1500,
+    822
+   ],
+   "used_in": {
+    "nam-ban-hay-dran.html": [
+     "display"
     ]
    }
   },
@@ -3256,6 +3304,30 @@
      "og",
      "schema",
      "twitter"
+    ]
+   }
+  },
+  "thua-dat-rao-giu-nam-ban.webp": {
+   "kb": 159,
+   "dims": [
+    1280,
+    720
+   ],
+   "used_in": {
+    "giu-dat-nam-ban-tu-xa.html": [
+     "display"
+    ]
+   }
+  },
+  "thua-vua-xuong-giong-nam-ban.webp": {
+   "kb": 292,
+   "dims": [
+    1500,
+    1125
+   ],
+   "used_in": {
+    "vua-mua-dat-nam-ban-lam-gi.html": [
+     "display"
     ]
    }
   },
