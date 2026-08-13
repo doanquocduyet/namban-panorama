@@ -8,8 +8,8 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 235,
- "unused_count": 25,
+ "total_images": 234,
+ "unused_count": 24,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
   "canh-ca-phe-qua-xanh-nam-ban.webp",
@@ -27,7 +27,6 @@
   "nha-tho-giao-xu-nam-ban.webp",
   "quan-com-sen-viet-nam-ban.webp",
   "quan-com-thanh-hai-nam-ban.webp",
-  "quy-hoach-tp-da-lat-2030.webp",
   "ruong-bap-nam-ban.webp",
   "san-vuon-bon-lua-nam-ban.webp",
   "so-do-sap-xep-dvhc-huyen-lam-dong.webp",
@@ -1793,7 +1792,7 @@
    "status": "unused"
   },
   "lo-trinh-do-thi-lam-dong-2035.webp": {
-   "kb": 169,
+   "kb": 128,
    "dims": [
     1972,
     1270
@@ -2908,15 +2907,6 @@
     ]
    }
   },
-  "quy-hoach-tp-da-lat-2030.webp": {
-   "kb": 180,
-   "dims": [
-    1400,
-    1015
-   ],
-   "used_in": {},
-   "status": "unused"
-  },
   "rau-hoa-cay-do-la-nam-ban.jpg": {
    "kb": 192,
    "dims": [
@@ -2994,7 +2984,7 @@
    }
   },
   "so-do-sap-xep-dvhc-huyen-lam-dong.webp": {
-   "kb": 84,
+   "kb": 63,
    "dims": [
     1290,
     1247
