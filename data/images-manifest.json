@@ -8,8 +8,8 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 233,
- "unused_count": 24,
+ "total_images": 235,
+ "unused_count": 25,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
   "canh-ca-phe-qua-xanh-nam-ban.webp",
@@ -30,6 +30,7 @@
   "quy-hoach-tp-da-lat-2030.webp",
   "ruong-bap-nam-ban.webp",
   "san-vuon-bon-lua-nam-ban.webp",
+  "so-do-sap-xep-dvhc-huyen-lam-dong.webp",
   "tram-y-te-xa-nam-ban-mat-truoc.webp",
   "trang-banh-cuon-cho-gia-lam.webp",
   "tuong-duc-me-nha-tho-nam-ban.webp",
@@ -1791,6 +1792,18 @@
    "used_in": {},
    "status": "unused"
   },
+  "lo-trinh-do-thi-lam-dong-2035.webp": {
+   "kb": 169,
+   "dims": [
+    1972,
+    1270
+   ],
+   "used_in": {
+    "nam-ban-co-sap-nhap-da-lat.html": [
+     "display"
+    ]
+   }
+  },
   "me-linh-doi-thong.webp": {
    "kb": 286,
    "dims": [
@@ -2979,6 +2992,15 @@
      "display"
     ]
    }
+  },
+  "so-do-sap-xep-dvhc-huyen-lam-dong.webp": {
+   "kb": 84,
+   "dims": [
+    1290,
+    1247
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "so-sanh-nam-ban-bao-loc-da-lat.jpg": {
    "kb": 116,
