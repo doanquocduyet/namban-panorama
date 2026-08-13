@@ -99,11 +99,11 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
 5. **Fonts CHỈ**: Fraunces (serif) + Be Vietnam Pro (sans). Không thêm font.
 6. **Số liệu chính xác tuyệt đối** — sai một số là sập uy tín. Không chắc thì KHÔNG ghi,
    không đoán. Cần thì web-search kiểm.
-7. **Số đang dùng (quyết định cuối — đo Google Maps 7/2026)**: trung tâm Nam Ban → Đà Lạt
-   **~25km** (qua đèo Tà Nung, ~45 phút); Thác Voi / chùa Linh Ẩn → Đà Lạt **~28km** (xa
-   trung tâm hơn ~3km); Nam Ban → sân bay Liên Khương **~20km**. KHÔNG dùng số cũ
-   23km/25km-cho-Nam-Ban/27km/22km trừ khi Chú yêu cầu đổi lại. Lưu ý: 25km là Nam Ban,
-   28km là Thác Voi — hai số khác nhau có chủ đích, đừng gộp.
+7. **Số đang dùng (Chú chốt lại 13/8/2026 — GỘP VỀ 25km)**: trung tâm Nam Ban → Đà Lạt
+   **~25km** (qua đèo Tà Nung, ~45 phút); Thác Voi / chùa Linh Ẩn → Đà Lạt **~25km** (cùng
+   khu Nam Ban); Nam Ban → sân bay Liên Khương **~20km**. KHÔNG dùng số cũ
+   23km/27km/22km, và **KHÔNG dùng 28km cho Thác Voi nữa** (đã đổi 28→25 toàn site 13/8/2026)
+   trừ khi Chú yêu cầu đổi lại. Cả Nam Ban lẫn Thác Voi giờ đều 25km — đừng tách 25/28 như bản cũ.
    **Tên địa danh (đã research 7/2026)**: giữ **"Chùa Linh Ẩn" (Linh Ẩn Tự)** vì đây là tên
    MẠNH SEO — trang chính quyền lamdong.gov.vn + mọi trang du lịch lớn + 100% kết quả search
    đều dùng "Chùa Linh Ẩn"; "Thiền Viện Linh Ẩn" gần như 0 search, không phải tên chính thức.
