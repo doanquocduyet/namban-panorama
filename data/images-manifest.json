@@ -8,10 +8,15 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 234,
- "unused_count": 23,
+ "total_images": 239,
+ "unused_count": 28,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
+  "ca-phe-che-bien-rua-qua-nam-ban.webp",
+  "ca-phe-phan-loai-qua-nam-ban.webp",
+  "ca-phe-qua-xanh-macro-nam-ban.webp",
+  "ca-phe-rang-moc-nam-ban.webp",
+  "ca-phe-trai-chin-do-nam-ban.webp",
   "cay-xang-petrolimex-nam-ban.webp",
   "cong-jong-minh-farm-me-linh.webp",
   "dehavi-coffee-nam-ban.webp",
@@ -155,6 +160,15 @@
     ]
    }
   },
+  "ca-phe-che-bien-rua-qua-nam-ban.webp": {
+   "kb": 58,
+   "dims": [
+    1300,
+    1949
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
   "ca-phe-chin-vang-tren-cay-nam-ban.webp": {
    "kb": 255,
    "dims": [
@@ -271,6 +285,15 @@
     ]
    }
   },
+  "ca-phe-phan-loai-qua-nam-ban.webp": {
+   "kb": 272,
+   "dims": [
+    1080,
+    1096
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
   "ca-phe-phoi-gian-nam-ban.webp": {
    "kb": 235,
    "dims": [
@@ -312,6 +335,33 @@
      "display"
     ]
    }
+  },
+  "ca-phe-qua-xanh-macro-nam-ban.webp": {
+   "kb": 73,
+   "dims": [
+    1600,
+    1066
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
+  "ca-phe-rang-moc-nam-ban.webp": {
+   "kb": 179,
+   "dims": [
+    1280,
+    853
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
+  "ca-phe-trai-chin-do-nam-ban.webp": {
+   "kb": 70,
+   "dims": [
+    1600,
+    1066
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "ca-phe-trai-chin.webp": {
    "kb": 117,
