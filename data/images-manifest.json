@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 239,
+ "total_images": 243,
  "unused_count": 25,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -1840,6 +1840,18 @@
     ]
    }
   },
+  "lo-dat-trong-hang-rao-nam-ban.webp": {
+   "kb": 159,
+   "dims": [
+    1280,
+    720
+   ],
+   "used_in": {
+    "do-dac-dat-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
   "lo-dat-view-thung-lung-me-linh.webp": {
    "kb": 238,
    "dims": [
@@ -2132,6 +2144,18 @@
     ]
    }
   },
+  "nam-ban-khu-phan-lo-flycam.webp": {
+   "kb": 238,
+   "dims": [
+    1400,
+    1050
+   ],
+   "used_in": {
+    "ban-dat-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
   "nam-ban-mua-nao.jpg": {
    "kb": 244,
    "dims": [
@@ -2143,6 +2167,18 @@
      "og",
      "schema",
      "twitter"
+    ]
+   }
+  },
+  "nam-ban-thung-lung-ao-ho.webp": {
+   "kb": 287,
+   "dims": [
+    1600,
+    1066
+   ],
+   "used_in": {
+    "doc-lo-dat-02-view-ho.html": [
+     "display"
     ]
    }
   },
@@ -2210,6 +2246,18 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "nam-ban-toan-canh-nong-nghiep-flycam.webp": {
+   "kb": 291,
+   "dims": [
+    1400,
+    932
+   ],
+   "used_in": {
+    "brief-01.html": [
+     "display"
     ]
    }
   },
