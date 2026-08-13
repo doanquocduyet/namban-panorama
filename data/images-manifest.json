@@ -9,14 +9,11 @@
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
  "total_images": 239,
- "unused_count": 28,
+ "unused_count": 25,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
   "ca-phe-che-bien-rua-qua-nam-ban.webp",
-  "ca-phe-phan-loai-qua-nam-ban.webp",
   "ca-phe-qua-xanh-macro-nam-ban.webp",
-  "ca-phe-rang-moc-nam-ban.webp",
-  "ca-phe-trai-chin-do-nam-ban.webp",
   "cay-xang-petrolimex-nam-ban.webp",
   "cong-jong-minh-farm-me-linh.webp",
   "dehavi-coffee-nam-ban.webp",
@@ -291,8 +288,11 @@
     1080,
     1096
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "mua-ca-phe-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "ca-phe-phoi-gian-nam-ban.webp": {
    "kb": 235,
@@ -351,8 +351,11 @@
     1280,
     853
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "tour-ca-phe-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "ca-phe-trai-chin-do-nam-ban.webp": {
    "kb": 70,
@@ -360,8 +363,11 @@
     1600,
     1066
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "gia-ca-phe-va-gia-dat-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "ca-phe-trai-chin.webp": {
    "kb": 117,
