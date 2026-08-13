@@ -8,14 +8,15 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 222,
- "unused_count": 21,
+ "total_images": 224,
+ "unused_count": 22,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
   "canh-ca-phe-qua-xanh-nam-ban.webp",
   "cay-xang-petrolimex-nam-ban.webp",
   "cong-jong-minh-farm-me-linh.webp",
   "dehavi-coffee-nam-ban.webp",
+  "dien-linh-tuyen-nam-ban.webp",
   "duong-deo-mua-suong-mo.webp",
   "gia-lam-biet-thu-o-to.webp",
   "hat-bo-tach-vo-nam-ban.webp",
@@ -871,6 +872,15 @@
      "ref"
     ]
    }
+  },
+  "dien-linh-tuyen-nam-ban.webp": {
+   "kb": 95,
+   "dims": [
+    1091,
+    734
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "do-dat-giu-ranh.webp": {
    "kb": 167,
@@ -3207,6 +3217,18 @@
    ],
    "used_in": {
     "san-bay-lien-khuong-mo-lai.html": [
+     "display"
+    ]
+   }
+  },
+  "van-phong-dien-linh-nam-ban.webp": {
+   "kb": 56,
+   "dims": [
+    532,
+    720
+   ],
+   "used_in": {
+    "duong-di-nam-ban.html": [
      "display"
     ]
    }
