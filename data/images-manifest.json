@@ -8,8 +8,8 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 227,
- "unused_count": 22,
+ "total_images": 233,
+ "unused_count": 24,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
   "canh-ca-phe-qua-xanh-nam-ban.webp",
@@ -23,9 +23,11 @@
   "hoa-vien-tiec-cuoi-ba-dinh-nam-ban.webp",
   "lo-dat-view-thung-lung-me-linh.webp",
   "me-linh-vuon-doi-cao.webp",
+  "nha-ong-mai-doc-san-trong.webp",
   "nha-tho-giao-xu-nam-ban.webp",
   "quan-com-sen-viet-nam-ban.webp",
   "quan-com-thanh-hai-nam-ban.webp",
+  "quy-hoach-tp-da-lat-2030.webp",
   "ruong-bap-nam-ban.webp",
   "san-vuon-bon-lua-nam-ban.webp",
   "tram-y-te-xa-nam-ban-mat-truoc.webp",
@@ -584,6 +586,18 @@
     ]
    }
   },
+  "chua-linh-an-thac-voi-toan-canh.webp": {
+   "kb": 204,
+   "dims": [
+    1500,
+    843
+   ],
+   "used_in": {
+    "chua-linh-an-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
   "chuyen-len-nam-ban-song.jpg": {
    "kb": 103,
    "dims": [
@@ -704,6 +718,18 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "dat-doi-duong-vao-nam-ban.webp": {
+   "kb": 162,
+   "dims": [
+    1600,
+    900
+   ],
+   "used_in": {
+    "doc-the-dat-nam-ban.html": [
+     "display"
     ]
    }
   },
@@ -2282,6 +2308,15 @@
     ]
    }
   },
+  "nha-ong-mai-doc-san-trong.webp": {
+   "kb": 96,
+   "dims": [
+    1400,
+    935
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
   "nha-tho-giao-xu-nam-ban.webp": {
    "kb": 218,
    "dims": [
@@ -2290,6 +2325,18 @@
    ],
    "used_in": {},
    "status": "unused"
+  },
+  "nha-vuon-hoang-hon-nam-ban.webp": {
+   "kb": 293,
+   "dims": [
+    1500,
+    1125
+   ],
+   "used_in": {
+    "xay-nha-o-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "novaland-nam-ban.jpg": {
    "kb": 242,
@@ -2835,6 +2882,27 @@
      "ref"
     ]
    }
+  },
+  "quy-hoach-da-lat-vung-phu-can-2030.webp": {
+   "kb": 217,
+   "dims": [
+    1093,
+    1560
+   ],
+   "used_in": {
+    "nam-ban-co-sap-nhap-da-lat.html": [
+     "display"
+    ]
+   }
+  },
+  "quy-hoach-tp-da-lat-2030.webp": {
+   "kb": 180,
+   "dims": [
+    1400,
+    1015
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "rau-hoa-cay-do-la-nam-ban.jpg": {
    "kb": 192,
