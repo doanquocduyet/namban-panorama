@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 254,
+ "total_images": 255,
  "unused_count": 25,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -2527,6 +2527,20 @@
    "used_in": {
     "xay-nha-o-nam-ban.html": [
      "display"
+    ]
+   }
+  },
+  "nhan-tien-den-bu-dat-nen-lam-gi.jpg": {
+   "kb": 76,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "nhan-tien-den-bu-dat-nen-lam-gi.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
