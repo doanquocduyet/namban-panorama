@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 253,
+ "total_images": 254,
  "unused_count": 25,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -825,6 +825,20 @@
    ],
    "used_in": {
     "dat-nguon-goc-lam-nghiep-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
+  "dat-vuon-nam-ban-xay-duoc-gi.jpg": {
+   "kb": 153,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dat-vuon-nam-ban-xay-duoc-gi.html": [
      "og",
      "schema",
      "twitter"
