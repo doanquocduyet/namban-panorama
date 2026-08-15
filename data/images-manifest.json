@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 255,
+ "total_images": 256,
  "unused_count": 25,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -3243,6 +3243,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "ta-nung-hay-me-linh.jpg": {
+   "kb": 168,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "ta-nung-hay-me-linh.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
