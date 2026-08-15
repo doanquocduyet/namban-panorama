@@ -248,4 +248,8 @@
     <loc>https://nambanpanorama.com/google-maps-khong-noi-ve-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-aerial.webp</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://nambanpanorama.com/ta-nung-hay-me-linh</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/ta-nung-hay-me-linh.jpg</image:loc></image:image>
+  </url>
 </urlset>
