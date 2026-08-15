@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 256,
+ "total_images": 257,
  "unused_count": 25,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -1734,6 +1734,23 @@
     ]
    }
   },
+  "lam-ha-truoc-va-sau-sap-nhap.jpg": {
+   "kb": 168,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "lam-ha-truoc-va-sau-sap-nhap.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
   "len-lam-dong-nen-song-o-dau.jpg": {
    "kb": 189,
    "dims": [
@@ -3257,6 +3274,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
