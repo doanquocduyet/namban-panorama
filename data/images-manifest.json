@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 257,
+ "total_images": 258,
  "unused_count": 25,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -828,6 +828,23 @@
      "og",
      "schema",
      "twitter"
+    ]
+   }
+  },
+  "dat-the-am-the-duong.jpg": {
+   "kb": 229,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dat-the-am-the-duong.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },

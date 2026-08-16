@@ -256,4 +256,8 @@
     <loc>https://nambanpanorama.com/lam-ha-truoc-va-sau-sap-nhap</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/lam-ha-truoc-va-sau-sap-nhap.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://nambanpanorama.com/dat-the-am-the-duong</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/dat-the-am-the-duong.jpg</image:loc></image:image>
+  </url>
 </urlset>
