@@ -272,4 +272,8 @@
     <loc>https://nambanpanorama.com/ve-nam-ban-lam-gi</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/ve-nam-ban-lam-gi.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://nambanpanorama.com/lam-viec-tu-xa-o-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/lam-viec-tu-xa-o-nam-ban.jpg</image:loc></image:image>
+  </url>
 </urlset>
