@@ -8,8 +8,8 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 260,
- "unused_count": 24,
+ "total_images": 262,
+ "unused_count": 25,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
   "ca-phe-che-bien-rua-qua-nam-ban.webp",
@@ -21,6 +21,7 @@
   "gia-lam-biet-thu-o-to.webp",
   "hat-bo-tach-vo-nam-ban.webp",
   "hoa-vien-tiec-cuoi-ba-dinh-nam-ban.webp",
+  "lam-viec-tu-xa-o-nam-ban.jpg",
   "lo-dat-view-thung-lung-me-linh.webp",
   "me-linh-vuon-doi-cao.webp",
   "nha-ong-mai-doc-san-trong.webp",
@@ -1805,6 +1806,15 @@
      "ref"
     ]
    }
+  },
+  "lam-viec-tu-xa-o-nam-ban.jpg": {
+   "kb": 169,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "len-lam-dong-nen-song-o-dau.jpg": {
    "kb": 193,
@@ -3759,6 +3769,24 @@
    "used_in": {
     "duong-di-nam-ban.html": [
      "display"
+    ]
+   }
+  },
+  "ve-nam-ban-lam-gi.jpg": {
+   "kb": 187,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "ve-nam-ban-lam-gi.html": [
+     "og",
+     "ref",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },

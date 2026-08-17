@@ -268,4 +268,8 @@
     <loc>https://nambanpanorama.com/dinh-gia-dat-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/dinh-gia-dat-nam-ban.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://nambanpanorama.com/ve-nam-ban-lam-gi</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/ve-nam-ban-lam-gi.jpg</image:loc></image:image>
+  </url>
 </urlset>
