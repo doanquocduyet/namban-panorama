@@ -260,4 +260,8 @@
     <loc>https://nambanpanorama.com/dat-the-am-the-duong</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/dat-the-am-the-duong.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://nambanpanorama.com/mua-mua-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/mua-mua-nam-ban.jpg</image:loc></image:image>
+  </url>
 </urlset>
