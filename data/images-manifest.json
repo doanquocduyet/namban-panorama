@@ -9,14 +9,13 @@
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
  "total_images": 260,
- "unused_count": 25,
+ "unused_count": 24,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
   "ca-phe-che-bien-rua-qua-nam-ban.webp",
   "ca-phe-qua-xanh-macro-nam-ban.webp",
   "cay-xang-petrolimex-nam-ban.webp",
   "cong-jong-minh-farm-me-linh.webp",
-  "dehavi-coffee-nam-ban.webp",
   "dien-linh-tuyen-nam-ban.webp",
   "duong-deo-mua-suong-mo.webp",
   "gia-lam-biet-thu-o-to.webp",
@@ -923,8 +922,11 @@
     1600,
     1099
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "ocop-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "deo-ta-nung.jpg": {
    "kb": 260,
