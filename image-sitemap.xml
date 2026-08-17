@@ -276,4 +276,8 @@
     <loc>https://nambanpanorama.com/lam-viec-tu-xa-o-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/lam-viec-tu-xa-o-nam-ban.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://nambanpanorama.com/quy-trinh-mua-dat-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/quy-trinh-mua-dat-nam-ban.jpg</image:loc></image:image>
+  </url>
 </urlset>
