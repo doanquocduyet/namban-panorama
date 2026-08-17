@@ -264,4 +264,8 @@
     <loc>https://nambanpanorama.com/mua-mua-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/mua-mua-nam-ban.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://nambanpanorama.com/dinh-gia-dat-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/dinh-gia-dat-nam-ban.jpg</image:loc></image:image>
+  </url>
 </urlset>

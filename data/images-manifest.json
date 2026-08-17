@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 259,
+ "total_images": 260,
  "unused_count": 25,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -1033,6 +1033,24 @@
    ],
    "used_in": {},
    "status": "unused"
+  },
+  "dinh-gia-dat-nam-ban.jpg": {
+   "kb": 119,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dinh-gia-dat-nam-ban.html": [
+     "og",
+     "ref",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
   },
   "do-dac-dat-nam-ban.jpg": {
    "kb": 295,
