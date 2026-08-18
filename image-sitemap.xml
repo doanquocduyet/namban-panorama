@@ -286,4 +286,8 @@
     <image:image><image:loc>https://nambanpanorama.com/images/tram-sac-vinfast-quan-an-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/khu-xay-duong-moi-nam-ban.webp</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://nambanpanorama.com/nam-ban-la-gi</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-la-gi.jpg</image:loc></image:image>
+  </url>
 </urlset>
