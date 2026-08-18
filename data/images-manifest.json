@@ -8,25 +8,31 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 264,
- "unused_count": 24,
+ "total_images": 272,
+ "unused_count": 30,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
+  "banh-cuon-dia-nuoc-cham-nam-ban.webp",
   "ca-phe-che-bien-rua-qua-nam-ban.webp",
   "ca-phe-qua-xanh-macro-nam-ban.webp",
   "cay-xang-petrolimex-nam-ban.webp",
+  "com-ga-68-khai-truong-nam-ban.webp",
   "cong-jong-minh-farm-me-linh.webp",
   "dien-linh-tuyen-nam-ban.webp",
   "duong-deo-mua-suong-mo.webp",
+  "ga-vuon-san-nam-ban.webp",
   "gia-lam-biet-thu-o-to.webp",
   "hat-bo-tach-vo-nam-ban.webp",
   "hoa-vien-tiec-cuoi-ba-dinh-nam-ban.webp",
+  "lam-banh-cuon-nam-ban.webp",
   "lo-dat-view-thung-lung-me-linh.webp",
+  "mam-nhau-goi-bia-nam-ban.webp",
   "me-linh-vuon-doi-cao.webp",
   "nha-ong-mai-doc-san-trong.webp",
   "nha-tho-giao-xu-nam-ban.webp",
   "quan-com-sen-viet-nam-ban.webp",
   "quan-com-thanh-hai-nam-ban.webp",
+  "quan-sen-viet-xe-o-to-nam-ban.webp",
   "ruong-bap-nam-ban.webp",
   "san-vuon-bon-lua-nam-ban.webp",
   "so-do-sap-xep-dvhc-huyen-lam-dong.webp",
@@ -113,6 +119,15 @@
      "display"
     ]
    }
+  },
+  "banh-cuon-dia-nuoc-cham-nam-ban.webp": {
+   "kb": 221,
+   "dims": [
+    1234,
+    1500
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "bo-dong-lanh-may-hut.jpg": {
    "kb": 233,
@@ -684,6 +699,15 @@
      "twitter"
     ]
    }
+  },
+  "com-ga-68-khai-truong-nam-ban.webp": {
+   "kb": 201,
+   "dims": [
+    1500,
+    843
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "cong-an-xa-nam-ban-me-linh.webp": {
    "kb": 299,
@@ -1340,6 +1364,15 @@
     ]
    }
   },
+  "ga-vuon-san-nam-ban.webp": {
+   "kb": 282,
+   "dims": [
+    1500,
+    843
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
   "gia-lam-biet-thu-o-to.webp": {
    "kb": 287,
    "dims": [
@@ -1761,6 +1794,21 @@
     ]
    }
   },
+  "khu-xay-duong-moi-nam-ban.webp": {
+   "kb": 282,
+   "dims": [
+    1500,
+    1125
+   ],
+   "used_in": {
+    "tram-sac-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
   "khung-cua-nhin-ra-doi-nam-ban.webp": {
    "kb": 175,
    "dims": [
@@ -1772,6 +1820,15 @@
      "display"
     ]
    }
+  },
+  "lam-banh-cuon-nam-ban.webp": {
+   "kb": 228,
+   "dims": [
+    1500,
+    1125
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "lam-dong-co-gi-de-lam-an.jpg": {
    "kb": 194,
@@ -2014,6 +2071,15 @@
      "display"
     ]
    }
+  },
+  "mam-nhau-goi-bia-nam-ban.webp": {
+   "kb": 121,
+   "dims": [
+    1500,
+    843
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "me-linh-doi-thong.webp": {
    "kb": 290,
@@ -3191,6 +3257,15 @@
    "used_in": {},
    "status": "unused"
   },
+  "quan-sen-viet-xe-o-to-nam-ban.webp": {
+   "kb": 195,
+   "dims": [
+    1500,
+    843
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
   "quan-thao-men-nam-ban.webp": {
    "kb": 202,
    "dims": [
@@ -3709,6 +3784,21 @@
      "ref",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "tram-sac-vinfast-quan-an-nam-ban.webp": {
+   "kb": 220,
+   "dims": [
+    1500,
+    1142
+   ],
+   "used_in": {
+    "tram-sac-nam-ban.html": [
+     "display"
     ],
     "image-sitemap.xml": [
      "ref"
