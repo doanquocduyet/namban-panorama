@@ -280,4 +280,8 @@
     <loc>https://nambanpanorama.com/quy-trinh-mua-dat-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/quy-trinh-mua-dat-nam-ban.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://nambanpanorama.com/tram-sac-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/tram-sac-nam-ban.jpg</image:loc></image:image>
+  </url>
 </urlset>
