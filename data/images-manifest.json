@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 273,
+ "total_images": 274,
  "unused_count": 30,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -603,6 +603,24 @@
     ]
    }
   },
+  "cho-nam-ban.jpg": {
+   "kb": 193,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "cho-nam-ban.html": [
+     "og",
+     "ref",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
   "cho-thang-long-nam-ban-2.webp": {
    "kb": 214,
    "dims": [
@@ -612,6 +630,12 @@
    "used_in": {
     "so-sanh-nam-ban-bao-loc-da-lat.html": [
      "display"
+    ],
+    "cho-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
