@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi" class="js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Demo — Panorama Selection (hệ Panorama)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1815;--paper:#f1ece2;--card:#faf6ee;--forest:#2f4034;
+    --forest-deep:#1e2a20;--clay:#9d5d38;--clay-soft:#bb8862;
+    --stone:#a79c87;--muted:#6e6759;--line:#e1d9c8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{overflow-x:clip}
+  body{font-family:'Be Vietnam Pro',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased}
+  .serif{font-family:'Fraunces',Georgia,serif}
+  .wrap{max-width:660px;margin:0 auto;padding:0 26px}
+
+  .demolabel{
+    max-width:660px;margin:0 auto;padding:52px 26px 18px;
+    font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--clay);font-weight:600;
+  }
+  .demolabel small{display:block;text-transform:none;letter-spacing:0;font-size:13px;color:var(--stone);margin-top:7px;font-weight:400;line-height:1.6}
+
+  /* ══════ (A) CARD ══════ */
+  .card{
+    max-width:456px;margin:0 auto;background:var(--card);
+    border:1px solid var(--line);border-radius:3px;overflow:hidden;
+    box-shadow:0 1px 2px rgba(26,24,21,.03),0 12px 34px rgba(26,24,21,.06);
+  }
+  .card-img{
+    aspect-ratio:16/10;background:linear-gradient(135deg,#cdc7b6,#b3ac97);
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    font-size:12px;color:#514b3d;padding:20px;line-height:1.55;
+  }
+  .card-body{padding:22px 26px 26px}
+  .card-eyebrow{font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--stone);margin-bottom:12px;font-weight:600}
+  .card-title{font-family:'Fraunces',Georgia,serif;font-size:23px;line-height:1.28;font-weight:600;letter-spacing:-.01em;margin-bottom:15px;color:var(--ink)}
+  .card-meta{font-size:12px;color:var(--stone);display:flex;gap:13px;align-items:center;flex-wrap:wrap}
+  .card-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--stone)}
+
+  .divider-big{max-width:660px;margin:60px auto;padding:0 26px}
+  .divider-big hr{border:none;border-top:1px solid var(--line)}
+
+  /* ══════ (B) BÀI ══════ */
+  .crumb{font-size:12px;color:var(--stone);letter-spacing:.02em;margin-bottom:26px;line-height:1.8}
+  .crumb a{color:var(--stone);text-decoration:none}
+  .crumb .sep{margin:0 8px;opacity:.6}
+  .crumb .here{color:var(--forest)}
+
+  .kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--clay);font-weight:600;margin-bottom:18px}
+  h1{font-family:'Fraunces',Georgia,serif;font-size:40px;line-height:1.14;font-weight:600;letter-spacing:-.015em;margin-bottom:22px}
+  .standfirst{font-family:'Fraunces',Georgia,serif;font-size:21px;line-height:1.55;color:var(--muted);font-style:italic;font-weight:300;margin-bottom:28px}
+
+  .survey-meta{
+    font-size:12.5px;color:var(--stone);display:flex;flex-wrap:wrap;gap:8px 22px;
+    padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:44px;
+  }
+  .survey-meta b{color:var(--muted);font-weight:600}
+
+  .fig{margin:0 0 12px}
+  .fig-img{
+    background:linear-gradient(135deg,#c9c3b2,#aca592);border-radius:2px;
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    font-size:12px;color:#4c4638;padding:24px;line-height:1.55;
+  }
+  .fig-lead .fig-img{aspect-ratio:3/2}
+  .fig-cap{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:300;font-size:13px;color:var(--muted);margin:11px 2px 0;line-height:1.55;text-align:center}
+
+  p.body{font-size:18px;margin-bottom:24px}
+  .lead-p::first-letter{font-family:'Fraunces',Georgia,serif;font-size:56px;float:left;line-height:.82;padding:6px 12px 0 0;color:var(--forest);font-weight:600}
+
+  .curio{
+    font-family:'Fraunces',Georgia,serif;font-size:22px;line-height:1.5;color:var(--ink);
+    border-left:2px solid var(--clay);padding-left:24px;margin:40px 0;font-style:italic;font-weight:300;
+  }
+
+  .imgrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:36px 0 0}
+  .imgrow .fig-img{aspect-ratio:4/3}
+
+  .readbox{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:28px 30px;margin:44px 0}
+  .readbox h3{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--forest);font-weight:600;margin-bottom:20px}
+  .readrow{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.55}
+  .readrow:last-child{border:none}
+  .readrow .k{flex:0 0 120px;color:var(--ink);font-weight:600}
+  .readrow .v{color:var(--muted)}
+
+  /* sơ đồ thửa — Panorama vẽ (level-1 mặc định) */
+  .doc{margin:44px 0}
+  .doc-img{
+    aspect-ratio:4/3;background:var(--card);border:1px solid var(--line);
+    border-radius:2px;display:flex;align-items:center;justify-content:center;text-align:center;
+    font-size:12px;color:var(--muted);padding:24px;line-height:1.6;
+  }
+  .doc-cap{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:300;font-size:13px;color:var(--muted);margin-top:11px;line-height:1.55}
+
+  .verdict-final{
+    font-family:'Fraunces',Georgia,serif;font-size:20px;line-height:1.55;font-weight:300;
+    background:var(--forest);color:#eae4d6;border-radius:3px;padding:32px 34px;margin:44px 0;
+  }
+  .verdict-final .lbl{font-family:'Be Vietnam Pro',sans-serif;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--clay-soft);margin-bottom:14px;font-weight:600}
+
+  .disc{font-size:13px;color:var(--stone);line-height:1.7;padding-top:24px;border-top:1px solid var(--line);margin-top:44px}
+
+  .next{margin-top:56px}
+  .next-h{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--stone);margin-bottom:22px;font-weight:600}
+  .next-grid{display:grid;gap:12px}
+  .next-item{display:flex;align-items:center;gap:16px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:3px;text-decoration:none;transition:border-color .18s}
+  .next-item:hover{border-color:var(--forest)}
+  .next-ic{flex:0 0 34px;height:34px;border-radius:50%;background:#eae7dd;display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--forest)}
+  .next-tx{flex:1}
+  .next-tx .t{font-family:'Fraunces',Georgia,serif;font-size:16px;font-weight:600;color:var(--ink);margin-bottom:2px;line-height:1.35}
+  .next-tx .d{font-size:12.5px;color:var(--stone)}
+
+  /* khối liên hệ trầm cuối bài — chuẩn publication, KHÔNG nút, KHÔNG "ngay" */
+  .qblock{max-width:660px;margin:56px auto 0;padding:26px 26px 0;border-top:1px solid var(--line)}
+  .qblock p{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:300;font-size:17px;color:var(--forest);line-height:1.6}
+  .qblock a{color:var(--forest);text-decoration:none;border-bottom:1px solid var(--clay-soft)}
+
+  .foot{max-width:660px;margin:40px auto 0;padding:34px 26px 90px;border-top:1px solid var(--line);font-size:12.5px;color:var(--stone);line-height:1.85}
+
+  @media (max-width:600px){
+    h1{font-size:30px}.standfirst{font-size:18px}p.body{font-size:16.5px}
+    .card-title{font-size:21px}
+    .imgrow{grid-template-columns:1fr}.readrow{flex-direction:column;gap:2px}.readrow .k{flex:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ (A) CARD ═══════════ -->
+<div class="demolabel">Phần A — Card khi nằm trên hub
+  <small>Thứ người đọc thấy TRƯỚC khi bấm. Card quyết định ở lại hay lướt.</small>
+</div>
+
+<div class="card">
+  <div class="card-img">[ Ảnh ĐẠI DIỆN — góc bao quát lô: thấy đường vào, địa hình dốc nhẹ, hàng cà phê, bối cảnh thung lũng. KHÔNG phải ảnh đẹp nhất, cũng KHÔNG phải góc cống/taluy ]</div>
+  <div class="card-body">
+    <div class="card-eyebrow">Panorama Selection · 07</div>
+    <div class="card-title">Ở lô này, thứ tôi nhìn đầu tiên không phải view</div>
+    <div class="card-meta">
+      <span>Mê Linh, Nam Ban</span><span class="dot"></span>
+      <span>Khảo sát 22·7·2026</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider-big"><hr></div>
+
+<!-- ═══════════ (B) BÀI ĐẦY ĐỦ ═══════════ -->
+<div class="demolabel">Phần B — Bài đầy đủ khi bấm vào</div>
+
+<div class="wrap">
+
+  <div class="crumb">
+    <a href="#">Nam Ban</a><span class="sep">›</span>
+    <a href="#">Mê Linh</a><span class="sep">›</span>
+    <a href="#">Selection</a><span class="sep">›</span>
+    <span class="here">#07 · Lô gần Hồ Bãi Công</span>
+  </div>
+
+  <div class="kicker">Panorama Selection · 07</div>
+  <h1>Ở lô này, thứ tôi nhìn đầu tiên không phải view</h1>
+  <p class="standfirst">Lô thoáng, có hàng cà phê, cách hồ không xa. Nhưng có một chỗ khiến tôi đứng lại xem khá lâu trước khi ghi gì.</p>
+
+  <div class="survey-meta">
+    <span><b>Vị trí:</b> Mê Linh, Nam Ban (gần Hồ Bãi Công)</span>
+    <span><b>Ngày khảo sát:</b> 22·7·2026, ~16h30</span>
+    <span><b>Cập nhật:</b> 24·7·2026</span>
+  </div>
+
+  <figure class="fig fig-lead">
+    <div class="fig-img">[ ẢNH 1 — ĐẠI DIỆN: đứng đầu lô nhìn vào, thấy toàn cảnh — đường bê tông, độ dốc, hàng cà phê, dãy đồi sau. Ảnh thật, bối cảnh đầy đủ ]</div>
+    <figcaption class="fig-cap">Lô nhìn từ đầu đường vào, chiều 22·7. Dốc thoải dần ra sau.</figcaption>
+  </figure>
+
+  <p class="body lead-p">Tôi xem phần sau của lô trước, chứ không nhìn view. Nền sau thấp hơn mặt đường một khoảng, có vệt nước cũ chạy dọc mép.</p>
+
+  <p class="body">Hôm đó trời khô, nhưng vệt nước còn để dấu trên đất. Đây là chỗ nước cả sườn đồi phía trên thoát xuống. Mùa mưa, nước dồn qua đúng dải này rồi mới ra hồ.</p>
+
+  <div class="curio">Thấy nước không có nghĩa là bỏ. Nhưng miếng đất có đường nước chạy ngang thì chỗ xây, chỗ kê nền phải tính từ đầu — không để dành xử lý sau.</div>
+
+  <div class="imgrow">
+    <figure class="fig"><div class="fig-img">[ ẢNH 2 — ZOOM: vệt nước cũ dọc mép sau lô, đất sẫm màu hơn ]</div></figure>
+    <figure class="fig"><div class="fig-img">[ ẢNH 3 — ZOOM: chênh cao giữa nền lô và mặt đường bê tông ]</div></figure>
+  </div>
+  <p class="fig-cap" style="margin-bottom:24px">Trái: dấu nước cũ dọc mép sau. Phải: nền sau thấp hơn mặt đường khoảng nửa mét.</p>
+
+  <p class="body">Phần còn lại thì ổn. Đường bê tông vào tận nơi, không phải đi nhờ. Hàng cà phê đang cho trái, chủ nói trồng bảy năm. View hồ có thật, nhưng phải lùi vào trong lô mới thấy trọn — đứng sát đường thì hàng cây bên kia che mất một khúc.</p>
+
+  <div class="readbox">
+    <h3>Đọc nhanh lô này</h3>
+    <div class="readrow"><div class="k">Thoát nước</div><div class="v">Có đường nước chạy ngang mép sau — điểm chính của lô.</div></div>
+    <div class="readrow"><div class="k">Đường vào</div><div class="v">Bê tông tận đất, xe hơi vào được.</div></div>
+    <div class="readrow"><div class="k">Địa hình</div><div class="v">Dốc thoải về sau, không gắt.</div></div>
+    <div class="readrow"><div class="k">Cây</div><div class="v">Cà phê ~7 năm, đang cho trái.</div></div>
+    <div class="readrow"><div class="k">View</div><div class="v">Có, phải lùi vào trong mới trọn.</div></div>
+    <div class="readrow"><div class="k">Pháp lý</div><div class="v">Xem ngay dưới.</div></div>
+  </div>
+
+  <!-- SỔ: mặc định level-1 = sơ đồ Panorama tự vẽ, KHÔNG ảnh sổ thật của lô chưa xin phép -->
+  <div class="doc">
+    <div class="doc-img">[ SƠ ĐỒ THỬA — Panorama vẽ lại từ hồ sơ: ranh thửa, phần ODT (thổ cư) tô đậm, phần CLN, dải thoát nước gạch chéo chồng lên phần thổ cư. KHÔNG ảnh sổ gốc ]</div>
+    <div class="doc-cap">Sơ đồ Panorama vẽ lại từ hồ sơ — giữ đúng tỷ lệ loại đất, không lộ thông tin cá nhân của chủ. <br>Chỉ khi là đất của mình hoặc chủ đất đồng ý công khai → mới thay bằng ảnh trích sổ thật đã che tên/số thửa.</div>
+  </div>
+
+  <p class="body">Sổ riêng, sang tên được. Nhưng đọc kỹ phần loại đất: <b>200m² ODT, còn lại khoảng 180m² là CLN.</b> Chỉ phần thổ cư mới xây được — mà phần thổ cư đó lại nằm đúng trên dải thoát nước phía sau. Tách ra thì mỗi chỗ đều bình thường. Ghép lại, chỗ xây được hẹp hơn cảm giác lúc mới nhìn cả lô rộng thênh.</p>
+
+  <div class="verdict-final">
+    <div class="lbl">Tóm lại</div>
+    Sổ rõ ràng. Đường vào thuận tiện. Phần thổ cư và dải thoát nước nằm cùng một khu, nên nếu định xây nhà thì tính phương án nền ngay từ đầu. Nếu mục tiêu là xây liền, tôi sẽ xem thêm vài lô khác trong cùng khu rồi so sánh.
+  </div>
+
+  <div class="disc">
+    Phân tích tham khảo độc lập, không phải khuyến nghị đầu tư. Số liệu ghi nhận tại thời điểm khảo sát; hiện trạng và pháp lý cần thẩm định trực tiếp trước giao dịch.
+  </div>
+
+  <div class="next">
+    <div class="next-h">Đọc tiếp</div>
+    <div class="next-grid">
+      <a class="next-item" href="#">
+        <div class="next-ic">◎</div>
+        <div class="next-tx"><div class="t">3 lô cùng kiểu địa hình, kết quả khác hẳn</div><div class="d">Cùng có đường nước ngang — lô nào xử lý được, lô nào không</div></div>
+      </a>
+      <a class="next-item" href="#">
+        <div class="next-ic">▨</div>
+        <div class="next-tx"><div class="t">Xem lô này trên bản đồ Nam Ban</div><div class="d">Vị trí so với hồ, đường, khu dân cư</div></div>
+      </a>
+      <a class="next-item" href="#">
+        <div class="next-ic">⬡</div>
+        <div class="next-tx"><div class="t">Các lô khác quanh Mê Linh · Hồ Bãi Công</div><div class="d">Những miếng Panorama đã xem trong cùng khu</div></div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- khối liên hệ trầm — giống các bài phân tích đất khác -->
+<div class="qblock">
+  <p>Có câu hỏi về một lô cụ thể ở Mê Linh? — <a href="tel:0978758788">0978 758 788</a> · Zalo</p>
+</div>
+
+<div class="foot">
+  Nam Ban Panorama · Selection — đọc kỹ tại chỗ trước khi nhắc tới.<br>
+  Ghi chép độc lập. Không quảng cáo, không hoa hồng.
+</div>
+
+</body>
+</html>

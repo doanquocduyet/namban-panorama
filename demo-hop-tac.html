@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Hợp tác — Cùng nhìn Nam Ban dài hạn | Namban Panorama</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Be+Vietnam+Pro:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="panorama-article.css">
+<link rel="stylesheet" href="nav.css">
+<style>
+  html{overflow-x:clip;}
+  ::selection{background:#2f4034;color:#f1ece2;}
+  h1,h2,h3{text-wrap:balance;}
+  p,li,figcaption{text-wrap:pretty;}
+  a,button{touch-action:manipulation;}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 40px;}
+  .logo{font-family:'Fraunces',serif;font-weight:500;font-size:20px;letter-spacing:1.8px;text-decoration:none;color:var(--ink);}
+  .nav-cta{border:1px solid var(--clay);color:var(--clay)!important;padding:4px 14px;border-radius:20px;}
+
+  .demobar{background:var(--forest-deep);color:#e9e3d5;font-family:'Be Vietnam Pro',sans-serif;font-size:12.5px;letter-spacing:.3px;text-align:center;padding:9px 16px;line-height:1.5;}
+  .demobar b{color:#e8b98a;font-weight:500;}
+
+  /* HERO — trầm, nền forest */
+  .ht-hero{background:var(--forest);color:#e9e3d5;}
+  .ht-hero .in{max-width:720px;margin:0 auto;padding:72px 24px 60px;text-align:center;}
+  .ht-kicker{font-family:'Be Vietnam Pro',sans-serif;font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#e8b98a;font-weight:500;}
+  .ht-hero h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,5vw,46px);line-height:1.12;letter-spacing:-.5px;margin:18px auto 20px;max-width:16ch;color:#f5f1e8;}
+  .ht-hero h1 em{font-style:italic;color:#e8b98a;}
+  .ht-lede{font-size:clamp(15px,1.8vw,18px);color:#cfc7b5;line-height:1.7;max-width:46ch;margin:0 auto;font-style:italic;font-family:'Fraunces',serif;}
+
+  .ht-sec{max-width:720px;margin:0 auto;padding:56px 24px 0;}
+  .ht-sec .lbl{font-family:'Be Vietnam Pro',sans-serif;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--clay);font-weight:500;margin-bottom:12px;}
+  .ht-sec h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(22px,3vw,29px);line-height:1.22;letter-spacing:-.3px;margin-bottom:16px;}
+  .ht-sec p{font-size:16px;line-height:1.75;color:var(--ink);margin-bottom:16px;}
+  .ht-sec p.mut{color:var(--muted);}
+
+  /* Các dạng hợp tác — danh sách trầm, không phải thẻ bán hàng */
+  .ht-list{border-top:1px solid var(--line);margin-top:8px;}
+  .ht-list .row{padding:22px 2px;border-bottom:1px solid var(--line);}
+  .ht-list b{font-family:'Fraunces',serif;font-weight:500;font-size:18px;color:var(--ink);display:block;margin-bottom:6px;}
+  .ht-list span{font-size:15px;color:var(--muted);line-height:1.65;}
+
+  /* Panorama mang gì — 2 cột nhẹ */
+  .ht-bring{display:grid;grid-template-columns:1fr 1fr;gap:14px 26px;margin-top:6px;}
+  .ht-bring .b{padding:16px 0;border-top:1px solid var(--line);}
+  .ht-bring .b b{font-family:'Fraunces',serif;font-weight:500;font-size:16px;color:var(--forest);display:block;margin-bottom:5px;}
+  .ht-bring .b span{font-size:14px;color:var(--muted);line-height:1.55;}
+
+  /* nguyên tắc làm việc */
+  .ht-princ .p{display:flex;gap:14px;padding:14px 0;}
+  .ht-princ .p::before{content:"—";color:var(--clay);flex:none;}
+  .ht-princ .p span{font-size:15.5px;color:var(--ink);line-height:1.6;}
+  .ht-princ .p b{font-weight:500;}
+
+  /* KHÔNG làm — ranh giới trust */
+  .ht-no{background:#ece5d7;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-left:3px solid var(--clay);margin-top:56px;}
+  .ht-no .in{max-width:720px;margin:0 auto;padding:44px 24px;}
+  .ht-no h2{font-family:'Fraunces',serif;font-weight:400;font-size:22px;margin-bottom:16px;}
+  .ht-no ul{list-style:none;padding:0;margin:0;}
+  .ht-no li{font-size:15.5px;color:var(--ink);line-height:1.6;padding:0 0 12px 20px;position:relative;}
+  .ht-no li::before{content:"×";position:absolute;left:0;color:var(--clay);font-weight:600;}
+
+  /* Bắt đầu — khối trầm forest */
+  .ht-start{background:var(--forest);color:#e9e3d5;margin-top:56px;}
+  .ht-start .in{max-width:720px;margin:0 auto;padding:56px 24px;text-align:center;}
+  .ht-start .lbl{color:#e8b98a;display:block;margin-bottom:12px;}
+  .ht-start h2{color:#f5f1e8;font-family:'Fraunces',serif;font-weight:400;font-size:clamp(22px,3vw,28px);margin-bottom:16px;letter-spacing:-.3px;}
+  .ht-start p{color:#cfc7b5;font-size:16px;line-height:1.75;margin-bottom:22px;max-width:52ch;margin-left:auto;margin-right:auto;}
+  .ht-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .ht-btn{display:inline-flex;align-items:center;gap:9px;font-family:'Be Vietnam Pro',sans-serif;font-size:13px;letter-spacing:.4px;text-decoration:none;padding:12px 22px;border-radius:3px;}
+  .ht-btn.z{background:#e8b98a;color:#1e2a20;}
+  .ht-btn.p{border:1px solid rgba(232,185,138,.5);color:#e8b98a;}
+
+  .fill{border:1px dashed var(--clay);border-radius:5px;background:rgba(157,93,56,.05);padding:14px 16px;margin:10px 0 20px;}
+  .fill .tag{font-family:'Be Vietnam Pro',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--clay);font-weight:500;display:block;margin-bottom:7px;}
+  .fill .ex{font-size:14px;color:var(--muted);font-style:italic;line-height:1.65;}
+  .fill.dark{border-color:rgba(232,185,138,.5);background:rgba(232,185,138,.06);text-align:left;}
+  .fill.dark .tag{color:#e8b98a;} .fill.dark .ex{color:#c2bba9;}
+
+  footer{background:var(--ink);color:#cabfab;padding:60px 24px;text-align:center;}
+  footer .contact-line{font-size:14px;letter-spacing:.3px;line-height:2;}
+  footer a{color:#cabfab;text-decoration:none;}
+  footer .meta{font-size:11px;letter-spacing:2px;opacity:.5;margin-top:16px;}
+
+  @media(max-width:720px){ .ht-bring{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap navin">
+    <a href="/" class="logo">Namban Panorama</a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="navlinks" id="navlinks">
+      <a href="nam-ban">Về Nam Ban</a>
+      <a href="dat">Về Đất</a>
+      <a href="dau-tu">Đầu tư</a>
+      <a href="trao-doi" class="nav-cta">Trao đổi</a>
+    </div>
+  </div>
+</nav>
+<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+<button class="mobile-close" id="mobileClose" onclick="toggleMenu()" aria-label="Đóng">×</button>
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-logo">Panorama</span>
+  <a href="nam-ban" onclick="toggleMenu()">Về Nam Ban</a>
+  <a href="dat" onclick="toggleMenu()">Về Đất</a>
+  <a href="dau-tu" onclick="toggleMenu()">Đầu tư</a>
+  <a href="trao-doi" onclick="toggleMenu()">Trao đổi</a>
+</div>
+
+<!-- HERO -->
+<div class="ht-hero">
+  <div class="in">
+    <span class="ht-kicker">Hợp tác</span>
+    <h1>Cùng nhìn Nam Ban <em>dài hạn</em></h1>
+    <p class="ht-lede">Panorama không bán đất. Nhưng với người nhìn vùng này đủ lâu, đôi khi có việc đáng làm cùng nhau.</p>
+  </div>
+</div>
+
+<!-- MỞ ĐẦU -->
+<div class="ht-sec">
+  <p>Phần lớn người ghé Panorama chỉ để đọc — và như vậy là đủ. Nhưng thỉnh thoảng có người không chỉ muốn đọc: họ muốn giữ một phần tài sản ở đây, muốn cùng nhìn một cơ hội, hoặc có sẵn đất và cần người hiểu vùng đứng cùng. Trang này dành cho số ít đó.</p>
+  <p class="mut">Không có gói dịch vụ, không có bảng giá, không có cam kết lợi nhuận. Chỉ là một lời mời trò chuyện thẳng — rồi tuỳ việc mà tính.</p>
+</div>
+
+<!-- CÁC DẠNG -->
+<div class="ht-sec">
+  <span class="lbl">Thường là những việc này</span>
+  <h2>Hợp tác kiểu gì</h2>
+  <div class="ht-list">
+    <div class="row"><b>Đồng hành &amp; đồng đầu tư</b><span>Cùng nhìn một cơ hội dài hạn ở Nam Ban — chia sẻ dữ liệu, góc nhìn và cả rủi ro. Không vội, không ép, hợp thì làm.</span></div>
+    <div class="row"><b>Ký gửi &amp; trông coi</b><span>Có đất ở đây nhưng ở xa — cần người tại chỗ trông nom, chăm sóc, hoặc đưa vào khai thác đúng cách.</span></div>
+    <div class="row"><b>Chủ đất muốn được đọc kỹ</b><span>Một lô đáng giá xứng đáng được thẩm định và kể lại đàng hoàng, không tô vẽ — để đúng người tìm thấy nó.</span></div>
+    <div class="row"><b>Người địa phương &amp; chuyên môn</b><span>Rành vùng, rành pháp lý, rành nông nghiệp — cùng làm dày thêm kho dữ liệu gốc của Panorama.</span></div>
+  </div>
+</div>
+
+<!-- PANORAMA MANG GÌ -->
+<div class="ht-sec">
+  <span class="lbl">Vì sao là Panorama</span>
+  <h2>Cái Panorama mang tới bàn</h2>
+  <div class="ht-bring">
+    <div class="b"><b>Dữ liệu gốc</b><span>Ảnh tự chụp, số từ văn bản, tọa độ thật — không phải giá rao trên mạng.</span></div>
+    <div class="b"><b>Đã đi từng lô</b><span>Hiểu vùng ở mức đứng tận nơi, không phải nghe kể lại.</span></div>
+    <div class="b"><b>Đọc cả rủi ro</b><span>Nói thẳng cả lý do nên dừng — đối tác cần sự thật, không cần giấc mơ.</span></div>
+    <div class="b"><b>Đứng lâu ở đây</b><span>Không phải người lướt qua một mùa sốt đất rồi đi.</span></div>
+  </div>
+</div>
+
+<!-- CÁCH LÀM VIỆC -->
+<div class="ht-sec">
+  <span class="lbl">Nguyên tắc</span>
+  <h2>Cách mình làm việc với nhau</h2>
+  <div class="ht-princ">
+    <div class="p"><span><b>Thẳng thắn.</b> Nói rõ được gì, không được gì, ngay từ đầu.</span></div>
+    <div class="p"><span><b>Chậm mà chắc.</b> Không đẩy ai vào quyết định vội — việc dài hạn thì không cần gấp.</span></div>
+    <div class="p"><span><b>Minh bạch.</b> Dữ kiện tách khỏi nhận định; rủi ro nói trước, không giấu.</span></div>
+    <div class="p"><span><b>Đôi bên cùng có lý do.</b> Chỉ làm khi việc hợp lý cho cả hai — không có kèo một chiều.</span></div>
+  </div>
+</div>
+
+<!-- KHÔNG LÀM -->
+<div class="ht-no">
+  <div class="in">
+    <h2>Panorama không làm gì</h2>
+    <ul>
+      <li>Không môi giới chộp giật, không "chốt deal" bằng mọi giá.</li>
+      <li>Không hứa lợi nhuận, không vẽ giấc mơ tăng giá.</li>
+      <li>Không giấu rủi ro để cho xong một thương vụ.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- BẮT ĐẦU -->
+<div class="ht-start">
+  <div class="in">
+    <span class="ht-kicker lbl">Bắt đầu</span>
+    <h2>Một cuộc trò chuyện, không ràng buộc</h2>
+    <p>Nếu thấy có điểm chung, cứ nhắn một câu — bạn đang nghĩ tới điều gì, ở khu nào, dài hạn hay ngắn. Không cần chuẩn bị gì, không cam kết gì. Thường được trả lời trong buổi.</p>
+    <div class="ht-btns">
+      <a class="ht-btn z" href="https://zalo.me/0978758788">Nhắn Zalo</a>
+      <a class="ht-btn p" href="tel:0978758788">Gọi 0978 758 788</a>
+      <a class="ht-btn p" href="/">Chưa vội — đọc Panorama trước →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="contact-line">
+    <a href="tel:0978758788">0978 758 788</a> · <a href="mailto:nambanpanorama@gmail.com">nambanpanorama@gmail.com</a><br>
+    <a href="trao-doi" style="color:var(--clay-soft);font-size:13px;">Trao đổi trực tiếp</a>
+  </div>
+  <div class="meta">NAMBAN PANORAMA · NAM BAN LÂM HÀ, LÂM ĐỒNG</div>
+</footer>
+
+<script>
+function toggleMenu(){
+  var m=document.getElementById('mobileMenu'),ov=document.getElementById('menuOverlay'),cl=document.getElementById('mobileClose'),hb=document.querySelector('.hamburger');
+  var open=m.classList.toggle('open');
+  if(ov)ov.classList.toggle('open',open); if(cl)cl.classList.toggle('open',open); if(hb)hb.classList.toggle('is-open',open);
+  document.body.style.overflow=open?'hidden':'';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){var m=document.getElementById('mobileMenu');if(m&&m.classList.contains('open'))toggleMenu();}});
+</script>
+</body>
+</html>

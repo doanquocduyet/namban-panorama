@@ -1,0 +1,97 @@
+# robots.txt — Namban Panorama
+# Mục tiêu: ĐƯỢC TÌM THẤY TỐI ĐA.
+# Mở cho mọi công cụ tìm kiếm (Google, Bing, Coc Coc, Yandex...) + bot chia sẻ link
+# (Zalo, Facebook, Messenger) + bot AI có trích nguồn. Chỉ chặn các bot SEO/scraper
+# tào lao: không mang khách, chỉ cào ăn tài nguyên.
+
+# ---- Bot AI: MỞ (được AI trích nguồn = thêm một kênh được tìm thấy) ----
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+# Bytespider (ByteDance/TikTok AI) — mở theo định hướng GEO 6/2026: Doubao/TikTok search là kênh tìm thấy ở VN
+User-agent: Bytespider
+Allow: /
+
+# ---- Công cụ tìm kiếm: MỞ ----
+User-agent: Bingbot
+Allow: /
+
+User-agent: coccocbot
+Allow: /
+
+# ---- CHẶN bot SEO/scraper tào lao (không giúp được tìm thấy, chỉ tốn tài nguyên) ----
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: rogerbot
+Disallow: /
+
+# ---- Mặc định: CHO PHÉP TẤT CẢ (Google, Coc Coc, Zalo, Facebook, Messenger...) ----
+User-agent: *
+Allow: /
+
+Sitemap: https://nambanpanorama.com/sitemap.xml
+Sitemap: https://nambanpanorama.com/image-sitemap.xml

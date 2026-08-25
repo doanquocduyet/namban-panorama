@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) - GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESHM9LN735"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ESHM9LN735');</script>
+<script>document.documentElement.className+=" js";</script>
+<script>/* Hero: quyết định SỚM trong <head> — visit 1-3/phiên: bật poster (hiện ngay) + video; visit 4+: để hero TRƠN như cũ */
+(function(){try{
+  var n=(parseInt(sessionStorage.getItem('pm_hero_lan'),10)||0)+1;
+  sessionStorage.setItem('pm_hero_lan',n); window.__pmHeroLan=n;
+  if(n<4){
+    document.documentElement.className+=' hero-on';
+    var l=document.createElement('link');
+    l.rel='preload';l.as='image';l.href='/video/hero-poster.jpg';l.setAttribute('fetchpriority','high');
+    document.head.appendChild(l);
+  }
+}catch(e){}})();</script>
+<meta name="google-site-verification" content="DS0gtRXXFexf9_Gij0c3AMiUb_rQfspuSP-QgDb0LfE">
+<meta name="google-site-verification" content="FYC1bLVncwYyO-ExYXis7oUHQzasSUD_ytGxlRorXe0" />
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" id="favdyn">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>(function(){try{var h=new Date().getHours();var v=(h>=5&&h<10)?"dawn":(h>=10&&h<16)?"day":(h>=16&&h<19)?"dusk":"night";var l=document.getElementById("favdyn");if(l)l.href="/favicon-"+v+".png";}catch(e){}})();</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Namban Panorama — See the whole picture of Nam Ban before you decide</title>
+  <meta name="description" content="Coffee, silk, land and everyday life in Nam Ban — Lâm Hà, Lâm Đồng, near Đà Lạt. An independent look at the place, for anyone thinking of settling or investing here.">
+  <meta name="keywords" content="Nam Ban Vietnam, living in Nam Ban, land near Da Lat, buy land near Da Lat, Lam Ha Lam Dong, moving to Vietnam highlands, Da Lat countryside, Nam Ban Lam Dong">
+  <meta name="geo.placename" content="Nam Ban, Lâm Hà, Lâm Đồng">
+  <meta name="geo.region" content="VN-35">
+  <link rel="canonical" href="https://nambanpanorama.com/en/">
+  <link rel="alternate" hreflang="vi" href="https://nambanpanorama.com/">
+  <link rel="alternate" hreflang="en" href="https://nambanpanorama.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://nambanpanorama.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Namban Panorama — See the whole picture of Nam Ban before you decide">
+  <meta property="og:description" content="The land, coffee, people and everyday life of Nam Ban — understand the place before you understand the price.">
+  <meta property="og:image" content="https://nambanpanorama.com/images/og-home.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Namban Panorama">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://nambanpanorama.com/images/og-home.jpg">
+  <meta property="og:url" content="https://nambanpanorama.com/en/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Be+Vietnam+Pro:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1815;--paper:#f1ece2;--card:#faf6ee;
+    --forest:#2f4034;--forest-deep:#1e2a20;
+    --clay:#9d5d38;--clay-soft:#bb8862;
+    --stone:#a79c87;--muted:#6e6759;--line:#e1d9c8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;overflow-x:clip;}
+  body{font-family:'Be Vietnam Pro',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;font-weight:400;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-kerning:normal;-webkit-tap-highlight-color:transparent;}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:80;opacity:.03;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  .serif{font-family:'Fraunces',serif;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 40px;}
+  .kicker{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--clay);font-weight:500;}
+  .idx{font-family:'Fraunces',serif;font-weight:300;font-style:italic;color:var(--stone);font-size:15px;}
+  .fu{opacity:0;transform:translateY(16px);animation:fu 1s cubic-bezier(.22,1,.36,1) forwards;}
+  @keyframes fu{to{opacity:1;transform:none;}}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,1);border-bottom:1px solid var(--line);}
+  .navin{display:flex;align-items:center;justify-content:space-between;height:72px;}
+  .logo{font-family:'Fraunces',serif;font-weight:500;font-size:20px;letter-spacing:1.8px;}
+  .logo i{font-style:normal;color:var(--clay);}
+
+  .navlinks{display:flex;gap:38px;align-items:center;font-size:13px;color:var(--muted);font-weight:400;letter-spacing:.3px;}
+  .navlinks a{position:relative;padding-bottom:2px;color:inherit;text-decoration:none;transition:color .25s;}
+  .navlinks a:hover{color:var(--ink);}
+  .navlinks a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--clay);transition:width .28s ease;}
+  .navlinks a:hover::after{width:100%;}
+  .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:14px 10px;margin-right:-10px;background:none;border:none;}
+  .hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:transform .3s ease,opacity .2s ease;trans-origin:center;}
+  .hamburger.is-open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+  .hamburger.is-open span:nth-child(2){opacity:0;}
+  .hamburger.is-open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+  /* Overlay tối nhẹ phủ toàn trang khi mở menu */
+  .menu-overlay{position:fixed;inset:0;background:rgba(26,24,21,.28);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);z-index:999;opacity:0;visibility:hidden;transition:opacity .4s ease,visibility .4s;}
+  .menu-overlay.open{opacity:1;visibility:visible;}
+  /* Panel trượt từ phải, chiếm ~70% rộng, nền mờ kính */
+  .mobile-menu{position:fixed;top:0;right:0;bottom:0;width:72%;max-width:340px;height:100vh;height:100dvh;background:rgba(244,240,232,.86);backdrop-filter:blur(22px) saturate(1.2);-webkit-backdrop-filter:blur(22px) saturate(1.2);border-left:1px solid rgba(157,93,56,.14);box-shadow:-18px 0 50px rgba(26,24,21,.16);z-index:1000;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:0;padding:0 0 0 40px;opacity:1;visibility:hidden;transform:translateX(100%);transition:transform .44s cubic-bezier(.22,1,.36,1),visibility .44s;}
+  .mobile-menu.open{visibility:visible;transform:translateX(0);}
+  .mobile-logo{font-family:'Fraunces',serif;font-style:italic;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:var(--clay);margin-bottom:34px;opacity:0;transition:opacity .5s ease .2s;}
+  .mobile-menu.open .mobile-logo{opacity:1;}
+  .mobile-menu a{font-family:'Fraunces',serif;font-size:25px;font-weight:300;color:var(--ink);text-decoration:none;letter-spacing:.2px;padding:15px 0;opacity:0;transform:translateX(18px);transition:opacity .5s ease,transform .5s cubic-bezier(.22,1,.36,1),color .2s;}
+  .mobile-menu.open a{opacity:1;transform:translateX(0);}
+  .mobile-menu.open a:nth-of-type(1){transition-delay:.14s;}
+  .mobile-menu.open a:nth-of-type(2){transition-delay:.20s;}
+  .mobile-menu.open a:nth-of-type(3){transition-delay:.26s;}
+  .mobile-menu.open a:nth-of-type(4){transition-delay:.32s;}
+  .mobile-menu.open a:nth-of-type(5){transition-delay:.38s;}
+  .mobile-menu a:active,.mobile-menu a:hover{color:var(--clay);}
+  .mobile-close{position:fixed;top:20px;right:22px;width:42px;height:42px;font-size:26px;color:var(--ink);cursor:pointer;background:rgba(244,240,232,.6);border:1px solid rgba(157,93,56,.18);border-radius:50%;line-height:0;padding:0;z-index:1001;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .4s ease .1s,visibility .4s,transform .3s;}
+  .mobile-close.open{opacity:1;visibility:visible;}
+  .mobile-close:active{transform:rotate(90deg);}
+  .btn{background:var(--forest);color:var(--paper);padding:10px 22px;border-radius:2px;font-size:12.5px;letter-spacing:.5px;text-decoration:none;transition:background .3s;}
+  .btn:hover{background:var(--forest-deep);}
+
+  /* HERO with panorama ridges */
+  header{position:relative;padding:92px 0 0;text-align:center;overflow:hidden;}
+  header .wrap{position:relative;z-index:2;padding-bottom:60px;}
+  header h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(38px,6.4vw,64px);line-height:1.04;letter-spacing:-1px;margin:24px auto 20px;max-width:14ch;}
+  header h1 em{font-style:normal;color:var(--forest);}
+  header h1 .h1-l3{display:inline-block;font-size:.62em;white-space:nowrap;letter-spacing:-.2px;}
+  .lede{font-size:clamp(15px,1.7vw,18px);color:#443d33;max-width:540px;margin:0 auto 34px;text-wrap:balance;}
+
+  /* ── Mini-quiz ── */
+  /* QUIZ — Concierge (phương án A) */
+  .quiz-wrap{max-width:520px;margin:0 auto;position:relative;z-index:3;}
+  .quiz-card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:30px 28px;box-shadow:0 2px 14px rgba(26,24,21,.05);}
+  .quiz-step{font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--stone);margin-bottom:14px;}
+  .quiz-label{font-size:20px;color:var(--ink);margin-bottom:18px;font-family:'Fraunces',serif;font-style:italic;font-weight:400;line-height:1.4;text-wrap:balance;}
+  .quiz-opts{display:flex;flex-direction:column;counter-reset:qo;border-top:1px solid var(--line);}
+  .qopt{counter-increment:qo;display:flex;align-items:center;gap:16px;background:none;border:0;border-bottom:1px solid var(--line);color:var(--ink);padding:16px 4px;text-align:left;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;font-size:14.5px;font-weight:300;line-height:1.4;letter-spacing:.1px;width:100%;transition:padding-left .35s cubic-bezier(.22,1,.36,1),opacity .3s,color .3s;}
+  .qopt::before{content:counter(qo,decimal-leading-zero);font-family:'Fraunces',serif;font-size:13px;color:var(--stone);flex:none;width:18px;transition:color .3s;}
+  .qopt::after{content:"\2192";margin-left:auto;padding-left:12px;font-family:'Fraunces',serif;font-size:17px;color:var(--clay);opacity:0;transform:translateX(-6px);transition:.3s;flex:none;}
+  .qopt:hover{padding-left:10px;}
+  .qopt:hover::after{opacity:1;transform:none;}
+  .qopt.chosen{padding-left:10px;color:var(--forest);font-weight:400;}
+  .qopt.chosen::before{color:var(--forest);}
+  .qopt.chosen::after{opacity:1;transform:none;color:var(--forest);}
+  .quiz-opts:has(.chosen) .qopt:not(.chosen){opacity:.34;}
+  .quiz-result{padding:4px 0;}
+  .quiz-result-card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:22px 24px;margin-bottom:14px;}
+  .quiz-result-text{font-size:14.5px;color:var(--ink);line-height:1.68;}
+  .quiz-email-row{display:flex;gap:0;border:1px solid var(--stone);border-radius:2px;overflow:hidden;margin-top:18px;}
+  .quiz-email-row input{flex:1;background:var(--paper);border:0;padding:14px 16px;font-family:inherit;font-size:14px;color:var(--ink);outline:none;}
+  .quiz-email-row input::placeholder{color:var(--stone);}
+  .quiz-email-row button{background:var(--forest);border:0;color:var(--paper);padding:0 22px;font-family:inherit;font-size:12.5px;letter-spacing:.5px;cursor:pointer;white-space:nowrap;transition:background .3s;}
+  .quiz-email-row button:hover{background:var(--forest-deep);}
+  .quiz-cap{font-size:11.5px;color:var(--stone);margin:9px 2px 0;font-style:italic;text-align:center;line-height:1.5;letter-spacing:.2px;}
+
+  .hero-foot{font-size:12px;color:var(--muted);margin-top:14px;letter-spacing:.3px;}
+  .ridges{position:absolute;left:0;right:0;bottom:0;width:100%;height:300px;z-index:1;pointer-events:none;}
+
+  /* ── VIDEO NỀN HERO — CHỈ visit 1-3/phiên (class .hero-on ở <html>); visit 4+ = hero TRƠN như cũ ── */
+  .hero-video{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;}   /* mặc định trơn: không nền */
+  .hero-on .hero-video{background:url('/video/hero-poster.jpg') center/cover no-repeat,url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAASACADASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAMBBQYC/8QAHxAAAgEEAwEBAAAAAAAAAAAAAAECAwURIRUxQQQy/8QAFwEBAQEBAAAAAAAAAAAAAAAAAgEAA//EABYRAQEBAAAAAAAAAAAAAAAAAAEAAv/aAAwDAQACEQMRAD8AuqV4mnuaaGcy5PCaZgKlwcVhSwxXJ1IyzGTEhQW39W8tRzorq99nnTRl+RdSP636hb+uL7FkyR0rVsuhfoAc5Ux7O0AFtf/Z') center/cover no-repeat #636973;}  /* blur-up: hình mờ nhúng sẵn (~1KB) hiện TỨC THÌ ở lớp dưới → poster nét chồng lên → video. Hết mảng màu trơn. */
+  .hero-video video{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.72) brightness(1.16) contrast(.93);}
+  /* phủ lớp giấy — giữ chữ tối đọc được (chỉ khi CÓ media) */
+  .hero-on .hero-video::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(241,236,226,.30) 0%,rgba(241,236,226,.48) 34%,rgba(241,236,226,.52) 62%,rgba(241,236,226,.34) 100%);}
+  /* Điện thoại: khung hero cao hẹp nên video cắt hai bên; phóng để đẩy dải mờ ra ngoài khung. */
+  @media(max-width:900px){ .hero-video video{transform:scale(1.38);transform-origin:center 46%;} }
+  /* chữ tách khỏi nền video bằng quầng sáng mảnh (chỉ khi có media) */
+  .hero-on .hero-video ~ .wrap .kicker,
+  .hero-on .hero-video ~ .wrap h1,
+  .hero-on .hero-video ~ .wrap .lede{text-shadow:0 1px 2px rgba(241,236,226,.92),0 0 22px rgba(241,236,226,.75);}
+  /* đồi vẽ SVG lùi lại khi có video */
+  .hero-on .hero-video ~ .ridges{opacity:.42;}
+
+  /* AERIAL — ảnh toàn cảnh: mobile tràn viền, PC luôn có lề */
+  .aer-band{position:relative;z-index:1;width:100%;height:clamp(230px,33vw,360px);overflow:hidden;background:var(--paper);}
+  /* khớp đúng lề với .wrap để ảnh thẳng hàng với các khối nội dung */
+  @media(min-width:781px){.aer-band{max-width:1000px;width:calc(100% - 80px);margin:0 auto;}}
+  @media(min-width:781px) and (max-width:1080px){.aer-band{max-width:800px;}}
+  @media(min-width:1300px){.aer-band{max-width:1120px;}}
+  .aer-band img{width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block;transition:transform 1.5s cubic-bezier(.16,.5,.2,1);}
+  .js .aer-band img{transform:scale(1.09);}
+  .aer-band.in img{transform:scale(1);}
+  @media(hover:hover){.aer-band.in:hover img{transform:scale(1.05);transition:transform 5s cubic-bezier(.16,.5,.2,1);}}
+  /* Chỉ làm mềm mép TRÊN (hoà vào nền giấy). Bỏ hẳn fade mép dưới:
+     dưới ảnh là dải chạy chữ nền đục #e4dcca, fade sang màu giấy tạo vệt trắng lệch màu
+     ăn mất ~29px đáy ảnh — nhìn như ảnh bị lún xuống. */
+  .aer-fade{position:absolute;inset:0;background:linear-gradient(to bottom,var(--paper) 0%,rgba(241,236,226,0) 7%,rgba(241,236,226,0) 100%);pointer-events:none;}
+
+  /* LAYERS — dải 4 mục Notes/Brief/Selection/Advisory */
+  .layers{background:var(--forest);color:#e9e3d5;}
+  .layers .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;padding-top:22px;padding-bottom:22px;}
+  .layer{display:flex;flex-direction:column;gap:2px;}
+  .layer b{font-family:'Fraunces',serif;font-weight:400;font-size:15px;}
+  .layer span{font-size:11px;color:#e8b98a;letter-spacing:.3px;}
+  .layer-sep{width:1px;align-self:stretch;background:rgba(255,255,255,.12);}
+  @media(max-width:640px){.layers .wrap{justify-content:flex-start;flex-wrap:nowrap;gap:6px;align-items:flex-start;}.layer{flex:1 1 0;min-width:0;}.layer b{font-size:13.5px;line-height:1.25;}.layer span{font-size:9.5px;font-weight:300;line-height:1.3;}.layer-sep{display:none;}}
+
+  /* SLOGAN — quiet luxury statement */
+  .slogan{padding:64px 24px;text-align:center;background:var(--card);}
+  .slogan .s{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(19px,2.6vw,30px);color:#3f382e;letter-spacing:.01em;line-height:1.5;max-width:24ch;margin:0 auto;text-wrap:balance;}
+  .slogan .s em{font-style:italic;color:var(--forest);}
+  .slogan .tick{display:block;width:22px;height:1px;background:var(--clay);opacity:.55;margin:0 auto 18px;}
+  @media(max-width:640px){
+    .slogan{padding:44px 20px;}
+  }
+
+  /* BẮT ĐẦU TỪ ĐÂY — Journey Navigator (thẻ gọn, bấm mới xổ bài) */
+  .jn{padding:50px 0 54px;}
+  .jn-head{text-align:center;margin-bottom:28px;}
+  .jn-q{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(20px,2.6vw,26px);letter-spacing:-.3px;margin-top:10px;}
+  .jn-grid{display:grid;grid-template-columns:repeat(4,1fr);align-items:start;gap:14px;}
+    .jn-grid .jn-card:nth-child(2){transition-delay:.09s;}
+  .jn-grid .jn-card:nth-child(3){transition-delay:.18s;}
+  .jn-grid .jn-card:nth-child(4){transition-delay:.27s;}
+  .jn-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:box-shadow .45s cubic-bezier(.22,1,.36,1),border-color .45s cubic-bezier(.22,1,.36,1),transform .45s cubic-bezier(.22,1,.36,1);}
+  @media(hover:hover){.jn-card:hover{box-shadow:0 10px 26px rgba(26,24,21,.09);border-color:var(--stone);transform:translateY(-3px);}}
+  .jn-btn,.jn-link{display:flex;flex-direction:column;min-height:172px;padding:20px 18px;text-align:left;cursor:pointer;font-family:inherit;color:var(--ink);text-decoration:none;width:100%;}
+  .jn-btn{background:none;border:0;}
+  .jn-num{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:14px;color:var(--stone);margin-bottom:10px;}
+  .jn-t{font-family:'Fraunces',serif;font-size:17.5px;line-height:1.25;margin-bottom:7px;text-wrap:balance;}
+  .jn-d{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:14px;text-wrap:pretty;}
+  .jn-go{margin-top:auto;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--clay);font-weight:500;display:flex;align-items:center;gap:6px;}
+  .jn-go i{font-style:normal;font-size:15px;transition:transform .3s ease;line-height:1;}
+  .jn-card.open .jn-go i{transform:rotate(90deg);}
+  .jn-link:hover .jn-go,.jn-btn:hover .jn-go{color:var(--forest);}
+  .jn-panel{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+  .jn-card.open .jn-panel{max-height:360px;}
+  .jn-panel-in{padding:0 18px 16px;border-top:1px solid var(--line);}
+  .jn-panel-in a{display:block;font-family:'Fraunces',serif;font-size:14px;line-height:1.3;color:var(--ink);text-decoration:none;padding:9px 0;border-bottom:1px solid var(--line);transition:color .2s,padding-left .2s;}
+  .jn-panel-in a:hover{color:var(--clay);padding-left:5px;}
+  .jn-panel-in .jn-all{border-bottom:0;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--clay);font-weight:500;padding-top:12px;}
+  .jn-panel-in .jn-all:hover{color:var(--forest);padding-left:0;}
+  @media(max-width:780px){.jn{padding:36px 0 40px;}.jn-grid{grid-template-columns:1fr 1fr;gap:10px;}.jn-btn,.jn-link{min-height:150px;padding:15px 14px;}.jn-t{font-size:15.5px;}.jn-d{font-size:11.5px;}.jn-panel-in{padding:0 14px 13px;}}
+
+  /* Ô CHẠY CHỮ */
+  /* dải chữ khớp đúng bề rộng ảnh phía trên → hai cái thành MỘT khối liền */
+  .marq{padding:13px 40px;text-align:center;background:#e4dcca;border-bottom:1px solid var(--line);overflow:hidden;}
+  @media(min-width:781px){.marq{max-width:1000px;width:calc(100% - 80px);margin:0 auto;}}
+  @media(min-width:781px) and (max-width:1080px){.marq{max-width:800px;}}
+  @media(min-width:1300px){.marq{max-width:1120px;}}
+  .marq .t{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:16px;color:#57503f;}
+  @media(max-width:640px){.marq{padding:11px 20px;}.marq .t{font-size:14px;}}
+
+  /* SECTIONS */
+  section{padding:88px 0;}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:38px;}
+  .grid2{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:stretch;}
+  .grid2 .feature{display:flex;flex-direction:column;justify-content:center;}
+  .feature .idx{display:block;margin-bottom:14px;}
+  .feature h3{font-family:'Fraunces',serif;font-weight:400;font-size:30px;line-height:1.2;letter-spacing:-.4px;margin-bottom:16px;}
+  .feature p{font-size:16.5px;color:#443d33;margin-bottom:22px;max-width:46ch;}
+  .link{font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:var(--forest);text-decoration:none;border-bottom:1px solid var(--clay-soft);padding-bottom:3px;transition:border-color .3s;}
+  .link:hover{border-color:var(--forest);}
+  .kb{border-top:1px solid var(--line);}
+  .kb a{display:flex;align-items:baseline;justify-content:space-between;padding:17px 2px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);transition:padding .25s;}
+  .kb a:hover{padding-left:10px;}
+  .kb .kb-t{font-family:'Fraunces',serif;font-size:18px;}
+  .kb .kb-s{font-size:12.5px;color:var(--muted);}
+  .kb .kb-n{font-family:'Fraunces',serif;font-style:italic;color:var(--stone);font-size:14px;}
+
+  .alt{background:#ece5d7;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-left:4px solid var(--clay);}
+
+  .feed-item{font-size:13px;padding:7px 0;display:flex;gap:10px;align-items:baseline;border-bottom:1px solid var(--line);}
+  .feed-item:last-child{border:0;}
+  .feed-item .d{width:6px;height:6px;border-radius:50%;flex:none;margin-top:6px;}
+
+
+  /* Selection 03 — thẻ tuyển chọn gọn */
+  .selc{border:1px solid var(--line);border-radius:6px;background:var(--card);padding:22px 24px;}
+  .selc-lead{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(14.5px,1.9vw,16.5px);line-height:1.55;color:var(--forest);max-width:54ch;margin:0 0 17px;}
+  .selc-item{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:16px;border-top:1px solid var(--line);text-decoration:none;color:var(--ink);transition:padding-left .25s ease;}
+  .selc-item:hover{padding-left:6px;}
+  .selc-info{display:flex;flex-direction:column;gap:5px;min-width:0;}
+  .selc-k{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--clay);}
+  .selc-t{font-family:'Fraunces',serif;font-size:clamp(17px,2.2vw,20px);line-height:1.2;color:var(--ink);}
+  .selc-right{display:flex;align-items:baseline;gap:13px;flex-shrink:0;}
+  .selc-arrow{color:var(--clay);font-size:19px;line-height:1;align-self:center;}
+
+  /* Khung ảnh Tám Trình — mat kem + keyline mảnh + tên khắc dưới (chữ nhẹ) */
+  .tt-frame{max-width:850px;margin:0 auto;background:var(--card);border:1px solid var(--line);padding:13px 13px 16px;}
+  .wrap.tt-wrap{padding-left:26px;padding-right:26px;}
+  @media(max-width:780px){.wrap.tt-wrap{padding-left:15px;padding-right:15px;}.tt-frame{padding:10px 10px 13px;}}
+  .tt-kl{border:1px solid rgba(26,24,21,.15);line-height:0;overflow:hidden;}
+  .tt-kl img{width:100%;height:auto;display:block;filter:contrast(1.06) saturate(1.04) brightness(.99);}
+  @media(hover:hover){.tt-kl img{transition:transform 5s cubic-bezier(.16,.5,.2,1);}.tt-frame:hover .tt-kl img{transform:scale(1.028);}}
+  .tt-plate{display:block;text-align:center;margin-top:14px;}
+  .tt-tick{display:block;width:20px;height:1px;background:var(--clay);opacity:.5;margin:0 auto 10px;}
+  .tt-cap{display:block;font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:13.5px;color:var(--muted);letter-spacing:.2px;}
+  .tt-place{display:block;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-top:7px;}
+
+  footer{background:var(--ink);color:#cabfab;padding:72px 0;text-align:center;}
+
+  footer .meta{font-size:11.5px;letter-spacing:.8px;opacity:.5;}
+  .note{max-width:1080px;margin:22px auto 0;padding:0 40px;font-size:11.5px;color:var(--stone);text-align:center;font-style:italic;}
+
+  @media(max-width:780px){
+    .wrap{padding:0 24px;}
+    /* mobile: nền nav hé nhẹ 0.95 + mờ kính cho art, vẫn đủ đục để lướt không xuyên */
+    nav{background:rgba(241,236,226,1);}
+    .navlinks{display:none;}
+    .hamburger{display:flex;}
+    .grid2{grid-template-columns:1fr;}
+
+    /* panorama image strip — giữ tỉ lệ trên mobile */
+    div[style*="aspect-ratio:3/1"] img{object-fit:cover;object-position:center 40%;height:100%;width:100%;}
+    /* quiz card trên mobile */
+    .quiz-wrap{max-width:100%;}
+    .quiz-card{padding:24px 20px;}
+    .quiz-label{font-size:18px;}
+    .qopt{padding:15px 2px;font-size:14px;gap:13px;}
+  }
+
+  .geo-note{display:none;font-family:'Fraunces',serif;font-style:italic;font-size:15.5px;color:var(--muted);margin:0 auto;max-width:520px;text-align:center;line-height:1.65;padding:44px 24px 0;text-wrap:pretty;}
+  .geo-note a{color:var(--forest);text-decoration:none;border-bottom:1px solid rgba(47,64,52,.3);}
+  .geo-note a:hover{border-color:var(--forest);}
+  .geo-note.show{display:block;animation:geoFade .6s ease;}
+  @keyframes geoFade{from{opacity:0;}to{opacity:1;}}
+
+.reco-pick{display:flex;align-items:center;justify-content:space-between;gap:14px;text-decoration:none;background:#fff;border:1px solid var(--line);border-left:2px solid var(--clay);border-radius:4px;padding:15px 17px;margin-top:14px;transition:transform .25s,box-shadow .25s;}
+.reco-pick:hover{transform:translateX(3px);box-shadow:0 4px 16px rgba(26,24,21,.08);}
+.reco-pick .rp-k{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--clay);display:block;margin-bottom:5px;}
+.reco-pick .rp-t{font-family:'Fraunces',serif;font-size:16px;color:var(--ink);line-height:1.3;}
+.reco-pick .rp-a{font-family:'Fraunces',serif;font-size:19px;color:var(--clay);flex-shrink:0;}
+.reco-urgent{border-left-color:var(--forest);background:var(--card);}
+.reco-urgent .rp-k{color:var(--forest);}
+.fab-contact{opacity:0;pointer-events:none;position:fixed;right:18px;bottom:18px;z-index:90;width:44px;height:44px;border-radius:50%;background:rgba(47,64,52,.14);border:1px solid rgba(47,64,52,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--forest);display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:none;transition:transform .3s,background .3s,color .3s,border-color .3s;}
+.fab-contact.on{opacity:1;pointer-events:auto;transition:opacity .6s ease,transform .25s,box-shadow .25s;}
+.fab-contact:hover{transform:translateY(-2px);background:rgba(47,64,52,.9);color:#fff;border-color:transparent;box-shadow:none;}
+.fab-contact svg{width:18px;height:18px;stroke:currentColor;}
+.fab-contact .fab-lbl{position:absolute;right:62px;top:50%;transform:translateY(-50%);background:var(--ink);color:#f3eee3;font-family:'Be Vietnam Pro',sans-serif;font-size:11.5px;letter-spacing:.3px;padding:6px 11px;border-radius:3px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .25s;}
+.fab-contact:hover .fab-lbl{opacity:.96;}
+@media(max-width:780px){.fab-contact{width:44px;height:44px;right:14px;bottom:14px;}.fab-contact .fab-lbl{display:none;}}
+
+@media(max-width:780px){.qopt{padding:14px 2px;font-size:13.5px;line-height:1.36;font-weight:300;letter-spacing:0;gap:12px;}}
+@media(min-width:781px) and (max-width:1080px){.wrap{max-width:880px;}}
+@media(min-width:1300px){.wrap{max-width:1200px;}.tt-frame{max-width:980px;}.quiz-wrap{max-width:560px;}section{padding:108px 0;}header h1{font-size:72px;}}
+.nav-cta{border:1px solid var(--clay);color:var(--clay)!important;padding:4px 14px;border-radius:20px;}
+
+.nb{white-space:nowrap;}
+@media(max-width:600px){section{padding:44px 0;}header{padding-top:60px;}header .wrap{padding-bottom:44px;}.ridges{height:225px;}header h1{max-width:100%;padding:0 6px;letter-spacing:-.5px;line-height:1.06;box-sizing:border-box;}header h1 .h1-l3{display:inline-block;font-size:clamp(20px,5.4vw,30px);white-space:nowrap;letter-spacing:-.2px;}}
+
+@media(min-width:901px){.mobile-menu{display:none !important;}.hamburger{display:none !important;}.menu-overlay{display:none !important;}}
+
+/* ==== Scroll-reveal (mượt khi cuộn tới) ==== */
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1);}
+.reveal.in{opacity:1;transform:none;}
+/* Dải ảnh toàn cảnh: chỉ mờ dần, không dịch 24px (khỏi chui xuống dải chạy chữ) */
+.js .aer-band.reveal{transform:none;}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+/* Signature moment — vạch gold rơi (cú nín thở) */
+.drop-line{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;height:104px;margin:22px auto 14px;}
+.drop-line .ln{width:2px;height:84px;border-radius:2px;background:linear-gradient(180deg,rgba(157,93,56,0) 0%,var(--clay) 45%,var(--clay) 100%);transform-origin:top center;transition:transform 1.25s cubic-bezier(.22,1,.36,1);}
+.js .drop-line .ln{transform:scaleY(0);}
+.drop-line .dot{position:relative;width:7px;height:7px;border-radius:50%;background:var(--clay);margin-top:5px;transition:opacity .5s ease 1s,transform .55s cubic-bezier(.34,1.56,.64,1) 1s;}
+.js .drop-line .dot{opacity:0;transform:translateY(-6px);}
+.drop-line .dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--clay);opacity:0;}
+.drop-line.in .ln{transform:scaleY(1);}
+.drop-line.in .dot{opacity:1;transform:none;}
+.drop-line.in .dot::after{animation:dropRipple 1.1s ease-out 1.15s 1;}
+@keyframes dropRipple{0%{opacity:.55;transform:scale(.5);}100%{opacity:0;transform:scale(2.6);}}
+@media(prefers-reduced-motion:reduce){.drop-line .ln{transform:scaleY(1);}.drop-line .dot{opacity:1;transform:none;transition:none;}.drop-line.in .dot::after{animation:none;}}
+
+/* ==== Chân trang: đèo → xanh → đen ==== */
+.closing{padding:0;}
+.closing-photo{position:relative;min-height:340px;background-image:url('/images/deo-ta-nung.webp');background-size:cover;background-position:left 48%;}
+.closing-photo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(to bottom,transparent,rgba(20,25,20,.4));}
+.closing-body{background:linear-gradient(to bottom,#2f4034 0%,#2f4034 28%,#2b322e 55%,#20241f 100%);}
+.closing-green{padding:44px 30px 30px;text-align:center;border-top:2px solid rgba(232,185,138,.32);}
+.closing-lead{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:15.5px;line-height:1.5;color:#e8b98a;max-width:520px;margin:0 auto 13px;}
+.closing-quote{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:20px;line-height:1.5;color:#f5f1e8;max-width:520px;margin:0 auto;}
+.closing-quote em{color:#e8b98a;font-style:italic;}
+.closing-dark{padding:0 30px 38px;text-align:center;}
+.closing-sep{width:28px;height:1px;background:rgba(232,185,138,.45);margin:32px auto 24px;}
+.closing-name{font-family:'Fraunces',serif;font-weight:300;font-size:16px;letter-spacing:2.5px;color:#dbe0d5;}
+.closing-meta{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#96a08e;margin-top:16px;}
+.closing-place{font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:#96a08e;margin-top:10px;}
+.closing-phone{font-family:'Fraunces',serif;font-weight:300;font-size:15px;letter-spacing:2px;margin-top:20px;}
+.closing-phone a{color:#d9b896;text-decoration:none;display:inline-block;padding:6px 8px;margin:-6px -8px;}
+.closing-mail{font-size:11px;letter-spacing:.4px;margin-top:7px;}
+.closing-mail a{color:#a6b09c;text-decoration:none;display:inline-block;padding:8px;margin:-8px;}
+@media(max-width:640px){.closing-quote{font-size:18px;}.closing-photo{min-height:260px;}.closing-lead{font-size:12.5px;}}
+
+/* ==== Tinh chỉnh CHỈ desktop (min-width:1024) — mobile & tablet giữ nguyên ==== */
+@media(min-width:1024px){
+  /* VIỆC 1 — khối 02: 2 cột, cụm phải thẳng đỉnh tiêu đề trái */
+  #cong-dong .c02-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:56px;align-items:start;}
+  #cong-dong .c02-r .feed{margin-top:0 !important;}
+  /* VIỆC 4a — ảnh đèo: cao hơn, thấy trọn đường + chữ khắc góc dưới-trái */
+  .closing-photo{min-height:520px;background-position:left bottom;}
+  /* VIỆC 4b — khối info chân trang căn trái */
+  .closing-dark{text-align:left;}
+  .closing-sep{margin-left:0;margin-right:auto;}
+}
+
+/* — polish: micro-typography & touch feel — */
+::selection{background:#2f4034;color:#f1ece2;}
+h1,h2,h3{text-wrap:balance;}
+p,li,figcaption{text-wrap:pretty;}
+a,button{touch-action:manipulation;}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}html{scroll-behavior:auto!important;}}
+
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  nav,.nav{background:rgba(241,236,226,1)!important;}
+}
+  /* Language switch VI · EN — quiet, no box/flag/dropdown */
+  .langsw{display:inline-flex;align-items:center;gap:5px;font-size:9.5px;letter-spacing:.16em;opacity:.45;}
+  .langsw a{color:var(--stone);text-decoration:none;transition:color .25s;}
+  .langsw a:hover{color:var(--muted);}
+  .langsw a::after{display:none;}
+  .langsw .langcur{color:var(--muted);font-weight:400;}
+  .langsw .langsep{color:var(--stone);opacity:.5;}
+  .mobile-lang{font-family:'Be Vietnam Pro',sans-serif;font-size:10px;letter-spacing:.14em;color:var(--stone);opacity:.7;margin-top:26px;padding:14px 0 0;}
+  .mobile-lang a{color:var(--stone);text-decoration:none;font-family:'Be Vietnam Pro',sans-serif;font-size:10px;font-weight:400;letter-spacing:.14em;}
+  .mobile-lang a:hover{color:var(--clay);}
+  .mobile-lang span{color:var(--muted);font-weight:400;}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Namban Panorama",
+  "url": "https://nambanpanorama.com",
+  "description": "Góc nhìn độc lập, trung thực về quy hoạch, bất động sản và đầu tư tại Nam Ban, Lâm Hà.",
+  "areaServed": {
+    "@type": "Place",
+    "name": "Nam Ban, Lâm Hà, Lâm Đồng, Việt Nam"
+  },
+  "knowsAbout": [
+    "Bất động sản Nam Ban",
+    "Quy hoạch Lâm Hà",
+    "Đầu tư đất Lâm Đồng",
+    "Giá đất Nam Ban"
+  ],
+  "@id": "https://nambanpanorama.com/#organization",
+  "founder": {
+    "@type": "Person",
+    "@id": "https://nambanpanorama.com/#founder",
+    "name": "Đoàn Quốc Duyệt",
+    "sameAs": [
+      "https://www.facebook.com/doanquocduyet"
+    ]
+  },
+  "sameAs": [
+    "https://www.facebook.com/nambanpanorama", "https://www.instagram.com/namban.panorama", "https://www.tiktok.com/@namban.panorama", "https://www.youtube.com/@NamBanPanorama"
+  ]
+}
+</script>
+<link rel="alternate" type="application/rss+xml" title="Namban Panorama" href="https://nambanpanorama.com/feed.xml">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://nambanpanorama.com/#founder",
+      "name": "Đoàn Quốc Duyệt",
+      "jobTitle": "Người sáng lập & biên tập Namban Panorama",
+      "description": "Người theo dõi và phân tích bất động sản, quy hoạch và đời sống vùng Nam Ban – Lâm Hà, Lâm Đồng. Trực tiếp khảo sát và đọc rủi ro từng lô đất trước khi người mua xuống tiền.",
+      "telephone": "+84978758788",
+      "worksFor": {
+        "@id": "https://nambanpanorama.com/#organization"
+      },
+      "workLocation": {
+        "@id": "https://nambanpanorama.com/#namban"
+      },
+      "knowsAbout": [
+        "Bất động sản Nam Ban",
+        "Quy hoạch Nam Ban – Lâm Hà",
+        "Giá đất Nam Ban",
+        "Pháp lý đất Lâm Đồng",
+        "Đời sống Nam Ban"
+      ],
+      "sameAs": [
+        "https://www.facebook.com/doanquocduyet"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://nambanpanorama.com/#organization",
+      "name": "Namban Panorama",
+      "url": "https://nambanpanorama.com",
+      "logo": "https://nambanpanorama.com/logo-nav.png",
+      "telephone": "+84978758788",
+      "founder": {
+        "@id": "https://nambanpanorama.com/#founder"
+      },
+      "areaServed": {
+        "@id": "https://nambanpanorama.com/#namban"
+      },
+      "sameAs": [
+        "https://www.facebook.com/nambanpanorama", "https://www.instagram.com/namban.panorama", "https://www.tiktok.com/@namban.panorama", "https://www.youtube.com/@NamBanPanorama"
+      ]
+    },
+    {
+      "@type": "Place",
+      "@id": "https://nambanpanorama.com/#namban",
+      "name": "Nam Ban, Lâm Hà, Lâm Đồng, Việt Nam",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Xã Nam Ban",
+        "addressRegion": "Lâm Đồng",
+        "addressCountry": "VN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 11.8406,
+        "longitude": 108.3356
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://nambanpanorama.com/#website",
+      "name": "Namban Panorama",
+      "url": "https://nambanpanorama.com",
+      "inLanguage": "vi",
+      "publisher": {
+        "@id": "https://nambanpanorama.com/#organization"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://nambanpanorama.com/en/#homepage",
+  "url": "https://nambanpanorama.com/en/",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@id": "https://nambanpanorama.com/#website"
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1"
+    ]
+  },
+  "dateModified": "2026-08-25T18:00:00+07:00",
+  "datePublished": "2026-07-02"
+}
+</script>
+<style>
+/* Vỡ dòng đẹp — chống rớt chữ (widow/orphan). Luật CLAUDE.md 29/7 */
+h1,h2,h3,h4,.pk-t,.pk-k,.layer b,.layer span{text-wrap:balance;}
+p,.pk-s{text-wrap:pretty;}
+</style>
+</head>
+<body>
+<script>
+var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}catch(e){return null;}},set:function(k,v){try{localStorage.setItem('pm_'+k,JSON.stringify(v));}catch(e){}}};
+(function(){
+  var visits=PM.get('visits')||0,last=PM.get('lastVisit'),now=Date.now();
+  if(!last||(now-last)>1800000){visits++;PM.set('visits',visits);}
+  PM.set('lastVisit',now);
+  var page=location.pathname.split('/').pop()||'index.html';
+  var read=PM.get('read')||[];
+  if(read.indexOf(page)===-1){read.push(page);PM.set('read',read);}
+  window.PM_STATE={visits:visits,read:read,intent:PM.get('intent')};
+})();
+</script>
+
+<nav>
+  <div class="wrap navin">
+    <a href="/en/" class="logo" style="text-decoration:none;color:inherit;">Namban Panorama</a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="navlinks" id="navlinks">
+      <a href="/en/nam-ban">About Nam Ban</a>
+      <a href="/en/trao-doi" class="nav-cta">Get in touch</a>
+      <span class="langsw"><a href="/">VI</a><span class="langsep">·</span><span class="langcur">EN</span></span>
+    </div>
+  </div>
+</nav>
+<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+<button class="mobile-close" id="mobileClose" onclick="toggleMenu()" aria-label="Close">×</button>
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-logo">Panorama</span>
+  <a href="/en/nam-ban" onclick="toggleMenu()">About Nam Ban</a>
+  <a href="/en/trao-doi" onclick="toggleMenu()">Get in touch</a>
+  <span class="mobile-lang"><a href="/">VI</a> · <span>EN</span></span>
+</div>
+<header>
+  <div class="hero-video" id="heroVideo" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="kicker fu" style="animation-delay:.05s">Nam Ban · Lâm Hà, Lâm&nbsp;Đồng — near&nbsp;Đà&nbsp;Lạt</div>
+    <h1 class="fu" style="animation-delay:.15s">See the <em>whole picture</em><br>of Nam Ban<br><span class="h1-l3">before you decide.</span></h1>
+    <p class="lede fu" style="animation-delay:.3s">Independent analysis, to help you make a better-informed decision.</p>
+
+    
+  </div>
+  <svg class="ridges" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#2f4034" stroke-width="1" opacity="0.12">
+      <path d="M0,70 C200,40 380,95 600,65 C820,38 1000,90 1200,60"/>
+      <path d="M0,110 C220,85 400,135 620,105 C840,80 1020,128 1200,100"/>
+    </g>
+    <path d="M0,300 L0,175 C160,150 320,190 520,170 C760,146 940,200 1200,165 L1200,300 Z" fill="#8a8a6f" opacity="0.30"/>
+    <path d="M0,300 L0,205 C200,180 360,225 580,205 C820,182 1010,232 1200,200 L1200,300 Z" fill="#5f6b52" opacity="0.42"/>
+    <path d="M0,300 L0,240 C180,222 380,258 600,240 C840,220 1020,262 1200,238 L1200,300 Z" fill="#44543f" opacity="0.6"/>
+    <path d="M0,300 L0,272 C220,260 420,286 640,272 C880,256 1040,288 1200,270 L1200,300 Z" fill="#2f4034" opacity="0.9"/>
+  </svg>
+</header>
+
+<!-- LAYERS / ECOSYSTEM -->
+<div class="layers">
+  <div class="wrap">
+    <div class="layer"><b>Notes</b><span>Field notes</span></div>
+    <div class="layer-sep"></div>
+    <div class="layer"><b>Brief</b><span>Monthly brief</span></div>
+    <div class="layer-sep"></div>
+    <div class="layer"><b>Selection</b><span>Curated opportunities</span></div>
+    <div class="layer-sep"></div>
+    <div class="layer"><b>Advisory</b><span>An independent view</span></div>
+  </div>
+</div>
+
+<!-- SLOGAN -->
+<div class="slogan"><div class="s"><span class="tick"></span>Understand the <em>place</em> before you understand the <em>price</em>.</div></div>
+
+
+<!-- BẮT ĐẦU TỪ ĐÂY — Journey Navigator -->
+<div class="jn">
+  <div class="wrap">
+    <div class="jn-head">
+      <span class="kicker">Start here</span>
+      <div class="jn-q">Where are you in the journey?</div>
+    </div>
+    <div class="jn-grid">
+      <a class="jn-card jn-link reveal" href="/living-in-nam-ban">
+        <span class="jn-num">01</span>
+        <span class="jn-t">New to Nam Ban</span>
+        <span class="jn-d">Worth living in? How is it different from Đà Lạt?</span>
+        <span class="jn-go">How life here really is →</span>
+      </a>
+      <div class="jn-card reveal">
+        <div class="jn-btn" style="cursor:default;">
+          <span class="jn-num">02</span>
+          <span class="jn-t">Considering a purchase</span>
+          <span class="jn-d">Prices, legal points, mistakes to avoid.</span>
+        </div>
+      </div>
+      <div class="jn-card reveal">
+        <div class="jn-btn" style="cursor:default;">
+          <span class="jn-num">03</span>
+          <span class="jn-t">Wondering whether to invest</span>
+          <span class="jn-d">Zoning, cycles, risks.</span>
+        </div>
+      </div>
+      <a class="jn-card jn-link reveal" href="/en/trao-doi">
+        <span class="jn-num">04</span>
+        <span class="jn-t">Ready to talk</span>
+        <span class="jn-d">An independent view, for you.</span>
+        <span class="jn-go">Get in touch →</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="aer-band reveal">
+  <img width="1600" height="750" src="/images/toan-canh-nam-ban-nhin-tu-tren-cao-lam-ha-lam-dong.webp" loading="lazy" decoding="async" alt="Nam Ban (Lâm Hà, Lâm Đồng) from above — a valley of gardens, ponds, the town and highland ridges near Đà Lạt">
+  <div class="aer-fade"></div>
+</div>
+
+<!-- Ô CHẠY CHỮ -->
+<div class="marq" style="margin-top:0;"><span class="t">A place worth living in reveals itself more slowly than a place worth selling.</span></div>
+<!-- 01 NOTES + BRIEF -->
+<section class="reveal">
+  <div class="wrap">
+    <div class="sechead"><span class="idx">01</span><span class="kicker">Panorama Notes &amp; Brief</span></div>
+    <div class="feature">
+      <span class="idx">Panorama Brief · No. 01</span>
+      <h3>Is Nam Ban still Nam Ban? The map has just been redrawn.</h3>
+      <p>Since 1 July 2025, Nam Ban became Nam Ban Lâm Hà commune, in the new Lâm Đồng. What that changes for the area — and for your money.</p>
+      <span class="link" style="cursor:default;border-color:var(--line);">Read · 10 min</span>
+    </div>
+  </div>
+</section>
+
+
+
+
+<div class="wrap tt-wrap" style="margin-top:14px;padding-bottom:2px;">
+  <figure class="tt-frame reveal">
+    <div class="tt-kl"><img width="1600" height="766" src="/images/view-tam-trinh-nam-ban.webp" loading="lazy" decoding="async" alt="The view over Nam Ban from Tám Trình coffee — succulents, wooden tables, a Guanyin statue, a waterfall and the town in the valley"></div>
+    <figcaption class="tt-plate"><span class="tt-tick"></span><span class="tt-cap">The view from Tám Trình coffee</span><span class="tt-place">Nam Ban · Lâm Hà</span></figcaption>
+  </figure>
+</div>
+<!-- 02 COMMUNITY -->
+
+<section class="alt" id="cong-dong" style="padding-top:46px;">
+  <div class="wrap">
+    <div class="sechead"><span class="idx">02</span><span class="kicker">Community · forming naturally</span></div>
+    <div class="c02-grid">
+      <div class="c02-l">
+    <h3 class="serif" style="font-weight:400;font-size:24px;letter-spacing:-.3px;margin-bottom:8px;color:var(--ink);">Real people, in a real place.</h3>
+    <p style="font-size:14.5px;color:var(--muted);max-width:54ch;margin-bottom:28px;line-height:1.65;">Locals, farm owners, new arrivals — sharing what they know about Nam Ban. A community growing slowly, and with care.</p>
+      </div>
+      <div class="c02-r">
+    <div class="feed" style="margin-top:28px;">
+      <div class="feed-item"><span class="d" style="background:var(--forest)"></span>Tuấn confirmed the Hà Bắc road is being upgraded and surfaced.</div>
+      <div class="feed-item"><span class="d" style="background:var(--clay)"></span>Mai shared actual transaction prices around Hồ Bãi Công, central Nam Ban.</div>
+    </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- 03 SELECTION -->
+<section class="reveal" id="sel03">
+  <div class="wrap">
+    <div class="sechead"><span class="idx">03</span><span class="kicker">Panorama Selection · opportunity AND risk</span></div>
+    <div class="selc">
+      <p class="selc-lead">Each month, a few properties seen in person — legal records, cash flow and risk read closely before they are ever mentioned.</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- CHÂN TRANG: đèo → xanh → đen -->
+<footer class="closing">
+  <div class="closing-photo"></div>
+  <div class="closing-body">
+    <div class="closing-green">
+      <p class="closing-lead">A good decision always starts from the full picture.</p>
+      <p class="closing-quote">We show you the whole of Nam Ban — including what might make you <span class="nb">decide <em>not to buy.</em></span></p>
+    </div>
+    <div class="closing-dark">
+      <div class="closing-sep"></div>
+      <p class="closing-name">Namban Panorama</p>
+      <p class="closing-meta">Zoning · Land prices · Opportunity &amp; risk</p>
+      <p class="closing-place">Nam Ban Lâm Hà · Lâm Đồng</p>
+      <p class="closing-phone"><a href="tel:0978758788">0978 758 788</a></p>
+      <p class="closing-mail"><a href="mailto:nambanpanorama@gmail.com">nambanpanorama@gmail.com</a></p>
+      <p class="closing-phone" style="margin-top:22px;font-size:13px;letter-spacing:1px;"><a href="/en/trao-doi" style="border-bottom:1px solid rgba(217,184,150,.4);">Talk to someone who's here →</a></p>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script>
+function jnToggle(btn){
+  var card = btn.closest('.jn-card');
+  var open = card.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+function toggleMenu(){
+  var m = document.getElementById('mobileMenu');
+  var ov = document.getElementById('menuOverlay');
+  var cl = document.getElementById('mobileClose');
+  var hb = document.querySelector('.hamburger');
+  var open = m.classList.toggle('open');
+  if(ov) ov.classList.toggle('open', open);
+  if(cl) cl.classList.toggle('open', open);
+  if(hb) hb.classList.toggle('is-open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    var m=document.getElementById('mobileMenu');
+    if(m&&m.classList.contains('open')) toggleMenu();
+  }
+});
+
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){var m=document.getElementById('mobileMenu');if(m&&m.classList.contains('open')){m.classList.remove('open');document.body.style.overflow='';}}
+});
+</script>
+
+
+
+
+<a href="https://zalo.me/0978758788" target="_blank" rel="noopener" class="fab-contact" id="fabContact" style="display:none" aria-label="Talk to someone who's here"><span class="fab-lbl">Talk to someone who's here</span><span class="fab-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#e7e0d2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a7.5 7.5 0 0 1-10.9 6.7L4 19.5l1.3-4.1A7.5 7.5 0 1 1 20 11.5Z"/></svg></span></a>
+<script defer src="/_vercel/insights/script.js"></script>
+
+<script>
+(function(){var f=document.getElementById('fabContact');if(!f)return;
+function s(){if((window.scrollY||0)>700){f.style.display='flex';requestAnimationFrame(function(){f.classList.add('on');});window.removeEventListener('scroll',s);}}
+window.addEventListener('scroll',s,{passive:true});s();})();
+</script>
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal, .drop-line');
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){obs.observe(el);});
+  }
+  // fallback: sau 2.5s mọi khối chưa hiện thì hiện luôn
+  setTimeout(function(){document.querySelectorAll('.reveal:not(.in), .drop-line:not(.in)').forEach(function(el){el.classList.add('in');});},2500);
+})();
+</script>
+<script defer src="/panorama-utils.js"></script>
+<script>
+/* Video nền hero.
+   Quy tắc: trong MỘT phiên — visit 1,2,3 vào trang chủ thì poster hiện NGAY + video CHẠY;
+   từ visit 4 trở đi HERO TRƠN như cũ (không poster, không video). Đóng tab / hôm sau vào lại = như đầu.
+   Số đếm phiên + bật class .hero-on (visit 1-3) đã làm ở script trong <head> — ở đây KHÔNG đếm lại.
+   Poster = khung hình đầu của chính video (đặt nền trong CSS) → hiện tức thì, video mờ chồng lên.
+   Mạng yếu / tiết kiệm dữ liệu / tắt chuyển động → chỉ poster tĩnh, không video.
+   Bỏ video: xoá thư mục /video hoặc xoá khối script này. */
+(function(){
+  var box=document.getElementById('heroVideo'); if(!box) return;
+  var lan=window.__pmHeroLan||1;                                      // đã đếm ở <head>, không đếm lại
+  if(lan>=4) return;                                                  // visit 4+: hero trơn, không media
+  var mq=window.matchMedia, c=navigator.connection;
+  if((mq&&mq('(prefers-reduced-motion:reduce)').matches) ||
+     (c&&(c.saveData||/2g|slow-2g/.test(c.effectiveType||'')))) return;  // mạng yếu / tắt chuyển động → poster tĩnh, không video
+
+  // visit 1-3: video chạy NGAY, mờ chồng lên poster (lần đầu ~0.6s; quay lại hiện thẳng)
+  var v=document.createElement('video');
+  v.muted=true;v.defaultMuted=true;v.loop=true;v.playsInline=true;
+  v.setAttribute('muted','');v.setAttribute('playsinline','');
+  v.preload='auto';v.poster='/video/hero-poster.jpg';v.src='/video/hero.mp4';
+  v.style.opacity=(lan>1?'1':'0');                                    // lần đầu: mờ chồng lên poster; quay lại: hiện thẳng
+  v.style.transition='opacity .6s ease';
+  v.addEventListener('playing',function(){ v.style.opacity='1'; },{once:true});
+  box.appendChild(v);
+  var p=v.play(); if(p&&p.catch) p.catch(function(){});               // lỗi phát → poster giữ nguyên
+})();
+</script>
+</body>
+</html>

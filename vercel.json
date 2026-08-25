@@ -1,0 +1,210 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "git": {
+    "deploymentEnabled": {
+      "claude/namban-panorama-setup-0oiyb1": false
+    }
+  },
+  "headers": [
+    {
+      "source": "/data/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/bat-dau",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/quy-hoach",
+      "destination": "/quy-hoach-2050",
+      "permanent": true
+    },
+    {
+      "source": "/nam-ban-vs-da-lat",
+      "destination": "/so-sanh-nam-ban-bao-loc-da-lat",
+      "permanent": true
+    },
+    {
+      "source": "/nam-ban-co-hop-voi-ban-khong",
+      "destination": "/nam-ban-co-hop-voi-ban",
+      "permanent": true
+    },
+    {
+      "source": "/quy-hoach-nam-ban",
+      "destination": "/quy-hoach-2050",
+      "permanent": true
+    },
+    {
+      "source": "/gia-dat-nam-ban",
+      "destination": "/namban-index",
+      "permanent": true
+    },
+    {
+      "source": "/co-nen-mua-dat-nam-ban",
+      "destination": "/tiem-nang-dau-tu",
+      "permanent": true
+    },
+    {
+      "source": "/ai-dang-mua-nam-ban",
+      "destination": "/brief-01",
+      "permanent": true
+    },
+    {
+      "source": "/nam-ban-hay-bao-loc",
+      "destination": "/so-sanh-nam-ban-bao-loc-da-lat",
+      "permanent": true
+    },
+    {
+      "source": "/truoc-khi-mua-dat-nam-ban",
+      "destination": "/truoc-khi-xuong-tien",
+      "permanent": true
+    },
+    {
+      "source": "/cau-hoi-thuong-gap",
+      "destination": "/hoi-nhanh",
+      "permanent": true
+    },
+    {
+      "source": "/song-o-nam-ban",
+      "destination": "/nam-ban-co-dang-song",
+      "permanent": true
+    },
+    {
+      "source": "/co-nen-song-o-nam-ban",
+      "destination": "/nam-ban-co-dang-song",
+      "permanent": true
+    },
+    {
+      "source": "/bo-pho-ve-nam-ban",
+      "destination": "/roi-sai-gon-len-nam-ban",
+      "permanent": true
+    },
+    {
+      "source": "/roi-sai-gon-len-cao-nguyen",
+      "destination": "/roi-sai-gon-len-nam-ban",
+      "permanent": true
+    },
+    {
+      "source": "/nam-ban-an-gi",
+      "destination": "/mot-ngay-o-nam-ban",
+      "permanent": true
+    },
+    {
+      "source": "/nam-ban-di-dau",
+      "destination": "/mot-ngay-o-nam-ban",
+      "permanent": true
+    },
+    {
+      "source": "/cuoi-tuan-o-nam-ban",
+      "destination": "/mot-ngay-o-nam-ban",
+      "permanent": true
+    },
+    {
+      "source": "/second-home-gan-da-lat",
+      "destination": "/so-sanh-nam-ban-bao-loc-da-lat",
+      "permanent": true
+    },
+    {
+      "source": "/dau-tu-dat-nam-ban",
+      "destination": "/tiem-nang-dau-tu",
+      "permanent": true
+    },
+    {
+      "source": "/khi-hau-nam-ban",
+      "destination": "/nam-ban-co-dang-song",
+      "permanent": true
+    },
+    {
+      "source": "/nam-ban-o-dau",
+      "destination": "/quy-hoach-2050",
+      "permanent": true
+    },
+    {
+      "source": "/nam-ban-cach-da-lat-bao-xa",
+      "destination": "/so-sanh-nam-ban-bao-loc-da-lat",
+      "permanent": true
+    },
+    {
+      "source": "/nguoi-nam-ban-01",
+      "destination": "/roi-sai-gon-len-nam-ban",
+      "permanent": true
+    },
+    {
+      "source": "/doc-nhanh-nam-ban",
+      "destination": "/doc-nhanh",
+      "permanent": true
+    },
+    {
+      "source": "/cau-chuyen",
+      "destination": "/cau-chuyen-nam-ban",
+      "permanent": true
+    },
+    {
+      "source": "/nguoi-nam-ban",
+      "destination": "/cau-chuyen-nam-ban",
+      "permanent": true
+    },
+    {
+      "source": "/people-of-namban",
+      "destination": "/cau-chuyen-nam-ban",
+      "permanent": true
+    },
+    {
+      "source": "/ban-do-quy-hoach",
+      "destination": "/ban-do-quy-hoach-nam-ban",
+      "permanent": true
+    },
+    {
+      "source": "/quy-hoach-phan-khu",
+      "destination": "/ban-do-quy-hoach-nam-ban",
+      "permanent": true
+    },
+    {
+      "source": "/dat-nam-ban-co-xay-duoc-khong",
+      "destination": "/ban-do-quy-hoach-nam-ban",
+      "permanent": true
+    },
+    {
+      "source": "/doc-lo",
+      "destination": "/doc-lo-dat",
+      "permanent": true
+    },
+    {
+      "source": "/danh-gia-lo-dat",
+      "destination": "/doc-lo-dat",
+      "permanent": true
+    },
+    {
+      "source": "/panorama-selection",
+      "destination": "/doc-lo-dat",
+      "permanent": true
+    },
+    {
+      "source": "/index-good",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/namban-panorama-v2",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/namban-intelligence-homepage",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/namban-intelligence-homepage-v2",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}

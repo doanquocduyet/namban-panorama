@@ -1,0 +1,40 @@
+name: Auto voice giọng Việt (Nam Minh) cho bài mới
+# Tự chạy mỗi khi push bài .html lên main. Chỉ tạo giọng cho bài TIẾNG VIỆT
+# còn THIẾU mp3 (bỏ qua bài đã có + bài ngoại ngữ). Không cần bấm tay.
+on:
+  push:
+    branches: [main]
+    paths: ['**/*.html']
+permissions:
+  contents: write
+concurrency:
+  group: audio-auto
+  cancel-in-progress: false
+jobs:
+  auto:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Cài edge-tts
+        run: pip install --quiet edge-tts
+      - name: Tạo giọng nam cho bài tiếng Việt còn thiếu
+        env:
+          SCOPE: all
+          VOICE: vi-VN-NamMinhNeural
+          RATE: "-4%"
+          OVERWRITE: "0"
+        run: python3 scripts/gen_audio_edge.py
+      - name: Commit & push nếu có audio mới
+        run: |
+          git config user.name "namban-audio-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add audio/*.mp3 *.html fr/*.html zh/*.html ko/*.html ja/*.html 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Không có bài mới cần tạo giọng."
+          else
+            git commit -m "Auto voice giọng Việt (Nam Minh) cho bài mới [skip ci]"
+            git push
+          fi
