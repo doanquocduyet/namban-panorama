@@ -99,14 +99,14 @@ nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,1);border-bott
 .risk-list{background:var(--card);border:1px solid rgba(225,217,200,.72);border-radius:2px;padding:var(--s1) var(--s4);margin:var(--s5) 0;}
 .risk-item{padding:16px 0;border-bottom:1px solid var(--line);}
 .risk-item:last-child{border:0;}
-.risk-item h4{font-size:14.5px;font-weight:500;margin-bottom:5px;color:var(--ink);}
+.risk-item h3{font-size:14.5px;font-weight:500;margin-bottom:5px;color:var(--ink);}
 .risk-item p{font-size:13.5px;color:var(--muted);margin:0;line-height:1.55;}
 
 /* Honest note callout */
 .note{background:var(--paper);border:1px dashed var(--stone);border-radius:2px;padding:var(--s3) var(--s3);margin:var(--s5) 0;font-size:var(--fs-cap);color:var(--muted);font-style:italic;}
 
 .source-box{background:var(--paper);border:1px solid rgba(225,217,200,.72);border-radius:2px;padding:var(--s3) var(--s4);margin-top:var(--s6);}
-.source-box h4{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--stone);margin-bottom:12px;}
+.source-box h3{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--stone);margin-bottom:12px;}
 .source-box p{font-size:13px;color:var(--muted);margin-bottom:8px;}
 .source-box p:last-child{margin:0;}
 
