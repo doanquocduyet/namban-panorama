@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 275,
+ "total_images": 277,
  "unused_count": 26,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -51,6 +51,9 @@
      "ref",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -140,6 +143,9 @@
    "used_in": {
     "an-gi-o-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -1411,6 +1417,9 @@
    "used_in": {
     "an-gi-o-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -1862,6 +1871,23 @@
     ]
    }
   },
+  "kinh-te-so-nam-ban.jpg": {
+   "kb": 79,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "kinh-te-so-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
   "lam-banh-cuon-nam-ban.webp": {
    "kb": 228,
    "dims": [
@@ -2122,6 +2148,9 @@
    "used_in": {
     "an-gi-o-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -2585,6 +2614,21 @@
     ],
     "nam-ban-co-gi-moi.html": [
      "og",
+     "twitter"
+    ],
+    "en/foreigners-buying-land-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "en/nam-ban-master-plan-2050.html": [
+     "og",
+     "ref",
+     "twitter"
+    ],
+    "en/land-prices-nam-ban.html": [
+     "og",
+     "ref",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -3511,6 +3555,23 @@
    "used_in": {
     "lam-ha-truoc-va-sau-sap-nhap.html": [
      "display"
+    ]
+   }
+  },
+  "so-hoa-nam-ban.jpg": {
+   "kb": 158,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "so-hoa-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },

@@ -302,4 +302,12 @@
     <image:image><image:loc>https://nambanpanorama.com/images/ga-vuon-san-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/mam-nhau-goi-bia-nam-ban.webp</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://nambanpanorama.com/so-hoa-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/so-hoa-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/kinh-te-so-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/kinh-te-so-nam-ban.jpg</image:loc></image:image>
+  </url>
 </urlset>
