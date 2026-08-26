@@ -310,4 +310,8 @@
     <loc>https://nambanpanorama.com/kinh-te-so-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/kinh-te-so-nam-ban.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://nambanpanorama.com/ai-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/ai-nam-ban.jpg</image:loc></image:image>
+  </url>
 </urlset>
