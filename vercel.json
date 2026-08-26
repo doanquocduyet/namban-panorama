@@ -21,6 +21,7 @@
       "destination": "/",
       "permanent": true
     },
+    { "source": "/ra", "destination": "/", "permanent": true },
     {
       "source": "/quy-hoach",
       "destination": "/quy-hoach-2050",
