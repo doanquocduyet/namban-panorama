@@ -101,7 +101,8 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
    không đoán. Cần thì web-search kiểm.
 7. **Số đang dùng (Chú chốt lại 13/8/2026 — GỘP VỀ 25km)**: trung tâm Nam Ban → Đà Lạt
    **~25km** (qua đèo Tà Nung, ~45 phút); Thác Voi / chùa Linh Ẩn → Đà Lạt **~25km** (cùng
-   khu Nam Ban); Nam Ban → sân bay Liên Khương **~20km**. KHÔNG dùng số cũ
+   khu Nam Ban); Nam Ban → sân bay Liên Khương **~20km, đi 35 – 45 phút** (lối ngã ba Cửa
+   Rừng rồi vào ĐT.725 — KHÔNG dùng "30 – 40 phút", đã sửa 26/8/2026). KHÔNG dùng số cũ
    23km/27km/22km, và **KHÔNG dùng 28km cho Thác Voi nữa** (đã đổi 28→25 toàn site 13/8/2026)
    trừ khi Chú yêu cầu đổi lại. Cả Nam Ban lẫn Thác Voi giờ đều 25km — đừng tách 25/28 như bản cũ.
    **Tên địa danh (đã research 7/2026)**: giữ **"Chùa Linh Ẩn" (Linh Ẩn Tự)** vì đây là tên
@@ -273,3 +274,97 @@ tọa độ) ghi thẳng; còn suy đoán/dự phóng của Panorama (giá sẽ 
 nhãn rõ "đây là phân tích của Panorama, không phải dữ kiện đã xác nhận". Trong `/data`,
 mốc/dữ kiện ghi `status`/nguồn thật ("đã ký" · "đang thi công" · "dự thảo" · "dự kiến") —
 KHÔNG bịa điểm tin cậy dạng số (vd "98/100") vì đó là số tự chấm, sai luật mục 6.
+
+---
+
+## 6. LUẬT GREP & QA — 14 điều (khóa 8/2026, rút từ lỗi thật)
+
+Đây là 14 lần **audit tự động báo SAI** trong đợt rà 8/2026. Mỗi luật = một lỗi đã thật sự
+xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
+
+1. **Không tin audit khi nó bảo XÓA.** Mở file, đọc markup thật, rồi mới xóa.
+2. **Không tin audit khi nó báo "SẠCH".** Kiểm chéo tay ít nhất 1 ca trước khi kết luận.
+3. **Quét cả chữ số VÀ chữ viết** — `tháng 4` và `tháng Tư` là hai chuỗi khác nhau.
+4. **Case-insensitive.** `Bốn phân khu` ≠ `bốn phân khu` (đã sót thật ở `llms-full.txt`).
+5. **Kiểm ngữ cảnh, không chỉ chuỗi.** Chuỗi khớp chưa chắc là ca cần sửa.
+6. **File dùng chung → phải QA CHỨC NĂNG THẬT**, không chỉ kiểm cú pháp. (`panorama-utils.js`
+   gọi `openMenu()` chưa hề định nghĩa → menu mobile CHẾT trên 18 trang, `try/catch` nuốt lỗi,
+   cú pháp vẫn hợp lệ. Chỉ Playwright bấm thật mới bắt được.)
+7. **Quét cả HOA lẫn thường** — kể cả trong `<title>`, `og:`, JSON-LD.
+8. **Meta/og/JSON-LD phải cùng độ chắc với thân bài.** Thân bài ghi "nghe nói 80% thất bại"
+   thì meta KHÔNG được ghi phẳng "80% thất bại". Sai luật §2.6.
+9. **Không đo nội dung đa ngữ bằng số ký tự.** CJK ≠ Latin — `.split()` báo trang ZH/JA
+   "mỏng 104 từ" trong khi thật ra 2.4–3.1k ký tự, đủ ý. **So theo Ý, không theo đếm.**
+10. **Đếm inbound phải tính cả href tương đối** — site dùng cả `href="/slug"` lẫn `href="slug"`.
+    Chỉ đếm dạng `/slug` → báo nhầm 3 trang mồ côi (thật ra 0).
+11. **Sửa dữ kiện phải quét cả `.txt` `.xml` `.json`, không chỉ `.html`.** Tầng dữ liệu mở
+    (`llms.txt` · `llms-full.txt` · `feed.xml` · `data/*.json`) là thứ AI đọc TRƯỚC. Đã có lần
+    HTML đúng mà 4 file này vẫn ghi số cũ suốt nhiều ngày.
+12. **File tồn tại (HTTP 200) KHÔNG chứng minh nội dung đúng.** Phải mở đọc.
+13. **Mọi kết luận "sạch" phải nêu rõ PHẠM VI đã quét** (bao nhiêu file, đuôi gì, có
+    case-insensitive không). "Sạch" không phạm vi = vô nghĩa.
+14. **KHÔNG sửa vì checker báo thiếu. Chỉ sửa khi chứng minh được nó cải thiện chuỗi:**
+    *được tìm thấy → được hiểu → được trích dẫn → được dẫn sang bài tiếp.* Đây là bộ lọc
+    tối thượng, đứng trên mọi gợi ý của công cụ.
+
+---
+
+## 7. ĐÍNH CHÍNH LUẬT — 6 điểm đã kiểm chứng (26/8/2026)
+
+Báo cáo rà soát 8/2026 nêu 6 luật quá tuyệt đối. Kiểm thật trên repo cho thấy nếu áp máy móc
+sẽ **phá nội dung đang đúng**. Đây là bản đã sửa — dùng bản này, không dùng bản cũ.
+
+### 7.1 "phía Tây" — TÁCH LÀM HAI, đừng gộp
+
+- **Hướng địa lý:** Nam Ban nằm **phía tây Đà Lạt** — ĐÚNG, giữ nguyên. Đã kiểm **20 ca**
+  trong repo, tất cả đều đúng nghĩa la bàn.
+- **Vùng quy hoạch tỉnh:** tên hành chính là **"Vùng trung tâm phía Bắc"** — đây là danh từ
+  riêng trong văn bản quy hoạch, KHÔNG phải hướng la bàn.
+- ⚠️ Hai thứ này KHÁC NHAU. Sửa "phía tây" thành "phía Bắc" hàng loạt = **gây lỗi địa lý toàn
+  site**. Chỉ đụng khi câu đang nói về *tên vùng quy hoạch*, không đụng khi nói *hướng đi*.
+
+### 7.2 "EN → EN only" — CÓ NGOẠI LỆ: bộ chuyển ngữ
+
+Luật gốc: bài `lang="en"` chỉ link tới trang `lang="en"` (tiền tố `/en/` không phải điều kiện).
+**Ngoại lệ bắt buộc giữ:** `.l10n` (bộ chuyển ngữ), `<link rel="alternate" hreflang>`, và
+`canonical`. Mấy cái này BẮT BUỘC trỏ sang ngôn ngữ khác — đó là chức năng của nó.
+Gỡ đi = **vỡ cụm hreflang**, mất tín hiệu đa ngữ với Google. Khi đếm "link ra ngoài ngôn ngữ",
+**loại trừ `.l10n` + `hreflang` + `canonical`** rồi mới đếm.
+
+### 7.3 FAQ trùng — "1 ngoại lệ" là SAI, thật ra **1 + 3**
+
+- **1 ngoại lệ có chủ đích:** *"Nam Ban cách Đà Lạt bao xa"* ở `/duong-di-nam-ban` và
+  `/nam-ban-la-gi` — cố ý, giữ.
+- **3 cặp hub↔spoke với `/hoi-nhanh`:** hợp lệ. `/hoi-nhanh` là hub hỏi-đáp, trùng câu với bài
+  chuyên sâu là ĐÚNG mô hình hub↔spoke, không phải lỗi.
+- → Tổng **4 nhóm trùng, cả 4 đều hợp lệ**. Đừng gỡ.
+
+### 7.4 Pillar — GIẢI MÂU THUẪN
+
+Báo cáo có 2 câu chọi nhau: *"pillar phải là trang nhiều inbound nhất site"* vs *"internal link
+không tối ưu theo quota"*. Thực tế: `/nam-ban-la-gi` xếp **47/121** với 6 inbound;
+`/truoc-khi-xuong-tien` có 29. **Chốt:**
+
+- **Luật "không tối ưu theo quota" THẮNG.** Không đi rải link để kéo pillar lên hạng 1 — đó
+  đúng là hành vi Luật 14 cấm.
+- Pillar được nhận diện bằng **vai trò nội dung** (trang trả lời câu gốc "Nam Ban là gì"), không
+  bằng thứ hạng inbound.
+- Chỉ thêm link tới pillar khi **câu đó thật sự cần dẫn người đọc sang** — tự nhiên trong mạch bài.
+- Khi đếm inbound để tham khảo: **loại link nav/footer**, chỉ đếm link trong thân bài.
+
+### 7.5 "huyện Lâm Hà" — ĐƯỢC DÙNG khi nói về ranh giới CŨ
+
+35 ca trong repo, gần hết đều đúng: đang mô tả đơn vị hành chính **trước sáp nhập**. Viết lịch
+sử mà cấm gọi tên cũ là sai. **Chỉ sửa** khi câu đang mô tả hiện trạng SAU sáp nhập mà vẫn ghi
+"huyện Lâm Hà" như thể còn tồn tại.
+
+### 7.6 "cây số vuông" / "ba vạn dân" — ĐƯỢC DÙNG trong văn xuôi
+
+5 ca, đều cố ý — giọng publication, đọc mượt. **Luật đúng:** bảng dữ kiện / fact card / JSON-LD
+/ `data/*.json` dùng **số chuẩn** (`117 km²`, `khoảng 33.000 người`); thân bài được phép dùng
+lối nói trên. Hai chỗ không mâu thuẫn vì cùng một con số.
+
+---
+
+**Ghi nhớ chung cho §7:** cả 6 điểm trên đều là ca *"checker báo lỗi nhưng nội dung đang đúng"*.
+Đây chính là Luật 14 trong thực tế — **chứng minh cải thiện trước, sửa sau.**
