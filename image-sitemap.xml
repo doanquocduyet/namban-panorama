@@ -314,4 +314,8 @@
     <loc>https://nambanpanorama.com/ai-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/ai-nam-ban.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://nambanpanorama.com/thuong-mai-dien-tu-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/thuong-mai-dien-tu-nam-ban.jpg</image:loc></image:image>
+  </url>
 </urlset>
