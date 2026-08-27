@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 280,
+ "total_images": 283,
  "unused_count": 26,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -894,6 +894,40 @@
     ]
    }
   },
+  "dat-dong-thanh-nam-ban.jpg": {
+   "kb": 124,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dat-dong-thanh-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "dat-me-linh-nam-ban.jpg": {
+   "kb": 143,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dat-me-linh-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
   "dat-nam-ban-trong-cay-gi.jpg": {
    "kb": 65,
    "dims": [
@@ -934,6 +968,23 @@
     "dat-the-am-the-duong.html": [
      "og",
      "ref",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "dat-trung-tam-nam-ban.jpg": {
+   "kb": 179,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dat-trung-tam-nam-ban.html": [
+     "og",
      "schema",
      "twitter"
     ],

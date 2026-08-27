@@ -322,4 +322,16 @@
     <loc>https://nambanpanorama.com/tra-cuu-dat-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/tra-cuu-dat-nam-ban.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://nambanpanorama.com/dat-trung-tam-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/dat-trung-tam-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/dat-dong-thanh-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/dat-dong-thanh-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/dat-me-linh-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/dat-me-linh-nam-ban.jpg</image:loc></image:image>
+  </url>
 </urlset>
