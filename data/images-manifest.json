@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 284,
+ "total_images": 287,
  "unused_count": 26,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -1413,6 +1413,23 @@
    "used_in": {
     "duong-di-nam-ban.html": [
      "display"
+    ]
+   }
+  },
+  "duong-nam-ban-phi-to-da-lat.jpg": {
+   "kb": 119,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "duong-nam-ban-phi-to-da-lat.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -3400,6 +3417,23 @@
     ]
    }
   },
+  "phi-to-nam-ha-lam-ha.jpg": {
+   "kb": 169,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "phi-to-nam-ha-lam-ha.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
   "quan-banh-canh-ca-loc-nam-ban.webp": {
    "kb": 249,
    "dims": [
@@ -4238,6 +4272,23 @@
    ],
    "used_in": {},
    "status": "unused"
+  },
+  "xa-nam-ha-lam-ha.jpg": {
+   "kb": 136,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "xa-nam-ha-lam-ha.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
   },
   "xay-nha-tren-doi-me-linh.webp": {
    "kb": 305,

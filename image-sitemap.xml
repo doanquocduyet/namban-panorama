@@ -338,4 +338,16 @@
     <loc>https://nambanpanorama.com/dat-gia-lam-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/dat-gia-lam-nam-ban.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://nambanpanorama.com/phi-to-nam-ha-lam-ha</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/phi-to-nam-ha-lam-ha.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/xa-nam-ha-lam-ha</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/xa-nam-ha-lam-ha.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/duong-nam-ban-phi-to-da-lat</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/duong-nam-ban-phi-to-da-lat.jpg</image:loc></image:image>
+  </url>
 </urlset>
