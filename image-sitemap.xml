@@ -334,4 +334,8 @@
     <loc>https://nambanpanorama.com/dat-me-linh-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/dat-me-linh-nam-ban.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://nambanpanorama.com/dat-gia-lam-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/dat-gia-lam-nam-ban.jpg</image:loc></image:image>
+  </url>
 </urlset>
