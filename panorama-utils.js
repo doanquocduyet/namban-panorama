@@ -151,7 +151,27 @@
    có .hamburger + link nav thì tự dựng panel, đọc đúng link/nhãn (kể cả ngoại ngữ). */
 (function(){
   try{
-    if(document.getElementById('mobileMenu'))return;            /* đã có panel xịn */
+    var stat=document.getElementById('mobileMenu');
+    if(stat){                                                   /* đã có panel tĩnh trong trang */
+      /* Một số trang có panel + onclick="toggleMenu()" nhưng QUÊN định nghĩa hàm
+         -> menu chết im lặng. Vá tại đây cho cả lớp lỗi này, không sửa tay từng trang. */
+      if(typeof window.toggleMenu!=='function'){
+        var sov=document.getElementById('menuOverlay'),
+            scl=document.getElementById('mobileClose'),
+            sham=document.querySelector('.hamburger');
+        window.toggleMenu=function(){
+          var open=stat.classList.toggle('open');
+          if(sov)sov.classList.toggle('open',open);
+          if(scl)scl.classList.toggle('open',open);
+          if(sham)sham.classList.toggle('is-open',open);
+          document.body.style.overflow=open?'hidden':'';
+        };
+        document.addEventListener('keydown',function(e){
+          if(e.key==='Escape'&&stat.classList.contains('open'))window.toggleMenu();
+        });
+      }
+      return;
+    }
     var ham=document.querySelector('.hamburger');
     var srcLinks=document.querySelectorAll('.nav-links a, .navlinks a');
     if(!ham||!srcLinks.length)return;                           /* không có nav để nâng */
