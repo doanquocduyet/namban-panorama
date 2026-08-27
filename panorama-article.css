@@ -1,5 +1,5 @@
 /* Namban Panorama — Article stylesheet */
-:root{
+:root{--stone-text:#726a5c;--clay-text:#9a5b37;
   --ink:#1a1815;--paper:#f1ece2;--card:#faf6ee;
   --forest:#2f4034;--forest-deep:#1e2a20;
   --clay:#9d5d38;--clay-soft:#bb8862;
@@ -40,8 +40,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,1);border-bott
 .art-body{max-width:752px;margin:0 auto;padding:var(--s3) 40px var(--s6);}
 .art-body hr{border:0;border-top:1px solid var(--line);margin:var(--s6) 0;}
 .art-body p{font-size:var(--fs-body);font-weight:400;margin-bottom:var(--s3);color:var(--ink);}
-.art-body p a{color:var(--clay);text-decoration:none;border-bottom:1px solid var(--line);}
-.art-body p a:hover{border-color:var(--clay);}
+.art-body p a{color:var(--clay-text);text-decoration:none;border-bottom:1px solid var(--line);}
+.art-body p a:hover{border-color:var(--clay-text);}
 .art-body strong{font-weight:500;}
 .lead::first-letter{font-family:'Fraunces',serif;font-size:4.2em;line-height:.75;float:left;margin:6px 10px 0 0;color:var(--forest);}
 
@@ -106,7 +106,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,1);border-bott
 .note{background:var(--paper);border:1px dashed var(--stone);border-radius:2px;padding:var(--s3) var(--s3);margin:var(--s5) 0;font-size:var(--fs-cap);color:var(--muted);font-style:italic;}
 
 .source-box{background:var(--paper);border:1px solid rgba(225,217,200,.72);border-radius:2px;padding:var(--s3) var(--s4);margin-top:var(--s6);}
-.source-box h3{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--stone);margin-bottom:12px;}
+.source-box h3{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--stone-text);margin-bottom:12px;}
 .source-box p{font-size:13px;color:var(--muted);margin-bottom:8px;}
 .source-box p:last-child{margin:0;}
 
