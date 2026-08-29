@@ -315,6 +315,13 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     đang trả lời một câu hỏi có/không hoặc lời khuyên, không phải câu hỏi đã đổi). Trùng chữ,
     đếm H2/FAQ đúng số, không chuỗi cấm — vẫn có thể "sạch" mà câu hỏi/câu trả lời lệch nhau;
     grep không bắt được lỗi này, phải đọc từng cặp Q↔A bằng mắt.
+    **15b — đừng tự tay tạo báo động giả (khóa 29/8/2026, rút từ tổng rà 13 ca):** câu hỏi
+    có/không mà bản chất phụ thuộc điều kiện thì đáp mở bằng "Nếu…"/"Nên…" là ĐÚNG, không
+    phải lỗi — đó chính là cách trả lời một câu hỏi vốn không có đáp án có/không cứng (11/13
+    ca máy gắn cờ đợt 29/8 là báo động giả kiểu này). **Chỉ tính lỗi khi đáp né chốt rồi trôi
+    sang một chủ đề khác hẳn** (kiểu ca đã vá: hỏi "một năm có đủ" mà đáp kể "ai hợp Nam Ban").
+    Phân biệt: đáp có điều kiện nhưng vẫn xoay quanh đúng câu hỏi → giữ; đáp bỏ qua câu hỏi,
+    quay sang trả lời một câu khác → sửa.
 
 ---
 
