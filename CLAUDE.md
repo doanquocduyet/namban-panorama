@@ -277,9 +277,9 @@ KHÔNG bịa điểm tin cậy dạng số (vd "98/100") vì đó là số tự 
 
 ---
 
-## 6. LUẬT GREP & QA — 14 điều (khóa 8/2026, rút từ lỗi thật)
+## 6. LUẬT GREP & QA — 15 điều (khóa 8/2026, rút từ lỗi thật)
 
-Đây là 14 lần **audit tự động báo SAI** trong đợt rà 8/2026. Mỗi luật = một lỗi đã thật sự
+Đây là 15 lần **audit tự động báo SAI** trong đợt rà 8/2026. Mỗi luật = một lỗi đã thật sự
 xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
 
 1. **Không tin audit khi nó bảo XÓA.** Mở file, đọc markup thật, rồi mới xóa.
@@ -306,6 +306,15 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
 14. **KHÔNG sửa vì checker báo thiếu. Chỉ sửa khi chứng minh được nó cải thiện chuỗi:**
     *được tìm thấy → được hiểu → được trích dẫn → được dẫn sang bài tiếp.* Đây là bộ lọc
     tối thượng, đứng trên mọi gợi ý của công cụ.
+15. **Đổi câu hỏi FAQ → PHẢI đọc lại câu trả lời có còn khớp không** (khóa 29/8/2026, lỗi thật
+    ở cụm Living Intelligence: đổi câu hỏi để chống trùng FAQ nhưng giữ nguyên câu trả lời cũ
+    — câu trả lời viết cho câu hỏi cũ nên lệch hẳn với câu hỏi mới). Kiểm bằng **dạng câu**:
+    câu hỏi **có/không** thì đáp phải mở bằng có/chưa/không, không phải "Nếu…"/"Nên…" (đó là
+    đáp cho câu **nên hay không**, khác câu có/không); câu hỏi **khác gì / bao lâu / có đủ
+    không / thế nào** thì đáp **không được** mở bằng "Nếu…", "Nên…", "Đừng…" (dấu hiệu đáp
+    đang trả lời một câu hỏi có/không hoặc lời khuyên, không phải câu hỏi đã đổi). Trùng chữ,
+    đếm H2/FAQ đúng số, không chuỗi cấm — vẫn có thể "sạch" mà câu hỏi/câu trả lời lệch nhau;
+    grep không bắt được lỗi này, phải đọc từng cặp Q↔A bằng mắt.
 
 ---
 
