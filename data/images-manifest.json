@@ -9,7 +9,7 @@
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
  "total_images": 287,
- "unused_count": 26,
+ "unused_count": 27,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
   "ca-phe-che-bien-rua-qua-nam-ban.webp",
@@ -35,6 +35,7 @@
   "tram-y-te-xa-nam-ban-mat-truoc.webp",
   "trang-banh-cuon-cho-gia-lam.webp",
   "tuong-duc-me-nha-tho-nam-ban.webp",
+  "van-phong-dien-linh-nam-ban.webp",
   "vuon-xen-canh-du-du-ca-phe-nam-ban.webp",
   "xay-nha-tren-doi-me-linh.webp"
  ],
@@ -713,6 +714,11 @@
     630
    ],
    "used_in": {
+    "ram-vu-lan-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
     "chua-linh-an-nam-ban.html": [
      "og",
      "ref",
@@ -1088,6 +1094,11 @@
     900
    ],
    "used_in": {
+    "da-lat-di-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
     "image-sitemap.xml": [
      "ref"
     ]
@@ -1116,6 +1127,9 @@
      "display"
     ],
     "living-in-nam-ban.html": [
+     "display"
+    ],
+    "da-lat-di-nam-ban.html": [
      "display"
     ],
     "en/index.html": [
@@ -1827,6 +1841,11 @@
     ],
     "mua-dat-nam-ban.html": [
      "display"
+    ],
+    "mot-ngay-lam-vuon-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
     ],
     "image-sitemap.xml": [
      "ref"
@@ -2714,8 +2733,28 @@
      "og",
      "twitter"
     ],
+    "nam-ban-sau-6h-toi.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "5km-o-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "pickleball-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
     "nam-ban-co-gi-moi.html": [
      "og",
+     "twitter"
+    ],
+    "o-nam-ban-mot-nam-moi-biet.html": [
+     "og",
+     "schema",
      "twitter"
     ],
     "en/foreigners-buying-land-nam-ban.html": [
@@ -4179,11 +4218,8 @@
     532,
     720
    ],
-   "used_in": {
-    "duong-di-nam-ban.html": [
-     "display"
-    ]
-   }
+   "used_in": {},
+   "status": "unused"
   },
   "ve-nam-ban-lam-gi.jpg": {
    "kb": 187,
