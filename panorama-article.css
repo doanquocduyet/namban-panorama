@@ -28,8 +28,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,1);border-bott
 
 .art-header{max-width:752px;margin:0 auto;padding:var(--s7) 40px var(--s5);}
 .issue-line{display:flex;align-items:center;gap:16px;margin-bottom:28px;flex-wrap:wrap;}
-.issue-badge{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--clay);}
-.issue-date{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);}
+.issue-badge{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--clay-text);}
+.issue-date{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--stone-text);}
 .art-header h1{font-family:'Fraunces',serif;font-weight:400;font-size:var(--fs-h1);line-height:1.08;letter-spacing:-1px;margin-bottom:var(--s3);}
 .standfirst{font-size:18px;color:var(--muted);line-height:1.6;font-style:italic;border-left:3px solid var(--clay);padding-left:20px;}
 
@@ -176,7 +176,7 @@ footer .meta{font-size:11px;letter-spacing:.8px;opacity:.34;}
 .fab-contact:hover .fab-lbl{opacity:.96;}
 @media(max-width:780px){.fab-contact{width:50px;height:50px;right:14px;bottom:14px;}.fab-contact .fab-lbl{display:none;}}
 
-.nav-cta{border:1px solid var(--clay);color:var(--clay)!important;padding:4px 16px;border-radius:20px;}
+.nav-cta{border:1px solid var(--clay);color:var(--clay-text)!important;padding:4px 16px;border-radius:20px;}
 
 
 /* ── READING PROGRESS ── */

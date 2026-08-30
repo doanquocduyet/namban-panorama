@@ -277,9 +277,9 @@ KHÔNG bịa điểm tin cậy dạng số (vd "98/100") vì đó là số tự 
 
 ---
 
-## 6. LUẬT GREP & QA — 15 điều (khóa 8/2026, rút từ lỗi thật)
+## 6. LUẬT GREP & QA — 16 điều (khóa 8/2026, rút từ lỗi thật)
 
-Đây là 15 lần **audit tự động báo SAI** trong đợt rà 8/2026. Mỗi luật = một lỗi đã thật sự
+Đây là 16 lần **audit tự động báo SAI** trong đợt rà 8/2026. Mỗi luật = một lỗi đã thật sự
 xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
 
 1. **Không tin audit khi nó bảo XÓA.** Mở file, đọc markup thật, rồi mới xóa.
@@ -322,6 +322,15 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     sang một chủ đề khác hẳn** (kiểu ca đã vá: hỏi "một năm có đủ" mà đáp kể "ai hợp Nam Ban").
     Phân biệt: đáp có điều kiện nhưng vẫn xoay quanh đúng câu hỏi → giữ; đáp bỏ qua câu hỏi,
     quay sang trả lời một câu khác → sửa.
+16. **Audio/asset sinh từ nội dung chỉ được chạy SAU khi nội dung đã lên `main`** (khóa
+    30/8/2026, lỗi thật: chạy workflow audio cùng lúc với push nên nó checkout bản cũ, sinh
+    ra MP3 đọc đúng chỗ vừa sửa — mà không ai thấy vì file vẫn tồn tại, vẫn phát được).
+    Workflow chạy trên GitHub, nó `checkout` `main` tại thời điểm nó khởi động, KHÔNG thấy
+    commit còn nằm ở máy. Trình tự bắt buộc: **commit → push → xác nhận `git ls-remote origin
+    main` đã đổi → mới trigger workflow**. Kiểm sau khi chạy: `git log -1 -- audio/<slug>.mp3`
+    phải trỏ commit MỚI HƠN commit sửa nội dung; nếu trỏ commit cũ hơn thì MP3 đang lệch, chạy
+    lại với `overwrite=true`. Cùng luật này áp cho mọi asset sinh từ nội dung (ảnh OG tự cắt,
+    sitemap tự sinh…), không riêng audio.
 
 ---
 

@@ -24,7 +24,7 @@
       ".pm-endcontact .pm-ec-a{font-family:'Fraunces',serif;font-size:18px;color:var(--forest,#2f4034);margin:0;letter-spacing:.3px;}"+
       ".pm-endcontact .pm-ec-a a{color:var(--forest,#2f4034);text-decoration:none;border-bottom:1px solid var(--line,#e1d9c8);padding-bottom:1px;transition:color .2s;}"+
       ".pm-endcontact .pm-ec-a a:hover{color:var(--clay,#9d5d38);}"+
-      ".pm-endcontact .pm-ec-dot{color:var(--stone,#a79c87);margin:0 8px;}"+
+      ".pm-endcontact .pm-ec-dot{color:var(--stone-text,#726a5c);margin:0 8px;}"+
       ".art-body .pm-endcontact{margin-left:0;margin-right:0;padding-left:0;padding-right:0;}";
     document.head.appendChild(st);
     var block=document.createElement("div");
