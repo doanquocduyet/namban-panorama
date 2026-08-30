@@ -277,9 +277,9 @@ KHÔNG bịa điểm tin cậy dạng số (vd "98/100") vì đó là số tự 
 
 ---
 
-## 6. LUẬT GREP & QA — 16 điều (khóa 8/2026, rút từ lỗi thật)
+## 6. LUẬT GREP & QA — 17 điều (khóa 8/2026, rút từ lỗi thật)
 
-Đây là 16 lần **audit tự động báo SAI** trong đợt rà 8/2026. Mỗi luật = một lỗi đã thật sự
+Đây là 17 lần **audit tự động báo SAI** trong đợt rà 8/2026. Mỗi luật = một lỗi đã thật sự
 xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
 
 1. **Không tin audit khi nó bảo XÓA.** Mở file, đọc markup thật, rồi mới xóa.
@@ -303,6 +303,10 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
 12. **File tồn tại (HTTP 200) KHÔNG chứng minh nội dung đúng.** Phải mở đọc.
 13. **Mọi kết luận "sạch" phải nêu rõ PHẠM VI đã quét** (bao nhiêu file, đuôi gì, có
     case-insensitive không). "Sạch" không phạm vi = vô nghĩa.
+    **13b — ranh giới "thân bài" (khóa 30/8/2026, lỗi thật khi kiểm `/ram-vu-lan-nam-ban`):**
+    khi kiểm "thân bài", nhớ khối FAQ hiển thị nằm **trong** `.art-body` — cắt tới
+    `<div class="source-box">` là tính nhầm cả FAQ vào thân bài. Ranh giới đúng: từ
+    `<div class="art-body">` tới `<h2>Câu hỏi thường gặp</h2>`.
 14. **KHÔNG sửa vì checker báo thiếu. Chỉ sửa khi chứng minh được nó cải thiện chuỗi:**
     *được tìm thấy → được hiểu → được trích dẫn → được dẫn sang bài tiếp.* Đây là bộ lọc
     tối thượng, đứng trên mọi gợi ý của công cụ.
@@ -331,6 +335,13 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     phải trỏ commit MỚI HƠN commit sửa nội dung; nếu trỏ commit cũ hơn thì MP3 đang lệch, chạy
     lại với `overwrite=true`. Cùng luật này áp cho mọi asset sinh từ nội dung (ảnh OG tự cắt,
     sitemap tự sinh…), không riêng audio.
+17. **Grep chuỗi LỒNG NHAU không được đếm thô** (khóa 30/8/2026, rút từ ca đặt tên
+    `Chùa Linh Ẩn (Thiền viện Linh Ẩn)`). Khi một chuỗi cấm nằm **bên trong** một chuỗi hợp lệ,
+    grep thẳng sẽ báo đỏ giả — nó bắt trúng chính cụm đang đúng. Phải **đếm cặp**: tổng
+    occurrence chuỗi con phải bằng tổng occurrence cụm hợp lệ chứa nó; **bằng nhau là pass**,
+    lệch một là có chỗ đứng độc lập. Cùng họ với Luật 4 (case-insensitive) và bài học "44 ca
+    đỏ chỉ 1 ca thật": trước khi tin một con số grep, hỏi xem chuỗi cấm có thể là một phần
+    của chuỗi đúng không.
 
 ---
 
