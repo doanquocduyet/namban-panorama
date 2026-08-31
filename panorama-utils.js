@@ -14,7 +14,7 @@
       "ho-bai-cong-nam-ban","nam-ban-hay-don-duong","duong-ha-bac-nam-ban","nam-ban-va-nam-ha",
       "mua-dat-da-lat-chon-nam-ban","quy-trinh-mua-dat-nam-ban","tram-sac-nam-ban",
       "dinh-gia-dat-nam-ban","mua-mua-nam-ban","mua-dat-nam-ban-de-lam-gi","dat-nam-ban-cuoi-tuan",
-      "kinh-nghiem-mua-dat-nam-ban"];
+      "kinh-nghiem-mua-dat-nam-ban","mua-chung-dat-nam-ban"];
     var slug=(location.pathname||"").replace(/\/+$/,"").split("/").pop().replace(/\.html$/,"");
     if(slug===""||IN.indexOf(slug)===-1)return;
     if(document.getElementById("pm-endcontact"))return;

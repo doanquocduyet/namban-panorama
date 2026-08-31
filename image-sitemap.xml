@@ -351,6 +351,10 @@
     <image:image><image:loc>https://nambanpanorama.com/images/duong-nam-ban-phi-to-da-lat.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/mua-chung-dat-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/mua-chung-dat-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/dat-nam-ban-cuoi-tuan</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/san-vuon-bon-lua-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/dat-nam-ban-cuoi-tuan.jpg</image:loc></image:image>
