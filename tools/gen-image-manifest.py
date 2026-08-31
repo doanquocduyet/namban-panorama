@@ -26,13 +26,24 @@ def list_images():
         out += glob.glob(os.path.join(IMG_DIR, f"*.{ext}"))
     return sorted(out, key=lambda p: os.path.basename(p).lower())
 
+# Thiếu Pillow thì DỪNG HẲN, đừng chạy tiếp.
+# Bản cũ nuốt cả ImportError rồi ghi "dims": null cho toàn bộ 287 ảnh — manifest vẫn
+# hợp lệ JSON nên không ai thấy, mà dữ liệu kích thước mất sạch. Gặp thật 30/8/2026.
+try:
+    from PIL import Image
+except ImportError:
+    raise SystemExit(
+        "THIẾU Pillow — dừng, KHÔNG ghi manifest.\n"
+        "Chạy tiếp sẽ ghi \"dims\": null cho mọi ảnh và xoá sạch kích thước đang có.\n"
+        "Cài rồi chạy lại:  pip install Pillow"
+    )
+
 def dims(path):
     try:
-        from PIL import Image
         with Image.open(path) as im:
             return list(im.size)
     except Exception:
-        return None
+        return None      # chỉ 1 file lỗi → null cho file đó, không ảnh hưởng cả kho
 
 def load_texts():
     files = {}

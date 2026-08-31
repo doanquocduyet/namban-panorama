@@ -9,7 +9,7 @@
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
  "total_images": 287,
- "unused_count": 27,
+ "unused_count": 26,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
   "ca-phe-che-bien-rua-qua-nam-ban.webp",
@@ -23,7 +23,6 @@
   "hat-bo-tach-vo-nam-ban.webp",
   "hoa-vien-tiec-cuoi-ba-dinh-nam-ban.webp",
   "lam-banh-cuon-nam-ban.webp",
-  "lo-dat-view-thung-lung-me-linh.webp",
   "me-linh-vuon-doi-cao.webp",
   "nha-ong-mai-doc-san-trong.webp",
   "nha-tho-giao-xu-nam-ban.webp",
@@ -94,6 +93,9 @@
     "ban-dat-nam-ban.html": [
      "og",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -2250,8 +2252,14 @@
     1600,
     1200
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "mua-dat-nam-ban-de-lam-gi.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
   },
   "lo-trinh-do-thi-lam-dong-2035.webp": {
    "kb": 132,
