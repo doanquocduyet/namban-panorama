@@ -99,7 +99,7 @@
     if(idate){
       var s=document.createElement('span');
       s.id='pm-updated'; s.textContent=label;
-      s.style.cssText='font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--clay,#9d5d38);margin-left:14px;';
+      s.style.cssText='font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted,#6e6759);margin-left:14px;';
       idate.parentNode.insertBefore(s, idate.nextSibling);
       return;
     }
@@ -107,7 +107,7 @@
     if(h1){
       var dv=document.createElement('div');
       dv.id='pm-updated'; dv.textContent=label;
-      dv.style.cssText='font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--stone,#a79c87);margin-top:8px;';
+      dv.style.cssText='font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted,#6e6759);margin-top:8px;';
       h1.parentNode.insertBefore(dv, h1.nextSibling);
     }
   }catch(e){}
