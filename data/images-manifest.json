@@ -8,8 +8,8 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 287,
- "unused_count": 26,
+ "total_images": 288,
+ "unused_count": 25,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
   "ca-phe-che-bien-rua-qua-nam-ban.webp",
@@ -30,7 +30,6 @@
   "quan-com-thanh-hai-nam-ban.webp",
   "quan-sen-viet-xe-o-to-nam-ban.webp",
   "ruong-bap-nam-ban.webp",
-  "san-vuon-bon-lua-nam-ban.webp",
   "tram-y-te-xa-nam-ban-mat-truoc.webp",
   "trang-banh-cuon-cho-gia-lam.webp",
   "tuong-duc-me-nha-tho-nam-ban.webp",
@@ -949,6 +948,23 @@
    ],
    "used_in": {
     "dat-me-linh-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "dat-nam-ban-cuoi-tuan.jpg": {
+   "kb": 227,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dat-nam-ban-cuoi-tuan.html": [
      "og",
      "schema",
      "twitter"
@@ -3687,8 +3703,14 @@
     1600,
     1200
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "dat-nam-ban-cuoi-tuan.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
   },
   "sau-rieng-nam-ban.jpg": {
    "kb": 114,
