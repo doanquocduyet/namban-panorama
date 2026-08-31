@@ -2301,8 +2301,14 @@
     720
    ],
    "used_in": {
+    "selection-02-lo-hoan-chinh.html": [
+     "display"
+    ],
     "do-dac-dat-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -2367,8 +2373,14 @@
     1200
    ],
    "used_in": {
+    "selection-01-duong-dat-view-dep.html": [
+     "display"
+    ],
     "mua-dat-duong-gia-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -2622,8 +2634,14 @@
     844
    ],
    "used_in": {
+    "selection-03-lo-binh-thuong.html": [
+     "display"
+    ],
     "thon-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
