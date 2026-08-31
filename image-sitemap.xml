@@ -369,4 +369,8 @@
     <loc>https://nambanpanorama.com/brief-02</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/brief-02.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://nambanpanorama.com/brief-03</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/brief-03.jpg</image:loc></image:image>
+  </url>
 </urlset>
