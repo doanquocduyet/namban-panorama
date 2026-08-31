@@ -146,6 +146,11 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
   **`&nbsp;`** giữa 2 chữ cuối để chữ chót không rớt lẻ. **BẮT BUỘC ngó lại chữ đã wrap trên CẢ
   1440 lẫn 390 (Playwright screenshot) trước khi đăng** — chữ vỡ dòng đẹp là một phần của "im lặng
   mà sang", đừng để câu hay bị hình thức làm hỏng.
+  **KHÔNG có luật "đoạn tối đa N dòng ở 360px" (gỡ 31/8/2026).** Từng có phiếu đặt trần
+  "tối đa 3 dòng" — đo thật thì KHÔNG bài nào trên site đạt, kể cả bài trụ (`/truoc-khi-xuong-tien`
+  đoạn dài nhất **19 dòng**; bài mới nhất 8 dòng, tức đã gọn hơn nhiều). Giữ trần đó = phải bẻ
+  văn Chú thành câu cụt, trái mục 4 §0. Thước đo đúng chỉ là: **chữ vỡ dòng đẹp, không rớt lẻ
+  1–2 chữ ở CẢ 1440 lẫn 360**. Đừng tự đặt lại trần số dòng, cũng đừng nhận phiếu có trần đó.
 - **Animation phải có fallback**: khối `.reveal` ẩn tự hiện sau 2.5s nếu observer lỗi; hiện
   luôn nếu không JS (chỉ ẩn khi `<html class="js">`). Không để nội dung biến mất.
 - **Ảnh chỉ dùng file trong `/images/`.** KHÔNG URL ảnh ngoài. Ảnh mới optimize <300KB
