@@ -2247,6 +2247,12 @@
    "used_in": {
     "doc-lo-dat.html": [
      "display"
+    ],
+    "mua-chung-dat-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
