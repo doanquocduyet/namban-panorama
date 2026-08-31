@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 289,
+ "total_images": 290,
  "unused_count": 25,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -212,6 +212,27 @@
    "used_in": {
     "mua-dat-co-vuon-bo.html": [
      "display"
+    ]
+   }
+  },
+  "brief-02.jpg": {
+   "kb": 222,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "brief.html": [
+     "og",
+     "twitter"
+    ],
+    "brief-02.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },

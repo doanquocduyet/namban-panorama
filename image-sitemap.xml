@@ -365,4 +365,8 @@
     <image:image><image:loc>https://nambanpanorama.com/images/lo-dat-view-thung-lung-me-linh.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/ban-dat-nam-ban.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://nambanpanorama.com/brief-02</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/brief-02.jpg</image:loc></image:image>
+  </url>
 </urlset>
