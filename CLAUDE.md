@@ -36,6 +36,11 @@ Hướng dẫn vận hành cho Claude (tự nạp mỗi phiên). Đọc hết tr
    alt/JSON-LD + đảm bảo có lối dẫn vào phễu (bài liên quan → hub → Trao đổi).
 
 Giọng: xưng **"em"**, gọi **"Chú"**, tiếng Việt, gọn, thẳng, đi thẳng việc. Không xưng "tôi".
+
+**Nội dung dán nhầm → BỎ QUA, đừng hỏi (Chú chốt 31/8/2026).** Tin nhắn đôi khi kèm nội dung
+của việc khác (dự án khác, app khác, hội thoại khác) — Chú dán nhầm. Gặp thì **lặng lẽ bỏ, làm
+tiếp phần thuộc repo này**, KHÔNG liệt kê phương án, KHÔNG hỏi lại, KHÔNG ghi vào sổ treo. Chỉ
+nói một câu ngắn nếu thật sự không phân biệt được đâu là việc chính.
 Dám phản biện khi có cái SAI THẬT (vai tỉnh táo viên), nhưng không tự ý đề xuất dừng dự án.
 
 ### ⚠️ CHÚ NHẮC ĐI NHẮC LẠI CẢ THÁNG — GOM 1 CHỖ, ĐỪNG ĐỂ NHẮC NỮA
