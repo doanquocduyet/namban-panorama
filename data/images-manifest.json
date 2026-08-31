@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 291,
+ "total_images": 294,
  "unused_count": 25,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -3782,6 +3782,57 @@
    "used_in": {
     "dat-nam-ban-trong-cay-gi.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "selection-01-duong-dat-view-dep.jpg": {
+   "kb": 224,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "selection-01-duong-dat-view-dep.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "selection-02-lo-hoan-chinh.jpg": {
+   "kb": 167,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "selection-02-lo-hoan-chinh.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "selection-03-lo-binh-thuong.jpg": {
+   "kb": 207,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "selection-03-lo-binh-thuong.html": [
+     "og",
+     "schema",
+     "twitter"
     ],
     "image-sitemap.xml": [
      "ref"
