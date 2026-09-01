@@ -317,6 +317,21 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     khi kiểm "thân bài", nhớ khối FAQ hiển thị nằm **trong** `.art-body` — cắt tới
     `<div class="source-box">` là tính nhầm cả FAQ vào thân bài. Ranh giới đúng: từ
     `<div class="art-body">` tới `<h2>Câu hỏi thường gặp</h2>`.
+    **13c — ranh giới CHUỖI CẤM khác ranh giới "thân bài" (khóa 1/9/2026, vấp LẦN HAI
+    cùng chỗ):** khi quét chuỗi cấm (`Panorama`, tên chuyên mục cũ, CTA bán…), cắt tới
+    `<div class="source-box">` là **bỏ sót khối Nguồn & lưu ý và khối "Đọc gì tiếp"** —
+    hai khối người đọc vẫn đọc, AI vẫn trích. Đã lọt thật: ba bài Brief 04–06 còn
+    "loạt Selection" và "Panorama không đại diện bên bán" trong khối Nguồn sau khi
+    grep báo sạch. **Ranh giới đúng cho chuỗi cấm: từ `<div class="art-body">` tới
+    `<div class="share-row">`.** Nhớ phân biệt hai ranh giới: đo *độ dày thân bài* thì
+    dừng ở FAQ (13b); quét *chuỗi cấm* thì chạy tới nút Chia sẻ (13c).
+    **13d — CHUẨN HOÁ `\xa0` TRƯỚC KHI SO (khóa 1/9/2026, lệch grep 3 lần trong một
+    phiên):** site chủ động chèn `&nbsp;` để chống rớt chữ và chống vỡ tên vùng
+    (`Nam&nbsp;Ban`, `25–30&nbsp;km`). Chính nó làm mọi grep chuỗi thật trượt: đếm
+    "Nam Ban" thiếu, `str_replace` không khớp, số cũ tưởng đã sạch. **Mọi checker phải
+    `html.unescape()` rồi `.replace('\xa0',' ')` trước khi so.** Khi thay chuỗi bằng
+    `str_replace` thì ngược lại — phải lấy **nguyên văn raw có `&nbsp;`** từ file, đừng
+    gõ lại bản có dấu cách thường.
 14. **KHÔNG sửa vì checker báo thiếu. Chỉ sửa khi chứng minh được nó cải thiện chuỗi:**
     *được tìm thấy → được hiểu → được trích dẫn → được dẫn sang bài tiếp.* Đây là bộ lọc
     tối thượng, đứng trên mọi gợi ý của công cụ.
