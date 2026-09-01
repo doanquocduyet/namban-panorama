@@ -374,18 +374,18 @@
     <image:image><image:loc>https://nambanpanorama.com/images/brief-03.jpg</image:loc></image:image>
   </url>
   <url>
-    <loc>https://nambanpanorama.com/selection-01-duong-dat-view-dep</loc>
-    <image:image><image:loc>https://nambanpanorama.com/images/selection-01-duong-dat-view-dep.jpg</image:loc></image:image>
+    <loc>https://nambanpanorama.com/dat-nam-ban-duong-dat</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/dat-nam-ban-duong-dat.jpg</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/me-linh-rung-thong-duong-dat.webp</image:loc></image:image>
   </url>
   <url>
-    <loc>https://nambanpanorama.com/selection-02-lo-hoan-chinh</loc>
-    <image:image><image:loc>https://nambanpanorama.com/images/selection-02-lo-hoan-chinh.jpg</image:loc></image:image>
+    <loc>https://nambanpanorama.com/dat-nam-ban-tho-cu-san</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/dat-nam-ban-tho-cu-san.jpg</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/lo-dat-trong-hang-rao-nam-ban.webp</image:loc></image:image>
   </url>
   <url>
-    <loc>https://nambanpanorama.com/selection-03-lo-binh-thuong</loc>
-    <image:image><image:loc>https://nambanpanorama.com/images/selection-03-lo-binh-thuong.jpg</image:loc></image:image>
+    <loc>https://nambanpanorama.com/lo-dat-nam-ban-binh-thuong</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/lo-dat-nam-ban-binh-thuong.jpg</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-dong-dat-trien-doi.webp</image:loc></image:image>
   </url>
 </urlset>

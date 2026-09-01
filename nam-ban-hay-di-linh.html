@@ -141,16 +141,16 @@ body{
 }
 .serif{font-family:'Fraunces',serif;}
 .wrap{max-width:760px;margin:0 auto;padding:0 40px;}
-.kicker{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--clay);font-weight:500;}
+.kicker{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--clay-text,#9a5b37);font-weight:500;}
 
 /* NAV */
 .nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,1);border-bottom:1px solid var(--line);}
 .nav-inner{max-width:1080px;margin:0 auto;padding:22px 40px;display:flex;justify-content:space-between;align-items:center;}
 .brand{font-family:'Fraunces',serif;font-size:19px;font-weight:500;letter-spacing:.5px;color:var(--ink);text-decoration:none;}
-.brand span{color:var(--clay);}
+.brand span{color:var(--clay-text,#9a5b37);}
 .nav-links{display:flex;gap:30px;}
 .nav-links a{font-size:13px;color:var(--muted);text-decoration:none;letter-spacing:.3px;transition:color .3s;}
-.nav-links a:hover{color:var(--clay);}
+.nav-links a:hover{color:var(--clay-text,#9a5b37);}
 .hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;justify-content:center;gap:5px;padding:14px 10px;margin:-14px -10px -14px 0;}
 .hamburger span{width:22px;height:1.5px;background:var(--ink);display:block;}
 .source-box{background:var(--paper);border:1px solid rgba(225,217,200,.72);border-radius:2px;padding:22px 26px;margin-top:40px;}
@@ -179,11 +179,11 @@ body{
 article{padding:20px 0 40px;}
 article .wrap{max-width:720px;}
 .block{margin-top:52px;}
-.eyebrow{font-size:11px;letter-spacing:2.5px;color:var(--clay);font-weight:500;display:block;margin-bottom:14px;text-transform:uppercase;}
+.eyebrow{font-size:11px;letter-spacing:2.5px;color:var(--clay-text,#9a5b37);font-weight:500;display:block;margin-bottom:14px;text-transform:uppercase;}
 h2.serif{font-weight:400;font-size:clamp(23px,3.5vw,31px);line-height:1.22;letter-spacing:-.3px;margin-bottom:22px;}
 p.body{font-size:17px;line-height:1.78;margin-bottom:20px;color:var(--ink);font-weight:300;}
 p.body strong{font-weight:500;}
-.body a{color:var(--clay);text-decoration:none;border-bottom:1px solid var(--line);}
+.body a{color:var(--clay-text,#9a5b37);text-decoration:none;border-bottom:1px solid var(--line);}
 
 /* pull */
 .pull{font-family:'Fraunces',serif;font-size:24px;line-height:1.5;color:var(--pine);font-weight:400;font-style:italic;padding:12px 0 12px 26px;border-left:2px solid var(--pine-soft);margin:38px 0;}
@@ -231,13 +231,13 @@ p.body strong{font-weight:500;}
 .next-inner{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:26px 30px;}
 .next .kicker{display:block;margin-bottom:10px;}
 .next a{font-family:'Fraunces',serif;font-size:18px;color:var(--ink);text-decoration:none;line-height:1.4;transition:color .3s;}
-.next a:hover{color:var(--clay);}
+.next a:hover{color:var(--clay-text,#9a5b37);}
 
 /* FOOTER */
 footer{border-top:1px solid var(--line);margin-top:64px;padding:40px 0;}
 footer .wrap{max-width:1080px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
 .foot-brand{font-family:'Fraunces',serif;font-size:16px;color:var(--ink);}
-.foot-brand span{color:var(--clay);}
+.foot-brand span{color:var(--clay-text,#9a5b37);}
 .foot-note{font-size:12px;color:var(--mist);font-weight:300;}
 
 .fu{opacity:0;transform:translateY(16px);animation:fu 1s cubic-bezier(.2,.7,.2,1) forwards;}
@@ -328,7 +328,7 @@ a,button{touch-action:manipulation;}
         <a href="/nam-ban">Về Nam Ban</a>
         <a href="/dat">Về Đất</a>
         <a href="/dau-tu">Đầu tư</a>
-        <a href="/trao-doi" style="border:1px solid var(--clay);color:var(--clay);padding:4px 12px;border-radius:20px;">Trao đổi</a>
+        <a href="/trao-doi" style="border:1px solid var(--clay);color:var(--clay-text,#9a5b37);padding:4px 12px;border-radius:20px;">Trao đổi</a>
       </div>
     <button class="hamburger" aria-label="Mở menu"><span></span><span></span><span></span></button>
   </div>

@@ -15,7 +15,7 @@
       "mua-dat-da-lat-chon-nam-ban","quy-trinh-mua-dat-nam-ban","tram-sac-nam-ban",
       "dinh-gia-dat-nam-ban","mua-mua-nam-ban","mua-dat-nam-ban-de-lam-gi","dat-nam-ban-cuoi-tuan",
       "kinh-nghiem-mua-dat-nam-ban","mua-chung-dat-nam-ban","brief-02","brief-03",
-      "selection-01-duong-dat-view-dep","selection-02-lo-hoan-chinh","selection-03-lo-binh-thuong"];
+      "dat-nam-ban-duong-dat","dat-nam-ban-tho-cu-san","lo-dat-nam-ban-binh-thuong"];
     var slug=(location.pathname||"").replace(/\/+$/,"").split("/").pop().replace(/\.html$/,"");
     if(slug===""||IN.indexOf(slug)===-1)return;
     if(document.getElementById("pm-endcontact"))return;

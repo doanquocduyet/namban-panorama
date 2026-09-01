@@ -83,7 +83,7 @@ main{padding:var(--s2) 0 var(--s6);}
 }
 .pick-grid a.lead .pk-k{
   display:block;font-size:var(--fs-micro);letter-spacing:2.2px;
-  text-transform:uppercase;color:var(--clay);margin-bottom:var(--s2);
+  text-transform:uppercase;color:var(--clay-text,#9a5b37);margin-bottom:var(--s2);
 }
 .pick-grid a.lead .pk-t{
   font-size:var(--fs-h2);line-height:1.13;letter-spacing:-.5px;margin-bottom:var(--s2);
@@ -111,8 +111,8 @@ main{padding:var(--s2) 0 var(--s6);}
   font-family:'Fraunces',serif;font-size:26px;font-weight:300;
   color:var(--stone);line-height:1;min-width:2.2ch;
 }
-.hub-dossier .pick-grid a:hover{background:rgba(250,246,238,.7);box-shadow:none;border-bottom-color:var(--clay);}
-.hub-dossier .pick-grid a:hover::before{color:var(--clay);}
+.hub-dossier .pick-grid a:hover{background:rgba(250,246,238,.7);box-shadow:none;border-bottom-color:var(--clay-text,#9a5b37);}
+.hub-dossier .pick-grid a:hover::before{color:var(--clay-text,#9a5b37);}
 .hub-dossier .pick-grid .pk-t{font-size:20px;line-height:1.28;margin-bottom:4px;}
 .hub-dossier .pick-grid .pk-s{font-size:13.5px;grid-column:2;}
 .hub-dossier .pick-sec{counter-reset:dx;padding:var(--s5) 0 var(--s1);}
@@ -139,7 +139,7 @@ main{padding:var(--s2) 0 var(--s6);}
 }
 .hub-story .pick-grid a:last-child{border-bottom:0;}
 .hub-story .pick-grid a:hover{background:transparent;box-shadow:none;}
-.hub-story .pick-grid a:hover .pk-t{color:var(--clay);}
+.hub-story .pick-grid a:hover .pk-t{color:var(--clay-text,#9a5b37);}
 .hub-story .pick-grid .pk-t{
   font-size:var(--fs-h2);line-height:1.16;letter-spacing:-.4px;
   margin-bottom:var(--s2);transition:color var(--t-hover) ease;

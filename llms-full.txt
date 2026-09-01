@@ -8837,9 +8837,9 @@ Bốn câu nên hỏi: thửa này nằm ở đâu trên quy hoạch và khu đ�
 
 ---
 
-## Panorama Brief 04 — Đất Nam Ban đường đất, view đẹp, giá tốt: mua rồi làm đường có đáng không?
+## Panorama Brief 04 — Đất Nam Ban đường đất, view đẹp: mua rồi làm đường có đáng không?
 
-URL: https://nambanpanorama.com/selection-01-duong-dat-view-dep
+URL: https://nambanpanorama.com/dat-nam-ban-duong-dat
 
 Tóm tắt: Lô đường đất ở Nam Ban rẻ hơn vì phần việc chưa ai làm. Ba câu phải hỏi trước khi tính tiền làm đường, và loại người nào hợp với kiểu lô này.
 
@@ -8861,7 +8861,7 @@ Lưu ý: bài không nêu chi phí làm đường, san nền hay kè taluy vì c
 
 ## Panorama Brief 05 — Lô Nam Ban đã làm đẹp, thổ cư sẵn, tách sẵn: có đáng trả thêm không?
 
-URL: https://nambanpanorama.com/selection-02-lo-hoan-chinh
+URL: https://nambanpanorama.com/dat-nam-ban-tho-cu-san
 
 Tóm tắt: Lô Nam Ban đã làm đẹp, có thổ cư, tách sẵn thì đắt hơn vì mình không phải tự làm. Khi nào phần chênh đó đáng trả, và vì sao lô đã makeup phải hỏi kỹ hơn.
 
@@ -8883,7 +8883,7 @@ Lưu ý: bài không nêu chi phí san nền, kè taluy hay làm đường vì c
 
 ## Panorama Brief 06 — Lô đất Nam Ban bình thường, không có gì nổi bật: hợp với ai?
 
-URL: https://nambanpanorama.com/selection-03-lo-binh-thuong
+URL: https://nambanpanorama.com/lo-dat-nam-ban-binh-thuong
 
 Tóm tắt: Lô đất Nam Ban bình thường tầm 500-700 triệu không có gì nổi bật, nhưng dễ vào dễ ra nhất. Hợp với người mua lần đầu và người muốn giữ đường lui.
 

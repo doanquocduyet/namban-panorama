@@ -10,18 +10,43 @@
     {
       "source": "/data/(.*)",
       "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
+        }
       ]
     }
   ],
   "redirects": [
     {
+      "source": "/selection-03-lo-binh-thuong",
+      "destination": "/lo-dat-nam-ban-binh-thuong",
+      "permanent": true
+    },
+    {
+      "source": "/selection-02-lo-hoan-chinh",
+      "destination": "/dat-nam-ban-tho-cu-san",
+      "permanent": true
+    },
+    {
+      "source": "/selection-01-duong-dat-view-dep",
+      "destination": "/dat-nam-ban-duong-dat",
+      "permanent": true
+    },
+    {
       "source": "/bat-dau",
       "destination": "/",
       "permanent": true
     },
-    { "source": "/ra", "destination": "/", "permanent": true },
+    {
+      "source": "/ra",
+      "destination": "/",
+      "permanent": true
+    },
     {
       "source": "/quy-hoach",
       "destination": "/quy-hoach-2050",

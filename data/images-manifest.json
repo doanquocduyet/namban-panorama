@@ -2301,7 +2301,7 @@
     720
    ],
    "used_in": {
-    "selection-02-lo-hoan-chinh.html": [
+    "dat-nam-ban-tho-cu-san.html": [
      "display"
     ],
     "do-dac-dat-nam-ban.html": [
@@ -2373,7 +2373,7 @@
     1200
    ],
    "used_in": {
-    "selection-01-duong-dat-view-dep.html": [
+    "dat-nam-ban-duong-dat.html": [
      "display"
     ],
     "mua-dat-duong-gia-nam-ban.html": [
@@ -2634,7 +2634,7 @@
     844
    ],
    "used_in": {
-    "selection-03-lo-binh-thuong.html": [
+    "lo-dat-nam-ban-binh-thuong.html": [
      "display"
     ],
     "thon-nam-ban.html": [
@@ -3806,14 +3806,14 @@
     ]
    }
   },
-  "selection-01-duong-dat-view-dep.jpg": {
+  "dat-nam-ban-duong-dat.jpg": {
    "kb": 224,
    "dims": [
     1200,
     630
    ],
    "used_in": {
-    "selection-01-duong-dat-view-dep.html": [
+    "dat-nam-ban-duong-dat.html": [
      "og",
      "schema",
      "twitter"
@@ -3823,14 +3823,14 @@
     ]
    }
   },
-  "selection-02-lo-hoan-chinh.jpg": {
+  "dat-nam-ban-tho-cu-san.jpg": {
    "kb": 167,
    "dims": [
     1200,
     630
    ],
    "used_in": {
-    "selection-02-lo-hoan-chinh.html": [
+    "dat-nam-ban-tho-cu-san.html": [
      "og",
      "schema",
      "twitter"
@@ -3840,14 +3840,14 @@
     ]
    }
   },
-  "selection-03-lo-binh-thuong.jpg": {
+  "lo-dat-nam-ban-binh-thuong.jpg": {
    "kb": 207,
    "dims": [
     1200,
     630
    ],
    "used_in": {
-    "selection-03-lo-binh-thuong.html": [
+    "lo-dat-nam-ban-binh-thuong.html": [
      "og",
      "schema",
      "twitter"
