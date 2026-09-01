@@ -150,6 +150,7 @@ footer .meta{font-size:11px;letter-spacing:.8px;opacity:.34;}
 .next-card-arrow{float:right;color:var(--stone-text,#726a5c);font-size:18px;margin-top:-48px;}
 @media(max-width:680px){
   .next-read{padding:0 24px;}
+  .next-card-arrow{float:none;display:block;text-align:right;margin-top:6px;}
 }
 
 
