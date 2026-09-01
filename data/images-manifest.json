@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 294,
+ "total_images": 297,
  "unused_count": 25,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -1003,6 +1003,40 @@
    ],
    "used_in": {
     "dat-nam-ban-cuoi-tuan.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "dat-nam-ban-duong-dat.jpg": {
+   "kb": 224,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dat-nam-ban-duong-dat.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "dat-nam-ban-tho-cu-san.jpg": {
+   "kb": 167,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dat-nam-ban-tho-cu-san.html": [
      "og",
      "schema",
      "twitter"
@@ -2276,6 +2310,23 @@
     ]
    }
   },
+  "lo-dat-nam-ban-binh-thuong.jpg": {
+   "kb": 207,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "lo-dat-nam-ban-binh-thuong.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
   "lo-dat-nam-ban-coc-ranh.webp": {
    "kb": 180,
    "dims": [
@@ -2301,10 +2352,10 @@
     720
    ],
    "used_in": {
-    "dat-nam-ban-tho-cu-san.html": [
+    "do-dac-dat-nam-ban.html": [
      "display"
     ],
-    "do-dac-dat-nam-ban.html": [
+    "dat-nam-ban-tho-cu-san.html": [
      "display"
     ],
     "image-sitemap.xml": [
@@ -2551,6 +2602,31 @@
     ]
    }
   },
+  "nam-ban-aerial-og.jpg": {
+   "kb": 155,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "ja/nam-ban-kurashi.html": [
+     "og",
+     "twitter"
+    ],
+    "ko/nam-ban-salm.html": [
+     "og",
+     "twitter"
+    ],
+    "fr/vivre-a-nam-ban.html": [
+     "og",
+     "twitter"
+    ],
+    "zh/zai-nam-ban-shenghuo.html": [
+     "og",
+     "twitter"
+    ]
+   }
+  },
   "nam-ban-aerial.jpg": {
    "kb": 204,
    "dims": [
@@ -2559,19 +2635,15 @@
    ],
    "used_in": {
     "ja/nam-ban-kurashi.html": [
-     "og",
      "schema"
     ],
     "ko/nam-ban-salm.html": [
-     "og",
      "schema"
     ],
     "fr/vivre-a-nam-ban.html": [
-     "og",
      "schema"
     ],
     "zh/zai-nam-ban-shenghuo.html": [
-     "og",
      "schema"
     ],
     "image-sitemap.xml": [
@@ -2826,11 +2898,11 @@
     ]
    }
   },
-  "nam-ban-toan-canh.jpg": {
-   "kb": 139,
+  "nam-ban-toan-canh-og.jpg": {
+   "kb": 221,
    "dims": [
-    800,
-    450
+    1200,
+    630
    ],
    "used_in": {
     "kinh-nghiem-mua-dat-nam-ban.html": [
@@ -2843,17 +2915,14 @@
     ],
     "nam-ban-sau-6h-toi.html": [
      "og",
-     "schema",
      "twitter"
     ],
     "5km-o-nam-ban.html": [
      "og",
-     "schema",
      "twitter"
     ],
     "pickleball-nam-ban.html": [
      "og",
-     "schema",
      "twitter"
     ],
     "nam-ban-co-gi-moi.html": [
@@ -2862,23 +2931,49 @@
     ],
     "o-nam-ban-mot-nam-moi-biet.html": [
      "og",
-     "schema",
      "twitter"
     ],
     "en/foreigners-buying-land-nam-ban.html": [
      "og",
-     "schema",
      "twitter"
     ],
     "en/nam-ban-master-plan-2050.html": [
      "og",
-     "ref",
      "twitter"
     ],
     "en/land-prices-nam-ban.html": [
      "og",
-     "ref",
      "twitter"
+    ]
+   }
+  },
+  "nam-ban-toan-canh.jpg": {
+   "kb": 139,
+   "dims": [
+    800,
+    450
+   ],
+   "used_in": {
+    "nam-ban-sau-6h-toi.html": [
+     "schema"
+    ],
+    "5km-o-nam-ban.html": [
+     "schema"
+    ],
+    "pickleball-nam-ban.html": [
+     "schema"
+    ],
+    "o-nam-ban-mot-nam-moi-biet.html": [
+     "schema"
+    ],
+    "en/foreigners-buying-land-nam-ban.html": [
+     "schema"
+    ],
+    "en/nam-ban-master-plan-2050.html": [
+     "ref"
+    ],
+    "en/land-prices-nam-ban.html": [
+     "ref"
     ],
     "image-sitemap.xml": [
      "ref"
@@ -3806,57 +3901,6 @@
     ]
    }
   },
-  "dat-nam-ban-duong-dat.jpg": {
-   "kb": 224,
-   "dims": [
-    1200,
-    630
-   ],
-   "used_in": {
-    "dat-nam-ban-duong-dat.html": [
-     "og",
-     "schema",
-     "twitter"
-    ],
-    "image-sitemap.xml": [
-     "ref"
-    ]
-   }
-  },
-  "dat-nam-ban-tho-cu-san.jpg": {
-   "kb": 167,
-   "dims": [
-    1200,
-    630
-   ],
-   "used_in": {
-    "dat-nam-ban-tho-cu-san.html": [
-     "og",
-     "schema",
-     "twitter"
-    ],
-    "image-sitemap.xml": [
-     "ref"
-    ]
-   }
-  },
-  "lo-dat-nam-ban-binh-thuong.jpg": {
-   "kb": 207,
-   "dims": [
-    1200,
-    630
-   ],
-   "used_in": {
-    "lo-dat-nam-ban-binh-thuong.html": [
-     "og",
-     "schema",
-     "twitter"
-    ],
-    "image-sitemap.xml": [
-     "ref"
-    ]
-   }
-  },
   "simple-sundays-cafe-nam-ban.webp": {
    "kb": 275,
    "dims": [
@@ -4033,6 +4077,31 @@
     ]
    }
   },
+  "thac-voi-og.jpg": {
+   "kb": 207,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "ja/nam-ban-zou-no-taki.html": [
+     "og",
+     "twitter"
+    ],
+    "ko/nam-ban-kokkiri-pokpo.html": [
+     "og",
+     "twitter"
+    ],
+    "fr/cascade-des-elephants-nam-ban.html": [
+     "og",
+     "twitter"
+    ],
+    "zh/nam-ban-daxiang-pubu.html": [
+     "og",
+     "twitter"
+    ]
+   }
+  },
   "thac-voi.jpg": {
    "kb": 183,
    "dims": [
@@ -4047,19 +4116,15 @@
      "display"
     ],
     "ja/nam-ban-zou-no-taki.html": [
-     "og",
      "schema"
     ],
     "ko/nam-ban-kokkiri-pokpo.html": [
-     "og",
      "schema"
     ],
     "fr/cascade-des-elephants-nam-ban.html": [
-     "og",
      "schema"
     ],
     "zh/nam-ban-daxiang-pubu.html": [
-     "og",
      "schema"
     ],
     "image-sitemap.xml": [
