@@ -255,6 +255,26 @@ Thêm bài mới: theo hệ A thì **nhớ nạp `nav.css`**.
 
 ## 5. AEO / SEO / GEO — hướng tối ưu thường trực
 
+**ĐÓNG SỔ NEO VÙNG — không mở lại (Chú chốt 2/9/2026).** Đã neo xong nhóm nặng nhất:
+ba bài khuôn Mê Linh/Gia Lâm/Đông Thanh, hồ Đông Thanh, hồ Bãi Công, cầu Tổng Đội,
+chùa Linh Ẩn, tách thửa. **KHÔNG đi rà 53 bài còn lại, không mở `/hoi-nhanh` 21 câu.**
+Lý do: mỗi bài còn lại chỉ 1–4 câu, sửa hết cũng không đổi được gì đo đếm được — đúng
+cái Luật 4 cấm, quy trình lớn hơn mục tiêu. Thay vào đó: **bài MỚI viết đúng neo ngay
+từ đầu** (một dòng kiểm trong phiếu content), không đi vá bài cũ. Cùng nguyên tắc này
+áp cho mọi sổ rà tương tự — 52 ca contrast màu cứng, 34 màu ngoài palette, entity graph,
+card title dài: đã cân nhắc và **cố ý bỏ**, không phải quên.
+
+**Neo bằng tên vùng ĐÚNG PHẠM VI, không mặc định "Nam Ban".** Ba bẫy đã vấp thật:
+Nam Hà là **xã riêng** (Nam Hà + Phi Tô), cạnh Nam Ban chứ không thuộc — neo vào là tạo
+lỗi địa lý. Tà Nung thuộc **phường Cam Ly, Đà Lạt** — câu so sánh Tà Nung ↔ Mê Linh mà
+neo "ở Nam Ban" là gán nhầm. Câu về **quy định tách thửa** áp cho cả tỉnh nên phải neo
+"ở Lâm Đồng" — neo "ở Nam Ban" vừa sai vừa đẩy người Bảo Lộc, Di Linh ra khỏi kết quả.
+
+**KHÔNG neo khi câu đang chủ động sửa hiểu nhầm.** Ví dụ thật: *"Chùa Linh Ẩn ở đâu?"* —
+đáp giải thích "nhiều người gọi là chùa Linh Ẩn Đà Lạt, nhưng chùa không nằm trong thành
+phố Đà Lạt". Nhét "Nam Ban" vào câu hỏi là giết đúng công dụng của nó, vì người cần đọc
+chính là người gõ câu chưa có "Nam Ban".
+
 **Nguyên tắc lọc (thước đo trước khi thêm bất cứ thứ gì):** KHÔNG thêm thành phần nào
 nếu nó không phục vụ **đồng thời ít nhất 2 trong 3**: *người đọc · Google · AI*. Cái chỉ
 để "chiều Google" mà không giúp người đọc, cũng không tạo tài sản dữ liệu lâu dài → bỏ.
