@@ -42,7 +42,7 @@ body{font-family:'Be Vietnam Pro',sans-serif;background:var(--paper);color:var(-
 nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,1);border-bottom:1px solid var(--line);}
 .navin{max-width:1080px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;}
 .logo{font-family:'Fraunces',serif;font-weight:500;font-size:19px;letter-spacing:.5px;text-decoration:none;color:var(--ink);}
-.logo .sub{font-family:'Be Vietnam Pro';font-weight:400;font-size:9.5px;letter-spacing:3px;color:var(--stone);margin-left:8px;text-transform:uppercase;}
+.logo .sub{font-family:'Be Vietnam Pro';font-weight:400;font-size:9.5px;letter-spacing:3px;color:var(--stone-text,#726a5c);margin-left:8px;text-transform:uppercase;}
 .back{font-size:12.5px;color:var(--muted);text-decoration:none;letter-spacing:.5px;}
 .back:hover{color:var(--ink);}
 
@@ -67,11 +67,11 @@ nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,1);border-bott
 /* Price grid */
 .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden;margin:24px 0;}
 .price-cell{background:var(--card);padding:24px 20px;}
-.price-tier{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--stone);margin-bottom:10px;font-weight:500;}
+.price-tier{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--stone-text,#726a5c);margin-bottom:10px;font-weight:500;}
 .price-range{font-family:'Fraunces',serif;font-size:22px;color:var(--forest);line-height:1.1;margin-bottom:8px;}
 .price-unit{font-size:12px;color:var(--clay-text,#9a5b37);margin-bottom:10px;font-weight:500;}
 .price-desc{font-size:13px;color:var(--muted);line-height:1.5;}
-.price-total{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:12px;color:var(--stone);font-style:italic;}
+.price-total{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:12px;color:var(--stone-text,#726a5c);font-style:italic;}
 
 /* Signal cards */
 .signals{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden;margin:24px 0;}
@@ -80,7 +80,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,1);border-bott
 .signal-dot.green{background:#4a7c59;}
 .signal-dot.amber{background:#c4832a;}
 .signal-dot.grey{background:var(--stone);}
-.signal-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);margin-bottom:10px;font-weight:500;}
+.signal-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--stone-text,#726a5c);margin-bottom:10px;font-weight:500;}
 .signal-title{font-size:15px;font-weight:500;margin-bottom:6px;color:var(--ink);}
 .signal-body{font-size:13.5px;color:var(--muted);line-height:1.55;}
 
@@ -93,7 +93,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,1);border-bott
 /* Observation list */
 .obs{border-top:1px solid var(--line);}
 .obs-item{padding:20px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:28px 1fr;gap:14px;align-items:start;}
-.obs-n{font-family:'Fraunces',serif;font-size:13px;color:var(--stone);}
+.obs-n{font-family:'Fraunces',serif;font-size:13px;color:var(--stone-text,#726a5c);}
 .obs-text{font-size:15px;color:var(--ink);line-height:1.6;}
 .obs-text b{font-weight:500;}
 
@@ -124,7 +124,7 @@ footer .meta{font-size:11px;letter-spacing:.8px;opacity:.45;}
 .read-progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--clay);z-index:1002;transition:width .12s linear;}
 nav{transition:box-shadow .3s ease;}
 .navin{transition:height .3s ease;}
-.crumb{display:flex;align-items:center;gap:8px;padding:16px 0 2px;font-size:12px;color:var(--stone);letter-spacing:.3px;flex-wrap:wrap;}
+.crumb{display:flex;align-items:center;gap:8px;padding:16px 0 2px;font-size:12px;color:var(--stone-text,#726a5c);letter-spacing:.3px;flex-wrap:wrap;}
 .crumb a{color:var(--muted);text-decoration:none;transition:color .2s;}
 .crumb a:hover{color:var(--clay-text,#9a5b37);}
 .crumb .sep{color:var(--stone-text,#726a5c);}
@@ -594,7 +594,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
   <div class="disclaimer">Namban Index là tổng hợp quan sát thực địa và thông tin thị trường, mang tính tham khảo độc lập. Không phải khuyến nghị đầu tư cá nhân. Giá cả thay đổi theo thời gian, vị trí và điều kiện cụ thể của từng tài sản — luôn thẩm định trực tiếp trước mọi giao dịch.</div>
 
-  <p style="font-size:12.5px;color:var(--stone);margin-top:14px;letter-spacing:.2px;">Dữ liệu mở — bảng giá này ở dạng máy đọc được: <a href="/data/prices.json" style="color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line);">JSON</a> · <a href="/data/prices.csv" style="color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line);">CSV</a>. Trích dẫn xin ghi nguồn Namban Panorama.</p>
+  <p style="font-size:12.5px;color:var(--stone-text,#726a5c);margin-top:14px;letter-spacing:.2px;">Dữ liệu mở — bảng giá này ở dạng máy đọc được: <a href="/data/prices.json" style="color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line);">JSON</a> · <a href="/data/prices.csv" style="color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line);">CSV</a>. Trích dẫn xin ghi nguồn Namban Panorama.</p>
 
 </div>
 

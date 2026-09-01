@@ -109,7 +109,7 @@ main{padding:var(--s2) 0 var(--s6);}
 .hub-dossier .pick-grid a::before{
   content:counter(dx,decimal-leading-zero);
   font-family:'Fraunces',serif;font-size:26px;font-weight:300;
-  color:var(--stone);line-height:1;min-width:2.2ch;
+  color:var(--stone-text,#726a5c);line-height:1;min-width:2.2ch;
 }
 .hub-dossier .pick-grid a:hover{background:rgba(250,246,238,.7);box-shadow:none;border-bottom-color:var(--clay-text,#9a5b37);}
 .hub-dossier .pick-grid a:hover::before{color:var(--clay-text,#9a5b37);}
@@ -172,7 +172,7 @@ main{padding:var(--s2) 0 var(--s6);}
 .hub-guide .pick-grid a::before{
   counter-increment:pk;content:counter(pk,decimal-leading-zero);
   position:absolute;top:var(--s2);right:var(--s3);
-  font-family:'Fraunces',serif;font-style:italic;font-size:12px;color:var(--stone);
+  font-family:'Fraunces',serif;font-style:italic;font-size:12px;color:var(--stone-text,#726a5c);
 }
 .hub-guide .heye{
   display:flex;align-items:baseline;gap:var(--s1);
@@ -180,7 +180,7 @@ main{padding:var(--s2) 0 var(--s6);}
 }
 .hub-guide .heye .gnum{
   font-family:'Fraunces',serif;font-style:italic;text-transform:none;
-  letter-spacing:0;color:var(--stone);font-size:13px;margin-left:auto;
+  letter-spacing:0;color:var(--stone-text,#726a5c);font-size:13px;margin-left:auto;
 }
 .hub-guide .pick-grid a.lead{padding:var(--s4) var(--s4) var(--s3);}
 .hub-guide .pick-grid a.lead .pk-t{font-size:var(--fs-h3);}

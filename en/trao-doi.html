@@ -46,7 +46,7 @@ body{font-family:'Be Vietnam Pro',sans-serif;background:var(--paper);color:var(-
 nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,1);border-bottom:1px solid var(--line);}
 .navin{max-width:1080px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;}
 .logo{font-family:'Fraunces',serif;font-weight:500;font-size:19px;text-decoration:none;color:var(--ink);}
-.logo .sub{font-family:'Be Vietnam Pro';font-size:9.5px;letter-spacing:3px;color:var(--stone);margin-left:8px;text-transform:uppercase;}
+.logo .sub{font-family:'Be Vietnam Pro';font-size:9.5px;letter-spacing:3px;color:var(--stone-text,#726a5c);margin-left:8px;text-transform:uppercase;}
 .back{font-size:12.5px;color:var(--muted);text-decoration:none;letter-spacing:.5px;}
 .back:hover{color:var(--ink);}
 
@@ -62,12 +62,12 @@ nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,1);border-bott
 
 /* Ô nhập */
 .td-form{display:flex;flex-direction:column;gap:20px;}
-.td-field label{display:block;font-family:'Be Vietnam Pro',sans-serif;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--stone);margin-bottom:8px;font-weight:500;}
+.td-field label{display:block;font-family:'Be Vietnam Pro',sans-serif;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--stone-text,#726a5c);margin-bottom:8px;font-weight:500;}
 .td-field select,.td-field textarea,.td-field input{width:100%;background:var(--card);border:1px solid var(--line);border-radius:7px;font-family:'Be Vietnam Pro',sans-serif;font-size:15px;font-weight:300;color:var(--ink);outline:none;transition:border-color .2s;}
 .td-field select,.td-field input{height:46px;padding:0 15px;}
 .td-field textarea{min-height:80px;padding:12px 15px;resize:vertical;line-height:1.6;}
 .td-field select:focus,.td-field textarea:focus,.td-field input:focus{border-color:var(--clay-text,#9a5b37);}
-.td-field ::placeholder{color:var(--stone);opacity:1;}
+.td-field ::placeholder{color:var(--stone-text,#726a5c);opacity:1;}
 .td-field select{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23a79c87' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:38px;}
 .td-hint{font-size:12.5px;color:var(--muted);margin-top:7px;line-height:1.5;}
 
@@ -79,7 +79,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,1);border-bott
 .td-send:disabled{opacity:.7;cursor:default;}
 
 /* Nhắn nhanh (mobile) */
-.td-quick-label{text-align:center;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--stone);margin:22px 0 12px;}
+.td-quick-label{text-align:center;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--stone-text,#726a5c);margin:22px 0 12px;}
 .td-two{display:grid;grid-template-columns:1fr 1fr;gap:11px;}
 .td-zalo{height:50px;background:var(--forest);color:var(--paper);border-radius:8px;font-family:'Fraunces',serif;font-size:15px;}
 .td-zalo:hover{background:var(--forest-deep,#1e2a20);}
@@ -100,7 +100,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,1);border-bott
 /* Chân trang */
 .td-foot{border-top:1px solid var(--line);text-align:center;padding:30px 24px 42px;margin-top:10px;}
 .td-foot .fn{font-family:'Fraunces',serif;font-size:16px;letter-spacing:1.5px;color:var(--ink);margin-bottom:8px;}
-.td-foot .fc{font-size:13px;color:var(--stone);}
+.td-foot .fc{font-size:13px;color:var(--stone-text,#726a5c);}
 .td-foot .fc a{color:inherit;text-decoration:none;}
 
 /* ===== PC ≥768px: hai cột ===== */
@@ -128,7 +128,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,1);border-bott
 .person-signoff::before{margin-bottom:40px;}
 .person-signoff::after{margin-top:0;}
 /* dòng nối 2 khối: eyebrow trên ảnh (như INTELLIGENCE, nhỏ hơn) — nhỏ, nhạt, thưa */
-.person-intro{font-family:'Be Vietnam Pro',sans-serif;font-style:normal;font-weight:500;font-size:10.5px;color:var(--stone);letter-spacing:2.6px;text-transform:uppercase;margin:0 auto 20px;text-wrap:balance;}
+.person-intro{font-family:'Be Vietnam Pro',sans-serif;font-style:normal;font-weight:500;font-size:10.5px;color:var(--stone-text,#726a5c);letter-spacing:2.6px;text-transform:uppercase;margin:0 auto 20px;text-wrap:balance;}
 .person-pic{width:160px;height:160px;border-radius:50%;overflow:hidden;margin:0 auto 24px;background:var(--card);}
 .person-pic img{width:100%;height:100%;object-fit:cover;display:block;}
 /* Tầng 1 — xác nhận có người thật (tên là mỏ neo cỡ chữ) */
@@ -151,13 +151,13 @@ nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,1);border-bott
 }
 
 .langsw{display:inline-flex;align-items:center;gap:5px;font-size:9.5px;letter-spacing:.16em;opacity:.45;}
-.langsw a{color:var(--stone);text-decoration:none;transition:color .25s;}
+.langsw a{color:var(--stone-text,#726a5c);text-decoration:none;transition:color .25s;}
 .langsw a:hover{color:var(--muted);}
 .langsw a::after{display:none;}
 .langsw .langcur{color:var(--muted);font-weight:400;}
-.langsw .langsep{color:var(--stone);opacity:.5;}
-.mobile-lang{font-family:'Be Vietnam Pro',sans-serif;font-size:10px;letter-spacing:.14em;color:var(--stone);opacity:.7;margin-top:26px;padding:14px 0 0;}
-.mobile-lang a{color:var(--stone);text-decoration:none;font-family:'Be Vietnam Pro',sans-serif;font-size:10px;font-weight:400;letter-spacing:.14em;}
+.langsw .langsep{color:var(--stone-text,#726a5c);opacity:.5;}
+.mobile-lang{font-family:'Be Vietnam Pro',sans-serif;font-size:10px;letter-spacing:.14em;color:var(--stone-text,#726a5c);opacity:.7;margin-top:26px;padding:14px 0 0;}
+.mobile-lang a{color:var(--stone-text,#726a5c);text-decoration:none;font-family:'Be Vietnam Pro',sans-serif;font-size:10px;font-weight:400;letter-spacing:.14em;}
 .mobile-lang a:hover{color:var(--clay-text,#9a5b37);}
 .mobile-lang span{color:var(--muted);font-weight:400;}
 </style>

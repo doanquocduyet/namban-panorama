@@ -63,7 +63,7 @@
   .serif{font-family:'Fraunces',serif;}
   .wrap{max-width:1080px;margin:0 auto;padding:0 40px;}
   .kicker{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--clay-text,#9a5b37);font-weight:500;}
-  .idx{font-family:'Fraunces',serif;font-weight:300;font-style:italic;color:var(--stone);font-size:15px;}
+  .idx{font-family:'Fraunces',serif;font-weight:300;font-style:italic;color:var(--stone-text,#726a5c);font-size:15px;}
   .fu{opacity:0;transform:translateY(16px);animation:fu 1s cubic-bezier(.22,1,.36,1) forwards;}
   @keyframes fu{to{opacity:1;transform:none;}}
 
@@ -117,11 +117,11 @@
   /* QUIZ — Concierge (phương án A) */
   .quiz-wrap{max-width:520px;margin:0 auto;position:relative;z-index:3;}
   .quiz-card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:30px 28px;box-shadow:0 2px 14px rgba(26,24,21,.05);}
-  .quiz-step{font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--stone);margin-bottom:14px;}
+  .quiz-step{font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--stone-text,#726a5c);margin-bottom:14px;}
   .quiz-label{font-size:20px;color:var(--ink);margin-bottom:18px;font-family:'Fraunces',serif;font-style:italic;font-weight:400;line-height:1.4;text-wrap:balance;}
   .quiz-opts{display:flex;flex-direction:column;counter-reset:qo;border-top:1px solid var(--line);}
   .qopt{counter-increment:qo;display:flex;align-items:center;gap:16px;background:none;border:0;border-bottom:1px solid var(--line);color:var(--ink);padding:16px 4px;text-align:left;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;font-size:14.5px;font-weight:300;line-height:1.4;letter-spacing:.1px;width:100%;transition:padding-left .35s cubic-bezier(.22,1,.36,1),opacity .3s,color .3s;}
-  .qopt::before{content:counter(qo,decimal-leading-zero);font-family:'Fraunces',serif;font-size:13px;color:var(--stone);flex:none;width:18px;transition:color .3s;}
+  .qopt::before{content:counter(qo,decimal-leading-zero);font-family:'Fraunces',serif;font-size:13px;color:var(--stone-text,#726a5c);flex:none;width:18px;transition:color .3s;}
   .qopt::after{content:"\2192";margin-left:auto;padding-left:12px;font-family:'Fraunces',serif;font-size:17px;color:var(--clay-text,#9a5b37);opacity:0;transform:translateX(-6px);transition:.3s;flex:none;}
   .qopt:hover{padding-left:10px;}
   .qopt:hover::after{opacity:1;transform:none;}
@@ -134,10 +134,10 @@
   .quiz-result-text{font-size:14.5px;color:var(--ink);line-height:1.68;}
   .quiz-email-row{display:flex;gap:0;border:1px solid var(--stone);border-radius:2px;overflow:hidden;margin-top:18px;}
   .quiz-email-row input{flex:1;background:var(--paper);border:0;padding:14px 16px;font-family:inherit;font-size:14px;color:var(--ink);outline:none;}
-  .quiz-email-row input::placeholder{color:var(--stone);}
+  .quiz-email-row input::placeholder{color:var(--stone-text,#726a5c);}
   .quiz-email-row button{background:var(--forest);border:0;color:var(--paper);padding:0 22px;font-family:inherit;font-size:12.5px;letter-spacing:.5px;cursor:pointer;white-space:nowrap;transition:background .3s;}
   .quiz-email-row button:hover{background:var(--forest-deep);}
-  .quiz-cap{font-size:11.5px;color:var(--stone);margin:9px 2px 0;font-style:italic;text-align:center;line-height:1.5;letter-spacing:.2px;}
+  .quiz-cap{font-size:11.5px;color:var(--stone-text,#726a5c);margin:9px 2px 0;font-style:italic;text-align:center;line-height:1.5;letter-spacing:.2px;}
 
   .hero-foot{font-size:12px;color:var(--muted);margin-top:14px;letter-spacing:.3px;}
   .ridges{position:absolute;left:0;right:0;bottom:0;width:100%;height:300px;z-index:1;pointer-events:none;}
@@ -200,10 +200,10 @@
   .jn-grid .jn-card:nth-child(3){transition-delay:.18s;}
   .jn-grid .jn-card:nth-child(4){transition-delay:.27s;}
   .jn-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:box-shadow .45s cubic-bezier(.22,1,.36,1),border-color .45s cubic-bezier(.22,1,.36,1),transform .45s cubic-bezier(.22,1,.36,1);}
-  @media(hover:hover){.jn-card:hover{box-shadow:0 10px 26px rgba(26,24,21,.09);border-color:var(--stone);transform:translateY(-3px);}}
+  @media(hover:hover){.jn-card:hover{box-shadow:0 10px 26px rgba(26,24,21,.09);border-color:var(--stone-text,#726a5c);transform:translateY(-3px);}}
   .jn-btn,.jn-link{display:flex;flex-direction:column;min-height:172px;padding:20px 18px;text-align:left;cursor:pointer;font-family:inherit;color:var(--ink);text-decoration:none;width:100%;}
   .jn-btn{background:none;border:0;}
-  .jn-num{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:14px;color:var(--stone);margin-bottom:10px;}
+  .jn-num{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:14px;color:var(--stone-text,#726a5c);margin-bottom:10px;}
   .jn-t{font-family:'Fraunces',serif;font-size:17.5px;line-height:1.25;margin-bottom:7px;text-wrap:balance;}
   .jn-d{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:14px;text-wrap:pretty;}
   .jn-go{margin-top:auto;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--clay-text,#9a5b37);font-weight:500;display:flex;align-items:center;gap:6px;}
@@ -243,7 +243,7 @@
   .kb a:hover{padding-left:10px;}
   .kb .kb-t{font-family:'Fraunces',serif;font-size:18px;}
   .kb .kb-s{font-size:12.5px;color:var(--muted);}
-  .kb .kb-n{font-family:'Fraunces',serif;font-style:italic;color:var(--stone);font-size:14px;}
+  .kb .kb-n{font-family:'Fraunces',serif;font-style:italic;color:var(--stone-text,#726a5c);font-size:14px;}
 
   .alt{background:#ece5d7;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-left:4px solid var(--clay);}
 
@@ -278,7 +278,7 @@
   footer{background:var(--ink);color:#cabfab;padding:72px 0;text-align:center;}
 
   footer .meta{font-size:11.5px;letter-spacing:.8px;opacity:.5;}
-  .note{max-width:1080px;margin:22px auto 0;padding:0 40px;font-size:11.5px;color:var(--stone);text-align:center;font-style:italic;}
+  .note{max-width:1080px;margin:22px auto 0;padding:0 40px;font-size:11.5px;color:var(--stone-text,#726a5c);text-align:center;font-style:italic;}
 
   @media(max-width:780px){
     .wrap{padding:0 24px;}
@@ -391,13 +391,13 @@ a,button{touch-action:manipulation;}
 }
 
 .langsw{display:inline-flex;align-items:center;gap:5px;font-size:9.5px;letter-spacing:.16em;opacity:.45;}
-.langsw a{color:var(--stone);text-decoration:none;transition:color .25s;}
+.langsw a{color:var(--stone-text,#726a5c);text-decoration:none;transition:color .25s;}
 .langsw a:hover{color:var(--muted);}
 .langsw a::after{display:none;}
 .langsw .langcur{color:var(--muted);font-weight:400;}
-.langsw .langsep{color:var(--stone);opacity:.5;}
-.mobile-lang{font-family:'Be Vietnam Pro',sans-serif;font-size:10px;letter-spacing:.14em;color:var(--stone);opacity:.7;margin-top:26px;padding:14px 0 0;}
-.mobile-lang a{color:var(--stone);text-decoration:none;font-family:'Be Vietnam Pro',sans-serif;font-size:10px;font-weight:400;letter-spacing:.14em;}
+.langsw .langsep{color:var(--stone-text,#726a5c);opacity:.5;}
+.mobile-lang{font-family:'Be Vietnam Pro',sans-serif;font-size:10px;letter-spacing:.14em;color:var(--stone-text,#726a5c);opacity:.7;margin-top:26px;padding:14px 0 0;}
+.mobile-lang a{color:var(--stone-text,#726a5c);text-decoration:none;font-family:'Be Vietnam Pro',sans-serif;font-size:10px;font-weight:400;letter-spacing:.14em;}
 .mobile-lang a:hover{color:var(--clay-text,#9a5b37);}
 .mobile-lang span{color:var(--muted);font-weight:400;}
 </style>
@@ -699,7 +699,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
       </div>
       <div>
         <div class="kicker" style="display:block;margin-bottom:4px;">Đọc chậm</div>
-        <p style="font-size:13px;color:var(--stone);margin:0 0 16px;font-style:italic;">Đọc trước khi xuống tiền — bốn góc nhìn nên biết.</p>
+        <p style="font-size:13px;color:var(--stone-text,#726a5c);margin:0 0 16px;font-style:italic;">Đọc trước khi xuống tiền — bốn góc nhìn nên biết.</p>
         <div class="kb">
           <a href="quy-hoach-2050"><span><span class="kb-t">Quy hoạch 2050</span><br><span class="kb-s">Nam Ban trên bản đồ mới của Lâm Đồng</span></span><span class="kb-n">→</span></a>
           <a href="tiem-nang-dau-tu"><span><span class="kb-t">Tiềm năng đầu tư</span><br><span class="kb-s">Cơ hội &amp; rủi ro, đọc qua lăng kính toàn cảnh</span></span><span class="kb-n">→</span></a>
