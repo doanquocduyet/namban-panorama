@@ -2706,14 +2706,8 @@
     844
    ],
    "used_in": {
-    "lo-dat-nam-ban-binh-thuong.html": [
-     "display"
-    ],
     "thon-nam-ban.html": [
      "display"
-    ],
-    "image-sitemap.xml": [
-     "ref"
     ]
    }
   },
