@@ -255,14 +255,32 @@ Thêm bài mới: theo hệ A thì **nhớ nạp `nav.css`**.
 
 ## 5. AEO / SEO / GEO — hướng tối ưu thường trực
 
-**ĐÓNG SỔ NEO VÙNG — không mở lại (Chú chốt 2/9/2026).** Đã neo xong nhóm nặng nhất:
-ba bài khuôn Mê Linh/Gia Lâm/Đông Thanh, hồ Đông Thanh, hồ Bãi Công, cầu Tổng Đội,
-chùa Linh Ẩn, tách thửa. **KHÔNG đi rà 53 bài còn lại, không mở `/hoi-nhanh` 21 câu.**
-Lý do: mỗi bài còn lại chỉ 1–4 câu, sửa hết cũng không đổi được gì đo đếm được — đúng
-cái Luật 4 cấm, quy trình lớn hơn mục tiêu. Thay vào đó: **bài MỚI viết đúng neo ngay
-từ đầu** (một dòng kiểm trong phiếu content), không đi vá bài cũ. Cùng nguyên tắc này
-áp cho mọi sổ rà tương tự — 52 ca contrast màu cứng, 34 màu ngoài palette, entity graph,
-card title dài: đã cân nhắc và **cố ý bỏ**, không phải quên.
+**NEO VÙNG — ĐÃ CHẠY HẾT MỘT LƯỢT, ĐÓNG SỔ (Chú chốt 2/9/2026).** Quét toàn bộ H2 và
+FAQ trang `lang="vi"`: **638 ca thiếu neo**, lọc theo bốn luật dưới còn **20 ca đáng
+neo**, đã làm. 618 ca còn lại **cố ý bỏ** — không phải quên, không rà lại. Ba nhóm bỏ
+lớn nhất: **291 ca là H2 tu từ hoặc nhãn mục** (không phải câu hỏi, neo vào là giết
+câu); **150 ca không nói về vật thể trong vùng**; **116 ca không thuộc ba nhóm ưu tiên**.
+Bốn luật lọc (dùng lại cho mọi đợt sau, và cho bài mới):
+
+1. **Không neo khi sai phạm vi.** Nam Hà là xã riêng. Tà Nung thuộc phường Cam Ly,
+   Đà Lạt. Bảo Lộc, Di Linh, D'ran, Đơn Dương, Đức Trọng, Lạc Dương là vùng khác.
+   Quy định pháp lý cấp tỉnh → neo **"Lâm Đồng"**, không neo "Nam Ban" (neo hẹp lại
+   vừa sai vừa đẩy người Bảo Lộc, Di Linh ra khỏi kết quả). Câu so sánh hai vùng →
+   không neo bên nào. Khái niệm toàn quốc (sổ chung, vi bằng, công chứng, thuế, "một
+   sào là bao nhiêu mét vuông") → không neo.
+2. **Không neo khi câu đã có neo khác** — tên riêng đủ mạnh (thác Voi, chùa Linh Ẩn,
+   Liên Khương, ĐT.725, hồ Bãi Công, cầu Tổng Đội) hoặc đã có địa danh vùng.
+3. **Không neo khi giết câu.** Câu đang chủ động sửa hiểu nhầm (*"Chùa Linh Ẩn ở
+   đâu?"* — người cần đọc chính là người gõ câu chưa có "Nam Ban"). Nhãn khu có mô tả
+   thơ. Câu hỏi mà đáp án chính là tên vùng (*"Mê Linh thuộc xã nào?"*). H2 tu từ,
+   không phải câu hỏi. Câu dài sẵn, thêm vào vượt hai dòng ở 360.
+4. **Mỗi bài tối đa 3 câu** (hub `/hoi-nhanh` tối đa 5), chọn theo thứ tự: câu định vị
+   → câu về giá hoặc tiền → câu quyết định mua. Cách viết: **"ở Nam Ban"**, không ghép
+   liền, cho khớp nếp site.
+
+**Bài MỚI viết đúng neo ngay từ đầu** (một dòng kiểm trong phiếu content), không đi vá
+bài cũ. Cùng nguyên tắc này áp cho mọi sổ rà tương tự — 52 ca contrast màu cứng, 34 màu
+ngoài palette, entity graph, card title dài: đã cân nhắc và **cố ý bỏ**.
 
 **Neo bằng tên vùng ĐÚNG PHẠM VI, không mặc định "Nam Ban".** Ba bẫy đã vấp thật:
 Nam Hà là **xã riêng** (Nam Hà + Phi Tô), cạnh Nam Ban chứ không thuộc — neo vào là tạo

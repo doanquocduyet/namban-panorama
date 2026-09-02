@@ -774,7 +774,7 @@ Bảo Lộc phát triển hơn, dịch vụ nhiều hơn, giá cao hơn. Nam Ban
 Giá rao và giá bán thật chênh nhau đáng kể ở vài khu, nên "sốt" trên tin rao chưa chắc là sốt thật. Nhìn giá giao dịch có xác minh, đừng nhìn giá chào.
 Giá thật và tín hiệu thị trường →
 
-Quy hoạch 2050 có làm giá đất tăng không?
+Quy hoạch 2050 có làm giá đất Nam Ban tăng không?
 
 Có thể. Nhưng một đoạn đường đang thật sự thi công thường tác động tới giá nhanh và chắc hơn một bản quy hoạch còn nằm trên giấy.
 Hiểu quy hoạch Nam Ban 2050 →
@@ -3013,7 +3013,7 @@ Vì sao đất tôi rao mãi không ai mua?
 
 Lý do phổ biến nhất không phải vị trí xấu — là định giá sai. Người mua bây giờ tra giá rất dễ; chỉ cần lệch vài trăm triệu so với mặt bằng là mất gần hết khách nghiêm túc. Dấu hiệu rõ nhất: tin đăng im lặng hàng tuần, không một cuộc gọi nào. 
 
-Làm sao biết giá thật của lô đất mình? 
+Làm sao biết giá thật của lô đất mình ở Nam Ban? 
 
 Đừng nhìn giá rao — đó là giá người ta muốn, không phải giá người ta được. Hỏi hai ba môi giới địa phương: họ có giá chốt thật. Con số nào lặp lại là con số gần đúng. Rồi đối chiếu mặt bằng giữa 2026: nông nghiệp 1,7–2,8tr/m², thổ cư 3–4,5tr, view hồ 4–6tr. 
 
@@ -4248,7 +4248,7 @@ Lên thổ cư ở Nam Ban giảm 70% có đúng không?
 
 Đúng một phần. Nghị quyết 254/2025/QH15 quy định ba mức: 30% chênh lệch cho phần trong hạn mức đất ở, 50% cho phần vượt hạn mức nhưng không quá một lần hạn mức, và 100% cho phần vượt xa hơn. Hạn mức đất ở Lâm Đồng là 72m² một cá nhân. Nên "giảm 70%" chỉ áp cho 72m² đầu tiên. 
 
-1.000m² đất vườn lên thổ cư hết bao nhiêu tiền? 
+1.000m² đất vườn ở Nam Ban lên thổ cư hết bao nhiêu tiền? 
 
 Không có con số cố định — phụ thuộc bảng giá đất tại vị trí lô. Nhưng cách tính thì rõ: 72m² đầu tính 30% chênh lệch, 72m² tiếp tính 50%, và 856m² còn lại tính 100%. Chênh lệch là chênh giữa giá đất ở và giá đất nông nghiệp theo bảng giá đất nhà nước. 
 
@@ -4260,11 +4260,11 @@ Hạn mức đất ở Lâm Đồng là bao nhiêu?
 
 72m² cho một cá nhân, cả nông thôn lẫn đô thị (Quyết định 23/2024/QĐ-UBND). Đây là con số quyết định phần nào được giảm và phần nào không. 
 
-Bảng giá đất có phải giá thị trường không? 
+Bảng giá đất Lâm Đồng có phải giá thị trường không? 
 
 Không. Bảng giá đất do nhà nước ban hành, dùng để tính thuế, phí, tiền sử dụng đất và bồi thường. Giá thị trường là giá hai bên thỏa thuận, thường cao hơn bảng giá ba đến năm lần. Nhưng tiền lên thổ cư thì tính theo bảng giá — không theo giá bạn mua. 
 
-Bảng giá đất dùng để làm gì? 
+Bảng giá đất Lâm Đồng dùng để làm gì? 
 
 Sáu việc: tính tiền chuyển mục đích (lên thổ cư), thuế sử dụng đất, lệ phí trước bạ, tiền bồi thường khi thu hồi, tiền phạt vi phạm đất đai, và giá khởi điểm đấu giá. Không dùng để mua bán — mua bán là giá hai bên thỏa thuận. 
 
@@ -4455,7 +4455,7 @@ Giá bơ tại vườn Nam Ban bao nhiêu?
 
 Chính vụ 2026, giá thu mua tại vườn khoảng 5.000–7.000 đồng một ký. Giá rao trên các sàn 25.000–60.000 đồng. Giá bán lẻ ở thành phố 79.000–220.000 đồng. Ba thang giá khác nhau. 
 
-Có vườn bơ, bán bơ ở đâu? 
+Có vườn bơ ở Nam Ban, bán bơ ở đâu? 
 
 Cách phổ biến ở Nam Ban là chở tới vựa cân. Cũng có thương lái vào tận vườn cắt, nhưng ít hơn. Từ vựa, bơ đi bán sỉ, cấp đông, hoặc xuất khẩu. 
 
@@ -4463,7 +4463,7 @@ Bơ ở Nam Ban trồng thế nào?
 
 Chủ yếu trồng xen trong vườn cà phê — bơ là tầng tán cao hơn, che nắng cho cà phê bên dưới. Nhà nào cũng có vài chục gốc. Có vườn chuyên bơ nhưng phần lớn nhỏ, ba sào tới hai héc-ta, quy mô hộ gia đình. 
 
-Vì sao bơ ở vườn rẻ hơn bơ ngoài phố nhiều thế? 
+Vì sao bơ ở vườn Nam Ban rẻ hơn bơ ngoài phố nhiều thế? 
 
 Vì bơ phải đi xa, phải bảo quản, phải qua tay. Chủ vườn nhận giá tại vườn; người ăn ở thành phố trả giá bán lẻ. Ba thang giá cách nhau khá xa — đây là chuyện chung của trái cây phải vận chuyển, không riêng gì bơ. 
 
@@ -4896,11 +4896,11 @@ Mua đất có sẵn vườn bơ thì cây bơ tính thế nào?
 
 Đất tính theo đất — vị trí, mặt tiền, pháp lý, thế đất, nguồn nước. Vườn bơ là phần cộng thêm. Không có bảng giá cho một gốc bơ; người ta nhìn tuổi cây, giống, sản lượng ba năm gần nhất và số năm khai thác còn lại. Cộng bao nhiêu thì tùy người mua định làm gì với miếng đất đó. 
 
-Một cây bơ đang cho trái đáng bao nhiêu tiền? 
+Ở Nam Ban, một cây bơ đang cho trái đáng bao nhiêu tiền? 
 
 Không có bảng giá chính thức. Không cơ quan nào công bố, không sàn nào niêm yết, không có dữ liệu giao dịch công khai. Trong thực tế người ta không đếm cây rồi nhân — họ nhìn tuổi cây, giống, sản lượng và số năm còn khai thác được. 
 
-Vườn bơ cộng thêm bao nhiêu vào giá đất? 
+Vườn bơ cộng thêm bao nhiêu vào giá đất Nam Ban? 
 
 Tùy mục đích mua. Người mua để ở hoặc làm lưu trú cộng nhiều nhất — họ trả cho bóng mát và cảnh quan có sẵn. Người mua để canh tác cộng theo tuổi cây và giống. Người mua để giữ lâu dài cộng ở chỗ đất có người chăm. Người mua để chia lô gần như không cộng, vì cây sẽ nhường chỗ cho đường và ranh lô. 
 
@@ -4912,7 +4912,7 @@ Cây bơ trồng bao lâu thì cho trái?
 
 Bơ ghép cho trái sau khoảng hai năm rưỡi đến bốn năm. Giống 034 nếu chăm tốt có thể sớm hơn, chừng mười tám tháng đến hai năm. Cây ổn định từ năm thứ năm đến năm thứ bảy. 
 
-Vườn bơ bao nhiêu tuổi thì đáng giá nhất? 
+Vườn bơ ở Nam Ban bao nhiêu tuổi thì đáng giá nhất? 
 
 Từ năm thứ tám đến năm thứ mười tám là giai đoạn năng suất cao nhất. Sau hai mươi đến hai mươi lăm năm, năng suất giảm dần tùy mức chăm sóc. Hai vườn cùng số cây nhưng khác tuổi thì giá trị khác nhau rất nhiều. 
 
@@ -5222,7 +5222,7 @@ Một gốc cà phê đáng giá bao nhiêu?
 
 Không có bảng giá cho từng gốc cây — không cơ quan nào công bố, không có dữ liệu giao dịch công khai. Thực tế người ta không đếm cây rồi nhân. Họ nhìn năng suất, tuổi cây, giống, mật độ, và số năm khai thác còn lại. 
 
-Tuổi cây cà phê ảnh hưởng thế nào đến giá vườn? 
+Tuổi cây cà phê ảnh hưởng thế nào đến giá vườn ở Nam Ban? 
 
 Ba năm đầu chưa cho thu. Năm thứ tư bắt đầu thu. Từ năm sáu đến năm mười tám là thời kỳ năng suất cao nhất. Từ năm hai mươi trở đi giảm dần nếu không tái canh. Hai vườn cùng diện tích, cùng số cây, nhưng khác tuổi thì giá khác nhau rất nhiều. 
 
@@ -5409,7 +5409,7 @@ Vì sao có người mua đất dưỡng già rồi lại bán, quay về thành
 
 Ba lý do hay gặp: không có ai để nói chuyện (bạn bè cũ ở xa, hàng xóm mới cần thời gian); không có việc để làm (nếu không làm vườn thì trống); và xa con cháu — lý do nặng nhất. Ba điều đó không sửa được bằng một mảnh đất đẹp hơn. Nên lên ở thử trước khi mua. 
 
-Có nên mua đất trước rồi đưa ba mẹ lên không? 
+Có nên mua đất Nam Ban trước rồi đưa ba mẹ lên không? 
 
 Nhiều nhà làm ngược lại: lên thuê ở thử một mùa trước, ba mẹ thấy hợp rồi mới mua. Mất tiền thuê vài tháng rẻ hơn nhiều so với mua rồi bán lại. 
 
@@ -6460,7 +6460,7 @@ Mua đất có sẵn vườn bơ thì cây bơ tính thế nào?
 
 Đất tính theo đất — vị trí, mặt tiền, pháp lý, thế đất, nguồn nước. Vườn bơ là phần cộng thêm. Cộng bao nhiêu thì tùy bạn định làm gì với miếng đất: người mua để về ở hoặc dựng nhà vườn cuối tuần cộng nhiều nhất; người mua để tích trữ, để dành thì cộng ở chỗ cây giữ đất; người mua để chia lô gần như không cộng. Không có bảng giá cho một gốc bơ. Chi tiết ở bài Mua đất có sẵn vườn bơ: cây bơ tính thế nào . 
 
-Giá bơ tại vườn khác giá bán lẻ bao nhiêu? 
+Giá bơ tại vườn Nam Ban khác giá bán lẻ bao nhiêu? 
 
 Khá xa. Chính vụ 2026, giá thu mua tại vườn khoảng 5.000–7.000 đồng một ký. Giá rao trên các sàn 25.000–60.000 đồng. Giá bán lẻ ở thành phố 79.000–220.000 đồng. Chủ vườn nhận thang đầu tiên — nên khi tính doanh thu một vườn, phải dùng giá tại vườn, không dùng giá siêu thị. 
 
@@ -6863,7 +6863,7 @@ Tóm tắt: Định giá một lô đất Nam Ban không chỉ nhìn giá/m². V
 
 Trả lời nhanh: Đừng hỏi lô này bao nhiêu một mét trước. Hỏi nó khác lô bên cạnh ở đâu. Hai lô gần nhau, cùng diện tích, nhìn qua tưởng giống — nhưng đường vào, cao độ, hình thửa, view và phần việc phải làm sau khi mua có thể khác rất xa.
 
-Vì sao hai lô đất gần nhau lại khác giá?
+Vì sao hai lô đất Nam Ban gần nhau lại khác giá?
 
 Vì diện tích chỉ là một phần. Một lô còn có vị trí, đường vào, hình thửa, độ dốc, khả năng sử dụng và phần việc phải làm sau khi mua. Nên không hỏi "khu này bao nhiêu một mét", mà hỏi "lô này khác lô bên cạnh ở đâu?".
 
@@ -6871,7 +6871,7 @@ Vị trí đẹp không chỉ là gần trung tâm
 
 "Đẹp" không chỉ là gần chợ. Nhìn đường vào lô, nó nằm đâu trong khu, ra trục chính thế nào, có thuận với mục đích không. Lô để ở cuối tuần thích yên tĩnh; lô ở lâu dài quan tâm đi lại mỗi ngày; lô làm vườn cần đường thuận cho sản xuất — cùng một chỗ, ba người thấy ba giá trị khác nhau.
 
-Đường vào ảnh hưởng giá thế nào?
+Đường vào ảnh hưởng giá đất Nam Ban thế nào?
 
 Trên bản đồ hai lô gần như nhau, nhưng một lô đi vào thuận, một lô phải qua đoạn nhỏ hoặc dốc hơn — lúc ở, xây nhà, chở vật liệu mới thấy khác. Không phải đường càng rộng càng đáng tiền; quan trọng là đường đó giúp dùng đất tới đâu.
 
@@ -6879,7 +6879,7 @@ Trên bản đồ hai lô gần như nhau, nhưng một lô đi vào thuận, m�
 
 Nhiều người thấy thửa có đất ở là cộng luôn vào giá theo kiểu máy tính. Nhưng phần đó nằm đâu — mặt đường, giữa thửa, hay một góc? Cùng một diện tích đất ở, cách nó nằm trên thửa tạo ra cách dùng rất khác.
 
-Thế đất và chi phí cải tạo có nằm trong giá không?
+Thế đất và chi phí cải tạo có nằm trong giá đất Nam Ban không?
 
 Có. Người mua không chỉ mua miếng đất mà mua luôn phần việc phải làm với nó: đất dốc nhẹ giữ nguyên được là một chuyện, đất phải xử lý cao độ/taluy/thoát nước lại là chuyện khác. Thích nhà đi theo đất hơn là bắt cả quả đồi đi theo cái nhà.
 
@@ -9777,7 +9777,7 @@ Mua đất Nam Ban có cần đo lại không?
 
 Không phải thửa nào cũng cần. Nhưng nếu diện tích, ranh giới trên giấy và ngoài thực địa có dấu hiệu không khớp, hoặc người bán nói diện tích khác với sổ, thì nên làm rõ trước khi giao dịch.
 
-Người bán nói đất rộng hơn sổ thì có nên trả tiền phần dư không?
+Người bán nói đất ở Nam Ban rộng hơn sổ thì có nên trả tiền phần dư không?
 
 Nên xác định phần đó nằm ở đâu, ranh giới thế nào, nguồn gốc ra sao và đã có hồ sơ nào ghi nhận chưa, trước khi đưa vào giá.
 
@@ -12561,7 +12561,7 @@ Cuối cùng mới ngồi tính tiền.
 
 Thứ tự này đỡ nhầm hơn cách mở bảng giá trước rồi đi tìm lý do để mua. Mấy thứ cần kiểm trước khi cọc tôi ghi ở trước khi xuống tiền .
 
-Quy hoạch mới có làm giá đất tăng không?
+Quy hoạch mới có làm giá đất Nam Ban tăng không?
 
 Tự nó thì không.
 
