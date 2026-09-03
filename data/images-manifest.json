@@ -8,8 +8,8 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 323,
- "unused_count": 43,
+ "total_images": 326,
+ "unused_count": 45,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
   "ban-do-cao-do-thua-dat-nam-ban.webp",
@@ -36,6 +36,7 @@
   "me-linh-vuon-doi-cao.webp",
   "nha-ong-mai-doc-san-trong.webp",
   "nha-tho-giao-xu-nam-ban.webp",
+  "quan-ca-phe-trong-nam-ban.webp",
   "quan-com-sen-viet-nam-ban.webp",
   "quan-com-thanh-hai-nam-ban.webp",
   "quan-sen-viet-xe-o-to-nam-ban.webp",
@@ -51,6 +52,7 @@
   "tu-banh-croissant-nam-ban.webp",
   "tuong-duc-me-nha-tho-nam-ban.webp",
   "van-phong-dien-linh-nam-ban.webp",
+  "vuon-rau-nha-vuon-nam-ban.webp",
   "vuon-xen-canh-du-du-ca-phe-nam-ban.webp",
   "xay-nha-tren-doi-me-linh.webp",
   "xe-khach-nhin-ra-cua-nam-ban.webp"
@@ -3916,6 +3918,15 @@
     ]
    }
   },
+  "quan-ca-phe-trong-nam-ban.webp": {
+   "kb": 298,
+   "dims": [
+    900,
+    1600
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
   "quan-com-sen-viet-nam-ban.webp": {
    "kb": 240,
    "dims": [
@@ -4817,6 +4828,30 @@
      "display"
     ]
    }
+  },
+  "vuon-rau-luong-go-nam-ban.webp": {
+   "kb": 283,
+   "dims": [
+    1250,
+    703
+   ],
+   "used_in": {
+    "rau-hoa-cay-do-la-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "vuon-rau-nha-vuon-nam-ban.webp": {
+   "kb": 285,
+   "dims": [
+    1400,
+    788
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "vuon-xen-canh-du-du-ca-phe-nam-ban.webp": {
    "kb": 297,

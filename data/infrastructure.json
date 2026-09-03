@@ -6,13 +6,16 @@
     "url": "https://nambanpanorama.com",
     "contact": "nambanpanorama@gmail.com",
     "usage": "Được trích dẫn tự do với ghi nguồn: Namban Panorama (nambanpanorama.com).",
-    "updated": "2026-07-15"
+    "updated": "2026-09-04"
   },
   "items": [
     {
       "id": "cau-tien-lam",
       "name": "Cầu Tiền Lâm",
-      "alias": ["cầu Tổng Đội", "cầu sắt Tổng Đội"],
+      "alias": [
+        "cầu Tổng Đội",
+        "cầu sắt Tổng Đội"
+      ],
       "type": "cầu",
       "status": "đang thi công",
       "location": "Bắc qua suối Cam Ly, tuyến Gia Lâm – Đông Thanh – Nam Ban (Km6+680 – Km7+010), xã Nam Ban Lâm Hà, Lâm Đồng",
@@ -48,11 +51,18 @@
     {
       "id": "san-bay-lien-khuong",
       "name": "Sân bay Liên Khương",
-      "alias": ["Lien Khuong Airport", "DLI", "VVDL"],
+      "alias": [
+        "Lien Khuong Airport",
+        "DLI",
+        "VVDL"
+      ],
       "type": "sân bay",
       "status": "khai thác trở lại từ 00h00 ngày 19/8/2026",
       "location": "Đức Trọng, Lâm Đồng",
-      "coordinates": { "lat": 11.7503, "lon": 108.367 },
+      "coordinates": {
+        "lat": 11.7503,
+        "lon": 108.367
+      },
       "distance_from_nam_ban_km": 20,
       "travel_time_from_nam_ban": "35–45 phút",
       "article": "https://nambanpanorama.com/san-bay-lien-khuong-mo-lai",
@@ -87,7 +97,10 @@
     {
       "id": "tuyen-t20-chi-lang-buon-chuoi",
       "name": "Đường Chi Lăng – Buôn Chuối (tuyến T-20)",
-      "alias": ["đường Hà Bắc", "T-20"],
+      "alias": [
+        "đường Hà Bắc",
+        "T-20"
+      ],
       "type": "đường",
       "status": "đang thi công (làm nền)",
       "location": "Khu Hà Bắc, xã Nam Ban Lâm Hà, tỉnh Lâm Đồng; cách hồ Bãi Công ~900m",
@@ -109,6 +122,27 @@
       "sources": [
         "Biển thông tin dự án tại công trường (gói thầu số 24); khảo sát Namban Panorama 7/2026"
       ]
+    },
+    {
+      "id": "tuyen-nam-ban-chi-lang",
+      "name": "Tuyến đường Nam Ban – Chi Lăng",
+      "type": "đường",
+      "status": "đề xuất chủ trương đầu tư",
+      "status_note": "Kết luận cuộc họp ngày 31/3/2026 tại UBND xã Nam Ban Lâm Hà. Mới ở bước đề xuất chủ trương để trình UBND tỉnh Lâm Đồng xem xét — chưa phê duyệt, chưa bố trí vốn.",
+      "location": "Xã Nam Ban Lâm Hà, Lâm Đồng",
+      "length_m": 3300,
+      "spec": {
+        "grade": "đường cấp IV miền núi",
+        "roadbed_width_m": 7.5,
+        "surface_width_m": 5.5,
+        "surface": "bê tông nhựa trên lớp móng cấp phối đá dăm",
+        "reinforced_shoulder_m": 0.5,
+        "earth_shoulder_m": 0.5,
+        "drainage": "cống hộp, cống tròn; mương thoát nước dọc bằng mương đất kết hợp mương hở bê tông lắp ghép, bê tông cốt thép",
+        "safety": "cọc tiêu, hộ lan, biển báo"
+      },
+      "source": "Thông báo kết luận của Phó Chủ tịch UBND xã Nam Ban Lâm Hà tại cuộc họp ngày 31/3/2026",
+      "date_recorded": "2026-09-04"
     }
   ]
 }

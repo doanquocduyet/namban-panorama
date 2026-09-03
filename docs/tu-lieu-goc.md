@@ -132,3 +132,77 @@ trú và số thửa của một cá nhân. Thư mục đó công khai và bị 
 Nguồn công khai đáng nhớ, thấy trong IMG_4284:
 `nambanlamha.lamdong.gov.vn` — trang tin xã, có mục công khai hồ sơ và lấy ý kiến
 cộng đồng dân cư về đồ án quy hoạch chung xã.
+
+
+---
+
+## 7. Đợt 4/9/2026 (14 tấm) — hai văn bản nặng ký, và một cảnh báo
+
+### 7.1 Thông báo 142/TB-UBND ngày 16/4/2026 — ĐÃ KÝ, CÓ DẤU
+Tạm dừng tiếp nhận hồ sơ chuyển mục đích sử dụng đất từ **17/4/2026**, cho đến khi có
+thông báo mới. Ký TL. Chủ tịch — Chánh Văn phòng Phạm Thị Tâm.
+Lý do nêu trong văn bản: lượng hồ sơ lớn, nhân lực chuyên môn hạn chế, mỗi hồ sơ phải
+kiểm điều kiện quy hoạch, rà soát hạ tầng kỹ thuật, xác minh thực địa. Sau khi giải quyết
+xong tồn đọng, Trung tâm Phục vụ hành chính công xã sẽ nhận lại theo thông báo mới.
+Căn cứ: Luật Đất đai 18/01/2024; NĐ 102/2024, 103/2024, 151/2025/NĐ-CP;
+QĐ 1245/QĐ-UBND (27/6/2023); QĐ 567/QĐ-UBND (10/02/2026).
+
+**KHÔNG PHẢI SỬA GÌ.** `/chuyen-muc-dich-su-dung-dat-nam-ban` đã có nguyên mục
+"Từ ngày 17/4 có gì thay đổi?", đã nêu số 142/TB, đã phân biệt *tiếp nhận hồ sơ mới*
+với *xử lý hồ sơ đã nhận*, và đã viết thẳng "hôm nay xã đã nhận lại hồ sơ chưa thì tôi
+không đoán". Văn bản chỉ xác nhận bài đang đúng.
+
+### 7.2 Thông báo kết luận họp 31/3/2026 — hai tuyến đường
+Kết luận của Phó Chủ tịch UBND xã Đinh Văn Bình về đề xuất chủ trương đầu tư xây dựng,
+nâng cấp hai tuyến:
+
+| Tuyến | Dài | Quy mô |
+|---|---|---|
+| Gia Lâm – Đông Thanh – Nam Ban | ~5.800 m | cấp IV miền núi, nền 7,5 m, mặt 5,5 m bê tông nhựa |
+| Nam Ban – Chi Lăng | ~3.300 m | như trên |
+
+Lề gia cố hai bên mỗi bên 0,5 m; lề đất mỗi bên 0,5 m; móng cấp phối đá dăm;
+thoát nước cống hộp/cống tròn + mương dọc; an toàn giao thông cọc tiêu, hộ lan, biển báo.
+Mười hai thôn trên tuyến phải họp dân lấy ý kiến **tự nguyện giải tỏa**, biên bản gửi
+về trước 15/4/2026.
+
+**Trạng thái: ĐỀ XUẤT CHỦ TRƯƠNG** để trình tỉnh — chưa duyệt, chưa có vốn.
+**Đã dùng:** `/nam-ban-co-gi-moi` (mốc 31/3/2026) và `data/infrastructure.json` (2 mục mới).
+
+Giấy mời họp thôn Bạch Đằng ngày 10/4/2026 về hành lang đường Chi Lăng 3.300 m khớp
+đúng với văn bản này — hai nguồn độc lập, cùng một việc.
+
+### 7.3 ⛔ CẢNH BÁO DỮ LIỆU CÁ NHÂN — nghiêm trọng hơn các lần trước
+Tám tấm trong đợt này chứa dữ liệu cá nhân của người dân, trong đó có:
+- **số căn cước công dân, ngày cấp, nơi cấp**
+- **địa chỉ thường trú**
+- **số điện thoại**
+- họ tên, số thửa, diện tích thu hồi
+
+Gồm: một trang sổ đỏ, và sáu biên bản làm việc / phúc tra hiện trạng thu hồi đất phục vụ
+tuyến kênh hồ Đông Thanh. Đã gỡ khỏi thư mục làm việc, **không tấm nào vào `/images/`**.
+
+Đây là lần thứ tư và thứ năm trong ngày. Mọi tấm đã đẩy lên GitHub vẫn nằm trong
+lịch sử repo công khai. Xem mục "Việc cần Chú quyết" ở cuối sổ.
+
+### 7.4 Ảnh thật
+| Ảnh | Xử lý |
+|---|---|
+| Vườn rau luống nhỏ, lối đi lát gỗ | **Đã gắn** `/rau-hoa-cay-do-la-nam-ban` |
+| Vườn rau góc rộng hơn | Kho, để dành |
+| Quán cà phê nhìn từ trong | Kho — chưa bài nào hợp |
+
+---
+
+## Việc cần Chú quyết
+
+**Xóa dữ liệu cá nhân khỏi lịch sử repo.** Tới nay có ít nhất 8 file chứa dữ liệu cá nhân
+của người dân đã từng được đẩy lên GitHub. Gỡ khỏi thư mục làm việc **không xóa được
+khỏi lịch sử** — ai clone repo về vẫn lấy được đủ.
+
+Xóa hẳn phải chạy `git filter-repo` rồi force-push, tức viết lại toàn bộ lịch sử. Đây là
+việc đụng tới mọi commit nên em không tự làm. Chú gật thì em làm một lượt cho tất cả.
+
+**Cách tránh từ đầu:** chụp màn hình văn bản thì che phần có tên, căn cước, số điện thoại,
+địa chỉ, số thửa trước khi gửi. Phần nội dung hành chính — mốc thời gian, số văn bản,
+thông số công trình — vẫn dùng được đầy đủ mà không cần mấy thứ kia.
