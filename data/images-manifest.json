@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 298,
+ "total_images": 299,
  "unused_count": 25,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -94,6 +94,19 @@
      "twitter"
     ],
     "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "ban-do-hanh-chinh-lam-dong-2025.webp": {
+   "kb": 284,
+   "dims": [
+    1605,
+    2048
+   ],
+   "used_in": {
+    "nam-ban-thuoc-xa-nao.html": [
+     "display",
      "ref"
     ]
    }

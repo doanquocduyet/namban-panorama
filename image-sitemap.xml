@@ -387,4 +387,9 @@
     <loc>https://nambanpanorama.com/lo-dat-nam-ban-binh-thuong</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/lo-dat-nam-ban-binh-thuong.jpg</image:loc></image:image>
   </url>
+<url>
+    <loc>https://nambanpanorama.com/nam-ban-thuoc-xa-nao</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/ban-do-hanh-chinh-lam-dong-2025.webp</image:loc><image:title>Bản đồ hành chính tỉnh Lâm Đồng sau sắp xếp — 124 đơn vị cấp xã</image:title></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/cho-thang-long-nam-ban.webp</image:loc><image:title>Phố chợ Thăng Long ở trung tâm Nam Ban</image:title></image:image>
+  </url>
 </urlset>
