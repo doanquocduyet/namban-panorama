@@ -8,9 +8,13 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 313,
- "unused_count": 35,
+ "total_images": 320,
+ "unused_count": 41,
  "unused": [
+  "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
+  "ban-do-cao-do-thua-dat-nam-ban.webp",
+  "ban-do-quy-hoach-xa-nam-ban-gis.webp",
+  "ban-do-thua-dat-nam-ban-gis.webp",
   "ban-do-tuyen-me-linh-langbiang.webp",
   "bo-booth-vao-vu-vua-nam-ban.webp",
   "ca-phe-che-bien-rua-qua-nam-ban.webp",
@@ -33,8 +37,10 @@
   "quan-com-sen-viet-nam-ban.webp",
   "quan-com-thanh-hai-nam-ban.webp",
   "quan-sen-viet-xe-o-to-nam-ban.webp",
+  "ranh-gioi-xa-nam-ban-lam-ha-gis.webp",
   "ruong-bap-nam-ban.webp",
   "tam-pin-mat-troi-nam-ban.webp",
+  "tra-cuu-quy-hoach-tren-man-hinh.webp",
   "tram-sac-nam-ban-toan-canh.webp",
   "tram-sac-nam-ban-troi-chieu.webp",
   "tram-y-te-xa-nam-ban-mat-truoc.webp",
@@ -83,6 +89,15 @@
     ]
    }
   },
+  "anh-ve-tinh-thua-dat-nam-ban-gis.webp": {
+   "kb": 262,
+   "dims": [
+    1350,
+    903
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
   "ban-dat-nam-ban.jpg": {
    "kb": 159,
    "dims": [
@@ -107,6 +122,15 @@
      "ref"
     ]
    }
+  },
+  "ban-do-cao-do-thua-dat-nam-ban.webp": {
+   "kb": 277,
+   "dims": [
+    1350,
+    759
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "ban-do-hanh-chinh-lam-dong-2025.webp": {
    "kb": 284,
@@ -139,6 +163,15 @@
     ]
    }
   },
+  "ban-do-quy-hoach-xa-nam-ban-gis.webp": {
+   "kb": 267,
+   "dims": [
+    1600,
+    727
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
   "ban-do-sai-gon-nam-ban.webp": {
    "kb": 289,
    "dims": [
@@ -150,6 +183,15 @@
      "display"
     ]
    }
+  },
+  "ban-do-thua-dat-nam-ban-gis.webp": {
+   "kb": 194,
+   "dims": [
+    1600,
+    680
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "ban-do-tuyen-me-linh-langbiang.webp": {
    "kb": 173,
@@ -181,6 +223,9 @@
    "used_in": {
     "duong-di-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -1473,6 +1518,9 @@
    "used_in": {
     "dat-nam-ban-tho-cu-san.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -1485,6 +1533,9 @@
    "used_in": {
     "doc-the-dat-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -2434,6 +2485,18 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "lo-dat-san-xong-bo-via-cho-lap-nam-ban.webp": {
+   "kb": 279,
+   "dims": [
+    1600,
+    900
+   ],
+   "used_in": {
+    "dinh-gia-dat-nam-ban.html": [
+     "display"
     ]
    }
   },
@@ -3938,6 +4001,15 @@
     ]
    }
   },
+  "ranh-gioi-xa-nam-ban-lam-ha-gis.webp": {
+   "kb": 164,
+   "dims": [
+    1600,
+    1054
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
   "rau-hoa-cay-do-la-nam-ban.jpg": {
    "kb": 196,
    "dims": [
@@ -4426,6 +4498,15 @@
     ]
    }
   },
+  "tra-cuu-quy-hoach-tren-man-hinh.webp": {
+   "kb": 291,
+   "dims": [
+    1600,
+    900
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
   "tram-dung-chan-deo-dai-ninh.webp": {
    "kb": 138,
    "dims": [
@@ -4483,6 +4564,9 @@
    "used_in": {
     "tram-sac-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
