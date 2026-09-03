@@ -87,3 +87,48 @@ không mâu thuẫn, nhưng site đang thiếu vai UBND.
 - **17 tên thôn** trên `/thon-nam-ban` khớp từng chữ với danh sách trưởng thôn của
   UBND xã, kể cả "Thôn Cill Cus". Không phải sửa gì.
 - Mốc **30/6/2026** phê duyệt quy hoạch chung: khớp với dòng thời gian trong công văn 747.
+
+
+---
+
+## 5. QĐ 1528/QĐ-UBND — ĐÃ KÝ, CÓ DẤU (đợt 4/9/2026)
+
+- **Nguồn:** UBND xã Nam Ban Lâm Hà, số 1528/QĐ-UBND ngày 15/5/2026
+- **Người ký:** KT. Chủ tịch — Phó Chủ tịch Đinh Văn Bình (có dấu đỏ)
+- **Đăng tại:** trang thông tin điện tử xã, nambanlamha.lamdong.gov.vn
+- **Trạng thái:** đã ký — dùng được
+
+Nội dung: điều chỉnh Quyết định thu hồi đất số 6635/QĐ-UBND ngày 22/12/2023 của
+UBND huyện Lâm Hà, phục vụ dự án **Hồ chứa nước Đông Thanh, hạng mục tuyến kênh và
+đường thi công kết hợp đường quản lý**. Diện tích thu hồi điều chỉnh từ 250,4 m²
+lên 268,5 m² đất SXNN (HNK). Căn cứ văn bản 505/TTPTQĐ-BT,GPMB ngày 01/4/2026 của
+Trung tâm phát triển Quỹ đất tỉnh; Tờ trình 415/TTr-KT ngày 07/5/2026 của Phòng Kinh tế xã.
+Có dẫn hai văn bản tỉnh chấp thuận ranh giới thu hồi: 9089/UBND-ĐC (13/12/2021) và
+9042/UBND-ĐC (25/11/2022).
+
+**Ý nghĩa:** `/ho-dong-thanh-nam-ban` đang viết "còn hạng mục kênh chưa có mặt bằng
+để làm". Văn bản này là bằng chứng có dấu cho đúng câu đó, và cho biết tới **giữa
+tháng 5/2026 thủ tục đất phần kênh vẫn đang chạy** — hồ chưa bị xếp lại.
+
+**Đã dùng:** `/ho-dong-thanh-nam-ban`, mục "Giờ tới đâu rồi?" — chỉ nêu sự việc và mốc,
+**không nêu tên hộ dân, địa chỉ hay số thửa**.
+
+⛔ Hai ảnh chụp văn bản này **KHÔNG để trong `/images/`** vì có họ tên, địa chỉ thường
+trú và số thửa của một cá nhân. Thư mục đó công khai và bị crawl.
+
+---
+
+## 6. Ảnh đợt 4/9/2026 — quyết định từng tấm
+
+| Ảnh | Nội dung | Xử lý |
+|---|---|---|
+| IMG_4281 | Toàn cảnh Nam Ban: tượng Quan Âm + thác Voi + thị trấn | **Đã gắn** `/nam-ban-la-gi` |
+| IMG_4288/4289 | QĐ 1528 thu hồi đất tuyến kênh hồ Đông Thanh | Dùng **dữ kiện**, không đăng ảnh |
+| IMG_4285 | Bản đồ quy hoạch màu, chụp màn hình | Tư liệu — không chú giải, không tên địa danh, màu chọi palette |
+| IMG_4284 | Ảnh chụp bài Facebook trang tin xã + sơ đồ QH-01 | Tư liệu |
+| IMG_4282, IMG_4283 | Bảng concept "The Pines Courtyard Villa", "Pines Chill Retreat" | **Không đưa vào `/images/`** — sản phẩm villa thương mại, lệch làn publication |
+| IMG_4280, IMG_4279 | Trùng bản đã xử lý đợt trước | Bỏ |
+
+Nguồn công khai đáng nhớ, thấy trong IMG_4284:
+`nambanlamha.lamdong.gov.vn` — trang tin xã, có mục công khai hồ sơ và lấy ý kiến
+cộng đồng dân cư về đồ án quy hoạch chung xã.

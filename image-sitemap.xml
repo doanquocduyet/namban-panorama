@@ -292,7 +292,8 @@
   <url>
     <loc>https://nambanpanorama.com/nam-ban-la-gi</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-la-gi.jpg</image:loc></image:image>
-  </url>
+  
+    <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-toan-canh-tuong-quan-am-thac-voi.webp</image:loc><image:title>Toàn cảnh Nam Ban: tượng Quan Âm chùa Linh Ẩn, thác Voi và thị trấn</image:title></image:image></url>
   <url>
     <loc>https://nambanpanorama.com/cho-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/cho-nam-ban.jpg</image:loc></image:image>

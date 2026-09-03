@@ -8,11 +8,12 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 320,
- "unused_count": 41,
+ "total_images": 323,
+ "unused_count": 43,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
   "ban-do-cao-do-thua-dat-nam-ban.webp",
+  "ban-do-quy-hoach-nam-ban-mau-tren-man-hinh.webp",
   "ban-do-quy-hoach-xa-nam-ban-gis.webp",
   "ban-do-thua-dat-nam-ban-gis.webp",
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -22,6 +23,7 @@
   "cay-xang-petrolimex-nam-ban.webp",
   "com-ga-68-khai-truong-nam-ban.webp",
   "cong-jong-minh-farm-me-linh.webp",
+  "cong-khai-lay-y-kien-quy-hoach-chung-xa.webp",
   "dien-linh-tuyen-nam-ban.webp",
   "duong-dat-song-doi-nam-ban.webp",
   "duong-deo-mua-suong-mo.webp",
@@ -162,6 +164,15 @@
      "ref"
     ]
    }
+  },
+  "ban-do-quy-hoach-nam-ban-mau-tren-man-hinh.webp": {
+   "kb": 229,
+   "dims": [
+    1500,
+    843
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "ban-do-quy-hoach-xa-nam-ban-gis.webp": {
    "kb": 267,
@@ -932,6 +943,15 @@
    "dims": [
     1280,
     960
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
+  "cong-khai-lay-y-kien-quy-hoach-chung-xa.webp": {
+   "kb": 111,
+   "dims": [
+    693,
+    1500
    ],
    "used_in": {},
    "status": "unused"
@@ -2497,6 +2517,9 @@
    "used_in": {
     "dinh-gia-dat-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -3116,6 +3139,21 @@
     "en/land-prices-nam-ban.html": [
      "og",
      "twitter"
+    ]
+   }
+  },
+  "nam-ban-toan-canh-tuong-quan-am-thac-voi.webp": {
+   "kb": 247,
+   "dims": [
+    1600,
+    900
+   ],
+   "used_in": {
+    "nam-ban-la-gi.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
