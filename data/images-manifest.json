@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 297,
+ "total_images": 298,
  "unused_count": 25,
  "unused": [
   "ban-do-tuyen-me-linh-langbiang.webp",
@@ -2574,6 +2574,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "mua-nha-xay-san-nam-ban.jpg": {
+   "kb": 142,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "mua-nha-xay-san-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
