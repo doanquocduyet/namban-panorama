@@ -239,7 +239,8 @@
   <url>
     <loc>https://nambanpanorama.com/doc-the-dat-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/do-dat-giu-ranh.webp</image:loc></image:image>
-  </url>
+  
+    <image:image><image:loc>https://nambanpanorama.com/images/duong-dat-do-cat-suon-doi-nam-ban.webp</image:loc><image:title>Đường đất đỏ mới mở cắt ngang sườn đồi ở Nam Ban</image:title></image:image></url>
   <url>
     <loc>https://nambanpanorama.com/khu-nao-o-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-thung-lung.jpg</image:loc></image:image>
@@ -285,7 +286,8 @@
     <image:image><image:loc>https://nambanpanorama.com/images/tram-sac-nam-ban.jpg</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/tram-sac-vinfast-quan-an-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/khu-xay-duong-moi-nam-ban.webp</image:loc></image:image>
-  </url>
+  
+    <image:image><image:loc>https://nambanpanorama.com/images/tram-sac-vinfast-nam-ban-chieu-mua.webp</image:loc><image:title>Trạm sạc VinFast nhiều trụ ở Nam Ban lúc chiều mưa</image:title></image:image></url>
   <url>
     <loc>https://nambanpanorama.com/nam-ban-la-gi</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-la-gi.jpg</image:loc></image:image>
@@ -382,7 +384,8 @@
     <loc>https://nambanpanorama.com/dat-nam-ban-tho-cu-san</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/dat-nam-ban-tho-cu-san.jpg</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/lo-dat-trong-hang-rao-nam-ban.webp</image:loc></image:image>
-  </url>
+  
+    <image:image><image:loc>https://nambanpanorama.com/images/duong-be-tong-moi-coc-moc-nam-ban.webp</image:loc><image:title>Đường bê tông mới và cọc mốc ranh giữa các lô đã san ở Nam Ban</image:title></image:image></url>
   <url>
     <loc>https://nambanpanorama.com/lo-dat-nam-ban-binh-thuong</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/lo-dat-nam-ban-binh-thuong.jpg</image:loc></image:image>
@@ -391,5 +394,9 @@
     <loc>https://nambanpanorama.com/nam-ban-thuoc-xa-nao</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/ban-do-hanh-chinh-lam-dong-2025.webp</image:loc><image:title>Bản đồ hành chính tỉnh Lâm Đồng sau sắp xếp — 124 đơn vị cấp xã</image:title></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/cho-thang-long-nam-ban.webp</image:loc><image:title>Phố chợ Thăng Long ở trung tâm Nam Ban</image:title></image:image>
+  </url>
+<url>
+    <loc>https://nambanpanorama.com/duong-di-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/bang-gia-ve-xe-da-lat-dam-rong.webp</image:loc><image:title>Bảng giá vé xe khách tuyến Đà Lạt – Đam Rông, áp dụng từ 1/4/2026</image:title></image:image>
   </url>
 </urlset>
