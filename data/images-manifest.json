@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 330,
+ "total_images": 331,
  "unused_count": 45,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -2778,6 +2778,20 @@
    "used_in": {
     "mua-dat-duong-gia-nam-ban.html": [
      "og",
+     "twitter"
+    ]
+   }
+  },
+  "mua-dat-nam-ban-hop-dong-uy-quyen.jpg": {
+   "kb": 118,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "mua-dat-nam-ban-hop-dong-uy-quyen.html": [
+     "og",
+     "schema",
      "twitter"
     ]
    }
