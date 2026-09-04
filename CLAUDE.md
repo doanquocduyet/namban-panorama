@@ -463,6 +463,27 @@ sử mà cấm gọi tên cũ là sai. **Chỉ sửa** khi câu đang mô tả h
 / `data/*.json` dùng **số chuẩn** (`117 km²`, `khoảng 33.000 người`); thân bài được phép dùng
 lối nói trên. Hai chỗ không mâu thuẫn vì cùng một con số.
 
+### 7.7 SỐ TRÒN vs SỐ LẺ — luật chung (Chú chốt 4/9/2026)
+
+**Số làm tròn dùng trong văn kể. Số lẻ chỉ xuất hiện KÈM NGUỒN, trong bài tra cứu và trong
+schema. Không đồng nhất hai loại.**
+
+Rút ra từ hai ca thật cùng ngày:
+- `117,53 km²` **giữ** ở `/ban-do-quy-hoach-nam-ban` vì trích thẳng văn bản quy hoạch, có nguồn
+  kèm, và đó là bài tồn tại để truyền độ chính xác. Bài kể chuyện ghi `khoảng 117 km²`.
+- `khoảng 33.035 người` **giữ** ở `/quy-hoach-chung-nam-ban` và các bản sao dữ liệu, vì nó luôn
+  đứng cùng câu với `11.753,83 ha` — cặp số trích từ một hồ sơ. Làm tròn một nửa cặp là tự
+  mâu thuẫn ngay trong câu.
+
+**DÂN SỐ — số chuẩn cho văn kể là `khoảng 33.000 người`.** Trước 4/9/2026 site có **bảy cách
+viết, bốn con số** (33.035 · 33.000 · 32.770 · 30.000), ai trích rời một câu là ra số khác nhau.
+Đã quét dọn một lượt. **Số lịch sử KHÔNG đụng**: `4.100 nhân khẩu` và `2.345 ha` (xã Nam Hà lập
+2002), `~11.000 nhân khẩu` và `2.089 ha` (thị trấn Nam Ban còn lại sau 2002) — đó là số của một
+thời điểm khác, không phải cách làm tròn khác.
+
+Khi thấy hai số lẻ khác nhau cho **cùng một đại lượng** (ví dụ 32.770 và 33.035 cùng là dân số
+xã), đó là mâu thuẫn thật — gom về số tròn, đừng giữ cả hai.
+
 ---
 
 **Ghi nhớ chung cho §7:** cả 6 điểm trên đều là ca *"checker báo lỗi nhưng nội dung đang đúng"*.
