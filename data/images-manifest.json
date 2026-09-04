@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 326,
+ "total_images": 327,
  "unused_count": 45,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -4861,6 +4861,23 @@
    ],
    "used_in": {},
    "status": "unused"
+  },
+  "xa-nam-ban-lam-ha.jpg": {
+   "kb": 134,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "xa-nam-ban-lam-ha.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
   },
   "xa-nam-ha-lam-ha.jpg": {
    "kb": 136,
