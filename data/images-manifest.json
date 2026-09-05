@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 336,
+ "total_images": 337,
  "unused_count": 45,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -4571,6 +4571,23 @@
    ],
    "used_in": {
     "thuong-mai-dien-tu-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "thuy-dien-da-chomo-phi-to.jpg": {
+   "kb": 175,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "thuy-dien-da-chomo-phi-to.html": [
      "og",
      "schema",
      "twitter"
