@@ -223,9 +223,16 @@ a,button{touch-action:manipulation;}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
   nav,.nav{background:rgba(241,236,226,1)!important;}
 }
+
+.crumb{display:flex;align-items:center;gap:8px;padding:16px 0 2px;font-size:12px;color:var(--stone-text,#726a5c);letter-spacing:.3px;flex-wrap:wrap;}
+.crumb a{color:var(--muted,#6e6759);text-decoration:none;transition:color .2s;}
+.crumb a:hover{color:var(--clay-text,#9a5b37);}
+.crumb .sep{color:var(--stone-text,#726a5c);}
+.crumb .cur{color:var(--ink,#1a1815);}
+@media(max-width:900px){.crumb{display:none;}}
 </style>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://nambanpanorama.com/"}, {"@type": "ListItem", "position": 2, "name": "Đầu tư", "item": "https://nambanpanorama.com/dau-tu"}, {"@type": "ListItem", "position": 3, "name": "Một hecta vườn bơ lời bao nhiêu", "item": "https://nambanpanorama.com/vuon-bo-loi-bao-nhieu"}]}
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://nambanpanorama.com/"}, {"@type": "ListItem", "position": 2, "name": "Đầu tư", "item": "https://nambanpanorama.com/dau-tu"}, {"@type": "ListItem", "position": 3, "name": "Một sào bơ cho bao nhiêu tiền?", "item": "https://nambanpanorama.com/vuon-bo-loi-bao-nhieu"}]}
 </script>
 <script type="application/ld+json">
 {
@@ -282,6 +289,8 @@ a,button{touch-action:manipulation;}
     <button class="hamburger" aria-label="Mở menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="/">Trang chủ</a><span class="sep">›</span><a href="/dau-tu">Đầu tư</a><span class="sep">›</span><span class="cur">Một sào bơ cho bao nhiêu tiền?</span></nav></div>
 
 <header class="hero">
   <div class="wrap fu">
