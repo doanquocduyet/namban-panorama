@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 332,
+ "total_images": 333,
  "unused_count": 45,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -2618,6 +2618,23 @@
    "used_in": {
     "nam-ban-co-sap-nhap-da-lat.html": [
      "display"
+    ]
+   }
+  },
+  "loi-di-chung-dat-nam-ban.jpg": {
+   "kb": 97,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "loi-di-chung-dat-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
