@@ -201,3 +201,10 @@ footer .meta{font-size:11px;letter-spacing:.8px;opacity:.34;}
 .time-block p{font-size:var(--fs-body);font-weight:400;margin-bottom:var(--s3);color:var(--ink);}
 
 .time-block h2{margin-top:8px;}
+
+/* — Khối trả lời nhanh (AEO answer block) —
+   18 trang có khối này mà thiếu rule, nên nó tụt xuống thành đoạn văn thường,
+   dính liền đoạn kế. Để ở đây thay vì dán vào từng file: trang nào đã có rule
+   inline thì inline vẫn thắng (đứng sau <link>), giá trị y hệt nên không đổi gì. */
+.quick-answer{border-left:3px solid var(--clay-soft);background:rgba(157,93,56,.05);padding:14px 18px;margin:18px 0 26px;border-radius:0 4px 4px 0;font-size:16px;line-height:1.72;color:#2b2822;}
+.quick-answer strong{color:var(--forest);}
