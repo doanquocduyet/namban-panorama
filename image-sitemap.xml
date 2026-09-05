@@ -441,4 +441,8 @@
     <loc>https://nambanpanorama.com/ho-tu-liem-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/ho-tu-liem-nam-ban.jpg</image:loc><image:title>Toàn cảnh vùng Nam Ban, Lâm Hà</image:title></image:image>
   </url>
+<url>
+    <loc>https://nambanpanorama.com/ho-thanh-tri-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/ho-thanh-tri-nam-ban.jpg</image:loc><image:title>Hồ Thanh Trì ở khu Thanh Trì, Đông Thanh cũ, Nam Ban</image:title></image:image>
+  </url>
 </urlset>
