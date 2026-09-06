@@ -393,6 +393,10 @@
     <image:image><image:loc>https://nambanpanorama.com/images/xay-nha-nho-nam-ban-bao-nhieu-tien.jpg</image:loc><image:title>Một công trình nhà vườn đang xây ở Mê Linh, Nam Ban</image:title></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/view-panorama-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/view-panorama-nam-ban.jpg</image:loc><image:title>Lô đất nhìn ra thung lũng ở Mê Linh, Nam Ban</image:title></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/ho-o-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/ho-o-nam-ban.jpg</image:loc><image:title>Hồ Bãi Công ở Nam Ban nhìn từ trên cao</image:title></image:image>
   </url>
