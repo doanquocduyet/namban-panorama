@@ -419,8 +419,10 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
 
 19. **KHÔNG SUY CHỦ ĐỀ ẢNH TỪ TÊN FILE** (khóa 6/9/2026). Ảnh og đặt theo quy ước `<slug>.jpg`,
     nên **tên file trùng slug KHÔNG chứng minh ảnh chụp ở đó**. Ca thật: `ho-tu-liem-nam-ban.jpg`
-    là toàn cảnh trung tâm kèm thác Voi và tượng Quan Âm, không phải hồ Từ Liêm;
-    `thuy-dien-da-chomo-phi-to.jpg` là đường bê tông qua rẫy, không phải nhà máy.
+    từng là toàn cảnh trung tâm kèm thác Voi và tượng Quan Âm, không phải hồ Từ Liêm — **đã vá
+    6/9/2026**, giờ cắt từ ảnh thật của Chú (`ho-tu-liem-nha-mai-do-nam-ban.webp`, nhận diện bằng
+    căn nhà mái đỏ sát mép nước); `thuy-dien-da-chomo-phi-to.jpg` là đường bê tông qua rẫy, không
+    phải nhà máy — **chưa vá**.
     **Luật:** trước khi gắn, **mở ảnh ra nhìn**. Không xác định được chụp ở đâu thì **để trống**,
     không gắn tạm rồi chú thích chung chung. Caption chỉ được nhận đúng thứ nhìn thấy trong ảnh.
 

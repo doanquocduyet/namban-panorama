@@ -8,8 +8,8 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 362,
- "unused_count": 55,
+ "total_images": 368,
+ "unused_count": 57,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
   "ban-do-cao-do-thua-dat-nam-ban.webp",
@@ -17,6 +17,7 @@
   "ban-do-quy-hoach-xa-nam-ban-gis.webp",
   "ban-do-thua-dat-nam-ban-gis.webp",
   "ban-do-tuyen-me-linh-langbiang.webp",
+  "bien-hieu-tram-sac-gia-lam-nam-ban.webp",
   "bo-booth-vao-vu-vua-nam-ban.webp",
   "bon-hoa-ven-hang-rao-nam-ban.webp",
   "bui-hoa-tim-ven-duong-gia-lam.webp",
@@ -35,6 +36,7 @@
   "ga-tha-vuon-dat-do-nam-ban.webp",
   "gia-lam-biet-thu-o-to.webp",
   "hat-bo-tach-vo-nam-ban.webp",
+  "hoa-tam-giac-mach-doi-nam-ban-02.webp",
   "hoa-vien-tiec-cuoi-ba-dinh-nam-ban.webp",
   "hoa-vuon-nam-ban-04.webp",
   "hoa-vuon-nam-ban-05.webp",
@@ -278,6 +280,15 @@
      "ref"
     ]
    }
+  },
+  "bien-hieu-tram-sac-gia-lam-nam-ban.webp": {
+   "kb": 275,
+   "dims": [
+    1400,
+    1301
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "bo-booth-vao-vu-vua-nam-ban.webp": {
    "kb": 228,
@@ -2247,6 +2258,20 @@
     ]
    }
   },
+  "ho-me-linh-nam-ban-cam-ly-thuong.jpg": {
+   "kb": 131,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "ho-me-linh-nam-ban-cam-ly-thuong.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
   "ho-o-nam-ban.jpg": {
    "kb": 157,
    "dims": [
@@ -2318,7 +2343,7 @@
    }
   },
   "ho-tu-liem-nam-ban.jpg": {
-   "kb": 233,
+   "kb": 133,
    "dims": [
     1200,
     630
@@ -2331,6 +2356,18 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "ho-tu-liem-nha-mai-do-nam-ban.webp": {
+   "kb": 182,
+   "dims": [
+    1600,
+    912
+   ],
+   "used_in": {
+    "ho-tu-liem-nam-ban.html": [
+     "display"
     ]
    }
   },
@@ -2388,6 +2425,39 @@
      "ref"
     ]
    }
+  },
+  "hoa-sao-nhai-doi-nhin-thung-lung-nam-ban.webp": {
+   "kb": 283,
+   "dims": [
+    1360,
+    1021
+   ],
+   "used_in": {
+    "view-panorama-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
+  "hoa-sao-nhai-ven-duong-dat-do-nam-ban.webp": {
+   "kb": 285,
+   "dims": [
+    1500,
+    797
+   ],
+   "used_in": {
+    "hoa-o-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
+  "hoa-tam-giac-mach-doi-nam-ban-02.webp": {
+   "kb": 277,
+   "dims": [
+    1440,
+    810
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "hoa-tam-giac-mach-nam-ban.webp": {
    "kb": 239,
