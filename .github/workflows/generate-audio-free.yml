@@ -49,5 +49,13 @@ jobs:
           git add audio/*.mp3 *.html fr/*.html zh/*.html ko/*.html ja/*.html 2>/dev/null || true
           if git diff --cached --quiet; then echo "Không có audio mới."; else
             git commit -m "Audio giọng Việt (Microsoft Neural): cập nhật MP3 + meta"
-            git push
+            # main có thể đã tiến lên trong lúc sinh audio (audio-auto, hoặc người push).
+            # Rebase rồi thử lại, đừng để MP3 sinh xong bị vứt vì push bị reject.
+            for i in 1 2 3 4 5; do
+              if git push; then echo "Đã push."; exit 0; fi
+              echo "Push bị từ chối, rebase rồi thử lại (lần $i)..."
+              git pull --rebase origin main || exit 1
+              sleep 5
+            done
+            echo "::error::Push thất bại sau 5 lần thử."; exit 1
           fi

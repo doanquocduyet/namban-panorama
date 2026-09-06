@@ -451,6 +451,13 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     trước mà MP3 chưa theo kịp. **Ngược lại, đừng tin `git merge-base --is-ancestor` giữa commit
     nội dung và commit MP3** — nó báo đỏ cả bài chỉ thêm `<figure>` (báo động giả kiểu Luật 17).
     Ancestry chỉ để khoanh vùng; quyết định phải bằng so `narration()`.
+    **21c — ĐÃ VÁ GỐC 6/9/2026: hai workflow audio giờ tự rebase rồi thử lại 5 lần.**
+    Nguyên nhân thật của cả ba lần fail không phải "dispatch sai lúc" mà là `git push` TRẦN
+    trong `audio-auto.yml` và `generate-audio-free.yml` — `main` nhích một commit bất kỳ (kể cả
+    commit không liên quan nội dung, như sửa chính CLAUDE.md) là run bị `! [rejected] (fetch
+    first)`, MP3 sinh xong rồi vứt. Đã thay bằng vòng `git push || git pull --rebase origin main`
+    lặp 5 lần ở cả hai file. Từ nay **không cần canh me `main` đứng yên nữa**; Luật 21 và 21b
+    vẫn giữ để hiểu vì sao, nhưng cách chữa là ở workflow chứ không phải ở người bấm nút.
 
 22. **TỰA HỨA GÌ THÌ THÂN BÀI PHẢI CÓ** (khóa 6/9/2026, ca thật `/duong-ha-bac-nam-ban`). Đổi tựa
     thành "Nam Ban – Mê Linh" trong khi **"Mê Linh" xuất hiện 0 lần** trong thân bài là tựa hứa
