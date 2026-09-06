@@ -389,6 +389,10 @@
   
     <image:image><image:loc>https://nambanpanorama.com/images/duong-be-tong-moi-coc-moc-nam-ban.webp</image:loc><image:title>Đường bê tông mới và cọc mốc ranh giữa các lô đã san ở Nam Ban</image:title></image:image></url>
   <url>
+    <loc>https://nambanpanorama.com/ho-o-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/ho-o-nam-ban.jpg</image:loc><image:title>Hồ Bãi Công ở Nam Ban nhìn từ trên cao</image:title></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/lo-dat-nam-ban-binh-thuong</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/lo-dat-nam-ban-binh-thuong.jpg</image:loc></image:image>
   </url>
