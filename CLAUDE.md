@@ -325,9 +325,9 @@ KHÔNG bịa điểm tin cậy dạng số (vd "98/100") vì đó là số tự 
 
 ---
 
-## 6. LUẬT GREP & QA — 21 điều (khóa 8/2026, bổ sung 9/2026 — rút từ lỗi thật)
+## 6. LUẬT GREP & QA — 23 điều (khóa 8/2026, bổ sung 9/2026 — rút từ lỗi thật)
 
-Điều 1–17 là 17 lần **audit tự động báo SAI** trong đợt rà 8/2026; điều 18–21 bổ sung 9/2026.
+Điều 1–17 là 17 lần **audit tự động báo SAI** trong đợt rà 8/2026; điều 18–23 bổ sung 9/2026.
 Mỗi luật = một lỗi đã thật sự
 xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
 
@@ -439,6 +439,27 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     Hệ quả của Luật 16, không thay thế nó.
     **Ảnh không đổi lời đọc** — bộ trích bỏ qua `<figure>`, nên chỉ thêm/đổi ảnh thì **không cần**
     sinh lại MP3; kiểm bằng chính `scripts/gen_audio_edge.py` thay vì đoán.
+
+22. **TỰA HỨA GÌ THÌ THÂN BÀI PHẢI CÓ** (khóa 6/9/2026, ca thật `/duong-ha-bac-nam-ban`). Đổi tựa
+    thành "Nam Ban – Mê Linh" trong khi **"Mê Linh" xuất hiện 0 lần** trong thân bài là tựa hứa
+    suông — hại cả người đọc lẫn xếp hạng. **Luật:** tựa và H1 chỉ được chứa địa danh, cụm hoặc
+    khái niệm mà thân bài có nói tới. Đổi tựa thì kiểm ngay: cụm mới vừa thêm xuất hiện mấy lần
+    trong thân bài — **bằng 0 thì phải bổ sung nội dung**, không để tựa đứng một mình. Bổ sung
+    bằng **dữ kiện chứng minh được** (ca này: Buôn Chuối thuộc Mê Linh theo `/nen-xem-khu-nao-o-nam-ban`,
+    Chi Lăng thuộc trung tâm theo `/dat-gia-lam-nam-ban` — dữ liệu sẵn trong repo, không lấy nguồn ngoài).
+    **Kèm:** `<title>`, H1 và `og:title` phải là **một chuỗi thống nhất**, không để ba kiểu như bài
+    đó từng có. Và khi bài khó tìm, nhớ lý do lớn nhất thường không phải kỹ thuật: **tên riêng mới
+    chưa ai biết thì tự nó không kéo được ai** — phải gắn vào cụm người ta đã gõ.
+
+23. **DỮ KIỆN CỦA XÃ BÊN CẠNH KHÔNG ĐƯỢC GÁN CHO NAM BAN** (khóa 6/9/2026, ca thật đã sửa).
+    `/rau-hoa-cay-do-la-nam-ban` và `/dat-nam-ban-trong-cay-gi` ghi "một hợp tác xã rau hoa lập năm
+    2015" như của Nam Ban. Tra ra đó là **Hợp tác xã rau, hoa công nghệ cao Nam&nbsp;Hà** — lập 2015
+    tại **xã Nam Hà**, huyện Lâm Hà, do ông Phương và 10 nông dân; câu "có hộ trước kia trồng cà phê
+    chuyển sang làm hoa nhà kính" cũng chính là chuyện của hộ đó. Đã gỡ khỏi cả hai bài, `llms.txt`
+    và `llms-full.txt`. **Luật:** bài báo về "Lâm Hà" có thể trộn nhiều xã trong một bài — trước khi
+    lấy một mô hình, hợp tác xã, con số hay câu chuyện hộ dân, **phải xác định nó thuộc xã nào**.
+    Cùng họ với §5 (Nam Hà là xã riêng, cạnh Nam Ban chứ không thuộc). Nghi ngờ thì mô tả bằng
+    **quan sát tại chỗ** thay vì dẫn mô hình của ai.
 
 ---
 
