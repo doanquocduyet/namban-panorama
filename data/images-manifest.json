@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 350,
+ "total_images": 351,
  "unused_count": 48,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -802,6 +802,9 @@
    "used_in": {
     "cho-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -868,6 +871,9 @@
    "used_in": {
     "chua-linh-an-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -2009,6 +2015,9 @@
    "used_in": {
     "chuyen-len-nam-ban-song.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -2305,6 +2314,23 @@
      "display"
     ],
     "mot-ngay-lam-vuon-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "hoa-o-nam-ban.jpg": {
+   "kb": 277,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "hoa-o-nam-ban.html": [
      "og",
      "schema",
      "twitter"
@@ -3167,6 +3193,9 @@
    "used_in": {
     "nam-ban-sau-6h-toi.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -4185,6 +4214,9 @@
    "used_in": {
     "nam-ban-sau-6h-toi.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
