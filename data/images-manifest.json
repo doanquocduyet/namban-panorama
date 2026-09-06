@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 339,
+ "total_images": 340,
  "unused_count": 45,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -5091,6 +5091,23 @@
    ],
    "used_in": {
     "xa-nam-ha-lam-ha.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "xay-nha-nho-nam-ban-bao-nhieu-tien.jpg": {
+   "kb": 188,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "xay-nha-nho-nam-ban-bao-nhieu-tien.html": [
      "og",
      "schema",
      "twitter"
