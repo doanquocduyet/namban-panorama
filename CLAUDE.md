@@ -441,6 +441,16 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     Hệ quả của Luật 16, không thay thế nó.
     **Ảnh không đổi lời đọc** — bộ trích bỏ qua `<figure>`, nên chỉ thêm/đổi ảnh thì **không cần**
     sinh lại MP3; kiểm bằng chính `scripts/gen_audio_edge.py` thay vì đoán.
+    **21b — SO LỜI ĐỌC VỚI BẢN TẠI COMMIT SINH RA MP3, KHÔNG PHẢI VỚI MỘT MỐC GIỮA DÒNG**
+    (khóa 6/9/2026, vấp ngay trong phiên đặt Luật 21). Câu hỏi đúng luôn là: *lời đọc trong MP3
+    đang có còn khớp lời đọc hiện tại không?* Nên mốc so sánh **bắt buộc** là
+    `git log -1 --format=%H -- audio/<slug>.mp3`, rồi `git show <mp3-commit>:<slug>.html` và đưa
+    cả hai bản qua `narration()`. Lấy bất kỳ mốc nào khác — kể cả "trước loạt sửa lần này" — sẽ
+    bỏ sót mọi lần sửa nội dung nằm giữa commit MP3 và mốc đó. Ca thật: so với mốc giữa dòng ra
+    "3 bài cần sinh lại", so đúng mốc MP3 ra **6 bài**; ba bài lọt là ba bài đã sửa chữ từ đợt
+    trước mà MP3 chưa theo kịp. **Ngược lại, đừng tin `git merge-base --is-ancestor` giữa commit
+    nội dung và commit MP3** — nó báo đỏ cả bài chỉ thêm `<figure>` (báo động giả kiểu Luật 17).
+    Ancestry chỉ để khoanh vùng; quyết định phải bằng so `narration()`.
 
 22. **TỰA HỨA GÌ THÌ THÂN BÀI PHẢI CÓ** (khóa 6/9/2026, ca thật `/duong-ha-bac-nam-ban`). Đổi tựa
     thành "Nam Ban – Mê Linh" trong khi **"Mê Linh" xuất hiện 0 lần** trong thân bài là tựa hứa
