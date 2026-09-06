@@ -219,6 +219,8 @@
   <url>
     <loc>https://nambanpanorama.com/chuyen-len-nam-ban-song</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/duong-doi-view-thung-lung.jpg</image:loc></image:image>
+  
+    <image:image><image:loc>https://nambanpanorama.com/images/hieu-thuoc-cua-hang-nam-ban-toi.webp</image:loc><image:title>Khu trung tâm Nam Ban buổi tối, hàng quán còn sáng đèn</image:title></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/homestay-nam-ban-co-lai-khong</loc>
@@ -298,6 +300,8 @@
     <loc>https://nambanpanorama.com/cho-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/cho-nam-ban.jpg</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/cho-thang-long-nam-ban-2.webp</image:loc></image:image>
+  
+    <image:image><image:loc>https://nambanpanorama.com/images/cho-nam-ban-buoi-toi.webp</image:loc><image:title>Cổng chợ Nam Ban buổi tối</image:title></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/an-gi-o-nam-ban</loc>

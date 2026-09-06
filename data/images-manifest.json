@@ -8,8 +8,8 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 341,
- "unused_count": 44,
+ "total_images": 350,
+ "unused_count": 48,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
   "ban-do-cao-do-thua-dat-nam-ban.webp",
@@ -21,6 +21,9 @@
   "ca-phe-che-bien-rua-qua-nam-ban.webp",
   "ca-phe-qua-xanh-macro-nam-ban.webp",
   "cay-xang-petrolimex-nam-ban.webp",
+  "chua-linh-an-san-chua-dem.webp",
+  "chua-linh-an-tuong-quan-am-dem-doc.webp",
+  "chua-linh-an-tuong-quan-am-dem.webp",
   "com-ga-68-khai-truong-nam-ban.webp",
   "cong-jong-minh-farm-me-linh.webp",
   "cong-khai-lay-y-kien-quy-hoach-chung-xa.webp",
@@ -36,6 +39,7 @@
   "me-linh-vuon-doi-cao.webp",
   "nha-ong-mai-doc-san-trong.webp",
   "nha-tho-giao-xu-nam-ban.webp",
+  "pho-nam-ban-dem-hang-dong-cua.webp",
   "quan-ca-phe-trong-nam-ban.webp",
   "quan-com-sen-viet-nam-ban.webp",
   "quan-com-thanh-hai-nam-ban.webp",
@@ -789,6 +793,18 @@
     ]
    }
   },
+  "cho-nam-ban-buoi-toi.webp": {
+   "kb": 190,
+   "dims": [
+    1600,
+    900
+   ],
+   "used_in": {
+    "cho-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
   "cho-nam-ban.jpg": {
    "kb": 193,
    "dims": [
@@ -843,6 +859,18 @@
     ]
    }
   },
+  "chua-linh-an-chanh-dien-dem.webp": {
+   "kb": 250,
+   "dims": [
+    1600,
+    900
+   ],
+   "used_in": {
+    "chua-linh-an-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
   "chua-linh-an-duong.jpg": {
    "kb": 303,
    "dims": [
@@ -878,6 +906,15 @@
     ]
    }
   },
+  "chua-linh-an-san-chua-dem.webp": {
+   "kb": 281,
+   "dims": [
+    1600,
+    900
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
   "chua-linh-an-thac-voi-toan-canh.webp": {
    "kb": 208,
    "dims": [
@@ -889,6 +926,24 @@
      "display"
     ]
    }
+  },
+  "chua-linh-an-tuong-quan-am-dem-doc.webp": {
+   "kb": 252,
+   "dims": [
+    900,
+    1600
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
+  "chua-linh-an-tuong-quan-am-dem.webp": {
+   "kb": 222,
+   "dims": [
+    1600,
+    900
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "chuan-bi-truoc-khi-ban-dat-nam-ban.jpg": {
    "kb": 170,
@@ -1028,6 +1083,9 @@
     ],
     "xay-nha-o-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -1942,6 +2000,18 @@
     ]
    }
   },
+  "hieu-thuoc-cua-hang-nam-ban-toi.webp": {
+   "kb": 223,
+   "dims": [
+    1600,
+    900
+   ],
+   "used_in": {
+    "chuyen-len-nam-ban-song.html": [
+     "display"
+    ]
+   }
+  },
   "ho-bai-cong-cong-chi-lang.jpg": {
    "kb": 279,
    "dims": [
@@ -2148,6 +2218,9 @@
     ],
     "ho-thanh-tri-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -3082,6 +3155,18 @@
      "ref",
      "schema",
      "twitter"
+    ]
+   }
+  },
+  "nam-ban-dem-troi-sao.webp": {
+   "kb": 87,
+   "dims": [
+    1600,
+    900
+   ],
+   "used_in": {
+    "nam-ban-sau-6h-toi.html": [
+     "display"
     ]
    }
   },
@@ -4091,6 +4176,27 @@
     ]
    }
   },
+  "pho-nam-ban-buoi-toi.webp": {
+   "kb": 290,
+   "dims": [
+    1600,
+    900
+   ],
+   "used_in": {
+    "nam-ban-sau-6h-toi.html": [
+     "display"
+    ]
+   }
+  },
+  "pho-nam-ban-dem-hang-dong-cua.webp": {
+   "kb": 261,
+   "dims": [
+    1600,
+    900
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
   "quan-banh-canh-ca-loc-nam-ban.webp": {
    "kb": 249,
    "dims": [
@@ -5099,6 +5205,9 @@
    "used_in": {
     "mua-dat-nam-ban-co-nguoi-dang-canh-tac.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
