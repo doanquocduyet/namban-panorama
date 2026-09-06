@@ -9,7 +9,7 @@
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
  "total_images": 341,
- "unused_count": 45,
+ "unused_count": 44,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
   "ban-do-cao-do-thua-dat-nam-ban.webp",
@@ -53,7 +53,6 @@
   "tuong-duc-me-nha-tho-nam-ban.webp",
   "van-phong-dien-linh-nam-ban.webp",
   "vuon-rau-nha-vuon-nam-ban.webp",
-  "vuon-xen-canh-du-du-ca-phe-nam-ban.webp",
   "xay-nha-tren-doi-me-linh.webp",
   "xe-khach-nhin-ra-cua-nam-ban.webp"
  ],
@@ -941,6 +940,7 @@
    ],
    "used_in": {
     "coc-dat-nam-ban.html": [
+     "display",
      "og",
      "schema",
      "twitter"
@@ -1023,6 +1023,9 @@
     1108
    ],
    "used_in": {
+    "xay-nha-nho-nam-ban-bao-nhieu-tien.html": [
+     "display"
+    ],
     "xay-nha-o-nam-ban.html": [
      "display"
     ]
@@ -1589,6 +1592,9 @@
     "dat-nam-ban-tho-cu-san.html": [
      "display"
     ],
+    "loi-di-chung-dat-nam-ban.html": [
+     "display"
+    ],
     "image-sitemap.xml": [
      "ref"
     ]
@@ -2051,6 +2057,9 @@
     540
    ],
    "used_in": {
+    "ho-o-nam-ban.html": [
+     "display"
+    ],
     "ho-bai-cong-nam-ban.html": [
      "display"
     ],
@@ -2136,6 +2145,9 @@
    "used_in": {
     "quy-hoach-2050.html": [
      "display"
+    ],
+    "ho-thanh-tri-nam-ban.html": [
+     "display"
     ]
    }
   },
@@ -2164,6 +2176,7 @@
    ],
    "used_in": {
     "ho-tron-nam-ban.html": [
+     "display",
      "og",
      "schema",
      "twitter"
@@ -3194,6 +3207,9 @@
    ],
    "used_in": {
     "nam-ban-hay-don-duong.html": [
+     "display"
+    ],
+    "view-panorama-nam-ban.html": [
      "display"
     ],
     "image-sitemap.xml": [
@@ -5080,8 +5096,11 @@
     1200,
     1600
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "mua-dat-nam-ban-co-nguoi-dang-canh-tac.html": [
+     "display"
+    ]
+   }
   },
   "xa-nam-ban-lam-ha.jpg": {
    "kb": 134,

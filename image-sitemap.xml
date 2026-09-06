@@ -391,14 +391,20 @@
   <url>
     <loc>https://nambanpanorama.com/xay-nha-nho-nam-ban-bao-nhieu-tien</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/xay-nha-nho-nam-ban-bao-nhieu-tien.jpg</image:loc><image:title>Một công trình nhà vườn đang xây ở Mê Linh, Nam Ban</image:title></image:image>
+  
+    <image:image><image:loc>https://nambanpanorama.com/images/cong-trinh-dang-xay-me-linh.webp</image:loc><image:title>Công trình nhà ở đang lên khung ở Mê Linh, Nam Ban</image:title></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/view-panorama-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/view-panorama-nam-ban.jpg</image:loc><image:title>Lô đất nhìn ra thung lũng ở Mê Linh, Nam Ban</image:title></image:image>
+  
+    <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-thung-lung-pano.jpg</image:loc><image:title>Tầm nhìn nhiều lớp từ sườn đồi ở Nam Ban</image:title></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/ho-o-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/ho-o-nam-ban.jpg</image:loc><image:title>Hồ Bãi Công ở Nam Ban nhìn từ trên cao</image:title></image:image>
+  
+    <image:image><image:loc>https://nambanpanorama.com/images/ho-bai-cong-ven-ho.jpg</image:loc><image:title>Hồ Bãi Công và các lô đất ven hồ ở Nam Ban</image:title></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/lo-dat-nam-ban-binh-thuong</loc>
@@ -444,10 +450,14 @@
 <url>
     <loc>https://nambanpanorama.com/loi-di-chung-dat-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/loi-di-chung-dat-nam-ban.jpg</image:loc><image:title>Đường đất chạy dọc sườn đồi ở Nam Ban</image:title></image:image>
+  
+    <image:image><image:loc>https://nambanpanorama.com/images/duong-be-tong-moi-coc-moc-nam-ban.webp</image:loc><image:title>Đường bê tông mới và hàng cọc mốc ở Nam Ban</image:title></image:image>
   </url>
 <url>
     <loc>https://nambanpanorama.com/mua-dat-nam-ban-co-nguoi-dang-canh-tac</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/mua-dat-nam-ban-co-nguoi-dang-canh-tac.jpg</image:loc><image:title>Vườn cà phê trồng xen ở Nam Ban đang được canh tác</image:title></image:image>
+  
+    <image:image><image:loc>https://nambanpanorama.com/images/vuon-xen-canh-du-du-ca-phe-nam-ban.webp</image:loc><image:title>Đu đủ trồng xen trong vườn cà phê ở Nam Ban</image:title></image:image>
   </url>
 <url>
     <loc>https://nambanpanorama.com/ho-tu-liem-nam-ban</loc>
@@ -456,6 +466,8 @@
 <url>
     <loc>https://nambanpanorama.com/ho-thanh-tri-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/ho-thanh-tri-nam-ban.jpg</image:loc><image:title>Hồ Thanh Trì ở khu Thanh Trì, Đông Thanh cũ, Nam Ban</image:title></image:image>
+  
+    <image:image><image:loc>https://nambanpanorama.com/images/ho-thanh-tri-dong-thanh.webp</image:loc><image:title>Hồ thủy lợi ở khu Đông Thanh cũ, xã Nam Ban</image:title></image:image>
   </url>
 <url>
     <loc>https://nambanpanorama.com/thuy-dien-da-chomo-phi-to</loc>
