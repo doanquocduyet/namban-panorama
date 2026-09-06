@@ -325,9 +325,10 @@ KHÔNG bịa điểm tin cậy dạng số (vd "98/100") vì đó là số tự 
 
 ---
 
-## 6. LUẬT GREP & QA — 17 điều (khóa 8/2026, rút từ lỗi thật)
+## 6. LUẬT GREP & QA — 21 điều (khóa 8/2026, bổ sung 9/2026 — rút từ lỗi thật)
 
-Đây là 17 lần **audit tự động báo SAI** trong đợt rà 8/2026. Mỗi luật = một lỗi đã thật sự
+Điều 1–17 là 17 lần **audit tự động báo SAI** trong đợt rà 8/2026; điều 18–21 bổ sung 9/2026.
+Mỗi luật = một lỗi đã thật sự
 xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
 
 1. **Không tin audit khi nó bảo XÓA.** Mở file, đọc markup thật, rồi mới xóa.
@@ -405,6 +406,39 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     lệch một là có chỗ đứng độc lập. Cùng họ với Luật 4 (case-insensitive) và bài học "44 ca
     đỏ chỉ 1 ca thật": trước khi tin một con số grep, hỏi xem chuỗi cấm có thể là một phần
     của chuỗi đúng không.
+
+18. **KHÔNG TRỘN ÂM LỊCH VỚI DƯƠNG LỊCH TRONG MỘT CÂU** (khóa 6/9/2026, 24 ca thật, 8 file).
+    "Tháng Chạp" là tháng 12 **âm**, rơi vào khoảng tháng 1–2 dương. "Tháng Giêng" là tháng 1
+    **âm**, khoảng tháng 2 dương. Ghép chúng cạnh tên tháng dương ("tháng Mười Một tháng Chạp",
+    "từ tháng Mười tới tháng Giêng") là trộn hai hệ lịch trong một câu, và lệch hẳn bài trụ.
+    Đã sửa cả 24 ca về dương lịch, khớp `/mua-ca-phe-nam-ban` (thu tháng 10 → tháng 1 năm sau,
+    rộ tháng 11 và 12) và `/mua-bo-nam-ban` (Booth tháng 8 → tháng 12).
+    **Luật:** mùa vụ, thời tiết, tiến độ, giờ giấc → **luôn dương lịch**. Chỉ dùng tên tháng âm
+    khi câu đang thật sự nói chuyện âm lịch — Tết, rằm, cúng, giỗ. Quét định kỳ `tháng Chạp` và
+    `tháng Giêng`; ca nào đứng cạnh tên tháng dương là lỗi.
+
+19. **KHÔNG SUY CHỦ ĐỀ ẢNH TỪ TÊN FILE** (khóa 6/9/2026). Ảnh og đặt theo quy ước `<slug>.jpg`,
+    nên **tên file trùng slug KHÔNG chứng minh ảnh chụp ở đó**. Ca thật: `ho-tu-liem-nam-ban.jpg`
+    là toàn cảnh trung tâm kèm thác Voi và tượng Quan Âm, không phải hồ Từ Liêm;
+    `thuy-dien-da-chomo-phi-to.jpg` là đường bê tông qua rẫy, không phải nhà máy.
+    **Luật:** trước khi gắn, **mở ảnh ra nhìn**. Không xác định được chụp ở đâu thì **để trống**,
+    không gắn tạm rồi chú thích chung chung. Caption chỉ được nhận đúng thứ nhìn thấy trong ảnh.
+
+20. **ẢNH PUBLICATION KHÔNG ĐƯỢC MANG DẤU TIN RAO** (khóa 6/9/2026). Không dùng ảnh có **vạch
+    khoanh ranh**, mũi tên, chữ chèn, khung highlight, hay bất kỳ chú thích đồ họa nào của tin
+    rao. Ca thật đã loại: `nam-ban-thung-lung-ao-ho.webp` — rất hợp đoạn "nhiều mặt nước không
+    có tên" nhưng có vạch đỏ khoanh một lô bán, đặt vào bài là lệch lane.
+
+21. **AUDIO: CHỜ `audio-auto` ĐÁP XUỐNG RỒI MỚI DISPATCH** (khóa 6/9/2026, fail 2 lần liên tiếp
+    cùng một nguyên nhân). `audio-auto.yml` tự chạy khi push nội dung; nếu dispatch
+    `generate-audio-free.yml` ngay sau push thì hai workflow đua nhau, `audio-auto` commit
+    trước, `git push` của run dispatch bị **reject** — MP3 sinh ra rồi vứt, run báo failure mà
+    không phải lỗi sinh audio. **Trình tự đúng:** commit → push → **chờ commit của `audio-auto`
+    đáp xuống `main`** → xác nhận `git ls-remote origin main` đã đứng yên → mới dispatch
+    `generate-audio-free` với `overwrite=true`. Làm đúng thứ tự thì xong ngay lần đầu.
+    Hệ quả của Luật 16, không thay thế nó.
+    **Ảnh không đổi lời đọc** — bộ trích bỏ qua `<figure>`, nên chỉ thêm/đổi ảnh thì **không cần**
+    sinh lại MP3; kiểm bằng chính `scripts/gen_audio_edge.py` thay vì đoán.
 
 ---
 
