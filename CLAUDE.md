@@ -300,6 +300,42 @@ Lợi thế của Panorama là **kho dữ liệu gốc đáng tin** (ảnh tự 
 là nguồn đầu tiên), không phải mẹo SEO. Mọi tối ưu phải phục vụ mục tiêu đó.
 Quy trình xuất bản đầy đủ + checklist: xem `docs/quy-trinh-xuat-ban.md`.
 
+### FAQ CHO TÊN RIÊNG — KILL LIST, ĐÃ CÂN NHẮC VÀ CỐ Ý BỎ (Chú chốt 7/9/2026)
+
+Có một lỗi hệ thống đáng bắt: **bài liệt kê tên riêng mà không có FAQ cho từng
+tên**. Bài kể tám cái hồ, hai chục tên thôn, rồi chỉ ba FAQ chung — người ta gõ
+TỪNG tên một, mình chỉ mở cửa cho câu tổng. Mất long-tail ở chỗ dễ thắng nhất,
+vì tên riêng địa phương gần như không ai cạnh tranh. Rà bằng
+`python3 tools/scan-faq-coverage.py`.
+
+**Nhưng ba nhóm dưới đây ĐÃ QUYẾT BỎ. Đợt rà sau gặp lại thì đừng quyết lại từ đầu.**
+
+1. **Tên đã có bài riêng → KHÔNG thêm FAQ ở bài khác.** Đây là chống
+   cannibalization đúng chỗ. Mỗi tên chỉ có MỘT nhà. Đã đóng: `hồ Bãi Công` ở
+   `/ho-tron-nam-ban` và `/dat-trung-tam-nam-ban` · `hồ Từ Liêm` ở
+   `/ho-bai-cong-nam-ban` · `hồ Đông Thanh` · `thác Voi` · `chùa Linh Ẩn` ·
+   `cầu Tổng Đội` và `cầu Tiền Lâm` ở mọi bài không phải `/cau-tong-doi-nam-ban`
+   (bài đó đã có 7 FAQ phủ cả hai tên, kể cả tên trên giấy tờ).
+   **Cách nhận ra nhà của một tên:** vai trò nội dung thắng số đếm — bài *về* cái
+   đó là nhà, không phải bài nhắc nó nhiều nhất. Ví dụ `chợ Thăng Long` được
+   `/ho-bai-cong-nam-ban` nhắc 5 lần, `/cho-nam-ban` nhắc 4 — nhà vẫn là
+   `/cho-nam-ban`, vì bài kia chỉ dùng chợ làm mốc chỉ đường (§7.4).
+
+2. **Mốc là cơ sở kinh doanh → KHÔNG FAQ, KHÔNG link, KHÔNG đứng tên giới thiệu.**
+   `Nacasoo Hill` · `Phương Minh Farm` · `HT86` · `Hualong` · `King Coffee` và mọi
+   tên cùng loại. Chỉ được nhắc tên làm mốc chỉ đường. Bộ quét cố ý không bắt
+   nhóm này (nó không có danh từ chỉ loại đứng trước) — **đừng đi đọc tay để bù**.
+
+3. **Mốc nằm ngoài vùng → KHÔNG neo FAQ vào bài Nam Ban.** Ca thật đã loại:
+   `Suối Vàng` (ở Đà Lạt), `đèo Bảo Lộc`, `đèo Gia Bắc`, `đèo Đa Mi`,
+   `đèo Ngoạn Mục`, `QL55`, `QL27` — mấy cái này xuất hiện ở `/duong-di-nam-ban`
+   và `/dat-gan-da-lat` như chặng đường, không phải thực thể của vùng. Neo vào là
+   kéo bài lệch vùng, sai §5 luật lọc 1.
+
+**Trước khi thêm FAQ cho một tên, hỏi ba câu:** tên này đã có bài riêng chưa · nó
+có phải cơ sở kinh doanh không · nó có nằm trong vùng không. Ba câu đó loại phần
+lớn ứng viên. Còn lại mới đáng viết.
+
 Đã có nền: `llms.txt`, `llms-full.txt`, `sitemap.xml`, `image-sitemap.xml`, `robots.txt`,
 `feed.xml`, IndexNow, và tầng dữ liệu mở `/data/*.json` (prices/infrastructure/places/
 timeline) + JSON-LD (Organization/Person/Place+GeoCoordinates/WebSite/WebPage/Dataset/
