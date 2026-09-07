@@ -8,8 +8,8 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 368,
- "unused_count": 57,
+ "total_images": 373,
+ "unused_count": 58,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
   "ban-do-cao-do-thua-dat-nam-ban.webp",
@@ -55,6 +55,7 @@
   "san-vuon-ban-dem-nam-ban.webp",
   "san-vuon-hoa-va-doi-nam-ban.webp",
   "san-vuon-nha-hoa-gia-lam-nam-ban.webp",
+  "tam-giac-mach-nhin-qua-cua-xe-nam-ban.webp",
   "tam-pin-mat-troi-nam-ban.webp",
   "tra-cuu-quy-hoach-tren-man-hinh.webp",
   "tram-sac-nam-ban-toan-canh.webp",
@@ -1670,6 +1671,18 @@
     ]
    }
   },
+  "duong-be-tong-doc-mua-mua-nam-ban.webp": {
+   "kb": 90,
+   "dims": [
+    677,
+    1200
+   ],
+   "used_in": {
+    "nam-ban-mua-nao.html": [
+     "display"
+    ]
+   }
+  },
   "duong-be-tong-doi-nam-ban.webp": {
    "kb": 176,
    "dims": [
@@ -2006,6 +2019,18 @@
    ],
    "used_in": {
     "mot-ngay-o-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
+  "hang-banh-cuon-nha-cu-nam-ban-toi.webp": {
+   "kb": 216,
+   "dims": [
+    1197,
+    1300
+   ],
+   "used_in": {
+    "chuyen-len-nam-ban-song.html": [
      "display"
     ]
    }
@@ -4435,6 +4460,18 @@
    "used_in": {},
    "status": "unused"
   },
+  "quan-oc-nam-ban-buoi-toi.webp": {
+   "kb": 154,
+   "dims": [
+    1500,
+    844
+   ],
+   "used_in": {
+    "an-gi-o-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
   "quan-sen-viet-xe-o-to-nam-ban.webp": {
    "kb": 195,
    "dims": [
@@ -4766,6 +4803,15 @@
      "twitter"
     ]
    }
+  },
+  "tam-giac-mach-nhin-qua-cua-xe-nam-ban.webp": {
+   "kb": 275,
+   "dims": [
+    1440,
+    1125
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "tam-pin-mat-troi-nam-ban.webp": {
    "kb": 299,
@@ -5110,6 +5156,18 @@
    ],
    "used_in": {
     "duong-di-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
+  "tram-sac-nam-ban-dang-lap-tru.webp": {
+   "kb": 132,
+   "dims": [
+    1500,
+    844
+   ],
+   "used_in": {
+    "tram-sac-nam-ban.html": [
      "display"
     ]
    }
