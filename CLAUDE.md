@@ -515,6 +515,17 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     first)`, MP3 sinh xong rồi vứt. Đã thay bằng vòng `git push || git pull --rebase origin main`
     lặp 5 lần ở cả hai file. Từ nay **không cần canh me `main` đứng yên nữa**; Luật 21 và 21b
     vẫn giữ để hiểu vì sao, nhưng cách chữa là ở workflow chứ không phải ở người bấm nút.
+    **21d — VÁ TIẾP 7/9/2026: rebase KHÔNG đủ khi hai run cùng sinh một file MP3.**
+    Bài MỚI thì `audio-auto` tự sinh MP3 (vì bài chưa có `<meta name="pm-audio">`), rồi
+    push trước. Run `generate-audio-free` dispatch sau cũng sinh đúng file đó, rebase lên
+    thì gặp **CONFLICT (add/add) trên file nhị phân** — git không tự gộp được, rebase dừng,
+    MP3 vẫn bị vứt. Vòng rebase ở 21c chỉ xử được xung đột văn bản.
+    Đã thay bằng: `git fetch` → `git rebase origin/main` → nếu đụng độ thì
+    `git checkout --theirs -- audio/` (trong rebase, "theirs" là bản của commit đang được
+    áp lại, tức bản vừa sinh) → `git add -A` → `git rebase --continue`.
+    **Hệ quả cho người bấm nút: với BÀI MỚI thì đừng dispatch `generate-audio-free` nữa** —
+    `audio-auto` đã sinh sẵn rồi, dispatch thêm chỉ tạo ra đúng cái đụng độ này. Chỉ dispatch
+    cho bài CŨ vừa sửa chữ.
 
 22. **TỰA HỨA GÌ THÌ THÂN BÀI PHẢI CÓ** (khóa 6/9/2026, ca thật `/duong-ha-bac-nam-ban`). Đổi tựa
     thành "Nam Ban – Mê Linh" trong khi **"Mê Linh" xuất hiện 0 lần** trong thân bài là tựa hứa

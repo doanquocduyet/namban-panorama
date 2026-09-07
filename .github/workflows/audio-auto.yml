@@ -41,7 +41,16 @@ jobs:
             for i in 1 2 3 4 5; do
               if git push; then echo "Đã push."; exit 0; fi
               echo "Push bị từ chối, rebase rồi thử lại (lần $i)..."
-              git pull --rebase origin main || exit 1
+              git fetch origin main
+              # Rebase có thể đụng độ add/add trên MP3: audio-auto cũng vừa sinh
+              # đúng file đó. File nhị phân thì git không tự gộp được, nên lấy
+              # thẳng bản của run này (bản vừa sinh, mới hơn).
+              if ! git rebase origin/main; then
+                git checkout --theirs -- audio/ 2>/dev/null || true
+                git checkout --ours -- . 2>/dev/null || true
+                git add -A
+                GIT_EDITOR=true git rebase --continue || { git rebase --abort; exit 1; }
+              fi
               sleep 5
             done
             echo "::error::Push thất bại sau 5 lần thử."; exit 1
