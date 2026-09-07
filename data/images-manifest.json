@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 373,
+ "total_images": 374,
  "unused_count": 58,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -255,6 +255,18 @@
     ]
    }
   },
+  "banh-cuon-cho-gia-lam-mat-tien-toi.webp": {
+   "kb": 216,
+   "dims": [
+    1197,
+    1300
+   ],
+   "used_in": {
+    "chuyen-len-nam-ban-song.html": [
+     "display"
+    ]
+   }
+  },
   "banh-cuon-cho-gia-lam-nam-ban.webp": {
    "kb": 223,
    "dims": [
@@ -279,6 +291,18 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "bien-chup-anh-doi-hoa-ho-bai-cong.webp": {
+   "kb": 155,
+   "dims": [
+    619,
+    1100
+   ],
+   "used_in": {
+    "ho-bai-cong-nam-ban.html": [
+     "display"
     ]
    }
   },
@@ -1671,18 +1695,6 @@
     ]
    }
   },
-  "duong-be-tong-doc-mua-mua-nam-ban.webp": {
-   "kb": 90,
-   "dims": [
-    677,
-    1200
-   ],
-   "used_in": {
-    "nam-ban-mua-nao.html": [
-     "display"
-    ]
-   }
-  },
   "duong-be-tong-doi-nam-ban.webp": {
    "kb": 176,
    "dims": [
@@ -2019,18 +2031,6 @@
    ],
    "used_in": {
     "mot-ngay-o-nam-ban.html": [
-     "display"
-    ]
-   }
-  },
-  "hang-banh-cuon-nha-cu-nam-ban-toi.webp": {
-   "kb": 216,
-   "dims": [
-    1197,
-    1300
-   ],
-   "used_in": {
-    "chuyen-len-nam-ban-song.html": [
      "display"
     ]
    }
@@ -2588,6 +2588,18 @@
     "khu-nao-o-nam-ban.html": [
      "og",
      "twitter"
+    ]
+   }
+  },
+  "khu-nha-trang-dong-thanh-duong-mua.webp": {
+   "kb": 90,
+   "dims": [
+    677,
+    1200
+   ],
+   "used_in": {
+    "nam-ban-mua-nao.html": [
+     "display"
     ]
    }
   },
@@ -4460,7 +4472,7 @@
    "used_in": {},
    "status": "unused"
   },
-  "quan-oc-nam-ban-buoi-toi.webp": {
+  "quan-oc-vy-nam-ban-buoi-toi.webp": {
    "kb": 154,
    "dims": [
     1500,
