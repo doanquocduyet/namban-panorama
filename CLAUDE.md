@@ -332,6 +332,27 @@ vì tên riêng địa phương gần như không ai cạnh tranh. Rà bằng
    và `/dat-gan-da-lat` như chặng đường, không phải thực thể của vùng. Neo vào là
    kéo bài lệch vùng, sai §5 luật lọc 1.
 
+### SỔ CHỜ — SỬA KHI CÓ VĂN BẢN TÁCH NAM HÀ KHỎI PHI TÔ (mở 7/9/2026)
+
+Hiện Nam Hà và Phi Tô cùng một xã (xã Nam&nbsp;Hà Lâm&nbsp;Hà, từ 1/7/2025, Nghị quyết
+1671). Có thông tin đợt sắp xếp tiếp theo sẽ đưa **phần Nam Hà vào Nam Ban, còn Phi Tô
+thì không** — chưa có văn bản, nên site chưa sửa gì.
+
+Quét toàn site ra **36 câu** ghép Nam Hà với Phi Tô. Nhưng **chỉ ba câu sẽ sai**, vì
+chúng viết ở **thể vĩnh viễn, không có mốc thời gian**. Khi có quyết định thì sửa đúng
+ba câu này trước, đừng đi rà lại 36 ca:
+
+- `/xa-nam-ha-lam-ha` — *"nay là một xã riêng **gồm cả vùng Phi Tô**"*
+- `/nam-ban-va-nam-ha` — *"Nam Hà là xã riêng (xã Nam Hà Lâm Hà, **gồm Nam Hà và Phi Tô cũ**)"*
+- `/phi-to-nam-ha-lam-ha` — *"**Phi Tô thuộc xã Nam Hà Lâm Hà**, là một xã khác với Nam Ban"*
+  (câu này còn là câu trả lời trong FAQPage, sửa cả hiển thị lẫn schema)
+
+**Luật rút ra — CÁCH VIẾT DỮ KIỆN HÀNH CHÍNH CHO BỀN:** câu **có mốc thời gian** thì
+không hỏng theo thời gian, vì nó mô tả một thời điểm ("từ 1/7/2025, Phi Tô nhập với
+Nam Hà…" — sau này vẫn đúng). Câu viết ở **thể vĩnh viễn** mới hỏng ("Phi Tô thuộc xã
+Nam Hà Lâm Hà"). Địa giới vùng này đã đổi tám lần trong năm mươi năm, nên mọi câu về
+đơn vị hành chính **phải gắn mốc**. Áp cho bài mới ngay từ đầu, đừng đi vá sau.
+
 **Trước khi thêm FAQ cho một tên, hỏi ba câu:** tên này đã có bài riêng chưa · nó
 có phải cơ sở kinh doanh không · nó có nằm trong vùng không. Ba câu đó loại phần
 lớn ứng viên. Còn lại mới đáng viết.
