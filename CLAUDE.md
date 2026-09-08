@@ -332,6 +332,25 @@ vì tên riêng địa phương gần như không ai cạnh tranh. Rà bằng
    và `/dat-gan-da-lat` như chặng đường, không phải thực thể của vùng. Neo vào là
    kéo bài lệch vùng, sai §5 luật lọc 1.
 
+### SỔ CHỜ ẢNH — BA BÀI ĐANG TRỐNG, CHỜ CHÚ CHỤP (mở 8/9/2026)
+
+Ba bài dưới đây **cố ý không có ảnh trong thân bài** — kho không có tấm nào đúng chủ đề,
+và Luật 19 cấm gắn tạm rồi chú thích chung chung. Không phải quên, đừng đi gắn bừa:
+
+- `/xay-nha-giap-suoi-nam-ban` — **kho không có ảnh suối nào.** Bài này còn dùng
+  `og:image` là ảnh brand `nam-ban-toan-canh-og.jpg`, không phải ảnh suối. Cần: một
+  con suối trong xã, thấy được **mép bờ** và mực nước — tốt nhất chụp hai lần, mùa khô
+  và cuối mùa mưa, cùng một khúc, để minh họa đúng cái bài đang nói.
+- `/nha-go-thong-nam-ban` — cần cận cảnh **vách hoặc sàn gỗ thông** (thấy vân, thấy mắt
+  gỗ), hoặc một căn đang lắp ghép. Ảnh nhà gỗ hiện có (`nha-go-farmstay-nam-ban.webp`)
+  đã dùng cho bài mẹ `/nha-go-nam-ban`, dùng lại lần nữa là loãng.
+- `/10-10-1975-nam-ban` — cần ảnh tư liệu hoặc dấu vết còn lại (bia, cổng chào, nhà cũ
+  thời kinh tế mới). **Không lấy ảnh tư liệu trên mạng** — bản quyền, và Luật 19.
+
+**Khi có ảnh:** thêm figure vào thân bài, cắt `og:image` mới theo `/images/<slug>.jpg`
+1200×630, chạy lại `tools/gen-image-manifest.py` + `tools/gen-image-sitemap.py`. Ảnh không
+đổi lời đọc (Luật 21) nên **không cần sinh lại MP3**.
+
 ### SỔ CHỜ — SỬA KHI CÓ VĂN BẢN TÁCH NAM HÀ KHỎI PHI TÔ (mở 7/9/2026)
 
 Hiện Nam Hà và Phi Tô cùng một xã (xã Nam&nbsp;Hà Lâm&nbsp;Hà, từ 1/7/2025, Nghị quyết
