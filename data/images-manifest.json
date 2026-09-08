@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 381,
+ "total_images": 383,
  "unused_count": 63,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -2577,15 +2577,26 @@
     ]
    }
   },
+  "ho-tron-nam-ban-toan-canh-flycam.webp": {
+   "kb": 160,
+   "dims": [
+    1301,
+    720
+   ],
+   "used_in": {
+    "ho-tron-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
   "ho-tron-nam-ban.jpg": {
-   "kb": 183,
+   "kb": 167,
    "dims": [
     1200,
     630
    ],
    "used_in": {
     "ho-tron-nam-ban.html": [
-     "display",
      "og",
      "schema",
      "twitter"
@@ -4910,6 +4921,18 @@
    "used_in": {},
    "status": "unused"
   },
+  "pho-trung-tam-nam-ban-ban-ngay.webp": {
+   "kb": 156,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "ho-tron-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
   "quan-banh-canh-ca-loc-nam-ban.webp": {
    "kb": 249,
    "dims": [
@@ -6110,6 +6133,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
