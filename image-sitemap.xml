@@ -901,6 +901,15 @@
     <image:image><image:loc>https://nambanpanorama.com/images/xa-nam-ha-lam-ha.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/xay-nha-giap-ho-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/ho-thanh-tri-dong-thanh.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/xay-nha-giap-ho-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/xay-nha-giap-suoi-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-toan-canh-og.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/xay-nha-nho-nam-ban-bao-nhieu-tien</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/cong-trinh-dang-xay-me-linh.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/xay-nha-nho-nam-ban-bao-nhieu-tien.jpg</image:loc></image:image>
