@@ -712,6 +712,15 @@
     <image:image><image:loc>https://nambanpanorama.com/images/nguoi-ngoai-tinh-mua-dat-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/nha-go-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/nha-go-farmstay-nam-ban.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/nha-go-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/nha-go-thong-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/nha-go-thong-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/nhan-tien-den-bu-dat-nen-lam-gi</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/nhan-tien-den-bu-dat-nen-lam-gi.jpg</image:loc></image:image>
   </url>
