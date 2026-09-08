@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 374,
+ "total_images": 377,
  "unused_count": 63,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -76,6 +76,20 @@
   "xe-khach-nhin-ra-cua-nam-ban.webp"
  ],
  "images": {
+  "10-10-1975-nam-ban.jpg": {
+   "kb": 177,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "10-10-1975-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
   "ai-nam-ban.jpg": {
    "kb": 187,
    "dims": [
@@ -2507,6 +2521,30 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "ho-tron-nam-ban-cay-moi-trong-ven-ho.webp": {
+   "kb": 228,
+   "dims": [
+    1500,
+    844
+   ],
+   "used_in": {
+    "ho-tron-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
+  "ho-tron-nam-ban-dang-thi-cong-quanh-ho.webp": {
+   "kb": 218,
+   "dims": [
+    1500,
+    844
+   ],
+   "used_in": {
+    "ho-tron-nam-ban.html": [
+     "display"
     ]
    }
   },

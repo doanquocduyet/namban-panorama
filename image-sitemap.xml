@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://nambanpanorama.com/10-10-1975-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/10-10-1975-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/5km-o-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-toan-canh-og.jpg</image:loc></image:image>
   </url>
@@ -369,6 +373,8 @@
   </url>
   <url>
     <loc>https://nambanpanorama.com/ho-tron-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/ho-tron-nam-ban-dang-thi-cong-quanh-ho.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/ho-tron-nam-ban-cay-moi-trong-ven-ho.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/ho-tron-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
