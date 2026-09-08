@@ -149,6 +149,11 @@
     <image:image><image:loc>https://nambanpanorama.com/images/dat-gia-lam-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/dat-giap-rung-thong-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/me-linh-doi-thong.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/dat-giap-rung-thong-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/dat-me-linh-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/dat-me-linh-nam-ban.jpg</image:loc></image:image>
   </url>

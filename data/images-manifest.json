@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 379,
+ "total_images": 380,
  "unused_count": 63,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -1348,6 +1348,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "dat-giap-rung-thong-nam-ban.jpg": {
+   "kb": 156,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dat-giap-rung-thong-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
@@ -3300,6 +3314,9 @@
     "nen-xem-khu-nao-o-nam-ban.html": [
      "display"
     ],
+    "dat-giap-rung-thong-nam-ban.html": [
+     "display"
+    ],
     "image-sitemap.xml": [
      "ref"
     ]
@@ -4216,6 +4233,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
