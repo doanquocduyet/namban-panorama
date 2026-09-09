@@ -404,6 +404,17 @@ Viết **"phần nhiều"**, không viết "tất cả". Và **cấm cấu trúc
 Đã áp cho `/dat-giap-rung-thong-nam-ban`, `/xay-nha-giap-rung-thong-nam-ban`,
 `/view-panorama-nam-ban`, `llms.txt`, `llms-full.txt`.
 
+### PHÍ 0 ĐỒNG KHI LÀM THỦ TỤC TRỰC TUYẾN — KHÔNG ĐƯA VÀO BÀI (đóng sổ 9/9/2026)
+
+Có phiếu nhắc **Nghị quyết 51/2025/NQ-HĐND Lâm Đồng** quy định mức thu 0 đồng với phí,
+lệ phí khi làm dịch vụ công trực tuyến. **Tra hai lần, không xác minh được văn bản của
+Lâm Đồng.** Cái tra ra là nghị quyết CÙNG LOẠI của tỉnh khác: An Giang 14/2025, Bà Rịa –
+Vũng Tàu 08/2025, Quảng Ngãi 05/2025, TP.HCM 411. Đây đúng kiểu lấy số hiệu của tỉnh này
+gán cho tỉnh kia — cùng họ với Luật 23.
+
+**Chưa có văn bản Lâm Đồng thì KHÔNG ghi con số nào**, §2.6. Muốn mở lại thì phải có số
+hiệu tra được trên cổng HĐND tỉnh Lâm Đồng, không lấy từ bài báo tổng hợp nhiều tỉnh.
+
 ### SỔ CHỜ ẢNH — BA BÀI ĐANG TRỐNG, CHỜ CHÚ CHỤP (mở 8/9/2026)
 
 Ba bài dưới đây **cố ý không có ảnh trong thân bài** — kho không có tấm nào đúng chủ đề,
