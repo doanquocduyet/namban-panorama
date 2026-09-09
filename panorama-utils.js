@@ -4,7 +4,7 @@
 (function(){
   try{
     var IN=["namban-index","tiem-nang-dau-tu","quy-hoach-2050","ban-do-quy-hoach-nam-ban",
-      "truoc-khi-xuong-tien","so-sanh-nam-ban-bao-loc-da-lat","doc-lo-dat","doc-lo-dat-02-view-ho",
+      "chi-phi-dat-dai-nam-ban","truoc-khi-xuong-tien","so-sanh-nam-ban-bao-loc-da-lat","doc-lo-dat","doc-lo-dat-02-view-ho",
       "khu-nao-o-nam-ban","doc-the-dat-nam-ban","len-tho-cu-het-bao-nhieu-tien","ban-dat-nam-ban",
       "mua-dat-nam-ban","mua-dat-co-vuon-ca-phe","mua-dat-co-vuon-bo","mua-dat-duong-gia-nam-ban",
       "mua-vuon-ca-phe-nam-ban","vua-mua-dat-nam-ban-lam-gi","sap-nhap-nam-ban-dat","nam-ban-thuoc-xa-nao",
