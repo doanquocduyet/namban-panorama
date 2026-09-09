@@ -1,0 +1,63 @@
+name: Đăng Facebook theo hàng đợi
+
+# Chạy trên runner GitHub, KHÔNG chạy từ phiên Claude — ở đó
+# graph.facebook.com bị chặn.
+#
+# Chưa có secret FB_PAGE_ID / FB_PAGE_TOKEN thì script tự chạy khô: in ra
+# bài sắp đăng rồi thoát 0. Bật workflow trước, cấp token sau, không run nào đỏ.
+
+on:
+  schedule:
+    # 12:00 và 21:00 giờ Việt Nam (UTC+7) → 05:00 và 14:00 UTC.
+    # Khung trưa cho tin ngắn, khung tối cho bài dữ kiện dài
+    # (docs/facebook-panorama.md mục 1.10).
+    - cron: "0 5 * * *"
+    - cron: "0 14 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Chạy khô — in bài ra, không đăng"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fb-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Đăng bài đến hạn
+        env:
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          FB_DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+        run: python3 tools/fb-post.py
+
+      - name: Ghi lại hàng đợi
+        run: |
+          if [ -z "$(git status --porcelain data/fb-queue.json)" ]; then
+            echo "Hàng đợi không đổi (chạy khô hoặc không có bài đến hạn)."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/fb-queue.json
+          git commit -m "fb: đánh dấu bài đã đăng"
+          # Vòng rebase như hai workflow audio (Luật 21c) — main nhích một
+          # commit bất kỳ là push trần bị reject, công sinh ra rồi vứt.
+          for i in 1 2 3 4 5; do
+            git push origin HEAD:main && exit 0
+            git fetch origin main && git rebase origin/main || {
+              git checkout --theirs -- data/fb-queue.json
+              git add -A && git rebase --continue
+            }
+          done
+          echo "Push thất bại sau 5 lần." >&2
+          exit 1

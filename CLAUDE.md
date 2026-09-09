@@ -670,6 +670,35 @@ Gỡ đi = **vỡ cụm hreflang**, mất tín hiệu đa ngữ với Google. Kh
   bỏ dấu câu + lowercase rồi gom theo chuỗi. Lần quét 9/9: **951 câu, 946 chuỗi khác
   nhau, 5 nhóm trùng nguyên câu, 0 trùng trong cùng một bài.**
 
+### 7.3b FAQ HIỂN THỊ NHIỀU HƠN FAQ TRONG SCHEMA — LÀ THIẾT KẾ, KHÔNG PHẢI LỖI (đóng sổ 9/9/2026)
+
+Có phiếu báo `/ho-bai-cong-nam-ban` hiển thị FAQ *"Đường Hà Bắc ở Nam Ban là đường
+nào?"* mà thiếu trong `FAQPage`. Nghe như lỗi. **Quét cả site thì ra 19 trang, 23 ca
+cùng kiểu — và cả 23 ca đều CỐ Ý.**
+
+Bằng chứng: với mỗi câu bị bỏ khỏi schema, **có một bài khác đang giữ đúng câu đó
+trong schema của nó** — tức bài nhà. 18/23 khớp nguyên văn, 5 ca còn lại khớp biến
+thể (*"Nam Ban trồng cây gì?"* ↔ `/dat-nam-ban-trong-cay-gi` giữ *"Đất Nam Ban trồng
+được những cây gì?"*; *"Nam Ban ở đâu, cách Đà Lạt bao xa?"* ↔ `/nam-ban-la-gi` giữ
+cả hai vế rời). **23/23 đều có nhà.** Một ca còn là ca §5 kill-list luật 2 chạy đúng:
+*"Nacasoo Hill ở đâu?"* là cơ sở kinh doanh nên cố ý không vào schema.
+
+**Vì sao nếp này đúng, và là nếp nên giữ:**
+- Google **bắt buộc** nội dung `FAQPage` phải hiển thị được trên trang. Nên
+  **hiển thị mà không có trong schema = hợp lệ**; **có trong schema mà không hiển
+  thị = vi phạm chính sách**. Quét 9/9: chiều vi phạm đó **0 ca**. Không có lỗi nào.
+- Câu hiển thị phục vụ **người đọc đang ở trang đó**. Bỏ nó khỏi schema để **chỉ bài
+  nhà tranh rich result** cho truy vấn đó. Đúng §5 kill-list luật 1, đúng §7.3.
+- Thêm câu vào schema = tự tay tạo trùng nguyên câu giữa hai bài — đúng thứ §7.3
+  vừa dọn hôm 9/9.
+
+**Luật:** phiếu nào báo "FAQ thiếu trong schema" thì **KHÔNG vá**. Hỏi trước: câu này
+có bài nhà chưa? Có rồi thì schema bỏ nó ra là ĐÚNG. Chỉ xét thêm vào schema khi câu
+đó **không có nhà ở đâu cả** — và kể cả lúc đó vẫn phải qua bộ lọc Luật 14.
+Rà lại bằng: so `<h3>` trong khối FAQ hiển thị (cắt từ `<h2>Câu hỏi thường gặp</h2>`
+tới `<div class="source-box">`, không tính `<h3>Nguồn &amp; lưu ý</h3>`) với
+`mainEntity` của `FAQPage`. **Chiều duy nhất cần báo động là schema-có-mà-không-hiển-thị.**
+
 ### 7.4 Pillar — GIẢI MÂU THUẪN
 
 Báo cáo có 2 câu chọi nhau: *"pillar phải là trang nhiều inbound nhất site"* vs *"internal link
