@@ -332,6 +332,26 @@ vì tên riêng địa phương gần như không ai cạnh tranh. Rà bằng
    và `/dat-gan-da-lat` như chặng đường, không phải thực thể của vùng. Neo vào là
    kéo bài lệch vùng, sai §5 luật lọc 1.
 
+### GROUND TRUTH — RỪNG THÔNG Ở NAM BAN (Chú chốt 9/9/2026)
+
+**Rừng thông ở Nam Ban: CÓ nhưng ÍT.** Và cái có thì **phần nhiều là đồi thông người dân
+tự trồng trên đất của họ, KHÔNG phải rừng nhà nước**. Người ta trồng để giữ đất, lấy gỗ,
+hoặc đơn giản là thích.
+
+**Hai hệ quả, cả hai đều đảo trục bài:**
+
+1. **Lô giáp thông là lô HIẾM**, không phải chuyện gặp thường. Cấm viết kiểu "ai đi xem
+   đất vài lần cũng gặp" — đó là viết bài trụ cho tình huống hiếm.
+2. **Tầm nhìn ra thông KHÔNG mặc định ổn định.** Vạt thông bền hay không **tùy chủ vạt
+   thông** — họ có quyền làm gì với đất của mình. Cấm câu "rừng do nhà nước quản lý thì
+   ổn định hơn" đứng làm vế chính; vẫn có vạt nhà nước, nhưng đó là thiểu số ở đây.
+   Câu hỏi thực tế không phải *"rừng loại gì"* mà là **"thông của nhà ai"**.
+
+Viết **"phần nhiều"**, không viết "tất cả". Và **cấm cấu trúc câu `phần nhiều rừng thông
+ở Nam Ban là…`** — nó ngầm nói rừng thông nhiều. Quét `phần nhiều rừng thông` phải = 0.
+Đã áp cho `/dat-giap-rung-thong-nam-ban`, `/xay-nha-giap-rung-thong-nam-ban`,
+`/view-panorama-nam-ban`, `llms.txt`, `llms-full.txt`.
+
 ### SỔ CHỜ ẢNH — BA BÀI ĐANG TRỐNG, CHỜ CHÚ CHỤP (mở 8/9/2026)
 
 Ba bài dưới đây **cố ý không có ảnh trong thân bài** — kho không có tấm nào đúng chủ đề,
@@ -567,6 +587,28 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     Cùng họ với §5 (Nam Hà là xã riêng, cạnh Nam Ban chứ không thuộc). Nghi ngờ thì mô tả bằng
     **quan sát tại chỗ** thay vì dẫn mô hình của ai.
 
+
+24. **NGHE "CÓ NHIỀU X, X LÀ Y" THÌ HỎI LẠI: "NHIỀU" LÀ SỐ LƯỢNG HAY LÀ MỞ ĐẦU CÂU?**
+    (khóa 9/9/2026, ca thật). Chú nói *"Nam Ban có nhiều rừng thông, đồi thông tự trồng"* —
+    đọc thành **rừng thông NHIỀU**, trong khi ý là **"nhiều cái trong số đó là thông tự
+    trồng"**, còn tổng thể thì **ÍT**. Một chữ đọc lệch làm cả cụm hai bài đặt sai chỗ:
+    viết bài trụ cho một tình huống hiếm, mở bài bằng "ai đi xem đất vài lần cũng gặp",
+    và ngầm hứa tầm nhìn ổn định.
+    **Luật:** dữ kiện về **mật độ / số lượng** thì hỏi lại trước khi viết, đừng suy từ
+    ngữ cảnh. Câu mở bài kiểu *"ai cũng gặp"*, *"bao giờ cũng"*, *"đi vài lần sẽ thấy"*
+    là **câu khẳng định mật độ** — chỉ viết khi có ground truth, không viết cho đủ giọng.
+
+25. **`llms-full.txt`: MỖI ENTRY PHẢI CÓ `\n\n---\n\n## ` ĐỨNG TRƯỚC** (khóa 9/9/2026,
+    hệ quả của chính đợt vá 22 ca hôm 8/9). Đợt đó chèn dòng `## tiêu đề` nhưng **thiếu
+    dấu `---` phân cách**, nên 11 bài dính vào khối của bài trước — checker "thiếu `##`"
+    vẫn báo 0 vì `##` có thật. Hậu quả thật: lần sinh lại entry sau đó **nuốt mất 5 bài**
+    (163 → 158 URL), bắt được nhờ đối chiếu số URL trước/sau.
+    **Luật:** sau mọi thao tác trên `llms-full.txt`, kiểm ba số — **tổng URL không đổi** ·
+    **`split('\n---\n')` không có khối nào chứa >1 URL** · **không có khối rỗng**. Và khi
+    cắt entry theo `rindex('\n---\n', k, nx)`, nhớ `nx` là vị trí của `\n` trước `## `
+    nên slice **không chứa** ký tự đó — phải nới biên trên, nếu không `rindex` ném
+    `ValueError` giữa chừng.
+
 ---
 
 ## 7. ĐÍNH CHÍNH LUẬT — 6 điểm đã kiểm chứng (26/8/2026)
@@ -598,6 +640,14 @@ Gỡ đi = **vỡ cụm hreflang**, mất tín hiệu đa ngữ với Google. Kh
 - **3 cặp hub↔spoke với `/hoi-nhanh`:** hợp lệ. `/hoi-nhanh` là hub hỏi-đáp, trùng câu với bài
   chuyên sâu là ĐÚNG mô hình hub↔spoke, không phải lỗi.
 - → Tổng **4 nhóm trùng, cả 4 đều hợp lệ**. Đừng gỡ.
+- **Nhóm thứ 5 phát hiện 9/9/2026 — ĐÃ XỬ, KHÔNG phải ngoại lệ:** *"Xã Nam Ban Lâm Hà
+  rộng bao nhiêu, bao nhiêu dân?"* từng nằm ở cả `/nam-ban-la-gi` và `/xa-nam-ban-lam-ha`.
+  Không dính `/hoi-nhanh`, không phải intent khác nhau — chỉ là hai bài cùng giữ một câu
+  vì chưa ai rà. **Đã gỡ khỏi FAQPage của pillar `/nam-ban-la-gi`** (thân bài vẫn nói
+  diện tích, dân số — chỉ bỏ khỏi schema), giữ ở `/xa-nam-ban-lam-ha` theo §5 *"bài về
+  cái đó là nhà"*. Rà bằng: quét mọi `FAQPage` trang `lang="vi"`, chuẩn hoá `\xa0` +
+  bỏ dấu câu + lowercase rồi gom theo chuỗi. Lần quét 9/9: **951 câu, 946 chuỗi khác
+  nhau, 5 nhóm trùng nguyên câu, 0 trùng trong cùng một bài.**
 
 ### 7.4 Pillar — GIẢI MÂU THUẪN
 
