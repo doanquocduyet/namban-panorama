@@ -137,7 +137,7 @@
   .band-fade{position:absolute;inset:0;background:linear-gradient(to bottom,var(--paper) 0%,rgba(241,236,226,0) 12%,rgba(241,236,226,0) 88%,var(--paper) 100%);pointer-events:none;}
 
   /* ═══════════ TẦNG 2 — NGƯỜI (ảnh tràn trái + chữ phải) ═══════════ */
-  .t2{padding:60px 0 92px;}   /* nuốt luôn phần đệm dưới của .t3 cũ, giờ .t3 đã gộp vào đây */
+  .t2{padding:60px 0 34px;}   /* phần đệm cuối trang do .closing lo, đừng cộng dồn hai chỗ */
   /* căn giữa theo chiều dọc: cột chữ giờ cao hơn hẳn vì đã gộp cụm hợp tác vào,
      để 'start' thì dưới ảnh hở một mảng trống lớn */
   .t2-grid{display:grid;grid-template-columns:minmax(0,320px) 1fr;gap:56px;align-items:center;}
@@ -152,7 +152,6 @@
   .t2-say{font-size:16px;line-height:1.8;color:var(--muted);max-width:42ch;margin-bottom:28px;}
   .t2-brand{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(19px,2.1vw,22px);line-height:1.5;color:var(--ink);}
   /* Cụm hợp tác gộp thẳng vào khối founder — một mạch đọc, không tách hai dải */
-  .t2-join{display:block;width:34px;height:1px;background:var(--clay);opacity:.5;margin:32px 0 26px;}
   .t2-collab{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(21px,2.3vw,26px);line-height:1.34;letter-spacing:-.2px;color:var(--forest);margin-bottom:16px;text-wrap:balance;}
   .t2-collab-line{font-size:15px;line-height:1.8;color:var(--muted);max-width:48ch;margin-bottom:26px;text-wrap:balance;}
 
@@ -234,6 +233,15 @@
   .td-pc-zalo{display:none;}
   .td-divider{border-top:1px solid var(--line);margin:26px 0 16px;}
   .td-zalo-lead{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:16px;}
+  /* CÂU CHỐT TRANG — câu ký đứng riêng cuối trang, căn giữa, dùng chung
+     cho cả bản PC lẫn bản mobile. Trước đây câu này nằm lẫn trong khối
+     founder; đưa xuống đây để nó đóng lại cả trang chứ không phải một
+     dòng mô tả người viết. */
+  .closing{max-width:640px;margin:0 auto;padding:70px 24px 10px;text-align:center;}
+  .closing::before{content:"";display:block;width:34px;height:1px;background:var(--clay);opacity:.5;margin:0 auto 32px;}
+  .closing p{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(18px,2.1vw,22px);line-height:1.62;color:var(--ink);text-wrap:balance;}
+  @media(max-width:880px){ .closing{padding:52px 24px 6px;} .closing::before{margin-bottom:26px;} }
+
   .td-foot{border-top:1px solid var(--line);text-align:center;padding:30px 24px 42px;margin-top:10px;}
   .td-foot .fn{font-family:'Fraunces',serif;font-size:16px;letter-spacing:1.5px;color:var(--ink);margin-bottom:8px;}
   .td-foot .fc{font-size:13px;color:var(--stone-text,#726a5c);}
@@ -432,8 +440,6 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
         <h2 class="t2-name serif">Đoàn Quốc Duyệt</h2>
         <p class="t2-role">ghi chép tại Nam Ban</p>
         <span class="t2-tick"></span>
-        <p class="t2-brand">Panorama không có huy chương.<br>Chỉ có dấu chân trên từng nơi đã đi.</p>
-        <span class="t2-join"></span>
         <h2 class="t2-collab serif">Nếu có điều gì đáng&nbsp;làm cùng&nbsp;nhau<br>Cứ nhắn.</h2>
         <p class="t2-collab-line">Một khu đất cần đọc kỹ, một góc nhìn cần kiểm chứng, hay chỉ đơn giản là cùng nhau nói chuyện về Nam&nbsp;Ban.</p>
         <a href="https://zalo.me/0978758788" target="_blank" rel="noopener" class="t3-do">Nhắn cho tôi <span style="font-family:Fraunces,serif;">&rarr;</span></a>
@@ -441,6 +447,10 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
     </div>
   </div>
 </section>
+
+<div class="closing rev">
+  <p>Panorama không có huy chương.<br>Chỉ có dấu chân trên từng nơi đã&nbsp;đi.</p>
+</div>
 
 <footer>
   <p class="fname serif">Namban Panorama</p>
@@ -503,13 +513,16 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
       <div class="person-pic"><img src="/images/founder.webp" width="440" height="440" loading="lazy" decoding="async" alt="Đoàn Quốc Duyệt đứng ngoài thực địa ở Nam Ban, nền thung lũng phía sau"></div>
       <div class="person-name">Đoàn Quốc Duyệt</div>
       <div class="person-role">ghi chép tại Nam Ban</div>
-      <p class="person-sign">Panorama không có huy chương.<br>Chỉ có dấu chân trên từng nơi đã đi.</p>
     </div>
     <div class="collab-signoff">
       <p class="collab-lead">Nếu có điều gì đáng&nbsp;làm cùng&nbsp;nhau<br>Cứ nhắn.</p>
       <p class="collab-line">Một khu đất cần đọc kỹ, một góc nhìn cần kiểm chứng, hay chỉ đơn giản là cùng nhau nói chuyện về Nam&nbsp;Ban.</p>
       <a href="https://zalo.me/0978758788" target="_blank" rel="noopener" class="collab-do">Nhắn cho tôi <span style="font-family:Fraunces,serif;">&rarr;</span></a>
     </div>
+  </div>
+
+  <div class="closing">
+    <p>Panorama không có huy chương.<br>Chỉ có dấu chân trên từng nơi đã&nbsp;đi.</p>
   </div>
 
   <div class="td-foot">
