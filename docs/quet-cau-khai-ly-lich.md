@@ -18,11 +18,22 @@ Phiếu gốc: quét 6 mẫu `tôi ở Nam Ban` · `tôi sống ở Nam Ban` · 
 là hai cụm dính nhau trong một câu FAQ, không phải khai lý lịch. Không đụng,
 và đợt rà sau đừng mở lại.
 
-### CÒN LẠI 6 CA CHƯA XỬ — chờ cháu viết câu thay, KHÔNG tự sửa
+### PHẠM VI QUÉT ĐÚNG — SỬA SAU KHI SÓT 3 CA (9/9/2026)
+
+Bộ quét phải dò **toàn bộ text node trong vùng `.art-body` → `.share-row`**, KHÔNG
+giới hạn ở `<p> <li> <figcaption> <h2> <h3> <blockquote>`.
+
+Lý do: đợt 9/9/2026 bộ quét chỉ liệt sáu thẻ đó nên **sót 3 ca nằm trong
+`<div class="quick-answer">`**. Đó lại đúng là **khối AEO** — khối trả lời nhanh
+đầu bài, chỗ Google và AI trích nhiều nhất. Sót ở đó là sót đúng chỗ đắt nhất.
+Grep sau sửa ra 4 ca thay vì 1 mới lộ ra lỗi này.
+
+### 6 CA ĐỢT HAI — ĐÃ XỬ 9/9/2026
 
 Bộ quét Việc 1 chỉ dò trong `<p> <li> <figcaption> <h2> <h3> <blockquote>`, nên
 **bỏ sót chữ nằm trong `<div class="quick-answer">`**. Đó là lý do lần đầu ra 27
-mà grep lại còn 4. Ba ca dưới đây là ca thật, chưa có trong bảng đã duyệt:
+mà grep lại còn 4. Ba ca trong `quick-answer` (QA-1 → QA-3) và ba ca chỉ có trong `llms-full.txt`
+(LLM-1 → LLM-3) đã sửa theo bảng Chú duyệt:
 
 - `/len-lam-dong-nen-song-o-dau` — *"Tôi ở Nam Ban, một vùng ven Đà Lạt, nên phần
   cuối tôi kể vùng này rõ hơn; mấy vùng khác tôi chỉ nói trong phạm vi mình đã đi qua."*
@@ -203,3 +214,19 @@ NGOÀI HTML
   llms-full.txt    31 ca
   feed.xml         0 ca
 ```
+
+
+---
+
+## ĐÓNG SỔ (9/9/2026)
+
+**Tổng đã xử: 32 ca** — 26 ca đợt một + 3 ca `quick-answer` + 3 ca `llms-full.txt`.
+
+**CA 1 đóng vĩnh viễn.** `/ban-dat-nam-ban`, câu FAQ *"Làm sao biết giá thật của
+lô đất mình ở Nam Ban?"* — "lô đất mình" và "ở Nam Ban" là hai cụm dính nhau,
+không phải khai lý lịch. Grep còn bắt được ca này ở cả HTML lẫn `llms-full.txt`,
+**đó là con số kỳ vọng, không phải lỗi**. Đợt rà sau gặp lại thì đừng mở lại.
+
+**Còn treo:** entry `llms-full.txt` chứa LLM-2 giờ đọc cụt — câu
+*"Qua nhiều mùa được giá lẫn mất giá."* đứng một mình sau *"nhắn chúng tôi một
+câu."*, mất chủ ngữ. Phiếu cấm tự nối chữ nên để nguyên, chờ câu thay.
