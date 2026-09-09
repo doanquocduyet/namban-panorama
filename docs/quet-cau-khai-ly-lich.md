@@ -6,6 +6,49 @@ Phiếu gốc: quét 6 mẫu `tôi ở Nam Ban` · `tôi sống ở Nam Ban` · 
 
 **Ô Code chỉ đếm và báo. KHÔNG tự viết câu thay thế, KHÔNG sửa gì.**
 
+---
+
+## TRẠNG THÁI SAU ĐỢT SỬA 9/9/2026
+
+**Đã sửa 26 ca** (CA 2 → CA 27) theo bảng Chú duyệt, `str_replace` exact, mỗi
+`old_str` khớp đúng một lần, không ca nào phải nới rộng. Kèm 4 sửa ở
+`/dat-nam-ban-chua-xay` (B1–B4).
+
+**CA 1 — ĐÓNG, báo động giả.** `/ban-dat-nam-ban`: "lô đất mình" + "ở Nam Ban"
+là hai cụm dính nhau trong một câu FAQ, không phải khai lý lịch. Không đụng,
+và đợt rà sau đừng mở lại.
+
+### CÒN LẠI 6 CA CHƯA XỬ — chờ cháu viết câu thay, KHÔNG tự sửa
+
+Bộ quét Việc 1 chỉ dò trong `<p> <li> <figcaption> <h2> <h3> <blockquote>`, nên
+**bỏ sót chữ nằm trong `<div class="quick-answer">`**. Đó là lý do lần đầu ra 27
+mà grep lại còn 4. Ba ca dưới đây là ca thật, chưa có trong bảng đã duyệt:
+
+- `/len-lam-dong-nen-song-o-dau` — *"Tôi ở Nam Ban, một vùng ven Đà Lạt, nên phần
+  cuối tôi kể vùng này rõ hơn; mấy vùng khác tôi chỉ nói trong phạm vi mình đã đi qua."*
+  (dạng Ca C — vế sau là moat)
+- `/len-lam-dong-song-lam-gi` — *"Tôi ở Nam Ban, vùng Lâm Hà, nên chuyện này tôi
+  nhìn khá gần."*
+- `/nhan-tien-den-bu-dat-nen-lam-gi` — *"Tôi ở Nam Ban, nên phần cuối tôi kể từ
+  chỗ mình đứng."* (dạng Ca C)
+
+Và ba ca **chỉ có trong `llms-full.txt`**, không có trong thân bài HTML:
+
+- *"Nếu Nam Ban với bạn cũng là một nơi để quay về — tôi ở đây."*
+- *"Chúng tôi ở đây, qua nhiều mùa được giá lẫn mất giá."*
+- *"Đang phân vân giữa hai vùng, hai lô cụ thể — tôi ở đây."*
+
+### llms-full.txt
+
+Không có script sinh file này, và nội dung là tóm tắt biên soạn tay chứ không
+trích máy từ HTML — nên "sinh lại từ HTML" không chạy được. Thay vào đó áp lại
+**đúng 26 cặp Chú đã duyệt**, thuần cơ học, không viết câu mới: **31 → 7 ca**
+(1 báo động giả + 3 ca quick-answer + 3 ca chỉ có ở file này).
+`llms.txt` và `feed.xml` vẫn 0.
+
+---
+
+
 ```
 QUÉT CÂU KHAI LÝ LỊCH — kết quả Việc 1
 Phạm vi: 168 file .html lang=vi, vùng .art-body → .share-row (gồm Nguồn & Đọc gì tiếp).
