@@ -182,7 +182,28 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
   kho làm og (bài bơ→ảnh bơ; bài đất→ảnh lô đất/toàn cảnh); không có ảnh hợp thì dùng **ảnh
   brand mặc định** (`nam-ban-aerial.jpg` / `nam-ban-toan-canh.jpg`) — TRÁNH ảnh lệch làn
   (villa/HT86). Không để bài nào thẻ share trống.
+- **BA SCRIPT PHẢI CHẠY LẠI KHI THÊM/XÓA BÀI HOẶC ẢNH — gom một chỗ để khỏi sót:**
+  `python3 tools/gen-search-index.py` (sau khi **thêm/xóa/đổi tựa hoặc description một bài**
+  — nếu quên thì bài mới không tìm được trong ô search) · `python3 tools/gen-image-manifest.py`
+  và `python3 tools/gen-image-sitemap.py` (sau khi **thêm/xóa/đổi tên ảnh**). Commit luôn file
+  chúng sinh ra (`search-index.json`, `data/images-manifest.json`, `image-sitemap.xml`).
 - Xong: `git add -A && git commit && git push origin main` → chờ Vercel → **báo link**.
+
+### Ô TÌM KIẾM — CHỈ TRANG CHỦ + THANH MENU (Chú chốt 9/9/2026)
+
+Chạy hoàn toàn client-side, không backend, không dịch vụ ngoài. Ba mảnh:
+`tools/gen-search-index.py` → `search-index.json` (163 trang, ~123KB, gzip ~35KB) ·
+phần cuối `panorama-utils.js` dựng giao diện · `index.html` có slot `#pm-home-search`.
+
+- **Ô mở sẵn CHỈ ở trang chủ** (slot đó). Mọi trang khác chỉ có **icon kính lúp trong nav
+  + trong menu mobile** — bấm mới mở lớp phủ. Đừng thêm ô mở sẵn vào bài, sai chốt.
+- `search-index.json` **tải lười** — chỉ `fetch` lần đầu người đọc mở ô, không nặng trang.
+- Xếp hạng 5 bậc, khớp **trọn một từ trong tiêu đề** đứng đầu. Đây là bản đã vá hai lỗi
+  thật: gộp một chuỗi dò thì "ho bai cong" ra bài đường Hà Bắc trước; chỉ so tiền tố thì
+  "ho" ra "**Hợp** tác" trước "**Hồ** Thanh Trì". **Đừng gộp lại `ft`/`f` làm một.**
+- Chỉ index trang `lang="vi"` — ô search nằm ở trang tiếng Việt, trộn trang ngoại ngữ vào
+  là trả kết quả người đọc không mở được.
+- Phím `/` mở, `Esc` đóng. Không kết quả → "Chưa có bài nào về chuyện này." (không CTA).
 
 ### QUYẾT ĐỊNH ĐÃ CHỐT — ĐỪNG BÀN LẠI (26/7/2026)
 

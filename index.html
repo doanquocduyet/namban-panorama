@@ -297,6 +297,9 @@
     .qopt{padding:15px 2px;font-size:14px;gap:13px;}
   }
 
+  .home-search{padding:0 24px 58px;background:var(--card);}
+  .home-search .wrap{max-width:1080px;padding:0;}
+  @media(max-width:600px){.home-search{padding:0 20px 40px;}}
   .geo-note{display:none;font-family:'Fraunces',serif;font-style:italic;font-size:15.5px;color:var(--muted);margin:0 auto;max-width:520px;text-align:center;line-height:1.65;padding:44px 24px 0;text-wrap:pretty;}
   .geo-note a{color:var(--forest);text-decoration:none;border-bottom:1px solid rgba(47,64,52,.3);}
   .geo-note a:hover{border-color:var(--forest);}
@@ -615,6 +618,9 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <div class="slogan"><div class="s"><span class="tick"></span>Hiểu <em>vùng đất</em> trước&nbsp;khi&nbsp;hiểu <em>giá đất</em></div></div>
 
 <div class="geo-note" id="geoNote"></div>
+
+<!-- TÌM — ô mở sẵn, CHỈ trang chủ. panorama-utils.js chèn vào slot này -->
+<div class="home-search"><div class="wrap"><div id="pm-home-search"></div></div></div>
 
 <!-- BẮT ĐẦU TỪ ĐÂY — Journey Navigator -->
 <div class="jn">

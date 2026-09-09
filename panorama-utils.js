@@ -442,3 +442,194 @@
     else document.addEventListener('DOMContentLoaded',markImgs);
   }catch(e){}
 })();
+
+/* ── TÌM KIẾM — icon trên thanh menu (mọi trang) + ô mở sẵn trên TRANG CHỦ ──
+   Chạy client-side, không backend. Index sinh bằng tools/gen-search-index.py,
+   chỉ TẢI KHI người đọc mở ô tìm lần đầu — không ảnh hưởng tốc độ trang.
+   Thẩm mỹ "im lặng mà sang": không viền, không nút, không badge, không đếm
+   kết quả. Bỏ dấu khi so, nên gõ "ho bai cong" ra "hồ Bãi Công". */
+(function(){
+  try{
+    if(document.getElementById('pm-search-style'))return;
+    var IDX=null, LOADING=false, MAX=6;
+
+    function fold(s){
+      s=(s||'').toLowerCase().replace(/đ/g,'d');
+      return s.normalize?s.normalize('NFD').replace(/[̀-ͯ]/g,''):s;
+    }
+    function load(cb){
+      if(IDX){cb();return;}
+      if(LOADING)return;
+      LOADING=true;
+      fetch('/search-index.json').then(function(r){return r.json();})
+        .then(function(d){IDX=d;LOADING=false;cb();})
+        .catch(function(){LOADING=false;IDX=[];cb();});
+    }
+    /* Xếp hạng 5 bậc. Bậc "khớp TRỌN TỪ" là bậc quan trọng nhất: gõ "ho"
+       phải ra "Hồ Thanh Trì" chứ không phải "Hợp tác" — vì bỏ dấu thì
+       "hợp" thành "hop", mà "ho" là tiền tố của "hop". Đã vấp thật. */
+    function words(s){ return s.split(/[^a-z0-9]+/); }
+    function search(q){
+      if(!IDX||!IDX.length)return [];
+      var f=fold(q), out=[];
+      for(var i=0;i<IDX.length;i++){
+        var x=IDX[i], sc, w=words(x.ft);
+        if(w.indexOf(f)>-1) sc=0;                        /* trọn một từ trong tiêu đề */
+        else if(x.ft.indexOf(f)===0) sc=1;               /* mở đầu tiêu đề */
+        else if(w.some(function(t){return t.indexOf(f)===0;})) sc=2;  /* đầu một từ */
+        else if(x.ft.indexOf(f)>-1) sc=3;                /* giữa từ trong tiêu đề */
+        else if(x.f.indexOf(f)>-1) sc=4;                 /* mô tả hoặc từ khoá */
+        else continue;
+        out.push([sc,x.t.length,x]);
+      }
+      out.sort(function(a,b){return a[0]-b[0]||a[1]-b[1];});
+      return out.slice(0,MAX).map(function(r){return r[2];});
+    }
+
+    var st=document.createElement('style');
+    st.id='pm-search-style';
+    st.textContent=
+      /* icon trên nav */
+      '.pm-sbtn{background:none;border:0;padding:0 2px;cursor:pointer;color:inherit;opacity:.72;'+
+      'display:inline-flex;align-items:center;transition:opacity .25s;line-height:0;}'+
+      '.pm-sbtn:hover{opacity:1;}'+
+      '.mobile-menu .pm-sbtn{padding:15px 0;opacity:.85;}'+
+      /* lớp phủ */
+      '.pm-sov{position:fixed;inset:0;z-index:1200;display:none;background:rgba(241,236,226,.92);'+
+      '-webkit-backdrop-filter:blur(18px) saturate(1.15);backdrop-filter:blur(18px) saturate(1.15);}'+
+      '.pm-sov.on{display:block;}'+
+      '.pm-sbox{max-width:640px;margin:0 auto;padding:14vh 28px 0;}'+
+      '.pm-sin{width:100%;background:none;border:0;border-bottom:1px solid var(--line,#e1d9c8);'+
+      "font-family:'Fraunces',serif;font-weight:300;font-size:28px;color:var(--ink,#1a1815);"+
+      'padding:0 0 14px;outline:none;letter-spacing:.2px;}'+
+      '.pm-sin::placeholder{color:var(--stone,#a79c87);}'+
+      '.pm-sres{margin-top:26px;}'+
+      '.pm-sres a{display:block;text-decoration:none;padding:13px 0;border-bottom:1px solid var(--line,#e1d9c8);}'+
+      '.pm-sres a:last-child{border-bottom:0;}'+
+      ".pm-sres .pm-st{font-family:'Fraunces',serif;font-size:17px;font-weight:400;color:var(--ink,#1a1815);"+
+      'line-height:1.45;letter-spacing:.1px;transition:color .2s;}'+
+      '.pm-sres a:hover .pm-st{color:var(--clay-text,#9a5b37);}'+
+      '.pm-sres .pm-sd{font-size:13px;color:var(--muted,#6e6759);line-height:1.55;margin-top:4px;'+
+      'overflow:hidden;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;}'+
+      '.pm-sres .pm-sh{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;'+
+      'color:var(--stone-text,#726a5c);margin-bottom:3px;}'+
+      '.pm-snone{font-size:14px;color:var(--muted,#6e6759);padding:16px 0;letter-spacing:.2px;}'+
+      '.pm-shint{font-size:11.5px;color:var(--stone,#a79c87);letter-spacing:.4px;margin-top:22px;}'+
+      '.pm-sclose{position:fixed;top:20px;right:24px;width:40px;height:40px;border:0;background:none;'+
+      'font-size:26px;line-height:0;color:var(--ink,#1a1815);cursor:pointer;opacity:.6;transition:opacity .2s;}'+
+      '.pm-sclose:hover{opacity:1;}'+
+      /* ô mở sẵn — CHỈ trang chủ */
+      '.pm-shome{max-width:520px;margin:0 auto;position:relative;}'+'.pm-shome .pm-sin{font-size:19px;padding-bottom:11px;padding-left:28px;border-bottom-color:var(--stone,#a79c87);}'+'.pm-shome .pm-sic{position:absolute;left:2px;top:6px;color:var(--stone-text,#726a5c);opacity:.8;pointer-events:none;line-height:0;}'+'.pm-shome .pm-sin:focus{border-bottom-color:var(--clay-soft,#bb8862);}'+
+      '.pm-shome .pm-sres{position:absolute;left:0;right:0;top:100%;margin-top:6px;z-index:60;'+
+      'background:var(--card,#faf6ee);border:1px solid var(--line,#e1d9c8);border-radius:2px;'+
+      'padding:4px 18px;box-shadow:0 14px 40px rgba(26,24,21,.09);display:none;}'+
+      '.pm-shome .pm-sres.on{display:block;}'+
+      '@media(max-width:600px){.pm-sbox{padding-top:9vh;}.pm-sin{font-size:22px;}}';
+    document.head.appendChild(st);
+
+    var ICON='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" '+
+      'stroke-width="1.6" stroke-linecap="round" aria-hidden="true">'+
+      '<circle cx="11" cy="11" r="7"></circle><line x1="16.2" y1="16.2" x2="21" y2="21"></line></svg>';
+
+    function render(box, list, q){
+      if(!q||q.length<2){ box.innerHTML=''; box.classList.remove('on'); return; }
+      if(!list.length){
+        box.innerHTML='<p class="pm-snone">Chưa có bài nào về chuyện này.</p>';
+        box.classList.add('on'); return;
+      }
+      var h='';
+      for(var i=0;i<list.length;i++){
+        var x=list[i];
+        h+='<a href="/'+x.s+'">'+
+           (x.h?'<div class="pm-sh">'+x.h+'</div>':'')+
+           '<div class="pm-st">'+x.t+'</div>'+
+           (x.d?'<div class="pm-sd">'+x.d+'</div>':'')+
+           '</a>';
+      }
+      box.innerHTML=h; box.classList.add('on');
+    }
+
+    /* ── lớp phủ (mở từ icon trên thanh menu) ── */
+    var ov=document.createElement('div');
+    ov.className='pm-sov';
+    ov.innerHTML='<button class="pm-sclose" aria-label="Đóng tìm kiếm">×</button>'+
+      '<div class="pm-sbox"><input class="pm-sin" type="text" autocomplete="off" spellcheck="false" '+
+      'aria-label="Tìm trong Namban Panorama" placeholder="Tìm trong Namban Panorama…">'+
+      '<div class="pm-sres"></div>'+
+      '<p class="pm-shint">Gõ không dấu cũng được. Esc để đóng.</p></div>';
+    document.body.appendChild(ov);
+    var oin=ov.querySelector('.pm-sin'), ores=ov.querySelector('.pm-sres');
+
+    function openOv(){
+      ov.classList.add('on');
+      document.body.style.overflow='hidden';
+      load(function(){ if(oin.value)render(ores,search(oin.value),oin.value); });
+      setTimeout(function(){oin.focus();},40);
+    }
+    function closeOv(){
+      ov.classList.remove('on');
+      document.body.style.overflow='';
+      oin.value=''; ores.innerHTML=''; ores.classList.remove('on');
+    }
+    ov.querySelector('.pm-sclose').addEventListener('click',closeOv);
+    ov.addEventListener('click',function(e){ if(e.target===ov)closeOv(); });
+    oin.addEventListener('input',function(){
+      var q=oin.value.trim();
+      load(function(){ render(ores,search(q),q); });
+    });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'&&ov.classList.contains('on')){ closeOv(); return; }
+      /* phím "/" mở nhanh — trừ khi đang gõ trong ô nhập nào đó */
+      if(e.key==='/'&&!ov.classList.contains('on')){
+        var t=e.target, tag=(t&&t.tagName||'').toLowerCase();
+        if(tag==='input'||tag==='textarea'||(t&&t.isContentEditable))return;
+        e.preventDefault(); openOv();
+      }
+    });
+
+    /* ── icon vào thanh menu: navlinks (PC) + mobile-menu ── */
+    function addBtn(parent, before){
+      var b=document.createElement('button');
+      b.className='pm-sbtn'; b.type='button';
+      b.setAttribute('aria-label','Tìm kiếm');
+      b.innerHTML=ICON;
+      b.addEventListener('click',function(ev){
+        ev.preventDefault();
+        var mm=document.getElementById('mobileMenu');
+        if(mm&&mm.classList.contains('open')&&typeof toggleMenu==='function')toggleMenu();
+        openOv();
+      });
+      if(before)parent.insertBefore(b,before); else parent.appendChild(b);
+    }
+    var nl=document.querySelector('.navlinks')||document.querySelector('.nav-links');
+    if(nl)addBtn(nl, nl.querySelector('.langsw'));
+    var mm=document.getElementById('mobileMenu');
+    if(mm)addBtn(mm, mm.querySelector('.mobile-lang'));
+
+    /* ── ô mở sẵn: CHỈ trang chủ, chèn vào chỗ đánh dấu #pm-home-search ── */
+    var slot=document.getElementById('pm-home-search');
+    if(slot){
+      var w=document.createElement('div');
+      w.className='pm-shome';
+      w.innerHTML='<span class="pm-sic">'+ICON+'</span>'+
+        '<input class="pm-sin" type="text" autocomplete="off" spellcheck="false" '+
+        'aria-label="Tìm trong Namban Panorama" placeholder="Tìm một khu, một hồ, một câu hỏi…">'+
+        '<div class="pm-sres"></div>';
+      slot.appendChild(w);
+      var hin=w.querySelector('.pm-sin'), hres=w.querySelector('.pm-sres');
+      hin.addEventListener('input',function(){
+        var q=hin.value.trim();
+        load(function(){ render(hres,search(q),q); });
+      });
+      hin.addEventListener('focus',function(){ load(function(){}); });
+      document.addEventListener('click',function(e){
+        if(!w.contains(e.target)){ hres.classList.remove('on'); }
+        else if(hin.value.trim().length>1){ hres.classList.add('on'); }
+      });
+      hin.addEventListener('keydown',function(e){
+        if(e.key==='Escape'){ hin.value=''; hres.innerHTML=''; hres.classList.remove('on'); hin.blur(); }
+        if(e.key==='Enter'){ var a=hres.querySelector('a'); if(a)location.href=a.getAttribute('href'); }
+      });
+    }
+  }catch(e){}
+})();
