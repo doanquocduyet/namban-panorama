@@ -85,6 +85,10 @@
     <image:image><image:loc>https://nambanpanorama.com/images/og-cay-xang-petro-moi-o-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/chi-phi-dat-dai-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-toan-canh-og.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/cho-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/cho-thang-long-nam-ban-2.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/cho-nam-ban-buoi-toi.webp</image:loc></image:image>
@@ -164,6 +168,12 @@
   <url>
     <loc>https://nambanpanorama.com/dat-me-linh-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/dat-me-linh-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/dat-nam-ban-chua-xay</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/thua-dat-rao-giu-nam-ban.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/cong-trinh-dang-xay-me-linh.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-toan-canh-og.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/dat-nam-ban-cuoi-tuan</loc>

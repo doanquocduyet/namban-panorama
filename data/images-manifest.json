@@ -1240,6 +1240,9 @@
     "xay-nha-nho-nam-ban-bao-nhieu-tien.html": [
      "display"
     ],
+    "dat-nam-ban-chua-xay.html": [
+     "display"
+    ],
     "xay-nha-o-nam-ban.html": [
      "display"
     ],
@@ -1363,6 +1366,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -3966,6 +3972,11 @@
      "og",
      "twitter"
     ],
+    "chi-phi-dat-dai-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
     "xay-nha-giap-suoi-nam-ban.html": [
      "og",
      "schema",
@@ -3985,6 +3996,11 @@
     ],
     "pickleball-nam-ban.html": [
      "og",
+     "twitter"
+    ],
+    "dat-nam-ban-chua-xay.html": [
+     "og",
+     "schema",
      "twitter"
     ],
     "nam-ban-co-gi-moi.html": [
@@ -5571,6 +5587,9 @@
    ],
    "used_in": {
     "giu-dat-nam-ban-tu-xa.html": [
+     "display"
+    ],
+    "dat-nam-ban-chua-xay.html": [
      "display"
     ],
     "image-sitemap.xml": [
