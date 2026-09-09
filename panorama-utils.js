@@ -484,9 +484,9 @@
        phải ra "Hồ Thanh Trì" chứ không phải "Hợp tác" — vì bỏ dấu thì
        "hợp" thành "hop", mà "ho" là tiền tố của "hop". Đã vấp thật. */
     function words(s){ return s.split(/[^a-z0-9]+/); }
-    function search(q){
-      if(!IDX||!IDX.length)return [];
-      var f=fold(q), out=[];
+    /* Một chữ (hoặc một cụm dính liền): 5 bậc, khớp trọn một từ trong tiêu
+       đề đứng đầu. Đây là bản đã tinh, đừng đụng — xem CLAUDE.md §3. */
+    function searchOne(f,out){
       for(var i=0;i<IDX.length;i++){
         var x=IDX[i], sc, w=words(x.ft);
         if(w.indexOf(f)>-1) sc=0;                        /* trọn một từ trong tiêu đề */
@@ -497,6 +497,35 @@
         else continue;
         out.push([sc,x.t.length,x]);
       }
+    }
+
+    /* Nhiều chữ: MỌI chữ phải có mặt, không cần dính liền. Không có nhánh
+       này thì gõ "chi phí tách thửa" ra 0 kết quả — dù bài tách thửa nhắc
+       cụm đó 16 lần — vì bản cũ chỉ dò nguyên cụm làm chuỗi con. Người ta
+       gõ ba bốn chữ là chuyện thường, trượt sạch là hỏng đúng lúc cần nhất.
+       Xếp: nguyên cụm trong tiêu đề → nguyên cụm ở mô tả → càng nhiều chữ
+       rơi vào tiêu đề càng lên trên. */
+    function searchMany(f,toks,out){
+      for(var i=0;i<IDX.length;i++){
+        var x=IDX[i], k, hitAll=true, nTitle=0;
+        for(k=0;k<toks.length;k++){
+          if(x.f.indexOf(toks[k])<0){ hitAll=false; break; }
+          if(x.ft.indexOf(toks[k])>-1) nTitle++;
+        }
+        if(!hitAll) continue;
+        var sc = x.ft.indexOf(f)>-1 ? 0
+               : x.f.indexOf(f)>-1  ? 1
+               : 2 + (toks.length-nTitle);   /* thiếu chữ nào ở tiêu đề thì tụt bấy nhiêu */
+        out.push([sc,x.t.length,x]);
+      }
+    }
+
+    function search(q){
+      if(!IDX||!IDX.length)return [];
+      var f=fold(q).replace(/\s+/g,' ').replace(/^ | $/g,''), out=[];
+      if(!f) return [];
+      var toks=f.split(' ').filter(function(t){return t;});
+      if(toks.length<2) searchOne(f,out); else searchMany(f,toks,out);
       out.sort(function(a,b){return a[0]-b[0]||a[1]-b[1];});
       return out.slice(0,MAX).map(function(r){return r[2];});
     }

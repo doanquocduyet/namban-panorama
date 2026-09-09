@@ -198,9 +198,18 @@ phần cuối `panorama-utils.js` dựng giao diện · `index.html` có slot `#
 - **Ô mở sẵn CHỈ ở trang chủ** (slot đó). Mọi trang khác chỉ có **icon kính lúp trong nav
   + trong menu mobile** — bấm mới mở lớp phủ. Đừng thêm ô mở sẵn vào bài, sai chốt.
 - `search-index.json` **tải lười** — chỉ `fetch` lần đầu người đọc mở ô, không nặng trang.
-- Xếp hạng 5 bậc, khớp **trọn một từ trong tiêu đề** đứng đầu. Đây là bản đã vá hai lỗi
-  thật: gộp một chuỗi dò thì "ho bai cong" ra bài đường Hà Bắc trước; chỉ so tiền tố thì
-  "ho" ra "**Hợp** tác" trước "**Hồ** Thanh Trì". **Đừng gộp lại `ft`/`f` làm một.**
+- **Hai nhánh, đừng gộp.** Gõ **một chữ** → `searchOne`, 5 bậc, khớp trọn một từ trong
+  tiêu đề đứng đầu. Gõ **từ hai chữ trở lên** → `searchMany`, **mọi chữ phải có mặt,
+  không cần dính liền**. Thiếu nhánh sau thì gõ "chi phí tách thửa" ra **0 kết quả** —
+  đã vấp thật 9/9/2026, vì bản đầu chỉ dò nguyên cụm làm chuỗi con.
+- Ba lỗi đã vá, đừng làm lại: gộp một chuỗi dò thì "ho bai cong" ra bài đường Hà Bắc
+  trước; chỉ so tiền tố thì "ho" ra "**Hợp** tác" trước "**Hồ** Thanh Trì"; chỉ dò nguyên
+  cụm thì truy vấn nhiều chữ trượt sạch. **Đừng gộp lại `ft`/`f` làm một.**
+- **Index KHÔNG chứa thân bài** — chỉ tựa + description + keywords. Nên câu ghép một chữ
+  ở thân bài với một chữ ở tựa sẽ không khớp. Đã cân nhắc nhét thêm H2+H3 (83KB thô toàn
+  site) và **cố ý bỏ**: ca thúc đẩy ý đó là "chi phí tách thửa", mà `/tach-thua-dat-nam-ban`
+  không hề có chữ "chi phí" ở bất cứ đâu — kể cả H2. Thêm index không cứu được nội dung
+  chưa có. Đây là Luật 14: chưa chứng minh được cải thiện thì chưa thêm.
 - Chỉ index trang `lang="vi"` — ô search nằm ở trang tiếng Việt, trộn trang ngoại ngữ vào
   là trả kết quả người đọc không mở được.
 - Phím `/` mở, `Esc` đóng. Không kết quả → "Chưa có bài nào về chuyện này." (không CTA).
