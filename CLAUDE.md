@@ -205,6 +205,28 @@ phần cuối `panorama-utils.js` dựng giao diện · `index.html` có slot `#
   là trả kết quả người đọc không mở được.
 - Phím `/` mở, `Esc` đóng. Không kết quả → "Chưa có bài nào về chuyện này." (không CTA).
 
+### CHẶN COPY — CHỪA MỘT CHÌA CHO CHÚ (9/9/2026)
+
+Cuối `panorama-utils.js` có lớp chặn bôi đen chữ, kéo ảnh, chuột phải trên ảnh, Ctrl+S.
+Cố ý — giữ ảnh Chú tự chụp và chữ Chú viết khỏi bị lấy nguyên. **Đừng gỡ.**
+
+**Chìa của Chú: thêm `?copy=1` vào cuối bất kỳ địa chỉ nào** → tắt lớp chặn trên máy đó
+và **nhớ luôn** (localStorage `pm-copy-ok`), lần sau vào thẳng vẫn copy được. Khoá lại
+bằng `?copy=0`. Người khác không có chìa thì vẫn bị chặn nguyên.
+
+Ba điều đã kiểm, đừng bàn lại:
+- **Không hại SEO/AEO.** Google và AI đọc thẳng HTML nguồn, không chạy sự kiện `copy`;
+  `user-select:none` không đụng tới crawler. Lớp này chỉ ngăn người dùng phổ thông.
+- **Chừa sẵn phần liên hệ** (`EXEMPT`): footer, khối liên hệ cuối bài, `tel:`/`mailto:`/
+  Zalo, mọi ô nhập. Khách vẫn copy được số mà gọi — không được chặn mấy chỗ này, chặn là
+  tự cắt phễu.
+- **Chuột phải trên CHỮ vẫn mở menu** (chỉ chặn trên ảnh) để người đọc còn dùng được
+  chức năng dịch của trình duyệt. Đừng chặn luôn cho gọn.
+
+Đã QA Playwright 8 nhánh: khách thường bị chặn cả chữ lẫn ảnh · `?copy=1` mở được cả hai ·
+vào thẳng lần sau vẫn nhớ · `?copy=0` khoá lại · khách trên máy khác vẫn bị chặn.
+`localStorage` lỗi (chế độ ẩn danh) thì **cứ chặn** — ngã về phía an toàn.
+
 ### QUYẾT ĐỊNH ĐÃ CHỐT — ĐỪNG BÀN LẠI (26/7/2026)
 
 **0. CÂU CHỦ LỰC (chữ ký) = "Hiểu vùng đất trước khi hiểu giá đất"** (Chú chốt 28/7).

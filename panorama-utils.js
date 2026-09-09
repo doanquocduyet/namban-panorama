@@ -401,6 +401,21 @@
    Lưu ý: chỉ chặn người dùng phổ thông; KHÔNG ảnh hưởng Google/AI (đọc thẳng HTML nguồn). */
 (function(){
   try{
+    /* ── CHÌA KHOÁ CỦA CHÚ — mở khoá copy trên máy mình ──────────────────
+       Thêm `?copy=1` vào cuối bất kỳ địa chỉ nào trên site → tắt lớp chặn,
+       và NHỚ luôn trên máy đó, lần sau vào thẳng cũng copy được.
+       Muốn bật chặn lại: `?copy=0`.
+       Đây là công tắc tiện tay, KHÔNG phải bảo mật — chính lớp chặn dưới
+       cũng chỉ ngăn người dùng phổ thông (mở nguồn HTML là đọc hết chữ,
+       mở tab Network là tải hết ảnh). Nên đặt khoá dễ nhớ, đừng đặt khó. */
+    var CKEY='pm-copy-ok';
+    try{
+      var q=location.search||'';
+      if(q.indexOf('copy=1')>-1) localStorage.setItem(CKEY,'1');
+      else if(q.indexOf('copy=0')>-1) localStorage.removeItem(CKEY);
+      if(localStorage.getItem(CKEY)==='1') return;   /* đã mở khoá — không cài lớp chặn */
+    }catch(e){}                                      /* localStorage lỗi → cứ chặn, an toàn hơn */
+
     var EXEMPT='input,textarea,select,[contenteditable="true"],.pm-selectable,'
       +'footer,footer *,.pm-endcontact,.pm-endcontact *,.contact,.contact *,'
       +'a[href^="tel:"],a[href^="mailto:"],a[href*="zalo"],a[href*="mail.google.com"]';
