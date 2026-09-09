@@ -2,6 +2,16 @@
 
 Bản dựng 9/9/2026. Chuyển bộ 7 prompt Chú đưa sang chất liệu Panorama.
 
+**Trang: [facebook.com/nambanpanorama](https://facebook.com/nambanpanorama)**
+
+Đăng tự động đã dựng xong: `tools/fb-post.py` + `.github/workflows/fb-post.yml`,
+hàng đợi ở `data/fb-queue.json`. Chạy trên runner GitHub (phiên Claude bị chặn
+`graph.facebook.com`). **Chỉ cần một secret `FB_PAGE_TOKEN`** — page token tự gắn
+với đúng một Trang nên script hỏi `GET /me` ra Page ID, rồi đối chiếu username với
+`nambanpanorama`; lệch thì dừng, không đăng. Chốt này có thật vì Chú quản ba Trang
+(Panorama · Villas · Greenspacers), bấm nhầm ở bước lấy token là bài Panorama rơi
+lên tường Trang bán đất. Chưa cấp token thì workflow chạy khô, in bài ra, thoát sạch.
+
 Đọc `CLAUDE.md` §2 trước khi viết bất cứ dòng nào lên Facebook. Trang Facebook là
 **cánh tay của publication**, không phải kênh bán. Người ta đọc xong phải thấy
 "chỗ này biết chuyện", không phải "chỗ này đang gạ mình".

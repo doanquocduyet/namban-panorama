@@ -3,8 +3,12 @@ name: Đăng Facebook theo hàng đợi
 # Chạy trên runner GitHub, KHÔNG chạy từ phiên Claude — ở đó
 # graph.facebook.com bị chặn.
 #
-# Chưa có secret FB_PAGE_ID / FB_PAGE_TOKEN thì script tự chạy khô: in ra
-# bài sắp đăng rồi thoát 0. Bật workflow trước, cấp token sau, không run nào đỏ.
+# CHỈ CẦN MỘT SECRET: FB_PAGE_TOKEN. Page token đã gắn sẵn với đúng một
+# Trang nên script tự hỏi `GET /me` ra Page ID, rồi đối chiếu username với
+# `nambanpanorama` — lệch thì dừng, không đăng.
+#
+# Chưa có secret thì script tự chạy khô: in ra bài sắp đăng rồi thoát 0.
+# Bật workflow trước, cấp token sau, không run nào đỏ.
 
 on:
   schedule:
@@ -35,8 +39,10 @@ jobs:
 
       - name: Đăng bài đến hạn
         env:
-          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          # Tuỳ chọn, chỉ đặt khi cần ép một node cụ thể. Bỏ trống là
+          # đường đi thường dùng — script tự resolve từ token.
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FB_DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
         run: python3 tools/fb-post.py
 

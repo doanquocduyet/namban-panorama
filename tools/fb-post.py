@@ -11,9 +11,17 @@ mục 1.2 — link ngoài đặt trong caption làm tụt tiếp cận).
 Không có secret thì chạy khô (dry-run) và in ra bài sắp đăng. Nhờ vậy bật
 workflow trước, cấp token sau, mà không có run nào đỏ.
 
+CHỈ CẦN MỘT SECRET. Page Access Token đã tự gắn với đúng một Trang, nên
+`GET /me` trả về chính Trang đó — không phải đi tìm Page ID dạng số. Script
+tự hỏi, rồi **đối chiếu username trả về với `EXPECT_PAGE`**; lệch thì dừng,
+không đăng. Đây là chốt chặn thật: token cấp nhầm Trang khác (Chú quản nhiều
+Trang, bấm nhầm ở bước Get Page Access Token) sẽ bị bắt ngay, thay vì bài
+Panorama rơi lên tường của một Trang khác rồi mới phát hiện.
+
 Biến môi trường:
-    FB_PAGE_ID     — ID Trang (số).
-    FB_PAGE_TOKEN  — Page Access Token không hết hạn.
+    FB_PAGE_TOKEN  — Page Access Token không hết hạn. BẮT BUỘC.
+    FB_PAGE_ID     — tuỳ chọn, ép đăng vào một node cụ thể. Bỏ trống thì
+                     script tự resolve từ token (đường đi thường dùng).
     FB_DRY_RUN     — đặt "1" để buộc chạy khô dù đã có token.
 """
 import datetime
@@ -28,6 +36,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 QUEUE = os.path.join(ROOT, "data", "fb-queue.json")
 GRAPH = "https://graph.facebook.com/v21.0"
 SITE = "https://nambanpanorama.com"
+
+# Trang đích: facebook.com/nambanpanorama. Ghi cứng ở đây làm chốt chặn —
+# token phải trỏ đúng Trang này thì mới đăng.
+EXPECT_PAGE = "nambanpanorama"
 
 # Chuỗi cấm — cùng danh sách với §2.1 CLAUDE.md. Bài Facebook cũng là mặt
 # publication, nên chặn ngay ở đây thay vì trông vào người soạn nhớ.
@@ -72,10 +84,37 @@ def api(path, params, token):
         return json.loads(r.read().decode())
 
 
+def get(path, params, token):
+    qs = urllib.parse.urlencode(dict(params, access_token=token))
+    with urllib.request.urlopen(GRAPH + path + "?" + qs, timeout=60) as r:
+        return json.loads(r.read().decode())
+
+
+def resolve_page(token):
+    """Hỏi token nó thuộc Trang nào, rồi đối chiếu với EXPECT_PAGE.
+
+    Trả về (page_id, mô tả) nếu đúng Trang; ném RuntimeError nếu lệch.
+    Không dùng `username` để đăng — Facebook cho Trang đổi username, còn id
+    dạng số thì không đổi.
+    """
+    me = get("/me", {"fields": "id,name,username"}, token)
+    uname = (me.get("username") or "").lower()
+    if uname and uname != EXPECT_PAGE:
+        raise RuntimeError(
+            "Token trỏ tới Trang %r (%s), không phải %r. Không đăng."
+            % (me.get("name"), uname, EXPECT_PAGE))
+    if not uname:
+        # Trang chưa đặt username thì không đối chiếu được — báo rõ để
+        # người bấm nút tự nhìn tên, đừng lặng lẽ đăng bừa.
+        print("CẢNH BÁO: Trang chưa có username. Tên Trang theo token: %r"
+              % me.get("name"))
+    return me["id"], "%s (%s)" % (me.get("name"), uname or "chưa có username")
+
+
 def main():
     page = os.environ.get("FB_PAGE_ID", "").strip()
     token = os.environ.get("FB_PAGE_TOKEN", "").strip()
-    dry = os.environ.get("FB_DRY_RUN") == "1" or not (page and token)
+    dry = os.environ.get("FB_DRY_RUN") == "1" or not token
 
     queue = load()
     today = datetime.date.today().isoformat()
@@ -99,7 +138,8 @@ def main():
         comment = (comment + "\n" + link).strip()
 
     if dry:
-        print("=== CHẠY KHÔ (chưa có FB_PAGE_ID / FB_PAGE_TOKEN) ===")
+        print("=== CHẠY KHÔ (chưa có FB_PAGE_TOKEN) ===")
+        print("Trang:", "facebook.com/" + EXPECT_PAGE)
         print("ngày :", post.get("date"))
         print("bài  :", link or "(không có link)")
         print("---- caption ----")
@@ -108,6 +148,10 @@ def main():
         print(comment)
         print("=== hết. Chưa đăng gì lên Facebook. ===")
         return 0
+
+    if not page:
+        page, who = resolve_page(token)
+        print("Đăng lên Trang:", who, "· id", page)
 
     res = api("/%s/feed" % page, {"message": post["message"]}, token)
     pid = res["id"]
@@ -128,6 +172,9 @@ def main():
 if __name__ == "__main__":
     try:
         sys.exit(main())
+    except RuntimeError as e:
+        print("DỪNG —", e, file=sys.stderr)
+        sys.exit(1)
     except urllib.error.HTTPError as e:
         body = e.read().decode(errors="replace")
         print("LỖI GRAPH API %s: %s" % (e.code, body), file=sys.stderr)
