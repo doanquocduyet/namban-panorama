@@ -149,9 +149,17 @@
     <image:image><image:loc>https://nambanpanorama.com/images/dat-gia-lam-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/dat-giap-ho-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/dat-giap-ho-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/dat-giap-rung-thong-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/me-linh-doi-thong.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/dat-giap-rung-thong-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/dat-giap-suoi-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-toan-canh-og.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/dat-me-linh-nam-ban</loc>
@@ -906,6 +914,10 @@
     <loc>https://nambanpanorama.com/xay-nha-giap-ho-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/ho-thanh-tri-dong-thanh.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/xay-nha-giap-ho-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/xay-nha-giap-rung-thong-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/dat-giap-rung-thong-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/xay-nha-giap-suoi-nam-ban</loc>

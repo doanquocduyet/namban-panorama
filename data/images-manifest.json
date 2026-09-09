@@ -8,8 +8,8 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 383,
- "unused_count": 63,
+ "total_images": 385,
+ "unused_count": 64,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
   "ban-do-cao-do-thua-dat-nam-ban.webp",
@@ -72,6 +72,7 @@
   "tuong-duc-me-nha-tho-nam-ban.webp",
   "van-phong-dien-linh-nam-ban.webp",
   "vuon-rau-nha-vuon-nam-ban.webp",
+  "xay-nha-giap-rung-thong-nam-ban.jpg",
   "xay-nha-tren-doi-me-linh.webp",
   "xe-khach-nhin-ra-cua-nam-ban.webp"
  ],
@@ -1351,6 +1352,20 @@
     ]
    }
   },
+  "dat-giap-ho-nam-ban.jpg": {
+   "kb": 232,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dat-giap-ho-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
   "dat-giap-rung-thong-nam-ban.jpg": {
    "kb": 156,
    "dims": [
@@ -1358,6 +1373,11 @@
     630
    ],
    "used_in": {
+    "xay-nha-giap-rung-thong-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
     "dat-giap-rung-thong-nam-ban.html": [
      "og",
      "schema",
@@ -1481,7 +1501,6 @@
     "dat-nguon-goc-lam-nghiep-nam-ban.html": [
      "og",
      "ref",
-     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -2586,6 +2605,9 @@
    "used_in": {
     "ho-tron-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -3935,6 +3957,11 @@
     630
    ],
    "used_in": {
+    "dat-giap-suoi-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
     "kinh-nghiem-mua-dat-nam-ban.html": [
      "og",
      "twitter"
@@ -4930,6 +4957,9 @@
    "used_in": {
     "ho-tron-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -6138,6 +6168,15 @@
      "ref"
     ]
    }
+  },
+  "xay-nha-giap-rung-thong-nam-ban.jpg": {
+   "kb": 181,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "xay-nha-nho-nam-ban-bao-nhieu-tien.jpg": {
    "kb": 188,
