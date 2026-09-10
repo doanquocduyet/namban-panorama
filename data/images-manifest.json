@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 385,
+ "total_images": 388,
  "unused_count": 64,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -1269,6 +1269,32 @@
     ]
    }
   },
+  "dai-hoc-da-lat-lam-viec-nam-ban.webp": {
+   "kb": 105,
+   "dims": [
+    1280,
+    709
+   ],
+   "used_in": {
+    "dai-hoc-da-lat-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
+  "dai-hoc-da-lat-nam-ban.jpg": {
+   "kb": 138,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dai-hoc-da-lat-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
   "dai-ngam-nam-ban.jpg": {
    "kb": 208,
    "dims": [
@@ -1796,6 +1822,18 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "doan-dai-hoc-da-lat-tai-nam-ban.webp": {
+   "kb": 125,
+   "dims": [
+    1280,
+    853
+   ],
+   "used_in": {
+    "dai-hoc-da-lat-nam-ban.html": [
+     "display"
     ]
    }
   },
@@ -3963,6 +4001,11 @@
     630
    ],
    "used_in": {
+    "xem-dat-nam-ban-chua-mua-duoc.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
     "dat-giap-suoi-nam-ban.html": [
      "og",
      "schema",

@@ -140,6 +140,12 @@
     <image:image><image:loc>https://nambanpanorama.com/images/dac-san-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/dai-hoc-da-lat-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/dai-hoc-da-lat-lam-viec-nam-ban.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/doan-dai-hoc-da-lat-tai-nam-ban.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/dai-hoc-da-lat-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/dat-dong-thanh-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/dat-dong-thanh-nam-ban.jpg</image:loc></image:image>
   </url>
@@ -943,6 +949,10 @@
     <image:image><image:loc>https://nambanpanorama.com/images/cong-trinh-dang-xay-me-linh.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/nha-vuon-hoang-hon-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/hien-nha-thung-lung.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/xem-dat-nam-ban-chua-mua-duoc</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-toan-canh-og.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/zh/nam-ban-daxiang-pubu</loc>
