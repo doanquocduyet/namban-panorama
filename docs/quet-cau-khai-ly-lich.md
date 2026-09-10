@@ -227,6 +227,15 @@ lô đất mình ở Nam Ban?"* — "lô đất mình" và "ở Nam Ban" là hai
 không phải khai lý lịch. Grep còn bắt được ca này ở cả HTML lẫn `llms-full.txt`,
 **đó là con số kỳ vọng, không phải lỗi**. Đợt rà sau gặp lại thì đừng mở lại.
 
-**Còn treo:** entry `llms-full.txt` chứa LLM-2 giờ đọc cụt — câu
+**LLM-2 đã đóng (10/9/2026).** Entry `llms-full.txt` từng đọc cụt — câu
 *"Qua nhiều mùa được giá lẫn mất giá."* đứng một mình sau *"nhắn chúng tôi một
-câu."*, mất chủ ngữ. Phiếu cấm tự nối chữ nên để nguyên, chờ câu thay.
+câu."*, mất chủ ngữ; rồi bản vá tiếp theo lại để hai gạch ngang trong một câu,
+biến vế giữa thành ngoặc đơn. Đã thay bằng câu cháu viết: *"…nhắn chúng tôi một
+câu. Qua nhiều mùa được giá lẫn mất giá rồi, chúng tôi kể được cái gì thật."*
+
+**Ghi lại một điều đã kiểm, để đợt sau khỏi lo nhầm:** ca này chỉ tồn tại trong
+`llms-full.txt`. Câu trong `mua-bo-nam-ban.html` khác chữ (*"Chúng tôi ở đây, qua
+nhiều mùa được giá lẫn mất giá."*) và **nằm ngoài vùng `.art-body` → `.share-row`**
+nên bộ quét không đụng — đúng phạm vi Luật 13c, không phải sót. Hệ quả: sửa
+`llms-full.txt` **không** làm lệch MP3 bài `/mua-bo-nam-ban`, vì `narration()` đọc
+HTML chứ không đọc `llms-full.txt`. Đã kiểm bằng chính `scripts/gen_audio_edge.py`.
