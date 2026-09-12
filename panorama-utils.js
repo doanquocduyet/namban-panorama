@@ -689,3 +689,30 @@
     }
   }catch(e){}
 })();
+
+/* SPECULATION RULES — tải trước trang kế khi người đọc rê chuột/chạm vào link.
+   Dùng PREFETCH chứ KHÔNG dùng prerender: prerender chạy luôn cả JS của trang
+   đích nên vừa tốn dữ liệu (khách 4G) vừa dễ làm GA4 đếm lệch. prefetch lấy
+   sẵn HTML thôi — đã gần hết phần lợi về tốc độ, gần hết phần rủi ro.
+   eagerness "moderate" = chỉ lấy khi rê/chạm, không lấy bừa mọi link trên trang.
+   Loại trừ: link ngoài, tel/mailto/zalo, và ?copy= (chìa của Chú). */
+(function(){
+  try{
+    if(!HTMLScriptElement.supports||!HTMLScriptElement.supports('speculationrules'))return;
+    if(document.querySelector('script[type="speculationrules"]'))return;
+    var rules={prefetch:[{
+      source:"document",
+      where:{and:[
+        {href_matches:"/*"},
+        {not:{href_matches:"/*\\?*"}},
+        {not:{selector_matches:"a[rel~=nofollow]"}},
+        {not:{selector_matches:"[target=_blank]"}}
+      ]},
+      eagerness:"moderate"
+    }]};
+    var sc=document.createElement('script');
+    sc.type='speculationrules';
+    sc.textContent=JSON.stringify(rules);
+    document.head.appendChild(sc);
+  }catch(e){}
+})();

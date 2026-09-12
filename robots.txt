@@ -95,3 +95,6 @@ Allow: /
 
 Sitemap: https://nambanpanorama.com/sitemap.xml
 Sitemap: https://nambanpanorama.com/image-sitemap.xml
+
+# Feed RSS — bot AI phát hiện bài mới nhanh hơn sitemap
+Sitemap: https://nambanpanorama.com/feed.xml
