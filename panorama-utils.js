@@ -287,7 +287,7 @@
 ".pm-audio-btn svg{width:15px;height:15px;display:block;fill:#f1ece2;}",
 ".pm-audio-lbl{font-size:13.5px;color:var(--ink,#1a1815);letter-spacing:.2px;font-weight:500;}",
 ".pm-audio-time{font-size:12px;color:var(--muted,#6e6759);}",
-".pm-audio-speed{font-family:'Fraunces',serif;font-size:12.5px;color:var(--muted,#6e6759);background:none;border:1px solid var(--line,#e1d9c8);border-radius:20px;padding:2px 9px;margin-left:2px;margin-right:4px;cursor:pointer;transition:color .2s,border-color .2s;}",
+".pm-audio-speed{font-family:'Fraunces',serif;font-size:12.5px;color:var(--muted,#6e6759);background:none;border:1px solid var(--line,#e1d9c8);border-radius:20px;padding:4px 10px;margin-left:2px;margin-right:4px;cursor:pointer;transition:color .2s,border-color .2s;}",
 ".pm-audio-speed:hover{color:var(--clay,#9d5d38);border-color:var(--clay-soft,#bb8862);}",
 ".pm-audio.pm-on .pm-audio-lbl{color:var(--forest,#2f4034);}"
     ].join("");
@@ -547,9 +547,14 @@
     st.textContent=
       /* icon trên nav */
       '.pm-sbtn{background:none;border:0;padding:0 2px;cursor:pointer;color:inherit;opacity:.72;'+
-      'display:inline-flex;align-items:center;transition:opacity .25s;line-height:0;}'+
+      'display:inline-flex;align-items:center;justify-content:center;transition:opacity .25s;line-height:0;'+
+      'min-width:24px;min-height:24px;}'+
       '.pm-sbtn:hover{opacity:1;}'+
       '.mobile-menu .pm-sbtn{padding:15px 0;opacity:.85;}'+
+      /* vùng chạm tối thiểu 24×24 (WCAG 2.2 AA) — lớp phủ vô hình, KHÔNG đổi hình thức chữ */
+      '.l10n a,.mobile-lang a{position:relative;}'+
+      '.l10n a::after,.mobile-lang a::after{content:"";position:absolute;left:-5px;right:-5px;'+
+      'top:50%;transform:translateY(-50%);height:24px;}'+
       /* lớp phủ */
       '.pm-sov{position:fixed;inset:0;z-index:1200;display:none;background:rgba(241,236,226,.92);'+
       '-webkit-backdrop-filter:blur(18px) saturate(1.15);backdrop-filter:blur(18px) saturate(1.15);}'+

@@ -165,8 +165,8 @@ footer .meta{font-size:11px;letter-spacing:.8px;opacity:.34;}
 
 
 /* Nut quay lai dau bai */
-.art-back{max-width:720px;margin:0 auto;padding:20px 40px 0;}
-.art-back a{display:inline-flex;align-items:center;gap:6px;font-family:'Be Vietnam Pro',sans-serif;font-size:13px;color:var(--muted);text-decoration:none;letter-spacing:.2px;transition:color .2s;}
+.art-back{max-width:720px;margin:0 auto;padding:17px 40px 0;}
+.art-back a{display:inline-flex;align-items:center;gap:6px;font-family:'Be Vietnam Pro',sans-serif;font-size:13px;color:var(--muted);text-decoration:none;letter-spacing:.2px;transition:color .2s;padding:3px 0;}
 .art-back a:hover{color:var(--forest);}
 
 /* Nut lien he noi - trang y dinh cao */
