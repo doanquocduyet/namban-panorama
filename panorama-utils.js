@@ -318,29 +318,41 @@
     var mp3=(document.querySelector('meta[name="pm-audio"]')||{}).content||'';
 
     if(mp3){
-      /* ---- CHẾ ĐỘ MP3: phát thật, chạy nền/màn hình khoá ---- */
-      var audio=new Audio(); audio.preload='metadata'; audio.src=mp3;
+      /* ---- CHẾ ĐỘ MP3: phát thật, chạy nền/màn hình khoá ----
+         TẢI LƯỜI: KHÔNG tạo Audio lúc mở trang. Trước đây tạo sẵn với
+         preload='metadata', nhưng Chromium vẫn kéo NGUYÊN file — đo thật
+         4,5MB trên /vi-sao-nam-ban-nhieu-giao-dich, 3,5MB trên
+         /truoc-khi-xuong-tien, kể cả với server có hỗ trợ Range.
+         Nhãn "~N phút" vốn tính từ đếm chữ nên không cần MP3 để hiện.
+         Chỉ dựng Audio ở lần bấm đầu. ĐỪNG đưa new Audio() ra ngoài lại. */
+      var audio=null;
       function fmt(s){ if(!isFinite(s))return ''; s=Math.round(s); return Math.floor(s/60)+':'+('0'+(s%60)).slice(-2); }
-      audio.addEventListener('loadedmetadata',function(){ if(audio.duration)timeEl.textContent=fmt(audio.duration); });
-      audio.addEventListener('timeupdate',function(){ if(audio.duration)timeEl.textContent=fmt(audio.duration-audio.currentTime); });
-      audio.addEventListener('play',function(){ setIcon(true); lbl.textContent=L.reading; wrap.classList.add('pm-on'); });
-      audio.addEventListener('pause',function(){ if(!audio.ended){ setIcon(false); lbl.textContent=L.pause; } });
-      audio.addEventListener('ended',function(){ setIcon(false); wrap.classList.remove('pm-on'); lbl.textContent=L.replay; if(audio.duration)timeEl.textContent=fmt(audio.duration); });
-      btn.addEventListener('click',function(){ if(audio.paused){ if(audio.ended)audio.currentTime=0; audio.play(); } else audio.pause(); });
-      spd.addEventListener('click',function(){ audio.playbackRate=cycleRate(); });
-      if('mediaSession' in navigator){
-        try{
-          navigator.mediaSession.metadata=new MediaMetadata({
-            title:(h1?h1.textContent.trim():document.title),
-            artist:'Đoàn Quốc Duyệt — Namban Panorama',
-            album:'Namban Panorama'
-          });
-          navigator.mediaSession.setActionHandler('play',function(){ audio.play(); });
-          navigator.mediaSession.setActionHandler('pause',function(){ audio.pause(); });
-          navigator.mediaSession.setActionHandler('seekbackward',function(){ audio.currentTime=Math.max(0,audio.currentTime-15); });
-          navigator.mediaSession.setActionHandler('seekforward',function(){ audio.currentTime=Math.min(audio.duration||1e9,audio.currentTime+15); });
-        }catch(e){}
+      function ensureAudio(){
+        if(audio)return audio;
+        audio=new Audio(); audio.preload='metadata'; audio.src=mp3;
+        audio.playbackRate=rate;
+        audio.addEventListener('loadedmetadata',function(){ if(audio.duration)timeEl.textContent=fmt(audio.duration); });
+        audio.addEventListener('timeupdate',function(){ if(audio.duration)timeEl.textContent=fmt(audio.duration-audio.currentTime); });
+        audio.addEventListener('play',function(){ setIcon(true); lbl.textContent=L.reading; wrap.classList.add('pm-on'); });
+        audio.addEventListener('pause',function(){ if(!audio.ended){ setIcon(false); lbl.textContent=L.pause; } });
+        audio.addEventListener('ended',function(){ setIcon(false); wrap.classList.remove('pm-on'); lbl.textContent=L.replay; if(audio.duration)timeEl.textContent=fmt(audio.duration); });
+        if('mediaSession' in navigator){
+          try{
+            navigator.mediaSession.metadata=new MediaMetadata({
+              title:(h1?h1.textContent.trim():document.title),
+              artist:'Đoàn Quốc Duyệt — Namban Panorama',
+              album:'Namban Panorama'
+            });
+            navigator.mediaSession.setActionHandler('play',function(){ audio.play(); });
+            navigator.mediaSession.setActionHandler('pause',function(){ audio.pause(); });
+            navigator.mediaSession.setActionHandler('seekbackward',function(){ audio.currentTime=Math.max(0,audio.currentTime-15); });
+            navigator.mediaSession.setActionHandler('seekforward',function(){ audio.currentTime=Math.min(audio.duration||1e9,audio.currentTime+15); });
+          }catch(e){}
+        }
+        return audio;
       }
+      btn.addEventListener('click',function(){ var a=ensureAudio(); if(a.paused){ if(a.ended)a.currentTime=0; a.play(); } else a.pause(); });
+      spd.addEventListener('click',function(){ var r=cycleRate(); if(audio)audio.playbackRate=r; });
       return;
     }
 
