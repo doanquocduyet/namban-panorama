@@ -672,6 +672,21 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     nên slice **không chứa** ký tự đó — phải nới biên trên, nếu không `rindex` ném
     `ValueError` giữa chừng.
 
+
+26. **H1 PHẢI LÀ CÂU NGƯỜI ĐỌC CÓ KHẢ NĂNG GÕ, KHÔNG PHẢI CÂU VĂN HAY DO NGƯỜI VIẾT ĐẶT**
+    (Chú chốt 12/9/2026, ca thật `/vi-sao-nam-ban-nhieu-giao-dich`). H1 bản đầu là
+    *"Đất vùng ven Đà Lạt nhiều nơi, sao Nam Ban xôm tụ hơn"* — đọc hay, nhịp đẹp, và
+    **không ai gõ câu đó vào ô tìm kiếm**. Chữ "xôm tụ" là chữ của người viết, không phải
+    chữ của người tra. Đã đổi thành *"Vì sao đất Nam Ban nhiều người mua bán hơn các vùng
+    ven Đà Lạt khác?"*.
+    **Luật:** trước khi chốt H1, hỏi một câu — *có ai gõ đúng cụm này không?* Câu đảo ngữ,
+    câu hai vế kiểu "A nhiều nơi, sao B…", chữ địa phương hoặc chữ văn vẻ chỉ người viết
+    dùng → đều là dấu hiệu H1 đang phục vụ tai người viết chứ không phục vụ tay người tra.
+    Câu hay để dành cho câu dẫn (standfirst) và thân bài; H1 thì bám cụm người ta thật sự
+    search. Kèm: `<title>`, H1, `og:title` và `headline` vẫn phải thống nhất (Luật 22).
+    **Có thể còn bài khác vi phạm — CHƯA mở đợt rà.** Đợt sau đối chiếu H1 toàn site theo
+    luật này; đừng tự mở khi chưa được giao.
+
 ---
 
 ## 7. ĐÍNH CHÍNH LUẬT — 6 điểm đã kiểm chứng (26/8/2026)
