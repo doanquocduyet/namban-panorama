@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 394,
+ "total_images": 395,
  "unused_count": 67,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -1360,9 +1360,6 @@
     1125
    ],
    "used_in": {
-    "dat-nguon-goc-lam-nghiep-nam-ban.html": [
-     "display"
-    ],
     "dat-the-am-the-duong.html": [
      "display"
     ],
@@ -1506,6 +1503,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -1907,6 +1907,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "doc-tin-rao-dat-nam-ban.jpg": {
+   "kb": 125,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "doc-tin-rao-dat-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },

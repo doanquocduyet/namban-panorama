@@ -22,7 +22,7 @@
       "dat-me-linh-nam-ban","dat-trung-tam-nam-ban","dat-vuon-nam-ban-xay-duoc-gi",
       "nen-xem-khu-nao-o-nam-ban","nhan-tien-den-bu-dat-nen-lam-gi","tach-thua-dat-nam-ban",
       "tra-cuu-dat-nam-ban","xay-nha-o-nam-ban","mua-dat-nam-ban-500-trieu-1-ty",
-      "quy-hoach-chung-nam-ban","dat-nguon-goc-lam-nghiep-nam-ban"];
+      "quy-hoach-chung-nam-ban","dat-nguon-goc-lam-nghiep-nam-ban","doc-tin-rao-dat-nam-ban"];
     var slug=(location.pathname||"").replace(/\/+$/,"").split("/").pop().replace(/\.html$/,"");
     if(slug===""||IN.indexOf(slug)===-1)return;
     if(document.getElementById("pm-endcontact"))return;

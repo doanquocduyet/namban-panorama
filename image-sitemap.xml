@@ -214,7 +214,6 @@
   </url>
   <url>
     <loc>https://nambanpanorama.com/dat-nguon-goc-lam-nghiep-nam-ban</loc>
-    <image:image><image:loc>https://nambanpanorama.com/images/dat-doi-ven-rung-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/dat-nguon-goc-lam-nghiep-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
@@ -283,6 +282,10 @@
     <image:image><image:loc>https://nambanpanorama.com/images/duong-dat-do-cat-suon-doi-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/dat-doi-duong-vao-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/doc-the-dat-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/doc-tin-rao-dat-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/doc-tin-rao-dat-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/duong-di-nam-ban</loc>
