@@ -166,6 +166,17 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
   2 ảnh cùng loại dính sát nhau** (vd 2 quán café kề nhau → nát bài). Ảnh Chú up **không xóa tấm nào**
   (mỗi tấm có ý — kể cả đồ ăn/đồ uống = sinh hoạt thường nhật, để dành bài đời sống), chỉ **nén lại**
   cho web. Thà ít mà tinh (quiet luxury) còn hơn nhiều mà rối. Không chắc ảnh có tôn bài không → để dành.
+- **TRẦN DÙNG LẠI: MỘT TẤM TỐI ĐA 2 BÀI (Chú chốt 13/9/2026).** Chú ở Nam Ban, kho ảnh gốc
+  còn nhiều — không có lý do gì để một tấm đi khắp site. Trần này tính trên **bài gốc tiếng
+  Việt**, tách riêng hai vai: ảnh **hiển thị** trong thân bài đếm riêng, ảnh **og** đếm riêng.
+  **KHÔNG tính bản dịch** (`en/ fr/ zh/ ko/ ja/`) — bản dịch của cùng một bài BẮT BUỘC dùng
+  cùng ảnh, đếm gộp vào là báo động giả (đếm thô ra 22 tấm vượt trần, lọc đúng còn 10 + 4).
+  Rà bằng `data/images-manifest.json`, lọc `used_in` bỏ tiền tố ngoại ngữ, tách vai
+  `display` với `og`/`twitter`/`schema`.
+  **Ngoại lệ duy nhất:** ảnh brand mặc định (`nam-ban-toan-canh-og.jpg`…) được phép vượt trần
+  **tạm thời** ở bài chưa có ảnh riêng — nhưng mỗi lần Chú cấp ảnh mới thì phải rút dần, không
+  coi là chuyện bình thường. Bài mới: **không lấy ảnh đã dùng 2 bài**, chọn tấm chưa dùng
+  trong kho hoặc xin Chú chụp.
 - **BẢN ĐỒ ẢNH — đọc trước, đừng rà tay (tiết kiệm token/time).** Ảnh nào dùng ở đâu, đóng
   vai gì (`display`/`og`/`twitter`/`schema`), tấm nào chưa dùng → xem `data/images-manifest.json`.
   Sinh bằng `python3 tools/gen-image-manifest.py`. **Sau mỗi lần thêm/xóa/đổi tên ảnh → chạy
