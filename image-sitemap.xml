@@ -192,6 +192,10 @@
     <image:image><image:loc>https://nambanpanorama.com/images/dat-nam-ban-duong-dat.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/dat-nam-ban-kinh-doanh-gi</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/dat-nam-ban-kinh-doanh-gi.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/dat-nam-ban-tho-cu-san</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/lo-dat-trong-hang-rao-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/duong-be-tong-moi-coc-moc-nam-ban.webp</image:loc></image:image>

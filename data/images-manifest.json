@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 393,
+ "total_images": 394,
  "unused_count": 67,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -1492,6 +1492,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "dat-nam-ban-kinh-doanh-gi.jpg": {
+   "kb": 251,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dat-nam-ban-kinh-doanh-gi.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
