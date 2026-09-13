@@ -388,6 +388,8 @@
   </url>
   <url>
     <loc>https://nambanpanorama.com/ho-me-linh-nam-ban-cam-ly-thuong</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/cau-cam-ly-thuong-dt725.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/nuoc-duoi-cau-cam-ly-thuong.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/ho-me-linh-nam-ban-cam-ly-thuong.jpg</image:loc></image:image>
   </url>
   <url>
@@ -610,6 +612,10 @@
   <url>
     <loc>https://nambanpanorama.com/mua-mua-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/mua-mua-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/mua-nha-nam-ban-khong-o</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-toan-canh-og.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/mua-nha-xay-san-nam-ban</loc>
@@ -900,6 +906,10 @@
   <url>
     <loc>https://nambanpanorama.com/ve-nam-ban-lam-gi</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/ve-nam-ban-lam-gi.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/vi-sao-nam-ban-nhieu-giao-dich</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-toan-canh-og.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/view-panorama-nam-ban</loc>

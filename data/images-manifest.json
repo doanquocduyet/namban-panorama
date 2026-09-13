@@ -8,8 +8,8 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 388,
- "unused_count": 64,
+ "total_images": 392,
+ "unused_count": 66,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
   "ban-do-cao-do-thua-dat-nam-ban.webp",
@@ -32,8 +32,10 @@
   "cong-jong-minh-farm-me-linh.webp",
   "cong-khai-lay-y-kien-quy-hoach-chung-xa.webp",
   "dien-linh-tuyen-nam-ban.webp",
+  "doi-che-chua-ro-vi-tri.jpg",
   "duong-dat-song-doi-nam-ban.webp",
   "duong-deo-mua-suong-mo.webp",
+  "duong-ta-nung-nam-ban-dt725.webp",
   "ga-tha-vuon-dat-do-nam-ban.webp",
   "gia-lam-biet-thu-o-to.webp",
   "hat-bo-tach-vo-nam-ban.webp",
@@ -756,6 +758,18 @@
     ]
    }
   },
+  "cau-cam-ly-thuong-dt725.webp": {
+   "kb": 154,
+   "dims": [
+    1600,
+    901
+   ],
+   "used_in": {
+    "ho-me-linh-nam-ban-cam-ly-thuong.html": [
+     "display"
+    ]
+   }
+  },
   "cau-chuyen-nam-ban.jpg": {
    "kb": 77,
    "dims": [
@@ -1278,6 +1292,9 @@
    "used_in": {
     "dai-hoc-da-lat-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -1292,6 +1309,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -1834,6 +1854,9 @@
    "used_in": {
     "dai-hoc-da-lat-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -1868,6 +1891,15 @@
      "ref"
     ]
    }
+  },
+  "doi-che-chua-ro-vi-tri.jpg": {
+   "kb": 131,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "dong-thanh-camping-san-go.webp": {
    "kb": 281,
@@ -2107,6 +2139,15 @@
      "ref"
     ]
    }
+  },
+  "duong-ta-nung-nam-ban-dt725.webp": {
+   "kb": 259,
+   "dims": [
+    1600,
+    901
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "duong-vao-khu-dat-xa-nam-ban.webp": {
    "kb": 245,
@@ -2539,7 +2580,7 @@
    }
   },
   "ho-me-linh-nam-ban-cam-ly-thuong.jpg": {
-   "kb": 131,
+   "kb": 114,
    "dims": [
     1200,
     630
@@ -4046,12 +4087,22 @@
      "schema",
      "twitter"
     ],
+    "vi-sao-nam-ban-nhieu-giao-dich.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
     "nam-ban-co-gi-moi.html": [
      "og",
      "twitter"
     ],
     "o-nam-ban-mot-nam-moi-biet.html": [
      "og",
+     "twitter"
+    ],
+    "mua-nha-nam-ban-khong-o.html": [
+     "og",
+     "schema",
      "twitter"
     ],
     "en/foreigners-buying-land-nam-ban.html": [
@@ -4413,6 +4464,18 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "nuoc-duoi-cau-cam-ly-thuong.webp": {
+   "kb": 199,
+   "dims": [
+    1600,
+    901
+   ],
+   "used_in": {
+    "ho-me-linh-nam-ban-cam-ly-thuong.html": [
+     "display"
     ]
    }
   },

@@ -172,8 +172,12 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
   lại script rồi commit manifest.** Quy ước site: `.webp` cho ảnh hiển thị (nhẹ, nhanh),
   `.jpg` cho ảnh `og:image` chia sẻ (Facebook/Zalo — 56 trang theo chuẩn này). Không nuôi
   cả 2 định dạng cùng 1 ảnh trừ khi mỗi bản đóng đúng 1 vai (vd `deo-ta-nung`: webp=hiển thị,
-  jpg=OG). 2 tấm để dành có chủ đích trong kho: `gia-lam-biet-thu-o-to.webp` (biệt thự người
-  khác — lệch làn), `me-linh-vuon-doi-cao.webp` (đồi chè — sai chủ đề cà phê), `duong-deo-mua-suong-mo.webp` (đường đèo mưa sương mờ — Chú để dành up bài khác).
+  jpg=OG). 5 tấm để dành có chủ đích trong kho: `gia-lam-biet-thu-o-to.webp` (biệt thự người
+  khác — lệch làn), `me-linh-vuon-doi-cao.webp` (đồi chè — sai chủ đề cà phê), `duong-deo-mua-suong-mo.webp` (đường đèo mưa sương mờ — Chú để dành up bài khác),
+  `duong-ta-nung-nam-ban-dt725.webp` (ĐT.725 đoạn Tà Nung – Nam Ban; biển hiệu một quán chiếm
+  góc phải khá lớn, gắn vào bài dễ thành giới thiệu cơ sở kinh doanh — §5 kill-list luật 2),
+  `doi-che-chua-ro-vi-tri.jpg` (đồi chè, **chưa xác định chụp ở đâu** — nguyên là og cũ của
+  `/ho-me-linh-nam-ban-cam-ly-thuong`, đã gỡ theo Luật 19; chờ Chú xác nhận vị trí mới dùng).
 - **CHUẨN og:image (Chú chốt 26/7/2026 — làm VẬY cho MỌI bài từ nay):** ảnh chia sẻ Zalo/FB
   = **`/images/<slug>.jpg`, cắt chuẩn 1200×630** (tỷ lệ 1.91:1) từ ảnh đẹp của bài,
   **KHÔNG ghi chữ lên hình** (thiết kế chữ-trên-ảnh không đẹp), có **mờ đen NHẸ mép dưới**
@@ -492,6 +496,13 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
 
 1. **Không tin audit khi nó bảo XÓA.** Mở file, đọc markup thật, rồi mới xóa.
 2. **Không tin audit khi nó báo "SẠCH".** Kiểm chéo tay ít nhất 1 ca trước khi kết luận.
+   **2b — TRANG TRẮNG ĐO RA Y HỆT TRANG SẠCH** (khóa 13/9/2026, vấp thật). Server test
+   `python3 -m http.server` chết giữa phiên, `page.goto()` fail, `.catch(()=>{})` nuốt lỗi —
+   script QA in ra `tràn=false · reveal ẩn=0 · lỗi JS=0`, đọc y như một trang hoàn hảo. Thật ra
+   DOM rỗng. **Luật:** mọi script QA Playwright phải đo thêm **một con số dương bắt buộc**
+   (số ảnh, số `<h2>`, độ dài `document.title`) và **báo đỏ khi số đó bằng 0**; đừng chỉ đếm
+   thứ-không-được-có. Trước khi chạy, `curl -o /dev/null -w "%{http_code}"` một trang để chắc
+   server còn sống.
 3. **Quét cả chữ số VÀ chữ viết** — `tháng 4` và `tháng Tư` là hai chuỗi khác nhau.
 4. **Case-insensitive.** `Bốn phân khu` ≠ `bốn phân khu` (đã sót thật ở `llms-full.txt`).
 5. **Kiểm ngữ cảnh, không chỉ chuỗi.** Chuỗi khớp chưa chắc là ca cần sửa.
@@ -581,7 +592,14 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     từng là toàn cảnh trung tâm kèm thác Voi và tượng Quan Âm, không phải hồ Từ Liêm — **đã vá
     6/9/2026**, giờ cắt từ ảnh thật của Chú (`ho-tu-liem-nha-mai-do-nam-ban.webp`, nhận diện bằng
     căn nhà mái đỏ sát mép nước); `thuy-dien-da-chomo-phi-to.jpg` là đường bê tông qua rẫy, không
-    phải nhà máy — **chưa vá**.
+    phải nhà máy — **chưa vá**. Ca thứ ba, **đã vá 13/9/2026**:
+    `ho-me-linh-nam-ban-cam-ly-thuong.jpg` nguyên là một đồi chè — không hồ, không đập, không cầu;
+    giờ cắt từ ảnh Chú chụp cầu Cam Ly Thượng, nhận diện bằng **biển xanh ghi Km13+335 ĐT.725**.
+    Ảnh đồi chè cũ giữ lại dưới tên `doi-che-chua-ro-vi-tri.jpg`, chưa xác định vị trí nên chưa dùng.
+    Bài học chung của cả ba ca: **bài không có ảnh thân bài thì og dễ bị gán tạm nhất** — cả ba ca
+    đều rơi đúng vào nhóm đó. Đã đếm 13/9/2026: **39 bài `lang="vi"` không có `<figure>` mà vẫn có
+    og đặt theo slug riêng** — tức 39 ảnh chưa ai mở ra nhìn lại. **CHƯA mở đợt rà**, đừng tự mở khi
+    chưa được giao; rà thì mở từng ảnh ra xem, không suy từ tên.
     **Luật:** trước khi gắn, **mở ảnh ra nhìn**. Không xác định được chụp ở đâu thì **để trống**,
     không gắn tạm rồi chú thích chung chung. Caption chỉ được nhận đúng thứ nhìn thấy trong ảnh.
 
