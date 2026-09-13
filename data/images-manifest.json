@@ -8,8 +8,8 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 392,
- "unused_count": 66,
+ "total_images": 393,
+ "unused_count": 67,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
   "ban-do-cao-do-thua-dat-nam-ban.webp",
@@ -51,6 +51,7 @@
   "nam-ban-vista.jpg",
   "nha-ong-mai-doc-san-trong.webp",
   "nha-tho-giao-xu-nam-ban.webp",
+  "phac-thao-khu-dat-2.jpg",
   "phac-thao-khu-dat.jpg",
   "pho-nam-ban-dem-hang-dong-cua.webp",
   "quan-ca-phe-trong-nam-ban.webp",
@@ -767,6 +768,9 @@
    "used_in": {
     "ho-me-linh-nam-ban-cam-ly-thuong.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -4476,6 +4480,9 @@
    "used_in": {
     "ho-me-linh-nam-ban-cam-ly-thuong.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -5019,6 +5026,15 @@
      "ref"
     ]
    }
+  },
+  "phac-thao-khu-dat-2.jpg": {
+   "kb": 173,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "phac-thao-khu-dat.jpg": {
    "kb": 224,
@@ -5862,7 +5878,7 @@
    }
   },
   "tra-cuu-dat-nam-ban.jpg": {
-   "kb": 173,
+   "kb": 256,
    "dims": [
     1200,
     630
