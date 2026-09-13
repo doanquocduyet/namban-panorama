@@ -285,3 +285,26 @@ giữ SĐT là **đúng luật**, không phải lỗi.
 
 > Phiếu nhắc `/dat-nguon-goc-lam-nghiep-nam-ban` có SĐT footer. File đó có thật, nhưng nó
 > **không nằm trong `IN`** nên chưa có khối liên hệ — footer giữ SĐT là đúng §2.2. Không phải ca lỗi.
+
+---
+
+## Đã thi hành 13/9/2026 — gắn khối cho 14 bài
+
+Chú chốt gắn **13 bài** trong nhóm đáng gắn, cộng `/dat-nguon-goc-lam-nghiep-nam-ban` = **14 bài**.
+
+- **11 bài nhãn `[ĐẤT]` thuần** — gắn cả 11.
+- **2 bài trong nhóm phải đọc tay**, cùng mang badge **Đầu tư** nên đúng nhóm §2.2 cho phép:
+  `mua-dat-nam-ban-500-trieu-1-ty` · `quy-hoach-chung-nam-ban`.
+- **`dat-nguon-goc-lam-nghiep-nam-ban`** — đúng nhóm đất.
+- **10 bài còn lại trong nhóm đọc tay: CHƯA gắn** (`dat-the-am-the-duong`, `ho-tron-nam-ban`,
+  `do-dac-dat-nam-ban`, `nam-ban-hay-duc-trong`, `nam-ban-hay-lac-duong`,
+  `o-thu-nam-ban-truoc-khi-mua-dat`, `co-nen-mua-dat-nam-ban-o-xa`,
+  `gia-ca-phe-va-gia-dat-nam-ban`, `nguoi-ngoai-tinh-mua-dat-nam-ban`,
+  `dat-the-am-the-duong`) — mấy bài này nghiêng về hiểu vùng hơn mua bán, để lượt sau.
+- **95 bài có SĐT footer mà không thuộc `IN`: không đụng.**
+
+Bỏ SĐT footer **15 bài** = 14 bài trên + ca vi phạm `10-10-1975-nam-ban`.
+
+Danh sách `IN` trong `panorama-utils.js`: **79 → 93 slug**, 0 trùng lặp.
+
+QA Playwright 15/15: khối `#pm-endcontact` lên đúng · footer sạch SĐT · 0 tràn ngang · 0 lỗi JS.

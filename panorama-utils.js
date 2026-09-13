@@ -16,7 +16,13 @@
       "dinh-gia-dat-nam-ban","mua-mua-nam-ban","mua-dat-nam-ban-de-lam-gi","dat-nam-ban-cuoi-tuan",
       "kinh-nghiem-mua-dat-nam-ban","mua-chung-dat-nam-ban","brief-02","brief-03",
       "dat-nam-ban-duong-dat","dat-nam-ban-tho-cu-san","lo-dat-nam-ban-binh-thuong",
-      "mua-nha-xay-san-nam-ban","dat-nam-ban-xuong-gia-ban-hay-giu","chuan-bi-truoc-khi-ban-dat-nam-ban","mua-dat-nam-ban-hop-dong-uy-quyen","coc-dat-nam-ban","loi-di-chung-dat-nam-ban","mua-dat-nam-ban-co-nguoi-dang-canh-tac","ho-tu-liem-nam-ban","ho-thanh-tri-nam-ban","giu-dat-nam-ban-tu-xa","ho-o-nam-ban","xay-nha-nho-nam-ban-bao-nhieu-tien","view-panorama-nam-ban","hoa-o-nam-ban","ho-me-linh-nam-ban-cam-ly-thuong","10-10-1975-nam-ban","nha-go-nam-ban","nha-go-thong-nam-ban","dat-giap-rung-thong-nam-ban","xay-nha-giap-ho-nam-ban","xay-nha-giap-suoi-nam-ban","xay-nha-giap-rung-thong-nam-ban","dat-giap-ho-nam-ban","dat-giap-suoi-nam-ban"];
+      "mua-nha-xay-san-nam-ban","dat-nam-ban-xuong-gia-ban-hay-giu","chuan-bi-truoc-khi-ban-dat-nam-ban","mua-dat-nam-ban-hop-dong-uy-quyen","coc-dat-nam-ban","loi-di-chung-dat-nam-ban","mua-dat-nam-ban-co-nguoi-dang-canh-tac","ho-tu-liem-nam-ban","ho-thanh-tri-nam-ban","giu-dat-nam-ban-tu-xa","ho-o-nam-ban","xay-nha-nho-nam-ban-bao-nhieu-tien","view-panorama-nam-ban","hoa-o-nam-ban","ho-me-linh-nam-ban-cam-ly-thuong","10-10-1975-nam-ban","nha-go-nam-ban","nha-go-thong-nam-ban","dat-giap-rung-thong-nam-ban","xay-nha-giap-ho-nam-ban","xay-nha-giap-suoi-nam-ban","xay-nha-giap-rung-thong-nam-ban","dat-giap-ho-nam-ban","dat-giap-suoi-nam-ban",
+      /* thêm 13/9/2026 — đợt rà khối liên hệ: 11 bài nhãn [ĐẤT] thuần + 2 bài badge Đầu tư + bài đất lâm nghiệp */
+      "chuyen-muc-dich-su-dung-dat-nam-ban","dat-dong-thanh-nam-ban","dat-gia-lam-nam-ban",
+      "dat-me-linh-nam-ban","dat-trung-tam-nam-ban","dat-vuon-nam-ban-xay-duoc-gi",
+      "nen-xem-khu-nao-o-nam-ban","nhan-tien-den-bu-dat-nen-lam-gi","tach-thua-dat-nam-ban",
+      "tra-cuu-dat-nam-ban","xay-nha-o-nam-ban","mua-dat-nam-ban-500-trieu-1-ty",
+      "quy-hoach-chung-nam-ban","dat-nguon-goc-lam-nghiep-nam-ban"];
     var slug=(location.pathname||"").replace(/\/+$/,"").split("/").pop().replace(/\.html$/,"");
     if(slug===""||IN.indexOf(slug)===-1)return;
     if(document.getElementById("pm-endcontact"))return;
