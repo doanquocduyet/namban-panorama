@@ -134,23 +134,37 @@ def th_publish(token, uid, params):
 def th_chain(text, limit=None):
     """Cắt nguyên bài thành chuỗi bài Threads, mỗi bài dưới trần ký tự.
 
-    Cắt theo ranh giới đoạn, không cắt giữa câu — dùng lại `chunk()` của
-    `scripts/gen_audio_edge.py`, bộ đã cắt thật cho toàn bộ audio của site.
+    Cắt theo **ranh giới đoạn**, không cắt giữa câu. Cố ý KHÔNG dùng
+    `chunk()` của `gen_audio_edge.py`: bộ đó cắt cho giọng đọc nên nó gộp
+    mọi đoạn bằng một lần xuống dòng, làm mất hết dòng trống. Giọng đọc
+    không cần dòng trống, mắt người thì cần — đó đúng là chỗ Chú chê
+    16/9/2026 ("suông từ trên xuống").
+
+    Vạch ngăn mục `———` không được đứng cuối một bài trong chuỗi: vạch là
+    để mở mục mới, treo ở chân bài trước thì thành dấu cụt.
     """
     limit = limit or fb.THREADS_LIMIT
-    path = os.path.join(ROOT, "scripts", "gen_audio_edge.py")
-    src = open(path, encoding="utf-8").read().split("\nif __name__")[0]
-    g = {"__file__": path, "__name__": "gen_audio_edge"}
-    exec(compile(src, path, "exec"), g)
-    out = []
-    for part in g["chunk"](text, limit):
-        part = part.strip()
-        while len(part) > limit:            # đoạn đơn dài hơn trần thì đành cắt
-            out.append(part[:limit])
-            part = part[limit:]
-        if part:
-            out.append(part)
-    return out
+    out, cur = [], ""
+    for para in text.split("\n\n"):
+        para = para.strip()
+        if not para:
+            continue
+        if cur and len(cur) + 2 + len(para) > limit:
+            out.append(cur)
+            cur = ""
+        while len(para) > limit:        # đoạn đơn dài hơn trần thì đành cắt
+            cut = para.rfind(" ", 0, limit) or limit
+            out.append(para[:cut].strip())
+            para = para[cut:].strip()
+        cur = (cur + "\n\n" + para).strip() if cur else para
+    if cur:
+        out.append(cur)
+    # Kéo vạch treo ở chân bài xuống đầu bài kế.
+    for i in range(len(out) - 1):
+        if out[i].rstrip().endswith(fb.RULE):
+            out[i] = out[i].rstrip()[:-len(fb.RULE)].rstrip()
+            out[i + 1] = fb.RULE + "\n\n" + out[i + 1]
+    return [p for p in out if p.strip()]
 
 
 def th_post(token, caption, img, comment, dry):

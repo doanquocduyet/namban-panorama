@@ -142,24 +142,100 @@ def pick_image(post):
     return SITE + rel, rel
 
 
-def article_text(slug):
-    """Bóc nguyên lời bài từ `<slug>.html` — đúng phần người đọc đọc trên web.
-
-    Dùng lại bộ bóc của `scripts/gen_audio_edge.py` (hàm `narration`) thay vì
-    viết bộ thứ hai: bộ đó đã chạy thật cho toàn bộ audio của site, đã biết
-    bỏ `<figure>`, khối Nguồn, khối liên hệ, nút Nghe bài và mục "Đọc gì
-    tiếp". Nuôi hai bộ bóc song song là nuôi hai cách hiểu "thân bài" khác
-    nhau — đúng cái bẫy Luật 13b/13c.
-
-    Trả về chuỗi đã nối bằng dòng trống để đọc trên Facebook cho thoáng.
-    """
-    import importlib.util
+def _grab_module():
+    """Nạp `scripts/gen_audio_edge.py` làm module rời, không chạy phần main."""
     path = os.path.join(ROOT, "scripts", "gen_audio_edge.py")
     src = open(path, encoding="utf-8").read().split("\nif __name__")[0]
     g = {"__file__": path, "__name__": "gen_audio_edge"}
     exec(compile(src, path, "exec"), g)
-    parts = g["narration"](os.path.join(ROOT, slug + ".html")).split("\n")
-    return "\n\n".join(p for p in parts if p.strip())
+    return g
+
+
+def article_blocks(slug):
+    """Bóc lời bài kèm **vai của từng khối** — h2, h3, p, li.
+
+    Dùng lại nguyên bộ bóc của audio (`Grab` trong `gen_audio_edge.py`) thay
+    vì viết bộ thứ hai: bộ đó đã chạy thật cho toàn bộ audio của site, đã
+    biết bỏ `<figure>`, khối Nguồn, khối liên hệ, nút Nghe bài và mục "Đọc
+    gì tiếp". Nuôi hai bộ bóc song song là nuôi hai cách hiểu "thân bài"
+    khác nhau — đúng cái bẫy Luật 13b/13c.
+
+    Chỉ kế thừa thêm một việc: nhớ lại thẻ của mỗi khối. Bản audio không cần
+    biết đâu là tiêu đề vì giọng đọc tuần tự; bản Facebook thì cần, không
+    thì mọi dòng bằng nhau và bài đọc ra như máy nhả chữ (Chú bắt 16/9/2026).
+    """
+    g = _grab_module()
+
+    class Tagged(g["Grab"]):
+        def __init__(self):
+            super().__init__()
+            self.tagged = []
+
+        def handle_endtag(self, tag):
+            cap, n = self.cap, len(self.parts)
+            super().handle_endtag(tag)
+            if cap and len(self.parts) > n:
+                self.tagged.append((cap, self.parts[-1]))
+
+    fp = os.path.join(ROOT, slug + ".html")
+    raw = open(fp, encoding="utf-8").read()
+    t = Tagged()
+    t.feed(raw)
+    blocks = t.tagged
+
+    m = (re.search(r'<div class="art-header">.*?<h1>(.*?)</h1>', raw, re.S)
+         or re.search(r"<h1>(.*?)</h1>", raw, re.S))
+    h1 = ""
+    if m:
+        import html as _h
+        h1 = re.sub(r"<[^>]+>", "", _h.unescape(m.group(1))).strip()
+    if h1:
+        blocks = [("h1", h1)] + [b for b in blocks if b[1] != h1]
+    return blocks
+
+
+# Vạch ngăn mục: ba gạch ngang đứng riêng một dòng — đúng lối vạch mảnh của
+# trang (§2.3 "im lặng mà sang"). Facebook không có chữ đậm nên đây là cách
+# tách mục mà không phải dùng emoji hay CHỮ HOA.
+# Cố ý dùng em-dash chứ không dùng ký tự vạch dài lạ: em-dash có trong mọi
+# bộ chữ, không sợ ra ô vuông trên máy Android đời cũ.
+RULE = "———"
+
+
+def article_text(slug):
+    """Dựng lời bài thành một bài Facebook có nhịp, không phải một khối chữ.
+
+    Bốn quy ước, rút từ chỗ Chú chê 16/9/2026 ("suông từ trên xuống"):
+      • **Tựa** đứng riêng trên cùng.
+      • **Mỗi mục H2** mở bằng một dòng vạch `⸻` rồi tới tên mục — mắt có
+        chỗ nghỉ, biết bài đang sang phần khác.
+      • **Câu hỏi FAQ (H3) dính liền câu trả lời** — cách nhau một lần xuống
+        dòng thôi, còn giữa hai cặp mới là dòng trống. Hỏi và đáp đứng thành
+        cặp thì đọc ra cặp; cách đều nhau thì đọc ra danh sách.
+      • **Gạch đầu dòng** cho `<li>`, để danh sách ra danh sách.
+    """
+    out, i = [], 0
+    blocks = article_blocks(slug)
+    while i < len(blocks):
+        tag, text = blocks[i]
+        if tag == "h1":
+            out.append(text)
+        elif tag == "h2":
+            out.append(RULE + "\n\n" + text)
+        elif tag == "h3":
+            # Gộp câu hỏi với câu trả lời ngay sau nó thành một khối.
+            block = text
+            while i + 1 < len(blocks) and blocks[i + 1][0] in ("p", "li"):
+                nxt = blocks[i + 1][1]
+                block += "\n" + ("· " + nxt if blocks[i + 1][0] == "li" else nxt)
+                i += 1
+            out.append(block)
+        elif tag == "li":
+            out.append("· " + text)
+        else:
+            out.append(text)
+        i += 1
+    return "\n\n".join(b for b in out if b.strip())
 
 
 def caption_for(post, limit=None):
@@ -182,9 +258,15 @@ def caption_for(post, limit=None):
         return hook, "không bóc được lời bài (%s) — dùng câu mồi" % e
     if not body.strip():
         return hook, "bóc ra rỗng — dùng câu mồi"
+    # Hashtag chỉ nằm ở câu mồi viết tay, thân bài web không có. Đăng nguyên
+    # bài mà bỏ luôn hashtag là mất một đường người ta tìm ra bài — nên nhặt
+    # lại dòng hashtag cuối câu mồi, đắp xuống chân bài.
+    tags = [ln.strip() for ln in hook.splitlines()
+            if ln.strip().startswith("#")]
     tail = post.get("tail", "").strip()
-    if tail:
-        body = body + "\n\n" + tail
+    for extra in (tail, " ".join(tags)):
+        if extra and extra not in body:
+            body = body + "\n\n" + extra
     if limit and len(body) > limit:
         return hook, ("nguyên bài %d ký tự, quá trần %d — dùng câu mồi"
                       % (len(body), limit))
