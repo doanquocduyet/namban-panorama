@@ -31,6 +31,7 @@ import datetime
 import importlib.util
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -205,12 +206,66 @@ def th_chain(text, limit=None):
     return [p for p in out if p.strip()]
 
 
-def th_post(token, caption, img, comment, dry):
+def th_one(slug, link, limit=None):
+    """Gói bài thành **một** bài Threads dưới trần, kèm link ngay trong bài.
+
+    Chú hỏi 17/9/2026: "một bài ra tới 3 stt, tối ưu sao". Đây là câu trả
+    lời — không cắt bài thành chuỗi, mà viết lại cho vừa một bài.
+
+    Cách gói: lấy H1 làm dòng đầu, rồi **thêm từng câu một** của phần dẫn,
+    dừng ngay trước câu làm tràn. Chừa sẵn chỗ cho link. Nhờ vậy bài luôn
+    dứt ở ranh giới câu, không cụt giữa chừng.
+
+    Hai luật nhỏ rút từ lần đo đầu:
+      • **Không dừng ở câu kết thúc bằng dấu hai chấm** — câu đó hứa một
+        danh sách phía sau, cắt ngay đó là hứa suông (cùng họ Luật 22).
+      • Chỉ lấy tối đa ba đoạn đầu; xa hơn là thân bài, không phải phần dẫn.
+
+    Trả về (text, số câu đã lấy). Không gói nổi thì trả (None, 0).
+    """
+    limit = limit or fb.THREADS_LIMIT
+    blocks = fb.article_blocks(slug)
+    h1 = next((t for tag, t in blocks if tag == "h1"), "")
+    paras = [t for tag, t in blocks if tag == "p"][:3]
+    room = limit - len(link) - 2
+    if not h1 or len(h1) > room:
+        return None, 0
+
+    out, kept = h1, []
+    for para in paras:
+        for sent in re.findall(r"[^.!?…]+[.!?…]*", para):
+            sent = sent.strip()
+            if not sent:
+                continue
+            sep = "\n\n" if out == h1 else " "
+            if len(out) + len(sep) + len(sent) > room:
+                para = None
+                break
+            out += sep + sent
+            kept.append(sent)
+        if para is None:
+            break
+
+    # Câu chót hứa một danh sách ("…dễ bỏ qua:") thì bỏ, đừng hứa suông.
+    while kept and kept[-1].rstrip().endswith(":"):
+        out = out[:-(len(kept[-1]) + 1)].rstrip()
+        kept.pop()
+
+    if not kept:
+        return None, 0
+    return out + "\n\n" + link, len(kept)
+
+
+def th_post(token, caption, img, comment, dry, one=None):
     uid, uname = th_target(token) if not dry else ("(chạy khô)", EXPECT_THREADS)
     print("Threads: @%s · id %s" % (uname, uid))
-    posts = th_chain(caption)
-    if comment:
-        posts.append(comment)
+    if one:
+        # Một bài duy nhất, link nằm ngay trong bài. Không nối chuỗi.
+        posts = [one]
+    else:
+        posts = th_chain(caption)
+        if comment:
+            posts.append(comment)
     print("Chuỗi %d bài (trần %d ký tự/bài)" % (len(posts), fb.THREADS_LIMIT))
     if dry:
         for i, p in enumerate(posts, 1):
@@ -263,21 +318,34 @@ def main():
     # Threads cắt được nguyên bài thành chuỗi, nhưng một bài của site ra
     # **12–18 mắt xích** — đổ liên tiếp chừng đó lên một tài khoản mới thì
     # nhìn y như spam (Chú cản đúng lúc 17/9/2026, đã huỷ run đang chạy).
-    # Nên mặc định Threads đăng **câu mồi**, vẫn thành chuỗi 2–3 bài, đọc
-    # trọn ý. Muốn nguyên bài thì bật `THREADS_FULL=1` khi chạy tay.
+    # Nên mặc định Threads đăng **MỘT bài**, gói bằng `th_one`: H1 + mấy
+    # câu dẫn đầu + link ngay trong bài. Đo thật cả 4 bài trong hàng đợi:
+    # 324 / 466 / 395 / 489 ký tự — đều lọt.
+    # Muốn nguyên bài thành chuỗi thì bật `THREADS_FULL=1` khi chạy tay.
+    one = None
     if plat == "instagram":
         limit = fb.IG_LIMIT
     elif os.environ.get("THREADS_FULL") == "1":
         limit = None
     else:
         limit = fb.THREADS_LIMIT
+        if post.get("slug"):
+            one, nsent = th_one(post["slug"], link)
+            if one:
+                print("Threads: gói 1 bài · %d ký tự · %d câu dẫn"
+                      % (len(one), nsent))
+            else:
+                print("Threads: không gói nổi 1 bài — lùi về chuỗi câu mồi.")
     caption, why = caption_and_log(post, limit, plat)
     if plat == "threads":
         # Câu mồi viết cho Facebook nên ghi "Bản đầy đủ ở comment". Trên
-        # Threads link nằm ở bài trả lời nối bên dưới, không phải comment.
+        # Threads link nằm trong bài hoặc ở bài nối, không phải comment.
         caption = caption.replace("ở comment", "ở dưới")
 
-    errs = fb.check(post, caption, comment)
+    # Bài một-mảnh CÓ link trong thân, nên miễn luật cấm link của `check`
+    # (luật đó viết cho caption Facebook, nơi link làm tụt tiếp cận).
+    errs = fb.check(post, one or caption, comment) if not one else [
+        e for e in fb.check(post, one, comment) if "caption có link" not in e]
     if errs:
         print("DỪNG — bài %r không qua kiểm:" % post.get("slug"))
         for e in errs:
@@ -296,8 +364,10 @@ def main():
             print(comment)
             print("(Instagram không cho link bấm được trong caption lẫn "
                   "comment — link chỉ để người đọc copy; chỗ bấm được là bio.)")
-    pid = (ig_post if plat == "instagram" else th_post)(
-        token, caption, img, comment, dry)
+    if plat == "instagram":
+        pid = ig_post(token, caption, img, comment, dry)
+    else:
+        pid = th_post(token, caption, img, comment, dry, one=one)
     if dry or pid is None:
         print("=== hết. Chưa đăng gì lên %s. ===" % plat)
         return 0 if pid is not None or dry else 1
