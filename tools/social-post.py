@@ -131,6 +131,23 @@ def ig_post(token, caption, img, comment, dry):
 
 # ------------------------------------------------------------------ Threads
 
+def strip_tags(text):
+    """Bỏ hashtag khỏi bản Threads.
+
+    Threads **chỉ nhận một thẻ chủ đề mỗi bài**. Dòng hashtag kiểu Facebook
+    (`#NamBan #LamHa #LamDong #HoTron`) ra kết quả xấu: nó lấy cái đầu làm
+    thẻ rồi nuốt luôn dấu `#`, ba cái sau nằm trơ làm chữ thô. Thấy thật
+    trên bài đăng 17/9/2026 — dòng cuối hiện `NamBan #LamHa #LamDong #HoTron`.
+
+    Bỏ sạch cho gọn. Bản gói một bài (`th_one`) vốn không có hashtag vì nó
+    dựng từ H1 + câu dẫn, nên chỉ nhánh câu mồi và nhánh nguyên bài cần lọc.
+    """
+    lines = [ln for ln in text.splitlines()
+             if not re.fullmatch(r"\s*(#\S+\s*)+", ln)]
+    out = "\n".join(lines)
+    return re.sub(r"\n{3,}", "\n\n", out).strip()
+
+
 def th_expiry(token):
     """In số ngày còn lại của token Threads ngay đầu log.
 
@@ -341,6 +358,7 @@ def main():
         # Câu mồi viết cho Facebook nên ghi "Bản đầy đủ ở comment". Trên
         # Threads link nằm trong bài hoặc ở bài nối, không phải comment.
         caption = caption.replace("ở comment", "ở dưới")
+        caption = strip_tags(caption)
 
     # Bài một-mảnh CÓ link trong thân, nên miễn luật cấm link của `check`
     # (luật đó viết cho caption Facebook, nơi link làm tụt tiếp cận).
