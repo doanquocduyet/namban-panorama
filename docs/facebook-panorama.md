@@ -97,6 +97,18 @@ Xong bước 1. Giờ Chú đang ở trang quản lý App.
    - `pages_manage_posts`
 6. Bấm nút xanh **"Tạo mã truy cập" / "Generate Access Token"**. Facebook hỏi
    xác nhận lần nữa → đồng ý hết.
+
+   **LỖI HAY GẶP Ở ĐÂY — `Invalid Scopes: manage_pages`.** Gặp thật 16/9/2026.
+   Explorer tự nhét quyền `manage_pages` vào danh sách; đó là **quyền cũ Meta đã
+   bỏ từ 2021**, thay bằng ba quyền hẹp hơn (`pages_show_list` ·
+   `pages_read_engagement` · `pages_manage_posts`). Thông báo ghi rõ *"chỉ hiển
+   thị cho nhà phát triển"* nên nó **không chặn** việc lấy token — nhưng để lại
+   thì lần nào bấm cũng báo đỏ, dễ tưởng hỏng.
+
+   Dọn: ở khung **"Quyền"**, góc trên bên phải có icon **🗑** → bấm để xoá sạch
+   danh sách → bấm **"Thêm quyền"** tick lại đúng ba quyền trên → rồi mới chọn
+   lại **"Nhận mã truy cập Trang"**. Không thấy thùng rác thì tìm dòng
+   `manage_pages` trong danh sách và bấm dấu **×** bên cạnh nó.
 7. Ô **"Mã truy cập" / "Access Token"** ở trên giờ có một chuỗi dài loằng ngoằng.
    **Copy cả chuỗi đó.** Đây là token **ngắn hạn** (hết hạn sau ~1 giờ) — bước 3
    sẽ đổi nó thành loại không hết hạn.
