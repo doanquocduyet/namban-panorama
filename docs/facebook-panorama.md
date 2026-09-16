@@ -378,26 +378,60 @@ Không cần cài app riêng. Mở thẳng từ trong Instagram:
    Meta bắt buộc có.
 6. Bấm **Lưu thay đổi**.
 
-### BƯỚC 3 — Lấy token Threads (5 phút)
+### BƯỚC 3 — MỜI TÀI KHOẢN LÀM NGƯỜI KIỂM THỬ (bắt buộc, 5 phút)
+
+⚠️ **Bỏ bước này thì bấm Generate sẽ ra lỗi:**
+`{"error_message":"Invalid Request: The user has not accepted the invite to
+test the app.","error_code":1349245}` — vấp thật 17/9/2026.
+
+App ở chế độ phát triển thì tài khoản Threads phải được **mời** và phải
+**bấm nhận lời mời**. **Facebook KHÔNG cần bước này** (admin Trang là đủ),
+Threads thì cần — đây là chỗ hai bên khác nhau, đừng suy từ bên kia sang.
+
+*Trên máy tính:*
+1. Mở https://developers.facebook.com/apps/1057590477249015/roles/roles/
+2. Kéo tới mục **Người kiểm thử Threads** (*Threads Testers*) — nằm dưới
+   Quản trị viên / Nhà phát triển / Người kiểm thử.
+3. **Thêm người** → gõ `namban.panorama` → **Gửi**.
+
+*Trên điện thoại:*
+4. App **Threads** → **☰** → **Cài đặt** → **Tài khoản**
+5. **Quyền trên trang web** (*Website permissions*) → **Lời mời** (*Invites*)
+6. Thấy lời mời từ app → bấm **Chấp nhận**.
+
+### BƯỚC 4 — Lấy token Threads (5 phút)
 
 1. Mở https://developers.facebook.com/tools/explorer/
-2. Góc phải trên: ô **Meta App** chọn đúng app.
-3. Ngay dưới, ô đang ghi **Graph API** → bấm vào, **đổi thành `Threads API`**.
-   *Không thấy dòng Threads API thì bước 2 chưa xong, quay lại làm.*
-4. Ô **User or Page** → chọn **User Token**.
-5. Trong **Permissions**, tick ba quyền:
-   - `threads_basic`
-   - `threads_content_publish`
-   - `threads_manage_replies`
-6. Bấm **Generate Access Token** → chọn tài khoản Threads → **Continue**.
-7. Copy token.
+2. Góc phải trên: ô **Ứng dụng trên Meta** chọn đúng app.
+3. Ô nhỏ bên trái ô địa chỉ đang ghi **`graph.facebook.com`** → đổi thành
+   **`graph.threads.net`**. *Không thấy dòng đó thì bước 2 (mục 0-C) chưa xong.*
+4. Bấm **Generate Threads Access Token**.
+5. Chọn tài khoản Threads → duyệt quyền → **Tiếp tục**.
+6. Copy chuỗi trong ô **Mã truy cập**.
 
-### BƯỚC 4 — Dán vào GitHub (2 phút)
+**Nhận biết đúng token:** mã Facebook bắt đầu bằng `EAA`, mã Threads bắt đầu
+bằng `TH`. Còn thấy `EAA` là chưa lấy được, đừng đem đi dùng.
+
+### BƯỚC 5 — Đổi thành token 60 ngày (3 phút)
+
+Token Explorer vừa cấp **chỉ sống 1 giờ**. Phải đổi, không thì mai đã chết.
+
+1. Mở https://developers.facebook.com/apps/1057590477249015/settings/basic/
+2. Dòng **Khóa bí mật của ứng dụng** → **Hiển thị** → copy.
+3. Mở tab mới, dán địa chỉ này, thay hai chỗ IN HOA:
+   `https://graph.threads.net/access_token?grant_type=th_exchange_token&client_secret=KHOA_BI_MAT&access_token=MA_TH_NGAN_HAN`
+4. Trang trả về `{"access_token":"THQ...","expires_in":5183944}` — copy chuỗi
+   sau `"access_token":`. **Đó mới là token 60 ngày.**
+
+### BƯỚC 6 — Dán vào GitHub (2 phút)
 
 1. Mở https://github.com/doanquocduyet/namban-panorama/settings/secrets/actions/new
 2. Ô **Name** gõ đúng: `THREADS_TOKEN`
-3. Ô **Secret** dán token vừa copy.
+3. Ô **Secret** dán token ở bước 5.
 4. Bấm **Add secret**.
+
+`tools/social-post.py` tự in số ngày còn lại mỗi lần chạy và kêu to khi còn
+dưới 14 ngày. Tới lúc đó chỉ làm lại bước 4–6, không phải làm lại từ đầu.
 
 ### ⚠️ TOKEN THREADS SỐNG 60 NGÀY — KHÁC HẲN FACEBOOK
 
