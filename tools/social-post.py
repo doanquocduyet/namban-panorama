@@ -1,0 +1,261 @@
+#!/usr/bin/env python3
+"""Đăng Instagram và Threads từ cùng hàng đợi `data/fb-queue.json`.
+
+Chạy trên GitHub Actions, KHÔNG chạy từ phiên Claude — `graph.facebook.com`
+và `graph.threads.net` đều bị chặn ở đó.
+
+**Dùng chung hàng đợi với Facebook, cố ý.** Một bài viết một lần, ba nơi
+cùng lấy. Nuôi ba hàng đợi song song là nuôi ba bản nội dung lệch nhau, và
+sẽ lệch — chuyện đã thấy ở tầng dữ liệu mở (Luật 11).
+
+Mỗi nền tảng có cột đánh dấu riêng trong hàng đợi:
+    Facebook   -> "posted"
+    Instagram  -> "posted_ig"
+    Threads    -> "posted_threads"
+Nhờ vậy ba nơi chạy độc lập, nơi này hỏng không kéo nơi kia dừng.
+
+TRẦN CAPTION KHÁC NHAU — ĐÂY LÀ CHỖ DỄ HIỂU NHẦM NHẤT:
+    Facebook   63.206 ký tự -> đăng NGUYÊN BÀI, không bài nào chạm trần.
+    Instagram   2.200 ký tự -> không bài nào lọt, nên IG đăng CÂU MỒI.
+    Threads       500 ký tự/bài -> đăng nguyên bài bằng CHUỖI TRẢ LỜI nối
+                  nhau (đúng nếp Threads), bài đầu có ảnh, link ở bài chót.
+
+Biến môi trường:
+    PLATFORM            — "instagram" hoặc "threads". BẮT BUỘC.
+    FB_PAGE_TOKEN       — Page token (Instagram dùng chung token với Trang).
+    THREADS_TOKEN       — token riêng của Threads (lấy ở threads.net, khác
+                          token Facebook — xem docs/facebook-panorama.md 0-C).
+    SOCIAL_DRY_RUN      — "1" để chạy khô.
+"""
+import datetime
+import importlib.util
+import json
+import os
+import sys
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Mượn thẳng bộ dùng chung của fb-post.py: load/save/check/pick_image/
+# caption_for/article_text. Không chép lại — chép là tới lúc sửa luật §2.1
+# thì sửa một chỗ, quên chỗ kia.
+_spec = importlib.util.spec_from_file_location(
+    "fbpost", os.path.join(ROOT, "tools", "fb-post.py"))
+fb = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(fb)
+
+SITE = fb.SITE
+GRAPH = fb.GRAPH                                  # graph.facebook.com/v21.0
+THREADS = "https://graph.threads.net/v1.0"
+
+EXPECT_IG = "nambanpanorama"       # đối chiếu như EXPECT_PAGE bên Facebook
+EXPECT_THREADS = "nambanpanorama"
+
+
+def req(base, path, params, token, method="POST"):
+    body = urllib.parse.urlencode(dict(params, access_token=token))
+    if method == "GET":
+        url = base + path + "?" + body
+        r = urllib.request.Request(url, method="GET")
+    else:
+        r = urllib.request.Request(base + path, data=body.encode(),
+                                   method="POST")
+    with urllib.request.urlopen(r, timeout=90) as resp:
+        return json.loads(resp.read().decode())
+
+
+# ---------------------------------------------------------------- Instagram
+
+def ig_target(token):
+    """Tìm tài khoản Instagram đang gắn với Trang, rồi đối chiếu username.
+
+    Cùng một chốt chặn với `resolve_page` bên Facebook: Chú quản nhiều tài
+    khoản, token cấp nhầm thì bài Panorama rơi lên tường người khác.
+    """
+    page = fb.get("/me", {"fields": "id,name"}, token)["id"]
+    d = req(GRAPH, "/%s" % page, {"fields": "instagram_business_account"},
+            token, "GET")
+    acc = d.get("instagram_business_account")
+    if not acc:
+        raise RuntimeError(
+            "Trang chưa gắn tài khoản Instagram chuyên nghiệp. Làm theo "
+            "docs/facebook-panorama.md mục 0-B rồi chạy lại.")
+    ig = acc["id"]
+    me = req(GRAPH, "/%s" % ig, {"fields": "username"}, token, "GET")
+    uname = (me.get("username") or "").lower()
+    if uname and uname != EXPECT_IG:
+        raise RuntimeError("Token trỏ tới Instagram %r, không phải %r. "
+                           "Không đăng." % (uname, EXPECT_IG))
+    return ig, uname or "(chưa rõ username)"
+
+
+def ig_post(token, caption, img, comment, dry):
+    if not img:
+        print("DỪNG — Instagram bắt buộc phải có ảnh, bài này không tìm ra ảnh.")
+        return None
+    ig, uname = ig_target(token) if not dry else ("(chạy khô)", EXPECT_IG)
+    print("Instagram: @%s · id %s" % (uname, ig))
+    if dry:
+        return "(chạy khô)"
+    c = req(GRAPH, "/%s/media" % ig, {"image_url": img, "caption": caption},
+            token)["id"]
+    # Facebook phải đi tải ảnh về trước khi publish được. Publish ngay thì
+    # thỉnh thoảng dính lỗi "Media ID is not available" — chờ một nhịp.
+    time.sleep(8)
+    mid = req(GRAPH, "/%s/media_publish" % ig, {"creation_id": c}, token)["id"]
+    print("Đã đăng Instagram:", mid)
+    if comment:
+        r = req(GRAPH, "/%s/comments" % mid, {"message": comment}, token)
+        print("Đã đăng comment 1:", r["id"])
+    return mid
+
+
+# ------------------------------------------------------------------ Threads
+
+def th_target(token):
+    me = req(THREADS, "/me", {"fields": "id,username"}, token, "GET")
+    uname = (me.get("username") or "").lower()
+    if uname and uname != EXPECT_THREADS:
+        raise RuntimeError("Token trỏ tới Threads %r, không phải %r. "
+                           "Không đăng." % (uname, EXPECT_THREADS))
+    return me["id"], uname or "(chưa rõ username)"
+
+
+def th_publish(token, uid, params):
+    c = req(THREADS, "/%s/threads" % uid, params, token)["id"]
+    time.sleep(5)
+    return req(THREADS, "/%s/threads_publish" % uid,
+               {"creation_id": c}, token)["id"]
+
+
+def th_chain(text, limit=None):
+    """Cắt nguyên bài thành chuỗi bài Threads, mỗi bài dưới trần ký tự.
+
+    Cắt theo ranh giới đoạn, không cắt giữa câu — dùng lại `chunk()` của
+    `scripts/gen_audio_edge.py`, bộ đã cắt thật cho toàn bộ audio của site.
+    """
+    limit = limit or fb.THREADS_LIMIT
+    path = os.path.join(ROOT, "scripts", "gen_audio_edge.py")
+    src = open(path, encoding="utf-8").read().split("\nif __name__")[0]
+    g = {"__file__": path, "__name__": "gen_audio_edge"}
+    exec(compile(src, path, "exec"), g)
+    out = []
+    for part in g["chunk"](text, limit):
+        part = part.strip()
+        while len(part) > limit:            # đoạn đơn dài hơn trần thì đành cắt
+            out.append(part[:limit])
+            part = part[limit:]
+        if part:
+            out.append(part)
+    return out
+
+
+def th_post(token, caption, img, comment, dry):
+    uid, uname = th_target(token) if not dry else ("(chạy khô)", EXPECT_THREADS)
+    print("Threads: @%s · id %s" % (uname, uid))
+    posts = th_chain(caption)
+    if comment:
+        posts.append(comment)
+    print("Chuỗi %d bài (trần %d ký tự/bài)" % (len(posts), fb.THREADS_LIMIT))
+    if dry:
+        for i, p in enumerate(posts, 1):
+            print("---- bài %d/%d · %d ký tự ----" % (i, len(posts), len(p)))
+            print(p)
+        return "(chạy khô)"
+
+    first = {"media_type": "IMAGE", "image_url": img, "text": posts[0]} \
+        if img else {"media_type": "TEXT", "text": posts[0]}
+    root = th_publish(token, uid, first)
+    print("Đã đăng Threads:", root)
+    prev = root
+    for i, p in enumerate(posts[1:], 2):
+        prev = th_publish(token, uid,
+                          {"media_type": "TEXT", "text": p, "reply_to_id": prev})
+        print("   nối bài %d/%d: %s" % (i, len(posts), prev))
+    return root
+
+
+# --------------------------------------------------------------------- main
+
+def main():
+    plat = os.environ.get("PLATFORM", "").strip().lower()
+    if plat not in ("instagram", "threads"):
+        print("DỪNG — PLATFORM phải là 'instagram' hoặc 'threads'.",
+              file=sys.stderr)
+        return 1
+
+    token = os.environ.get(
+        "THREADS_TOKEN" if plat == "threads" else "FB_PAGE_TOKEN", "").strip()
+    dry = os.environ.get("SOCIAL_DRY_RUN") == "1" or not token
+    mark = "posted_threads" if plat == "threads" else "posted_ig"
+
+    queue = fb.load()
+    today = datetime.date.today().isoformat()
+    due = [p for p in queue
+           if not p.get(mark) and p.get("date", "9999") <= today]
+    if not due:
+        print("Không có bài nào đến hạn cho %s (hôm nay %s)." % (plat, today))
+        return 0
+
+    post = due[0]
+    link = "%s/%s" % (SITE, post["slug"]) if post.get("slug") else ""
+    comment = post.get("comment", "").strip()
+    if link and link not in comment:
+        comment = (comment + "\n" + link).strip()
+
+    # Instagram không lọt nguyên bài nên `caption_for` tự lùi về câu mồi.
+    # Threads thì nhận nguyên bài rồi tự cắt thành chuỗi, nên không đặt trần.
+    limit = fb.IG_LIMIT if plat == "instagram" else None
+    caption, why = caption_and_log(post, limit, plat)
+
+    errs = fb.check(post, caption, comment)
+    if errs:
+        print("DỪNG — bài %r không qua kiểm:" % post.get("slug"))
+        for e in errs:
+            print("   -", e)
+        return 1
+
+    img, note = fb.pick_image(post)
+    print("ảnh:", img or "KHÔNG CÓ (%s)" % note)
+
+    if dry:
+        print("=== CHẠY KHÔ — KHÔNG ĐĂNG GÌ (%s) ===" % plat)
+        if plat == "instagram":
+            print("---- caption ----")
+            print(caption)
+            print("---- comment 1 ----")
+            print(comment)
+            print("(Instagram không cho link bấm được trong caption lẫn "
+                  "comment — link chỉ để người đọc copy; chỗ bấm được là bio.)")
+    pid = (ig_post if plat == "instagram" else th_post)(
+        token, caption, img, comment, dry)
+    if dry or pid is None:
+        print("=== hết. Chưa đăng gì lên %s. ===" % plat)
+        return 0 if pid is not None or dry else 1
+
+    post[mark] = True
+    post[mark + "_id"] = pid
+    fb.save(queue)
+    print("Đã đánh dấu %r trong hàng đợi." % mark)
+    return 0
+
+
+def caption_and_log(post, limit, plat):
+    caption, why = fb.caption_for(post, limit=limit)
+    print("Caption %s: %s" % (plat, why))
+    return caption, why
+
+
+if __name__ == "__main__":
+    try:
+        sys.exit(main())
+    except RuntimeError as e:
+        print("DỪNG —", e, file=sys.stderr)
+        sys.exit(1)
+    except urllib.error.HTTPError as e:
+        print("LỖI API %s: %s" % (e.code, e.read().decode(errors="replace")),
+              file=sys.stderr)
+        sys.exit(1)

@@ -1,0 +1,83 @@
+name: Đăng Instagram / Threads theo hàng đợi
+
+# Cùng hàng đợi với Facebook (`data/fb-queue.json`), khác cột đánh dấu:
+# Facebook "posted" · Instagram "posted_ig" · Threads "posted_threads".
+# Ba nơi chạy độc lập — nơi này hỏng không kéo nơi kia dừng.
+#
+# Chưa có token thì script tự chạy khô, in bài ra rồi thoát 0. Bật workflow
+# trước, cấp token sau, không run nào đỏ.
+#
+# Secret cần:
+#   FB_PAGE_TOKEN  — đã có, Instagram dùng chung với Facebook.
+#   THREADS_TOKEN  — riêng của Threads, lấy ở threads.net (mục 0-C).
+
+on:
+  schedule:
+    # Lệch 30 phút so với Facebook (05:00 / 14:00 UTC) để ba nơi không
+    # cùng đăng một lúc — nhìn như máy chạy thì người đọc thấy ngay.
+    - cron: "30 5 * * *"
+    - cron: "30 14 * * *"
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: "Nền tảng"
+        type: choice
+        options: [ca-hai, instagram, threads]
+        default: ca-hai
+      dry_run:
+        description: "Chạy khô — CHỈ in bài ra, KHÔNG đăng"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: social-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    strategy:
+      # Chạy lần lượt, không song song: hai job cùng sửa `fb-queue.json`
+      # rồi cùng push là đúng cảnh Luật 21d (đụng độ lúc rebase).
+      max-parallel: 1
+      matrix:
+        platform: [instagram, threads]
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Đăng bài đến hạn
+        # Bấm tay chọn một nền tảng thì bỏ qua nhánh kia.
+        if: >-
+          github.event_name != 'workflow_dispatch' ||
+          inputs.platform == 'ca-hai' ||
+          inputs.platform == matrix.platform
+        env:
+          PLATFORM: ${{ matrix.platform }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+          SOCIAL_DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+        run: python3 tools/social-post.py
+
+      - name: Ghi lại hàng đợi
+        run: |
+          if [ -z "$(git status --porcelain data/fb-queue.json)" ]; then
+            echo "Hàng đợi không đổi (chạy khô hoặc không có bài đến hạn)."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/fb-queue.json
+          git commit -m "social: đánh dấu bài đã đăng (${{ matrix.platform }})"
+          # Vòng rebase như fb-post.yml và hai workflow audio (Luật 21c).
+          for i in 1 2 3 4 5; do
+            git push origin HEAD:main && exit 0
+            git fetch origin main && git rebase origin/main || {
+              git checkout --theirs -- data/fb-queue.json
+              git add -A && git rebase --continue
+            }
+          done
+          echo "Push thất bại sau 5 lần." >&2
+          exit 1

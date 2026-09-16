@@ -235,6 +235,177 @@ Add).
 
 ---
 
+## 0-B. INSTAGRAM — HƯỚNG DẪN TỪNG NÚT
+
+Instagram **dùng chung token với Facebook**, không phải lấy token mới. Nhưng Chú
+phải làm ba việc trên điện thoại trước, nếu chưa làm thì API không thấy tài khoản.
+
+### BƯỚC 1 — Đổi Instagram sang tài khoản chuyên nghiệp (3 phút)
+
+Tài khoản cá nhân thường **không đăng được bằng API**. Phải là Professional.
+
+1. Mở app **Instagram** trên điện thoại.
+2. Bấm **ảnh đại diện** góc dưới bên phải → vào trang cá nhân.
+3. Bấm ba gạch ngang **☰** góc trên bên phải.
+4. Bấm **Cài đặt và quyền riêng tư**.
+5. Kéo xuống mục **Dành cho chuyên gia** → bấm **Loại tài khoản và công cụ**.
+6. Bấm **Chuyển sang tài khoản chuyên nghiệp**.
+7. Chọn danh mục — chọn **Nhà xuất bản kỹ thuật số** hoặc **Blogger cá nhân**.
+   **Đừng chọn "Bất động sản"** — sai lane, Panorama là publication (§1 CLAUDE.md).
+8. Màn hình hỏi **Doanh nghiệp** hay **Nhà sáng tạo** → chọn **Doanh nghiệp**.
+   Nhà sáng tạo bị giới hạn vài API đăng bài.
+
+### BƯỚC 2 — Nối Instagram với Trang Facebook (2 phút)
+
+Đây là chỗ hay sót nhất. API tìm Instagram **qua Trang**, không nối thì
+script báo *"Trang chưa gắn tài khoản Instagram chuyên nghiệp"*.
+
+1. Vẫn trong Instagram: **☰** → **Cài đặt và quyền riêng tư**.
+2. Mục **Dành cho chuyên gia** → bấm **Chia sẻ và liên kết tài khoản**
+   (máy khác ghi **Trung tâm tài khoản**).
+3. Bấm **Trang Facebook** → **Liên kết Trang mới**.
+4. Chọn đúng **NamBan Panorama**. Cẩn thận chỗ này — Chú quản nhiều Trang,
+   bấm nhầm là bài Panorama rơi lên Instagram của Trang khác. Script có chốt
+   chặn đối chiếu username, nhưng vẫn nên bấm đúng ngay từ đầu.
+
+**Kiểm nhanh:** mở https://business.facebook.com/settings/instagram-accounts —
+thấy tài khoản Instagram nằm dưới Trang NamBan Panorama là xong.
+
+### BƯỚC 3 — Thêm hai quyền vào token (3 phút)
+
+Token cũ chưa có quyền Instagram, phải lấy lại **một lần**.
+
+1. Mở https://developers.facebook.com/tools/explorer/
+2. Góc phải: **Meta App** chọn đúng app đã tạo ở mục 0-A.
+3. **User or Page** → **Get Page Access Token** → chọn **NamBan Panorama**.
+4. Trong ô **Permissions**, bấm **Add a Permission** → tìm và tick thêm:
+   - `instagram_basic`
+   - `instagram_content_publish`
+   - `instagram_manage_comments` *(để thả link vào comment 1)*
+5. Bấm **Generate Access Token** → duyệt lại → **Continue**.
+6. Đem token mới qua https://developers.facebook.com/tools/debug/accesstoken/
+   → dán → **Debug** → bấm **Extend Access Token** (nút *"Gia hạn"*).
+7. Kiểm hai dòng: **Expires** phải ghi **Never**, **Type** phải ghi **Page**.
+   Sai một trong hai thì làm lại bước 3.
+8. Dán đè vào secret cũ: https://github.com/doanquocduyet/namban-panorama/settings/secrets/actions
+   → bấm `FB_PAGE_TOKEN` → **Update secret**.
+
+### MỘT ĐIỀU PHẢI BIẾT TRƯỚC VỀ INSTAGRAM
+
+**Instagram không cho link bấm được** — không trong caption, không trong comment.
+Link duy nhất bấm được là link ở **bio**. Nên Instagram **không kéo người về web**
+như Facebook; nó chỉ để nhận diện. Chú vào bio đặt sẵn `nambanpanorama.com`.
+
+**Caption Instagram trần 2.200 ký tự.** Bài ngắn nhất của site đã 5.700 ký tự, nên
+**không bài nào đăng đủ được trên Instagram**. Script tự lùi về câu mồi viết tay
+trong hàng đợi và ghi rõ lý do trong log — không cắt ngang giữa câu.
+
+**Ảnh dùng luôn tấm og 1200×630.** Tỷ lệ 1,905:1, vừa sát trần 1,91:1 của
+Instagram nên lọt, không phải cắt lại bộ ảnh vuông.
+
+---
+
+## 0-C. THREADS — HƯỚNG DẪN TỪNG NÚT
+
+Threads **có token riêng**, không dùng chung với Facebook. Đây là chỗ khác biệt
+lớn nhất so với Instagram, đừng nhầm.
+
+### BƯỚC 1 — Bật Threads cho tài khoản (2 phút)
+
+1. Mở app **Threads**, đăng nhập bằng đúng tài khoản Instagram `nambanpanorama`.
+2. Vào trang cá nhân → **☰** → **Cài đặt** → **Quyền riêng tư của tài khoản**.
+3. Bảo đảm tài khoản **công khai** (không khoá). Tài khoản khoá thì API đăng
+   được nhưng không ai ngoài người theo dõi thấy — mất sạch ý nghĩa.
+
+### BƯỚC 2 — Thêm Threads vào app Meta (5 phút)
+
+1. Mở https://developers.facebook.com/apps/ → bấm vào app đã tạo ở mục 0-A.
+2. Menu trái → **Thêm sản phẩm** (*Add Product*).
+3. Tìm ô **Threads API** → bấm **Thiết lập** (*Set up*).
+4. Vào **Threads API** → **Cài đặt** (*Settings*).
+5. Ô **Redirect Callback URLs** phải điền gì đó thì mới lưu được. Điền:
+   `https://nambanpanorama.com/` — mình không dùng đường quay lại này, nhưng
+   Meta bắt buộc có.
+6. Bấm **Lưu thay đổi**.
+
+### BƯỚC 3 — Lấy token Threads (5 phút)
+
+1. Mở https://developers.facebook.com/tools/explorer/
+2. Góc phải trên: ô **Meta App** chọn đúng app.
+3. Ngay dưới, ô đang ghi **Graph API** → bấm vào, **đổi thành `Threads API`**.
+   *Không thấy dòng Threads API thì bước 2 chưa xong, quay lại làm.*
+4. Ô **User or Page** → chọn **User Token**.
+5. Trong **Permissions**, tick ba quyền:
+   - `threads_basic`
+   - `threads_content_publish`
+   - `threads_manage_replies`
+6. Bấm **Generate Access Token** → chọn tài khoản Threads → **Continue**.
+7. Copy token.
+
+### BƯỚC 4 — Dán vào GitHub (2 phút)
+
+1. Mở https://github.com/doanquocduyet/namban-panorama/settings/secrets/actions/new
+2. Ô **Name** gõ đúng: `THREADS_TOKEN`
+3. Ô **Secret** dán token vừa copy.
+4. Bấm **Add secret**.
+
+### ⚠️ TOKEN THREADS SỐNG 60 NGÀY — KHÁC HẲN FACEBOOK
+
+Đây là điểm phải nhớ. Token Facebook không hết hạn; **token Threads thì hết hạn
+sau 60 ngày**, và Meta chưa cho loại vĩnh viễn. Hai tháng một lần phải làm lại
+**bước 3 và 4**.
+
+Dấu hiệu chết: workflow `social-post` đỏ ở nhánh `threads`, log ghi lỗi mã 190.
+
+### MỘT ĐIỀU PHẢI BIẾT TRƯỚC VỀ THREADS
+
+**Threads trần 500 ký tự một bài.** Nên script đăng nguyên bài bằng **chuỗi trả
+lời nối nhau** — đúng nếp Threads, người ta vẫn đọc kiểu đó. Bài đầu có ảnh, các
+bài sau là chữ, bài chót là link.
+
+Bài của site ra **12–18 mắt xích** một chuỗi. Dài, nhưng đó là cái giá của "đăng
+100% nội dung". Muốn một bài nào đó chỉ đăng câu mồi thì thêm `"full": false`
+vào bài đó trong `data/fb-queue.json`.
+
+---
+
+## 0-D. ĐĂNG 100% NỘI DUNG — ĐÃ BẬT, VÀ MỘT CHỖ CẦN NÓI THẲNG
+
+Chú chốt 16/9/2026: đăng **nguyên văn bài web**, không đăng câu mồi cụt. Đã bật,
+mặc định cho mọi bài. Script bóc lời bài bằng đúng bộ bóc của audio
+(`scripts/gen_audio_edge.py`, hàm `narration`) nên nó tự bỏ `<figure>`, khối
+Nguồn, khối liên hệ, nút Nghe bài, mục "Đọc gì tiếp" — còn lại đúng phần người
+đọc đọc trên web.
+
+Tắt cho một bài: thêm `"full": false` vào bài đó trong `data/fb-queue.json`.
+
+**Chỗ phải nói thẳng, vì nó là dữ kiện chứ không phải ý kiến:** việc này **không
+đem lại SEO**. Ba lý do, kiểm được:
+
+1. **Link từ Facebook là `nofollow`** — không truyền giá trị xếp hạng sang site.
+2. **Google gần như không index bài Facebook.** Nội dung Trang chỉ hiện đầy đủ
+   với người đã đăng nhập, Googlebot đọc được rất ít.
+3. **Các bộ thu thập của AI bị Meta chặn.** Nên chữ đăng lên Facebook gần như
+   vô hình với ChatGPT, Perplexity, Gemini — tức là **không giúp AEO/GEO**.
+
+Cái đăng đủ nội dung **thật sự** đem lại là **thời gian đọc trên bài**, và đó là
+thứ Facebook đo để quyết định cho bao nhiêu người thấy. Bài dài giữ người ở lại
+lâu hơn câu mồi ba dòng, nên tiếp cận lên. Đó là lợi ích thật, đo được, nằm gọn
+**bên trong Facebook**.
+
+Cái nó lấy đi là **cú bấm sang web**. Đọc hết trên Facebook rồi thì ít ai bấm
+link nữa. Mà phễu của Panorama nằm ở web (§0.6 CLAUDE.md), không nằm ở Facebook.
+
+**Nên cách dùng đúng:** để `full: true` cho bài **kể chuyện, dữ kiện vùng, sửa
+hiểu nhầm** — loại đọc xong là xong, mục tiêu là người ta nhớ tới Panorama. Để
+`full: false` cho bài **tra cứu có bảng, có số, có FAQ dài** — loại người ta cần
+mở lại nhiều lần, và mỗi lần mở lại là một lần vào web.
+
+SEO vẫn là việc của web, không phải việc của Facebook. Cái web đang làm đúng
+hướng rồi: `llms.txt`, JSON-LD, `sitemap.xml`, IndexNow, tầng `/data/*.json`.
+
+---
+
 ## 0. GIỮ GÌ, BỎ GÌ CỦA 7 PROMPT
 
 7 prompt Chú đưa là công thức bán hàng viral. **Cơ chế thì đúng, chất liệu thì sai

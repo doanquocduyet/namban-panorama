@@ -48,6 +48,13 @@ SITE = "https://nambanpanorama.com"
 # token phải trỏ đúng Trang này thì mới đăng.
 EXPECT_PAGE = "nambanpanorama"
 
+# Trần caption từng nền tảng. Facebook 63.206 ký tự — bài dài nhất của site
+# chưa tới 9.000 nên đăng nguyên bài thoải mái. Instagram 2.200, không bài
+# nào lọt, nên Instagram luôn rơi về câu mồi (xem `caption_for`).
+FB_LIMIT = 63000
+IG_LIMIT = 2200
+THREADS_LIMIT = 500
+
 # Chuỗi cấm — cùng danh sách với §2.1 CLAUDE.md. Bài Facebook cũng là mặt
 # publication, nên chặn ngay ở đây thay vì trông vào người soạn nhớ.
 BANNED = [
@@ -68,20 +75,28 @@ def save(q):
         fh.write("\n")
 
 
-def check(post):
+def check(post, caption=None, comment=""):
     """Chặn bài phạm luật TRƯỚC khi gọi API. Đăng rồi mới phát hiện thì
-    đã nằm trên tường Trang, sửa cũng còn dấu."""
+    đã nằm trên tường Trang, sửa cũng còn dấu.
+
+    Kiểm trên **caption thật sắp đăng**, không kiểm trên trường `message`.
+    Từ 16/9/2026 caption có thể là nguyên bài bóc từ web, nên kiểm `message`
+    là kiểm một chuỗi không ai đọc — đúng họ Luật 12 (file tồn tại không
+    chứng minh nội dung đúng).
+    """
     errs = []
-    text = (post.get("message", "") + " " + post.get("comment", "")).lower()
+    if caption is None:
+        caption = post.get("message", "")
+    text = (caption + " " + comment).lower()
     for b in BANNED:
         if b in text:
             errs.append("chuỗi cấm §2.1: %r" % b)
-    if not post.get("message", "").strip():
-        errs.append("message rỗng")
+    if not caption.strip():
+        errs.append("caption rỗng")
     # Chú chốt 16/9/2026: KHÔNG để link trong caption. Vừa là ý Chú, vừa
     # đúng mục 1.2 — link ngoài trong caption làm Facebook bóp tiếp cận.
     # Link chỉ nằm ở comment đầu tiên.
-    if re.search(r"https?://|nambanpanorama\.com", post.get("message", "")):
+    if re.search(r"https?://|nambanpanorama\.com", caption):
         errs.append("caption có link — link phải để ở comment, không để trên bài")
     slug = post.get("slug")
     if slug and not os.path.exists(os.path.join(ROOT, slug + ".html")):
@@ -125,6 +140,55 @@ def pick_image(post):
     if not os.path.exists(local):
         return None, "ảnh không có trong repo: %s" % rel
     return SITE + rel, rel
+
+
+def article_text(slug):
+    """Bóc nguyên lời bài từ `<slug>.html` — đúng phần người đọc đọc trên web.
+
+    Dùng lại bộ bóc của `scripts/gen_audio_edge.py` (hàm `narration`) thay vì
+    viết bộ thứ hai: bộ đó đã chạy thật cho toàn bộ audio của site, đã biết
+    bỏ `<figure>`, khối Nguồn, khối liên hệ, nút Nghe bài và mục "Đọc gì
+    tiếp". Nuôi hai bộ bóc song song là nuôi hai cách hiểu "thân bài" khác
+    nhau — đúng cái bẫy Luật 13b/13c.
+
+    Trả về chuỗi đã nối bằng dòng trống để đọc trên Facebook cho thoáng.
+    """
+    import importlib.util
+    path = os.path.join(ROOT, "scripts", "gen_audio_edge.py")
+    src = open(path, encoding="utf-8").read().split("\nif __name__")[0]
+    g = {"__file__": path, "__name__": "gen_audio_edge"}
+    exec(compile(src, path, "exec"), g)
+    parts = g["narration"](os.path.join(ROOT, slug + ".html")).split("\n")
+    return "\n\n".join(p for p in parts if p.strip())
+
+
+def caption_for(post, limit=None):
+    """Caption cuối cùng cho một bài, kèm lý do đã chọn cái gì.
+
+    Chú chốt 16/9/2026: đăng **100% nội dung như bài trên web**. Nên mặc
+    định là nguyên bài; `"full": false` trong hàng đợi thì quay về câu mồi
+    viết tay ở trường `message`.
+
+    `limit` dành cho Instagram (2.200 ký tự). Bài đủ luôn dài hơn, nên khi
+    vượt trần thì lùi về câu mồi thay vì cắt ngang giữa câu — cắt ngang là
+    đăng một bài cụt, tệ hơn hẳn một câu mồi viết tử tế.
+    """
+    hook = post.get("message", "").strip()
+    if not post.get("full", True) or not post.get("slug"):
+        return hook, "câu mồi viết tay"
+    try:
+        body = article_text(post["slug"])
+    except Exception as e:
+        return hook, "không bóc được lời bài (%s) — dùng câu mồi" % e
+    if not body.strip():
+        return hook, "bóc ra rỗng — dùng câu mồi"
+    tail = post.get("tail", "").strip()
+    if tail:
+        body = body + "\n\n" + tail
+    if limit and len(body) > limit:
+        return hook, ("nguyên bài %d ký tự, quá trần %d — dùng câu mồi"
+                      % (len(body), limit))
+    return body, "nguyên bài, %d ký tự" % len(body)
 
 
 def api(path, params, token):
@@ -207,17 +271,21 @@ def main():
         return 0
 
     post = due[0]
-    errs = check(post)
-    if errs:
-        print("DỪNG — bài %r không qua kiểm:" % post.get("slug"))
-        for e in errs:
-            print("   -", e)
-        return 1
 
     link = "%s/%s" % (SITE, post["slug"]) if post.get("slug") else ""
     comment = post.get("comment", "").strip()
     if link and link not in comment:
         comment = (comment + "\n" + link).strip()
+
+    caption, why = caption_for(post, limit=FB_LIMIT)
+    print("Caption:", why)
+
+    errs = check(post, caption, comment)
+    if errs:
+        print("DỪNG — bài %r không qua kiểm:" % post.get("slug"))
+        for e in errs:
+            print("   -", e)
+        return 1
 
     img, note = pick_image(post)
 
@@ -231,8 +299,8 @@ def main():
         print("ngày :", post.get("date"))
         print("bài  :", link or "(không có link)")
         print("ảnh  :", img or "KHÔNG CÓ — sẽ đăng chữ (%s)" % note)
-        print("---- caption (không có link, đúng ý) ----")
-        print(post["message"])
+        print("---- caption (%s) ----" % why)
+        print(caption)
         print("---- comment 1 ----")
         print(comment)
         print("=== hết. Chưa đăng gì lên Facebook. ===")
@@ -248,13 +316,13 @@ def main():
         # /photos trả về `id` của ảnh và `post_id` của bài trên tường.
         # Comment phải gắn vào `post_id` thì mới nằm dưới bài.
         res = api("/%s/photos" % page,
-                  {"url": img, "caption": post["message"], "published": "true"},
+                  {"url": img, "caption": caption, "published": "true"},
                   token)
         pid = res.get("post_id") or res["id"]
         print("Đã đăng ảnh + caption:", pid, "· ảnh", img)
     else:
         print("Không có ảnh (%s) — đăng chữ." % note)
-        res = api("/%s/feed" % page, {"message": post["message"]}, token)
+        res = api("/%s/feed" % page, {"message": caption}, token)
         pid = res["id"]
         print("Đã đăng:", pid)
 
