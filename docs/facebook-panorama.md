@@ -56,14 +56,25 @@ không cần duyệt, không cần công khai.
    Video trực tiếp · oEmbed — không cái nào đăng được lên Trang Facebook.
 
    Bấm **Tiếp / Next**.
-6. Hỏi tiếp **"Doanh nghiệp"** → chọn tài khoản doanh nghiệp nếu có, không có
-   thì bỏ qua → **Tiếp / Next**. Tới bước **"Yêu cầu"** và **"Tổng quan"** thì
-   chỉ cần xác nhận, không phải điền gì thêm.
-7. Điền:
+6. Màn **"Doanh nghiệp"** hỏi kết nối hồ sơ doanh nghiệp nào. Chọn
+   **"Tôi chưa muốn kết nối hồ sơ doanh nghiệp."** → **Tiếp / Next**.
+
+   **KHÔNG gắn vào hồ sơ Tân Hưng Realty.** Ba lý do, ghi lại để đợt sau đừng
+   quyết lại: (a) hệ thống chỉ cần Page Access Token của chính admin Trang —
+   app ở chế độ Development vẫn đăng được lên Trang mà admin đó quản, business
+   portfolio chỉ cần cho System User token hoặc app phát hành công khai;
+   (b) gắn vào là dính quy trình **xác minh doanh nghiệp**, thêm một vòng giấy
+   tờ cho thứ không dùng tới; (c) Tân Hưng Realty là lane bán đất, Panorama là
+   publication — §1 tách ba web ra chính vì vậy.
+
+   Vướng về sau thì gắn sau ở **Cài đặt app → Cơ bản → Business Account**,
+   không phải làm lại từ đầu.
+7. Hai màn **"Yêu cầu"** và **"Tổng quan"** chỉ bấm xác nhận, không điền gì.
+8. Điền:
    - **Tên ứng dụng:** gõ `Namban Panorama Auto Post` (tên gì cũng được, chỉ mình thấy)
    - **Email liên hệ:** `nambanpanorama@gmail.com`
    - **Tài khoản doanh nghiệp:** để trống cũng được
-8. Bấm **"Tạo ứng dụng" / "Create App"**. Facebook hỏi lại mật khẩu → nhập.
+9. Bấm **"Tạo ứng dụng" / "Create App"**. Facebook hỏi lại mật khẩu → nhập.
 
 Xong bước 1. Giờ Chú đang ở trang quản lý App.
 
