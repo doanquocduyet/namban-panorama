@@ -12,11 +12,11 @@ name: Đăng Facebook theo hàng đợi
 
 on:
   schedule:
-    # 12:00 và 21:00 giờ Việt Nam (UTC+7) → 05:00 và 14:00 UTC.
-    # Khung trưa cho tin ngắn, khung tối cho bài dữ kiện dài
-    # (docs/facebook-panorama.md mục 1.10).
-    - cron: "0 5 * * *"
-    - cron: "0 14 * * *"
+    # 11:00 và 20:00 giờ Việt Nam (UTC+7) → 04:00 và 13:00 UTC.
+    # Chú chốt 17/9/2026, đổi từ 12:00/21:00. Khung trưa cho tin ngắn,
+    # khung tối cho bài dữ kiện dài (docs/facebook-panorama.md mục 1.10).
+    - cron: "0 4 * * *"
+    - cron: "0 13 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
