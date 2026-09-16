@@ -43,6 +43,11 @@ jobs:
       # Chạy lần lượt, không song song: hai job cùng sửa `fb-queue.json`
       # rồi cùng push là đúng cảnh Luật 21d (đụng độ lúc rebase).
       max-parallel: 1
+      # Nhánh này hỏng KHÔNG được kéo nhánh kia chết theo. Gặp thật
+      # 16/9/2026: Instagram thiếu quyền nên lỗi, GitHub huỷ luôn nhánh
+      # Threads đang xếp hàng — đúng thứ mục tiêu "ba nơi chạy độc lập"
+      # ở đầu file muốn tránh.
+      fail-fast: false
       matrix:
         platform: [instagram, threads]
     steps:
