@@ -251,17 +251,21 @@ mục "Dành cho chuyên gia" như tài liệu Meta ghi. Đường đúng trên 
 2. Bấm **☰** góc trên phải → **Cài đặt và hoạt động**.
 3. Kéo xuống gần cuối, tới mục **Thông tin chi tiết và công cụ**.
 4. Bấm **Công cụ và loại tài khoản**.
-5. Nhìn trong đó:
-   - Có dòng **"Chuyển sang tài khoản chuyên nghiệp"** → đang là cá nhân.
-     Bấm vào, chọn danh mục **Nhà xuất bản kỹ thuật số** (**đừng chọn "Bất
-     động sản"** — sai lane, Panorama là publication, §1 CLAUDE.md), rồi
-     chọn **Doanh nghiệp** chứ không phải Nhà sáng tạo (Nhà sáng tạo bị giới
-     hạn vài API đăng bài).
-   - Có dòng **"Chuyển sang tài khoản cá nhân"** → **đã là chuyên nghiệp rồi**,
-     khỏi làm gì. Đừng bấm dòng đó.
-
-Dấu hiệu nhanh: cùng nhóm đó có mục **Bảng điều khiển** thì tài khoản thường
-đã là chuyên nghiệp.
+5. Dòng đầu **Loại tài khoản** cho biết đang là gì:
+   - Ghi **Cá nhân** → bấm dòng ngay dưới, **"Chuyển sang tài khoản công
+     việc"**. (Bản cũ gọi là *"tài khoản chuyên nghiệp"* — cùng một thứ,
+     Instagram đổi tên. Đừng đi tìm chữ "chuyên nghiệp" nữa.)
+   - Ghi **Công việc** / **Doanh nghiệp** → xong rồi, khỏi làm gì.
+6. Trong luồng chuyển:
+   - **Danh mục** → chọn **Nhà xuất bản kỹ thuật số** (không có thì **Blogger
+     cá nhân** hoặc **Trang web tin tức**). **ĐỪNG chọn "Bất động sản"** —
+     Panorama là publication (§1 CLAUDE.md); chọn vậy là tự dán nhãn sai lane
+     và Instagram xếp nội dung vào nhóm tin rao.
+   - Hỏi **Doanh nghiệp** hay **Nhà sáng tạo** → chọn **Doanh nghiệp**.
+     Nhà sáng tạo bị giới hạn vài API đăng bài.
+   - Hỏi nối Trang Facebook → **Bỏ qua**, nối ở bước 2 trên máy tính cho chắc.
+7. Quay lại màn hình cũ, dòng **Loại tài khoản** phải đổi thành **Công việc**.
+   Thấy vậy mới là xong bước 1.
 
 Tiện kiểm luôn: **Cài đặt và hoạt động → Quyền riêng tư của tài khoản** phải
 là **Công khai**.
