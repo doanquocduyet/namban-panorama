@@ -39,10 +39,22 @@ không cần duyệt, không cần công khai.
 3. Lần đầu vào Facebook hỏi *"Bạn có phải nhà phát triển không"* → bấm
    **"Bắt đầu" / "Get Started"**, xác nhận số điện thoại hoặc email nếu nó hỏi.
 4. Bấm nút xanh **"Tạo ứng dụng" / "Create App"** (góc trên bên phải).
-5. Màn hình hỏi **"Bạn muốn ứng dụng làm gì?"** → chọn **"Khác" / "Other"** →
-   bấm **Tiếp / Next**.
-6. Hỏi **"Chọn loại ứng dụng"** → chọn **"Doanh nghiệp" / "Business"** →
-   **Tiếp / Next**.
+5. **Giao diện Meta đổi tháng 9/2026** — giờ nó hỏi **"Trường hợp sử dụng"**
+   (Use case) với một cột lọc bên trái. Màn hình mặc định mở ở **"Đáng chú ý (6)"**,
+   và **cả sáu mục ở đó đều SAI** (API Marketing · Trình quản lý quảng cáo ·
+   API Threads · Trò chơi tức thì · Đăng nhập bằng Facebook · WhatsApp).
+   **Đừng tick cái nào.**
+
+   Bấm **"Quản lý nội dung (5)"** ở cột trái. Trong năm mục đó, tick mục nào
+   nhắc tới **Trang** và **đăng nội dung** — tên thường là
+   **"Quản lý trải nghiệm trên Trang"** hoặc **"Quản lý nội dung và thông tin
+   chi tiết trên Trang"**. Đó là use case cấp đúng ba quyền
+   `pages_show_list` · `pages_read_engagement` · `pages_manage_posts`.
+
+   Bấm **Tiếp / Next**.
+6. Hỏi tiếp **"Doanh nghiệp"** → chọn tài khoản doanh nghiệp nếu có, không có
+   thì bỏ qua → **Tiếp / Next**. Tới bước **"Yêu cầu"** và **"Tổng quan"** thì
+   chỉ cần xác nhận, không phải điền gì thêm.
 7. Điền:
    - **Tên ứng dụng:** gõ `Namban Panorama Auto Post` (tên gì cũng được, chỉ mình thấy)
    - **Email liên hệ:** `nambanpanorama@gmail.com`
