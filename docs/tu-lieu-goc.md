@@ -206,3 +206,35 @@ việc đụng tới mọi commit nên em không tự làm. Chú gật thì em l
 **Cách tránh từ đầu:** chụp màn hình văn bản thì che phần có tên, căn cước, số điện thoại,
 địa chỉ, số thửa trước khi gửi. Phần nội dung hành chính — mốc thời gian, số văn bản,
 thông số công trình — vẫn dùng được đầy đủ mà không cần mấy thứ kia.
+
+---
+
+## Lời kể tại chỗ — ĐƯỜNG "SÌNH 18" (Chú đưa 16/9/2026)
+
+- **Nguồn:** Chú kể lại lời các chú bác sống lâu năm trong vùng. **Không phải văn bản.**
+- **Nội dung:** đường từ **chợ Thăng Long** vào **Bãi Công** được người ở lâu năm
+  gọi là **"đường sình 18"**.
+- **Trạng thái:** tên dân gian, truyền miệng. **CHƯA ĐƯA LÊN SITE** — còn ba chỗ
+  chưa rõ, ghi ở dưới.
+
+**Vì sao đáng giữ.** Đây đúng loại dữ liệu §5 nói là lợi thế thật của Panorama:
+tên người trong vùng dùng, không có trên bản đồ, không trang nào khác có. Người
+đi hỏi đường nghe "sình 18" mà tra Google ra số 0 thì Panorama là nơi duy nhất
+trả lời được.
+
+**Ba chỗ phải hỏi Chú trước khi viết** (Luật 24 — dữ kiện về tên thì hỏi lại,
+đừng suy từ ngữ cảnh):
+
+1. **Viết hoa thế nào** — `đường Sình 18`, `đường sình 18`, hay `đường Sình Mười Tám`?
+2. **Số 18 là gì** — số tổ, số thôn, số lô, hay cây số? Biết thì câu giải thích
+   mới đứng được; không biết thì chỉ ghi được tên trần.
+3. **Phạm vi và thì** — tên này gọi cả tuyến 1,7km hay chỉ một đoạn? Và giờ đường
+   đã bê tông suốt rồi thì còn ai gọi vậy không, hay chỉ lớp người cũ còn nhớ?
+   Chỗ này quyết định viết ở **thì hiện tại** hay **thì quá khứ** — và §7 (SỔ CHỜ
+   NAM HÀ) đã có bài học: câu viết ở thể vĩnh viễn thì hỏng theo thời gian.
+
+**Chỗ sẽ gắn khi đủ rõ:** `/ho-bai-cong-nam-ban` đang có ba câu về đúng tuyến này
+(*"Từ chợ Thăng Long — chợ chính của Nam Ban — vào hồ khoảng 1,7km, bê tông suốt"*)
+mà chưa có tên dân gian. Thêm một câu tên cũ vào đó là bài mạnh hẳn lên, vì nó
+chứng minh người viết có nghe người tại chỗ nói.
+

@@ -18,6 +18,144 @@ lên tường Trang bán đất. Chưa cấp token thì workflow chạy khô, in
 
 ---
 
+## 0-A. LẤY `FB_PAGE_TOKEN` — HƯỚNG DẪN TỪNG NÚT CHO CHÚ
+
+Đây là **việc duy nhất Chú phải tự tay làm**. Làm một lần, xong là hệ thống tự chạy.
+Mất khoảng 15 phút. Không cần cài gì, không cần trả tiền.
+
+**Trước khi bắt đầu, kiểm một chuyện:** Chú phải là **Quản trị viên (Admin)** của
+Trang `facebook.com/nambanpanorama`. Vào Trang → nếu thấy nút **"Chuyển vào Bảng tin
+chuyên nghiệp"** hoặc vào được **Meta Business Suite** thì Chú là admin, đi tiếp được.
+
+---
+
+### BƯỚC 1 — Tạo một App trên Meta (5 phút)
+
+App này chỉ là cái "giấy thông hành" để Facebook cấp token. Không ai nhìn thấy nó,
+không cần duyệt, không cần công khai.
+
+1. Mở **https://developers.facebook.com/apps/**
+2. Đăng nhập bằng đúng tài khoản Facebook đang quản Trang Panorama.
+3. Lần đầu vào Facebook hỏi *"Bạn có phải nhà phát triển không"* → bấm
+   **"Bắt đầu" / "Get Started"**, xác nhận số điện thoại hoặc email nếu nó hỏi.
+4. Bấm nút xanh **"Tạo ứng dụng" / "Create App"** (góc trên bên phải).
+5. Màn hình hỏi **"Bạn muốn ứng dụng làm gì?"** → chọn **"Khác" / "Other"** →
+   bấm **Tiếp / Next**.
+6. Hỏi **"Chọn loại ứng dụng"** → chọn **"Doanh nghiệp" / "Business"** →
+   **Tiếp / Next**.
+7. Điền:
+   - **Tên ứng dụng:** gõ `Namban Panorama Auto Post` (tên gì cũng được, chỉ mình thấy)
+   - **Email liên hệ:** `nambanpanorama@gmail.com`
+   - **Tài khoản doanh nghiệp:** để trống cũng được
+8. Bấm **"Tạo ứng dụng" / "Create App"**. Facebook hỏi lại mật khẩu → nhập.
+
+Xong bước 1. Giờ Chú đang ở trang quản lý App.
+
+---
+
+### BƯỚC 2 — Lấy token trong Graph API Explorer (5 phút)
+
+1. Mở **https://developers.facebook.com/tools/explorer/**
+2. Góc **trên bên phải** có ô **"Ứng dụng Meta" / "Meta App"** → bấm vào, chọn
+   đúng app `Namban Panorama Auto Post` vừa tạo.
+3. Ngay dưới đó, ô **"Người dùng hoặc Trang" / "User or Page"** → bấm →
+   chọn **"Nhận mã truy cập của Trang" / "Get Page Access Token"**.
+4. Facebook mở cửa sổ hỏi chọn Trang. **ĐÂY LÀ CHỖ QUAN TRỌNG NHẤT** — Chú quản
+   ba Trang, phải tick **đúng `Namban Panorama`**, bỏ tick hai Trang kia.
+   Bấm **Tiếp / Continue** → **Lưu / Save** → **Xong / Done**.
+5. Quay lại Explorer, ở cột **"Quyền" / "Permissions"** bên trái, bấm
+   **"Thêm quyền" / "Add a Permission"** và tick đủ **ba quyền** này:
+   - `pages_show_list`
+   - `pages_read_engagement`
+   - `pages_manage_posts`
+6. Bấm nút xanh **"Tạo mã truy cập" / "Generate Access Token"**. Facebook hỏi
+   xác nhận lần nữa → đồng ý hết.
+7. Ô **"Mã truy cập" / "Access Token"** ở trên giờ có một chuỗi dài loằng ngoằng.
+   **Copy cả chuỗi đó.** Đây là token **ngắn hạn** (hết hạn sau ~1 giờ) — bước 3
+   sẽ đổi nó thành loại không hết hạn.
+
+---
+
+### BƯỚC 3 — Đổi thành token KHÔNG HẾT HẠN (3 phút)
+
+Bỏ qua bước này là một tháng sau hệ thống chết, mà không ai biết.
+
+1. Mở **https://developers.facebook.com/tools/debug/accesstoken/**
+2. Dán chuỗi token vừa copy vào ô, bấm **"Gỡ lỗi" / "Debug"**.
+3. Kéo xuống cuối trang, bấm nút **"Gia hạn mã truy cập" / "Extend Access Token"**.
+   Facebook hỏi mật khẩu → nhập.
+4. Xuất hiện một chuỗi **mới** ở dưới. Copy chuỗi mới này.
+5. Dán chuỗi mới vào Debugger lần nữa, bấm **Debug**, và **nhìn hai dòng**:
+   - **"Hết hạn" / "Expires"** phải ghi **"Không bao giờ" / "Never"**
+   - **"Loại" / "Type"** phải ghi **"Trang" / "Page"**
+
+   Nếu **Expires** vẫn ghi một ngày cụ thể, hoặc **Type** ghi "User" → làm lại
+   bước 2 và nhớ chọn **"Get Page Access Token"**, đừng lấy token người dùng.
+
+**Chuỗi cuối cùng đó chính là `FB_PAGE_TOKEN`.** Giữ kỹ — ai có nó là đăng được
+lên Trang.
+
+---
+
+### BƯỚC 4 — Dán vào GitHub (2 phút)
+
+1. Mở thẳng link này:
+   **https://github.com/doanquocduyet/namban-panorama/settings/secrets/actions/new**
+2. Ô **Name** gõ chính xác: `FB_PAGE_TOKEN`
+   (viết hoa hết, có gạch dưới, không có khoảng trắng)
+3. Ô **Secret** dán chuỗi token dài ở bước 3.
+4. Bấm **"Add secret"**.
+
+Xong. Không phải làm gì thêm.
+
+---
+
+### BƯỚC 5 — Chạy thử trước khi cho nó tự đăng
+
+**Chạy khô trước** — in bài ra màn hình, không đăng lên Facebook:
+
+1. Mở **https://github.com/doanquocduyet/namban-panorama/actions/workflows/fb-post.yml**
+2. Bấm **"Run workflow"** (nút xám bên phải).
+3. Ô **"Chạy khô — in bài ra, không đăng"** để nguyên **true**.
+4. Bấm **"Run workflow"** xanh.
+5. Đợi khoảng 30 giây, bấm vào run vừa hiện, xem log. Phải thấy bài sắp đăng in ra.
+
+**Rồi mới đăng thật:** làm lại từ đầu, nhưng đổi ô chạy khô thành **false**.
+
+Log sẽ in `Đăng lên Trang: Namban Panorama (nambanpanorama)`. Nếu nó in tên Trang
+khác thì script **tự dừng, không đăng** — lúc đó quay lại bước 2 chọn lại Trang.
+
+Sau lần đầu thành công, workflow tự chạy **12h trưa và 21h tối giờ Việt Nam** mỗi
+ngày, mỗi lần một bài, theo hàng đợi `data/fb-queue.json`.
+
+---
+
+### KHI NÀO PHẢI LÀM LẠI
+
+Page token loại này **không tự hết hạn**, nhưng sẽ chết nếu:
+- Chú **đổi mật khẩu Facebook**
+- Chú **gỡ app** khỏi tài khoản (Cài đặt → Ứng dụng và trang web)
+- Chú **rời quyền admin** của Trang
+
+Dấu hiệu chết: workflow `fb-post` bắt đầu đỏ, log ghi `LỖI GRAPH API 190`.
+Chữa: làm lại từ **bước 2**, rồi cập nhật secret ở bước 4 (bấm **Update** thay vì
+Add).
+
+---
+
+### CHỐT AN TOÀN ĐÃ DỰNG SẴN — Chú không cần lo
+
+| Rủi ro | Đã chặn thế nào |
+|---|---|
+| Token cấp nhầm Trang Villas / Greenspacers | Script hỏi `GET /me`, đối chiếu username với `nambanpanorama`, lệch thì **dừng, không đăng** |
+| Bài có chữ CTA bán (§2.1) | 12 chuỗi cấm kiểm **trước khi gọi API** — `liên hệ ngay`, `mua ngay`, `chốt ngay`, `nhanh tay`… dính một chữ là dừng |
+| Đăng nhầm bài chưa có trên web | Kiểm `slug` có file `.html` thật không, không có thì dừng |
+| Link ngoài làm tụt tiếp cận | Link bài **luôn nằm ở comment 1**, không nằm trong caption |
+| Đăng trùng | Đăng xong ghi `posted: true` vào hàng đợi, commit lại |
+| Chưa cấp token mà workflow chạy | Tự chuyển sang chạy khô, in bài ra, thoát sạch — **không run nào đỏ** |
+
+---
+
 ## 0. GIỮ GÌ, BỎ GÌ CỦA 7 PROMPT
 
 7 prompt Chú đưa là công thức bán hàng viral. **Cơ chế thì đúng, chất liệu thì sai
