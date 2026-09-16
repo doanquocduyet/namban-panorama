@@ -259,9 +259,23 @@ def main():
         comment = (comment + "\n" + link).strip()
 
     # Instagram không lọt nguyên bài nên `caption_for` tự lùi về câu mồi.
-    # Threads thì nhận nguyên bài rồi tự cắt thành chuỗi, nên không đặt trần.
-    limit = fb.IG_LIMIT if plat == "instagram" else None
+    #
+    # Threads cắt được nguyên bài thành chuỗi, nhưng một bài của site ra
+    # **12–18 mắt xích** — đổ liên tiếp chừng đó lên một tài khoản mới thì
+    # nhìn y như spam (Chú cản đúng lúc 17/9/2026, đã huỷ run đang chạy).
+    # Nên mặc định Threads đăng **câu mồi**, vẫn thành chuỗi 2–3 bài, đọc
+    # trọn ý. Muốn nguyên bài thì bật `THREADS_FULL=1` khi chạy tay.
+    if plat == "instagram":
+        limit = fb.IG_LIMIT
+    elif os.environ.get("THREADS_FULL") == "1":
+        limit = None
+    else:
+        limit = fb.THREADS_LIMIT
     caption, why = caption_and_log(post, limit, plat)
+    if plat == "threads":
+        # Câu mồi viết cho Facebook nên ghi "Bản đầy đủ ở comment". Trên
+        # Threads link nằm ở bài trả lời nối bên dưới, không phải comment.
+        caption = caption.replace("ở comment", "ở dưới")
 
     errs = fb.check(post, caption, comment)
     if errs:

@@ -28,6 +28,10 @@ on:
         description: "Chạy khô — CHỈ in bài ra, KHÔNG đăng"
         type: boolean
         default: false
+      threads_full:
+        description: "Threads: đăng NGUYÊN BÀI (chuỗi 12-18 mắt xích). Tắt = chỉ câu mồi, 2-3 bài"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -64,6 +68,7 @@ jobs:
           FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
           THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
           SOCIAL_DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+          THREADS_FULL: ${{ inputs.threads_full && '1' || '' }}
         run: python3 tools/social-post.py
 
       - name: Ghi lại hàng đợi
