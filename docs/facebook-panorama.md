@@ -289,22 +289,50 @@ Cẩn thận chỗ chọn Trang — Chú quản nhiều Trang, bấm nhầm là 
 lên Instagram của Trang khác. Script có chốt chặn đối chiếu username nên nó
 dừng chứ không đăng bừa, nhưng bấm đúng ngay từ đầu vẫn hơn.
 
-### BƯỚC 3 — Thêm hai quyền vào token (3 phút)
+### BƯỚC 3 — Thêm sản phẩm Instagram vào app TRƯỚC (5 phút)
+
+⚠️ **Gõ `instagram` vào ô Thêm quyền mà không ra dòng nào — đó KHÔNG phải
+lỗi.** Quyền `instagram_*` chỉ hiện trong Explorer **sau khi** app được gắn
+sản phẩm Instagram. Giống hệt Threads: chưa thêm Threads API thì trong ô
+chọn không có dòng Threads. Vấp thật 16/9/2026, mất một vòng đi tìm.
+
+1. Mở https://developers.facebook.com/apps/ → bấm vào app đã tạo ở mục 0-A.
+2. Menu trái, kéo xuống cuối → **Thêm sản phẩm** (*Add Product*).
+3. Tìm ô **Instagram** → **Thiết lập** (*Set up*).
+4. Hỏi kiểu thiết lập → chọn **API thiết lập bằng đăng nhập Facebook**
+   (*Instagram API setup with Facebook Login*).
+   **ĐỪNG chọn** *"Instagram API với đăng nhập Instagram"* — đường đó dùng
+   token riêng của Instagram, không dùng được Page token mình đang có.
+5. Menu trái không có **Thêm sản phẩm** mà có **Trường hợp sử dụng**
+   (*Use cases*) → app dựng theo kiểu mới. Khi đó: **Trường hợp sử dụng** →
+   **Thêm trường hợp sử dụng** → chọn cái có chữ **Instagram** → **Thiết lập**.
+   Kết quả như nhau.
+
+### BƯỚC 4 — Lấy token có quyền Instagram (3 phút)
 
 Token cũ chưa có quyền Instagram, phải lấy lại **một lần**.
 
-1. Mở https://developers.facebook.com/tools/explorer/
-2. Góc phải: **Meta App** chọn đúng app đã tạo ở mục 0-A.
-3. **User or Page** → **Get Page Access Token** → chọn **NamBan Panorama**.
-4. Trong ô **Permissions**, bấm **Add a Permission** → tìm và tick thêm:
+Giao diện tiếng Việt đặt tên ô khác tài liệu Meta — đối chiếu cho khỏi lẫn:
+**Meta App** = *Ứng dụng trên Meta* · **User or Page** = *Người dùng hoặc
+Trang* · **Permissions** = *Quyền* · **Add a Permission** = *Thêm quyền*.
+
+1. Mở https://developers.facebook.com/tools/explorer/ và **tải lại trang**
+   (F5) nếu vừa làm bước 3 xong — không tải lại thì quyền mới chưa hiện.
+2. Ô **Ứng dụng trên Meta** chọn đúng app đã tạo ở mục 0-A.
+3. Trong ô **Quyền**, bấm **Thêm quyền** → tìm và tick thêm:
    - `instagram_basic`
    - `instagram_content_publish`
    - `instagram_manage_comments` *(để thả link vào comment 1)*
+4. Ô **Người dùng hoặc Trang** — mặc định là **Mã người dùng**, SAI loại.
+   Đổi thành **Mã truy cập Trang** → chọn **NamBan Panorama**.
 5. Bấm **Generate Access Token** → duyệt lại → **Continue**.
+
+**Thứ tự bắt buộc:** thêm sản phẩm → tải lại trang → tick quyền → đổi sang
+mã Trang → Generate. Sai thứ tự thì mã sinh ra thiếu quyền, phải làm lại.
 6. Đem token mới qua https://developers.facebook.com/tools/debug/accesstoken/
    → dán → **Debug** → bấm **Extend Access Token** (nút *"Gia hạn"*).
 7. Kiểm hai dòng: **Expires** phải ghi **Never**, **Type** phải ghi **Page**.
-   Sai một trong hai thì làm lại bước 3.
+   Sai một trong hai thì làm lại bước 4.
 8. Dán đè vào secret cũ: https://github.com/doanquocduyet/namban-panorama/settings/secrets/actions
    → bấm `FB_PAGE_TOKEN` → **Update secret**.
 
