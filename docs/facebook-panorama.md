@@ -45,11 +45,15 @@ không cần duyệt, không cần công khai.
    API Threads · Trò chơi tức thì · Đăng nhập bằng Facebook · WhatsApp).
    **Đừng tick cái nào.**
 
-   Bấm **"Quản lý nội dung (5)"** ở cột trái. Trong năm mục đó, tick mục nào
-   nhắc tới **Trang** và **đăng nội dung** — tên thường là
-   **"Quản lý trải nghiệm trên Trang"** hoặc **"Quản lý nội dung và thông tin
-   chi tiết trên Trang"**. Đó là use case cấp đúng ba quyền
-   `pages_show_list` · `pages_read_engagement` · `pages_manage_posts`.
+   Bấm **"Quản lý nội dung (5)"** ở cột trái. Năm mục hiện ra, tick **đúng mục
+   cuối cùng: "Quản lý mọi thứ trên Trang"** — mô tả của nó là *"Đăng nội dung
+   và video, kiểm duyệt bài viết và bình luận của người theo dõi trên Trang,
+   đồng thời xem thông tin chi tiết về hoạt động tương tác."* Đó là use case
+   cấp đúng ba quyền `pages_show_list` · `pages_read_engagement` ·
+   `pages_manage_posts`.
+
+   Bốn mục còn lại trong nhóm đó **bỏ qua**: API Threads · Instagram ·
+   Video trực tiếp · oEmbed — không cái nào đăng được lên Trang Facebook.
 
    Bấm **Tiếp / Next**.
 6. Hỏi tiếp **"Doanh nghiệp"** → chọn tài khoản doanh nghiệp nếu có, không có
