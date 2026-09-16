@@ -130,7 +130,30 @@ def ig_post(token, caption, img, comment, dry):
 
 # ------------------------------------------------------------------ Threads
 
+def th_expiry(token):
+    """In số ngày còn lại của token Threads ngay đầu log.
+
+    Khác hẳn Facebook: Page token không hết hạn, còn token Threads **chỉ
+    sống 60 ngày** và Meta chưa cho loại vĩnh viễn. Không ai nhớ đi kiểm
+    định kỳ, nên script tự kiểm mỗi lần chạy và kêu to khi gần chết.
+    Cùng họ với `token_info` bên fb-post.py.
+    """
+    try:
+        d = req(THREADS, "/refresh_access_token",
+                {"grant_type": "th_refresh_token"}, token, "GET")
+    except Exception as e:
+        print("Không kiểm được hạn token Threads (%s) — vẫn đăng tiếp." % e)
+        return
+    left = int(d.get("expires_in", 0)) // 86400
+    print("Token Threads: còn %d ngày." % left)
+    if left <= 14:
+        print("CẢNH BÁO: token Threads sắp hết hạn. Lấy lại theo "
+              "docs/facebook-panorama.md mục 0-C, rồi cập nhật secret "
+              "THREADS_TOKEN.")
+
+
 def th_target(token):
+    th_expiry(token)
     me = req(THREADS, "/me", {"fields": "id,username"}, token, "GET")
     uname = (me.get("username") or "").lower()
     if uname and not same_handle(uname, EXPECT_THREADS):
