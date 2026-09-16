@@ -147,12 +147,29 @@ Bỏ qua bước này là một tháng sau hệ thống chết, mà không ai bi
 3. Kéo xuống cuối trang, bấm nút **"Gia hạn mã truy cập" / "Extend Access Token"**.
    Facebook hỏi mật khẩu → nhập.
 4. Xuất hiện một chuỗi **mới** ở dưới. Copy chuỗi mới này.
-5. Dán chuỗi mới vào Debugger lần nữa, bấm **Debug**, và **nhìn hai dòng**:
+5. Dán chuỗi mới vào Debugger lần nữa, bấm **Debug**, và **nhìn hai dòng**
+   (Chú hỏi 16/9/2026: *"làm sao biết mã vĩnh viễn hay có hạn 2–3 tháng"*):
    - **"Hết hạn" / "Expires"** phải ghi **"Không bao giờ" / "Never"**
    - **"Loại" / "Type"** phải ghi **"Trang" / "Page"**
 
    Nếu **Expires** vẫn ghi một ngày cụ thể, hoặc **Type** ghi "User" → làm lại
    bước 2 và nhớ chọn **"Get Page Access Token"**, đừng lấy token người dùng.
+
+   **Vì sao hay gặp con số "2–3 tháng":** token *người dùng* dài hạn sống đúng
+   **60 ngày**. Page token **dẫn xuất từ** token người dùng dài hạn đó mới là
+   loại không hết hạn. Lấy nhầm một bậc là hai tháng sau hệ thống chết lặng lẽ —
+   workflow vẫn xanh vì không có bài đến hạn, tới khi có bài mới đỏ.
+
+   **Không phải nhớ đi kiểm thủ công.** `tools/fb-post.py` tự gọi
+   `GET /debug_token` mỗi lần chạy và in ngay đầu log:
+
+   ```
+   Token: loại PAGE · KHÔNG HẾT HẠN
+   ```
+
+   Thấy dòng đó là yên tâm. Nếu token có hạn, log in thẳng số ngày còn lại và
+   trỏ về đúng mục này. Nếu token không phải loại PAGE, log in cảnh báo riêng.
+   Kiểm token hỏng cũng **không chặn việc đăng** — chỉ in ra rồi chạy tiếp.
 
 **Chuỗi cuối cùng đó chính là `FB_PAGE_TOKEN`.** Giữ kỹ — ai có nó là đăng được
 lên Trang.

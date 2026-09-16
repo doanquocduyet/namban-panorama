@@ -90,6 +90,38 @@ def get(path, params, token):
         return json.loads(r.read().decode())
 
 
+def token_info(token):
+    """In hạn dùng của token ngay đầu log.
+
+    Câu Chú hỏi 16/9/2026: "làm sao biết mã vĩnh viễn hay có hạn 2–3 tháng".
+    Không ai nhớ đi kiểm Debugger định kỳ, nên script tự kiểm mỗi lần chạy.
+    `expires_at = 0` nghĩa là không hết hạn — đó là thứ cần thấy.
+    Token người dùng dài hạn sống 60 ngày; lấy nhầm một bậc là đúng hai
+    tháng sau hệ thống chết mà không ai biết.
+    """
+    try:
+        d = get("/debug_token", {"input_token": token}, token).get("data", {})
+    except Exception as e:                      # không chặn việc đăng
+        print("Không kiểm được hạn token (%s) — vẫn đăng tiếp." % e)
+        return
+    exp = d.get("expires_at", -1)
+    typ = d.get("type", "?")
+    if exp == 0:
+        han = "KHÔNG HẾT HẠN"
+    elif exp and exp > 0:
+        left = (datetime.datetime.fromtimestamp(exp, datetime.timezone.utc)
+                - datetime.datetime.now(datetime.timezone.utc)).days
+        han = ("CÒN %d NGÀY (hết hạn %s) — token này sẽ chết, xem "
+               "docs/facebook-panorama.md mục 0-A bước 3"
+               % (left, datetime.date.fromtimestamp(exp).isoformat()))
+    else:
+        han = "không rõ"
+    print("Token: loại %s · %s" % (typ, han))
+    if typ != "PAGE":
+        print("CẢNH BÁO: token KHÔNG phải loại PAGE. Token người dùng không "
+              "đăng được lên Trang — lấy lại theo mục 0-A bước 2.")
+
+
 def resolve_page(token):
     """Hỏi token nó thuộc Trang nào, rồi đối chiếu với EXPECT_PAGE.
 
@@ -148,6 +180,8 @@ def main():
         print(comment)
         print("=== hết. Chưa đăng gì lên Facebook. ===")
         return 0
+
+    token_info(token)
 
     if not page:
         page, who = resolve_page(token)
