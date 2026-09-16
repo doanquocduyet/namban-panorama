@@ -90,11 +90,34 @@ Xong bước 1. Giờ Chú đang ở trang quản lý App.
 4. Facebook mở cửa sổ hỏi chọn Trang. **ĐÂY LÀ CHỖ QUAN TRỌNG NHẤT** — Chú quản
    ba Trang, phải tick **đúng `Namban Panorama`**, bỏ tick hai Trang kia.
    Bấm **Tiếp / Continue** → **Lưu / Save** → **Xong / Done**.
-5. Quay lại Explorer, ở cột **"Quyền" / "Permissions"** bên trái, bấm
-   **"Thêm quyền" / "Add a Permission"** và tick đủ **ba quyền** này:
-   - `pages_show_list`
-   - `pages_read_engagement`
-   - `pages_manage_posts`
+5. Quay lại Explorer, ở khung **"Quyền" / "Permissions"**, bấm
+   **"Thêm quyền" / "Add a Permission"**. Danh sách gom theo nhóm —
+   **nhóm cần là "Events Groups Pages"**, mọi quyền `pages_*` nằm trong đó.
+
+   **Tick đủ TÁM quyền, cấp một lần cho xong** (Chú chốt 16/9/2026 — đừng để
+   sau phải quay lại làm lại):
+
+   *Bốn quyền script cần ngay:*
+   | Quyền | Để làm gì |
+   |---|---|
+   | `pages_show_list` | Liệt kê Trang — script dùng để biết token thuộc Trang nào |
+   | `pages_read_engagement` | Đọc tên và username Trang — chốt chặn chống đăng nhầm Trang |
+   | `pages_manage_posts` | Đăng bài, sửa, xoá — `POST /{page}/feed` |
+   | `pages_manage_engagement` | Đăng comment thay mặt Trang — `POST /{post}/comments`, chỗ script để link bài |
+
+   *Bốn quyền mở sẵn cho sau này:*
+   | Quyền | Dùng khi nào |
+   |---|---|
+   | `pages_read_user_content` | Đọc comment người khác — cần khi muốn tự trả lời comment |
+   | `pages_manage_metadata` | Webhook, cài đặt Trang — cần khi muốn nhận thông báo comment mới |
+   | `read_insights` | Số liệu tiếp cận, tương tác — mục 1.10 theo dõi Insights 90 ngày |
+   | `pages_messaging` | Trả lời inbox — nếu sau này làm auto reply |
+
+   **Có quyền ≠ app tự làm.** Script chỉ chạy đúng thứ đã code: một bài, một
+   comment. Bốn quyền sau chỉ mở sẵn cửa, không có rủi ro khi tick thừa.
+
+   **Đừng tick:** `publish_to_groups` và `groups_access_member_info` (Panorama
+   không đăng nhóm) · mọi quyền có tiền tố `ads_` (lane quảng cáo, sai việc).
 6. Bấm nút xanh **"Tạo mã truy cập" / "Generate Access Token"**. Facebook hỏi
    xác nhận lần nữa → đồng ý hết.
 
