@@ -4,9 +4,15 @@
 Chạy trên GitHub Actions, KHÔNG chạy từ phiên Claude — `graph.facebook.com`
 bị chặn ở đó (đã thử: mã trả về 000). Runner của GitHub thì gọi được.
 
-Cách chạy: mỗi lần chạy lấy **một** bài đến hạn, đăng lên Trang, rồi đăng
-link bài web vào **comment đầu tiên** (kỹ thuật ở `docs/facebook-panorama.md`
-mục 1.2 — link ngoài đặt trong caption làm tụt tiếp cận).
+Cách chạy: mỗi lần chạy lấy **một** bài đến hạn, đăng **ảnh + caption** lên
+Trang, rồi đăng link bài web vào **comment đầu tiên** (kỹ thuật ở
+`docs/facebook-panorama.md` mục 1.2 — link ngoài đặt trong caption làm tụt
+tiếp cận). Caption KHÔNG chứa link; link chỉ nằm ở comment.
+
+Ảnh lấy theo thứ tự: trường `image` của bài trong hàng đợi → `og:image` đọc
+thẳng từ `<slug>.html`. Nhờ vậy không phải khai ảnh cho từng bài — bài nào
+cũng đã có og:image chuẩn 1200×630 (§3 CLAUDE.md). Không tìm ra ảnh thì
+đăng chữ, không dừng.
 
 Không có secret thì chạy khô (dry-run) và in ra bài sắp đăng. Nhờ vậy bật
 workflow trước, cấp token sau, mà không có run nào đỏ.
@@ -27,6 +33,7 @@ Biến môi trường:
 import datetime
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.parse
@@ -71,10 +78,53 @@ def check(post):
             errs.append("chuỗi cấm §2.1: %r" % b)
     if not post.get("message", "").strip():
         errs.append("message rỗng")
+    # Chú chốt 16/9/2026: KHÔNG để link trong caption. Vừa là ý Chú, vừa
+    # đúng mục 1.2 — link ngoài trong caption làm Facebook bóp tiếp cận.
+    # Link chỉ nằm ở comment đầu tiên.
+    if re.search(r"https?://|nambanpanorama\.com", post.get("message", "")):
+        errs.append("caption có link — link phải để ở comment, không để trên bài")
     slug = post.get("slug")
     if slug and not os.path.exists(os.path.join(ROOT, slug + ".html")):
         errs.append("slug không tồn tại: /%s" % slug)
     return errs
+
+
+def pick_image(post):
+    """Tìm ảnh cho bài. Trả về (url tuyệt đối, đường dẫn tương đối) hoặc (None, lý do).
+
+    Chú chốt 16/9/2026: đăng **bài + ảnh**, link để dưới comment. Ảnh không
+    khai tay cho từng bài — mọi bài đã có `og:image` cắt chuẩn 1200×630, đó
+    đúng là tấm dành cho mặt chia sẻ. Đọc thẳng từ HTML nên không phải nuôi
+    thêm một danh sách dễ lệch.
+
+    Kiểm file có thật trong repo trước khi đưa cho Facebook: Graph tải ảnh
+    bằng cách tự đi lấy URL đó, đưa nhầm đường dẫn thì nó báo lỗi mơ hồ,
+    khó dò hơn nhiều so với bắt ngay ở đây.
+    """
+    rel = (post.get("image") or "").strip()
+    if not rel:
+        slug = post.get("slug")
+        if not slug:
+            return None, "bài không có slug, cũng không khai ảnh"
+        path = os.path.join(ROOT, slug + ".html")
+        try:
+            with open(path, encoding="utf-8") as fh:
+                html = fh.read()
+        except OSError as e:
+            return None, "không đọc được %s.html (%s)" % (slug, e)
+        m = re.search(
+            r'<meta[^>]+property="og:image"[^>]+content="([^"]+)"', html)
+        if not m:
+            return None, "/%s không có thẻ og:image" % slug
+        rel = m.group(1)
+
+    rel = rel.replace(SITE, "")
+    if not rel.startswith("/"):
+        rel = "/" + rel
+    local = os.path.join(ROOT, rel.lstrip("/"))
+    if not os.path.exists(local):
+        return None, "ảnh không có trong repo: %s" % rel
+    return SITE + rel, rel
 
 
 def api(path, params, token):
@@ -169,12 +219,19 @@ def main():
     if link and link not in comment:
         comment = (comment + "\n" + link).strip()
 
+    img, note = pick_image(post)
+
     if dry:
-        print("=== CHẠY KHÔ (chưa có FB_PAGE_TOKEN) ===")
+        print("=== CHẠY KHÔ — KHÔNG ĐĂNG GÌ ===")
+        if token:
+            print("(có token, nhưng ô \"Chạy khô\" đang để true)")
+        else:
+            print("(chưa có FB_PAGE_TOKEN)")
         print("Trang:", "facebook.com/" + EXPECT_PAGE)
         print("ngày :", post.get("date"))
         print("bài  :", link or "(không có link)")
-        print("---- caption ----")
+        print("ảnh  :", img or "KHÔNG CÓ — sẽ đăng chữ (%s)" % note)
+        print("---- caption (không có link, đúng ý) ----")
         print(post["message"])
         print("---- comment 1 ----")
         print(comment)
@@ -187,9 +244,19 @@ def main():
         page, who = resolve_page(token)
         print("Đăng lên Trang:", who, "· id", page)
 
-    res = api("/%s/feed" % page, {"message": post["message"]}, token)
-    pid = res["id"]
-    print("Đã đăng:", pid)
+    if img:
+        # /photos trả về `id` của ảnh và `post_id` của bài trên tường.
+        # Comment phải gắn vào `post_id` thì mới nằm dưới bài.
+        res = api("/%s/photos" % page,
+                  {"url": img, "caption": post["message"], "published": "true"},
+                  token)
+        pid = res.get("post_id") or res["id"]
+        print("Đã đăng ảnh + caption:", pid, "· ảnh", img)
+    else:
+        print("Không có ảnh (%s) — đăng chữ." % note)
+        res = api("/%s/feed" % page, {"message": post["message"]}, token)
+        pid = res["id"]
+        print("Đã đăng:", pid)
 
     if comment:
         c = api("/%s/comments" % pid, {"message": comment}, token)

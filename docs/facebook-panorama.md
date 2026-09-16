@@ -274,6 +274,22 @@ viết đủ giá trị trong caption, **link đặt ở comment đầu tiên do
 rồi ghim comment đó. Trong caption ghi một dòng cuối: *"Bản đầy đủ ở comment."*
 Không viết "link ở cmt nhé cả nhà" — chữ đó là chữ seeding.
 
+**1.2b Bài = ẢNH + caption, link nằm dưới comment (Chú chốt 16/9/2026).** Không đăng
+bài chữ trơn, cũng không để link trên bài. `tools/fb-post.py` làm ba việc theo thứ tự:
+gọi `POST /{page}/photos` với `url` ảnh + `caption` → lấy `post_id` trong kết quả →
+gọi `POST /{post_id}/comments` để thả link. Comment phải gắn vào `post_id` (bài trên
+tường), không gắn vào `id` (node ảnh).
+
+**Ảnh không phải khai tay.** Script tự lấy theo thứ tự: trường `image` của bài trong
+`data/fb-queue.json` → `og:image` đọc thẳng từ `<slug>.html`. Mọi bài đã có og cắt
+chuẩn 1200×630 (§3 CLAUDE.md) nên mặc định là đúng tấm. Muốn đổi tấm khác cho một bài
+thì thêm `"image": "/images/ten-anh.jpg"` vào entry đó. Script kiểm file có thật trong
+repo trước khi đưa cho Graph — Graph tự đi tải URL đó, đưa nhầm đường dẫn thì nó báo
+lỗi mơ hồ, khó dò.
+
+**Chốt chặn kèm theo:** caption chứa `http` hoặc `nambanpanorama.com` là script DỪNG,
+không đăng. Link chỉ được nằm ở comment.
+
 **1.3 Bình luận trong 60 phút đầu quyết định bài sống hay chết.** Nên:
 - Đăng lúc mình rảnh trả lời, đừng đăng rồi đi ngủ.
 - Trả lời **mọi** bình luận trong giờ đầu, kể cả bình luận một chữ.

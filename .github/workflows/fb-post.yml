@@ -20,9 +20,12 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: "Chạy khô — in bài ra, không đăng"
+        description: "Chạy khô — CHỈ in bài ra, KHÔNG đăng (bật lên nếu chỉ muốn xem trước)"
         type: boolean
-        default: true
+        # Mặc định false từ 16/9/2026. Trước để true nên bấm nút là chạy khô,
+        # Chú tưởng hỏng ("chưa thấy đăng trên facebook") — run #15 đúng kiểu
+        # đó. Bấm nút = đăng thật; muốn xem trước thì tự tick vào.
+        default: false
 
 permissions:
   contents: write
@@ -35,7 +38,7 @@ jobs:
   post:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Đăng bài đến hạn
         env:
