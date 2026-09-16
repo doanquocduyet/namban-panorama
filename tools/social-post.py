@@ -55,6 +55,21 @@ EXPECT_IG = "nambanpanorama"       # đối chiếu như EXPECT_PAGE bên Facebo
 EXPECT_THREADS = "nambanpanorama"
 
 
+def same_handle(a, b):
+    """So tên tài khoản, bỏ qua dấu chấm và gạch dưới.
+
+    Instagram không cho trùng tên với Trang Facebook nên tên Instagram của
+    Panorama là `namban.panorama` — có dấu chấm, khác `nambanpanorama` bên
+    Facebook. So nguyên văn thì chốt chặn báo lệch và từ chối đăng, dù đúng
+    là tài khoản của mình (bắt được 16/9/2026, trước khi nó chặn thật).
+
+    Bỏ dấu chấm với gạch dưới vẫn giữ nguyên tác dụng canh: tên một Trang
+    khác của Chú (villas, greenspacers) vẫn lệch, vẫn bị chặn.
+    """
+    norm = lambda s: (s or "").lower().replace(".", "").replace("_", "")
+    return norm(a) == norm(b)
+
+
 def req(base, path, params, token, method="POST"):
     body = urllib.parse.urlencode(dict(params, access_token=token))
     if method == "GET":
@@ -86,7 +101,7 @@ def ig_target(token):
     ig = acc["id"]
     me = req(GRAPH, "/%s" % ig, {"fields": "username"}, token, "GET")
     uname = (me.get("username") or "").lower()
-    if uname and uname != EXPECT_IG:
+    if uname and not same_handle(uname, EXPECT_IG):
         raise RuntimeError("Token trỏ tới Instagram %r, không phải %r. "
                            "Không đăng." % (uname, EXPECT_IG))
     return ig, uname or "(chưa rõ username)"
@@ -118,7 +133,7 @@ def ig_post(token, caption, img, comment, dry):
 def th_target(token):
     me = req(THREADS, "/me", {"fields": "id,username"}, token, "GET")
     uname = (me.get("username") or "").lower()
-    if uname and uname != EXPECT_THREADS:
+    if uname and not same_handle(uname, EXPECT_THREADS):
         raise RuntimeError("Token trỏ tới Threads %r, không phải %r. "
                            "Không đăng." % (uname, EXPECT_THREADS))
     return me["id"], uname or "(chưa rõ username)"
