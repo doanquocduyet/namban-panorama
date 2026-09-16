@@ -240,36 +240,50 @@ Add).
 Instagram **dùng chung token với Facebook**, không phải lấy token mới. Nhưng Chú
 phải làm ba việc trên điện thoại trước, nếu chưa làm thì API không thấy tài khoản.
 
-### BƯỚC 1 — Đổi Instagram sang tài khoản chuyên nghiệp (3 phút)
+### BƯỚC 1 — Kiểm loại tài khoản Instagram (3 phút, trên điện thoại)
 
 Tài khoản cá nhân thường **không đăng được bằng API**. Phải là Professional.
 
-1. Mở app **Instagram** trên điện thoại.
-2. Bấm **ảnh đại diện** góc dưới bên phải → vào trang cá nhân.
-3. Bấm ba gạch ngang **☰** góc trên bên phải.
-4. Bấm **Cài đặt và quyền riêng tư**.
-5. Kéo xuống mục **Dành cho chuyên gia** → bấm **Loại tài khoản và công cụ**.
-6. Bấm **Chuyển sang tài khoản chuyên nghiệp**.
-7. Chọn danh mục — chọn **Nhà xuất bản kỹ thuật số** hoặc **Blogger cá nhân**.
-   **Đừng chọn "Bất động sản"** — sai lane, Panorama là publication (§1 CLAUDE.md).
-8. Màn hình hỏi **Doanh nghiệp** hay **Nhà sáng tạo** → chọn **Doanh nghiệp**.
-   Nhà sáng tạo bị giới hạn vài API đăng bài.
+⚠️ **Tên mục trong app đổi theo từng bản.** Bản Chú dùng (16/9/2026) KHÔNG có
+mục "Dành cho chuyên gia" như tài liệu Meta ghi. Đường đúng trên máy Chú:
 
-### BƯỚC 2 — Nối Instagram với Trang Facebook (2 phút)
+1. Mở app **Instagram** → bấm **ảnh đại diện** góc dưới phải.
+2. Bấm **☰** góc trên phải → **Cài đặt và hoạt động**.
+3. Kéo xuống gần cuối, tới mục **Thông tin chi tiết và công cụ**.
+4. Bấm **Công cụ và loại tài khoản**.
+5. Nhìn trong đó:
+   - Có dòng **"Chuyển sang tài khoản chuyên nghiệp"** → đang là cá nhân.
+     Bấm vào, chọn danh mục **Nhà xuất bản kỹ thuật số** (**đừng chọn "Bất
+     động sản"** — sai lane, Panorama là publication, §1 CLAUDE.md), rồi
+     chọn **Doanh nghiệp** chứ không phải Nhà sáng tạo (Nhà sáng tạo bị giới
+     hạn vài API đăng bài).
+   - Có dòng **"Chuyển sang tài khoản cá nhân"** → **đã là chuyên nghiệp rồi**,
+     khỏi làm gì. Đừng bấm dòng đó.
+
+Dấu hiệu nhanh: cùng nhóm đó có mục **Bảng điều khiển** thì tài khoản thường
+đã là chuyên nghiệp.
+
+Tiện kiểm luôn: **Cài đặt và hoạt động → Quyền riêng tư của tài khoản** phải
+là **Công khai**.
+
+### BƯỚC 2 — Nối Instagram với Trang Facebook (2 phút, LÀM TRÊN MÁY TÍNH)
 
 Đây là chỗ hay sót nhất. API tìm Instagram **qua Trang**, không nối thì
 script báo *"Trang chưa gắn tài khoản Instagram chuyên nghiệp"*.
 
-1. Vẫn trong Instagram: **☰** → **Cài đặt và quyền riêng tư**.
-2. Mục **Dành cho chuyên gia** → bấm **Chia sẻ và liên kết tài khoản**
-   (máy khác ghi **Trung tâm tài khoản**).
-3. Bấm **Trang Facebook** → **Liên kết Trang mới**.
-4. Chọn đúng **NamBan Panorama**. Cẩn thận chỗ này — Chú quản nhiều Trang,
-   bấm nhầm là bài Panorama rơi lên Instagram của Trang khác. Script có chốt
-   chặn đối chiếu username, nhưng vẫn nên bấm đúng ngay từ đầu.
+**Làm trên máy tính, đừng làm trong app.** Đường trong app đổi liên tục, mỗi
+bản một chỗ; đường Business Suite thì ổn định.
 
-**Kiểm nhanh:** mở https://business.facebook.com/settings/instagram-accounts —
-thấy tài khoản Instagram nằm dưới Trang NamBan Panorama là xong.
+1. Mở https://business.facebook.com/latest/settings/instagram_accounts
+2. Nếu nó hỏi chọn Trang → chọn **NamBan Panorama**.
+3. Bấm **Kết nối tài khoản** (hoặc **Thêm**).
+4. Đăng nhập Instagram `nambanpanorama` → xác nhận.
+5. Xong thì màn hình đó hiện tên tài khoản Instagram nằm dưới Trang NamBan
+   Panorama. Đó là thứ cần thấy.
+
+Cẩn thận chỗ chọn Trang — Chú quản nhiều Trang, bấm nhầm là bài Panorama rơi
+lên Instagram của Trang khác. Script có chốt chặn đối chiếu username nên nó
+dừng chứ không đăng bừa, nhưng bấm đúng ngay từ đầu vẫn hơn.
 
 ### BƯỚC 3 — Thêm hai quyền vào token (3 phút)
 
@@ -312,8 +326,12 @@ lớn nhất so với Instagram, đừng nhầm.
 
 ### BƯỚC 1 — Bật Threads cho tài khoản (2 phút)
 
-1. Mở app **Threads**, đăng nhập bằng đúng tài khoản Instagram `nambanpanorama`.
-2. Vào trang cá nhân → **☰** → **Cài đặt** → **Quyền riêng tư của tài khoản**.
+Không cần cài app riêng. Mở thẳng từ trong Instagram:
+
+1. **Instagram → ☰ → Cài đặt và hoạt động** → kéo xuống mục **Cũng của Meta**
+   → bấm **Threads**.
+2. Hoặc cài app **Threads** rồi đăng nhập bằng đúng tài khoản Instagram
+   `nambanpanorama`.
 3. Bảo đảm tài khoản **công khai** (không khoá). Tài khoản khoá thì API đăng
    được nhưng không ai ngoài người theo dõi thấy — mất sạch ý nghĩa.
 
