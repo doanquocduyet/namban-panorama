@@ -58,22 +58,25 @@ jobs:
 
       - name: Ghi lại hàng đợi
         run: |
-          if [ -z "$(git status --porcelain data/fb-queue.json)" ]; then
-            echo "Hàng đợi không đổi (chạy khô hoặc không có bài đến hạn)."
-            exit 0
-          fi
+          # Dán phiếu lên bản main MỚI NHẤT, không commit bản đã checkout.
+          # `actions/checkout` cầm ảnh chụp lúc bấm nút, nên commit bản đó
+          # là chắc chắn đụng độ khi có run khác vừa đẩy lên. Xem
+          # tools/apply-mark.py để biết cả câu chuyện (lỗi thật 17/9/2026).
+          [ -f data/.pending-mark.json ] || { echo "Không có phiếu — không đăng gì."; exit 0; }
+          cp data/.pending-mark.json /tmp/mark.json
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/fb-queue.json
-          git commit -m "fb: đánh dấu bài đã đăng"
-          # Vòng rebase như hai workflow audio (Luật 21c) — main nhích một
-          # commit bất kỳ là push trần bị reject, công sinh ra rồi vứt.
           for i in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/mark.json data/.pending-mark.json
+            python3 tools/apply-mark.py || exit 1
+            rm -f data/.pending-mark.json
+            git diff --quiet -- data/fb-queue.json && { echo "Đã có dấu từ trước."; exit 0; }
+            git add data/fb-queue.json
+            git commit -m "fb: đánh dấu bài đã đăng"
             git push origin HEAD:main && exit 0
-            git fetch origin main && git rebase origin/main || {
-              git checkout --theirs -- data/fb-queue.json
-              git add -A && git rebase --continue
-            }
+            echo "Push bị chặn, thử lại lần $i..."
           done
-          echo "Push thất bại sau 5 lần." >&2
+          echo "Push thất bại sau 5 lần — BÀI ĐÃ ĐĂNG nhưng chưa đánh dấu." >&2
           exit 1

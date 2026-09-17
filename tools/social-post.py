@@ -390,10 +390,7 @@ def main():
         print("=== hết. Chưa đăng gì lên %s. ===" % plat)
         return 0 if pid is not None or dry else 1
 
-    post[mark] = True
-    post[mark + "_id"] = pid
-    fb.save(queue)
-    print("Đã đánh dấu %r trong hàng đợi." % mark)
+    fb.mark_posted(post, mark, pid)
     return 0
 
 

@@ -75,6 +75,29 @@ def save(q):
         fh.write("\n")
 
 
+def mark_posted(post, field, pid):
+    """Ghi **phiếu** đánh dấu đã đăng, KHÔNG tự sửa hàng đợi trong repo.
+
+    Sửa thẳng `fb-queue.json` ở đây là nguồn của lỗi im lặng 17/9/2026 —
+    `actions/checkout` cầm ảnh chụp cũ nên hai nhánh trong cùng một run
+    chọi nhau, rebase vỡ, bài đã đăng mà hàng đợi không ghi nhận. Xem
+    `tools/apply-mark.py` để biết cả câu chuyện.
+
+    Phiếu nhỏ, workflow dán nó lên bản `origin/main` mới nhất.
+    """
+    rec = {
+        "slug": post.get("slug"),
+        "field": field,
+        "id": pid,
+        "at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+    }
+    path = os.path.join(ROOT, "data", ".pending-mark.json")
+    with open(path, "w", encoding="utf-8") as fh:
+        json.dump(rec, fh, ensure_ascii=False, indent=2)
+        fh.write("\n")
+    print("Đã ghi phiếu đánh dấu %r cho /%s." % (field, rec["slug"]))
+
+
 def check(post, caption=None, comment=""):
     """Chặn bài phạm luật TRƯỚC khi gọi API. Đăng rồi mới phát hiện thì
     đã nằm trên tường Trang, sửa cũng còn dấu.
@@ -412,11 +435,7 @@ def main():
         c = api("/%s/comments" % pid, {"message": comment}, token)
         print("Đã đăng comment 1:", c["id"])
 
-    post["posted"] = True
-    post["post_id"] = pid
-    post["posted_at"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
-    save(queue)
-    print("Đã đánh dấu trong hàng đợi.")
+    mark_posted(post, "posted", pid)
     return 0
 
 
