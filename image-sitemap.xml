@@ -376,6 +376,12 @@
     <image:image><image:loc>https://nambanpanorama.com/images/og-google-maps-khong-noi-ve-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/ha-noi-nam-ban-hop-tac-2026</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/hoi-nghi-ha-noi-nam-ban-trao-qua.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/hoi-nghi-ha-noi-nam-ban-toan-canh.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/ha-noi-nam-ban-hop-tac-2026.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/ho-bai-cong-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/ho-bai-cong-cong-chi-lang.jpg</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/ho-bai-cong-toan-canh.jpg</image:loc></image:image>
