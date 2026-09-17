@@ -13,11 +13,12 @@ name: Đăng Instagram / Threads theo hàng đợi
 
 on:
   schedule:
-    # 11:30 và 20:30 giờ Việt Nam (UTC+7) → 04:30 và 13:30 UTC.
-    # Lệch 30 phút so với Facebook (11:00 / 20:00 giờ Việt Nam) để ba nơi
-    # không cùng đăng một lúc — nhìn như máy chạy thì người đọc thấy ngay.
-    - cron: "30 4 * * *"
-    - cron: "30 13 * * *"
+    # 11:37 và 20:37 giờ Việt Nam (UTC+7) → 04:37 và 13:37 UTC.
+    # Lệch 30 phút so với Facebook (11:07 / 20:07) để ba nơi không cùng đăng
+    # một lúc — nhìn như máy chạy thì người đọc thấy ngay.
+    # Phút lẻ là cố ý, xem ghi chú ở `fb-post.yml`: phút tròn bị xếp hàng lâu.
+    - cron: "37 4 * * *"
+    - cron: "37 13 * * *"
   workflow_dispatch:
     inputs:
       platform:

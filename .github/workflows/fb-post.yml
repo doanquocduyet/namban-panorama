@@ -12,11 +12,16 @@ name: Đăng Facebook theo hàng đợi
 
 on:
   schedule:
-    # 11:00 và 20:00 giờ Việt Nam (UTC+7) → 04:00 và 13:00 UTC.
-    # Chú chốt 17/9/2026, đổi từ 12:00/21:00. Khung trưa cho tin ngắn,
-    # khung tối cho bài dữ kiện dài (docs/facebook-panorama.md mục 1.10).
-    - cron: "0 4 * * *"
-    - cron: "0 13 * * *"
+    # 11:07 và 20:07 giờ Việt Nam (UTC+7) → 04:07 và 13:07 UTC.
+    # Chú chốt 11h/20h ngày 17/9/2026 (đổi từ 12h/21h).
+    #
+    # ⚠️ CỐ Ý ĐẶT PHÚT LẺ, KHÔNG ĐẶT PHÚT TRÒN. Đo thật trên chính repo này:
+    # cron 05:00 chạy lúc 09:39–09:45, cron 14:00 chạy lúc 18:01–18:02 —
+    # trễ bốn tiếng, hai ngày liền. GitHub chạy lịch theo kiểu "cố gắng",
+    # lúc đông thì xếp hàng, mà phút :00 là lúc đông nhất vì cả thế giới
+    # đặt vào đó. Phút lẻ đỡ chen hơn nhiều.
+    - cron: "7 4 * * *"
+    - cron: "7 13 * * *"
   workflow_dispatch:
     inputs:
       dry_run:

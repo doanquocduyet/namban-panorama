@@ -204,7 +204,7 @@ Xong. Không phải làm gì thêm.
 Log sẽ in `Đăng lên Trang: Namban Panorama (nambanpanorama)`. Nếu nó in tên Trang
 khác thì script **tự dừng, không đăng** — lúc đó quay lại bước 2 chọn lại Trang.
 
-Sau lần đầu thành công, workflow tự chạy **11h trưa và 20h tối giờ Việt Nam** mỗi
+Sau lần đầu thành công, workflow tự chạy **khoảng 11h trưa và 20h tối giờ Việt Nam** mỗi
 ngày, mỗi lần một bài, theo hàng đợi `data/fb-queue.json`.
 
 ---
