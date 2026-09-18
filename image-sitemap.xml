@@ -258,6 +258,10 @@
     <image:image><image:loc>https://nambanpanorama.com/images/dinh-gia-dat-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/do-cao-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-toan-canh-og.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/do-dac-dat-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/lo-dat-trong-hang-rao-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/do-dac-dat-nam-ban.jpg</image:loc></image:image>
@@ -709,6 +713,12 @@
     <image:image><image:loc>https://nambanpanorama.com/images/pho-nam-ban-buoi-toi.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-dem-troi-sao.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-toan-canh-og.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/nam-ban-tap-huan-chuyen-doi-so-2026</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/hoi-nghi-chuyen-doi-so-nam-ban-phat-bieu.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/hoi-nghi-chuyen-doi-so-nam-ban-hoi-truong.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-tap-huan-chuyen-doi-so-2026.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/nam-ban-thuoc-xa-nao</loc>

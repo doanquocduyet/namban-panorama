@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 398,
+ "total_images": 401,
  "unused_count": 67,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -2341,6 +2341,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -2930,6 +2933,30 @@
    "used_in": {},
    "status": "unused"
   },
+  "hoi-nghi-chuyen-doi-so-nam-ban-hoi-truong.webp": {
+   "kb": 116,
+   "dims": [
+    941,
+    705
+   ],
+   "used_in": {
+    "nam-ban-tap-huan-chuyen-doi-so-2026.html": [
+     "display"
+    ]
+   }
+  },
+  "hoi-nghi-chuyen-doi-so-nam-ban-phat-bieu.webp": {
+   "kb": 120,
+   "dims": [
+    941,
+    848
+   ],
+   "used_in": {
+    "nam-ban-tap-huan-chuyen-doi-so-2026.html": [
+     "display"
+    ]
+   }
+  },
   "hoi-nghi-ha-noi-nam-ban-toan-canh.webp": {
    "kb": 205,
    "dims": [
@@ -2939,6 +2966,9 @@
    "used_in": {
     "ha-noi-nam-ban-hop-tac-2026.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -2951,6 +2981,9 @@
    "used_in": {
     "ha-noi-nam-ban-hop-tac-2026.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -4011,6 +4044,20 @@
     ]
    }
   },
+  "nam-ban-tap-huan-chuyen-doi-so-2026.jpg": {
+   "kb": 143,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "nam-ban-tap-huan-chuyen-doi-so-2026.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
   "nam-ban-thung-lung-ao-ho.webp": {
    "kb": 291,
    "dims": [
@@ -4141,6 +4188,11 @@
     ],
     "mua-dat-da-lat-chon-nam-ban.html": [
      "og",
+     "twitter"
+    ],
+    "do-cao-nam-ban.html": [
+     "og",
+     "schema",
      "twitter"
     ],
     "nam-ban-sau-6h-toi.html": [
