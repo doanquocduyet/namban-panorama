@@ -392,6 +392,28 @@ Lợi thế của Panorama là **kho dữ liệu gốc đáng tin** (ảnh tự 
 là nguồn đầu tiên), không phải mẹo SEO. Mọi tối ưu phải phục vụ mục tiêu đó.
 Quy trình xuất bản đầy đủ + checklist: xem `docs/quy-trinh-xuat-ban.md`.
 
+### PANORAMA KHÔNG ĐĂNG MỌI TIN CỦA XÃ (Chú chốt 18/9/2026)
+
+**Chỉ đăng tin giải thích được nó đổi gì trong đời sống thật.** Đăng hết mọi buổi họp thì
+authority loãng, và site thành trang tin địa phương thay vì nơi hiểu vùng. Trước khi nhận một
+bản tin của xã, hỏi: *người đọc của mình đổi được việc gì sau khi đọc?* Không trả lời được thì
+không đăng — kể cả tin đúng, kể cả tin mới.
+
+**Tin đã nhận thì là fresh-news node, KHÔNG phải bài evergreen.** Đừng viết dài thêm cho "đủ
+bài", đừng biến nó thành trang giải thích khái niệm — khái niệm đã có nhà riêng thì để nhà đó
+giữ. Ghi đúng điều đã công bố, nói rõ chỗ bản tin KHÔNG nói, rồi dẫn sang bài chuyên sâu.
+
+**Ba slug đã cân nhắc và KHÓA — đừng đề xuất lại:** `/chuyen-doi-so-nam-ban` (chưa đủ dữ liệu,
+mở ra là trang mỏng — `/so-hoa-nam-ban` đang giữ vai này) · `/dich-vu-cong-truc-tuyen-nam-ban`
+(Panorama không hướng dẫn thủ tục) · `/to-cong-nghe-so-cong-dong-nam-ban` (bản tin không có dữ
+liệu về mô hình tại Nam Ban).
+
+**Luật viết kèm:** mô hình chung ≠ sự thật về Nam Ban. Ca thật 18/9/2026 ở
+`/nam-ban-tap-huan-chuyen-doi-so-2026`: bản đầu tả Tổ công nghệ số cộng đồng là "người quen mặt
+trong thôn, được tập huấn rồi về chỉ lại" — đó là mô tả mô hình nói chung, còn bản tin của xã
+**không hề nói thành phần tổ**. Đã sửa thành "mô hình này nói chung hoạt động ở cấp thôn" kèm
+một câu nói thẳng là bản tin không mô tả. Cùng họ với Luật 23.
+
 ### FAQ CHO TÊN RIÊNG — KILL LIST, ĐÃ CÂN NHẮC VÀ CỐ Ý BỎ (Chú chốt 7/9/2026)
 
 Có một lỗi hệ thống đáng bắt: **bài liệt kê tên riêng mà không có FAQ cho từng
