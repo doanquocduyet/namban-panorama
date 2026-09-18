@@ -110,6 +110,31 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
    Rừng rồi vào ĐT.725 — KHÔNG dùng "30 – 40 phút", đã sửa 26/8/2026). KHÔNG dùng số cũ
    23km/27km/22km, và **KHÔNG dùng 28km cho Thác Voi nữa** (đã đổi 28→25 toàn site 13/8/2026)
    trừ khi Chú yêu cầu đổi lại. Cả Nam Ban lẫn Thác Voi giờ đều 25km — đừng tách 25/28 như bản cũ.
+   **ĐỘ CAO — CHỐT 18/9/2026, ĐỪNG BÀN LẠI (Chú chốt: "độ cao một vùng là dải, ghi khoảng
+   là được, chốt một số chính thức").** Độ cao của một vùng KHÔNG có một con số đúng — địa
+   hình lên xuống, đo chỗ nào ra chỗ đó. Nên site luôn ghi **"khoảng"**, và dùng đúng bộ số
+   dưới đây, không tự tra lại rồi đổi:
+   - **Nam Ban: khoảng 800–1.000 m.** Số của CẢ VÙNG, không phải của một thửa. Kiểm ngoài
+     khớp, kèm nguyên văn "thềm chuyển tiếp giữa cao nguyên với vùng bình nguyên", "đồi núi
+     nhấp nhô", "dân cư tập trung ở khe núi, thung lũng", "đất feralit sắt, hay đất bazan".
+   - **Đà Lạt: khoảng 1.500 m.** KHÔNG dùng 1.475 — số đó không tra được ở nguồn nào chắc.
+   - **Chênh Nam Ban ↔ Đà Lạt: Nam Ban THẤP HƠN chừng 500 m.**
+   - **Cầu Đất: khoảng 1.650 m.** Đã đổi từ 1.400 (18/9/2026) — mọi nguồn ghi 1.450–1.650,
+     tên thương hiệu vùng cũng là "Cầu Đất 1650". 1.400 là dưới sàn của mọi nguồn.
+   - **Măng Đen (Kon Tum): khoảng 1.200 m.** Nguồn ghi MỘT số, không phải khoảng 1.000–1.200.
+   - **Vườn cà phê Nam Ban: quanh 1.100 m** — CAO HƠN khoảng 800–1.000 của vùng, không mâu
+     thuẫn. Đây là ví dụ chuẩn cho "số của vùng khác số của một chỗ", xem `/do-cao-nam-ban`.
+   **ĐÃ GỠ: "Nam Ban CÙNG ĐỘ CAO với Đà Lạt" — câu này SAI, đã dọn 18/9/2026.** Chênh 500 m
+   thì không thể "cùng độ cao". Từng nằm ở 12 chỗ / 5 file, trong đó **3 chỗ nằm trong
+   `FAQPage` schema** (`/so-sanh-nam-ban-bao-loc-da-lat`, `/hoi-nhanh`, `/rau-hoa-cay-do-la-nam-ban`)
+   cộng `llms.txt` + `llms-full.txt`. Ý gốc muốn nói là "trồng được như nhau" — ý đó KHÔNG cần
+   dựa vào độ cao bằng nhau, nên thay bằng **"cùng kiểu khí hậu cao nguyên, cùng nền đất đỏ
+   bazan"** và nêu thẳng chênh lệch. Gặp lại câu cũ ở đâu thì sửa, đừng khôi phục.
+   **Nhiệt độ 18–25°C: đang dùng khắp site (10 bài) NHƯNG KHÔNG CÓ NGUỒN.** Không có
+   `citation`, không tên văn bản. Nguồn ngoài cho khoảng rộng hơn (11–25°C). Chưa đủ căn cứ
+   để đổi, cũng chưa đủ để chắc — nên **bài MỚI đừng ghi số nhiệt độ** (`/do-cao-nam-ban` cố
+   ý không có số nào). Muốn chốt thì phải tìm được văn bản khí tượng, không lấy từ bài du lịch.
+
    **Tên địa danh (đã research 7/2026)**: giữ **"Chùa Linh Ẩn" (Linh Ẩn Tự)** vì đây là tên
    MẠNH SEO — trang chính quyền lamdong.gov.vn + mọi trang du lịch lớn + 100% kết quả search
    đều dùng "Chùa Linh Ẩn"; "Thiền Viện Linh Ẩn" gần như 0 search, không phải tên chính thức.

@@ -740,7 +740,7 @@ Khí hậu mát quanh năm như Đà Lạt, thác Voi, vườn cà phê và dâu
 
 Nam Ban khác Đà Lạt thế nào?
 
-Cùng độ cao, cùng khí hậu. Đà Lạt đông, đắt, đầy đủ dịch vụ. Nam Ban vắng, rẻ, ít sương mù dày, đường còn nhiều đoạn đất đỏ. Đà Lạt để đi chơi, Nam Ban để ở.
+Nam Ban thấp hơn Đà Lạt chừng 500 mét, cùng kiểu khí hậu cao nguyên. Đà Lạt đông, đắt, đầy đủ dịch vụ. Nam Ban vắng, rẻ, ít sương mù dày, đường còn nhiều đoạn đất đỏ. Đà Lạt để đi chơi, Nam Ban để ở.
 So sánh Nam Ban, Bảo Lộc, Đà Lạt →
 
 Nam Ban có lạnh không, có sương không?
@@ -1514,7 +1514,7 @@ Giá đất
 
 Khí hậu và cảnh quan
 
-Cả ba đều mát quanh năm. Đà Lạt lạnh nhất, sương mù dày, đặc trưng nhất nhưng cũng ẩm nhất. Nam Ban ở độ cao tương tự, mát nhưng nắng nhiều hơn Đà Lạt một chút, ít sương mù dày đặc — với nhiều người, đây là điểm cộng. Bảo Lộc thấp hơn, ấm hơn, nổi tiếng "thành phố sương mù" nhưng thực ra ôn hòa hơn Đà Lạt.
+Cả ba đều mát quanh năm. Đà Lạt lạnh nhất, sương mù dày, đặc trưng nhất nhưng cũng ẩm nhất. Nam Ban thấp hơn chừng 500 mét, mát nhưng nắng nhiều hơn Đà Lạt một chút, ít sương mù dày đặc — với nhiều người, đây là điểm cộng. Bảo Lộc thấp hơn, ấm hơn, nổi tiếng "thành phố sương mù" nhưng thực ra ôn hòa hơn Đà Lạt.
 
 Kiểu sống ba vùng khác nhau thế nào
 
@@ -2798,7 +2798,7 @@ Nhịp nào hợp ai (gợi ý đọc đất của Panorama): mua để dành �
 
 URL: https://nambanpanorama.com/rau-hoa-cay-do-la-nam-ban
 
-Nói ngắn gọn: ngoài cà phê, bơ và dâu tằm, đất Nam Ban còn trồng rau màu, hoa nhà kính, chuối, chanh dây và cây đô la lấy cành bán cho shop hoa. Nhà kính ở đây chưa nhiều, khung cảnh còn giống Đà Lạt hồi xưa. Đây là những cây cho vòng quay nhanh, hợp với người ở tại chỗ hơn là người mua đất để dành. Nam Ban cách Đà Lạt ~25km qua đèo Tà Nung, cùng độ cao 800–1.000m, khí hậu 18–25°C, đất đỏ bazan.
+Nói ngắn gọn: ngoài cà phê, bơ và dâu tằm, đất Nam Ban còn trồng rau màu, hoa nhà kính, chuối, chanh dây và cây đô la lấy cành bán cho shop hoa. Nhà kính ở đây chưa nhiều, khung cảnh còn giống Đà Lạt hồi xưa. Đây là những cây cho vòng quay nhanh, hợp với người ở tại chỗ hơn là người mua đất để dành. Nam Ban cách Đà Lạt ~25km qua đèo Tà Nung, cao 800–1.000m (thấp hơn Đà Lạt chừng 500m), khí hậu 18–25°C, đất đỏ bazan.
 
 Trồng màu (làm màu): cách gọi chung cho cây ngắn ngày — khoai lang, khoai tây, bắp, đậu phộng, đậu cô ve, đậu que, dưa leo, bí, cà chua, ớt, hành, tỏi, gừng, cải, xà lách và các loại rau. Một vụ vài chục ngày tới vài tháng, tiền quay nhanh hơn cà phê/bơ. Đất làm màu cần cao ráo, thoát nước, lên luống cao 20–30cm chống ngập (mùa mưa tháng 5–11). Là nghề đi vườn mỗi ngày; thường nằm xen giữa vườn cà phê ở chỗ đất bằng, gần nước.
 
@@ -4269,7 +4269,7 @@ Nam Ban cao bao nhiêu mét?
 
 Đây là độ cao trung bình của cả vùng, không phải của một thửa. Địa hình ở đây đồi nhấp nhô, nên đứng trên đỉnh một quả đồi và đứng dưới thung lũng cách nhau vài chục mét là chuyện thường ngày.
 
-Để dễ hình dung thì đặt cạnh mấy nơi quen tên. Đà Lạt khoảng 1.500 mét. Cầu Đất, vùng cà phê nổi tiếng của Lâm Đồng, khoảng 1.400. Măng Đen ở Kon Tum khoảng 1.200. Nam Ban thấp hơn cả ba.
+Để dễ hình dung thì đặt cạnh mấy nơi quen tên. Đà Lạt khoảng 1.500 mét. Cầu Đất, vùng cà phê nổi tiếng của Lâm Đồng, khoảng 1.650. Măng Đen ở Kon Tum khoảng 1.200. Nam Ban thấp hơn cả ba.
 
 Thấp hơn không có nghĩa kém. Nó nghĩa là khác, và cái khác đó dẫn tới vài chuyện cụ thể.
 
@@ -4361,7 +4361,7 @@ Khi xem đất Nam Ban có cần quan tâm độ cao của lô không?
 
 Có, nhưng theo hướng khác. Con số 800–1.000 mét là của vùng. Với một lô cụ thể thì đáng hỏi là lô nằm cao hay thấp so với khu xung quanh, dốc bao nhiêu, và chênh với mặt đường thế nào — ba thứ đó ảnh hưởng tới nước, tiền san nền và cách bố trí xây dựng.
 
-Nguồn & lưu ý Độ cao trung bình 800–1.000m, mô tả thềm chuyển tiếp giữa cao nguyên với vùng bình nguyên, địa hình đồi nhấp nhô và đất feralit bazan theo tài liệu địa lý về xã Nam Ban Lâm Hà. Độ cao Đà Lạt khoảng 1.500m và Cầu Đất khoảng 1.400m là mức được dẫn phổ biến; Măng Đen ở Kon Tum khoảng 1.200m. Cảnh quan cà phê Colombia theo hồ sơ UNESCO World Heritage. Độ cao vùng cà phê Antigua, Guatemala có nhiều khoảng khác nhau tùy nguồn nên bài ghi theo khoảng chung, không lấy một con số đơn. Điều kiện độ cao của cà phê có nhiều khoảng tham khảo khác nhau tùy nguồn, nên bài không đưa ngưỡng cứng. Độ cao chỉ là một biến; nhiệt độ, mưa, đất, nước và hướng đất cũng quyết định cây có hợp hay không. Bài so bằng các chỉ số đo được, không xếp hạng và không so sánh chất lượng giữa các vùng. Độ cao của một thửa cụ thể cần đo tại chỗ, không suy từ con số trung bình của vùng.
+Nguồn & lưu ý Độ cao trung bình 800–1.000m, mô tả thềm chuyển tiếp giữa cao nguyên với vùng bình nguyên, địa hình đồi nhấp nhô và đất feralit bazan theo tài liệu địa lý về xã Nam Ban Lâm Hà. Độ cao Đà Lạt khoảng 1.500m và Cầu Đất khoảng 1.650m là mức được dẫn phổ biến; Măng Đen ở Kon Tum khoảng 1.200m. Cảnh quan cà phê Colombia theo hồ sơ UNESCO World Heritage. Độ cao vùng cà phê Antigua, Guatemala có nhiều khoảng khác nhau tùy nguồn nên bài ghi theo khoảng chung, không lấy một con số đơn. Điều kiện độ cao của cà phê có nhiều khoảng tham khảo khác nhau tùy nguồn, nên bài không đưa ngưỡng cứng. Độ cao chỉ là một biến; nhiệt độ, mưa, đất, nước và hướng đất cũng quyết định cây có hợp hay không. Bài so bằng các chỉ số đo được, không xếp hạng và không so sánh chất lượng giữa các vùng. Độ cao của một thửa cụ thể cần đo tại chỗ, không suy từ con số trung bình của vùng.
 
 ---
 
@@ -4380,7 +4380,7 @@ cao 800–1000m, 18–25°C, đất đỏ bazan — Nam Ban trồng được g�
 
 Người mới lên hay hỏi đất này trồng hoa gì được. Câu trả lời thật ra hơi chán: gần như cái gì cũng được.
 
-Cùng độ cao, cùng đất đỏ, cùng khoảng nhiệt với Đà Lạt — thứ bên đó sống thì bên này phần lớn cũng sống.
+Thấp hơn Đà Lạt chừng năm trăm mét, nhưng cùng đất đỏ, cùng khoảng nhiệt — thứ bên đó sống thì bên này phần lớn cũng sống.
 
 Nên câu đáng hỏi hơn là: loại nào ở đây người ta trồng thật, và trồng để làm gì. Cái đó thì phải đi mới biết.
 
@@ -6382,7 +6382,7 @@ Vì sao độ cao quyết định
 
 Robusta ưa vùng thấp. Sách vở ghi dưới 1.000m, phổ biến nhất 850 đến 900m. 
 
-Arabica ưa vùng cao. Cầu Đất — nơi được xem là thủ phủ Arabica Việt Nam — nằm ở 1.400m. Lạc Dương còn cao hơn. 
+Arabica ưa vùng cao. Cầu Đất — nơi được xem là thủ phủ Arabica Việt Nam — nằm ở khoảng 1.650m. Lạc Dương còn cao hơn. 
 
 Nam Ban ở giữa. Cao hơn mức thường của Robusta, thấp hơn vùng Arabica thuần. 
 
