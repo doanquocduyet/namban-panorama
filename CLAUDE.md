@@ -392,6 +392,37 @@ Lợi thế của Panorama là **kho dữ liệu gốc đáng tin** (ảnh tự 
 là nguồn đầu tiên), không phải mẹo SEO. Mọi tối ưu phải phục vụ mục tiêu đó.
 Quy trình xuất bản đầy đủ + checklist: xem `docs/quy-trinh-xuat-ban.md`.
 
+### HAI THỨ ĐÃ ĐỔI Ở PHÍA GOOGLE — GHI ĐỂ KHỎI TỐI ƯU THEO CHUẨN CŨ (tra 22/9/2026)
+
+**1. FAQ rich results đã CHẾT.** Google gắn thông báo khai tử lên tài liệu FAQPage ngày
+7/5/2026, tháng 6/2026 gỡ luôn báo cáo và công cụ kiểm (trước đó từ 8/2023 đã thu về chỉ
+trang chính phủ/y tế). Site đang có 153 khối `FAQPage`, 1.038 câu.
+- **KHÔNG gỡ `FAQPage`.** Google nói rõ để nguyên không sao, và structured data vẫn là thứ
+  AI đọc để trích (nghiên cứu 2026: +73% khả năng được chọn). Câu hỏi–đáp ngắn, trực tiếp
+  vẫn là dạng nội dung AI thích nhất.
+- **Nhưng LÝ DO của §7.3 / §7.3b đã đổi.** Hai mục đó được viết để *tranh ô FAQ trên Google*
+  — ô đó không còn. Luật "mỗi câu một nhà, bỏ câu khỏi schema bài khác" **vẫn giữ nguyên**,
+  vì nó vẫn đúng cho mục tiêu mới: **AI trích đúng bài nhà**, không trích lung tung hai bài
+  cùng câu. Đọc §7.3/§7.3b với mục tiêu đó, đừng đọc là "để hiện rich result".
+
+**2. `llms.txt` gần như không ai đọc.** Gary Illyes xác nhận Google không hỗ trợ, không có
+kế hoạch; Mueller ví với thẻ keywords. Ahrefs quét 137.000 site: **97% file `llms.txt`
+không hề được đọc** (5/2026); 500 triệu lượt bot AI chỉ 408 lượt chạm `llms.txt`.
+- **GIỮ cả `llms.txt` lẫn `llms-full.txt`** — không hại, đã có sẵn, nếu chuẩn này sống lại
+  thì mình đi trước.
+- **Nhưng đừng để nó CHẶN việc đăng.** Thứ tự ưu tiên khi thêm/sửa bài: HTML đúng → sitemap
+  → feed → search-index → *rồi mới* llms. Luật 11 (sửa dữ kiện phải quét cả `.txt`) **vẫn
+  giữ** — số sai trong `llms-full.txt` vẫn là số sai. Chỉ là: đồng bộ *entry mới* vào
+  `llms-full.txt` được phép làm theo đợt, không bắt buộc ngay trong commit đăng bài.
+- Đây là chi phí bảo trì thật với lợi ích chưa chứng minh. Luật 25 (nuốt mất 5 bài) sinh ra
+  từ chính việc đồng bộ file này. Cân nhắc lại khi có bằng chứng bot đọc.
+
+**3. Cái thật sự ăn điểm với AI (2026), và site đang ở đâu:** độ tươi (bài được trích tươi
+hơn ~26% — site: trung vị 18 ngày, cũ nhất 26, **giữ nếp này**) · entity graph 15+ thực thể
+nối (đã có `@id` cố định) · structured data (đủ) · **brand mentions mạnh gấp ~3 lần backlink**
+(việc ngoài repo — Facebook/IG/Threads đang chạy là đúng hướng). Ưu tiên tối ưu theo bốn
+thứ này, không theo mẹo cũ.
+
 ### PANORAMA KHÔNG ĐĂNG MỌI TIN CỦA XÃ (Chú chốt 18/9/2026)
 
 **Chỉ đăng tin giải thích được nó đổi gì trong đời sống thật.** Đăng hết mọi buổi họp thì
