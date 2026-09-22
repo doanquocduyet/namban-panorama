@@ -32,7 +32,9 @@
   </url>
   <url>
     <loc>https://nambanpanorama.com/brief-01</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-toan-canh.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-toan-canh-nong-nghiep-flycam.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/duong-vao-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/og-brief-01.jpg</image:loc></image:image>
   </url>
   <url>
@@ -452,6 +454,8 @@
   </url>
   <url>
     <loc>https://nambanpanorama.com/</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/toan-canh-nam-ban-nhin-tu-tren-cao-lam-ha-lam-dong.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/view-tam-trinh-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/og-home.jpg</image:loc></image:image>
   </url>
   <url>
@@ -817,6 +821,7 @@
   </url>
   <url>
     <loc>https://nambanpanorama.com/quy-hoach-2050</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-toan-canh.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/ho-thanh-tri-dong-thanh.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/quy-hoach-2050.jpg</image:loc></image:image>
   </url>
@@ -846,6 +851,8 @@
   </url>
   <url>
     <loc>https://nambanpanorama.com/san-bay-lien-khuong-mo-lai</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/lien-khuong-mo-lai.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/van-ban-lien-khuong.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/og-san-bay-lien-khuong-mo-lai.jpg</image:loc></image:image>
   </url>
   <url>
@@ -892,7 +899,9 @@
   </url>
   <url>
     <loc>https://nambanpanorama.com/tiem-nang-dau-tu</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/homestay-hoang-hon.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/ca-phe-phoi-nhieu-lo-nam-ban.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/ca-phe-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/tiem-nang-dau-tu.jpg</image:loc></image:image>
   </url>
   <url>

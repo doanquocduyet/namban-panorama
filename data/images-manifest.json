@@ -2942,6 +2942,9 @@
    "used_in": {
     "nam-ban-tap-huan-chuyen-doi-so-2026.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -2954,6 +2957,9 @@
    "used_in": {
     "nam-ban-tap-huan-chuyen-doi-so-2026.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -4055,6 +4061,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
