@@ -318,13 +318,17 @@ def main():
 
     queue = fb.load()
     today = datetime.date.today().isoformat()
-    due = [p for p in queue
-           if not p.get(mark) and p.get("date", "9999") <= today]
+    # Cùng thang ưu tiên với Facebook — xem fb.by_priority.
+    due = sorted([p for p in queue
+                  if not p.get(mark) and p.get("date", "9999") <= today],
+                 key=fb.by_priority)
     if not due:
         print("Không có bài nào đến hạn cho %s (hôm nay %s)." % (plat, today))
         return 0
 
     post = due[0]
+    print("Chọn: /%s (ưu tiên %s, hẹn %s) — còn %d bài đến hạn."
+          % (post.get("slug"), post.get("priority", 5), post.get("date"), len(due)))
     link = "%s/%s" % (SITE, post["slug"]) if post.get("slug") else ""
     comment = post.get("comment", "").strip()
     if link and link not in comment:

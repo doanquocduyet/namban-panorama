@@ -60,8 +60,53 @@ THREADS_LIMIT = 500
 BANNED = [
     "liên hệ ngay", "mua ngay", "đăng ký nhận giá", "trả lời trong ngày",
     "không cần đăng ký", "inbox ngay", "chốt ngay", "giá tốt nhất",
-    "cam kết lời", "chỉ còn", "nhanh tay", "kẻo lỡ",
+    "cam kết lời", "nhanh tay", "kẻo lỡ",
 ]
+# GỠ "chỉ còn" khỏi danh sách (22/9/2026). Nó KHÔNG phải CTA bán — tiếng Việt
+# thường ngày dùng nó để đo khoảng cách và thời gian. Ca thật chặn nhầm:
+# /duong-ha-bac-nam-ban "điểm cuối đường chỉ còn cách chừng 3km là tới tuyến
+# Lâm Hà – Đà Lạt". Câu đo đường, không bán gì. Mấy cụm hối thúc thật
+# ("nhanh tay", "kẻo lỡ") vẫn giữ.
+
+# Dấu nháy site dùng, cả thẳng lẫn cong. Dùng để tách phần TRÍCH DẪN.
+_QUOTES = [('"', '"'), ("\u201c", "\u201d"), ("\u00ab", "\u00bb")]
+
+
+def _unquoted(text):
+    """Bỏ mọi đoạn nằm trong ngoặc kép, trả phần còn lại.
+
+    Lý do (Luật 17, ca thật 22/9/2026): nếp viết của site là TRÍCH lời rao
+    rồi bác lại — /san-bay-lien-khuong-mo-lai có câu `Ai bảo "sân bay mở,
+    đất sắp sốt, mua ngay đi" là đang bán cho bạn một câu chuyện`. Đó chính
+    là §2.8 "dám nói đừng mua" đang chạy đúng. Grep thẳng thì bắt trúng cụm
+    ĐANG BỊ PHÊ PHÁN và chặn luôn bài tử tế nhất.
+    Nên: cụm cấm nằm TRONG ngoặc kép -> chỉ nhắc; nằm NGOÀI -> chặn thật.
+
+    Hai kiểu nháy phải xử KHÁC nhau, đây là chỗ bản đầu sai (22/9/2026):
+      - Nháy CONG mở/đóng khác ký tự -> quét theo cặp mở…đóng.
+      - Nháy THẲNG mở/đóng CÙNG ký tự -> không phân biệt được mở với đóng,
+        phải lấy **đoạn chẵn/lẻ xen kẽ**: cắt theo `"` thì mảnh lẻ là phần
+        bên trong. Bản đầu đi tìm `"` đóng gần nhất nên ăn nhầm dấu MỞ của
+        cụm sau, và câu ở /san-bay-lien-khuong-mo-lai vẫn bị chặn.
+    """
+    out = text
+    # 1) nháy cong / nháy nhọn — mở và đóng khác nhau
+    for op, cl in (("\u201c", "\u201d"), ("\u00ab", "\u00bb")):
+        res, i = [], 0
+        while True:
+            k = out.find(op, i)
+            if k < 0:
+                res.append(out[i:]); break
+            res.append(out[i:k])
+            j = out.find(cl, k + 1)
+            if j < 0:
+                break                      # mở mà không đóng: bỏ phần đuôi
+            i = j + 1
+        out = " ".join(res)
+    # 2) nháy thẳng — cùng ký tự, nên giữ các mảnh CHẴN (phần ngoài ngoặc)
+    parts = out.split('"')
+    out = " ".join(parts[::2])
+    return out
 
 
 def load():
@@ -111,9 +156,13 @@ def check(post, caption=None, comment=""):
     if caption is None:
         caption = post.get("message", "")
     text = (caption + " " + comment).lower()
+    bare = _unquoted(text)
     for b in BANNED:
-        if b in text:
+        if b in bare:
             errs.append("chuỗi cấm §2.1: %r" % b)
+        elif b in text:
+            print("  (bỏ qua %r — chỉ nằm trong ngoặc kép, là lời rao bị bài "
+                  "phê phán chứ không phải lời của bài)" % b)
     if not caption.strip():
         errs.append("caption rỗng")
     # Chú chốt 16/9/2026: KHÔNG để link trong caption. Vừa là ý Chú, vừa
@@ -362,6 +411,17 @@ def resolve_page(token):
     return me["id"], "%s (%s)" % (me.get("name"), uname or "chưa có username")
 
 
+# Chú chốt 22/9/2026: ƯU TIÊN đăng bài CẬP NHẬT THÔNG TIN và bài VỀ NAM BAN
+# trước. Trước đó bộ chọn lấy `due[0]` — tức thuần thứ tự trong file, ai nạp
+# trước đi trước. Giờ xếp theo `priority` rồi mới tới `date`:
+#   1 = tin cập nhật (hạ tầng, buổi làm việc, tiến độ, mốc có ngày tháng)
+#   2 = bài nền về Nam Ban (vùng đất, dữ kiện, đời sống)
+#   5 = còn lại (đất, mua bán, thao tác) — mặc định khi mục không ghi
+# Mục cũ không có trường này vẫn chạy được, nó rơi về 5.
+def by_priority(p):
+    return (p.get("priority", 5), p.get("date", "9999"))
+
+
 def main():
     page = os.environ.get("FB_PAGE_ID", "").strip()
     token = os.environ.get("FB_PAGE_TOKEN", "").strip()
@@ -369,13 +429,16 @@ def main():
 
     queue = load()
     today = datetime.date.today().isoformat()
-    due = [p for p in queue
-           if not p.get("posted") and p.get("date", "9999") <= today]
+    due = sorted([p for p in queue
+                  if not p.get("posted") and p.get("date", "9999") <= today],
+                 key=by_priority)
     if not due:
         print("Không có bài nào đến hạn (hôm nay %s)." % today)
         return 0
 
     post = due[0]
+    print("Chọn: /%s (ưu tiên %s, hẹn %s) — còn %d bài đến hạn."
+          % (post.get("slug"), post.get("priority", 5), post.get("date"), len(due)))
 
     link = "%s/%s" % (SITE, post["slug"]) if post.get("slug") else ""
     comment = post.get("comment", "").strip()
