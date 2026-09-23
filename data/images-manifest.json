@@ -9,7 +9,7 @@
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
  "total_images": 401,
- "unused_count": 64,
+ "unused_count": 63,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
   "ban-do-cao-do-thua-dat-nam-ban.webp",
@@ -57,7 +57,6 @@
   "quan-com-sen-viet-nam-ban.webp",
   "quan-com-thanh-hai-nam-ban.webp",
   "quan-sen-viet-xe-o-to-nam-ban.webp",
-  "ranh-gioi-xa-nam-ban-lam-ha-gis.webp",
   "ruong-bap-nam-ban.webp",
   "san-vuon-ban-dem-nam-ban.webp",
   "san-vuon-hoa-va-doi-nam-ban.webp",
@@ -604,6 +603,9 @@
     "mua-ca-phe-nam-ban.html": [
      "display"
     ],
+    "len-lam-dong-song-lam-gi.html": [
+     "display"
+    ],
     "image-sitemap.xml": [
      "ref"
     ]
@@ -622,9 +624,6 @@
     "dat-nam-ban-trong-cay-gi.html": [
      "display"
     ],
-    "len-lam-dong-song-lam-gi.html": [
-     "display"
-    ],
     "image-sitemap.xml": [
      "ref"
     ]
@@ -638,6 +637,9 @@
    ],
    "used_in": {
     "tiem-nang-dau-tu.html": [
+     "display"
+    ],
+    "nam-ban-mua-nao.html": [
      "display"
     ],
     "image-sitemap.xml": [
@@ -1715,9 +1717,6 @@
      "display"
     ],
     "duong-di-nam-ban.html": [
-     "display"
-    ],
-    "nam-ban-mua-nao.html": [
      "display"
     ],
     "index.html": [
@@ -2879,6 +2878,9 @@
    "used_in": {
     "dat-gan-da-lat.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -3420,9 +3422,6 @@
      "display"
     ],
     "doc-lo-dat.html": [
-     "display"
-    ],
-    "mua-chung-dat-nam-ban.html": [
      "display"
     ],
     "image-sitemap.xml": [
@@ -4107,9 +4106,6 @@
     "mua-dat-co-vuon-ca-phe.html": [
      "display"
     ],
-    "rau-hoa-cay-do-la-nam-ban.html": [
-     "display"
-    ],
     "o-thu-nam-ban-truoc-khi-mua-dat.html": [
      "og",
      "twitter"
@@ -4306,9 +4302,6 @@
      "display"
     ],
     "quy-hoach-2050.html": [
-     "display"
-    ],
-    "brief-01.html": [
      "display"
     ],
     "image-sitemap.xml": [
@@ -5420,8 +5413,11 @@
     1600,
     1054
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "brief-01.html": [
+     "display"
+    ]
+   }
   },
   "rau-hoa-cay-do-la-nam-ban.jpg": {
    "kb": 196,
@@ -6368,6 +6364,12 @@
    "used_in": {
     "len-lam-dong-nen-song-o-dau.html": [
      "display"
+    ],
+    "rau-hoa-cay-do-la-nam-ban.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -6475,6 +6477,9 @@
     ],
     "xay-nha-o-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
