@@ -409,6 +409,9 @@
    "used_in": {
     "ve-nam-ban-lam-gi.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -421,6 +424,9 @@
    "used_in": {
     "dat-dong-thanh-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -1321,6 +1327,9 @@
    ],
    "used_in": {
     "dat-gia-lam-nam-ban.html": [
+     "display"
+    ],
+    "nam-ha-sap-nhap-nam-ban.html": [
      "display"
     ],
     "image-sitemap.xml": [
@@ -6601,6 +6610,9 @@
    "used_in": {
     "phi-to-nam-ha-lam-ha.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
