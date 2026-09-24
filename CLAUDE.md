@@ -508,6 +508,15 @@ gán cho tỉnh kia — cùng họ với Luật 23.
 **Chưa có văn bản Lâm Đồng thì KHÔNG ghi con số nào**, §2.6. Muốn mở lại thì phải có số
 hiệu tra được trên cổng HĐND tỉnh Lâm Đồng, không lấy từ bài báo tổng hợp nhiều tỉnh.
 
+### SỔ CHỜ — `/mua-lon-nam-ban` CÓ HẠN DÙNG (mở 24/9/2026)
+
+Bài đăng 24/9/2026, ngày cuối đợt mưa dự báo 21–24/9. **Sau 25/9: thêm một dòng cập nhật
+đầu bài** ghi đợt mưa theo dự báo đã qua (chỉ ghi điều có nguồn, không tự kết luận thiệt hại),
+giữ nguyên phần dấu hiệu sạt lở và "lô nào đáng để ý" — đó là phần sống lâu, cụm evergreen
+*Nam Ban có sạt lở không · đất dốc mùa mưa · dấu hiệu sạt lở*. Slug cố ý không có năm.
+Hai số bị gỡ vì không kiểm được nguồn: lượng mưa Sơn Điền 112mm / Đơn Dương 66mm / Lạc Dương
+55mm, và chữ "phối hợp UNICEF". Có văn bản gốc thì mới được thêm lại (§2.6).
+
 ### SỔ CHỜ ẢNH — BA BÀI ĐANG TRỐNG, CHỜ CHÚ CHỤP (mở 8/9/2026)
 
 Ba bài dưới đây **cố ý không có ảnh trong thân bài** — kho không có tấm nào đúng chủ đề,

@@ -630,6 +630,11 @@
     <image:image><image:loc>https://nambanpanorama.com/images/og-mua-dat-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/mua-lon-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/duong-dat-do-cat-suon-doi-nam-ban.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/mua-lon-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/mua-mua-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/mua-mua-nam-ban.jpg</image:loc></image:image>
   </url>

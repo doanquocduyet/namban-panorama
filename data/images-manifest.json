@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 401,
+ "total_images": 402,
  "unused_count": 63,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -2011,6 +2011,9 @@
     1200
    ],
    "used_in": {
+    "mua-lon-nam-ban.html": [
+     "display"
+    ],
     "doc-the-dat-nam-ban.html": [
      "display"
     ],
@@ -3742,6 +3745,20 @@
     ]
    }
   },
+  "mua-lon-nam-ban.jpg": {
+   "kb": 163,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "mua-lon-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
   "mua-mua-nam-ban.jpg": {
    "kb": 213,
    "dims": [
@@ -5416,6 +5433,9 @@
    "used_in": {
     "brief-01.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
