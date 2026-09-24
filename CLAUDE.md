@@ -408,6 +408,14 @@ Bốn luật lọc (dùng lại cho mọi đợt sau, và cho bài mới):
    → câu về giá hoặc tiền → câu quyết định mua. Cách viết: **"ở Nam Ban"**, không ghép
    liền, cho khớp nếp site.
 
+**NGOẠI LỆ HUB `/hoi-nhanh` (Chú chốt 24/9/2026: "quá nhiều câu thiếu chữ Nam Ban"):**
+trần "hub tối đa 5" ở luật 4 KHÔNG áp cho hub này nữa — đã neo 22/22 câu còn thiếu, 50/50
+câu có "Nam Ban". Cách neo vẫn theo luật 1–3: khái niệm toàn quốc thì neo qua **đối tượng**
+("Sổ riêng khi mua đất Nam Ban là gì?", "Sang tên sổ đỏ đất Nam Ban mất bao lâu?"), không
+biến khái niệm thành thứ riêng của Nam Ban; câu đón người chưa biết Nam Ban thì thêm vế
+("…gần Đà Lạt, Nam Ban có hợp không?") thay vì thay hẳn. Đổi câu hỏi thì đọc lại đáp (Luật 15)
+— 22 câu đã đọc từng cặp. Sửa cả `.qa-q` lẫn `FAQPage`. Đừng "sửa lại" về 5.
+
 **Bài MỚI viết đúng neo ngay từ đầu** (một dòng kiểm trong phiếu content), không đi vá
 bài cũ. Cùng nguyên tắc này áp cho mọi sổ rà tương tự — 52 ca contrast màu cứng, 34 màu
 ngoài palette, entity graph, card title dài: đã cân nhắc và **cố ý bỏ**.
