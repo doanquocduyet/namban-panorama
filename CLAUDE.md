@@ -854,6 +854,13 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     search. Kèm: `<title>`, H1, `og:title` và `headline` vẫn phải thống nhất (Luật 22).
     **Có thể còn bài khác vi phạm — CHƯA mở đợt rà.** Đợt sau đối chiếu H1 toàn site theo
     luật này; đừng tự mở khi chưa được giao.
+    **26b — VẾ SAU CỦA TỰA HAI CÂU CŨNG PHẢI LÀ CÂU ĐỦ, NÓI NHƯ NGƯỜI THẬT** (Chú chốt
+    24/9/2026, ca thật `/nam-ha-sap-nhap-nam-ban`). *"Nam Hà sáp nhập Nam Ban chưa? Nếu có
+    thì đổi gì?"* — vế sau cụt, là chữ người viết rút gọn. Đã đổi thành *"…? Nếu sáp nhập thì
+    có những thay đổi gì?"* — đúng câu người ta nói chuyện và gõ tìm. **Luật:** không rút chủ
+    ngữ/động từ ra khỏi câu hỏi cho gọn ("Nếu có thì…", "Đổi gì?"); nhắc lại đủ việc đang hỏi.
+    Tựa dài hơn một chút vẫn hơn tựa cụt. Nhớ kèm Luật 22: cụm mới trong tựa ("thay đổi") phải
+    có trong thân bài.
 
 ---
 
