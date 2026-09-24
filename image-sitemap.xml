@@ -149,6 +149,7 @@
   </url>
   <url>
     <loc>https://nambanpanorama.com/dat-dong-thanh-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/bien-may-dong-thanh-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/dat-dong-thanh-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
@@ -821,6 +822,7 @@
   </url>
   <url>
     <loc>https://nambanpanorama.com/phi-to-nam-ha-lam-ha</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/vuon-thanh-long-phi-to.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/phi-to-nam-ha-lam-ha.jpg</image:loc></image:image>
   </url>
   <url>
@@ -946,6 +948,7 @@
   </url>
   <url>
     <loc>https://nambanpanorama.com/ve-nam-ban-lam-gi</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/bien-may-dem-trang-dong-thanh.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/ve-nam-ban-lam-gi.jpg</image:loc></image:image>
   </url>
   <url>

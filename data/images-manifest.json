@@ -9,7 +9,7 @@
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
  "total_images": 420,
- "unused_count": 72,
+ "unused_count": 69,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
   "ban-an-trang-tri-giang-sinh.webp",
@@ -20,7 +20,7 @@
   "ban-do-tuyen-me-linh-langbiang.webp",
   "ban-tiec-tra-kieu-co-dien.webp",
   "bien-hieu-tram-sac-gia-lam-nam-ban.webp",
-  "bien-may-sang-som.webp",
+  "bien-may-dem-trang-dong-thanh-2.webp",
   "biet-thu-len-den-tu-tren-cao.webp",
   "bo-booth-vao-vu-vua-nam-ban.webp",
   "bon-hoa-ven-hang-rao-nam-ban.webp",
@@ -35,8 +35,6 @@
   "com-ga-68-khai-truong-nam-ban.webp",
   "cong-jong-minh-farm-me-linh.webp",
   "cong-khai-lay-y-kien-quy-hoach-chung-xa.webp",
-  "dem-trang-may-thung-lung-den-2.webp",
-  "dem-trang-may-thung-lung-den.webp",
   "dien-linh-tuyen-nam-ban.webp",
   "doi-che-chua-ro-vi-tri.jpg",
   "duong-dat-song-doi-nam-ban.webp",
@@ -80,7 +78,6 @@
   "tu-banh-croissant-nam-ban.webp",
   "tuong-duc-me-nha-tho-nam-ban.webp",
   "van-phong-dien-linh-nam-ban.webp",
-  "vuon-thanh-long-duong-dat-do.webp",
   "xay-nha-giap-rung-thong-nam-ban.jpg",
   "xe-khach-nhin-ra-cua-nam-ban.webp"
  ],
@@ -363,8 +360,7 @@
    ],
    "used_in": {
     "mot-ngay-lam-vuon-nam-ban.html": [
-     "display",
-     "ref"
+     "display"
     ],
     "image-sitemap.xml": [
      "ref"
@@ -395,14 +391,38 @@
    "used_in": {},
    "status": "unused"
   },
-  "bien-may-sang-som.webp": {
+  "bien-may-dem-trang-dong-thanh-2.webp": {
+   "kb": 59,
+   "dims": [
+    1600,
+    900
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
+  "bien-may-dem-trang-dong-thanh.webp": {
+   "kb": 79,
+   "dims": [
+    1600,
+    900
+   ],
+   "used_in": {
+    "ve-nam-ban-lam-gi.html": [
+     "display"
+    ]
+   }
+  },
+  "bien-may-dong-thanh-nam-ban.webp": {
    "kb": 75,
    "dims": [
     1600,
     1200
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "dat-dong-thanh-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "biet-thu-len-den-tu-tren-cao.webp": {
    "kb": 78,
@@ -1108,7 +1128,6 @@
    "used_in": {
     "ram-vu-lan-nam-ban.html": [
      "og",
-     "ref",
      "schema",
      "twitter"
     ],
@@ -1302,8 +1321,7 @@
    ],
    "used_in": {
     "dat-gia-lam-nam-ban.html": [
-     "display",
-     "ref"
+     "display"
     ],
     "image-sitemap.xml": [
      "ref"
@@ -1468,7 +1486,6 @@
    "used_in": {
     "dat-gia-lam-nam-ban.html": [
      "og",
-     "ref",
      "schema",
      "twitter"
     ],
@@ -1525,7 +1542,6 @@
    "used_in": {
     "dat-giap-suoi-nam-ban.html": [
      "og",
-     "ref",
      "schema",
      "twitter"
     ],
@@ -1698,7 +1714,6 @@
    "used_in": {
     "dat-trung-tam-nam-ban.html": [
      "og",
-     "ref",
      "schema",
      "twitter"
     ],
@@ -1786,24 +1801,6 @@
      "ref"
     ]
    }
-  },
-  "dem-trang-may-thung-lung-den-2.webp": {
-   "kb": 59,
-   "dims": [
-    1600,
-    900
-   ],
-   "used_in": {},
-   "status": "unused"
-  },
-  "dem-trang-may-thung-lung-den.webp": {
-   "kb": 79,
-   "dims": [
-    1600,
-    900
-   ],
-   "used_in": {},
-   "status": "unused"
   },
   "deo-ta-nung.jpg": {
    "kb": 260,
@@ -1942,7 +1939,6 @@
    "used_in": {
     "do-cao-nam-ban.html": [
      "og",
-     "ref",
      "schema",
      "twitter"
     ],
@@ -2059,8 +2055,7 @@
    ],
    "used_in": {
     "do-cao-nam-ban.html": [
-     "display",
-     "ref"
+     "display"
     ],
     "image-sitemap.xml": [
      "ref"
@@ -2964,7 +2959,6 @@
     ],
     "mot-ngay-lam-vuon-nam-ban.html": [
      "og",
-     "ref",
      "schema",
      "twitter"
     ],
@@ -4485,8 +4479,7 @@
    ],
    "used_in": {
     "dat-trung-tam-nam-ban.html": [
-     "display",
-     "ref"
+     "display"
     ],
     "image-sitemap.xml": [
      "ref"
@@ -5778,12 +5771,10 @@
    ],
    "used_in": {
     "dat-giap-suoi-nam-ban.html": [
-     "display",
-     "ref"
+     "display"
     ],
     "xay-nha-giap-suoi-nam-ban.html": [
-     "display",
-     "ref"
+     "display"
     ],
     "image-sitemap.xml": [
      "ref"
@@ -6420,8 +6411,7 @@
    ],
    "used_in": {
     "xa-nam-ban-lam-ha.html": [
-     "display",
-     "ref"
+     "display"
     ],
     "image-sitemap.xml": [
      "ref"
@@ -6436,8 +6426,7 @@
    ],
    "used_in": {
     "ram-vu-lan-nam-ban.html": [
-     "display",
-     "ref"
+     "display"
     ],
     "image-sitemap.xml": [
      "ref"
@@ -6603,14 +6592,17 @@
     ]
    }
   },
-  "vuon-thanh-long-duong-dat-do.webp": {
+  "vuon-thanh-long-phi-to.webp": {
    "kb": 272,
    "dims": [
     1600,
     900
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "phi-to-nam-ha-lam-ha.html": [
+     "display"
+    ]
+   }
   },
   "vuon-xen-canh-du-du-ca-phe-nam-ban.webp": {
    "kb": 297,
@@ -6636,7 +6628,6 @@
    "used_in": {
     "xa-nam-ban-lam-ha.html": [
      "og",
-     "ref",
      "schema",
      "twitter"
     ],
@@ -6697,7 +6688,6 @@
    "used_in": {
     "xay-nha-giap-suoi-nam-ban.html": [
      "og",
-     "ref",
      "schema",
      "twitter"
     ],
