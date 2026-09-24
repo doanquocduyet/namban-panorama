@@ -542,8 +542,16 @@ hiệu tra được trên cổng HĐND tỉnh Lâm Đồng, không lấy từ b�
 
 Bài đăng 24/9/2026, ngày cuối đợt mưa dự báo 21–24/9. **Sau 25/9: thêm một dòng cập nhật
 đầu bài** ghi đợt mưa theo dự báo đã qua (chỉ ghi điều có nguồn, không tự kết luận thiệt hại),
-giữ nguyên phần dấu hiệu sạt lở và "lô nào đáng để ý" — đó là phần sống lâu, cụm evergreen
-*Nam Ban có sạt lở không · đất dốc mùa mưa · dấu hiệu sạt lở*. Slug cố ý không có năm.
+giữ nguyên phần cách nhìn lô đất khi mưa lớn — đó là phần sống lâu, cụm evergreen
+*nhìn đất mùa mưa · xem đất ngày mưa Nam Ban · đất Nam Ban mùa mưa cần nhìn gì*. Slug cố ý không có năm.
+**Sửa khung 24/9/2026 (Chú chốt): Panorama KHÔNG gán rủi ro thiên tai cho vùng mình.** Bản đầu có H1
+"dấu hiệu sạt lở…", keyword `Nam Ban có sạt lở không` / `sạt lở đất Nam Ban`, FAQ mở đầu "Đất ở Nam Ban
+có dễ sạt lở không?", `about` schema "Mưa lớn và sạt lở đất ở Nam Ban", ảnh sườn đồi trọc dưới trời mưa —
+tất cả cùng đẩy về một ý "Nam Ban mưa là sạt". Đã gỡ hết, đổi khung sang *cách nhìn một lô đất trong mùa
+mưa*. **Luật cho mọi bài sau:** bài về mưa bão, thiên tai, rủi ro môi trường thì H1, title, meta, keyword,
+FAQ, schema và ảnh **không ghép tên vùng với tên thiên tai** (không "sạt lở Nam Ban", "Nam Ban ngập").
+Rủi ro nằm ở **từng lô**, nói trong thân bài; dấu hiệu chung thì dẫn nguồn cơ quan chức năng, không
+neo "Nam Ban". Thân bài đọc rủi ro trung dung vẫn giữ — cái sai là khung ngoài.
 Hai số bị gỡ vì không kiểm được nguồn: lượng mưa Sơn Điền 112mm / Đơn Dương 66mm / Lạc Dương
 55mm, và chữ "phối hợp UNICEF". Có văn bản gốc thì mới được thêm lại (§2.6).
 
