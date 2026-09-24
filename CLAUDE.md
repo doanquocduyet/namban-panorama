@@ -276,6 +276,36 @@ Ba điều đã kiểm, đừng bàn lại:
 vào thẳng lần sau vẫn nhớ · `?copy=0` khoá lại · khách trên máy khác vẫn bị chặn.
 `localStorage` lỗi (chế độ ẩn danh) thì **cứ chặn** — ngã về phía an toàn.
 
+### NGUỒN CHUẨN KHI TÀI LIỆU LỆCH NHAU — ĐÃ TRẢ LỜI, ĐỪNG HỎI LẠI (Chú chốt 24/9/2026)
+
+**CLAUDE.md trong repo là chuẩn cao nhất**, mới hơn mọi bản bàn giao, ghi chép cũ hay
+hướng dẫn project dán ngoài (bản bàn giao 20/9 cũng cũ hơn file này). Tài liệu ngoài nói
+khác CLAUDE.md thì theo CLAUDE.md, không cần hỏi Chú. Năm câu đã có người hỏi:
+
+1. **Khoảng cách:** Nam Ban → Đà Lạt **khoảng 25km** (§2.7). Quét 24/9: "23km" còn 0 chỗ.
+2. **Quy hoạch chung:** **7 khu vực phát triển**. "4 phân khu" còn 0 chỗ.
+3. **Quy mô site:** đừng dùng con số trong tài liệu, **đếm thẳng repo**. Ngày 24/9: 194 file
+   HTML, 178 trang tiếng Việt, 188 URL trong `sitemap.xml`. Danh sách 116 URL ngày 19/8 đã bỏ.
+4. **Độ cao:** chuẩn viết là **"khoảng 800–1.000 m"** — gạch nối dài, **dấu chấm ngăn hàng
+   nghìn**, như §2.7. KHÔNG phải "800–1000m" viết liền. Site đang có 5 cách viết của cùng số
+   này (phổ biến nhất `800–1.000m`, 16 chỗ). Cùng một con số nên **không mở đợt dọn** (Luật 14);
+   bài mới và câu nào đang sửa thì viết đúng chuẩn.
+5. **CTA và liên hệ:** đọc đúng §2.1–2.2, hai tầng không mâu thuẫn:
+   - **Cấm CTA bán ở mọi nơi**: "liên hệ ngay", "mua ngay", "đăng ký nhận giá", nút màu nóng.
+   - **Được: một khối liên hệ trầm cuối bài**, CHỈ ở bài phân tích đất/mua bán/thị trường.
+     Khối này **do `panorama-utils.js` tự chèn** theo danh sách slug `IN` (đầu file).
+     **Không dán tay vào HTML.** Bài mới thuộc diện đó thì thêm slug vào `IN`, kèm một dòng
+     ghi chú lý do như các đợt trước. Bài có khối thì footer bỏ SĐT.
+   - Ghi chép cũ "Panorama không CTA, không SĐT" là bản trước khi có §2.2. Đã thay.
+6. **Chữ "đầu tư": KHÔNG cấm.** Hub `/dau-tu` là một trong ba mục menu chính; 177/178 trang
+   tiếng Việt có chữ này (phần lớn là menu). Người ta thật sự gõ "đầu tư đất Nam Ban", cấm là
+   tự bỏ từ khóa (§0.6). **Cái cấm là giọng hô hào**, không phải chữ: "cơ hội đầu tư vàng",
+   "đầu tư ngay", "sinh lời chắc chắn", "x2 x3", hứa giá tăng. Viết "đầu tư" theo nghĩa trung
+   tính và đọc rủi ro kèm theo (§2.8 dám nói đừng mua) thì đúng nếp.
+7. **Bài tin có hạn dùng (vd `/mua-lon-nam-ban`):** trước khi đề xuất sửa, kiểm `git log`
+   xem đã lên `main` chưa. Bài đó **đã đăng 24/9/2026** với khung sống lâu sẵn (H1 và slug
+   không có ngày, dòng ghi chú ngày đăng) và đã hẹn thêm dòng cập nhật — xem sổ chờ ở §5.
+
 ### QUYẾT ĐỊNH ĐÃ CHỐT — ĐỪNG BÀN LẠI (26/7/2026)
 
 **0. CÂU CHỦ LỰC (chữ ký) = "Hiểu vùng đất trước khi hiểu giá đất"** (Chú chốt 28/7).
