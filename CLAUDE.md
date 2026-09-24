@@ -931,6 +931,32 @@ Rà lại bằng: so `<h3>` trong khối FAQ hiển thị (cắt từ `<h2>Câu 
 tới `<div class="source-box">`, không tính `<h3>Nguồn &amp; lưu ý</h3>`) với
 `mainEntity` của `FAQPage`. **Chiều duy nhất cần báo động là schema-có-mà-không-hiển-thị.**
 
+### 7.3c FAQ/H1/H2 CÓ THẬT SỰ HIỆN KHÔNG — ĐÃ ĐO TOÀN SITE, 0 LỖI (24/9/2026)
+
+Chú lo lỗi kiểu Villas (schema có FAQ mà trang không hiển thị / Google không đọc được).
+Đã đo **172 trang vi, 1.037 câu FAQ, 1.273 H2** theo hai góc: (1) tắt JS, đọc mã gốc
+như Googlebot; (2) bật JS, cuộn hết trang, đo `getBoundingClientRect` + `display/visibility/
+opacity` cả chuỗi tổ tiên, ở 390 và 1440. **Kết quả: 0 câu FAQ chỉ nằm trong schema; 0 FAQ/
+H1/H2 bị ẩn bằng CSS/JS; H1 mỗi trang đúng 1; 0 trang noindex.** Không có gì để vá.
+
+Bốn kiểu **báo động giả** của bộ đo, gặp lại thì đừng tin số thô:
+- `aria-hidden="true"` trên **SVG nút Chia sẻ** (138 trang) — chỉ ẩn icon với trình đọc màn
+  hình, không ẩn chữ.
+- `/hoi-nhanh` để câu hỏi trong `<div class="qa-q">`, đáp trong `<p class="qa-a">` (không
+  h3) — bộ đo chỉ dò h3/strong nên báo "không có phần tử". Đã đo riêng: 50/50 hiện.
+- **3 bài viết FAQ dạng `<p><strong>Hỏi</strong><br>Đáp</p>`** (`/dat-gan-da-lat`,
+  `/nam-ban-co-gi`, `/san-bay-lien-khuong-mo-lai`): đáp nằm cùng `<p>` với hỏi, phần tử kế
+  tiếp là `<br>` (cao 0) → bộ đo tưởng đáp bị ẩn. Hợp lệ, không sửa.
+- Câu hỏi trùng với nhãn khối `.quick-answer` (`/chua-linh-an-nam-ban`, `/nuoc-o-nam-ban`):
+  bộ đo khớp `<strong>` đầu bài trước, không phải `<h3>` FAQ thật ở dưới.
+
+**Một điểm thật, KHÔNG phải lỗi schema, chưa sửa:** `/trao-doi` (và `/en/trao-doi`) có **hai
+bố cục** — `.pc-view` (có `<h1>` + 2 `<h2>`) ẩn ở ≤880px, và khối `td-main` cho mobile dùng
+`<div class="td-h1">` làm tiêu đề. Nên trên mobile (Google index theo mobile) `<h1>` đang
+`display:none`. Trang liên hệ, không phải trang tranh hạng → tác động thấp. Hai form cùng
+`id="td-hint"` nhưng JS tìm hint **trong form đang gửi** (`f.querySelector`) nên không lỗi
+chức năng. Muốn gọn thì gộp về một bố cục responsive — đó là việc thiết kế, hỏi Chú trước.
+
 ### 7.4 Pillar — GIẢI MÂU THUẪN
 
 Báo cáo có 2 câu chọi nhau: *"pillar phải là trang nhiều inbound nhất site"* vs *"internal link
