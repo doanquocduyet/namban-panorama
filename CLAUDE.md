@@ -191,10 +191,11 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
   2 ảnh cùng loại dính sát nhau** (vd 2 quán café kề nhau → nát bài). Ảnh Chú up **không xóa tấm nào**
   (mỗi tấm có ý — kể cả đồ ăn/đồ uống = sinh hoạt thường nhật, để dành bài đời sống), chỉ **nén lại**
   cho web. Thà ít mà tinh (quiet luxury) còn hơn nhiều mà rối. Không chắc ảnh có tôn bài không → để dành.
-- **ẢNH CHÚ UP LÀ ẢNH CHÚ TỰ CHỤP (Chú chốt 24/9/2026)** — kể cả ảnh flycam, ảnh camera
-  nhà (EZVIZ). Đừng hỏi lại bản quyền. Ảnh mới gắn vào bài thì ghi `ImageObject` có
-  `creator` → `#founder`, `creditText`, `copyrightNotice` như 69 trang đang có. Cái vẫn phải
-  hỏi là **chụp ở đâu** khi nhìn ảnh không xác định được (Luật 19); tự chụp ≠ biết vị trí.
+- **ẢNH TRÊN PANORAMA MẶC ĐỊNH LÀ CHÚ CHỤP (Chú chốt 24/9/2026)** — kể cả ảnh flycam, ảnh
+  camera nhà (EZVIZ). **Không cần ghi chú người chụp, không cần ghi bản quyền** — không thêm
+  dòng "ảnh: …" vào caption, không thêm `creator`/`creditText`/`copyrightNotice` vào schema
+  bài mới (schema giữ `"image": "<og url>"` như nếp bài thường). Đừng hỏi lại bản quyền. Cái
+  vẫn phải hỏi là **chụp ở đâu** khi nhìn ảnh không xác định được (Luật 19); tự chụp ≠ biết vị trí.
   Ảnh chụp màn hình chat/mạng xã hội có tên người khác → không đưa lên web, dù Chú chụp.
   Up ảnh thẳng vào gốc repo là **lên web công khai ngay** (không có `.vercelignore`) — em
   nén rồi chuyển vào `/images/`, gỡ file gốc khỏi gốc repo.
