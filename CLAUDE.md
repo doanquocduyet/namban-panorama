@@ -549,7 +549,10 @@ giữ nguyên phần cách nhìn lô đất khi mưa lớn — đó là phần s
 có dễ sạt lở không?", `about` schema "Mưa lớn và sạt lở đất ở Nam Ban", ảnh sườn đồi trọc dưới trời mưa —
 tất cả cùng đẩy về một ý "Nam Ban mưa là sạt". Đã gỡ hết, đổi khung sang *cách nhìn một lô đất trong mùa
 mưa*. **Luật cho mọi bài sau:** bài về mưa bão, thiên tai, rủi ro môi trường thì H1, title, meta, keyword,
-FAQ, schema và ảnh **không ghép tên vùng với tên thiên tai** (không "sạt lở Nam Ban", "Nam Ban ngập").
+FAQ, schema và ảnh **không tự tạo cụm khẳng định hay gợi rủi ro cho cả vùng** (không "sạt lở đất
+Nam Ban", "Nam Ban có dễ sạt lở không", ảnh đồi trọc dưới mưa). **Phân biệt:** câu hỏi có sẵn người ta
+thật sự gõ ("Mùa mưa Nam Ban có ngập không?" ở `/mua-mua-nam-ban`) mà đáp thẳng bằng dữ kiện thì GIỮ —
+đó là nhà của truy vấn, thường chính là chỗ gỡ nỗi sợ. Đừng đi quét gỡ các câu đó (Luật 14).
 Rủi ro nằm ở **từng lô**, nói trong thân bài; dấu hiệu chung thì dẫn nguồn cơ quan chức năng, không
 neo "Nam Ban". Thân bài đọc rủi ro trung dung vẫn giữ — cái sai là khung ngoài.
 **H1 giữ "mấy ngày này" (Chú chốt 24/9/2026):** bài có ngày đăng và dòng ghi chú ngày, người đọc tự
