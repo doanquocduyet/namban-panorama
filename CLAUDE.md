@@ -560,15 +560,16 @@ biết bài viết vào đợt mưa nào — KHÔNG đổi H1 khi thêm dòng c�
 Hai số bị gỡ vì không kiểm được nguồn: lượng mưa Sơn Điền 112mm / Đơn Dương 66mm / Lạc Dương
 55mm, và chữ "phối hợp UNICEF". Có văn bản gốc thì mới được thêm lại (§2.6).
 
-### SỔ CHỜ ẢNH — BA BÀI ĐANG TRỐNG, CHỜ CHÚ CHỤP (mở 8/9/2026)
+### SỔ CHỜ ẢNH — CÒN HAI BÀI TRỐNG, CHỜ CHÚ CHỤP (mở 8/9/2026, bài suối xong 24/9)
 
-Ba bài dưới đây **cố ý không có ảnh trong thân bài** — kho không có tấm nào đúng chủ đề,
+Hai bài còn lại dưới đây (`/nha-go-thong-nam-ban`, `/10-10-1975-nam-ban`) **cố ý không có ảnh trong thân bài** — kho không có tấm nào đúng chủ đề,
 và Luật 19 cấm gắn tạm rồi chú thích chung chung. Không phải quên, đừng đi gắn bừa:
 
-- `/xay-nha-giap-suoi-nam-ban` — **kho không có ảnh suối nào.** Bài này còn dùng
-  `og:image` là ảnh brand `nam-ban-toan-canh-og.jpg`, không phải ảnh suối. Cần: một
-  con suối trong xã, thấy được **mép bờ** và mực nước — tốt nhất chụp hai lần, mùa khô
-  và cuối mùa mưa, cùng một khúc, để minh họa đúng cái bài đang nói.
+- `/xay-nha-giap-suoi-nam-ban` — **ĐÃ CÓ ẢNH 24/9/2026** (`suoi-sau-mua-nuoc-duc.webp`,
+  dòng nước đục sau mưa nhìn từ thành cầu, bờ trái kè rọ đá; og `xay-nha-giap-suoi-nam-ban.jpg`).
+  Cùng tấm cũng gắn `/dat-giap-suoi-nam-ban` → **đã đủ trần 2 bài, đừng dùng thêm**. Caption cố
+  ý nói "dòng nước", không nói "suối" và không nêu địa điểm — chưa xác định đây là suối hay
+  mương (bài phân biệt hai thứ này). Còn thiếu: tấm **mùa khô cùng khúc đó** để đặt cạnh.
 - `/nha-go-thong-nam-ban` — cần cận cảnh **vách hoặc sàn gỗ thông** (thấy vân, thấy mắt
   gỗ), hoặc một căn đang lắp ghép. Ảnh nhà gỗ hiện có (`nha-go-farmstay-nam-ban.webp`)
   đã dùng cho bài mẹ `/nha-go-nam-ban`, dùng lại lần nữa là loãng.
