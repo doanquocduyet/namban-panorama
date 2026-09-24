@@ -552,6 +552,8 @@ mưa*. **Luật cho mọi bài sau:** bài về mưa bão, thiên tai, rủi ro 
 FAQ, schema và ảnh **không ghép tên vùng với tên thiên tai** (không "sạt lở Nam Ban", "Nam Ban ngập").
 Rủi ro nằm ở **từng lô**, nói trong thân bài; dấu hiệu chung thì dẫn nguồn cơ quan chức năng, không
 neo "Nam Ban". Thân bài đọc rủi ro trung dung vẫn giữ — cái sai là khung ngoài.
+**H1 giữ "mấy ngày này" (Chú chốt 24/9/2026):** bài có ngày đăng và dòng ghi chú ngày, người đọc tự
+biết bài viết vào đợt mưa nào — KHÔNG đổi H1 khi thêm dòng cập nhật sau 25/9, đừng đề xuất lại.
 Hai số bị gỡ vì không kiểm được nguồn: lượng mưa Sơn Điền 112mm / Đơn Dương 66mm / Lạc Dương
 55mm, và chữ "phối hợp UNICEF". Có văn bản gốc thì mới được thêm lại (§2.6).
 
