@@ -191,6 +191,13 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
   2 ảnh cùng loại dính sát nhau** (vd 2 quán café kề nhau → nát bài). Ảnh Chú up **không xóa tấm nào**
   (mỗi tấm có ý — kể cả đồ ăn/đồ uống = sinh hoạt thường nhật, để dành bài đời sống), chỉ **nén lại**
   cho web. Thà ít mà tinh (quiet luxury) còn hơn nhiều mà rối. Không chắc ảnh có tôn bài không → để dành.
+- **ẢNH CHÚ UP LÀ ẢNH CHÚ TỰ CHỤP (Chú chốt 24/9/2026)** — kể cả ảnh flycam, ảnh camera
+  nhà (EZVIZ). Đừng hỏi lại bản quyền. Ảnh mới gắn vào bài thì ghi `ImageObject` có
+  `creator` → `#founder`, `creditText`, `copyrightNotice` như 69 trang đang có. Cái vẫn phải
+  hỏi là **chụp ở đâu** khi nhìn ảnh không xác định được (Luật 19); tự chụp ≠ biết vị trí.
+  Ảnh chụp màn hình chat/mạng xã hội có tên người khác → không đưa lên web, dù Chú chụp.
+  Up ảnh thẳng vào gốc repo là **lên web công khai ngay** (không có `.vercelignore`) — em
+  nén rồi chuyển vào `/images/`, gỡ file gốc khỏi gốc repo.
 - **TRẦN DÙNG LẠI: MỘT TẤM TỐI ĐA 2 BÀI (Chú chốt 13/9/2026).** Chú ở Nam Ban, kho ảnh gốc
   còn nhiều — không có lý do gì để một tấm đi khắp site. Trần này tính trên **bài gốc tiếng
   Việt**, tách riêng hai vai: ảnh **hiển thị** trong thân bài đếm riêng, ảnh **og** đếm riêng.

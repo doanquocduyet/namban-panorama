@@ -8,8 +8,8 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 419,
- "unused_count": 71,
+ "total_images": 420,
+ "unused_count": 72,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
   "ban-an-trang-tri-giang-sinh.webp",
@@ -68,6 +68,7 @@
   "san-vuon-ban-dem-nam-ban.webp",
   "san-vuon-hoa-va-doi-nam-ban.webp",
   "san-vuon-nha-hoa-gia-lam-nam-ban.webp",
+  "suong-mu-vuon-doi-21-9-2026.webp",
   "tam-giac-mach-nhin-qua-cua-xe-nam-ban.webp",
   "tam-pin-mat-troi-nam-ban.webp",
   "tra-cuu-quy-hoach-tren-man-hinh.webp",
@@ -362,7 +363,11 @@
    ],
    "used_in": {
     "mot-ngay-lam-vuon-nam-ban.html": [
-     "display"
+     "display",
+     "ref"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -1103,6 +1108,7 @@
    "used_in": {
     "ram-vu-lan-nam-ban.html": [
      "og",
+     "ref",
      "schema",
      "twitter"
     ],
@@ -1296,7 +1302,11 @@
    ],
    "used_in": {
     "dat-gia-lam-nam-ban.html": [
-     "display"
+     "display",
+     "ref"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -1458,6 +1468,7 @@
    "used_in": {
     "dat-gia-lam-nam-ban.html": [
      "og",
+     "ref",
      "schema",
      "twitter"
     ],
@@ -1514,8 +1525,12 @@
    "used_in": {
     "dat-giap-suoi-nam-ban.html": [
      "og",
+     "ref",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -1683,6 +1698,7 @@
    "used_in": {
     "dat-trung-tam-nam-ban.html": [
      "og",
+     "ref",
      "schema",
      "twitter"
     ],
@@ -1926,8 +1942,12 @@
    "used_in": {
     "do-cao-nam-ban.html": [
      "og",
+     "ref",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -2039,7 +2059,11 @@
    ],
    "used_in": {
     "do-cao-nam-ban.html": [
-     "display"
+     "display",
+     "ref"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -2940,6 +2964,7 @@
     ],
     "mot-ngay-lam-vuon-nam-ban.html": [
      "og",
+     "ref",
      "schema",
      "twitter"
     ],
@@ -4460,7 +4485,11 @@
    ],
    "used_in": {
     "dat-trung-tam-nam-ban.html": [
-     "display"
+     "display",
+     "ref"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -5749,12 +5778,26 @@
    ],
    "used_in": {
     "dat-giap-suoi-nam-ban.html": [
-     "display"
+     "display",
+     "ref"
     ],
     "xay-nha-giap-suoi-nam-ban.html": [
-     "display"
+     "display",
+     "ref"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
+  },
+  "suong-mu-vuon-doi-21-9-2026.webp": {
+   "kb": 236,
+   "dims": [
+    1600,
+    870
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "suong-nam-ban.jpg": {
    "kb": 295,
@@ -6377,7 +6420,11 @@
    ],
    "used_in": {
     "xa-nam-ban-lam-ha.html": [
-     "display"
+     "display",
+     "ref"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -6389,7 +6436,11 @@
    ],
    "used_in": {
     "ram-vu-lan-nam-ban.html": [
-     "display"
+     "display",
+     "ref"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -6585,6 +6636,7 @@
    "used_in": {
     "xa-nam-ban-lam-ha.html": [
      "og",
+     "ref",
      "schema",
      "twitter"
     ],
@@ -6645,8 +6697,12 @@
    "used_in": {
     "xay-nha-giap-suoi-nam-ban.html": [
      "og",
+     "ref",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
