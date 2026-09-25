@@ -45,7 +45,7 @@ for key, label, low in GROUPS:
     src = f'{cur[1]} tin rao' if cur[2] == "rao" else 'sổ thực địa Panorama†'
     if prev:
         d, w = trend(cur[0], prev[1][0]); sign = "+" if d > 0 else "−"
-        small = " <small>(mẫu nhỏ)</small>" if (cur[2] == "rao" and cur[1] < 20) or (prev[1][2] == "rao" and (prev[1][1] or 0) < 20) else ""
+        small = "&nbsp;<small>(mẫu nhỏ)</small>" if (cur[2] == "rao" and cur[1] < 20) or (prev[1][2] == "rao" and (prev[1][1] or 0) < 20) else ""
         cmp = f'So với tháng {month_vi(prev[0])} ({tr(prev[1][0])}): <b>{w}</b>&nbsp;{sign}{abs(d):.0f}&nbsp;%{small}'
         ans.append(f"{low.capitalize()} <strong>{tr(cur[0])} triệu/m²</strong> ({src}), so với tháng {month_vi(prev[0])} là {tr(prev[1][0])} — <strong>{w}</strong> ({sign}{abs(d):.0f}&nbsp;%).")
     else:
@@ -66,7 +66,7 @@ for m in reversed(months):
     rows.append(f'<tr><th scope="row"><time datetime="{m["month"]}">{month_vi(m["month"])}</time>{tag}</th>{tds}</tr>')
 first_shown = min(shown)
 table = f'''<figure class="idx-fig pm-selectable">
-<figcaption>Trung vị giá rao theo tháng, triệu đồng/m², xã Nam&nbsp;Ban Lâm&nbsp;Hà. Nguồn: Namban&nbsp;Index — tin rao công khai của 7 trang, gộp&nbsp;trùng, đo&nbsp;{m_on}.</figcaption>
+<figcaption>Trung vị giá rao theo tháng, triệu đồng/m², xã Nam&nbsp;Ban Lâm&nbsp;Hà. Nguồn: Namban&nbsp;Index — tin rao công khai của 7&nbsp;trang, gộp&nbsp;trùng, đo&nbsp;{m_on}.</figcaption>
 <div class="idx-tblwrap"><table class="idx-tbl">
 <thead><tr><th scope="col">Tháng</th>{"".join(f'<th scope="col" class="num">{lab}</th>' for _, lab, _ in GROUPS)}</tr></thead>
 <tbody>
