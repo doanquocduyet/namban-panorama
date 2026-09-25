@@ -160,7 +160,7 @@ a,button{touch-action:manipulation;}
   "headline": "Giá đất Nam Ban 2026: bảng giá rao theo từng loại",
   "description": "Giá rao đất Nam Ban 2026 theo ba phân khúc: nông nghiệp diện tích lớn, tách thửa có thổ cư, lô view hồ. Kèm tín hiệu thị trường tháng 9 và dữ liệu mở.",
   "datePublished": "2026-06-01",
-  "dateModified": "2026-09-25T09:29:00+07:00",
+  "dateModified": "2026-09-25T09:37:00+07:00",
   "author": {
     "@type": "Person",
     "@id": "https://nambanpanorama.com/#founder",
@@ -399,8 +399,11 @@ h3.idx-sub{font-family:'Fraunces',serif;font-weight:400;font-size:19px;margin:28
 .tldr strong,.idx-cite .nw{white-space:nowrap}
 /* IDX-GEN:START */
 .idx-answer{font-size:16.5px;line-height:1.7;margin:0 0 14px;text-wrap:pretty}
-.idx-now .price-cell{padding:22px 20px 18px}
-.idx-now .price-range{font-size:30px}
+.idx-now{grid-template-columns:repeat(4,1fr)}
+.idx-now .price-cell{padding:22px 18px 16px}
+@media(max-width:900px){.idx-now{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.idx-now{grid-template-columns:1fr}}
+.idx-now .price-range{font-size:28px}
 .idx-unit{font-family:'Be Vietnam Pro',sans-serif;font-size:13px;color:var(--muted);letter-spacing:.2px}
 .idx-now .price-desc b{font-weight:500;color:var(--ink)}
 .idx-now .price-desc small{font-size:11.5px;color:var(--stone-text,#726a5c)}
@@ -581,16 +584,16 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <!-- IDX-HIST:START (sinh bởi tools/gen-index-history.py — đừng sửa tay) -->
 <div class="idx-section-label">02 — Diễn biến</div>
 <h2 class="idx-section-title">Giá đất Nam Ban đang tăng hay giảm?</h2>
-<p class="idx-answer">Tháng 9/2026 (đo tới 25/9/2026): Đất nền tách thửa 150–300 m² <strong>3,67 triệu/m²</strong> (19 tin rao), so với tháng 6/2026 là 3,73 — <strong>đi ngang</strong> (−1&nbsp;%). Đất trên 1.000 m² <strong>1,38 triệu/m²</strong> (32 tin rao), so với tháng 7/2026 là 0,54 — <strong>khác hẳn</strong> (+154&nbsp;%). Lô có view hồ, đồi, toàn cảnh <strong>3,16 triệu/m²</strong> (13 tin rao), so với tháng 6/2026 là 2,98 — <strong>nhích lên</strong> (+6&nbsp;%). Đây là giá rao trung vị, chưa phải giá đã&nbsp;chốt.</p>
-<div class="price-grid idx-now"><div class="price-cell"><div class="price-tier">Đất nền tách thửa 150–300&nbsp;m²</div><div class="price-range">3,67 <span class="idx-unit">tr/m²</span></div><div class="price-unit">Tháng 9/2026 · 19 tin rao</div><div class="price-desc">So với tháng 6/2026 (3,73): <b>đi ngang</b>&nbsp;−1&nbsp;%&nbsp;<small>(mẫu nhỏ)</small></div></div><div class="price-cell"><div class="price-tier">Đất trên 1.000&nbsp;m²</div><div class="price-range">1,38 <span class="idx-unit">tr/m²</span></div><div class="price-unit">Tháng 9/2026 · 32 tin rao</div><div class="price-desc">So với tháng 7/2026 (0,54): <b>khác hẳn</b>&nbsp;+154&nbsp;%&nbsp;<small>(mẫu khác nhau, so tham khảo)</small></div></div><div class="price-cell"><div class="price-tier">Lô có view hồ, đồi, toàn cảnh</div><div class="price-range">3,16 <span class="idx-unit">tr/m²</span></div><div class="price-unit">Tháng 9/2026 · 13 tin rao</div><div class="price-desc">So với tháng 6/2026 (2,98): <b>nhích lên</b>&nbsp;+6&nbsp;%&nbsp;<small>(mẫu nhỏ)</small></div></div></div>
+<p class="idx-answer">Tháng 9/2026 (đo tới 25/9/2026): Đất nền tách thửa 150–300 m² <strong>3,67 triệu/m²</strong> (19 tin rao), so với tháng 6/2026 là 3,73 — <strong>đi&nbsp;ngang</strong> (−1&nbsp;%). Lô khoảng 500 m² có thổ cư <strong>2,24 triệu/m²</strong> (39 tin rao), so với tháng 7/2026 là 3,16 — <strong>giảm</strong> (−29&nbsp;%). Đất trên 1.000 m² <strong>1,38 triệu/m²</strong> (32 tin rao), so với tháng 7/2026 là 0,54 — <strong>khác&nbsp;hẳn</strong> (+154&nbsp;%). Lô có view hồ, đồi, toàn cảnh <strong>3,16 triệu/m²</strong> (13 tin rao), so với tháng 6/2026 là 2,98 — <strong>nhích&nbsp;lên</strong> (+6&nbsp;%). Đây là giá rao trung vị, chưa phải giá đã&nbsp;chốt.</p>
+<div class="price-grid idx-now"><div class="price-cell"><div class="price-tier">Đất nền tách thửa 150–300&nbsp;m²</div><div class="price-range">3,67 <span class="idx-unit">tr/m²</span></div><div class="price-unit">Tháng 9/2026 · 19 tin rao</div><div class="price-desc">So với tháng 6/2026 (3,73): <b>đi&nbsp;ngang</b>&nbsp;−1&nbsp;%&nbsp;<small>(mẫu&nbsp;nhỏ)</small></div><div class="price-total">Nền nhỏ trong khu đã tách, có thổ cư, xây được ngay.</div></div><div class="price-cell"><div class="price-tier">Lô khoảng 500&nbsp;m² có thổ cư</div><div class="price-range">2,24 <span class="idx-unit">tr/m²</span></div><div class="price-unit">Tháng 9/2026 · 39 tin rao</div><div class="price-desc">So với tháng 7/2026 (3,16): <b>giảm</b>&nbsp;−29&nbsp;%&nbsp;<small>(mẫu&nbsp;nhỏ)</small></div><div class="price-total">Ngang 10–18&nbsp;m, tách từ thời luật chưa cho tách nhỏ; ít hàng, giao dịch tốt.</div></div><div class="price-cell"><div class="price-tier">Đất trên 1.000&nbsp;m²</div><div class="price-range">1,38 <span class="idx-unit">tr/m²</span></div><div class="price-unit">Tháng 9/2026 · 32 tin rao</div><div class="price-desc">So với tháng 7/2026 (0,54): <b>khác&nbsp;hẳn</b>&nbsp;+154&nbsp;%&nbsp;<small>(mẫu khác nhau, so&nbsp;tham&nbsp;khảo)</small></div><div class="price-total">Phần nhiều là nông nghiệp tách ra từ rẫy, chưa đủ điều kiện tách nhỏ.</div></div><div class="price-cell"><div class="price-tier">Lô có view hồ, đồi, toàn cảnh</div><div class="price-range">3,16 <span class="idx-unit">tr/m²</span></div><div class="price-unit">Tháng 9/2026 · 13 tin rao</div><div class="price-desc">So với tháng 6/2026 (2,98): <b>nhích&nbsp;lên</b>&nbsp;+6&nbsp;%&nbsp;<small>(mẫu&nbsp;nhỏ)</small></div><div class="price-total">Nhìn ra hồ, đồi hoặc toàn cảnh thị trấn; hiếm, giá theo tầm nhìn.</div></div></div>
 <figure class="idx-fig pm-selectable">
 <figcaption>Trung vị giá rao theo tháng, triệu đồng/m², xã Nam&nbsp;Ban Lâm&nbsp;Hà. Nguồn: Namban&nbsp;Index — tin rao công khai của 7&nbsp;trang, gộp&nbsp;trùng, đo&nbsp;25/9/2026.</figcaption>
 <div class="idx-tblwrap"><table class="idx-tbl">
-<thead><tr><th scope="col">Tháng</th><th scope="col" class="num">Đất nền tách thửa 150–300&nbsp;m²</th><th scope="col" class="num">Đất trên 1.000&nbsp;m²</th><th scope="col" class="num">Lô có view hồ, đồi, toàn cảnh</th></tr></thead>
+<thead><tr><th scope="col">Tháng</th><th scope="col" class="num">Đất nền tách thửa 150–300&nbsp;m²</th><th scope="col" class="num">Lô khoảng 500&nbsp;m² có thổ cư</th><th scope="col" class="num">Đất trên 1.000&nbsp;m²</th><th scope="col" class="num">Lô có view hồ, đồi, toàn cảnh</th></tr></thead>
 <tbody>
-<tr><th scope="row"><time datetime="2026-09">9/2026</time> <sup class="idx-tmp" title="tháng đang diễn ra, số tới ngày đo">tạm</sup></th><td class="num"><b>3,67</b><small>19 tin</small></td><td class="num"><b>1,38</b><small>32 tin</small></td><td class="num"><b>3,16</b><small>13 tin</small></td></tr>
-<tr><th scope="row"><time datetime="2026-07">7/2026</time></th><td class="num dash">—</td><td class="num"><b>0,54</b><small>23 tin</small></td><td class="num dash">—</td></tr>
-<tr><th scope="row"><time datetime="2026-06">6/2026</time></th><td class="num"><b>3,73</b><small>41 tin</small></td><td class="num"><b>0,99</b><small>13 tin</small></td><td class="num"><b>2,98</b><small>30 tin</small></td></tr>
+<tr><th scope="row"><time datetime="2026-09">9/2026</time> <sup class="idx-tmp" title="tháng đang diễn ra, số tới ngày đo">tạm</sup></th><td class="num"><b>3,67</b><small>19 tin</small></td><td class="num"><b>2,24</b><small>39 tin</small></td><td class="num"><b>1,38</b><small>32 tin</small></td><td class="num"><b>3,16</b><small>13 tin</small></td></tr>
+<tr><th scope="row"><time datetime="2026-07">7/2026</time></th><td class="num dash">—</td><td class="num"><b>3,16</b><small>12 tin</small></td><td class="num"><b>0,54</b><small>23 tin</small></td><td class="num dash">—</td></tr>
+<tr><th scope="row"><time datetime="2026-06">6/2026</time></th><td class="num"><b>3,73</b><small>41 tin</small></td><td class="num"><b>2,76</b><small>22 tin</small></td><td class="num"><b>0,99</b><small>13 tin</small></td><td class="num"><b>2,98</b><small>30 tin</small></td></tr>
 </tbody></table></div>
 </figure>
 <p class="idx-note">"—": tháng đó nhóm chưa đủ 10 tin rao, không tính. † Số từ sổ giao dịch thực địa của Panorama, dùng cho tháng tin rao chưa đủ. Bảng nối dài về trước khi có số thực địa; từ tháng 10/2026 mỗi tuần thêm một lần&nbsp;đo.</p>

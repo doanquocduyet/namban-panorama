@@ -41,6 +41,7 @@ for r in good:
 def q(xs, p):
     xs = sorted(xs); k = (len(xs) - 1) * p; lo = int(k); hi = min(lo + 1, len(xs) - 1); return xs[lo] + (xs[hi] - xs[lo]) * (k - lo)
 G = [("tach_thua_150_300", "Đất nền tách thửa 150–300 m²", lambda r: 150 <= r["_a"] <= 300 and r["loai"] != "nhà / biệt thự"),
+     ("lo_500_tho_cu", "Lô khoảng 500 m² có thổ cư", lambda r: 350 <= r["_a"] <= 700 and r["loai"] != "nhà / biệt thự"),
      ("dat_tren_1000", "Đất trên 1.000 m²", lambda r: r["_a"] > 1000 and r["loai"] != "nhà / biệt thự"),
      ("view", "Lô có view hồ, đồi, toàn cảnh", lambda r: r["view"] == "view"),
      ("nha", "Nhà / biệt thự (m² đất)", lambda r: r["loai"] == "nhà / biệt thự")]

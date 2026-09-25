@@ -12,6 +12,7 @@ ED = json.load(open("data/index/editorial.json", encoding="utf-8")) if os.path.e
 MIN_N = D["meta"].get("min_n", 10)
 NOW = dt.datetime.now(dt.timezone(dt.timedelta(hours=7)))
 GROUPS = [("tach_thua_150_300", "Đất nền tách thửa 150–300&nbsp;m²", "đất nền tách thửa 150–300 m²"),
+          ("lo_500_tho_cu", "Lô khoảng 500&nbsp;m² có thổ cư", "lô khoảng 500 m² có thổ cư"),
           ("dat_tren_1000", "Đất trên 1.000&nbsp;m²", "đất trên 1.000 m²"),
           ("view", "Lô có view hồ, đồi, toàn cảnh", "lô có view hồ, đồi, toàn cảnh")]
 
@@ -26,7 +27,7 @@ def val(m, key):
     return None
 def trend(cur, prev):
     d = (cur - prev) / prev * 100
-    w = "đi ngang" if abs(d) < 3 else ("nhích lên" if 3 <= d <= 8 else "nhích xuống" if -8 <= d <= -3 else ("tăng" if 8 < d <= 40 else "giảm" if -40 <= d < -8 else "khác hẳn"))
+    w = "đi&nbsp;ngang" if abs(d) < 3 else ("nhích&nbsp;lên" if 3 <= d <= 8 else "nhích&nbsp;xuống" if -8 <= d <= -3 else ("tăng" if 8 < d <= 40 else "giảm" if -40 <= d < -8 else "khác&nbsp;hẳn"))
     return d, w
 
 months = D["monthly"]; last = months[-1]; base = D["baseline"]
@@ -45,13 +46,17 @@ for key, label, low in GROUPS:
     src = f'{cur[1]} tin rao' if cur[2] == "rao" else 'sổ thực địa Panorama†'
     if prev:
         d, w = trend(cur[0], prev[1][0]); sign = "+" if d > 0 else "−"
-        small = "&nbsp;<small>(mẫu khác nhau, so tham khảo)</small>" if w == "khác hẳn" else ("&nbsp;<small>(mẫu nhỏ)</small>" if (cur[2] == "rao" and cur[1] < 20) or (prev[1][2] == "rao" and (prev[1][1] or 0) < 20) else "")
+        small = "&nbsp;<small>(mẫu khác nhau, so&nbsp;tham&nbsp;khảo)</small>" if w == "khác&nbsp;hẳn" else ("&nbsp;<small>(mẫu&nbsp;nhỏ)</small>" if (cur[2] == "rao" and cur[1] < 20) or (prev[1][2] == "rao" and (prev[1][1] or 0) < 20) else "")
         cmp = f'So với tháng {month_vi(prev[0])} ({tr(prev[1][0])}): <b>{w}</b>&nbsp;{sign}{abs(d):.0f}&nbsp;%{small}'
         ans.append(f"{low.capitalize()} <strong>{tr(cur[0])} triệu/m²</strong> ({src}), so với tháng {month_vi(prev[0])} là {tr(prev[1][0])} — <strong>{w}</strong> ({sign}{abs(d):.0f}&nbsp;%).")
     else:
         cmp = "Chưa có tháng trước để so"
         ans.append(f"{low.capitalize()} <strong>{tr(cur[0])} triệu/m²</strong> ({src}).")
-    cells.append(f'<div class="price-cell"><div class="price-tier">{label}</div>{big}<div class="price-unit">Tháng {last_m} · {src}</div><div class="price-desc">{cmp}</div></div>')
+    NOTE = {"tach_thua_150_300": "Nền nhỏ trong khu đã tách, có thổ cư, xây được ngay.",
+            "lo_500_tho_cu": "Ngang 10–18&nbsp;m, tách từ thời luật chưa cho tách nhỏ; ít hàng, giao dịch tốt.",
+            "dat_tren_1000": "Phần nhiều là nông nghiệp tách ra từ rẫy, chưa đủ điều kiện tách nhỏ.",
+            "view": "Nhìn ra hồ, đồi hoặc toàn cảnh thị trấn; hiếm, giá theo tầm nhìn."}
+    cells.append(f'<div class="price-cell"><div class="price-tier">{label}</div>{big}<div class="price-unit">Tháng {last_m} · {src}</div><div class="price-desc">{cmp}</div><div class="price-total">{NOTE[key]}</div></div>')
     live[key] = f'Trung vị tin rao {last_m}: <b>{tr(cur[0])} tr/m²</b> ({src})'
 answer = f"Tháng {last_m} (đo tới {m_on}): " + " ".join(ans) + " Đây là giá rao trung vị, chưa phải giá đã&nbsp;chốt."
 
@@ -101,8 +106,11 @@ def _add(m):
 s = re.sub(r'<div class="price-total">[^<]*</div>', _add, s, count=3)
 
 CSS = """.idx-answer{font-size:16.5px;line-height:1.7;margin:0 0 14px;text-wrap:pretty}
-.idx-now .price-cell{padding:22px 20px 18px}
-.idx-now .price-range{font-size:30px}
+.idx-now{grid-template-columns:repeat(4,1fr)}
+.idx-now .price-cell{padding:22px 18px 16px}
+@media(max-width:900px){.idx-now{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.idx-now{grid-template-columns:1fr}}
+.idx-now .price-range{font-size:28px}
 .idx-unit{font-family:'Be Vietnam Pro',sans-serif;font-size:13px;color:var(--muted);letter-spacing:.2px}
 .idx-now .price-desc b{font-weight:500;color:var(--ink)}
 .idx-now .price-desc small{font-size:11.5px;color:var(--stone-text,#726a5c)}

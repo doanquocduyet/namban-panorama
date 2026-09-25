@@ -9,7 +9,7 @@
   "area": "Xã Nam Ban Lâm Hà, Lâm Đồng (thị trấn Nam Ban cũ, Đông Thanh, Mê Linh, Gia Lâm — từ 1/7/2025)",
   "method": "Tin rao công khai trên guland.vn, batdongsanonline.vn, datnenlamdong.com.vn, thuviennhadat.vn, muaban.net, mogi.vn, nambanvillas.vn; kiểm robots.txt và điều khoản từng nguồn; lọc đúng xã; loại tin thiếu giá hoặc diện tích; khử trùng theo khu + diện tích ±2% + giá ±3%; trung vị chỉ tính khi nhóm có từ 10 tin. \"posted\" = xếp theo ngày đăng ghi trên trang nguồn; \"refreshed_guland\" = tin Guland xếp theo ngày cập nhật (không phải ngày đăng). Giá rao, chưa phải giá đã chốt. Không lưu tựa, mô tả, ảnh, số điện thoại, tên người đăng.",
   "min_n": 10,
-  "generated_at": "2026-09-25T09:27+07:00",
+  "generated_at": "2026-09-25T09:36+07:00",
   "measured_on": "2026-09-25"
  },
  "baseline": {
@@ -23,6 +23,13 @@
     "median_vnd_m2": 3493589,
     "p10_vnd_m2": 2529272,
     "p90_vnd_m2": 4836515
+   },
+   "lo_500_tho_cu": {
+    "label": "Lô khoảng 500 m² có thổ cư",
+    "n": 158,
+    "median_vnd_m2": 2278329,
+    "p10_vnd_m2": 1420317,
+    "p90_vnd_m2": 3975481
    },
    "dat_tren_1000": {
     "label": "Đất trên 1.000 m²",
@@ -92,6 +99,13 @@
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
      },
+     "lo_500_tho_cu": {
+      "label": "Lô khoảng 500 m² có thổ cư",
+      "n": 2,
+      "median_vnd_m2": null,
+      "p10_vnd_m2": null,
+      "p90_vnd_m2": null
+     },
      "dat_tren_1000": {
       "label": "Đất trên 1.000 m²",
       "n": 1,
@@ -152,6 +166,13 @@
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
      },
+     "lo_500_tho_cu": {
+      "label": "Lô khoảng 500 m² có thổ cư",
+      "n": 2,
+      "median_vnd_m2": null,
+      "p10_vnd_m2": null,
+      "p90_vnd_m2": null
+     },
      "dat_tren_1000": {
       "label": "Đất trên 1.000 m²",
       "n": 1,
@@ -207,6 +228,13 @@
     "groups": {
      "tach_thua_150_300": {
       "label": "Đất nền tách thửa 150–300 m²",
+      "n": 0,
+      "median_vnd_m2": null,
+      "p10_vnd_m2": null,
+      "p90_vnd_m2": null
+     },
+     "lo_500_tho_cu": {
+      "label": "Lô khoảng 500 m² có thổ cư",
       "n": 0,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
@@ -273,6 +301,13 @@
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
      },
+     "lo_500_tho_cu": {
+      "label": "Lô khoảng 500 m² có thổ cư",
+      "n": 0,
+      "median_vnd_m2": null,
+      "p10_vnd_m2": null,
+      "p90_vnd_m2": null
+     },
      "dat_tren_1000": {
       "label": "Đất trên 1.000 m²",
       "n": 2,
@@ -333,6 +368,13 @@
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
      },
+     "lo_500_tho_cu": {
+      "label": "Lô khoảng 500 m² có thổ cư",
+      "n": 0,
+      "median_vnd_m2": null,
+      "p10_vnd_m2": null,
+      "p90_vnd_m2": null
+     },
      "dat_tren_1000": {
       "label": "Đất trên 1.000 m²",
       "n": 1,
@@ -388,6 +430,13 @@
      "tach_thua_150_300": {
       "label": "Đất nền tách thửa 150–300 m²",
       "n": 1,
+      "median_vnd_m2": null,
+      "p10_vnd_m2": null,
+      "p90_vnd_m2": null
+     },
+     "lo_500_tho_cu": {
+      "label": "Lô khoảng 500 m² có thổ cư",
+      "n": 0,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
@@ -455,6 +504,13 @@
       "p10_vnd_m2": 2750000,
       "p90_vnd_m2": 4651162
      },
+     "lo_500_tho_cu": {
+      "label": "Lô khoảng 500 m² có thổ cư",
+      "n": 22,
+      "median_vnd_m2": 2763972,
+      "p10_vnd_m2": 2064709,
+      "p90_vnd_m2": 3869051
+     },
      "dat_tren_1000": {
       "label": "Đất trên 1.000 m²",
       "n": 13,
@@ -511,6 +567,13 @@
     "groups": {
      "tach_thua_150_300": {
       "label": "Đất nền tách thửa 150–300 m²",
+      "n": 0,
+      "median_vnd_m2": null,
+      "p10_vnd_m2": null,
+      "p90_vnd_m2": null
+     },
+     "lo_500_tho_cu": {
+      "label": "Lô khoảng 500 m² có thổ cư",
       "n": 0,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
@@ -576,6 +639,13 @@
       "p10_vnd_m2": 2750000,
       "p90_vnd_m2": 4651162
      },
+     "lo_500_tho_cu": {
+      "label": "Lô khoảng 500 m² có thổ cư",
+      "n": 22,
+      "median_vnd_m2": 2763972,
+      "p10_vnd_m2": 2064709,
+      "p90_vnd_m2": 3869051
+     },
      "dat_tren_1000": {
       "label": "Đất trên 1.000 m²",
       "n": 11,
@@ -639,6 +709,13 @@
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
      },
+     "lo_500_tho_cu": {
+      "label": "Lô khoảng 500 m² có thổ cư",
+      "n": 12,
+      "median_vnd_m2": 3156137,
+      "p10_vnd_m2": 1831157,
+      "p90_vnd_m2": 4528409
+     },
      "dat_tren_1000": {
       "label": "Đất trên 1.000 m²",
       "n": 23,
@@ -697,6 +774,13 @@
      "tach_thua_150_300": {
       "label": "Đất nền tách thửa 150–300 m²",
       "n": 2,
+      "median_vnd_m2": null,
+      "p10_vnd_m2": null,
+      "p90_vnd_m2": null
+     },
+     "lo_500_tho_cu": {
+      "label": "Lô khoảng 500 m² có thổ cư",
+      "n": 1,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
@@ -762,6 +846,13 @@
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
      },
+     "lo_500_tho_cu": {
+      "label": "Lô khoảng 500 m² có thổ cư",
+      "n": 11,
+      "median_vnd_m2": 3457943,
+      "p10_vnd_m2": 1828153,
+      "p90_vnd_m2": 4545454
+     },
      "dat_tren_1000": {
       "label": "Đất trên 1.000 m²",
       "n": 21,
@@ -821,6 +912,13 @@
      "tach_thua_150_300": {
       "label": "Đất nền tách thửa 150–300 m²",
       "n": 8,
+      "median_vnd_m2": null,
+      "p10_vnd_m2": null,
+      "p90_vnd_m2": null
+     },
+     "lo_500_tho_cu": {
+      "label": "Lô khoảng 500 m² có thổ cư",
+      "n": 6,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
@@ -887,6 +985,13 @@
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
      },
+     "lo_500_tho_cu": {
+      "label": "Lô khoảng 500 m² có thổ cư",
+      "n": 0,
+      "median_vnd_m2": null,
+      "p10_vnd_m2": null,
+      "p90_vnd_m2": null
+     },
      "dat_tren_1000": {
       "label": "Đất trên 1.000 m²",
       "n": 1,
@@ -944,6 +1049,13 @@
      "tach_thua_150_300": {
       "label": "Đất nền tách thửa 150–300 m²",
       "n": 5,
+      "median_vnd_m2": null,
+      "p10_vnd_m2": null,
+      "p90_vnd_m2": null
+     },
+     "lo_500_tho_cu": {
+      "label": "Lô khoảng 500 m² có thổ cư",
+      "n": 6,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
@@ -1011,6 +1123,13 @@
       "p10_vnd_m2": 2416312,
       "p90_vnd_m2": 13111111
      },
+     "lo_500_tho_cu": {
+      "label": "Lô khoảng 500 m² có thổ cư",
+      "n": 39,
+      "median_vnd_m2": 2241379,
+      "p10_vnd_m2": 1224808,
+      "p90_vnd_m2": 4278451
+     },
      "dat_tren_1000": {
       "label": "Đất trên 1.000 m²",
       "n": 32,
@@ -1069,6 +1188,13 @@
      "tach_thua_150_300": {
       "label": "Đất nền tách thửa 150–300 m²",
       "n": 2,
+      "median_vnd_m2": null,
+      "p10_vnd_m2": null,
+      "p90_vnd_m2": null
+     },
+     "lo_500_tho_cu": {
+      "label": "Lô khoảng 500 m² có thổ cư",
+      "n": 4,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
@@ -1133,6 +1259,13 @@
       "median_vnd_m2": 4059040,
       "p10_vnd_m2": 2938541,
       "p90_vnd_m2": 17333333
+     },
+     "lo_500_tho_cu": {
+      "label": "Lô khoảng 500 m² có thổ cư",
+      "n": 35,
+      "median_vnd_m2": 2089093,
+      "p10_vnd_m2": 1219881,
+      "p90_vnd_m2": 3659699
      },
      "dat_tren_1000": {
       "label": "Đất trên 1.000 m²",
@@ -1200,6 +1333,13 @@
       "median_vnd_m2": 3493589,
       "p10_vnd_m2": 2529272,
       "p90_vnd_m2": 4836515
+     },
+     "lo_500_tho_cu": {
+      "label": "Lô khoảng 500 m² có thổ cư",
+      "n": 158,
+      "median_vnd_m2": 2278329,
+      "p10_vnd_m2": 1420317,
+      "p90_vnd_m2": 3975481
      },
      "dat_tren_1000": {
       "label": "Đất trên 1.000 m²",
