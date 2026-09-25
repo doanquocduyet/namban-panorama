@@ -50,7 +50,7 @@ for m in reversed(months):
     tag = ' <sup class="idx-tmp" title="tháng đang diễn ra, số tới ngày đo">tạm</sup>' if m["status"] == "partial" else ""
     rcell = cell(r["groups"]["dat_duoi_2000"]) if r["n"] else '<td class="num">—</td>'
     pcell = cell(p["groups"]["dat_duoi_2000"]) if p["n"] else '<td class="num">—</td>'
-    rows.append(f'<tr><th scope="row"><time datetime="{m["month"]}">{month_vi(m["month"])}</time>{tag}<small>{p["n"]} tin đăng · {r["n"]} tin làm mới</small></th>{pcell}{rcell}</tr>')
+    rows.append(f'<tr><th scope="row"><time datetime="{m["month"]}">{month_vi(m["month"])}</time>{tag}<small>{p["n"]} đăng · {r["n"]} làm&nbsp;mới</small></th>{pcell}{rcell}</tr>')
 rows.append(f'<tr class="base"><th scope="row">Mốc nền {m_on}<small>{base["n"]} tin đang treo</small></th>{cell(bg["dat_duoi_2000"])}<td class="num">—</td></tr>')
 table = f'''<figure class="idx-fig pm-selectable">
 <figcaption>Trung vị giá rao đất dưới 2.000&nbsp;m² ở xã Nam&nbsp;Ban Lâm&nbsp;Hà theo tháng, triệu đồng/m². Nhóm dưới {MIN_N} tin ghi "ít dữ liệu", không nội suy. Nguồn: Namban&nbsp;Index, đo&nbsp;{m_on}.</figcaption>
@@ -124,7 +124,7 @@ CSS = """.idx-answer{font-size:16.5px;line-height:1.7;margin:0 0 14px;text-wrap:
 .idx-note{font-size:14.5px;color:var(--muted);line-height:1.65;margin:10px 0 0;text-wrap:pretty}
 .idx-note a,.idx-dl a{color:var(--forest);text-decoration:none;border-bottom:1px solid var(--line)}
 .idx-dl{font-size:13.5px;color:var(--muted);margin:10px 0 4px}
-@media(max-width:600px){.idx-tbl{font-size:13px}.idx-tbl tbody th{white-space:normal}.idx-tbl td.low{white-space:normal}.idx-tbl th,.idx-tbl td{padding:8px 7px}.idx-tbl td small{font-size:11px}.idx-tbl thead th{font-size:10.5px;letter-spacing:.05em}.idx-tbl td b{font-size:15px}.idx-answer{font-size:15.5px}}
+@media(max-width:600px){.idx-tbl{font-size:13px}.idx-tbl tbody th{white-space:normal}.idx-tbl td.low{white-space:normal}.idx-tbl tbody th{min-width:96px}.idx-tbl th,.idx-tbl td{padding:8px 7px}.idx-tbl td small{font-size:11px}.idx-tbl thead th{font-size:10.5px;letter-spacing:.05em}.idx-tbl td b{font-size:15px}.idx-answer{font-size:15.5px}}
 """
 if ".idx-tblwrap{" not in s:
     s = s.replace("</style>\n", CSS + "</style>\n", 1) if '<style id="idx-v2">' not in s else s.replace('<style id="idx-v2">\n', '<style id="idx-v2">\n' + CSS, 1)
