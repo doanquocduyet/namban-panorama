@@ -1,4 +1,5 @@
 __pycache__/
 
 data/.pending-mark.json
+# dòng thô của bộ đo giá rao (chỉ số liệu tổng hợp mới vào repo)
 survey/out/
