@@ -4551,8 +4551,8 @@
     ]
    }
   },
-  "namban-index-gia-dat.jpg": {
-   "kb": 102,
+  "namban-index.jpg": {
+   "kb": 135,
    "dims": [
     1200,
     630
@@ -4563,9 +4563,6 @@
      "ref",
      "schema",
      "twitter"
-    ],
-    "image-sitemap.xml": [
-     "ref"
     ]
    }
   },

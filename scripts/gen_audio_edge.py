@@ -92,6 +92,7 @@ def article_files():
     out=[]
     for f in fs:
         h=open(f,encoding='utf-8').read()
+        if 'name="pm-audio" content="none"' in h: continue   # trang cố ý không có audio (Index: bảng số)
         if 'class="art-body"' in h or 'class="idx-body"' in h or '<article' in h: out.append(f)
     return sorted(out)
 

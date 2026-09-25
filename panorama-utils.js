@@ -242,6 +242,8 @@
     var body=document.querySelector('.art-body')||document.querySelector('article')||document.querySelector('.idx-body');
     if(!body)return;
     if(document.getElementById('pm-audio'))return;
+    var optout=document.querySelector('meta[name="pm-audio"]');
+    if(optout&&optout.getAttribute('content')==='none')return;   /* trang cố ý không có nghe bài (vd Index: bảng số, đọc lên vô nghĩa) */
 
     var lang=(document.documentElement.getAttribute('lang')||'vi').slice(0,2).toLowerCase();
     if(lang!=='vi')return;                                     /* bài ngoại ngữ không cần voice */

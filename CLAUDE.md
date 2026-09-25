@@ -297,6 +297,13 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
 - **Nguồn ghi "7 trang"** = danh sách quét trong `meta.method`, không đếm theo tháng có tin (mogi
   tháng 9 = 0 tin nhưng vẫn là nguồn). Có `nambanvillas.vn` (web cùng chủ) trong danh sách — đã khử
   trùng với 6 nguồn còn lại; chưa ghi chú xung đột lợi ích trên trang, cân nhắc sau.
+- **Index KHÔNG có nghe bài (Chú chốt 25/9/2026: "trang này index thì không cần có file đọc").**
+  Trang có `<meta name="pm-audio" content="none">` → `panorama-utils.js` không chèn nút, và
+  `scripts/gen_audio_edge.py` bỏ qua file (cả `audio-auto` lẫn `generate-audio-free`). MP3 cũ đã xóa.
+  Đừng dispatch audio cho slug này; đừng đổi meta về đường dẫn mp3. Cơ chế `content="none"` dùng
+  được cho mọi trang bảng số sau này.
+- **og:image của Index = ảnh Chú thiết kế** (`/images/namban-index.jpg`, 1200×630, có chữ trên hình —
+  ngoại lệ Chú cấp 25/9/2026 cho riêng trang này, không áp cho bài thường). Ảnh cũ `namban-index-gia-dat.jpg` đã xóa.
 - Giọng: thân bài "chúng tôi"; "tôi" chỉ trong khối trích có nút chép (`#khong-phai-da-lat-gia-re`)
   và hộp ký tên founder (`.idx-voice`). Câu dẫn Chú viết ("Giá rao bán là thứ dễ nhìn thấy nhất…")
   nằm ở mục 03, không ở header.
