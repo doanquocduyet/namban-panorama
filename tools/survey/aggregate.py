@@ -97,8 +97,14 @@ for r in kept:
     (upd if r["ngay_uoc"] else real)[m].append(r); allm[m].append(r)
 cur = TODAY.strftime("%Y-%m")
 months = {m["month"]: m for m in D["monthly"]}
+# Tin cũ bị sàn gỡ sau 2–3 tháng (kinh nghiệm Villas 25/9/2026) → tháng đã qua CHỈ được ghi đè khi mẫu mới
+# không nhỏ hơn mẫu đã lưu; nếu không, tháng 6 sẽ tụt dần về "dưới 10 tin" khi tin của nó biến mất khỏi mạng.
 for m in sorted(set(allm) | {cur}):
-    months[m] = {"month": m, "status": "partial" if m == cur else "closed", "ghi_nhan": grp(allm.get(m, [])), "posted": grp(real.get(m, [])), "refreshed_guland": grp(upd.get(m, []))}
+    new = {"month": m, "status": "partial" if m == cur else "closed", "ghi_nhan": grp(allm.get(m, [])), "posted": grp(real.get(m, [])), "refreshed_guland": grp(upd.get(m, []))}
+    old = months.get(m)
+    if m != cur and old and new["ghi_nhan"]["n"] < old["ghi_nhan"]["n"]:
+        old["status"] = "closed"; continue
+    months[m] = new
 D["monthly"] = [months[k] for k in sorted(months)]
 wk = {"week": ISO_WEEK, "measured_on": TODAY.isoformat(), "new_listings": len(new_rows), "snapshot": base}
 D["weekly"] = [w for w in prev_weeks if w["week"] != ISO_WEEK] + [wk]

@@ -3,7 +3,8 @@
   "trailingSlash": false,
   "git": {
     "deploymentEnabled": {
-      "claude/namban-panorama-setup-0oiyb1": false
+      "claude/namban-panorama-setup-0oiyb1": false,
+      "claude/*": false
     }
   },
   "headers": [

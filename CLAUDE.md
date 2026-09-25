@@ -335,6 +335,9 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   dùng nhóm này **chỉ cho bảng tháng**: không vào mốc nền/tuần (không biết tin còn treo), không tính "tin
   mới", gộp trùng với tin tự đo KHÔNG xét khu (tin tự đo giữ trước vì có URL). Tin Nam Hà bị loại (xã
   khác). Có luật dừng riêng: nguồn này về 0 tin mà lần trước có → không sinh lại trang (bảng tháng sẽ tụt).
+  **Tháng đã qua KHÔNG tụt mẫu (25/9/2026):** sàn gỡ tin sau 2–3 tháng (Chợ Tốt chỉ còn tin từ 27/8), nên
+  `aggregate.py` chỉ ghi đè một tháng đã qua khi mẫu mới ≥ mẫu đã lưu — không thì tháng 6 sẽ tự rơi về "dưới
+  10 tin". Tháng hiện tại vẫn tính lại mỗi lần. Bài học: tin phải được lưu lúc còn trên mạng, tìm lại sau là mất.
   Mục 03 tự in một câu nêu số tin và tháng bổ sung. Luật "ít hơn 15 tin mới" chỉ xét khi lần đo trước cách
   ≥6 ngày, để chạy lại trong tuần không bị chặn oan.
 - **Nguồn ghi "7 trang"** = danh sách quét trong `meta.method`, không đếm theo tháng có tin (mogi
@@ -488,6 +491,13 @@ Thêm bài mới: theo hệ A thì **nhớ nạp `nav.css`**.
   **đẩy 1 commit rỗng ép build** — `git commit --allow-empty -m "ép deploy" && git push origin main`.
   Vercel nhận commit mới → build lại → mọi thay đổi tồn đọng lên hết. Đây KHÔNG phải lỗi repo,
   đừng đi sửa code. (Hôm đó Chú test nhiều lần thấy "chưa sửa" thực ra là đang xem bản cũ do nhỡ deploy.)
+- **VERCEL CHỈ CHO 100 LƯỢT DEPLOY/NGÀY (kinh nghiệm Villas 25/9/2026 — Villas đã dùng hết).** Dấu hiệu:
+  đã lên `main` mà web vẫn bản cũ, status commit ghi `Deployment rate limited — retry in 24 hours`.
+  Panorama ngày 25/9 có 49 commit lên `main` (bot fb/social/audio/index cũng tính). Luật:
+  (1) `vercel.json` tắt deploy cho mọi nhánh `claude/*` (đã có) — đồng bộ nhánh trợ lý không tốn lượt;
+  (2) **gom nhiều sửa nhỏ vào một commit**, đừng đẩy lẻ từng chữ; (3) **chưa thấy `success` ở
+  `https://api.github.com/repos/doanquocduyet/namban-panorama/commits/<sha>/status` thì chưa được báo
+  "đã lên web"**; thấy `rate limited` thì báo Chú, không đẩy thêm commit rỗng (commit rỗng cũng tốn lượt).
 - **Nếu push bị `403` / "Resource not accessible by integration"**: GitHub App của Claude
   **chưa có quyền Contents: Write** trên repo (không liên quan public/private). Đây là việc
   Chú phải tự cấp — dán link + hướng dẫn từng bước, rồi chờ Chú xác nhận mới push lại.
