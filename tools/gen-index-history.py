@@ -177,15 +177,20 @@ hist = f'''<div class="idx-section-label">02 — Diễn biến</div>
 
 # ---- IDX-DATA: mục 03 ----
 n_src = 7  # danh sách nguồn quét (meta.method) — không đếm theo tháng có tin
+DIGEST = "nambanvillas.vn/tin-rao"
+dg_n = D["meta"].get("digest_n") or 0
+dg_m = [m["month"] for m in months if m["ghi_nhan"]["sources"].get(DIGEST)]
+dg_src = " + tin rao video tổng hợp" if dg_n else ""
+dg_p = (f' Bảng diễn biến tháng {month_vi(dg_m[0]).split("/")[0]}–{month_vi(dg_m[-1])} có thêm {dg_n} tin rao qua video môi giới và sàn do nambanvillas.vn tổng hợp, mỗi tin có ngày đăng và đã được mở lại nguồn gốc; chúng tôi bỏ tin ngoài xã Nam&nbsp;Ban, gộp trùng với tin tự đo, và không tính chúng vào số tin đang&nbsp;treo.' if dg_n and dg_m else "")
 data = f'''<dl class="idx-stats">
 <div><dt>Đơn vị</dt><dd>Triệu đồng/m², trung vị</dd></div>
 <div><dt>Loại giá</dt><dd>Giá rao, chưa phải giá chốt</dd></div>
-<div><dt>Nguồn</dt><dd>{n_src} trang rao công khai, gộp trùng</dd></div>
+<div><dt>Nguồn</dt><dd>{n_src} trang rao công khai{dg_src}, gộp trùng</dd></div>
 <div><dt>Ngưỡng</dt><dd>Từ {MIN_N} tin mỗi nhóm mỗi tháng</dd></div>
 <div><dt>Kỳ đo</dt><dd><time datetime="{base["measured_on"]}">{m_on}</time> · {base["n"]} tin đang treo</dd></div>
 <div><dt>Kỳ tới</dt><dd>Đầu tháng {nxt}</dd></div>
 </dl>
-<p class="idx-body-p">Chúng tôi không đăng lại từng tin, không đăng tựa hay số điện thoại người rao, chỉ đăng số tổng&nbsp;hợp.</p>'''
+<p class="idx-body-p">Chúng tôi không đăng lại từng tin, không đăng tựa hay số điện thoại người rao, chỉ đăng số tổng&nbsp;hợp.{dg_p}</p>'''
 
 # ---- IDX-CITE ----
 cite_nums = "; ".join(f'{LOW[k]} {tr(cur[k]["v"])}' for k, _, _ in GROUPS if k in cur)

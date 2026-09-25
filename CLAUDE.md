@@ -313,6 +313,15 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   Bảng diễn biến xếp **tháng mới nhất trước**, mỗi tháng một ô rộng bằng nhau, nên tháng hiện tại
   luôn ở cột đầu. Đổi bố cục thì đo lại bằng Playwright ở 390/768/1440/1920, không chỉ nhìn một khổ.
   Sau khi sửa trang Index, chạy `python3 tools/gen-llms-index-entry.py` để đồng bộ `llms-full.txt`.
+- **Nguồn thứ 8 — tin rao Villas tổng hợp (thêm 25/9/2026, Chú giao: "bên đó làm sâu và nhiều tin hơn",
+  "Villas đã đối chiếu nguồn gốc, đáng tin").** `crawl.py villasdigest` đọc
+  `nambanvillas.vn/thi-truong/tin-rao-dat-nam-ban-moi/` (video môi giới + sàn, mỗi tin có ngày, KHÔNG có link
+  gốc), nhãn nguồn `nambanvillas.vn/tin-rao` — khác `nambanvillas.vn` (lô Villas tự bán). `aggregate.py`
+  dùng nhóm này **chỉ cho bảng tháng**: không vào mốc nền/tuần (không biết tin còn treo), không tính "tin
+  mới", gộp trùng với tin tự đo KHÔNG xét khu (tin tự đo giữ trước vì có URL). Tin Nam Hà bị loại (xã
+  khác). Có luật dừng riêng: nguồn này về 0 tin mà lần trước có → không sinh lại trang (bảng tháng sẽ tụt).
+  Mục 03 tự in một câu nêu số tin và tháng bổ sung. Luật "ít hơn 15 tin mới" chỉ xét khi lần đo trước cách
+  ≥6 ngày, để chạy lại trong tuần không bị chặn oan.
 - **Nguồn ghi "7 trang"** = danh sách quét trong `meta.method`, không đếm theo tháng có tin (mogi
   tháng 9 = 0 tin nhưng vẫn là nguồn). Có `nambanvillas.vn` (web cùng chủ) trong danh sách — đã khử
   trùng với 6 nguồn còn lại; chưa ghi chú xung đột lợi ích trên trang, cân nhắc sau.

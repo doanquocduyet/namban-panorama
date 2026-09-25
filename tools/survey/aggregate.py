@@ -33,11 +33,19 @@ for r in rows:
     if r["ngay_dang"] and r["ngay_dang"] < "2026-01-01": continue
     r["_h"] = hashlib.sha1(r["url"].split("?")[0].encode()).hexdigest()[:16]
     good.append(r)
-good.sort(key=lambda r: (r["ngay_dang"] or "9999", r["nguon"]))
+# Tin rao Villas tổng hợp (video môi giới + sàn, có ngày đăng, không link gốc) — CHỈ bổ sung bảng tháng:
+# không vào mốc nền/tuần (không biết tin còn treo), không tính "tin mới"; gộp trùng với tin tự đo KHÔNG xét khu
+# (sàn ghi khu khác nhau cho cùng một lô), tin tự đo được giữ trước vì có URL gốc.
+DIGEST = "nambanvillas.vn/tin-rao"
+good.sort(key=lambda r: (r["nguon"] == DIGEST, r["ngay_dang"] or "9999", r["nguon"]))
 kept = []
+def dup(k, r): return abs(k["_a"] - r["_a"]) <= .02 * k["_a"] and abs(k["_t"] - r["_t"]) <= .03 * k["_t"]
 for r in good:
-    if any(k["_khu"] == r["_khu"] and abs(k["_a"] - r["_a"]) <= .02 * k["_a"] and abs(k["_t"] - r["_t"]) <= .03 * k["_t"] for k in kept): continue
+    if r["nguon"] == DIGEST:
+        if any(dup(k, r) for k in kept): continue
+    elif any(k["_khu"] == r["_khu"] and dup(k, r) for k in kept): continue
     kept.append(r)
+live = [r for r in kept if r["nguon"] != DIGEST]; n_digest = len(kept) - len(live)
 def q(xs, p):
     xs = sorted(xs); k = (len(xs) - 1) * p; lo = int(k); hi = min(lo + 1, len(xs) - 1); return xs[lo] + (xs[hi] - xs[lo]) * (k - lo)
 G = [("tach_thua_150_300", "Đất nền tách thửa 150–300 m²", lambda r: 150 <= r["_a"] <= 300 and r["loai"] != "nhà / biệt thự"),
@@ -56,11 +64,14 @@ def grp(rs):
     return out
 
 # ---- điều kiện dừng ----
-new_rows = [r for r in kept if r["_h"] not in seen]
+new_rows = [r for r in live if r["_h"] not in seen]
 alerts = []
 prev_weeks = D.get("weekly", [])
-if seen and len(new_rows) < 15: alerts.append(f"chỉ {len(new_rows)} tin mới trong tuần (<15)")
-base = grp(kept)
+# chỉ xét khi lần đo trước cách ≥6 ngày — chạy lại trong cùng tuần (vd thêm nguồn) thì tin mới đương nhiên ít
+gap_days = (TODAY - dt.date.fromisoformat(D["meta"].get("measured_on", "2000-01-01"))).days
+if seen and gap_days >= 6 and len(new_rows) < 15: alerts.append(f"chỉ {len(new_rows)} tin mới trong tuần (<15)")
+if D["meta"].get("digest_n") and raw_by_src.get(DIGEST, 0) == 0: alerts.append(f"nguồn {DIGEST} về 0 tin (lần trước {D['meta']['digest_n']}) — bảng tháng sẽ tụt nếu sinh lại")
+base = grp(live)
 if prev_weeks:
     # so từng nhóm có ở cả hai tuần (dùng .get: tên nhóm từng đổi 25/9/2026, khóa cũ 'dat_duoi_2000' làm run #4 chết)
     pg = prev_weeks[-1]["snapshot"].get("groups", {})
@@ -93,6 +104,7 @@ wk = {"week": ISO_WEEK, "measured_on": TODAY.isoformat(), "new_listings": len(ne
 D["weekly"] = [w for w in prev_weeks if w["week"] != ISO_WEEK] + [wk]
 D["baseline"] = {"measured_on": TODAY.isoformat(), "label": f"Mốc nền: toàn bộ tin đang treo ngày {TODAY.strftime('%-d/%-m/%Y')}, sau khử trùng", **base}
 D["meta"]["generated_at"] = dt.datetime.now(dt.timezone(dt.timedelta(hours=7))).isoformat(timespec="minutes"); D["meta"]["measured_on"] = TODAY.isoformat()
+D["meta"]["digest_n"] = n_digest
 json.dump(D, open(P, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 json.dump({"hashes": sorted(seen | {r["_h"] for r in kept}), "updated": TODAY.isoformat()}, open(SEEN_P, "w"))
 with open("data/index/monthly.csv", "w", newline="", encoding="utf-8") as f:
@@ -104,4 +116,4 @@ with open("data/index/monthly.csv", "w", newline="", encoding="utf-8") as f:
         for key, g in wq["snapshot"]["groups"].items(): w.writerow([wq["week"], "weekly_snapshot", wq["snapshot"]["n"], key, g["n"], g["median_vnd_m2"] or "", g["p10_vnd_m2"] or "", g["p90_vnd_m2"] or ""])
 if glob.glob("data/index/alert.json"):
     import os; os.remove("data/index/alert.json")
-print(f"OK tuần {ISO_WEEK}: {base['n']} tin đang treo · {len(new_rows)} tin mới · tháng {cur} posted n={months[cur]['posted']['n']}")
+print(f"OK tuần {ISO_WEEK}: {base['n']} tin đang treo · {len(new_rows)} tin mới · {n_digest} tin Villas tổng hợp (chỉ bảng tháng) · tháng {cur} posted n={months[cur]['posted']['n']}")

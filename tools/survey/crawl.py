@@ -550,6 +550,28 @@ def src_villas():
                     ptot = ptot or pt2; pm2 = pm2 or pm22; area = area or ar2
             add_row(src, u, title, addr, chips, date, approx, area, ptot, pm2, "Nam Ban")
 
+def src_villas_digest():
+    """Trang tin rao Villas tổng hợp (video môi giới + sàn, Villas đã mở lại nguồn gốc từng tin).
+    KHÁC src_villas (lô Villas tự bán): đây là tin của người khác, có ngày đăng. Trang không để link gốc,
+    nên URL giả chỉ dùng để băm khử lặp — không vào repo. aggregate.py chỉ dùng nhóm này cho bảng tháng."""
+    src = "nambanvillas.vn/tin-rao"; base = "https://nambanvillas.vn/thi-truong/tin-rao-dat-nam-ban-moi/"
+    r = get(src, base, delay=0.8)
+    if r is None: return
+    parts = re.split(r"<!-- DAY:(\d{4}-\d{2}-\d{2}) -->", r.text)
+    for i in range(1, len(parts), 2):
+        day = dt.date.fromisoformat(parts[i])
+        for li in BeautifulSoup(parts[i + 1], "lxml").select("li.tin-item"):
+            title = text_of(li.select_one(".tin-title")); desc = text_of(li.select_one(".tin-desc"))
+            specs = [text_of(x) for x in li.select(".tin-specs span")]
+            if not specs or re.search(r"không quy ra đơn giá|lệch nhau", desc): st(src, "skip_conflict"); continue
+            feat = re.sub(r"^Tin rao [^.]*\.\s*", "", desc).split("Cần kiểm")[0]
+            area = parse_area(specs[0]); ptot = None
+            for x in specs:
+                v, un = parse_money(x)
+                if un == "total": ptot = v; break
+            u = f"{base}#{day.isoformat()}-{area}-{ptot}"
+            add_row(src, u, f"{title}. {feat}", specs[-1], " ".join(specs), day, False, area, ptot, None, None)
+
 SOURCES = {
     "guland": src_guland,
     "batdongsanonline": lambda: src_bdsonline_like("batdongsanonline.vn", "batdongsanonline.vn",
@@ -564,6 +586,7 @@ SOURCES = {
          ("https://bandatlamdong.com.vn/ban-dat-xa-me-linh/", "Mê Linh"), ("https://bandatlamdong.com.vn/ban-dat-xa-gia-lam/", None)],
         r"bandatlamdong\.com\.vn/(?!ban-dat-|ban-nha-|cho-thue|tin-tuc|du-an|ban-do|page|trang)[a-z0-9-]{20,}/?$"),
     "thuviennhadat": src_thuviennhadat, "muaban": src_muaban, "mogi": src_mogi, "nambanvillas": src_villas,
+    "villasdigest": src_villas_digest,
 }
 
 def main():

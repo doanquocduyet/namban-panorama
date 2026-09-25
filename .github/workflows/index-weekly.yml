@@ -24,7 +24,7 @@ jobs:
       - run: pip install -q requests beautifulsoup4 lxml
       - name: Lấy tin (7 nguồn, tuần tự)
         run: |
-          for s in guland batdongsanonline datnenlamdong thuviennhadat muaban mogi nambanvillas; do
+          for s in guland batdongsanonline datnenlamdong thuviennhadat muaban mogi nambanvillas villasdigest; do
             timeout 25m python tools/survey/crawl.py $s || echo "$s: hết giờ/lỗi — giữ phần đã có"
           done
       - name: Gộp + điều kiện dừng
