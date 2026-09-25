@@ -302,6 +302,11 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   `scripts/gen_audio_edge.py` bỏ qua file (cả `audio-auto` lẫn `generate-audio-free`). MP3 cũ đã xóa.
   Đừng dispatch audio cho slug này; đừng đổi meta về đường dẫn mp3. Cơ chế `content="none"` dùng
   được cho mọi trang bảng số sau này.
+  **Đã rà toàn site 25/9/2026 (164 trang vi có container):** chỉ thêm hai trang cùng loại — `/brief`
+  (mục lục các số Brief, 63 từ đọc) và `/nam-ban-co-gi-moi` (danh sách cập nhật, 68 từ) — đều đổi
+  sang `none`, MP3 xóa. Các hub `/dat` `/dau-tu` `/nam-ban` `/hoi-nhanh` `/trao-doi` `/doc-lo-dat`
+  vốn không có container nên chưa bao giờ có audio. Bài ngắn nhưng là văn (`/dac-san-nam-ban` 279 từ,
+  `/mot-ngay-o-nam-ban` 338 từ) GIỮ audio. Trang mới dạng danh sách/bảng/hub → đặt `none` ngay từ đầu.
 - **og:image của Index = ảnh Chú thiết kế** (`/images/namban-index.jpg`, 1200×630, có chữ trên hình —
   ngoại lệ Chú cấp 25/9/2026 cho riêng trang này, không áp cho bài thường). Ảnh cũ `namban-index-gia-dat.jpg` đã xóa.
 - Giọng: thân bài "chúng tôi"; "tôi" chỉ trong khối trích có nút chép (`#khong-phai-da-lat-gia-re`)
