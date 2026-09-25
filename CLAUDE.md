@@ -313,6 +313,10 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   Bảng diễn biến xếp **tháng mới nhất trước**, mỗi tháng một ô rộng bằng nhau, nên tháng hiện tại
   luôn ở cột đầu. Đổi bố cục thì đo lại bằng Playwright ở 390/768/1440/1920, không chỉ nhìn một khổ.
   Sau khi sửa trang Index, chạy `python3 tools/gen-llms-index-entry.py` để đồng bộ `llms-full.txt`.
+- **HAI VAI, KHÔNG LẪN (Chú chốt 25/9/2026): Villas ĐỌC TIN + LỌC TIN ĐĂNG; Panorama LÀM BÁO CÁO INDEX.**
+  Bộ đọc bên Villas kỹ hơn (mở lại nguồn gốc từng tin, gộp tin đăng lại, loại xã khác) → kết quả của nó là
+  đầu vào chính cho bảng tháng. Panorama không đọc lại từng tin, chỉ gộp, tính trung vị, viết báo cáo. Bộ quét
+  7 trang của Panorama giữ làm phần bổ sung (cho số "tin đang treo" mỗi tuần). Muốn đổi vai thì hỏi Chú.
 - **Nguồn thứ 8 — tin rao Villas tổng hợp (thêm 25/9/2026, Chú giao: "bên đó làm sâu và nhiều tin hơn",
   "Villas đã đối chiếu nguồn gốc, đáng tin").** `crawl.py villasdigest` đọc
   `nambanvillas.vn/thi-truong/tin-rao-dat-nam-ban-moi/` (video môi giới + sàn, mỗi tin có ngày, KHÔNG có link
