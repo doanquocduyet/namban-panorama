@@ -170,7 +170,7 @@ a,button{touch-action:manipulation;}
   "headline": "Giá đất Nam Ban 2026: bảng giá rao theo từng loại",
   "description": "Giá rao đất Nam Ban 2026 theo bốn loại: đất nền tách thửa 150–300 m², lô khoảng 500 m² có thổ cư, đất trên 1.000 m², lô có view. Trung vị theo tháng, tăng hay giảm, giá theo khu và dữ liệu mở.",
   "datePublished": "2026-06-01",
-  "dateModified": "2026-09-25T10:55:00+07:00",
+  "dateModified": "2026-09-25T10:59:00+07:00",
   "author": {
     "@type": "Person",
     "@id": "https://nambanpanorama.com/#founder",
@@ -221,7 +221,7 @@ a,button{touch-action:manipulation;}
       "name": "Giá đất Nam Ban đang tăng hay giảm?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Tháng 9/2026 so với tháng gần nhất có đủ số: đất nền tách thửa 150–300 m² đi ngang; lô khoảng 500 m² có thổ cư giảm; đất trên 1.000 m² không so được vì mẫu hai tháng khác hẳn; lô có view hồ, đồi, toàn cảnh nhích lên. Theo quan sát thực địa của Panorama, giá rao tháng 9/2026 mềm hơn vì mùa mưa bão và kinh tế: nguồn cung mùa này ra nhiều hơn cầu, người bán rao mềm hơn để ra hàng. Đây là giá rao; chưa đủ để kết luận xu hướng dài hạn."
+        "text": "Nhìn chung giá rao đang mềm đi. Tháng 9/2026 so với tháng gần nhất có đủ số: đất nền tách thửa 150–300 m² đi ngang; lô khoảng 500 m² có thổ cư giảm; đất trên 1.000 m² không so được vì mẫu hai tháng khác hẳn; lô có view hồ, đồi, toàn cảnh nhích lên. Theo quan sát thực địa của Panorama, giá rao tháng 9/2026 mềm hơn vì mùa mưa bão và kinh tế: nguồn cung mùa này ra nhiều hơn cầu, người bán rao mềm hơn để ra hàng. Đây là giá rao; chưa đủ để kết luận xu hướng dài hạn."
       }
     },
     {
@@ -424,6 +424,11 @@ h3.idx-sub{font-family:'Fraunces',serif;font-weight:400;font-size:19px;margin:28
 .idx-answer{font-size:16.5px;line-height:1.7;margin:0 0 14px;text-wrap:pretty}
 .idx-why{font-size:15px;line-height:1.7;margin:16px 0 0;text-wrap:pretty;color:var(--ink)}
 .idx-why b{font-weight:500}
+.idx-dirs{list-style:none;margin:0 0 22px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 28px;border-top:1px solid var(--line)}
+.idx-dirs li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.idx-dirs b{font-weight:500;color:var(--ink);white-space:nowrap}
+.idx-dirs em{font-style:italic;color:var(--muted);white-space:nowrap;font-size:14px}
+@media(max-width:600px){.idx-dirs{grid-template-columns:1fr}}
 .idx-now{grid-template-columns:repeat(4,1fr);grid-auto-rows:auto}
 .idx-now .price-cell{padding:22px 18px 16px;display:grid;grid-row:span 6;grid-template-rows:subgrid;row-gap:0;align-content:start}
 .idx-now .price-tier{margin-bottom:10px;align-self:end}
@@ -613,9 +618,10 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <!-- IDX-HIST:START (sinh bởi tools/gen-index-history.py — đừng sửa tay) -->
 <div class="idx-section-label">02 — Diễn biến</div>
 <h2 class="idx-section-title">Giá đất Nam Ban đang tăng hay giảm?</h2>
-<p class="idx-answer">Tháng 9/2026 (đo tới 25/9/2026): Đất nền tách thửa 150–300 m² <strong>3,67 triệu/m²</strong> (19 tin rao), so với tháng 6/2026 là 3,73 — <strong>đi&nbsp;ngang</strong> (−1&nbsp;%). Lô khoảng 500 m² có thổ cư <strong>2,24 triệu/m²</strong> (39 tin rao), so với tháng 7/2026 là 3,16 — <strong>giảm</strong> (−29&nbsp;%). Đất trên 1.000 m² <strong>1,38 triệu/m²</strong> (32 tin rao); tháng 7/2026 là 0,54 nhưng mẫu hai tháng khác hẳn nhau nên không&nbsp;so. Lô có view hồ, đồi, toàn cảnh <strong>3,16 triệu/m²</strong> (13 tin rao), so với tháng 6/2026 là 2,98 — <strong>nhích&nbsp;lên</strong> (+6&nbsp;%). Đây là giá rao trung vị, chưa phải giá đã&nbsp;chốt.</p>
+<p class="idx-answer">Nhìn chung giá rao đang mềm&nbsp;đi. Tháng 9/2026 so với tháng gần nhất có đủ&nbsp;số:</p>
+<ul class="idx-dirs"><li><span>Đất nền tách thửa 150–300&nbsp;m²</span><b>đi ngang</b></li><li><span>Lô khoảng 500&nbsp;m² có thổ cư</span><b>giảm</b></li><li><span>Đất trên 1.000&nbsp;m²</span><em>chưa so được</em></li><li><span>Lô có view hồ, đồi, toàn cảnh</span><b>nhích lên</b></li></ul>
 <figure class="idx-fig pm-selectable">
-<figcaption>Trung vị giá rao theo tháng, triệu đồng/m², xã Nam&nbsp;Ban Lâm&nbsp;Hà. Nguồn: Namban&nbsp;Index — tin rao công khai của 7&nbsp;trang, gộp&nbsp;trùng, đo&nbsp;25/9/2026.</figcaption>
+<figcaption>Trung vị giá rao, triệu đồng/m². Nguồn: Namban&nbsp;Index, 7&nbsp;trang rao công khai, gộp&nbsp;trùng, đo&nbsp;25/9/2026.</figcaption>
 <div class="idx-tblwrap"><table class="idx-tbl idx-bygroup">
 <thead><tr><th scope="col">Loại đất</th><th scope="col">Các tháng đủ số, mới nhất trước</th></tr></thead>
 <tbody>
@@ -778,7 +784,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <h2 style="font-family:'Fraunces',serif;font-weight:500;font-size:26px;line-height:1.25;margin:0 0 22px;color:var(--forest);text-wrap:balance;">Hỏi đáp nhanh giá đất Nam&nbsp;Ban mới&nbsp;nhất</h2>
 <!-- IDX-FAQ:START (sinh bởi tools/gen-index-history.py — đừng sửa tay) -->
 <h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:19px;line-height:1.35;margin:26px 0 8px;color:var(--ink);">Giá đất Nam Ban hiện nay bao nhiêu một mét?</h3><p style="font-size:16px;line-height:1.72;color:var(--muted);margin:0;font-weight:300;">Theo Namban Index, tháng 9/2026 trung vị giá rao ở xã Nam Ban Lâm Hà, triệu đồng/m²: đất nền tách thửa 150–300 m² 3,67; lô khoảng 500 m² có thổ cư 2,24; đất trên 1.000 m² 1,38; lô có view hồ, đồi, toàn cảnh 3,16. Khoảng rao phổ biến nửa đầu 2026 theo quan sát thực địa: đất nền tách thửa 150–300 m² 3–4,5; đất trên 1.000 m² 1,7–2,8; lô có view hồ, đồi, toàn cảnh 4–6. Đây là giá rao, chưa phải giá chốt; mỗi lô khác nhau tùy vị trí, pháp lý, thương lượng.</p>
-<h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:19px;line-height:1.35;margin:26px 0 8px;color:var(--ink);">Giá đất Nam Ban đang tăng hay giảm?</h3><p style="font-size:16px;line-height:1.72;color:var(--muted);margin:0;font-weight:300;">Tháng 9/2026 so với tháng gần nhất có đủ số: đất nền tách thửa 150–300 m² đi ngang; lô khoảng 500 m² có thổ cư giảm; đất trên 1.000 m² không so được vì mẫu hai tháng khác hẳn; lô có view hồ, đồi, toàn cảnh nhích lên. Theo quan sát thực địa của Panorama, giá rao tháng 9/2026 mềm hơn vì mùa mưa bão và kinh tế: nguồn cung mùa này ra nhiều hơn cầu, người bán rao mềm hơn để ra hàng. Đây là giá rao; chưa đủ để kết luận xu hướng dài hạn.</p>
+<h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:19px;line-height:1.35;margin:26px 0 8px;color:var(--ink);">Giá đất Nam Ban đang tăng hay giảm?</h3><p style="font-size:16px;line-height:1.72;color:var(--muted);margin:0;font-weight:300;">Nhìn chung giá rao đang mềm đi. Tháng 9/2026 so với tháng gần nhất có đủ số: đất nền tách thửa 150–300 m² đi ngang; lô khoảng 500 m² có thổ cư giảm; đất trên 1.000 m² không so được vì mẫu hai tháng khác hẳn; lô có view hồ, đồi, toàn cảnh nhích lên. Theo quan sát thực địa của Panorama, giá rao tháng 9/2026 mềm hơn vì mùa mưa bão và kinh tế: nguồn cung mùa này ra nhiều hơn cầu, người bán rao mềm hơn để ra hàng. Đây là giá rao; chưa đủ để kết luận xu hướng dài hạn.</p>
 <h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:19px;line-height:1.35;margin:26px 0 8px;color:var(--ink);">Giá đất Nam Ban có còn rẻ không?</h3><p style="font-size:16px;line-height:1.72;color:var(--muted);margin:0;font-weight:300;">So với Đà Lạt và Bảo Lộc, mặt bằng giá Nam Ban vẫn dễ tiếp cận hơn. Nhưng giá rao và giá giao dịch thực chênh nhau đáng kể ở một số khu, nên con số 'rẻ' cần được kiểm chứng tại thực địa thay vì tin theo tin rao.</p>
 <h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:19px;line-height:1.35;margin:26px 0 8px;color:var(--ink);">Đất Nam Ban 500 triệu mua được gì?</h3><p style="font-size:16px;line-height:1.72;color:var(--muted);margin:0;font-weight:300;">Tầm 500 triệu tới 1,2 tỷ thường rơi vào khu tách thửa nhỏ có thổ cư, diện tích 150–300 m², hạ tầng điện nước đã có hoặc đang hoàn thiện — hợp xây nhỏ hoặc nhà vườn cuối tuần.</p>
 <h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:19px;line-height:1.35;margin:26px 0 8px;color:var(--ink);">Phân khúc đất Nam Ban nào dễ bán lại nhất?</h3><p style="font-size:16px;line-height:1.72;color:var(--muted);margin:0;font-weight:300;">Theo quan sát thị trường, lô có view hồ hoặc view toàn cảnh thường dễ bán lại hơn — người mua tìm view thật hiếm khi hối tiếc. Khoảng rao phổ biến nửa đầu 2026 của nhóm này là 4–6 triệu/m², tổng giá phổ biến 1,2–1,8 tỷ một lô; trung vị tin rao từng tháng xem ở mục 01.</p>

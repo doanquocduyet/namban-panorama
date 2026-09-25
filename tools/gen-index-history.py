@@ -118,8 +118,25 @@ now = f'''<div class="idx-section-label">01 — Giá kỳ này</div>
 {why}'''
 
 # ---- IDX-HIST: mục 02 ----
-ans = " ".join(sent(k, cur[k]) for k, _, _ in GROUPS if k in cur)
-answer = f"Tháng {last_m} (đo tới {m_on}): " + ans + " Đây là giá rao trung vị, chưa phải giá đã&nbsp;chốt."
+# câu đáp mục 02: chỉ nói CHIỀU, không nhắc lại số (số đã ở bốn ô mục 01 và bảng ngay dưới)
+def dirw(k):
+    r = cur[k]
+    if not r.get("prev") or r["w"] == "khác&nbsp;hẳn": return None
+    return plain(r["w"])
+dirs = {k: dirw(k) for k, _, _ in GROUPS if k in cur}
+down = [k for k, w in dirs.items() if w == "giảm"]   # chỉ tính lệch rõ (>8 %); "nhích" 3–8 % coi như chưa đổi chiều
+up = [k for k, w in dirs.items() if w == "tăng"]
+if down and not up: verdict = "Nhìn chung giá rao đang mềm&nbsp;đi."
+elif up and not down: verdict = "Nhìn chung giá rao đang&nbsp;tăng."
+elif not up and not down: verdict = "Nhìn chung giá rao gần như đứng&nbsp;yên."
+else: verdict = "Mỗi loại đi một chiều, chưa có xu hướng&nbsp;chung."
+items = []
+for k, label, low in GROUPS:
+    if k not in dirs: continue
+    w = dirs[k]
+    items.append(f'<li><span>{label}</span><b>{w}</b></li>' if w else f'<li><span>{label}</span><em>chưa so được</em></li>')
+answer = f'{verdict} Tháng {last_m} so với tháng gần nhất có đủ&nbsp;số:'
+dirs_html = '<ul class="idx-dirs">' + "".join(items) + '</ul>'
 rows = []; shown = set(); skipped = {}
 chron = months  # cũ → mới
 for key, label, low in GROUPS:
@@ -143,8 +160,9 @@ gap = (f' Tháng {", ".join(empty_months)} không loại nào đủ {MIN_N} tin 
 hist = f'''<div class="idx-section-label">02 — Diễn biến</div>
 <h2 class="idx-section-title">Giá đất Nam Ban đang tăng hay giảm?</h2>
 <p class="idx-answer">{answer}</p>
+{dirs_html}
 <figure class="idx-fig pm-selectable">
-<figcaption>Trung vị giá rao theo tháng, triệu đồng/m², xã Nam&nbsp;Ban Lâm&nbsp;Hà. Nguồn: Namban&nbsp;Index — tin rao công khai của 7&nbsp;trang, gộp&nbsp;trùng, đo&nbsp;{m_on}.</figcaption>
+<figcaption>Trung vị giá rao, triệu đồng/m². Nguồn: Namban&nbsp;Index, 7&nbsp;trang rao công khai, gộp&nbsp;trùng, đo&nbsp;{m_on}.</figcaption>
 <div class="idx-tblwrap"><table class="idx-tbl idx-bygroup">
 <thead><tr><th scope="col">Loại đất</th><th scope="col">Các tháng đủ số, mới nhất trước</th></tr></thead>
 <tbody>
@@ -178,7 +196,7 @@ cite = f'''<div class="idx-cite pm-selectable">
 q1 = f"Theo Namban Index, tháng {last_m} trung vị giá rao ở xã Nam Ban Lâm Hà, triệu đồng/m²: {cite_nums}. "
 if RANGE: q1 += "Khoảng rao phổ biến nửa đầu 2026 theo quan sát thực địa: " + "; ".join(f'{LOW[k]} {tr1(RANGE[k][0])}–{tr1(RANGE[k][1])}' for k, _, _ in GROUPS if k in RANGE) + ". "
 q1 += "Đây là giá rao, chưa phải giá chốt; mỗi lô khác nhau tùy vị trí, pháp lý, thương lượng."
-q2 = f"Tháng {last_m} so với tháng gần nhất có đủ số: " + "; ".join(
+q2 = plain(verdict) + f" Tháng {last_m} so với tháng gần nhất có đủ số: " + "; ".join(
     f'{LOW[k]} {plain(cur[k]["w"]) if cur[k]["w"] != "khác&nbsp;hẳn" else "không so được vì mẫu hai tháng khác hẳn"}' if cur[k].get("prev") else f'{LOW[k]} chưa có tháng trước để so'
     for k, _, _ in GROUPS if k in cur) + ". "
 q2 += (REASON.get(last["month"], "") + " " if REASON.get(last["month"]) else "") + "Đây là giá rao; chưa đủ để kết luận xu hướng dài hạn."
@@ -211,6 +229,11 @@ CSS = """.idx-header p.idx-period{font-size:11.5px;letter-spacing:.12em;text-tra
 .idx-answer{font-size:16.5px;line-height:1.7;margin:0 0 14px;text-wrap:pretty}
 .idx-why{font-size:15px;line-height:1.7;margin:16px 0 0;text-wrap:pretty;color:var(--ink)}
 .idx-why b{font-weight:500}
+.idx-dirs{list-style:none;margin:0 0 22px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 28px;border-top:1px solid var(--line)}
+.idx-dirs li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.idx-dirs b{font-weight:500;color:var(--ink);white-space:nowrap}
+.idx-dirs em{font-style:italic;color:var(--muted);white-space:nowrap;font-size:14px}
+@media(max-width:600px){.idx-dirs{grid-template-columns:1fr}}
 .idx-now{grid-template-columns:repeat(4,1fr);grid-auto-rows:auto}
 .idx-now .price-cell{padding:22px 18px 16px;display:grid;grid-row:span 6;grid-template-rows:subgrid;row-gap:0;align-content:start}
 .idx-now .price-tier{margin-bottom:10px;align-self:end}
