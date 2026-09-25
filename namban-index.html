@@ -93,6 +93,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(241,236,226,1);border-bott
 .trend-block p{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(17px,2.3vw,21px);line-height:1.45;margin-bottom:16px;}
 .trend-block p:last-child{margin:0;}
 .trend-block em{color:var(--clay-text,#9a5b37);}
+.trend-block .idx-cite-actions{margin-top:20px;border-top-color:rgba(47,64,52,.18);}
 
 /* Observation list */
 .obs{border-top:1px solid var(--line);}
@@ -626,9 +627,10 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   <div class="idx-section-label">04 — Nhận định</div>
   <h2 class="idx-section-title">Điều bảng giá không nói được</h2>
 
-  <div class="trend-block">
+  <div class="trend-block pm-selectable" id="khong-phai-da-lat-gia-re">
     <p>Có một cách gọi Nam Ban tôi nghe khá nhiều: <em>"phiên bản rẻ hơn của Đà Lạt"</em>. Tôi nghĩ đó là cách nhìn nguy hiểm — và về lâu dài, sẽ là cách nhìn sai.</p>
-    <p>Vì nếu Nam Ban chỉ là Đà Lạt giá rẻ, thì ngày mai sẽ luôn có một nơi khác rẻ hơn. Một vùng đất không thể xây tương lai bằng cách rẻ hơn người khác.</p>
+    <p>Vì nếu Nam Ban chỉ là Đà Lạt giá rẻ, thì ngày mai sẽ luôn có một nơi khác rẻ&nbsp;hơn. Một vùng đất không thể xây tương&nbsp;lai bằng cách rẻ hơn người&nbsp;khác.</p>
+    <div class="idx-cite-actions"><button class="idx-act" type="button" id="copyQuote"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="1.5"/><path d="M15 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3"/></svg><span>Chép trích dẫn</span></button></div>
   </div>
 
   <p style="font-size:16px;line-height:1.75;margin-bottom:24px;">Trong những lần đi lại giữa TP.HCM và Nam Ban, điều khiến tôi chú ý không phải giá đất. Mà là <strong style="font-weight:500;">con người đang đến đây và lý do họ đến</strong>. Chuyện đó tôi gỡ ra ở <a href="/vi-sao-nam-ban-nhieu-giao-dich">vì sao Nam&nbsp;Ban xôm tụ hơn nhiều vùng ven Đà&nbsp;Lạt</a>.</p>
@@ -845,7 +847,8 @@ document.addEventListener('keydown',function(e){
 (function(){var c=document.getElementById('copyCite'),l=document.getElementById('copyLink');if(!c||!l)return;
 function cp(t,b,ok){var l=b.querySelector('span')||b;if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){l.textContent=ok;b.classList.add('done');},function(){l.textContent='Chép tay đoạn trên';});}else{l.textContent='Chép tay đoạn trên';}}
 c.addEventListener('click',function(e){cp((document.getElementById('citeText').textContent+' '+document.getElementById('citeSrc').textContent).replace(/\u00a0/g,' '),e.currentTarget,'Đã chép');});
-l.addEventListener('click',function(e){cp('https://nambanpanorama.com/namban-index',e.currentTarget,'Đã chép link');});})();
+l.addEventListener('click',function(e){cp('https://nambanpanorama.com/namban-index',e.currentTarget,'Đã chép link');});
+var q=document.getElementById('copyQuote');if(q){q.addEventListener('click',function(e){var ps=[].slice.call(document.querySelectorAll('#khong-phai-da-lat-gia-re p')).map(function(p){return p.textContent.replace(/ /g,' ').trim();}).join('\n');cp(ps+'\n— Namban Panorama, Namban Index. https://nambanpanorama.com/namban-index#khong-phai-da-lat-gia-re',e.currentTarget,'Đã chép');});}})();
 function panoramaShare(btn){var url=window.location.href;var title=document.title;if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});}else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){var lbl=btn.querySelector('.share-label');if(!lbl)return;var old=lbl.textContent;lbl.textContent='Đã sao chép';setTimeout(function(){lbl.textContent=old;},2000);}).catch(function(){});}}
 </script>
 <a href="https://zalo.me/0978758788" target="_blank" rel="noopener" class="fab-contact" aria-label="Trao đổi với người ở đây"><span class="fab-lbl">Trao đổi với người ở đây</span><span class="fab-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#e7e0d2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a7.5 7.5 0 0 1-10.9 6.7L4 19.5l1.3-4.1A7.5 7.5 0 1 1 20 11.5Z"/></svg></span></a>
