@@ -262,6 +262,49 @@ phần cuối `panorama-utils.js` dựng giao diện · `index.html` có slot `#
   là trả kết quả người đọc không mở được.
 - Phím `/` mở, `Esc` đóng. Không kết quả → "Chưa có bài nào về chuyện này." (không CTA).
 
+### NAMBAN INDEX `/namban-index` — TRANG HUB GIÁ ĐẤT (xếp lại 25/9/2026 theo mẫu Zillow/Nationwide, Chú duyệt)
+
+Trang đỉnh nhất về giá đất của site. Đã soi 8 trang chỉ số giá (Zillow, Redfin, Rightmove, Zoopla,
+CoreLogic, Domain, Batdongsan, FRED/Trading Economics — ghi chép ở scratchpad phiên 25/9) và chốt
+nếp: **một câu đáp → bốn ô → bảng → bối cảnh → phương pháp**. Thứ tự mục: 01 Giá kỳ này · 02 Diễn
+biến · 03 Về dữ liệu · 04 Tín hiệu (nhãn "phân tích của Panorama") · 05 Nhận định · 06 Bên trong
+Index (hub: bảng giá theo khu + 18 ô bài liên quan) · 07 Trích dẫn · FAQ "Hỏi đáp nhanh giá đất Nam
+Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "Tin rao đang được quan sát" và
+"Báo cáo tháng".
+
+- **Bộ sinh `tools/gen-index-history.py` là nguồn duy nhất của mọi con số trên trang.** Nó ghi vào
+  7 cặp marker `IDX-LEAD / IDX-NOW / IDX-HIST / IDX-DATA / IDX-KHU / IDX-CITE / IDX-FAQ`, viết lại
+  toàn bộ `FAQPage` JSON-LD, và CSS giữa `/* IDX-GEN:START */…END */`. **Đừng sửa tay bên trong
+  marker** — sửa script rồi chạy `python3 tools/gen-index-history.py`. Workflow `index-weekly.yml`
+  chạy script này sau mỗi lần đo (Chủ nhật 19:00 UTC).
+- **Một bộ phân loại 4 nhóm cho mọi khối** (Chú chốt 25/9): đất nền tách thửa 150–300 m² · lô
+  khoảng 500 m² có thổ cư (ngang 10–18 m, tách từ thời luật chưa cho tách nhỏ) · đất trên 1.000 m²
+  (nông nghiệp tách từ rẫy) · lô có view hồ, đồi, toàn cảnh. KHÔNG dùng lại tên cũ "nông nghiệp diện
+  tích lớn / khu tách thửa nhỏ / đặc biệt view". KHÔNG có mốc 2.000 m².
+- **Hai loại số, hai nhãn, không trộn:** *trung vị tin rao theo tháng* (kèm n, ngưỡng 10 tin, "—"
+  khi thiếu) và *khoảng rao phổ biến nửa đầu 2026* (quan sát thực địa, `data/prices.json`). Khi trung
+  vị tháng nằm dưới khoảng nửa đầu năm, script in đoạn `idx-why` nêu tên nhóm + lý do tháng từ dict
+  `REASON` trong script. **Lý do 9/2026 là ground truth của Chú:** *mưa bão và kinh tế, nguồn cung
+  mùa này ra nhiều hơn cầu.* Tháng mới không có dòng trong `REASON` thì script in câu trung tính,
+  không tự bịa lý do.
+- **Mẫu hai kỳ khác hẳn (|Δ| > 40 %) → in "không so được — mẫu hai tháng khác nhau", KHÔNG in %.**
+  Từng in "+154 % khác hẳn" cỡ 28px — số tự nói "đừng tin tôi" mà vẫn đứng hàng chính; đã bỏ.
+- **Bảng tháng ở ≤600px đổi thành card theo tháng** bằng CSS (`td::before{content:attr(data-g)}`),
+  không nhân đôi DOM. Header bảng từng cao 102px ở 390 — đừng quay lại bảng cuộn ngang.
+- **Giá theo khu** (mục 06) lấy từ `baseline.by_khu`, **gộp mọi loại đất** — caption phải nói rõ
+  chênh giữa khu một phần do loại đất. Hàng "Chỉ ghi “Nam Ban”, không nêu khu" không có link (không
+  chứng minh được là trung tâm). Ba khu còn lại link sang `/dat-<khu>-nam-ban`.
+- **Nguồn ghi "7 trang"** = danh sách quét trong `meta.method`, không đếm theo tháng có tin (mogi
+  tháng 9 = 0 tin nhưng vẫn là nguồn). Có `nambanvillas.vn` (web cùng chủ) trong danh sách — đã khử
+  trùng với 6 nguồn còn lại; chưa ghi chú xung đột lợi ích trên trang, cân nhắc sau.
+- Giọng: thân bài "chúng tôi"; "tôi" chỉ trong khối trích có nút chép (`#khong-phai-da-lat-gia-re`)
+  và hộp ký tên founder (`.idx-voice`). Câu dẫn Chú viết ("Giá rao bán là thứ dễ nhìn thấy nhất…")
+  nằm ở mục 03, không ở header.
+- **Sổ chờ Index (mở khi đủ dữ liệu, Luật 14):** mục "Kỳ trước" mỗi tháng một trang khi bảng có ≥3
+  tháng liền · sparkline SVG khi ≥4 kỳ · bảng so Nam Ban / Nam Hà / Tà Nung khi tự đo được cả ba với
+  ngưỡng 10 tin (không lấy số trang khác điền vào, Luật 23). Cố ý KHÔNG làm dù trang xịn có: chỉ số
+  điểm chuẩn hoá, dự báo 1 năm, thang nóng/nguội, màu xanh/đỏ tăng giảm, chart JS, PDF, paywall.
+
 ### CHẶN COPY — CHỪA MỘT CHÌA CHO CHÚ (9/9/2026)
 
 Cuối `panorama-utils.js` có lớp chặn bôi đen chữ, kéo ảnh, chuột phải trên ảnh, Ctrl+S.
