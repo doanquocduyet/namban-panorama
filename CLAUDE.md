@@ -239,6 +239,21 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
   — nếu quên thì bài mới không tìm được trong ô search) · `python3 tools/gen-image-manifest.py`
   và `python3 tools/gen-image-sitemap.py` (sau khi **thêm/xóa/đổi tên ảnh**). Commit luôn file
   chúng sinh ra (`search-index.json`, `data/images-manifest.json`, `image-sitemap.xml`).
+  **Thêm script thứ tư (25/9/2026): `python3 tools/sync-updated-date.py` sau MỖI lần sửa bài (đổi
+  `dateModified`).** Nó ghi sẵn `<time id="pm-updated" datetime="…">Cập nhật d/m/yyyy</time>` vào HTML gốc —
+  bot AI (GPTBot, PerplexityBot, ClaudeBot…) không chạy JS nên trước đây không thấy ngày chính xác. Ô ngày
+  vốn ghi "CẬP NHẬT THÁNG …" thì được thay bằng ngày chính xác ngay trong ô (khỏi hai dòng "cập nhật");
+  ô ghi "Tháng …, 2026" (tháng đăng) giữ nguyên, ngày cập nhật đứng cạnh. Quên chạy thì người đọc vẫn thấy
+  đúng (JS tự đồng bộ chữ + `datetime` theo JSON-LD), chỉ bot thấy ngày cũ. Không đổi lời đọc audio.
+- **Dòng "nguồn ưu tiên trên Google" ở footer (Chú gật 25/9/2026)** do `panorama-utils.js` tự chèn vào mọi
+  footer, trỏ `https://www.google.com/preferences/source?q=nambanpanorama.com`. Chữ trầm 12px, màu theo nền
+  footer (tối → `#b3a892`, sáng → `--muted`), tương phản đo 4.76–7.54. Không nút, không màu nóng. Đừng dán tay.
+- **Hướng tối ưu AI 2026 (tra 25/9/2026, nguồn Google/Bing/Ahrefs):** Google tuyên bố AI Overviews/AI Mode
+  KHÔNG cần llms.txt, markdown, schema đặc biệt, chia nhỏ đoạn; Ahrefs đo thêm schema KHÔNG tăng trích dẫn →
+  đừng đổ công vào đó. Chỉ 38 % trang được AI Overviews trích nằm top 10 (AI tách câu hỏi thành nhiều câu nhỏ)
+  → **mỗi câu hỏi nhỏ một trang trả lời gọn, nối về hub** là hướng ăn điểm nhất. Theo dõi bằng Search Console
+  (mục Search generative AI, giữ "Include") và Bing Webmaster Tools → AI Performance (câu hỏi thật khiến
+  ChatGPT/Copilot trích mình).
 - Xong: `git add -A && git commit && git push origin main` → chờ Vercel → **báo link**.
 
 ### Ô TÌM KIẾM — CHỈ TRANG CHỦ + THANH MENU (Chú chốt 9/9/2026)

@@ -94,7 +94,6 @@
 /* "CẬP NHẬT LẦN CUỐI" — lấy ngày THẬT từ JSON-LD dateModified (không thể lùi khống) */
 (function(){
   try{
-    if(document.getElementById('pm-updated'))return;
     var pub=null, mod=null;
     var S=document.querySelectorAll('script[type="application/ld+json"]');
     for(var i=0;i<S.length;i++){
@@ -111,7 +110,10 @@
     if(!mod) return;                 /* không có ngày sửa → không hiện */
     if(pub && mod<=pub) return;       /* chưa sửa sau khi đăng → chỉ giữ ngày đăng */
     var p=mod.split('-');
-    var label='Cập nhật '+parseInt(p[2],10)+'/'+parseInt(p[1],10)+'/'+p[0];
+    var label=((document.documentElement.lang||'vi').slice(0,2)==='vi'?'Cập nhật ':'Updated ')+parseInt(p[2],10)+'/'+parseInt(p[1],10)+'/'+p[0];
+    /* đã có bản tĩnh (tools/sync-updated-date.py, cho bot không chạy JS) → chỉ đồng bộ chữ/ngày, không chèn thêm */
+    var st=document.getElementById('pm-updated');
+    if(st){ var tm=st.tagName==='TIME'?st:st.querySelector('time'); if(tm){ tm.setAttribute('datetime',mod); tm.textContent=label; } return; }
     var idate=document.querySelector('.issue-date');
     if(idate){
       var s=document.createElement('span');
@@ -710,6 +712,29 @@
         if(e.key==='Enter'){ var a=hres.querySelector('a'); if(a)location.href=a.getAttribute('href'); }
       });
     }
+  }catch(e){}
+})();
+
+/* NGUỒN ƯU TIÊN TRÊN GOOGLE — một dòng chữ trầm ở footer (Chú gật 25/9/2026).
+   Google "Preferred sources" (mọi ngôn ngữ từ 30/4/2026, hiện cả trong AI Overviews/AI Mode từ 27/5/2026):
+   người đọc chọn Panorama thì Google ưu tiên hiện Panorama cho họ. Không nút, không màu nóng, không "ngay" —
+   đúng §2.1. Màu chữ theo nền footer: nền tối dùng màu chữ footer sẵn có, nền sáng dùng --muted (đủ tương phản). */
+(function(){
+  try{
+    var f=document.querySelector('footer'); if(!f||f.querySelector('.pm-prefsrc'))return;
+    var vi=(document.documentElement.lang||'vi').slice(0,2)==='vi';
+    var a=document.createElement('a');
+    a.className='pm-prefsrc';
+    a.href='https://www.google.com/preferences/source?q=nambanpanorama.com';
+    a.target='_blank'; a.rel='noopener';
+    a.textContent=vi?'Thêm Namban Panorama vào nguồn ưu tiên trên Google':'Add Namban Panorama as a preferred source on Google';
+    var bg=getComputedStyle(f).backgroundColor.match(/\d+/g)||[255,255,255];
+    var dark=(0.299*bg[0]+0.587*bg[1]+0.114*bg[2])<128 && !(bg.length>3 && +bg[3]===0);
+    var c=dark?'#b3a892':'#6e6759';
+    a.style.cssText='display:inline-block;margin:4px auto 14px;font-size:12px;letter-spacing:.3px;color:'+c+';text-decoration:underline;text-decoration-color:'+(dark?'rgba(179,168,146,.4)':'rgba(110,103,89,.4)')+';text-underline-offset:3px;';
+    var w=document.createElement('div'); w.appendChild(a);
+    var meta=f.querySelector('.meta');
+    if(meta&&meta.parentNode===f) f.insertBefore(w,meta); else f.appendChild(w);
   }catch(e){}
 })();
 
