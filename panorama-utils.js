@@ -41,12 +41,19 @@
     document.head.appendChild(st);
     var block=document.createElement("div");
     block.id="pm-endcontact"; block.className="pm-endcontact";
-    block.innerHTML='<p class="pm-ec-q">Có câu hỏi về một khu cụ thể ở Nam Ban?</p>'+
+    /* Câu hỏi riêng theo trang — khớp đúng câu người đọc đang nghĩ (25/9/2026: Index nhắc
+       "giá rao chưa phải giá chốt" nhiều lần nên câu tự nảy ra là "vậy giá chốt bao nhiêu"). */
+    var QS={"namban-index":"Muốn biết một lô cụ thể đang chốt quanh mức nào?"};
+    var q=QS[slug]||"Có câu hỏi về một khu cụ thể ở Nam Ban?";
+    block.innerHTML='<p class="pm-ec-q">'+q+'</p>'+
       '<p class="pm-ec-a"><a href="tel:0978758788">0978 758 788</a>'+
       '<span class="pm-ec-dot">·</span>'+
       '<a href="https://zalo.me/0978758788" target="_blank" rel="noopener">Zalo</a></p>';
+    /* Trang tự chừa chỗ (#pm-endcontact-slot) thì đặt vào đó — Index đặt ngay dưới câu chốt founder. */
+    var slot=document.getElementById("pm-endcontact-slot");
     var body=document.querySelector(".art-body");
-    if(body){ body.appendChild(block); }
+    if(slot){ slot.appendChild(block); }
+    else if(body){ body.appendChild(block); }
     else{
       var footer=document.querySelector("footer");
       if(footer){ var w=document.createElement("div"); w.className="wrap"; w.appendChild(block); footer.parentNode.insertBefore(w,footer); }

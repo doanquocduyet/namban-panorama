@@ -335,6 +335,18 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   ngoặc to + chữ phóng lớn (Chú: "quá lố"); một đoạn trơn không nền (Chú: "nhìn y chang ở trên").
   Giữ nguyên văn Chú, không nút, không thêm nhãn. Câu dẫn Chú viết ("Giá rao bán là thứ dễ nhìn thấy nhất…")
   nằm ở mục 03, không ở header.
+- **Đường liên hệ & ký tên (25/9/2026, sau khi đóng vai 5 tệp khách):**
+  (1) **Dòng ký tên đầu trang** dưới dòng kỳ: *"Đo và tổng hợp bởi Namban Panorama, tại Nam Ban · cách đo"*
+  (dẫn `#du-lieu`). Đã tra: ký "team" / "đội ngũ" / "nhóm nội dung" bị người đọc và AI coi là vô danh,
+  giảm tin; tin nhất là nói rõ **ai làm · làm cách nào · ở đâu** (đúng ba câu Google hỏi người chấm).
+  KHÔNG dùng chữ "team", "đội ngũ". Tên Chú giữ ở câu chốt cuối bài.
+  (2) **Khối liên hệ trầm nằm TRONG dải câu chốt founder**, ngay dưới ký tên — `panorama-utils.js` ưu
+  tiên đặt vào `#pm-endcontact-slot` nếu trang có. Trang khác không có slot thì giữ chỗ cũ.
+  (3) **Câu hỏi của khối liên hệ theo từng trang** — dict `QS` trong `panorama-utils.js`. Index:
+  *"Muốn biết một lô cụ thể đang chốt quanh mức nào?"* (khớp câu người đọc tự nảy ra sau khi trang nhắc
+  "giá rao chưa phải giá chốt"). Trang không có trong `QS` giữ câu mặc định. Vẫn không nút, không "ngay".
+  (4) **Giải nghĩa "trung vị"** một dòng dưới H2 mục 01. Neo `#du-lieu #tin-hieu #hub` có
+  `scroll-margin-top:96px` để không bị thanh menu che khi bấm.
 - **Sổ chờ Index (mở khi đủ dữ liệu, Luật 14):** mục "Kỳ trước" mỗi tháng một trang khi bảng có ≥3
   tháng liền · sparkline SVG khi ≥4 kỳ · bảng so Nam Ban / Nam Hà / Tà Nung khi tự đo được cả ba với
   ngưỡng 10 tin (không lấy số trang khác điền vào, Luật 23). Cố ý KHÔNG làm dù trang xịn có: chỉ số

@@ -88,9 +88,9 @@ def sent(key, r):
     sign = "+" if r["d"] > 0 else "−"
     return s + f', so với tháng {month_vi(pm)} là {tr(pv[0])} — <strong>{r["w"]}</strong> ({sign}{abs(r["d"]):.0f}&nbsp;%).'
 
-# ---- IDX-LEAD: dòng kỳ + một câu đáp (hai nhóm mẫu lớn nhất có thể so được) ----
+# ---- IDX-LEAD: dòng kỳ + dòng ký tên (ai đo, ở đâu, dẫn xuống cách đo) ----
 lead = f'''<p class="idx-period">Kỳ tháng {last_m} · đo tới <span class="nw">{m_on}</span> · giá rao, chưa phải giá&nbsp;chốt</p>
-'''
+<p class="idx-by">Đo và tổng hợp bởi Namban&nbsp;Panorama, <span class="nw">tại Nam Ban · <a href="#du-lieu">cách đo</a></span></p>'''
 
 # ---- IDX-NOW: mục 01 ----
 cells = []; below = []
@@ -107,6 +107,7 @@ if below:
     why = f'<p class="idx-why">Trung vị tháng {last_m} của {lst} đang thấp hơn khoảng rao nửa đầu năm. Vì sao, <a href="#tin-hieu">xem&nbsp;mục&nbsp;04</a>.</p>'
 now = f'''<div class="idx-section-label">01 — Giá kỳ này</div>
 <h2 class="idx-section-title">Giá đất Nam Ban tháng {last_m} theo từng loại</h2>
+<p class="idx-kicker">Trung vị: xếp các tin rao từ thấp tới cao, lấy giá ở&nbsp;giữa.</p>
 <div class="price-grid idx-now">{"".join(cells)}</div>
 {why}'''
 
@@ -225,6 +226,11 @@ s = re.sub(r'<script type="application/ld\+json">\s*\{\s*"@context": "https://sc
 
 CSS = """.idx-header p.idx-period{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--line);margin:0 0 14px;max-width:none;line-height:1.6}
 .idx-period .nw{white-space:nowrap}
+.idx-header p.idx-by{font-size:13px;color:#c8c0b0;margin:-6px 0 0;max-width:none}
+.idx-by .nw{white-space:nowrap}
+.idx-header p.idx-by a{color:#e8e1d3;text-decoration:none;border-bottom:1px solid rgba(232,225,211,.35)}
+.idx-header p.idx-by a:hover{border-color:#e8e1d3}
+.idx-kicker{font-size:13.5px;color:var(--muted);margin:-8px 0 14px}
 .idx-kicker{font-size:13.5px;color:var(--muted);margin:-8px 0 14px}
 .idx-answer{font-size:16.5px;line-height:1.7;margin:0 0 14px;text-wrap:pretty}
 .idx-why{font-size:15px;line-height:1.7;margin:16px 0 0;text-wrap:pretty;color:var(--ink)}
