@@ -1086,19 +1086,17 @@ Namban Index
 
 Giá đất Nam Ban 2026: bảng giá rao theo từng loại
 
-Kỳ tháng 9/2026 · đo tới 25/9/2026 · chốt số mỗi tháng
+Kỳ tháng 9/2026 · đo tới 25/9/2026
 
-Tháng 9/2026, giá rao lô khoảng 500 m² có thổ cư 2,24 triệu/m² (39 tin), giảm so với tháng 7; đất nền tách thửa 150–300 m² 3,67 triệu/m² (19 tin), đi ngang so với tháng 6. Đây là giá rao trung vị ở xã Nam Ban Lâm Hà, chưa phải giá chốt.
+Lô khoảng 500 m² có thổ cư 2,24 triệu/m² (39 tin), giảm so với tháng 7; đất nền tách thửa 150–300 m² 3,67 triệu/m² (19 tin), đi ngang so với tháng 6. Giá rao trung vị, chưa phải giá chốt.
 
 Giá đất Nam Ban tháng 9/2026 theo từng loại
-
-Giá rao trung vị, triệu đồng/m², xã Nam Ban Lâm Hà — chưa phải giá chốt.
 
 Đất nền tách thửa 150–300 m²
 
 3,67 tr/m²
 
-Trung vị tháng 9/2026 · 19 tin rao
+trung vị của 19 tin rao
 
 So với tháng 6/2026 (3,73): đi ngang −1 % (mẫu nhỏ)
 
@@ -1110,7 +1108,7 @@ Lô khoảng 500 m² có thổ cư
 
 2,24 tr/m²
 
-Trung vị tháng 9/2026 · 39 tin rao
+trung vị của 39 tin rao
 
 So với tháng 7/2026 (3,16): giảm −29 % (mẫu nhỏ)
 
@@ -1120,7 +1118,7 @@ Ngang 10–18 m, tách từ thời luật chưa cho tách nhỏ; ít hàng, giao
 
 1,38 tr/m²
 
-Trung vị tháng 9/2026 · 32 tin rao
+trung vị của 32 tin rao
 
 So với tháng 7/2026 (0,54): không so được — mẫu hai tháng khác nhau
 
@@ -1132,7 +1130,7 @@ Lô có view hồ, đồi, toàn cảnh
 
 3,16 tr/m²
 
-Trung vị tháng 9/2026 · 13 tin rao
+trung vị của 13 tin rao
 
 So với tháng 6/2026 (2,98): nhích lên +6 % (mẫu nhỏ)
 
@@ -1148,7 +1146,13 @@ Tháng 9/2026 (đo tới 25/9/2026): Đất nền tách thửa 150–300 m² 3,6
 
 Trung vị giá rao theo tháng, triệu đồng/m², xã Nam Ban Lâm Hà. Nguồn: Namban Index — tin rao công khai của 7 trang, gộp trùng, đo 25/9/2026.
 
-"—": tháng đó nhóm chưa đủ 10 tin rao, không tính. Bảng nối dài về trước khi có số thực địa; từ tháng 10/2026 mỗi tuần thêm một lần đo.
+Loại đất | Các tháng đủ số, cũ đến mới
+Đất nền tách thửa 150–300 m² | 6/2026 3,73 41 tin 9/2026 · đang đo 3,67 19 tin
+Lô khoảng 500 m² có thổ cư | 6/2026 2,76 22 tin 7/2026 3,16 12 tin 9/2026 · đang đo 2,24 39 tin
+Đất trên 1.000 m² | 6/2026 0,99 13 tin 7/2026 0,54 23 tin 9/2026 · đang đo 1,38 32 tin
+Lô có view hồ, đồi, toàn cảnh | 6/2026 2,98 30 tin 9/2026 · đang đo 3,16 13 tin
+
+Mỗi loại chỉ hiện tháng có từ 10 tin rao trở lên; tháng ít tin hơn thì bỏ, không điền số ước. Tháng 8/2026 không loại nào đủ 10 tin nên không có trong bảng. Từ tháng 10/2026 đo mỗi tuần nên sẽ ít tháng hụt hơn.
 
 Dữ liệu mở: monthly.json · monthly.csv — trích dẫn tự do, ghi nguồn Namban Panorama.
 
@@ -1241,6 +1245,12 @@ Giá theo khu, cách đọc giá một lô, pháp lý và chi phí
 Bảng giá là cửa vào. Mỗi ô dưới đây là một bài riêng của Panorama, đọc tiếp tùy việc bạn đang cần.
 
 Giá theo khu, tin đang treo 25/9/2026
+
+Khu | Trung vị, tr/m² | Số tin
+Đông Thanh | 2,40 | 120
+Mê Linh | 3,29 | 83
+Gia Lâm | 1,76 | 26
+Chỉ ghi “Nam Ban”, không nêu khu | 3,00 | 357
 
 Gộp mọi loại đất trong khu, nên chênh giữa các khu một phần là do loại đất khác nhau — so trong cùng loại thì xem bốn nhóm ở mục 01. Bấm tên khu để đọc bài về khu đó.
 
@@ -1359,24 +1369,6 @@ Giá rao là giá người bán muốn, không phải giá giao dịch được.
 Mua đất nông nghiệp diện tích lớn ở Nam Ban tầm bao nhiêu?
 
 Đất nông nghiệp trên 1.000 m², chưa tách thửa, có khoảng rao phổ biến nửa đầu 2026 là 1,7–2,8 triệu/m² — tổng giá phổ biến 4,5–15 tỷ tùy diện tích; trung vị tin rao từng tháng xem ở mục 01. Hợp làm vườn canh tác hoặc giữ dài hạn; cần kiểm kỹ lộ giới và khả năng chuyển đổi.
-
-Tháng | Đất nền tách thửa 150–300 m² | Lô khoảng 500 m² có thổ cư | Đất trên 1.000 m² | Lô có view hồ, đồi, toàn cảnh
-
-9/2026 tạm | 3,67 19 tin | 2,24 39 tin | 1,38 32 tin | 3,16 13 tin
-
-7/2026 | — | 3,16 12 tin | 0,54 23 tin | —
-
-6/2026 | 3,73 41 tin | 2,76 22 tin | 0,99 13 tin | 2,98 30 tin
-
-Khu | Trung vị, tr/m² | Số tin
-
-Đông Thanh | 2,40 | 120
-
-Mê Linh | 3,29 | 83
-
-Gia Lâm | 1,76 | 26
-
-Chỉ ghi “Nam Ban”, không nêu khu | 3,00 | 357
 
 ---
 

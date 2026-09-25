@@ -122,28 +122,38 @@ now = f'''<div class="idx-section-label">01 — Giá kỳ này</div>
 # ---- IDX-HIST: mục 02 ----
 ans = " ".join(sent(k, cur[k]) for k, _, _ in GROUPS if k in cur)
 answer = f"Tháng {last_m} (đo tới {m_on}): " + ans + " Đây là giá rao trung vị, chưa phải giá đã&nbsp;chốt."
-rows = []; shown = []
-for m in reversed(months):
-    vs = [val(m, k) for k, _, _ in GROUPS]
-    if not any(vs): continue
-    shown.append(m["month"])
-    tag = ' <sup class="idx-tmp" title="tháng đang diễn ra, số tới ngày đo">tạm</sup>' if m["status"] == "partial" else ""
-    tds = "".join(f'<td class="num" data-g="{plain(LABEL[k])}"><b>{tr(v[0])}</b><small>{(str(v[1]) + " tin") if v[2] == "rao" else "sổ thực địa†"}</small></td>' if v else f'<td class="num dash" data-g="{plain(LABEL[k])}">—</td>' for (k, _, _), v in zip(GROUPS, vs))
-    rows.append(f'<tr><th scope="row"><time datetime="{m["month"]}">{month_vi(m["month"])}</time>{tag}</th>{tds}</tr>')
+rows = []; shown = set(); skipped = {}
+chron = months  # cũ → mới
+for key, label, low in GROUPS:
+    pts = []
+    for m in chron:
+        v = val(m, key)
+        if not v:
+            n_raw = m["ghi_nhan"]["groups"][key]["n"]
+            if n_raw: skipped.setdefault(key, []).append((m["month"], n_raw))
+            continue
+        shown.add(m["month"])
+        tag = '<span class="idx-tmp"> · đang đo</span>' if m["status"] == "partial" else ""
+        n_txt = f'{v[1]}&nbsp;tin' if v[2] == "rao" else "sổ thực địa†"
+        pts.append(f'<li><span class="idx-m"><time datetime="{m["month"]}">{month_vi(m["month"])}</time>{tag}</span><b>{tr(v[0])}</b><small>{n_txt}</small></li>')
+    rows.append(f'<tr><th scope="row">{label}</th><td><ol class="idx-series">{"".join(pts)}</ol></td></tr>')
 first_shown = min(shown)
+span = [m["month"] for m in chron if first_shown <= m["month"] <= last["month"]]
+empty_months = [month_vi(m) for m in span if m not in shown]
 dagger = " † Số từ sổ giao dịch thực địa của Panorama, dùng cho tháng tin rao chưa đủ." if "†" in "".join(rows) + "".join(cells) else ""
+gap = (f' Tháng {", ".join(empty_months)} không loại nào đủ {MIN_N} tin nên không có trong bảng.' if empty_months else "")
 hist = f'''<div class="idx-section-label">02 — Diễn biến</div>
 <h2 class="idx-section-title">Giá đất Nam Ban đang tăng hay giảm?</h2>
 <p class="idx-answer">{answer}</p>
 <figure class="idx-fig pm-selectable">
 <figcaption>Trung vị giá rao theo tháng, triệu đồng/m², xã Nam&nbsp;Ban Lâm&nbsp;Hà. Nguồn: Namban&nbsp;Index — tin rao công khai của 7&nbsp;trang, gộp&nbsp;trùng, đo&nbsp;{m_on}.</figcaption>
-<div class="idx-tblwrap"><table class="idx-tbl">
-<thead><tr><th scope="col">Tháng</th>{"".join(f'<th scope="col" class="num">{lab}</th>' for _, lab, _ in GROUPS)}</tr></thead>
+<div class="idx-tblwrap"><table class="idx-tbl idx-bygroup">
+<thead><tr><th scope="col">Loại đất</th><th scope="col">Các tháng đủ số, cũ đến mới</th></tr></thead>
 <tbody>
 {chr(10).join(rows)}
 </tbody></table></div>
 </figure>
-<p class="idx-note">"—": tháng đó nhóm chưa đủ {MIN_N} tin rao, không tính.{dagger} Bảng nối dài về trước khi có số thực địa; từ tháng 10/2026 mỗi tuần thêm một lần&nbsp;đo.</p>
+<p class="idx-note">Mỗi loại chỉ hiện tháng có từ {MIN_N} tin rao trở lên; tháng ít tin hơn thì bỏ, không điền số ước.{gap}{dagger} Từ tháng 10/2026 đo mỗi tuần nên sẽ ít tháng hụt&nbsp;hơn.</p>
 <p class="idx-dl">Dữ liệu mở: <a href="/data/index/monthly.json">monthly.json</a> · <a href="/data/index/monthly.csv">monthly.csv</a> — trích dẫn tự do, ghi nguồn Namban&nbsp;Panorama.</p>'''
 
 # ---- IDX-DATA: mục 03 ----
@@ -255,12 +265,23 @@ CSS = """.idx-header p.idx-period{font-size:11.5px;letter-spacing:.12em;text-tra
 .idx-stats div{background:var(--card);padding:12px 14px}
 .idx-stats dt{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--stone-text,#726a5c);font-weight:500;margin-bottom:4px}
 .idx-stats dd{margin:0;font-size:14px;line-height:1.45;color:var(--ink)}
+.idx-bygroup tbody th{width:38%;white-space:normal;font-family:'Fraunces',serif;font-weight:400;font-size:16px;line-height:1.35}
+.idx-series{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 22px}
+.idx-series li{display:flex;flex-direction:column;min-width:64px}
+.idx-series .idx-m{font-size:11.5px;line-height:16px;height:16px;letter-spacing:.04em;color:var(--muted);white-space:nowrap}
+.idx-series b{font-family:'Fraunces',serif;font-weight:500;font-size:19px;color:var(--ink);line-height:1.25}
+.idx-series small{font-size:11.5px;color:var(--muted)}
+.idx-series .idx-tmp{font-size:11px;margin:0;font-style:italic;color:var(--muted)}
+.idx-series li:last-child b{color:var(--forest)}
 @media(max-width:600px){.idx-stats{grid-template-columns:1fr 1fr}.idx-tbl{font-size:13px}.idx-answer{font-size:15.5px}.idx-now .price-range{font-size:27px}
-.idx-tbl thead{display:none}.idx-tbl,.idx-tbl tbody,.idx-tbl tr{display:block}.idx-tbl tr{padding:4px 12px 8px;border-bottom:1px solid var(--line)}.idx-tbl tr:last-child{border-bottom:0}
-.idx-tbl tbody th{display:block;padding:8px 0 2px;border:0;font-family:'Fraunces',serif;font-size:16px;white-space:normal}
-.idx-tbl td{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:4px 0;border:0}
-.idx-tbl td::before{content:attr(data-g);font-size:12.5px;color:var(--muted);text-align:left;flex:1;line-height:1.35}
-.idx-tbl td b{font-size:16px}.idx-tbl td small{display:inline;margin-left:6px}.idx-tbl td.dash{font-size:15px}}
+.idx-bygroup thead{display:none}.idx-bygroup,.idx-bygroup tbody,.idx-bygroup tr,.idx-bygroup th,.idx-bygroup td{display:block;width:auto}
+.idx-bygroup tr{padding:12px 14px;border-bottom:1px solid var(--line)}.idx-bygroup tr:last-child{border-bottom:0}
+.idx-bygroup tbody th,.idx-bygroup td{padding:0;border:0}.idx-bygroup tbody th{margin-bottom:8px}
+.idx-khu thead{display:none}.idx-khu,.idx-khu tbody,.idx-khu tr{display:block}.idx-khu tr{padding:4px 12px 8px;border-bottom:1px solid var(--line)}.idx-khu tr:last-child{border-bottom:0}
+.idx-khu tbody th{display:block;padding:8px 0 2px;border:0;font-family:'Fraunces',serif;font-size:16px;white-space:normal}
+.idx-khu td{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:4px 0;border:0}
+.idx-khu td::before{content:attr(data-g);font-size:12.5px;color:var(--muted);text-align:left;flex:1;line-height:1.35}
+.idx-khu td b{font-size:16px}}
 """
 if "/* IDX-GEN:START */" in s:
     s = re.sub(r"/\* IDX-GEN:START \*/\n[\s\S]*?/\* IDX-GEN:END \*/", lambda m: "/* IDX-GEN:START */\n" + CSS + "/* IDX-GEN:END */", s, count=1)
