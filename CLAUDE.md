@@ -157,6 +157,10 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
 
 - Sửa bằng **`str_replace`/Edit exact từng đoạn**. TUYỆT ĐỐI KHÔNG regex DOTALL xóa cả
   block (đã từng gây vỡ layout). Đọc chuỗi thật → thay chuỗi thật.
+- **H2 CÓ `&nbsp;` (ghi 25/9/2026):** 66 H2 (đợt 97 câu, 9/2026) dùng &nbsp; nối tên riêng.
+  Mọi phiếu str_replace trên H2 phải chạy khô với cả bản có &nbsp;; mọi grep/đếm phải chuẩn
+  hóa &nbsp; về khoảng trắng trước khi so. *(Đếm toàn site 25/9: **418 H2 trên 82 trang vi**
+  có `&nbsp;`, không riêng 66 câu của đợt đó — nên luật áp cho MỌI H2, xem thêm Luật 13d.)*
 - **Verify trước khi push**: (1) CSS braces cân `{`=`}` trong `<style>`; (2)
   `<div>/<section>/<nav>/<footer>/<script>` mở=đóng; (3) mọi JSON-LD `JSON.parse()` được.
 - **QA THẬT bằng Playwright trên CẢ HAI khổ 1440px + 390px** (và kiểm 1920px không tràn):
@@ -959,6 +963,8 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     ngữ/động từ ra khỏi câu hỏi cho gọn ("Nếu có thì…", "Đổi gì?"); nhắc lại đủ việc đang hỏi.
     Tựa dài hơn một chút vẫn hơn tựa cụt. Nhớ kèm Luật 22: cụm mới trong tựa ("thay đổi") phải
     có trong thân bài.
+    **KHÓA:** Không đổi title/H1 bài /nam-ha-sap-nhap-nam-ban tới hết 25/10/2026. (Chờ Google
+    đọc lại tựa mới; đổi tiếp giữa chừng thì không biết tựa nào đem lại kết quả.)
 
 ---
 
