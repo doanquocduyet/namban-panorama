@@ -7,7 +7,6 @@ Chỉ thay phần giữa các cặp marker — đừng sửa tay bên trong:
   IDX-NOW   mục 01: bốn ô giá kỳ này (trung vị + n + so kỳ trước + khoảng rao nửa đầu năm) + lý do tháng
   IDX-HIST  mục 02: đoạn đáp + bảng tháng + chú thích + link dữ liệu mở
   IDX-DATA  mục 03: bảng Stats 6 cặp (đơn vị · loại giá · nguồn · ngưỡng · kỳ đo · kỳ tới) + đoạn "n tin rao"
-  IDX-KHU   mục 06: bảng giá theo khu (mọi loại đất gộp) có link sang bài khu
   IDX-CITE  mục 07: ô trích dẫn có số của kỳ
   IDX-FAQ   khối FAQ hiển thị + toàn bộ FAQPage JSON-LD (2 câu sinh theo số + 5 câu tĩnh)
   IDX-GEN   CSS của các khối trên (trong <style id="idx-v2">)
@@ -38,8 +37,6 @@ for seg in PR["periods"][0]["segments"]:
     if k: RANGE[k] = (seg["price_min_vnd_m2"], seg["price_max_vnd_m2"], seg.get("total_price_note"))
 # lý do của tháng — CHỈ ghi khi Chú xác nhận (ground truth thực địa); tháng không có dòng thì không in
 REASON = {"2026-09": "Theo quan sát thực địa của Panorama, giá rao tháng 9/2026 mềm hơn vì mùa mưa bão và kinh tế: nguồn cung mùa này ra nhiều hơn cầu, người bán rao mềm hơn để ra hàng."}
-KHU = [("Đông Thanh", "Đông Thanh", "/dat-dong-thanh-nam-ban"), ("Mê Linh", "Mê Linh", "/dat-me-linh-nam-ban"),
-       ("Gia Lâm", "Gia Lâm", "/dat-gia-lam-nam-ban"), ("Nam Ban", "Chỉ ghi “Nam Ban”, không nêu khu", None)]
 
 def tr(v): return f"{v/1e6:.2f}".replace(".", ",")
 def tr1(v): return (f"{v/1e6:.1f}".rstrip("0").rstrip(".")).replace(".", ",")
@@ -168,25 +165,6 @@ data = f'''<dl class="idx-stats">
 </dl>
 <p class="idx-answer">Namban Index theo dõi <strong>{base["n"]} tin rao đang treo</strong> ở xã Nam&nbsp;Ban Lâm&nbsp;Hà (đo {m_on}) từ {n_src} trang công khai, gộp tin trùng, lọc đúng xã. Chúng tôi không đăng lại từng tin, không đăng tựa hay số điện thoại người rao — chỉ đăng số tổng hợp. Muốn biết một lô cụ thể đáng giá bao nhiêu, xem <a href="/dinh-gia-dat-nam-ban">vì sao hai lô cùng diện tích khác&nbsp;giá</a>.</p>'''
 
-# ---- IDX-KHU: giá theo khu (mọi loại đất gộp) ----
-bk = base.get("by_khu", {})
-krows = []
-for k, name, href in KHU:
-    g = bk.get(k)
-    if not g or g["n"] < MIN_N: continue
-    nm = f'<a href="{href}">{name}</a>' if href else name
-    v = f'<b>{tr(g["median_vnd_m2"])}</b>' if g["median_vnd_m2"] else "—"
-    krows.append(f'<tr><th scope="row">{nm}</th><td class="num" data-g="Trung vị, tr/m²">{v}</td><td class="num" data-g="Số tin">{g["n"]}</td></tr>')
-khu = f'''<h3 class="idx-sub">Giá theo khu, tin đang treo {m_on}</h3>
-<figure class="idx-fig pm-selectable">
-<div class="idx-tblwrap"><table class="idx-tbl idx-khu">
-<thead><tr><th scope="col">Khu</th><th scope="col" class="num">Trung vị, tr/m²</th><th scope="col" class="num">Số tin</th></tr></thead>
-<tbody>
-{chr(10).join(krows)}
-</tbody></table></div>
-<figcaption>Gộp mọi loại đất trong khu, nên chênh giữa các khu một phần là do loại đất khác nhau — so trong cùng loại thì xem bốn nhóm ở mục 01. Bấm tên khu để đọc bài về khu&nbsp;đó.</figcaption>
-</figure>'''
-
 # ---- IDX-CITE ----
 cite_nums = "; ".join(f'{LOW[k]} {tr(cur[k]["v"])}' for k, _, _ in GROUPS if k in cur)
 cite = f'''<div class="idx-cite pm-selectable">
@@ -220,7 +198,7 @@ s = open(P, encoding="utf-8").read()
 def replace_block(s, tag, body):
     st = re.search(rf"<!-- {tag}:START[^>]*-->", s).group(0); a = s.index(st) + len(st); end = f"<!-- {tag}:END -->"; b = s.index(end)
     return s[:a] + "\n" + body + "\n" + s[b:]
-for tag, body in [("IDX-LEAD", lead), ("IDX-NOW", now), ("IDX-HIST", hist), ("IDX-DATA", data), ("IDX-KHU", khu), ("IDX-CITE", cite), ("IDX-FAQ", faq_html)]:
+for tag, body in [("IDX-LEAD", lead), ("IDX-NOW", now), ("IDX-HIST", hist), ("IDX-DATA", data), ("IDX-CITE", cite), ("IDX-FAQ", faq_html)]:
     s = replace_block(s, tag, body)
 s = re.sub(r'<script type="application/ld\+json">\s*\{\s*"@context": "https://schema.org",\s*"@type": "FAQPage",[\s\S]*?\}\s*</script>', lambda m: '<script type="application/ld+json">\n' + faq_ld + '\n</script>', s, count=1)
 
@@ -276,12 +254,7 @@ CSS = """.idx-header p.idx-period{font-size:11.5px;letter-spacing:.12em;text-tra
 @media(max-width:600px){.idx-stats{grid-template-columns:1fr 1fr}.idx-tbl{font-size:13px}.idx-answer{font-size:15.5px}.idx-now .price-range{font-size:27px}
 .idx-bygroup thead{display:none}.idx-bygroup,.idx-bygroup tbody,.idx-bygroup tr,.idx-bygroup th,.idx-bygroup td{display:block;width:auto}
 .idx-bygroup tr{padding:12px 14px;border-bottom:1px solid var(--line)}.idx-bygroup tr:last-child{border-bottom:0}
-.idx-bygroup tbody th,.idx-bygroup td{padding:0;border:0}.idx-bygroup tbody th{margin-bottom:8px}
-.idx-khu thead{display:none}.idx-khu,.idx-khu tbody,.idx-khu tr{display:block}.idx-khu tr{padding:4px 12px 8px;border-bottom:1px solid var(--line)}.idx-khu tr:last-child{border-bottom:0}
-.idx-khu tbody th{display:block;padding:8px 0 2px;border:0;font-family:'Fraunces',serif;font-size:16px;white-space:normal}
-.idx-khu td{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:4px 0;border:0}
-.idx-khu td::before{content:attr(data-g);font-size:12.5px;color:var(--muted);text-align:left;flex:1;line-height:1.35}
-.idx-khu td b{font-size:16px}}
+.idx-bygroup tbody th,.idx-bygroup td{padding:0;border:0}.idx-bygroup tbody th{margin-bottom:8px}}
 """
 if "/* IDX-GEN:START */" in s:
     s = re.sub(r"/\* IDX-GEN:START \*/\n[\s\S]*?/\* IDX-GEN:END \*/", lambda m: "/* IDX-GEN:START */\n" + CSS + "/* IDX-GEN:END */", s, count=1)
@@ -298,4 +271,4 @@ for m in re.finditer(r'<script type="application/ld\+json">(.*?)</script>', s, r
 for m in re.finditer(r"<style[^>]*>(.*?)</style>", s, re.S): assert m.group(1).count("{") == m.group(1).count("}")
 for t in ["div", "figure", "table", "thead", "tbody", "tr", "th", "td", "p", "h2", "h3", "dl", "dt", "dd"]:
     o = len(re.findall(rf"<{t}\b[^>]*>", s)); c = len(re.findall(rf"</{t}>", s)); assert o == c, (t, o, c)
-print("OK:", len(rows), "tháng trong bảng ·", len(cells), "ô ·", len(krows), "khu ·", len(FAQ), "FAQ · dateModified", NOW.strftime("%Y-%m-%d %H:%M"))
+print("OK:", len(rows), "tháng trong bảng ·", len(cells), "ô ·", len(FAQ), "FAQ · dateModified", NOW.strftime("%Y-%m-%d %H:%M"))

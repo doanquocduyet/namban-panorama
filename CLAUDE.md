@@ -268,12 +268,12 @@ Trang đỉnh nhất về giá đất của site. Đã soi 8 trang chỉ số gi
 CoreLogic, Domain, Batdongsan, FRED/Trading Economics — ghi chép ở scratchpad phiên 25/9) và chốt
 nếp: **một câu đáp → bốn ô → bảng → bối cảnh → phương pháp**. Thứ tự mục: 01 Giá kỳ này · 02 Diễn
 biến · 03 Về dữ liệu · 04 Tín hiệu (nhãn "phân tích của Panorama") · 05 Nhận định · 06 Bên trong
-Index (hub: bảng giá theo khu + 18 ô bài liên quan) · 07 Trích dẫn · FAQ "Hỏi đáp nhanh giá đất Nam
+Index (hub: 18 ô bài liên quan) · 07 Trích dẫn · FAQ "Hỏi đáp nhanh giá đất Nam
 Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "Tin rao đang được quan sát" và
 "Báo cáo tháng".
 
 - **Bộ sinh `tools/gen-index-history.py` là nguồn duy nhất của mọi con số trên trang.** Nó ghi vào
-  7 cặp marker `IDX-LEAD / IDX-NOW / IDX-HIST / IDX-DATA / IDX-KHU / IDX-CITE / IDX-FAQ`, viết lại
+  6 cặp marker `IDX-LEAD / IDX-NOW / IDX-HIST / IDX-DATA / IDX-CITE / IDX-FAQ`, viết lại
   toàn bộ `FAQPage` JSON-LD, và CSS giữa `/* IDX-GEN:START */…END */`. **Đừng sửa tay bên trong
   marker** — sửa script rồi chạy `python3 tools/gen-index-history.py`. Workflow `index-weekly.yml`
   chạy script này sau mỗi lần đo (Chủ nhật 19:00 UTC).
@@ -293,9 +293,10 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   nhìn cùi bắp).** Không còn ma trận tháng × loại có ô trống. Tháng mà KHÔNG loại nào đủ số (vd
   8/2026) thì ghi chú nêu tên tháng đó. Ô thiếu KHÔNG điền số ước từ vài tin (7/2026 tách thửa
   chỉ 6 tin, view 9 tin — dưới ngưỡng). Đừng quay lại dạng ma trận có "—", đừng hạ ngưỡng 10 cho đủ ô.
-- **Giá theo khu** (mục 06) lấy từ `baseline.by_khu`, **gộp mọi loại đất** — caption phải nói rõ
-  chênh giữa khu một phần do loại đất. Hàng "Chỉ ghi “Nam Ban”, không nêu khu" không có link (không
-  chứng minh được là trung tâm). Ba khu còn lại link sang `/dat-<khu>-nam-ban`.
+- **KHÔNG có bảng giá theo khu (Chú chốt 25/9/2026: "không thực tế").** Từng có bảng trung vị
+  gộp mọi loại đất theo Đông Thanh / Mê Linh / Gia Lâm — bỏ vì gộp loại đất nên số không nói lên
+  giá thật của khu, và 357/640 tin chỉ ghi "Nam Ban". Mục 06 giữ các ô dẫn sang bài từng khu, không
+  có số. Đừng dựng lại bảng này, kể cả khi `baseline.by_khu` vẫn còn trong `monthly.json`.
 - **Nguồn ghi "7 trang"** = danh sách quét trong `meta.method`, không đếm theo tháng có tin (mogi
   tháng 9 = 0 tin nhưng vẫn là nguồn). Có `nambanvillas.vn` (web cùng chủ) trong danh sách — đã khử
   trùng với 6 nguồn còn lại; chưa ghi chú xung đột lợi ích trên trang, cân nhắc sau.
