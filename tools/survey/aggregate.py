@@ -40,11 +40,10 @@ for r in good:
     kept.append(r)
 def q(xs, p):
     xs = sorted(xs); k = (len(xs) - 1) * p; lo = int(k); hi = min(lo + 1, len(xs) - 1); return xs[lo] + (xs[hi] - xs[lo]) * (k - lo)
-G = [("tho_cu_duoi_2000", "Đất < 2.000 m² có thổ cư", lambda r: r["loai"] == "đất <2.000 m² có thổ cư"),
-     ("dat_duoi_2000", "Đất < 2.000 m² (mọi loại)", lambda r: r["loai"].startswith("đất <2.000")),
-     ("nong_nghiep_tu_2000", "Đất ≥ 2.000 m²", lambda r: r["loai"].startswith("đất ≥2.000")),
-     ("nha", "Nhà / biệt thự (m² đất)", lambda r: r["loai"] == "nhà / biệt thự"),
-     ("view", "Tin có view", lambda r: r["view"] == "view")]
+G = [("tach_thua_150_300", "Đất nền tách thửa 150–300 m²", lambda r: 150 <= r["_a"] <= 300 and r["loai"] != "nhà / biệt thự"),
+     ("dat_tren_1000", "Đất trên 1.000 m²", lambda r: r["_a"] > 1000 and r["loai"] != "nhà / biệt thự"),
+     ("view", "Lô có view hồ, đồi, toàn cảnh", lambda r: r["view"] == "view"),
+     ("nha", "Nhà / biệt thự (m² đất)", lambda r: r["loai"] == "nhà / biệt thự")]
 def grp(rs):
     out = {"n": len(rs), "groups": {}}
     for key, label, f in G:

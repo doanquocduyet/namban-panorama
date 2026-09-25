@@ -11,9 +11,9 @@ D = json.load(open("data/index/monthly.json", encoding="utf-8"))
 ED = json.load(open("data/index/editorial.json", encoding="utf-8")) if os.path.exists("data/index/editorial.json") else {}
 MIN_N = D["meta"].get("min_n", 10)
 NOW = dt.datetime.now(dt.timezone(dt.timedelta(hours=7)))
-GROUPS = [("tho_cu_duoi_2000", "Đất thổ cư dưới 2.000&nbsp;m²", "đất thổ cư dưới 2.000 m²"),
-          ("nong_nghiep_tu_2000", "Đất nông nghiệp từ 2.000&nbsp;m²", "đất nông nghiệp từ 2.000 m²"),
-          ("view", "Lô có view hồ, đồi, toàn cảnh", "lô có view")]
+GROUPS = [("tach_thua_150_300", "Đất nền tách thửa 150–300&nbsp;m²", "đất nền tách thửa 150–300 m²"),
+          ("dat_tren_1000", "Đất trên 1.000&nbsp;m²", "đất trên 1.000 m²"),
+          ("view", "Lô có view hồ, đồi, toàn cảnh", "lô có view hồ, đồi, toàn cảnh")]
 
 def tr(v): return f"{v/1e6:.2f}".replace(".", ",")
 def month_vi(m): y, mo = m.split("-"); return f"{int(mo)}/{y}"
@@ -26,7 +26,7 @@ def val(m, key):
     return None
 def trend(cur, prev):
     d = (cur - prev) / prev * 100
-    w = "đi ngang" if abs(d) < 3 else ("nhích lên" if 3 <= d <= 8 else "nhích xuống" if -8 <= d <= -3 else ("tăng" if d > 8 else "giảm"))
+    w = "đi ngang" if abs(d) < 3 else ("nhích lên" if 3 <= d <= 8 else "nhích xuống" if -8 <= d <= -3 else ("tăng" if 8 < d <= 40 else "giảm" if -40 <= d < -8 else "khác hẳn"))
     return d, w
 
 months = D["monthly"]; last = months[-1]; base = D["baseline"]
@@ -45,7 +45,7 @@ for key, label, low in GROUPS:
     src = f'{cur[1]} tin rao' if cur[2] == "rao" else 'sổ thực địa Panorama†'
     if prev:
         d, w = trend(cur[0], prev[1][0]); sign = "+" if d > 0 else "−"
-        small = "&nbsp;<small>(mẫu nhỏ)</small>" if (cur[2] == "rao" and cur[1] < 20) or (prev[1][2] == "rao" and (prev[1][1] or 0) < 20) else ""
+        small = "&nbsp;<small>(mẫu khác nhau, so tham khảo)</small>" if w == "khác hẳn" else ("&nbsp;<small>(mẫu nhỏ)</small>" if (cur[2] == "rao" and cur[1] < 20) or (prev[1][2] == "rao" and (prev[1][1] or 0) < 20) else "")
         cmp = f'So với tháng {month_vi(prev[0])} ({tr(prev[1][0])}): <b>{w}</b>&nbsp;{sign}{abs(d):.0f}&nbsp;%{small}'
         ans.append(f"{low.capitalize()} <strong>{tr(cur[0])} triệu/m²</strong> ({src}), so với tháng {month_vi(prev[0])} là {tr(prev[1][0])} — <strong>{w}</strong> ({sign}{abs(d):.0f}&nbsp;%).")
     else:
@@ -92,7 +92,7 @@ s = replace_block(s, r"<!-- IDX-HIST:START[^>]*-->", "<!-- IDX-HIST:END -->", hi
 s = replace_block(s, r"<!-- IDX-OBS:START[^>]*-->", "<!-- IDX-OBS:END -->", obs)
 
 # ---- mục 01: dòng trung vị tin rao dưới "Tổng giá phổ biến" của 3 ô (thứ tự ô: nông nghiệp lớn · tách thửa thổ cư · view) ----
-order = ["nong_nghiep_tu_2000", "tho_cu_duoi_2000", "view"]
+order = ["dat_tren_1000", "tach_thua_150_300", "view"]
 s = re.sub(r'\n\s*<div class="price-live">.*?</div>', '', s, flags=re.S)
 i = [0]
 def _add(m):
