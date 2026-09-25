@@ -1,8 +1,10 @@
 name: Namban Index — đo giá rao hằng tuần
 # Thứ Hai 02:00 giờ VN (Chủ nhật 19:00 UTC). Lấy tin công khai (kiểm robots.txt từng URL),
-# gộp thành số tổng hợp vào data/index/monthly.json, sinh lại mục 02/06 của namban-index.html.
+# gộp thành số tổng hợp vào data/index/monthly.json, sinh lại các khối số của namban-index.html + entry llms-full.
 # Bất thường (ít tin mới, lệch >25%, một nguồn về 0, Villas >40%) → chỉ ghi data/index/alert.json, KHÔNG sửa trang.
 # Không lưu tựa/URL/SĐT vào repo; dòng thô chỉ giữ 30 ngày trong artifact của run.
+# 25/9/2026: mỗi nguồn một máy chạy song song (trước chạy tuần tự ~60 phút); mỗi máy chỉ gọi một host nên
+# nhịp nghỉ giữa các lần mở tin với từng trang vẫn giữ nguyên như cũ.
 on:
   schedule:
     - cron: '0 19 * * 0'
@@ -13,30 +15,56 @@ concurrency:
   group: index-weekly
   cancel-in-progress: false
 jobs:
-  weekly:
+  crawl:
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        source: [guland, batdongsanonline, datnenlamdong, thuviennhadat, muaban, mogi, nambanvillas, villasdigest]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: pip install -q requests beautifulsoup4 lxml
-      - name: Lấy tin (7 nguồn, tuần tự)
+      - name: Lấy tin — ${{ matrix.source }}
         run: |
-          for s in guland batdongsanonline datnenlamdong thuviennhadat muaban mogi nambanvillas villasdigest; do
-            timeout 25m python tools/survey/crawl.py $s || echo "$s: hết giờ/lỗi — giữ phần đã có"
-          done
+          timeout 25m python tools/survey/crawl.py ${{ matrix.source }} || echo "${{ matrix.source }}: hết giờ/lỗi — giữ phần đã có"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: raw-${{ matrix.source }}
+          path: survey/out/
+          retention-days: 1
+          if-no-files-found: ignore
+  weekly:
+    needs: crawl
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: raw-*
+          path: survey/out/
+          merge-multiple: true
       - name: Gộp + điều kiện dừng
         id: agg
         run: |
           set +e
+          ls survey/out/
           python tools/survey/aggregate.py; rc=$?
           echo "rc=$rc" >> $GITHUB_OUTPUT
           [ $rc -eq 0 ] || [ $rc -eq 3 ] || exit $rc
-      - name: Sinh lại mục 02/06 của Index
+      - name: Sinh lại các khối số của Index + entry llms-full
         if: steps.agg.outputs.rc == '0'
-        run: python tools/gen-index-history.py
+        run: |
+          python tools/gen-index-history.py
+          python tools/gen-llms-index-entry.py || echo "llms-full: không đồng bộ (Luật 25 chặn) — trang vẫn cập nhật"
       - name: Lưu dòng thô 30 ngày (không vào repo)
         uses: actions/upload-artifact@v4
         with:
@@ -48,7 +76,7 @@ jobs:
           rm -rf survey/out
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/index namban-index.html
+          git add data/index namban-index.html llms-full.txt
           if [ "${{ steps.agg.outputs.rc }}" = "0" ]; then msg="Index: số đo giá rao tuần $(date -u +%G-W%V) (tự động)"; else msg="Index: cảnh báo tuần $(date -u +%G-W%V) — không sửa trang (tự động)"; fi
           git commit -m "$msg" || exit 0
           for i in 1 2 3 4 5; do git push origin HEAD:main && break; git pull --rebase origin main; done

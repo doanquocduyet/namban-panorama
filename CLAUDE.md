@@ -280,7 +280,10 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   6 cặp marker `IDX-LEAD / IDX-NOW / IDX-HIST / IDX-DATA / IDX-CITE / IDX-FAQ`, viết lại
   toàn bộ `FAQPage` JSON-LD, và CSS giữa `/* IDX-GEN:START */…END */`. **Đừng sửa tay bên trong
   marker** — sửa script rồi chạy `python3 tools/gen-index-history.py`. Workflow `index-weekly.yml`
-  chạy script này sau mỗi lần đo (Chủ nhật 19:00 UTC).
+  chạy script này sau mỗi lần đo (Chủ nhật 19:00 UTC). **Từ 25/9/2026 workflow chạy song song** (Chú gật):
+  job `crawl` là ma trận 8 nguồn, mỗi nguồn một máy (mỗi máy chỉ gọi một host nên nhịp nghỉ với từng trang
+  giữ nguyên), job `weekly` gộp artifact `raw-*` rồi aggregate → gen-index-history → **gen-llms-index-entry
+  (tự đồng bộ `llms-full.txt`, không cần chạy tay nữa)** → commit. Một lượt từ ~60 phút còn ~25 phút.
 - **Một bộ phân loại 4 nhóm cho mọi khối** (Chú chốt 25/9): đất nền tách thửa 150–300 m² · lô
   khoảng 500 m² có thổ cư (ngang 10–18 m, tách từ thời luật chưa cho tách nhỏ) · đất trên 1.000 m²
   (nông nghiệp tách từ rẫy) · lô có view hồ, đồi, toàn cảnh. KHÔNG dùng lại tên cũ "nông nghiệp diện
