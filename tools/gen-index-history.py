@@ -93,11 +93,11 @@ def sent(key, r):
 # ---- IDX-LEAD: dòng kỳ + một câu đáp (hai nhóm mẫu lớn nhất có thể so được) ----
 lead_keys = sorted([k for k, r in cur.items() if r.get("prev") and r["w"] != "khác&nbsp;hẳn"], key=lambda k: -cur[k]["n"])[:2] or sorted(cur, key=lambda k: -cur[k]["n"])[:2]
 def lead_part(key):
-    r = cur[key]; s = f'{LOW[key]} <b>{tr(r["v"])} triệu/m²</b> ({r["n"]} tin)'
+    r = cur[key]; s = f'{LOW[key]} <b>{tr(r["v"])} triệu/m²</b> ({r["n"]}&nbsp;tin)'
     if r.get("prev") and r["w"] != "khác&nbsp;hẳn": s += f', {r["w"]} so với tháng {month_vi(r["prev"][0]).split("/")[0]}'
     return s
-lead = f'''<p class="idx-period">Kỳ tháng {last_m} · đo tới {m_on} · <span class="nw">chốt số mỗi tháng</span></p>
-<p class="idx-lead">Tháng {last_m}, giá rao {lead_part(lead_keys[0])}; {lead_part(lead_keys[1])}. Đây là giá rao trung vị ở xã Nam&nbsp;Ban Lâm&nbsp;Hà, chưa phải giá&nbsp;chốt.</p>'''
+lead = f'''<p class="idx-period">Kỳ tháng {last_m} · đo tới <span class="nw">{m_on}</span></p>
+<p class="idx-lead">{lead_part(lead_keys[0]).capitalize()}; {lead_part(lead_keys[1])}. Giá rao trung vị, chưa phải giá&nbsp;chốt.</p>'''
 
 # ---- IDX-NOW: mục 01 ----
 cells = []; below = []
@@ -107,7 +107,7 @@ for key, label, low in GROUPS:
     rng = RANGE.get(key)
     rng_html = f'<div class="price-band">Khoảng rao phổ biến nửa đầu 2026: <b>{tr1(rng[0])}–{tr1(rng[1])} tr/m²</b></div>' if rng else ""
     if rng and r["v"] < rng[0]: below.append(low)
-    cells.append(f'<div class="price-cell"><div class="price-tier">{label}</div><div class="price-range">{tr(r["v"])} <span class="idx-unit">tr/m²</span></div><div class="price-unit">Trung vị tháng {last_m} · {src_txt(r)}</div><div class="price-desc">{cmp_txt(r)}</div>{rng_html}<div class="price-total">{NOTE[key]}</div></div>')
+    cells.append(f'<div class="price-cell"><div class="price-tier">{label}</div><div class="price-range">{tr(r["v"])} <span class="idx-unit">tr/m²</span></div><div class="price-unit">trung vị của {src_txt(r)}</div><div class="price-desc">{cmp_txt(r)}</div>{rng_html}<div class="price-total">{NOTE[key]}</div></div>')
 why = ""
 if below:
     lst = (", ".join(below[:-1]) + " và " + below[-1]) if len(below) > 1 else below[0]
@@ -116,7 +116,6 @@ if below:
     why += 'Đây là phân tích của Panorama, chưa phải dữ kiện đã xác nhận, và chưa đủ để kết luận xu hướng dài&nbsp;hạn.</p>'
 now = f'''<div class="idx-section-label">01 — Giá kỳ này</div>
 <h2 class="idx-section-title">Giá đất Nam Ban tháng {last_m} theo từng loại</h2>
-<p class="idx-kicker">Giá rao trung vị, triệu đồng/m², xã Nam&nbsp;Ban Lâm&nbsp;Hà — chưa phải giá&nbsp;chốt.</p>
 <div class="price-grid idx-now">{"".join(cells)}</div>
 {why}'''
 
