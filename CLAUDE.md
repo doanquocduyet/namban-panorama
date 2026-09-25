@@ -289,8 +289,10 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   không tự bịa lý do.
 - **Mẫu hai kỳ khác hẳn (|Δ| > 40 %) → in "không so được — mẫu hai tháng khác nhau", KHÔNG in %.**
   Từng in "+154 % khác hẳn" cỡ 28px — số tự nói "đừng tin tôi" mà vẫn đứng hàng chính; đã bỏ.
-- **Bảng tháng ở ≤600px đổi thành card theo tháng** bằng CSS (`td::before{content:attr(data-g)}`),
-  không nhân đôi DOM. Header bảng từng cao 102px ở 390 — đừng quay lại bảng cuộn ngang.
+- **Bảng diễn biến = mỗi loại đất một dòng, chỉ hiện tháng đủ 10 tin (Chú chốt 25/9/2026: ô "—"
+  nhìn cùi bắp).** Không còn ma trận tháng × loại có ô trống. Tháng mà KHÔNG loại nào đủ số (vd
+  8/2026) thì ghi chú nêu tên tháng đó. Ô thiếu KHÔNG điền số ước từ vài tin (7/2026 tách thửa
+  chỉ 6 tin, view 9 tin — dưới ngưỡng). Đừng quay lại dạng ma trận có "—", đừng hạ ngưỡng 10 cho đủ ô.
 - **Giá theo khu** (mục 06) lấy từ `baseline.by_khu`, **gộp mọi loại đất** — caption phải nói rõ
   chênh giữa khu một phần do loại đất. Hàng "Chỉ ghi “Nam Ban”, không nêu khu" không có link (không
   chứng minh được là trung tâm). Ba khu còn lại link sang `/dat-<khu>-nam-ban`.
