@@ -192,6 +192,35 @@ data = f'''<dl class="idx-stats">
 </dl>
 <p class="idx-body-p">Chúng tôi không đăng lại từng tin, không đăng tựa hay số điện thoại người rao, chỉ đăng số tổng&nbsp;hợp.{dg_p}</p>'''
 
+# ---- tổng hợp toàn bộ tin còn đang rao ngày đo (Chú giao 25/9/2026: "làm tổng hợp cho index") ----
+# Cố ý chỉ in SỐ TIN + KHOẢNG GIÁ PHỔ BIẾN (p10–p90), không in trung vị: trung vị là việc của mục 01 (theo tháng
+# đăng), in thêm một trung vị khác cho cùng loại đất là hai con số tranh nhau. Theo khu chỉ đếm tin, không in
+# giá (CLAUDE.md: không có bảng giá theo khu). Bốn nhóm đúng bộ phân loại chung; nhà nêu trong câu ghi chú.
+bg = base["groups"]
+SLAB = {"tach_thua_150_300": 'Đất nền tách&nbsp;thửa<small>150–300&nbsp;m²</small>',
+        "lo_500_tho_cu": 'Lô khoảng 500&nbsp;m²<small>có thổ&nbsp;cư</small>',
+        "dat_tren_1000": 'Đất trên 1.000&nbsp;m²<small>phần nhiều là nông&nbsp;nghiệp</small>',
+        "view": 'Lô có view<small>hồ, đồi, toàn&nbsp;cảnh</small>'}
+stock_rows = "".join(
+    f'<tr><th scope="row">{SLAB[k]}</th><td class="num">{bg[k]["n"]}</td><td class="num">'
+    + (f'{tr1(bg[k]["p10_vnd_m2"])}–{tr1(bg[k]["p90_vnd_m2"])}' if bg[k].get("p10_vnd_m2") else '<span class="few">dưới 10&nbsp;tin</span>')
+    + '</td></tr>' for k, label, _ in GROUPS if k in bg)
+KHU = [("Nam Ban", "chỉ ghi “Nam Ban”"), ("Đông Thanh", "Đông Thanh"), ("Mê Linh", "Mê Linh"), ("Gia Lâm", "Gia Lâm"), ("chưa rõ khu", "không ghi khu")]
+khu_txt = " · ".join(f'{lab} {base["by_khu"][k]["n"]}' for k, lab in KHU if base.get("by_khu", {}).get(k, {}).get("n"))
+n_house = bg.get("nha", {}).get("n", 0)
+n_out = base["n"] - n_house - sum(bg[k]["n"] for k in ("tach_thua_150_300", "lo_500_tho_cu", "dat_tren_1000") if k in bg)
+data += f'''
+<h3 class="idx-sub">Tổng hợp {base["n"]} tin còn đang rao ngày&nbsp;{m_on}</h3>
+<figure class="idx-fig pm-selectable">
+<div class="idx-tblwrap"><table class="idx-tbl idx-stock">
+<thead><tr><th scope="col">Loại đất</th><th scope="col" class="num">Số&nbsp;tin</th><th scope="col" class="num">Giá phổ&nbsp;biến<br><span class="u">triệu/m²</span></th></tr></thead>
+<tbody>
+{stock_rows}
+</tbody></table></div>
+<figcaption>Khoảng giá phổ biến: bỏ 10&nbsp;% tin rẻ nhất và 10&nbsp;% tin đắt nhất, lấy khoảng còn lại. Tính trên mọi tin còn đang rao ngày đo, không theo tháng đăng, nên không so thẳng với bốn ô ở mục&nbsp;01.</figcaption>
+</figure>
+<p class="idx-note">Theo khu: {khu_txt}. {n_house} tin là nhà hoặc biệt thự; {n_out} tin đất có diện tích nằm ngoài ba nhóm diện tích trên (ví dụ dưới 150&nbsp;m², 300–350&nbsp;m², 700–1.000&nbsp;m²) — vẫn được đếm, không vào ô&nbsp;nào.</p>'''
+
 # ---- IDX-CITE ----
 cite_nums = "; ".join(f'{LOW[k]} {tr(cur[k]["v"])}' for k, _, _ in GROUPS if k in cur)
 cite = f'''<div class="idx-cite pm-selectable">
@@ -229,7 +258,14 @@ for tag, body in [("IDX-LEAD", lead), ("IDX-NOW", now), ("IDX-HIST", hist), ("ID
     s = replace_block(s, tag, body)
 s = re.sub(r'<script type="application/ld\+json">\s*\{\s*"@context": "https://schema.org",\s*"@type": "FAQPage",[\s\S]*?\}\s*</script>', lambda m: '<script type="application/ld+json">\n' + faq_ld + '\n</script>', s, count=1)
 
-CSS = """.idx-header p.idx-period{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--line);margin:0 0 14px;max-width:none;line-height:1.6}
+CSS = """.idx-tbl.idx-stock tbody th{white-space:normal}
+.idx-stock tbody th small{display:block;font-weight:400;font-size:12px;color:var(--muted);margin-top:2px}
+.idx-stock td.num{text-align:right;white-space:nowrap}
+.idx-stock thead th.num{text-align:right;white-space:nowrap}
+.idx-stock thead .u{text-transform:none;letter-spacing:0;font-size:11.5px}
+@media(max-width:600px){.idx-stock th,.idx-stock td{padding:9px 8px}.idx-stock tbody th{font-size:13px}}
+.idx-stock .few{font-style:italic;font-size:12px;color:var(--muted)}
+.idx-header p.idx-period{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--line);margin:0 0 14px;max-width:none;line-height:1.6}
 .idx-period .nw{white-space:nowrap}
 .idx-header p.idx-by{font-size:13px;color:#c8c0b0;margin:-6px 0 0;max-width:none}
 .idx-by .nw{white-space:nowrap}
