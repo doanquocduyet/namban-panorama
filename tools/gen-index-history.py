@@ -126,10 +126,10 @@ CSS = """.idx-answer{font-size:16.5px;line-height:1.7;margin:0 0 14px;text-wrap:
 .idx-dl{font-size:13.5px;color:var(--muted);margin:10px 0 4px}
 @media(max-width:600px){.idx-tbl{font-size:13px}.idx-tbl th,.idx-tbl td{padding:9px 8px}.idx-tbl td b{font-size:15.5px}.idx-tbl thead th{font-size:10px}.idx-answer{font-size:15.5px}.idx-now .price-range{font-size:27px}}
 """
-if ".idx-answer{" in s:
-    s = re.sub(r"\.idx-answer\{[\s\S]*?\n(?=</style>)", CSS, s, count=1)
+if "/* IDX-GEN:START */" in s:
+    s = re.sub(r"/\* IDX-GEN:START \*/\n[\s\S]*?/\* IDX-GEN:END \*/", "/* IDX-GEN:START */\n" + CSS + "/* IDX-GEN:END */", s, count=1)
 else:
-    s = s.replace('<style id="idx-v2">\n', '<style id="idx-v2">\n' + CSS, 1)
+    s = s.replace('<style id="idx-v2">\n', '<style id="idx-v2">\n/* IDX-GEN:START */\n' + CSS + '/* IDX-GEN:END */\n', 1)
 
 # ---- JSON-LD + dateModified ----
 s = re.sub(r'"temporalCoverage": "[^"]*"', f'"temporalCoverage": "{first_shown}/{last["month"]}"', s, count=1)

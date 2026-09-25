@@ -160,7 +160,7 @@ a,button{touch-action:manipulation;}
   "headline": "Giá đất Nam Ban 2026: bảng giá rao theo từng loại",
   "description": "Giá rao đất Nam Ban 2026 theo ba phân khúc: nông nghiệp diện tích lớn, tách thửa có thổ cư, lô view hồ. Kèm tín hiệu thị trường tháng 9 và dữ liệu mở.",
   "datePublished": "2026-06-01",
-  "dateModified": "2026-09-25T09:27:00+07:00",
+  "dateModified": "2026-09-25T09:29:00+07:00",
   "author": {
     "@type": "Person",
     "@id": "https://nambanpanorama.com/#founder",
@@ -381,6 +381,23 @@ nav{background:rgba(241,236,226,1);}
 </script>
 
 <style id="idx-v2">
+h2.idx-section-title{margin-top:0;line-height:1.25}
+.idx-header #pm-updated{color:#c8c0b0!important}
+h3.idx-sub{font-family:'Fraunces',serif;font-weight:400;font-size:19px;margin:28px 0 4px;color:var(--ink)}
+.signal-now{background:rgba(47,64,52,.05);padding:18px 20px 6px 20px;border-radius:3px;margin:8px 0 12px 0}
+.signal-now p{font-size:16px;line-height:1.7;margin:0 0 12px}
+.idx-list{margin:0;padding:0;list-style:none}
+.idx-list li{padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.6}
+.idx-list a{color:var(--clay-text,#9a5b37);text-decoration:none;border-bottom:1px solid var(--line)}
+.idx-cite{background:var(--card);border:1px solid var(--line);padding:18px 20px;border-radius:3px}
+.idx-cite p{font-size:16px;margin:0 0 8px}
+.idx-cite .src{font-size:13px;color:var(--muted);margin-bottom:16px;word-break:break-word}
+.idx-cite-actions{display:flex;gap:26px;align-items:center;flex-wrap:wrap;padding-top:12px;border-top:1px solid var(--line)}
+.idx-act{font:inherit;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);background:none;border:0;padding:0;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:color .2s}
+.idx-act svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.idx-act:hover,.idx-act.done{color:var(--forest)}
+.tldr strong,.idx-cite .nw{white-space:nowrap}
+/* IDX-GEN:START */
 .idx-answer{font-size:16.5px;line-height:1.7;margin:0 0 14px;text-wrap:pretty}
 .idx-now .price-cell{padding:22px 20px 18px}
 .idx-now .price-range{font-size:30px}
@@ -406,6 +423,7 @@ nav{background:rgba(241,236,226,1);}
 .idx-note a,.idx-dl a,.idx-answer a{color:var(--forest);text-decoration:none;border-bottom:1px solid var(--line)}
 .idx-dl{font-size:13.5px;color:var(--muted);margin:10px 0 4px}
 @media(max-width:600px){.idx-tbl{font-size:13px}.idx-tbl th,.idx-tbl td{padding:9px 8px}.idx-tbl td b{font-size:15.5px}.idx-tbl thead th{font-size:10px}.idx-answer{font-size:15.5px}.idx-now .price-range{font-size:27px}}
+/* IDX-GEN:END */
 </style>
 <style id="tldr-style">
 .tldr{border-left:3px solid var(--accent,#6b5b4a);background:rgba(107,91,74,.05);
@@ -684,7 +702,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   <div class="idx-cite pm-selectable">
     <p id="citeText">Giữa 2026, giá chào bán tham khảo đất ở xã Nam Ban Lâm Hà, <span class="nw">Lâm Đồng</span>: nông nghiệp diện tích lớn <span class="nw">1,7–2,8</span> triệu/m², khu tách thửa có thổ cư <span class="nw">3–4,5</span> triệu/m², lô view hồ hoặc toàn&nbsp;cảnh <span class="nw">4–6 triệu/m²</span>.</p>
     <p class="src" id="citeSrc">Nguồn: Namban Panorama, Namban Index, cập nhật 25/9/2026. https://nambanpanorama.com/namban-index</p>
-    <button class="idx-pill" type="button" id="copyCite">Chép trích dẫn</button> <button class="idx-pill" type="button" id="copyLink">Chép link</button>
+    <div class="idx-cite-actions"><button class="idx-act" type="button" id="copyCite"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="1.5"/><path d="M15 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3"/></svg><span>Chép trích dẫn</span></button><button class="idx-act" type="button" id="copyLink"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.2 1.2"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.2-1.2"/></svg><span>Chép link</span></button></div>
   </div>
 
   <div class="disclaimer">Namban Index là tổng hợp giá rao công khai và quan sát thực địa, mang tính tham khảo độc lập. Không phải khuyến nghị đầu tư cá nhân. Giá cả thay đổi theo thời gian, vị trí và điều kiện cụ thể của từng tài sản — luôn thẩm định trực tiếp trước mọi giao dịch.</div>
@@ -822,7 +840,7 @@ document.addEventListener('keydown',function(e){
 </script>
 <script>
 (function(){var c=document.getElementById('copyCite'),l=document.getElementById('copyLink');if(!c||!l)return;
-function cp(t,b,ok){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){b.textContent=ok;},function(){b.textContent='Chép tay đoạn trên';});}else{b.textContent='Chép tay đoạn trên';}}
+function cp(t,b,ok){var l=b.querySelector('span')||b;if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){l.textContent=ok;b.classList.add('done');},function(){l.textContent='Chép tay đoạn trên';});}else{l.textContent='Chép tay đoạn trên';}}
 c.addEventListener('click',function(e){cp((document.getElementById('citeText').textContent+' '+document.getElementById('citeSrc').textContent).replace(/\u00a0/g,' '),e.currentTarget,'Đã chép');});
 l.addEventListener('click',function(e){cp('https://nambanpanorama.com/namban-index',e.currentTarget,'Đã chép link');});})();
 function panoramaShare(btn){var url=window.location.href;var title=document.title;if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});}else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){var lbl=btn.querySelector('.share-label');if(!lbl)return;var old=lbl.textContent;lbl.textContent='Đã sao chép';setTimeout(function(){lbl.textContent=old;},2000);}).catch(function(){});}}
