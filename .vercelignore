@@ -1,0 +1,14 @@
+# Tài liệu, code, dữ liệu nội bộ — KHÔNG lên nambanpanorama.com (bàn giao GreenSpace 25/9)
+# data/ công khai có chủ đích (llms.txt + trang dùng): prices.json/csv, infrastructure.json, places.json,
+# timeline.json, index/monthly.json/csv — KHÔNG chặn. Chỉ chặn file nội bộ bên dưới.
+CLAUDE.md
+FORM-noi-dung-trust.md
+docs/
+tools/
+scripts/
+.github/
+*.py
+*.sh
+data/fb-queue.json
+data/images-manifest.json
+data/index/seen.json
