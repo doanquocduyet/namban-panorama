@@ -78,7 +78,7 @@ table = f'''<figure class="idx-fig pm-selectable">
 {chr(10).join(rows)}
 </tbody></table></div>
 </figure>
-<p class="idx-note">"—": tháng đó nhóm chưa đủ {MIN_N} tin rao, không tính. † Số từ sổ giao dịch thực địa của Panorama, dùng cho tháng tin rao chưa đủ. Bảng nối dài về trước khi có số thực địa; từ tháng 10/2026 mỗi tuần thêm một lần&nbsp;đo.</p>
+<p class="idx-note">"—": tháng đó nhóm chưa đủ {MIN_N} tin rao, không tính.{" † Số từ sổ giao dịch thực địa của Panorama, dùng cho tháng tin rao chưa đủ." if "†" in "".join(rows) + "".join(cells) else ""} Bảng nối dài về trước khi có số thực địa; từ tháng 10/2026 mỗi tuần thêm một lần&nbsp;đo.</p>
 <p class="idx-dl">Dữ liệu mở: <a href="/data/index/monthly.json">monthly.json</a> · <a href="/data/index/monthly.csv">monthly.csv</a> — trích dẫn tự do, ghi nguồn Namban&nbsp;Panorama.</p>'''
 
 hist = f'''<div class="idx-section-label">02 — Diễn biến</div>
