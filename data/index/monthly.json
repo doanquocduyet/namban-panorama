@@ -9,27 +9,28 @@
   "area": "Xã Nam Ban Lâm Hà, Lâm Đồng (thị trấn Nam Ban cũ, Đông Thanh, Mê Linh, Gia Lâm — từ 1/7/2025)",
   "method": "Tin rao công khai trên guland.vn, batdongsanonline.vn, datnenlamdong.com.vn, thuviennhadat.vn, muaban.net, mogi.vn, nambanvillas.vn; kiểm robots.txt và điều khoản từng nguồn; lọc đúng xã; loại tin thiếu giá hoặc diện tích; khử trùng theo khu + diện tích ±2% + giá ±3%; trung vị chỉ tính khi nhóm có từ 10 tin. \"posted\" = xếp theo ngày đăng ghi trên trang nguồn; \"refreshed_guland\" = tin Guland xếp theo ngày cập nhật (không phải ngày đăng). Bảng tháng (không phải mốc nền) bổ sung tin rao do nambanvillas.vn tổng hợp tại /thi-truong/tin-rao-dat-nam-ban-moi/ (video môi giới và sàn, có ngày đăng, đã mở lại nguồn gốc): bỏ tin ngoài xã, bỏ tin diện tích/giá lệch nhau, gộp trùng với tin tự đo theo diện tích ±2% + giá ±3% không xét khu; không tính vào số tin đang treo. Giá rao, chưa phải giá đã chốt. Không lưu tựa, mô tả, ảnh, số điện thoại, tên người đăng.",
   "min_n": 10,
-  "generated_at": "2026-09-25T09:36+07:00",
-  "measured_on": "2026-09-25"
+  "generated_at": "2026-09-25T19:25+07:00",
+  "measured_on": "2026-09-25",
+  "digest_n": 97
  },
  "baseline": {
   "measured_on": "2026-09-25",
   "label": "Mốc nền: toàn bộ tin đang treo ngày 25/9/2026, sau khử trùng",
-  "n": 640,
+  "n": 634,
   "groups": {
    "tach_thua_150_300": {
     "label": "Đất nền tách thửa 150–300 m²",
-    "n": 128,
-    "median_vnd_m2": 3493589,
-    "p10_vnd_m2": 2529272,
-    "p90_vnd_m2": 4836515
+    "n": 129,
+    "median_vnd_m2": 3487179,
+    "p10_vnd_m2": 2482352,
+    "p90_vnd_m2": 4810689
    },
    "lo_500_tho_cu": {
     "label": "Lô khoảng 500 m² có thổ cư",
-    "n": 158,
-    "median_vnd_m2": 2278329,
-    "p10_vnd_m2": 1420317,
-    "p90_vnd_m2": 3975481
+    "n": 154,
+    "median_vnd_m2": 2270073,
+    "p10_vnd_m2": 1411428,
+    "p90_vnd_m2": 3878686
    },
    "dat_tren_1000": {
     "label": "Đất trên 1.000 m²",
@@ -40,27 +41,27 @@
    },
    "view": {
     "label": "Lô có view hồ, đồi, toàn cảnh",
-    "n": 143,
-    "median_vnd_m2": 3005617,
-    "p10_vnd_m2": 1718930,
-    "p90_vnd_m2": 4719806
+    "n": 140,
+    "median_vnd_m2": 3016162,
+    "p10_vnd_m2": 1735189,
+    "p90_vnd_m2": 4725903
    },
    "nha": {
     "label": "Nhà / biệt thự (m² đất)",
-    "n": 91,
-    "median_vnd_m2": 4769230,
-    "p10_vnd_m2": 1893939,
-    "p90_vnd_m2": 12324528
+    "n": 93,
+    "median_vnd_m2": 5018248,
+    "p10_vnd_m2": 1906060,
+    "p90_vnd_m2": 12809510
    }
   },
   "by_khu": {
    "Nam Ban": {
-    "n": 357,
-    "median_vnd_m2": 3000000
+    "n": 355,
+    "median_vnd_m2": 3005617
    },
    "Đông Thanh": {
-    "n": 120,
-    "median_vnd_m2": 2403965
+    "n": 116,
+    "median_vnd_m2": 2373720
    },
    "Mê Linh": {
     "n": 83,
@@ -75,14 +76,14 @@
     "median_vnd_m2": 2125131
    }
   },
-  "villas_n": 103,
+  "villas_n": 102,
   "sources": {
-   "batdongsanonline.vn": 18,
+   "batdongsanonline.vn": 12,
    "thuviennhadat.vn": 15,
-   "guland.vn": 284,
-   "nambanvillas.vn": 103,
+   "guland.vn": 286,
+   "nambanvillas.vn": 102,
    "muaban.net": 5,
-   "datnenlamdong.com.vn": 215
+   "datnenlamdong.com.vn": 214
   }
  },
  "monthly": [
@@ -90,7 +91,7 @@
    "month": "2026-04",
    "status": "closed",
    "ghi_nhan": {
-    "n": 8,
+    "n": 6,
     "groups": {
      "tach_thua_150_300": {
       "label": "Đất nền tách thửa 150–300 m²",
@@ -101,7 +102,7 @@
      },
      "lo_500_tho_cu": {
       "label": "Lô khoảng 500 m² có thổ cư",
-      "n": 2,
+      "n": 1,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
@@ -134,7 +135,7 @@
       "median_vnd_m2": null
      },
      "Đông Thanh": {
-      "n": 2,
+      "n": 0,
       "median_vnd_m2": null
      },
      "Mê Linh": {
@@ -152,12 +153,12 @@
     },
     "villas_n": 0,
     "sources": {
-     "batdongsanonline.vn": 5,
+     "batdongsanonline.vn": 3,
      "thuviennhadat.vn": 3
     }
    },
    "posted": {
-    "n": 8,
+    "n": 6,
     "groups": {
      "tach_thua_150_300": {
       "label": "Đất nền tách thửa 150–300 m²",
@@ -168,7 +169,7 @@
      },
      "lo_500_tho_cu": {
       "label": "Lô khoảng 500 m² có thổ cư",
-      "n": 2,
+      "n": 1,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
@@ -201,7 +202,7 @@
       "median_vnd_m2": null
      },
      "Đông Thanh": {
-      "n": 2,
+      "n": 0,
       "median_vnd_m2": null
      },
      "Mê Linh": {
@@ -219,7 +220,7 @@
     },
     "villas_n": 0,
     "sources": {
-     "batdongsanonline.vn": 5,
+     "batdongsanonline.vn": 3,
      "thuviennhadat.vn": 3
     }
    },
@@ -495,59 +496,59 @@
    "month": "2026-06",
    "status": "closed",
    "ghi_nhan": {
-    "n": 95,
+    "n": 135,
     "groups": {
      "tach_thua_150_300": {
       "label": "Đất nền tách thửa 150–300 m²",
-      "n": 41,
-      "median_vnd_m2": 3726708,
-      "p10_vnd_m2": 2750000,
-      "p90_vnd_m2": 4651162
+      "n": 48,
+      "median_vnd_m2": 3820128,
+      "p10_vnd_m2": 2757258,
+      "p90_vnd_m2": 8757692
      },
      "lo_500_tho_cu": {
       "label": "Lô khoảng 500 m² có thổ cư",
-      "n": 22,
-      "median_vnd_m2": 2763972,
-      "p10_vnd_m2": 2064709,
-      "p90_vnd_m2": 3869051
+      "n": 33,
+      "median_vnd_m2": 2956521,
+      "p10_vnd_m2": 2173395,
+      "p90_vnd_m2": 3863651
      },
      "dat_tren_1000": {
       "label": "Đất trên 1.000 m²",
-      "n": 13,
-      "median_vnd_m2": 994513,
-      "p10_vnd_m2": 184492,
-      "p90_vnd_m2": 2092037
+      "n": 21,
+      "median_vnd_m2": 1000000,
+      "p10_vnd_m2": 308461,
+      "p90_vnd_m2": 2458649
      },
      "view": {
       "label": "Lô có view hồ, đồi, toàn cảnh",
-      "n": 30,
-      "median_vnd_m2": 2979186,
-      "p10_vnd_m2": 2114833,
-      "p90_vnd_m2": 4541771
+      "n": 35,
+      "median_vnd_m2": 3005617,
+      "p10_vnd_m2": 2080799,
+      "p90_vnd_m2": 4597560
      },
      "nha": {
       "label": "Nhà / biệt thự (m² đất)",
-      "n": 6,
-      "median_vnd_m2": null,
-      "p10_vnd_m2": null,
-      "p90_vnd_m2": null
+      "n": 16,
+      "median_vnd_m2": 6269262,
+      "p10_vnd_m2": 3490266,
+      "p90_vnd_m2": 11669354
      }
     },
     "by_khu": {
      "Nam Ban": {
-      "n": 55,
+      "n": 87,
       "median_vnd_m2": 3333333
      },
      "Đông Thanh": {
-      "n": 5,
+      "n": 6,
       "median_vnd_m2": null
      },
      "Mê Linh": {
-      "n": 17,
-      "median_vnd_m2": 3400000
+      "n": 20,
+      "median_vnd_m2": 3405882
      },
      "Gia Lâm": {
-      "n": 3,
+      "n": 7,
       "median_vnd_m2": null
      },
      "chưa rõ khu": {
@@ -558,64 +559,64 @@
     "villas_n": 0,
     "sources": {
      "thuviennhadat.vn": 5,
-     "batdongsanonline.vn": 1,
-     "guland.vn": 89
+     "guland.vn": 89,
+     "nambanvillas.vn/tin-rao": 41
     }
    },
    "posted": {
-    "n": 6,
+    "n": 46,
     "groups": {
      "tach_thua_150_300": {
       "label": "Đất nền tách thửa 150–300 m²",
-      "n": 0,
+      "n": 7,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
      },
      "lo_500_tho_cu": {
       "label": "Lô khoảng 500 m² có thổ cư",
-      "n": 0,
-      "median_vnd_m2": null,
-      "p10_vnd_m2": null,
-      "p90_vnd_m2": null
+      "n": 11,
+      "median_vnd_m2": 3059125,
+      "p10_vnd_m2": 2655889,
+      "p90_vnd_m2": 3638814
      },
      "dat_tren_1000": {
       "label": "Đất trên 1.000 m²",
-      "n": 2,
-      "median_vnd_m2": null,
-      "p10_vnd_m2": null,
-      "p90_vnd_m2": null
+      "n": 10,
+      "median_vnd_m2": 1272635,
+      "p10_vnd_m2": 865931,
+      "p90_vnd_m2": 2462784
      },
      "view": {
       "label": "Lô có view hồ, đồi, toàn cảnh",
-      "n": 2,
+      "n": 7,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
      },
      "nha": {
       "label": "Nhà / biệt thự (m² đất)",
-      "n": 2,
-      "median_vnd_m2": null,
-      "p10_vnd_m2": null,
-      "p90_vnd_m2": null
+      "n": 12,
+      "median_vnd_m2": 7187848,
+      "p10_vnd_m2": 4939669,
+      "p90_vnd_m2": 12004838
      }
     },
     "by_khu": {
      "Nam Ban": {
-      "n": 5,
-      "median_vnd_m2": null
+      "n": 37,
+      "median_vnd_m2": 3597122
      },
      "Đông Thanh": {
-      "n": 1,
+      "n": 2,
       "median_vnd_m2": null
      },
      "Mê Linh": {
-      "n": 0,
+      "n": 3,
       "median_vnd_m2": null
      },
      "Gia Lâm": {
-      "n": 0,
+      "n": 4,
       "median_vnd_m2": null
      },
      "chưa rõ khu": {
@@ -626,7 +627,7 @@
     "villas_n": 0,
     "sources": {
      "thuviennhadat.vn": 5,
-     "batdongsanonline.vn": 1
+     "nambanvillas.vn/tin-rao": 41
     }
    },
    "refreshed_guland": {
@@ -700,39 +701,39 @@
    "month": "2026-07",
    "status": "closed",
    "ghi_nhan": {
-    "n": 52,
+    "n": 75,
     "groups": {
      "tach_thua_150_300": {
       "label": "Đất nền tách thửa 150–300 m²",
-      "n": 6,
+      "n": 9,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
      },
      "lo_500_tho_cu": {
       "label": "Lô khoảng 500 m² có thổ cư",
-      "n": 12,
-      "median_vnd_m2": 3156137,
-      "p10_vnd_m2": 1831157,
-      "p90_vnd_m2": 4528409
+      "n": 18,
+      "median_vnd_m2": 2677165,
+      "p10_vnd_m2": 1849179,
+      "p90_vnd_m2": 4426136
      },
      "dat_tren_1000": {
       "label": "Đất trên 1.000 m²",
-      "n": 23,
-      "median_vnd_m2": 544444,
-      "p10_vnd_m2": 200555,
-      "p90_vnd_m2": 1675000
+      "n": 28,
+      "median_vnd_m2": 907633,
+      "p10_vnd_m2": 201944,
+      "p90_vnd_m2": 2197872
      },
      "view": {
       "label": "Lô có view hồ, đồi, toàn cảnh",
-      "n": 9,
-      "median_vnd_m2": null,
-      "p10_vnd_m2": null,
-      "p90_vnd_m2": null
+      "n": 12,
+      "median_vnd_m2": 3694422,
+      "p10_vnd_m2": 1037749,
+      "p90_vnd_m2": 5825611
      },
      "nha": {
       "label": "Nhà / biệt thự (m² đất)",
-      "n": 3,
+      "n": 8,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
@@ -740,19 +741,19 @@
     },
     "by_khu": {
      "Nam Ban": {
-      "n": 27,
-      "median_vnd_m2": 2840000
+      "n": 41,
+      "median_vnd_m2": 2500000
      },
      "Đông Thanh": {
-      "n": 2,
+      "n": 6,
       "median_vnd_m2": null
      },
      "Mê Linh": {
-      "n": 9,
-      "median_vnd_m2": null
+      "n": 12,
+      "median_vnd_m2": 2725498
      },
      "Gia Lâm": {
-      "n": 2,
+      "n": 4,
       "median_vnd_m2": null
      },
      "chưa rõ khu": {
@@ -763,45 +764,46 @@
     "villas_n": 1,
     "sources": {
      "thuviennhadat.vn": 2,
-     "batdongsanonline.vn": 5,
+     "batdongsanonline.vn": 4,
      "nambanvillas.vn": 1,
-     "guland.vn": 44
+     "guland.vn": 45,
+     "nambanvillas.vn/tin-rao": 23
     }
    },
    "posted": {
-    "n": 8,
+    "n": 30,
     "groups": {
      "tach_thua_150_300": {
       "label": "Đất nền tách thửa 150–300 m²",
-      "n": 2,
+      "n": 5,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
      },
      "lo_500_tho_cu": {
       "label": "Lô khoảng 500 m² có thổ cư",
-      "n": 1,
+      "n": 6,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
      },
      "dat_tren_1000": {
       "label": "Đất trên 1.000 m²",
-      "n": 2,
+      "n": 7,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
      },
      "view": {
       "label": "Lô có view hồ, đồi, toàn cảnh",
-      "n": 1,
+      "n": 4,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
      },
      "nha": {
       "label": "Nhà / biệt thự (m² đất)",
-      "n": 1,
+      "n": 6,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
@@ -809,19 +811,19 @@
     },
     "by_khu": {
      "Nam Ban": {
-      "n": 7,
-      "median_vnd_m2": null
+      "n": 21,
+      "median_vnd_m2": 2014492
      },
      "Đông Thanh": {
-      "n": 0,
+      "n": 3,
       "median_vnd_m2": null
      },
      "Mê Linh": {
-      "n": 1,
+      "n": 4,
       "median_vnd_m2": null
      },
      "Gia Lâm": {
-      "n": 0,
+      "n": 2,
       "median_vnd_m2": null
      },
      "chưa rõ khu": {
@@ -832,12 +834,13 @@
     "villas_n": 1,
     "sources": {
      "thuviennhadat.vn": 2,
-     "batdongsanonline.vn": 5,
-     "nambanvillas.vn": 1
+     "batdongsanonline.vn": 4,
+     "nambanvillas.vn": 1,
+     "nambanvillas.vn/tin-rao": 23
     }
    },
    "refreshed_guland": {
-    "n": 44,
+    "n": 45,
     "groups": {
      "tach_thua_150_300": {
       "label": "Đất nền tách thửa 150–300 m²",
@@ -848,10 +851,10 @@
      },
      "lo_500_tho_cu": {
       "label": "Lô khoảng 500 m² có thổ cư",
-      "n": 11,
-      "median_vnd_m2": 3457943,
-      "p10_vnd_m2": 1828153,
-      "p90_vnd_m2": 4545454
+      "n": 12,
+      "median_vnd_m2": 3156137,
+      "p10_vnd_m2": 1858285,
+      "p90_vnd_m2": 4528409
      },
      "dat_tren_1000": {
       "label": "Đất trên 1.000 m²",
@@ -881,7 +884,7 @@
       "median_vnd_m2": 3020000
      },
      "Đông Thanh": {
-      "n": 2,
+      "n": 3,
       "median_vnd_m2": null
      },
      "Mê Linh": {
@@ -899,7 +902,7 @@
     },
     "villas_n": 0,
     "sources": {
-     "guland.vn": 44
+     "guland.vn": 45
     }
    }
   },
@@ -907,39 +910,39 @@
    "month": "2026-08",
    "status": "closed",
    "ghi_nhan": {
-    "n": 34,
+    "n": 52,
     "groups": {
      "tach_thua_150_300": {
       "label": "Đất nền tách thửa 150–300 m²",
-      "n": 8,
-      "median_vnd_m2": null,
-      "p10_vnd_m2": null,
-      "p90_vnd_m2": null
+      "n": 10,
+      "median_vnd_m2": 3512276,
+      "p10_vnd_m2": 2543067,
+      "p90_vnd_m2": 6052857
      },
      "lo_500_tho_cu": {
       "label": "Lô khoảng 500 m² có thổ cư",
-      "n": 6,
-      "median_vnd_m2": null,
-      "p10_vnd_m2": null,
-      "p90_vnd_m2": null
+      "n": 12,
+      "median_vnd_m2": 2632726,
+      "p10_vnd_m2": 1224011,
+      "p90_vnd_m2": 4692530
      },
      "dat_tren_1000": {
       "label": "Đất trên 1.000 m²",
-      "n": 4,
+      "n": 9,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
      },
      "view": {
       "label": "Lô có view hồ, đồi, toàn cảnh",
-      "n": 5,
-      "median_vnd_m2": null,
-      "p10_vnd_m2": null,
-      "p90_vnd_m2": null
+      "n": 11,
+      "median_vnd_m2": 2956521,
+      "p10_vnd_m2": 2577419,
+      "p90_vnd_m2": 5900000
      },
      "nha": {
       "label": "Nhà / biệt thự (m² đất)",
-      "n": 4,
+      "n": 7,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
@@ -947,11 +950,11 @@
     },
     "by_khu": {
      "Nam Ban": {
-      "n": 15,
-      "median_vnd_m2": 4227642
+      "n": 29,
+      "median_vnd_m2": 3318584
      },
      "Đông Thanh": {
-      "n": 7,
+      "n": 8,
       "median_vnd_m2": null
      },
      "Mê Linh": {
@@ -959,7 +962,7 @@
       "median_vnd_m2": null
      },
      "Gia Lâm": {
-      "n": 3,
+      "n": 6,
       "median_vnd_m2": null
      },
      "chưa rõ khu": {
@@ -970,81 +973,14 @@
     "villas_n": 5,
     "sources": {
      "nambanvillas.vn": 5,
-     "batdongsanonline.vn": 5,
+     "batdongsanonline.vn": 3,
      "thuviennhadat.vn": 1,
-     "guland.vn": 23
+     "guland.vn": 22,
+     "nambanvillas.vn/tin-rao": 21
     }
    },
    "posted": {
-    "n": 11,
-    "groups": {
-     "tach_thua_150_300": {
-      "label": "Đất nền tách thửa 150–300 m²",
-      "n": 3,
-      "median_vnd_m2": null,
-      "p10_vnd_m2": null,
-      "p90_vnd_m2": null
-     },
-     "lo_500_tho_cu": {
-      "label": "Lô khoảng 500 m² có thổ cư",
-      "n": 0,
-      "median_vnd_m2": null,
-      "p10_vnd_m2": null,
-      "p90_vnd_m2": null
-     },
-     "dat_tren_1000": {
-      "label": "Đất trên 1.000 m²",
-      "n": 1,
-      "median_vnd_m2": null,
-      "p10_vnd_m2": null,
-      "p90_vnd_m2": null
-     },
-     "view": {
-      "label": "Lô có view hồ, đồi, toàn cảnh",
-      "n": 4,
-      "median_vnd_m2": null,
-      "p10_vnd_m2": null,
-      "p90_vnd_m2": null
-     },
-     "nha": {
-      "label": "Nhà / biệt thự (m² đất)",
-      "n": 3,
-      "median_vnd_m2": null,
-      "p10_vnd_m2": null,
-      "p90_vnd_m2": null
-     }
-    },
-    "by_khu": {
-     "Nam Ban": {
-      "n": 8,
-      "median_vnd_m2": null
-     },
-     "Đông Thanh": {
-      "n": 3,
-      "median_vnd_m2": null
-     },
-     "Mê Linh": {
-      "n": 0,
-      "median_vnd_m2": null
-     },
-     "Gia Lâm": {
-      "n": 0,
-      "median_vnd_m2": null
-     },
-     "chưa rõ khu": {
-      "n": 0,
-      "median_vnd_m2": null
-     }
-    },
-    "villas_n": 5,
-    "sources": {
-     "nambanvillas.vn": 5,
-     "batdongsanonline.vn": 5,
-     "thuviennhadat.vn": 1
-    }
-   },
-   "refreshed_guland": {
-    "n": 23,
+    "n": 30,
     "groups": {
      "tach_thua_150_300": {
       "label": "Đất nền tách thửa 150–300 m²",
@@ -1055,7 +991,76 @@
      },
      "lo_500_tho_cu": {
       "label": "Lô khoảng 500 m² có thổ cư",
+      "n": 7,
+      "median_vnd_m2": null,
+      "p10_vnd_m2": null,
+      "p90_vnd_m2": null
+     },
+     "dat_tren_1000": {
+      "label": "Đất trên 1.000 m²",
       "n": 6,
+      "median_vnd_m2": null,
+      "p10_vnd_m2": null,
+      "p90_vnd_m2": null
+     },
+     "view": {
+      "label": "Lô có view hồ, đồi, toàn cảnh",
+      "n": 10,
+      "median_vnd_m2": 3189851,
+      "p10_vnd_m2": 2585328,
+      "p90_vnd_m2": 5932406
+     },
+     "nha": {
+      "label": "Nhà / biệt thự (m² đất)",
+      "n": 6,
+      "median_vnd_m2": null,
+      "p10_vnd_m2": null,
+      "p90_vnd_m2": null
+     }
+    },
+    "by_khu": {
+     "Nam Ban": {
+      "n": 22,
+      "median_vnd_m2": 3450336
+     },
+     "Đông Thanh": {
+      "n": 5,
+      "median_vnd_m2": null
+     },
+     "Mê Linh": {
+      "n": 0,
+      "median_vnd_m2": null
+     },
+     "Gia Lâm": {
+      "n": 3,
+      "median_vnd_m2": null
+     },
+     "chưa rõ khu": {
+      "n": 0,
+      "median_vnd_m2": null
+     }
+    },
+    "villas_n": 5,
+    "sources": {
+     "nambanvillas.vn": 5,
+     "batdongsanonline.vn": 3,
+     "thuviennhadat.vn": 1,
+     "nambanvillas.vn/tin-rao": 21
+    }
+   },
+   "refreshed_guland": {
+    "n": 22,
+    "groups": {
+     "tach_thua_150_300": {
+      "label": "Đất nền tách thửa 150–300 m²",
+      "n": 5,
+      "median_vnd_m2": null,
+      "p10_vnd_m2": null,
+      "p90_vnd_m2": null
+     },
+     "lo_500_tho_cu": {
+      "label": "Lô khoảng 500 m² có thổ cư",
+      "n": 5,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
@@ -1088,7 +1093,7 @@
       "median_vnd_m2": null
      },
      "Đông Thanh": {
-      "n": 4,
+      "n": 3,
       "median_vnd_m2": null
      },
      "Mê Linh": {
@@ -1106,7 +1111,7 @@
     },
     "villas_n": 0,
     "sources": {
-     "guland.vn": 23
+     "guland.vn": 22
     }
    }
   },
@@ -1114,28 +1119,28 @@
    "month": "2026-09",
    "status": "partial",
    "ghi_nhan": {
-    "n": 151,
+    "n": 164,
     "groups": {
      "tach_thua_150_300": {
       "label": "Đất nền tách thửa 150–300 m²",
-      "n": 19,
+      "n": 21,
       "median_vnd_m2": 3671328,
-      "p10_vnd_m2": 2416312,
-      "p90_vnd_m2": 13111111
+      "p10_vnd_m2": 2081560,
+      "p90_vnd_m2": 8888888
      },
      "lo_500_tho_cu": {
       "label": "Lô khoảng 500 m² có thổ cư",
-      "n": 39,
-      "median_vnd_m2": 2241379,
-      "p10_vnd_m2": 1224808,
-      "p90_vnd_m2": 4278451
+      "n": 38,
+      "median_vnd_m2": 2176017,
+      "p10_vnd_m2": 1295575,
+      "p90_vnd_m2": 3611020
      },
      "dat_tren_1000": {
       "label": "Đất trên 1.000 m²",
-      "n": 32,
-      "median_vnd_m2": 1382503,
-      "p10_vnd_m2": 439411,
-      "p90_vnd_m2": 3831538
+      "n": 37,
+      "median_vnd_m2": 1397081,
+      "p10_vnd_m2": 518114,
+      "p90_vnd_m2": 3865877
      },
      "view": {
       "label": "Lô có view hồ, đồi, toàn cảnh",
@@ -1146,20 +1151,20 @@
      },
      "nha": {
       "label": "Nhà / biệt thự (m² đất)",
-      "n": 24,
-      "median_vnd_m2": 5023095,
-      "p10_vnd_m2": 2163684,
-      "p90_vnd_m2": 30319590
+      "n": 26,
+      "median_vnd_m2": 5748651,
+      "p10_vnd_m2": 2202631,
+      "p90_vnd_m2": 47602291
      }
     },
     "by_khu": {
      "Nam Ban": {
-      "n": 54,
-      "median_vnd_m2": 3460941
+      "n": 67,
+      "median_vnd_m2": 3444881
      },
      "Đông Thanh": {
       "n": 47,
-      "median_vnd_m2": 5892255
+      "median_vnd_m2": 3500000
      },
      "Mê Linh": {
       "n": 15,
@@ -1176,32 +1181,33 @@
     },
     "villas_n": 19,
     "sources": {
-     "guland.vn": 126,
      "nambanvillas.vn": 19,
+     "guland.vn": 127,
      "muaban.net": 5,
-     "thuviennhadat.vn": 1
+     "thuviennhadat.vn": 1,
+     "nambanvillas.vn/tin-rao": 12
     }
    },
    "posted": {
-    "n": 24,
+    "n": 36,
     "groups": {
      "tach_thua_150_300": {
       "label": "Đất nền tách thửa 150–300 m²",
-      "n": 2,
+      "n": 3,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
      },
      "lo_500_tho_cu": {
       "label": "Lô khoảng 500 m² có thổ cư",
-      "n": 4,
+      "n": 7,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
      },
      "dat_tren_1000": {
       "label": "Đất trên 1.000 m²",
-      "n": 3,
+      "n": 5,
       "median_vnd_m2": null,
       "p10_vnd_m2": null,
       "p90_vnd_m2": null
@@ -1223,8 +1229,8 @@
     },
     "by_khu": {
      "Nam Ban": {
-      "n": 19,
-      "median_vnd_m2": 4583333
+      "n": 31,
+      "median_vnd_m2": 4103343
      },
      "Đông Thanh": {
       "n": 3,
@@ -1247,32 +1253,33 @@
     "sources": {
      "nambanvillas.vn": 19,
      "muaban.net": 4,
-     "thuviennhadat.vn": 1
+     "thuviennhadat.vn": 1,
+     "nambanvillas.vn/tin-rao": 12
     }
    },
    "refreshed_guland": {
-    "n": 127,
+    "n": 128,
     "groups": {
      "tach_thua_150_300": {
       "label": "Đất nền tách thửa 150–300 m²",
-      "n": 17,
-      "median_vnd_m2": 4059040,
-      "p10_vnd_m2": 2938541,
-      "p90_vnd_m2": 17333333
+      "n": 18,
+      "median_vnd_m2": 3865184,
+      "p10_vnd_m2": 2531932,
+      "p90_vnd_m2": 15222222
      },
      "lo_500_tho_cu": {
       "label": "Lô khoảng 500 m² có thổ cư",
-      "n": 35,
+      "n": 31,
       "median_vnd_m2": 2089093,
-      "p10_vnd_m2": 1219881,
-      "p90_vnd_m2": 3659699
+      "p10_vnd_m2": 1214953,
+      "p90_vnd_m2": 3454545
      },
      "dat_tren_1000": {
       "label": "Đất trên 1.000 m²",
-      "n": 29,
-      "median_vnd_m2": 1357019,
-      "p10_vnd_m2": 415176,
-      "p90_vnd_m2": 2943143
+      "n": 32,
+      "median_vnd_m2": 1362472,
+      "p10_vnd_m2": 437659,
+      "p90_vnd_m2": 2695652
      },
      "view": {
       "label": "Lô có view hồ, đồi, toàn cảnh",
@@ -1283,20 +1290,20 @@
      },
      "nha": {
       "label": "Nhà / biệt thự (m² đất)",
-      "n": 15,
-      "median_vnd_m2": 3662691,
-      "p10_vnd_m2": 2183157,
-      "p90_vnd_m2": 45210985
+      "n": 17,
+      "median_vnd_m2": 3962703,
+      "p10_vnd_m2": 2222105,
+      "p90_vnd_m2": 53053305
      }
     },
     "by_khu": {
      "Nam Ban": {
-      "n": 35,
-      "median_vnd_m2": 2902684
+      "n": 36,
+      "median_vnd_m2": 2892518
      },
      "Đông Thanh": {
       "n": 44,
-      "median_vnd_m2": 5966262
+      "median_vnd_m2": 4696127
      },
      "Mê Linh": {
       "n": 13,
@@ -1313,7 +1320,7 @@
     },
     "villas_n": 0,
     "sources": {
-     "guland.vn": 126,
+     "guland.vn": 127,
      "muaban.net": 1
     }
    }
@@ -1323,23 +1330,23 @@
   {
    "week": "2026-W39",
    "measured_on": "2026-09-25",
-   "new_listings": 640,
+   "new_listings": 18,
    "snapshot": {
-    "n": 640,
+    "n": 634,
     "groups": {
      "tach_thua_150_300": {
       "label": "Đất nền tách thửa 150–300 m²",
-      "n": 128,
-      "median_vnd_m2": 3493589,
-      "p10_vnd_m2": 2529272,
-      "p90_vnd_m2": 4836515
+      "n": 129,
+      "median_vnd_m2": 3487179,
+      "p10_vnd_m2": 2482352,
+      "p90_vnd_m2": 4810689
      },
      "lo_500_tho_cu": {
       "label": "Lô khoảng 500 m² có thổ cư",
-      "n": 158,
-      "median_vnd_m2": 2278329,
-      "p10_vnd_m2": 1420317,
-      "p90_vnd_m2": 3975481
+      "n": 154,
+      "median_vnd_m2": 2270073,
+      "p10_vnd_m2": 1411428,
+      "p90_vnd_m2": 3878686
      },
      "dat_tren_1000": {
       "label": "Đất trên 1.000 m²",
@@ -1350,27 +1357,27 @@
      },
      "view": {
       "label": "Lô có view hồ, đồi, toàn cảnh",
-      "n": 143,
-      "median_vnd_m2": 3005617,
-      "p10_vnd_m2": 1718930,
-      "p90_vnd_m2": 4719806
+      "n": 140,
+      "median_vnd_m2": 3016162,
+      "p10_vnd_m2": 1735189,
+      "p90_vnd_m2": 4725903
      },
      "nha": {
       "label": "Nhà / biệt thự (m² đất)",
-      "n": 91,
-      "median_vnd_m2": 4769230,
-      "p10_vnd_m2": 1893939,
-      "p90_vnd_m2": 12324528
+      "n": 93,
+      "median_vnd_m2": 5018248,
+      "p10_vnd_m2": 1906060,
+      "p90_vnd_m2": 12809510
      }
     },
     "by_khu": {
      "Nam Ban": {
-      "n": 357,
-      "median_vnd_m2": 3000000
+      "n": 355,
+      "median_vnd_m2": 3005617
      },
      "Đông Thanh": {
-      "n": 120,
-      "median_vnd_m2": 2403965
+      "n": 116,
+      "median_vnd_m2": 2373720
      },
      "Mê Linh": {
       "n": 83,
@@ -1385,14 +1392,14 @@
       "median_vnd_m2": 2125131
      }
     },
-    "villas_n": 103,
+    "villas_n": 102,
     "sources": {
-     "batdongsanonline.vn": 18,
+     "batdongsanonline.vn": 12,
      "thuviennhadat.vn": 15,
-     "guland.vn": 284,
-     "nambanvillas.vn": 103,
+     "guland.vn": 286,
+     "nambanvillas.vn": 102,
      "muaban.net": 5,
-     "datnenlamdong.com.vn": 215
+     "datnenlamdong.com.vn": 214
     }
    }
   }
