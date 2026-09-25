@@ -170,7 +170,7 @@ a,button{touch-action:manipulation;}
   "headline": "Giá đất Nam Ban 2026: bảng giá rao theo từng loại",
   "description": "Giá rao đất Nam Ban 2026 theo bốn loại: đất nền tách thửa 150–300 m², lô khoảng 500 m² có thổ cư, đất trên 1.000 m², lô có view. Trung vị theo tháng, tăng hay giảm, giá theo khu và dữ liệu mở.",
   "datePublished": "2026-06-01",
-  "dateModified": "2026-09-25T10:53:00+07:00",
+  "dateModified": "2026-09-25T10:55:00+07:00",
   "author": {
     "@type": "Person",
     "@id": "https://nambanpanorama.com/#founder",
@@ -424,8 +424,13 @@ h3.idx-sub{font-family:'Fraunces',serif;font-weight:400;font-size:19px;margin:28
 .idx-answer{font-size:16.5px;line-height:1.7;margin:0 0 14px;text-wrap:pretty}
 .idx-why{font-size:15px;line-height:1.7;margin:16px 0 0;text-wrap:pretty;color:var(--ink)}
 .idx-why b{font-weight:500}
-.idx-now{grid-template-columns:repeat(4,1fr)}
-.idx-now .price-cell{padding:22px 18px 16px}
+.idx-now{grid-template-columns:repeat(4,1fr);grid-auto-rows:auto}
+.idx-now .price-cell{padding:22px 18px 16px;display:grid;grid-row:span 6;grid-template-rows:subgrid;row-gap:0;align-content:start}
+.idx-now .price-tier{margin-bottom:10px;align-self:end}
+.idx-now .price-desc{display:flex;flex-direction:column;margin-top:2px}
+.idx-now .cmp-l{font-size:12.5px;color:var(--muted)}
+.idx-now .cmp-v{font-size:13.5px;color:var(--ink)}
+@supports not (grid-template-rows:subgrid){.idx-now .price-cell{display:block}.idx-now .price-tier{min-height:2.9em}}
 @media(max-width:900px){.idx-now{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.idx-now{grid-template-columns:1fr}}
 .idx-now .price-range{font-size:28px}
@@ -433,7 +438,7 @@ h3.idx-sub{font-family:'Fraunces',serif;font-weight:400;font-size:19px;margin:28
 .idx-now .price-desc{text-wrap:pretty}
 .idx-now .price-desc b{font-weight:500;color:var(--ink)}
 .idx-now .price-desc small{font-size:11.5px;color:var(--stone-text,#726a5c)}
-.price-band{margin-top:8px;font-size:12.5px;color:var(--muted);line-height:1.45}
+.price-band{margin-top:10px;font-size:12.5px;color:var(--muted);line-height:1.45;text-wrap:pretty}
 .price-band b{font-weight:500;color:var(--forest)}
 .idx-fig{margin:18px 0 10px}
 .idx-fig figcaption{font-size:13px;color:var(--muted);line-height:1.5;margin:0 0 8px;text-wrap:pretty}
@@ -457,18 +462,17 @@ h3.idx-sub{font-family:'Fraunces',serif;font-weight:400;font-size:19px;margin:28
 .idx-stats div{background:var(--card);padding:12px 14px}
 .idx-stats dt{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--stone-text,#726a5c);font-weight:500;margin-bottom:4px}
 .idx-stats dd{margin:0;font-size:14px;line-height:1.45;color:var(--ink)}
-.idx-bygroup tbody th{width:38%;white-space:normal;font-family:'Fraunces',serif;font-weight:400;font-size:16px;line-height:1.35}
-.idx-series{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 22px}
-.idx-series li{display:flex;flex-direction:column;min-width:64px}
+.idx-bygroup tbody th{width:34%;white-space:normal;font-family:'Fraunces',serif;font-weight:400;font-size:16px;line-height:1.35}
+.idx-series{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(86px,1fr));gap:8px 10px}
+.idx-series li{display:flex;flex-direction:column;min-width:0}
 .idx-series .idx-m{font-size:11.5px;line-height:16px;height:16px;letter-spacing:.04em;color:var(--muted);white-space:nowrap}
 .idx-series b{font-family:'Fraunces',serif;font-weight:500;font-size:19px;color:var(--ink);line-height:1.25}
 .idx-series small{font-size:11.5px;color:var(--muted)}
-.idx-series .idx-tmp{font-size:11px;margin:0;font-style:italic;color:var(--muted)}
-.idx-series li:last-child b{color:var(--forest)}
+.idx-series li:first-child b{color:var(--forest)}
 @media(max-width:600px){.idx-stats{grid-template-columns:1fr 1fr}.idx-tbl{font-size:13px}.idx-answer{font-size:15.5px}.idx-now .price-range{font-size:27px}
 .idx-bygroup thead{display:none}.idx-bygroup,.idx-bygroup tbody,.idx-bygroup tr,.idx-bygroup th,.idx-bygroup td{display:block;width:auto}
 .idx-bygroup tr{padding:12px 14px;border-bottom:1px solid var(--line)}.idx-bygroup tr:last-child{border-bottom:0}
-.idx-bygroup tbody th,.idx-bygroup td{padding:0;border:0}.idx-bygroup tbody th{margin-bottom:8px}}
+.idx-bygroup tbody th,.idx-bygroup td{padding:0;border:0}.idx-bygroup tbody th{margin-bottom:8px;width:auto}}
 /* IDX-GEN:END */
 </style>
 <style id="idx-support">
@@ -599,7 +603,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <!-- IDX-NOW:START (sinh bởi tools/gen-index-history.py — đừng sửa tay) -->
 <div class="idx-section-label">01 — Giá kỳ này</div>
 <h2 class="idx-section-title">Giá đất Nam Ban tháng 9/2026 theo từng loại</h2>
-<div class="price-grid idx-now"><div class="price-cell"><div class="price-tier">Đất nền tách thửa 150–300&nbsp;m²</div><div class="price-range">3,67 <span class="idx-unit">tr/m²</span></div><div class="price-unit">trung vị của 19 tin rao</div><div class="price-desc">So với tháng 6/2026 (3,73): <b>đi&nbsp;ngang</b>&nbsp;−1&nbsp;%&nbsp;<small>(mẫu&nbsp;nhỏ)</small></div><div class="price-band">Khoảng rao phổ biến nửa đầu 2026: <b>3–4,5 tr/m²</b></div><div class="price-total">Nền nhỏ trong khu đã tách, có thổ cư, xây được ngay.</div></div><div class="price-cell"><div class="price-tier">Lô khoảng 500&nbsp;m² có thổ cư</div><div class="price-range">2,24 <span class="idx-unit">tr/m²</span></div><div class="price-unit">trung vị của 39 tin rao</div><div class="price-desc">So với tháng 7/2026 (3,16): <b>giảm</b>&nbsp;−29&nbsp;%&nbsp;<small>(mẫu&nbsp;nhỏ)</small></div><div class="price-total">Ngang 10–18&nbsp;m, tách từ thời luật chưa cho tách nhỏ; ít hàng, giao dịch tốt.</div></div><div class="price-cell"><div class="price-tier">Đất trên 1.000&nbsp;m²</div><div class="price-range">1,38 <span class="idx-unit">tr/m²</span></div><div class="price-unit">trung vị của 32 tin rao</div><div class="price-desc">So với tháng 7/2026 (0,54): <b>không so được</b> — mẫu hai tháng khác&nbsp;nhau</div><div class="price-band">Khoảng rao phổ biến nửa đầu 2026: <b>1,7–2,8 tr/m²</b></div><div class="price-total">Phần nhiều là nông nghiệp tách ra từ rẫy, chưa đủ điều kiện tách nhỏ.</div></div><div class="price-cell"><div class="price-tier">Lô có view hồ, đồi, toàn cảnh</div><div class="price-range">3,16 <span class="idx-unit">tr/m²</span></div><div class="price-unit">trung vị của 13 tin rao</div><div class="price-desc">So với tháng 6/2026 (2,98): <b>nhích&nbsp;lên</b>&nbsp;+6&nbsp;%&nbsp;<small>(mẫu&nbsp;nhỏ)</small></div><div class="price-band">Khoảng rao phổ biến nửa đầu 2026: <b>4–6 tr/m²</b></div><div class="price-total">Nhìn ra hồ, đồi hoặc toàn cảnh thị trấn; hiếm, giá theo tầm nhìn.</div></div></div>
+<div class="price-grid idx-now"><div class="price-cell"><div class="price-tier">Đất nền tách thửa 150–300&nbsp;m²</div><div class="price-range">3,67 <span class="idx-unit">tr/m²</span></div><div class="price-unit">trung vị của 19 tin rao</div><div class="price-desc"><span class="cmp-l">so với tháng 6/2026 (3,73)</span><span class="cmp-v"><b>đi&nbsp;ngang</b>&nbsp;−1&nbsp;% <small>(mẫu&nbsp;nhỏ)</small></span></div><div class="price-band">Khoảng rao nửa đầu 2026: <b>3–4,5&nbsp;tr/m²</b></div><div class="price-total">Nền nhỏ trong khu đã tách, có thổ cư, xây được ngay.</div></div><div class="price-cell"><div class="price-tier">Lô khoảng 500&nbsp;m² có thổ cư</div><div class="price-range">2,24 <span class="idx-unit">tr/m²</span></div><div class="price-unit">trung vị của 39 tin rao</div><div class="price-desc"><span class="cmp-l">so với tháng 7/2026 (3,16)</span><span class="cmp-v"><b>giảm</b>&nbsp;−29&nbsp;% <small>(mẫu&nbsp;nhỏ)</small></span></div><div class="price-band">Khoảng rao nửa đầu 2026: chờ số thực&nbsp;địa</div><div class="price-total">Ngang 10–18&nbsp;m, tách từ thời luật chưa cho tách nhỏ; ít hàng, giao dịch tốt.</div></div><div class="price-cell"><div class="price-tier">Đất trên 1.000&nbsp;m²</div><div class="price-range">1,38 <span class="idx-unit">tr/m²</span></div><div class="price-unit">trung vị của 32 tin rao</div><div class="price-desc"><span class="cmp-l">so với tháng 7/2026 (0,54)</span><span class="cmp-v"><b>không so được</b> <small>(mẫu khác&nbsp;nhau)</small></span></div><div class="price-band">Khoảng rao nửa đầu 2026: <b>1,7–2,8&nbsp;tr/m²</b></div><div class="price-total">Phần nhiều là nông nghiệp tách ra từ rẫy, chưa đủ điều kiện tách nhỏ.</div></div><div class="price-cell"><div class="price-tier">Lô có view hồ, đồi, toàn cảnh</div><div class="price-range">3,16 <span class="idx-unit">tr/m²</span></div><div class="price-unit">trung vị của 13 tin rao</div><div class="price-desc"><span class="cmp-l">so với tháng 6/2026 (2,98)</span><span class="cmp-v"><b>nhích&nbsp;lên</b>&nbsp;+6&nbsp;% <small>(mẫu&nbsp;nhỏ)</small></span></div><div class="price-band">Khoảng rao nửa đầu 2026: <b>4–6&nbsp;tr/m²</b></div><div class="price-total">Nhìn ra hồ, đồi hoặc toàn cảnh thị trấn; hiếm, giá theo tầm nhìn.</div></div></div>
 <p class="idx-why">Trung vị tháng 9/2026 của đất trên 1.000 m² và lô có view hồ, đồi, toàn cảnh đang nằm <b>dưới</b> khoảng rao phổ biến nửa đầu năm. Theo quan sát thực địa của Panorama, giá rao tháng 9/2026 mềm hơn vì mùa mưa bão và kinh tế: nguồn cung mùa này ra nhiều hơn cầu, người bán rao mềm hơn để ra hàng. Đây là phân tích của Panorama, chưa phải dữ kiện đã xác nhận, và chưa đủ để kết luận xu hướng dài&nbsp;hạn.</p>
 <!-- IDX-NOW:END -->
 
@@ -613,12 +617,12 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <figure class="idx-fig pm-selectable">
 <figcaption>Trung vị giá rao theo tháng, triệu đồng/m², xã Nam&nbsp;Ban Lâm&nbsp;Hà. Nguồn: Namban&nbsp;Index — tin rao công khai của 7&nbsp;trang, gộp&nbsp;trùng, đo&nbsp;25/9/2026.</figcaption>
 <div class="idx-tblwrap"><table class="idx-tbl idx-bygroup">
-<thead><tr><th scope="col">Loại đất</th><th scope="col">Các tháng đủ số, cũ đến mới</th></tr></thead>
+<thead><tr><th scope="col">Loại đất</th><th scope="col">Các tháng đủ số, mới nhất trước</th></tr></thead>
 <tbody>
-<tr><th scope="row">Đất nền tách thửa 150–300&nbsp;m²</th><td><ol class="idx-series"><li><span class="idx-m"><time datetime="2026-06">6/2026</time></span><b>3,73</b><small>41&nbsp;tin</small></li><li><span class="idx-m"><time datetime="2026-09">9/2026</time><span class="idx-tmp"> · đang đo</span></span><b>3,67</b><small>19&nbsp;tin</small></li></ol></td></tr>
-<tr><th scope="row">Lô khoảng 500&nbsp;m² có thổ cư</th><td><ol class="idx-series"><li><span class="idx-m"><time datetime="2026-06">6/2026</time></span><b>2,76</b><small>22&nbsp;tin</small></li><li><span class="idx-m"><time datetime="2026-07">7/2026</time></span><b>3,16</b><small>12&nbsp;tin</small></li><li><span class="idx-m"><time datetime="2026-09">9/2026</time><span class="idx-tmp"> · đang đo</span></span><b>2,24</b><small>39&nbsp;tin</small></li></ol></td></tr>
-<tr><th scope="row">Đất trên 1.000&nbsp;m²</th><td><ol class="idx-series"><li><span class="idx-m"><time datetime="2026-06">6/2026</time></span><b>0,99</b><small>13&nbsp;tin</small></li><li><span class="idx-m"><time datetime="2026-07">7/2026</time></span><b>0,54</b><small>23&nbsp;tin</small></li><li><span class="idx-m"><time datetime="2026-09">9/2026</time><span class="idx-tmp"> · đang đo</span></span><b>1,38</b><small>32&nbsp;tin</small></li></ol></td></tr>
-<tr><th scope="row">Lô có view hồ, đồi, toàn cảnh</th><td><ol class="idx-series"><li><span class="idx-m"><time datetime="2026-06">6/2026</time></span><b>2,98</b><small>30&nbsp;tin</small></li><li><span class="idx-m"><time datetime="2026-09">9/2026</time><span class="idx-tmp"> · đang đo</span></span><b>3,16</b><small>13&nbsp;tin</small></li></ol></td></tr>
+<tr><th scope="row">Đất nền tách thửa 150–300&nbsp;m²</th><td><ol class="idx-series"><li><span class="idx-m"><time datetime="2026-09">9/2026</time></span><b>3,67</b><small>19&nbsp;tin · đang đo</small></li><li><span class="idx-m"><time datetime="2026-06">6/2026</time></span><b>3,73</b><small>41&nbsp;tin</small></li></ol></td></tr>
+<tr><th scope="row">Lô khoảng 500&nbsp;m² có thổ cư</th><td><ol class="idx-series"><li><span class="idx-m"><time datetime="2026-09">9/2026</time></span><b>2,24</b><small>39&nbsp;tin · đang đo</small></li><li><span class="idx-m"><time datetime="2026-07">7/2026</time></span><b>3,16</b><small>12&nbsp;tin</small></li><li><span class="idx-m"><time datetime="2026-06">6/2026</time></span><b>2,76</b><small>22&nbsp;tin</small></li></ol></td></tr>
+<tr><th scope="row">Đất trên 1.000&nbsp;m²</th><td><ol class="idx-series"><li><span class="idx-m"><time datetime="2026-09">9/2026</time></span><b>1,38</b><small>32&nbsp;tin · đang đo</small></li><li><span class="idx-m"><time datetime="2026-07">7/2026</time></span><b>0,54</b><small>23&nbsp;tin</small></li><li><span class="idx-m"><time datetime="2026-06">6/2026</time></span><b>0,99</b><small>13&nbsp;tin</small></li></ol></td></tr>
+<tr><th scope="row">Lô có view hồ, đồi, toàn cảnh</th><td><ol class="idx-series"><li><span class="idx-m"><time datetime="2026-09">9/2026</time></span><b>3,16</b><small>13&nbsp;tin · đang đo</small></li><li><span class="idx-m"><time datetime="2026-06">6/2026</time></span><b>2,98</b><small>30&nbsp;tin</small></li></ol></td></tr>
 </tbody></table></div>
 </figure>
 <p class="idx-note">Mỗi loại chỉ hiện tháng có từ 10 tin rao trở lên; tháng ít tin hơn thì bỏ, không điền số ước. Tháng 8/2026 không loại nào đủ 10 tin nên không có trong bảng. Từ tháng 10/2026 đo mỗi tuần nên sẽ ít tháng hụt&nbsp;hơn.</p>

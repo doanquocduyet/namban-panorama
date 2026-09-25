@@ -297,6 +297,12 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   gộp mọi loại đất theo Đông Thanh / Mê Linh / Gia Lâm — bỏ vì gộp loại đất nên số không nói lên
   giá thật của khu, và 357/640 tin chỉ ghi "Nam Ban". Mục 06 giữ các ô dẫn sang bài từng khu, không
   có số. Đừng dựng lại bảng này, kể cả khi `baseline.by_khu` vẫn còn trong `monthly.json`.
+- **Bố cục đã khóa thẳng hàng (25/9/2026, Chú báo PC và mobile lệch):** bốn ô mục 01 dùng
+  `grid-template-rows:subgrid` nên tên loại, số to, dòng so sánh, khoảng nửa đầu năm, ghi chú luôn
+  cùng hàng dù tên dài ngắn khác nhau; ô nào thiếu khoảng nửa đầu năm vẫn in một dòng giữ chỗ.
+  Bảng diễn biến xếp **tháng mới nhất trước**, mỗi tháng một ô rộng bằng nhau, nên tháng hiện tại
+  luôn ở cột đầu. Đổi bố cục thì đo lại bằng Playwright ở 390/768/1440/1920, không chỉ nhìn một khổ.
+  Sau khi sửa trang Index, chạy `python3 tools/gen-llms-index-entry.py` để đồng bộ `llms-full.txt`.
 - **Nguồn ghi "7 trang"** = danh sách quét trong `meta.method`, không đếm theo tháng có tin (mogi
   tháng 9 = 0 tin nhưng vẫn là nguồn). Có `nambanvillas.vn` (web cùng chủ) trong danh sách — đã khử
   trùng với 6 nguồn còn lại; chưa ghi chú xung đột lợi ích trên trang, cân nhắc sau.

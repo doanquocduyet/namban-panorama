@@ -73,12 +73,13 @@ for key, label, low in GROUPS:
     cur[key] = row
 def src_txt(r): return f'{r["n"]} tin rao' if r["src"] == "rao" else "sổ thực địa Panorama†"
 def cmp_txt(r):
-    if not r.get("prev"): return "Chưa có tháng trước để so"
+    if not r.get("prev"): return '<span class="cmp-l">chưa có tháng trước</span><span class="cmp-v">để&nbsp;so</span>'
     pm, pv = r["prev"]
-    if r["w"] == "khác&nbsp;hẳn": return f'So với tháng {month_vi(pm)} ({tr(pv[0])}): <b>không so được</b> — mẫu hai tháng khác&nbsp;nhau'
+    lead = f'<span class="cmp-l">so với tháng {month_vi(pm)} ({tr(pv[0])})</span>'
+    if r["w"] == "khác&nbsp;hẳn": return lead + '<span class="cmp-v"><b>không so được</b> <small>(mẫu khác&nbsp;nhau)</small></span>'
     sign = "+" if r["d"] > 0 else "−"
-    small = "&nbsp;<small>(mẫu&nbsp;nhỏ)</small>" if (r["src"] == "rao" and r["n"] < 20) or (pv[2] == "rao" and (pv[1] or 0) < 20) else ""
-    return f'So với tháng {month_vi(pm)} ({tr(pv[0])}): <b>{r["w"]}</b>&nbsp;{sign}{abs(r["d"]):.0f}&nbsp;%{small}'
+    small = " <small>(mẫu&nbsp;nhỏ)</small>" if (r["src"] == "rao" and r["n"] < 20) or (pv[2] == "rao" and (pv[1] or 0) < 20) else ""
+    return lead + f'<span class="cmp-v"><b>{r["w"]}</b>&nbsp;{sign}{abs(r["d"]):.0f}&nbsp;%{small}</span>'
 def sent(key, r):
     s = f'{LOW[key].capitalize()} <strong>{tr(r["v"])} triệu/m²</strong> ({src_txt(r)})'
     if not r.get("prev"): return s + "."
@@ -102,7 +103,7 @@ for key, label, low in GROUPS:
     r = cur.get(key)
     if not r: continue
     rng = RANGE.get(key)
-    rng_html = f'<div class="price-band">Khoảng rao phổ biến nửa đầu 2026: <b>{tr1(rng[0])}–{tr1(rng[1])} tr/m²</b></div>' if rng else ""
+    rng_html = f'<div class="price-band">Khoảng rao nửa đầu 2026: <b>{tr1(rng[0])}–{tr1(rng[1])}&nbsp;tr/m²</b></div>' if rng else '<div class="price-band">Khoảng rao nửa đầu 2026: chờ số thực&nbsp;địa</div>'
     if rng and r["v"] < rng[0]: below.append(low)
     cells.append(f'<div class="price-cell"><div class="price-tier">{label}</div><div class="price-range">{tr(r["v"])} <span class="idx-unit">tr/m²</span></div><div class="price-unit">trung vị của {src_txt(r)}</div><div class="price-desc">{cmp_txt(r)}</div>{rng_html}<div class="price-total">{NOTE[key]}</div></div>')
 why = ""
@@ -123,16 +124,16 @@ rows = []; shown = set(); skipped = {}
 chron = months  # cũ → mới
 for key, label, low in GROUPS:
     pts = []
-    for m in chron:
+    for m in reversed(chron):
         v = val(m, key)
         if not v:
             n_raw = m["ghi_nhan"]["groups"][key]["n"]
             if n_raw: skipped.setdefault(key, []).append((m["month"], n_raw))
             continue
         shown.add(m["month"])
-        tag = '<span class="idx-tmp"> · đang đo</span>' if m["status"] == "partial" else ""
+        tag = ' · đang đo' if m["status"] == "partial" else ""
         n_txt = f'{v[1]}&nbsp;tin' if v[2] == "rao" else "sổ thực địa†"
-        pts.append(f'<li><span class="idx-m"><time datetime="{m["month"]}">{month_vi(m["month"])}</time>{tag}</span><b>{tr(v[0])}</b><small>{n_txt}</small></li>')
+        pts.append(f'<li><span class="idx-m"><time datetime="{m["month"]}">{month_vi(m["month"])}</time></span><b>{tr(v[0])}</b><small>{n_txt}{tag}</small></li>')
     rows.append(f'<tr><th scope="row">{label}</th><td><ol class="idx-series">{"".join(pts)}</ol></td></tr>')
 first_shown = min(shown)
 span = [m["month"] for m in chron if first_shown <= m["month"] <= last["month"]]
@@ -145,7 +146,7 @@ hist = f'''<div class="idx-section-label">02 — Diễn biến</div>
 <figure class="idx-fig pm-selectable">
 <figcaption>Trung vị giá rao theo tháng, triệu đồng/m², xã Nam&nbsp;Ban Lâm&nbsp;Hà. Nguồn: Namban&nbsp;Index — tin rao công khai của 7&nbsp;trang, gộp&nbsp;trùng, đo&nbsp;{m_on}.</figcaption>
 <div class="idx-tblwrap"><table class="idx-tbl idx-bygroup">
-<thead><tr><th scope="col">Loại đất</th><th scope="col">Các tháng đủ số, cũ đến mới</th></tr></thead>
+<thead><tr><th scope="col">Loại đất</th><th scope="col">Các tháng đủ số, mới nhất trước</th></tr></thead>
 <tbody>
 {chr(10).join(rows)}
 </tbody></table></div>
@@ -210,8 +211,13 @@ CSS = """.idx-header p.idx-period{font-size:11.5px;letter-spacing:.12em;text-tra
 .idx-answer{font-size:16.5px;line-height:1.7;margin:0 0 14px;text-wrap:pretty}
 .idx-why{font-size:15px;line-height:1.7;margin:16px 0 0;text-wrap:pretty;color:var(--ink)}
 .idx-why b{font-weight:500}
-.idx-now{grid-template-columns:repeat(4,1fr)}
-.idx-now .price-cell{padding:22px 18px 16px}
+.idx-now{grid-template-columns:repeat(4,1fr);grid-auto-rows:auto}
+.idx-now .price-cell{padding:22px 18px 16px;display:grid;grid-row:span 6;grid-template-rows:subgrid;row-gap:0;align-content:start}
+.idx-now .price-tier{margin-bottom:10px;align-self:end}
+.idx-now .price-desc{display:flex;flex-direction:column;margin-top:2px}
+.idx-now .cmp-l{font-size:12.5px;color:var(--muted)}
+.idx-now .cmp-v{font-size:13.5px;color:var(--ink)}
+@supports not (grid-template-rows:subgrid){.idx-now .price-cell{display:block}.idx-now .price-tier{min-height:2.9em}}
 @media(max-width:900px){.idx-now{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.idx-now{grid-template-columns:1fr}}
 .idx-now .price-range{font-size:28px}
@@ -219,7 +225,7 @@ CSS = """.idx-header p.idx-period{font-size:11.5px;letter-spacing:.12em;text-tra
 .idx-now .price-desc{text-wrap:pretty}
 .idx-now .price-desc b{font-weight:500;color:var(--ink)}
 .idx-now .price-desc small{font-size:11.5px;color:var(--stone-text,#726a5c)}
-.price-band{margin-top:8px;font-size:12.5px;color:var(--muted);line-height:1.45}
+.price-band{margin-top:10px;font-size:12.5px;color:var(--muted);line-height:1.45;text-wrap:pretty}
 .price-band b{font-weight:500;color:var(--forest)}
 .idx-fig{margin:18px 0 10px}
 .idx-fig figcaption{font-size:13px;color:var(--muted);line-height:1.5;margin:0 0 8px;text-wrap:pretty}
@@ -243,18 +249,17 @@ CSS = """.idx-header p.idx-period{font-size:11.5px;letter-spacing:.12em;text-tra
 .idx-stats div{background:var(--card);padding:12px 14px}
 .idx-stats dt{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--stone-text,#726a5c);font-weight:500;margin-bottom:4px}
 .idx-stats dd{margin:0;font-size:14px;line-height:1.45;color:var(--ink)}
-.idx-bygroup tbody th{width:38%;white-space:normal;font-family:'Fraunces',serif;font-weight:400;font-size:16px;line-height:1.35}
-.idx-series{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 22px}
-.idx-series li{display:flex;flex-direction:column;min-width:64px}
+.idx-bygroup tbody th{width:34%;white-space:normal;font-family:'Fraunces',serif;font-weight:400;font-size:16px;line-height:1.35}
+.idx-series{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(86px,1fr));gap:8px 10px}
+.idx-series li{display:flex;flex-direction:column;min-width:0}
 .idx-series .idx-m{font-size:11.5px;line-height:16px;height:16px;letter-spacing:.04em;color:var(--muted);white-space:nowrap}
 .idx-series b{font-family:'Fraunces',serif;font-weight:500;font-size:19px;color:var(--ink);line-height:1.25}
 .idx-series small{font-size:11.5px;color:var(--muted)}
-.idx-series .idx-tmp{font-size:11px;margin:0;font-style:italic;color:var(--muted)}
-.idx-series li:last-child b{color:var(--forest)}
+.idx-series li:first-child b{color:var(--forest)}
 @media(max-width:600px){.idx-stats{grid-template-columns:1fr 1fr}.idx-tbl{font-size:13px}.idx-answer{font-size:15.5px}.idx-now .price-range{font-size:27px}
 .idx-bygroup thead{display:none}.idx-bygroup,.idx-bygroup tbody,.idx-bygroup tr,.idx-bygroup th,.idx-bygroup td{display:block;width:auto}
 .idx-bygroup tr{padding:12px 14px;border-bottom:1px solid var(--line)}.idx-bygroup tr:last-child{border-bottom:0}
-.idx-bygroup tbody th,.idx-bygroup td{padding:0;border:0}.idx-bygroup tbody th{margin-bottom:8px}}
+.idx-bygroup tbody th,.idx-bygroup td{padding:0;border:0}.idx-bygroup tbody th{margin-bottom:8px;width:auto}}
 """
 if "/* IDX-GEN:START */" in s:
     s = re.sub(r"/\* IDX-GEN:START \*/\n[\s\S]*?/\* IDX-GEN:END \*/", lambda m: "/* IDX-GEN:START */\n" + CSS + "/* IDX-GEN:END */", s, count=1)

@@ -1098,9 +1098,9 @@ Giá đất Nam Ban tháng 9/2026 theo từng loại
 
 trung vị của 19 tin rao
 
-So với tháng 6/2026 (3,73): đi ngang −1 % (mẫu nhỏ)
+so với tháng 6/2026 (3,73) đi ngang −1 % (mẫu nhỏ)
 
-Khoảng rao phổ biến nửa đầu 2026: 3–4,5 tr/m²
+Khoảng rao nửa đầu 2026: 3–4,5 tr/m²
 
 Nền nhỏ trong khu đã tách, có thổ cư, xây được ngay.
 
@@ -1110,7 +1110,9 @@ Lô khoảng 500 m² có thổ cư
 
 trung vị của 39 tin rao
 
-So với tháng 7/2026 (3,16): giảm −29 % (mẫu nhỏ)
+so với tháng 7/2026 (3,16) giảm −29 % (mẫu nhỏ)
+
+Khoảng rao nửa đầu 2026: chờ số thực địa
 
 Ngang 10–18 m, tách từ thời luật chưa cho tách nhỏ; ít hàng, giao dịch tốt.
 
@@ -1120,9 +1122,9 @@ Ngang 10–18 m, tách từ thời luật chưa cho tách nhỏ; ít hàng, giao
 
 trung vị của 32 tin rao
 
-So với tháng 7/2026 (0,54): không so được — mẫu hai tháng khác nhau
+so với tháng 7/2026 (0,54) không so được (mẫu khác nhau)
 
-Khoảng rao phổ biến nửa đầu 2026: 1,7–2,8 tr/m²
+Khoảng rao nửa đầu 2026: 1,7–2,8 tr/m²
 
 Phần nhiều là nông nghiệp tách ra từ rẫy, chưa đủ điều kiện tách nhỏ.
 
@@ -1132,9 +1134,9 @@ Lô có view hồ, đồi, toàn cảnh
 
 trung vị của 13 tin rao
 
-So với tháng 6/2026 (2,98): nhích lên +6 % (mẫu nhỏ)
+so với tháng 6/2026 (2,98) nhích lên +6 % (mẫu nhỏ)
 
-Khoảng rao phổ biến nửa đầu 2026: 4–6 tr/m²
+Khoảng rao nửa đầu 2026: 4–6 tr/m²
 
 Nhìn ra hồ, đồi hoặc toàn cảnh thị trấn; hiếm, giá theo tầm nhìn.
 
@@ -1146,11 +1148,11 @@ Tháng 9/2026 (đo tới 25/9/2026): Đất nền tách thửa 150–300 m² 3,6
 
 Trung vị giá rao theo tháng, triệu đồng/m², xã Nam Ban Lâm Hà. Nguồn: Namban Index — tin rao công khai của 7 trang, gộp trùng, đo 25/9/2026.
 
-Loại đất | Các tháng đủ số, cũ đến mới
-Đất nền tách thửa 150–300 m² | 6/2026 3,73 41 tin 9/2026 · đang đo 3,67 19 tin
-Lô khoảng 500 m² có thổ cư | 6/2026 2,76 22 tin 7/2026 3,16 12 tin 9/2026 · đang đo 2,24 39 tin
-Đất trên 1.000 m² | 6/2026 0,99 13 tin 7/2026 0,54 23 tin 9/2026 · đang đo 1,38 32 tin
-Lô có view hồ, đồi, toàn cảnh | 6/2026 2,98 30 tin 9/2026 · đang đo 3,16 13 tin
+Loại đất | Các tháng đủ số, mới nhất trước
+Đất nền tách thửa 150–300 m² | 9/2026 3,67 19 tin · đang đo 6/2026 3,73 41 tin
+Lô khoảng 500 m² có thổ cư | 9/2026 2,24 39 tin · đang đo 7/2026 3,16 12 tin 6/2026 2,76 22 tin
+Đất trên 1.000 m² | 9/2026 1,38 32 tin · đang đo 7/2026 0,54 23 tin 6/2026 0,99 13 tin
+Lô có view hồ, đồi, toàn cảnh | 9/2026 3,16 13 tin · đang đo 6/2026 2,98 30 tin
 
 Mỗi loại chỉ hiện tháng có từ 10 tin rao trở lên; tháng ít tin hơn thì bỏ, không điền số ước. Tháng 8/2026 không loại nào đủ 10 tin nên không có trong bảng. Từ tháng 10/2026 đo mỗi tuần nên sẽ ít tháng hụt hơn.
 
@@ -1182,7 +1184,7 @@ Kỳ tới
 
 Đầu tháng 10/2026
 
-Namban Index theo dõi 640 tin rao đang treo ở xã Nam Ban Lâm Hà (đo 25/9/2026) từ 7 trang công khai, gộp tin trùng, lọc đúng xã. Chúng tôi không đăng lại từng tin, không đăng tựa hay số điện thoại người rao — chỉ đăng số tổng hợp. Muốn biết một lô cụ thể đáng giá bao nhiêu, xem vì sao hai lô cùng diện tích khác giá.
+Namban Index theo dõi 640 tin rao đang treo ở xã Nam Ban Lâm Hà (đo 25/9/2026) từ 7 trang công khai, gộp tin trùng, lọc đúng xã. Chúng tôi không đăng lại từng tin, không đăng tựa hay số điện thoại người rao — chỉ đăng số tổng hợp. Muốn biết một lô cụ thể đáng giá bao nhiêu, xem vì sao hai lô cùng diện tích khác giá .
 
 Giá rao bán là thứ dễ nhìn thấy nhất — dù bạn đang định mua, định bán, hay chỉ muốn biết giá đất Nam Ban hiện đang bao nhiêu, tăng hay giảm, và vì sao. Số ở trên lấy từ tin rao công khai, rồi được đối chiếu với những giao dịch thực tế đang diễn ra trong xã. Từ 1/7/2025, xã Nam Ban gồm thị trấn Nam Ban cũ và các xã Đông Thanh, Mê Linh, Gia Lâm.
 
@@ -1192,7 +1194,7 @@ Giá một lô đã thực sự bán. Namban Index đo giá rao, không đo giá
 
 Một tin biến mất chưa chắc là đã bán. Có tin gỡ vì hết hạn, có lô đổi người rao.
 
-Giá của một lô cụ thể. Diện tích, vị trí, pháp lý làm hai lô cùng loại chênh nhau nhiều; xem vì sao hai lô cùng diện tích khác giá.
+Giá của một lô cụ thể. Diện tích, vị trí, pháp lý làm hai lô cùng loại chênh nhau nhiều; xem vì sao hai lô cùng diện tích khác giá .
 
 Xu hướng dài hạn từ vài tháng số liệu. Mẫu càng nhỏ, biến động ngắn hạn càng cần đọc thận trọng.
 
@@ -1218,11 +1220,11 @@ Tín hiệu tích cực
 
 Điều bảng giá không nói được
 
-Có một cách gọi Nam Ban tôi nghe khá nhiều: "phiên bản rẻ hơn của Đà Lạt". Tôi nghĩ đó là cách nhìn nguy hiểm — và về lâu dài, sẽ là cách nhìn sai.
+Có một cách gọi Nam Ban tôi nghe khá nhiều: "phiên bản rẻ hơn của Đà Lạt" . Tôi nghĩ đó là cách nhìn nguy hiểm — và về lâu dài, sẽ là cách nhìn sai.
 
 Vì nếu Nam Ban chỉ là Đà Lạt giá rẻ, thì ngày mai sẽ luôn có một nơi khác rẻ hơn. Một vùng đất không thể xây tương lai bằng cách rẻ hơn người khác.
 
-Điều đáng nhìn ở Nam Ban không phải giá đất, mà là con người đang đến đây và lý do họ đến. Năm quan sát dưới đây là của Panorama; chuyện vì sao vùng này nhiều giao dịch hơn các vùng ven khác, chúng tôi gỡ ra ở vì sao đất Nam Ban nhiều người mua bán hơn các vùng ven Đà Lạt khác.
+Điều đáng nhìn ở Nam Ban không phải giá đất, mà là con người đang đến đây và lý do họ đến . Năm quan sát dưới đây là của Panorama; chuyện vì sao vùng này nhiều giao dịch hơn các vùng ven khác, chúng tôi gỡ ra ở vì sao đất Nam Ban nhiều người mua bán hơn các vùng ven Đà Lạt khác .
 
 Những người rời thành phố sau nhiều năm làm doanh nghiệp — không phải về hưu, mà đang tìm nhịp sống khác để tiếp tục làm việc.
 
@@ -1230,11 +1232,11 @@ Những gia đình muốn con lớn lên gần cây cối, gần vườn — kh�
 
 Những người làm việc từ xa — designer, developer, founder startup nhỏ — đang thuê dài hạn thay vì nghỉ ngắn ngày. Nhu cầu này chưa có đủ nguồn cung phù hợp.
 
-Điều đáng chú ý nhất: phần lớn họ không đến vì đầu tư. Họ đến vì một câu hỏi lớn hơn — "Mình muốn sống như thế nào trong 10 năm tới?" Nam Ban đang trở thành một trong những câu trả lời.
+Điều đáng chú ý nhất: phần lớn họ không đến vì đầu tư . Họ đến vì một câu hỏi lớn hơn — "Mình muốn sống như thế nào trong 10 năm tới?" Nam Ban đang trở thành một trong những câu trả lời.
 
-Và nhiều người trong số họ không đăng lên mạng xã hội. Không quay TikTok. Không livestream. Nhiều người thậm chí không muốn ai biết. Điều đó có nghĩa là: nếu chỉ nhìn giá đất hay quy hoạch, bạn sẽ bỏ qua sự dịch chuyển quan trọng nhất đang diễn ra.
+Và nhiều người trong số họ không đăng lên mạng xã hội . Không quay TikTok. Không livestream. Nhiều người thậm chí không muốn ai biết. Điều đó có nghĩa là: nếu chỉ nhìn giá đất hay quy hoạch, bạn sẽ bỏ qua sự dịch chuyển quan trọng nhất đang diễn ra.
 
-Khi dịch vụ bắt đầu mọc lên — quán cà phê, homestay, cửa hàng tiện lợi — đó không phải nguyên nhân của sự phát triển. Đó là hệ quả. Dịch vụ theo chân người. Người đến trước khi tiện ích có mặt. Và thường, đến lúc tiện ích đủ đầy thì giá đã khác.
+Khi dịch vụ bắt đầu mọc lên — quán cà phê, homestay, cửa hàng tiện lợi — đó không phải nguyên nhân của sự phát triển. Đó là hệ quả . Dịch vụ theo chân người. Người đến trước khi tiện ích có mặt. Và thường, đến lúc tiện ích đủ đầy thì giá đã khác.
 
 Nếu Đà Lạt là điểm đến du lịch — nơi người ta ghé qua rồi về — thì Nam Ban đang có cơ hội trở thành điều khác: nơi người ta thực sự sống. Nên tôi không quá chú trọng câu hỏi "giá đất sẽ tăng bao nhiêu phần trăm". Câu hỏi tôi thấy đáng hơn là: khi những người đang âm thầm đến đây trở thành cộng đồng, điều gì sẽ xảy ra với vùng đất này?
 
@@ -1328,7 +1330,7 @@ Tháng 9/2026, giá rao đất ở xã Nam Ban Lâm Hà, Lâm Đồng — trung 
 
 Nguồn: Namban Panorama, Namban Index, kỳ tháng 9/2026. https://nambanpanorama.com/namban-index
 
-Dữ liệu mở, dạng máy đọc được: monthly.json · monthly.csv · prices.json. Trích dẫn xin ghi nguồn Namban Panorama.
+Dữ liệu mở, dạng máy đọc được: monthly.json · monthly.csv · prices.json . Trích dẫn xin ghi nguồn Namban Panorama.
 
 Hỏi đáp nhanh giá đất Nam Ban mới nhất
 
