@@ -36,7 +36,7 @@ for r in rows:
 # Tin rao Villas tổng hợp (video môi giới + sàn, có ngày đăng, không link gốc) — CHỈ bổ sung bảng tháng:
 # không vào mốc nền/tuần (không biết tin còn treo), không tính "tin mới"; gộp trùng với tin tự đo KHÔNG xét khu
 # (sàn ghi khu khác nhau cho cùng một lô), tin tự đo được giữ trước vì có URL gốc.
-DIGEST = "nambanvillas.vn/tin-rao"
+DIGEST = "video môi giới + sàn (tổng hợp)"  # nhãn công khai trong monthly.json — KHÔNG ghi tên trang tổng hợp (Chú chốt 25/9)
 good.sort(key=lambda r: (r["nguon"] == DIGEST, r["ngay_dang"] or "9999", r["nguon"]))
 kept = []
 def dup(k, r): return abs(k["_a"] - r["_a"]) <= .02 * k["_a"] and abs(k["_t"] - r["_t"]) <= .03 * k["_t"]

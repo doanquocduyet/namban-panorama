@@ -554,7 +554,7 @@ def src_villas_digest():
     """Trang tin rao Villas tổng hợp (video môi giới + sàn, Villas đã mở lại nguồn gốc từng tin).
     KHÁC src_villas (lô Villas tự bán): đây là tin của người khác, có ngày đăng. Trang không để link gốc,
     nên URL giả chỉ dùng để băm khử lặp — không vào repo. aggregate.py chỉ dùng nhóm này cho bảng tháng."""
-    src = "nambanvillas.vn/tin-rao"; base = "https://nambanvillas.vn/thi-truong/tin-rao-dat-nam-ban-moi/"
+    src = "video môi giới + sàn (tổng hợp)"; base = "https://nambanvillas.vn/thi-truong/tin-rao-dat-nam-ban-moi/"
     r = get(src, base, delay=0.8)
     if r is None: return
     parts = re.split(r"<!-- DAY:(\d{4}-\d{2}-\d{2}) -->", r.text)

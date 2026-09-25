@@ -177,11 +177,11 @@ hist = f'''<div class="idx-section-label">02 — Diễn biến</div>
 
 # ---- IDX-DATA: mục 03 ----
 n_src = 7  # danh sách nguồn quét (meta.method) — không đếm theo tháng có tin
-DIGEST = "nambanvillas.vn/tin-rao"
+DIGESTS = {"video môi giới + sàn (tổng hợp)", "nambanvillas.vn/tin-rao"}  # nhãn mới + nhãn cũ (run #5)
 dg_n = D["meta"].get("digest_n") or 0
-dg_m = [m["month"] for m in months if m["ghi_nhan"]["sources"].get(DIGEST)]
-dg_src = " + tin rao video tổng hợp" if dg_n else ""
-dg_p = (f' Bảng diễn biến tháng {month_vi(dg_m[0]).split("/")[0]}–{month_vi(dg_m[-1])} có thêm {dg_n} tin rao qua video môi giới và sàn do nambanvillas.vn tổng hợp, mỗi tin có ngày đăng và đã được mở lại nguồn gốc; chúng tôi bỏ tin ngoài xã Nam&nbsp;Ban, gộp trùng với tin tự đo, và không tính chúng vào số tin đang&nbsp;treo.' if dg_n and dg_m else "")
+dg_m = [m["month"] for m in months if DIGESTS & set(k for k, v in m["ghi_nhan"]["sources"].items() if v)]
+dg_src = " + tin rao qua video" if dg_n else ""
+dg_p = (f' Bảng diễn biến tháng {month_vi(dg_m[0]).split("/")[0]}–{month_vi(dg_m[-1])} có thêm {dg_n} tin rao qua video môi giới và sàn, mỗi tin có ngày đăng và đã được đối chiếu với nguồn&nbsp;gốc; chúng tôi bỏ tin ngoài xã Nam&nbsp;Ban, gộp trùng với tin tự đo, và không tính chúng vào số tin đang&nbsp;treo.' if dg_n and dg_m else "")
 data = f'''<dl class="idx-stats">
 <div><dt>Đơn vị</dt><dd>Triệu đồng/m², trung vị</dd></div>
 <div><dt>Loại giá</dt><dd>Giá rao, chưa phải giá chốt</dd></div>
