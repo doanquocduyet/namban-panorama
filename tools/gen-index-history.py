@@ -136,39 +136,43 @@ for k, label, low in GROUPS:
         items.append(f'<li><span>{label}</span><span class="d"><em>chưa so được</em><small>mẫu hai tháng khác nhau</small></span></li>')
 answer = f'{verdict} Tháng {last_m} so với tháng gần nhất có đủ số của từng&nbsp;loại:'
 dirs_html = '<ul class="idx-dirs">' + "".join(items) + '</ul>'
-rows = []; shown = set(); skipped = {}
-chron = months  # cũ → mới
+rows = []; chron = months  # cũ → mới
+# cột = tháng có ít nhất một loại đủ số, mới nhất trước; tên tháng ghi MỘT lần ở đầu cột
+cols = [m for m in reversed(chron) if any(val(m, k) for k, _, _ in GROUPS)]
+first_shown = min(m["month"] for m in cols)
 for key, label, low in GROUPS:
-    pts = []
-    for m in reversed(chron):
-        v = val(m, key)
-        if not v:
+    tds = []
+    for i, m in enumerate(cols):
+        v = val(m, key); mv = month_vi(m["month"]) + (" · đang đo" if m["status"] == "partial" else "")
+        cls = ' class="cur"' if i == 0 else ""
+        if v:
+            n_txt = f'{v[1]}&nbsp;tin' if v[2] == "rao" else "sổ thực địa†"
+            tds.append(f'<td{cls} data-m="{mv}"><b>{tr(v[0])}</b><small>{n_txt}</small></td>')
+        else:
             n_raw = m["ghi_nhan"]["groups"][key]["n"]
-            if n_raw: skipped.setdefault(key, []).append((m["month"], n_raw))
-            continue
-        shown.add(m["month"])
-        tag = ' · đang đo' if m["status"] == "partial" else ""
-        n_txt = f'{v[1]}&nbsp;tin' if v[2] == "rao" else "sổ thực địa†"
-        pts.append(f'<li><span class="idx-m"><time datetime="{m["month"]}">{month_vi(m["month"])}</time></span><b>{tr(v[0])}</b><small>{n_txt}{tag}</small></li>')
-    rows.append(f'<tr><th scope="row">{label}</th><td><ol class="idx-series">{"".join(pts)}</ol></td></tr>')
-first_shown = min(shown)
+            tds.append(f'<td{cls} data-m="{mv}"><span class="few">dưới {MIN_N}&nbsp;tin</span></td>')
+    rows.append(f'<tr><th scope="row">{label}</th>{"".join(tds)}</tr>')
+CUR = ' class="cur"'
+TMP = '<small>đang đo</small>'
+thead = "".join(f'<th scope="col"{CUR if i == 0 else ""}><time datetime="{m["month"]}">{month_vi(m["month"])}</time>{TMP if m["status"] == "partial" else ""}</th>' for i, m in enumerate(cols))
 span = [m["month"] for m in chron if first_shown <= m["month"] <= last["month"]]
-empty_months = [month_vi(m) for m in span if m not in shown]
+shown_m = {m["month"] for m in cols}
+empty_months = [month_vi(m) for m in span if m not in shown_m]
 dagger = " † Số từ sổ giao dịch thực địa của Panorama, dùng cho tháng tin rao chưa đủ." if "†" in "".join(rows) + "".join(cells) else ""
-gap = (f' Tháng {", ".join(empty_months)} không loại nào đủ {MIN_N} tin nên không có trong bảng.' if empty_months else "")
+gap = (f' Tháng {", ".join(empty_months)} không loại nào đủ {MIN_N} tin nên không có&nbsp;cột.' if empty_months else "")
 hist = f'''<div class="idx-section-label">02 — Diễn biến</div>
 <h2 class="idx-section-title">Giá đất Nam Ban đang tăng hay giảm?</h2>
 <p class="idx-answer">{answer}</p>
 {dirs_html}
 <figure class="idx-fig pm-selectable">
 <figcaption>Trung vị giá rao, triệu đồng/m², đo&nbsp;{m_on}. Nguồn và cách tính ở mục&nbsp;03.</figcaption>
-<div class="idx-tblwrap"><table class="idx-tbl idx-bygroup">
-<thead><tr><th scope="col">Loại đất</th><th scope="col">Các tháng đủ số, mới nhất trước</th></tr></thead>
+<div class="idx-tblwrap"><table class="idx-tbl idx-months" style="--nc:{len(cols)}">
+<thead><tr><th scope="col">Loại đất</th>{thead}</tr></thead>
 <tbody>
 {chr(10).join(rows)}
 </tbody></table></div>
 </figure>
-<p class="idx-note">Mỗi loại chỉ hiện tháng có từ {MIN_N} tin rao trở lên; tháng ít tin hơn thì bỏ, không điền số ước.{gap}{dagger} Từ tháng 10/2026 đo mỗi tuần nên sẽ ít tháng hụt&nbsp;hơn.</p>'''
+<p class="idx-note">Chỉ tính khi một loại có từ {MIN_N} tin rao trong tháng; ít hơn thì ghi "dưới {MIN_N} tin", không điền số&nbsp;ước.{gap}{dagger} Từ tháng 10/2026 đo mỗi tuần nên sẽ ít ô hụt&nbsp;hơn.</p>'''
 
 # ---- IDX-DATA: mục 03 ----
 n_src = 7  # danh sách nguồn quét (meta.method) — không đếm theo tháng có tin
@@ -270,17 +274,27 @@ CSS = """.idx-header p.idx-period{font-size:11.5px;letter-spacing:.12em;text-tra
 .idx-stats div{background:var(--card);padding:12px 14px}
 .idx-stats dt{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--stone-text,#726a5c);font-weight:500;margin-bottom:4px}
 .idx-stats dd{margin:0;font-size:14px;line-height:1.45;color:var(--ink)}
-.idx-bygroup tbody th{width:34%;white-space:normal;font-family:'Fraunces',serif;font-weight:400;font-size:16px;line-height:1.35}
-.idx-series{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(86px,1fr));gap:8px 10px}
-.idx-series li{display:flex;flex-direction:column;min-width:0}
-.idx-series .idx-m{font-size:11.5px;line-height:16px;height:16px;letter-spacing:.04em;color:var(--muted);white-space:nowrap}
-.idx-series b{font-family:'Fraunces',serif;font-weight:500;font-size:19px;color:var(--ink);line-height:1.25}
-.idx-series small{font-size:11.5px;color:var(--muted)}
-.idx-series li:first-child b{color:var(--forest)}
+.idx-months{table-layout:fixed}
+.idx-months thead th{text-align:right;white-space:nowrap}
+.idx-months thead th:first-child{text-align:left;width:40%}
+.idx-months thead th time{display:block;font-size:12.5px;letter-spacing:.04em;color:var(--ink);text-transform:none}
+.idx-months thead th small{display:block;font-size:10.5px;letter-spacing:.04em;text-transform:none;font-style:italic;color:var(--muted);font-weight:400}
+.idx-months tbody th{white-space:normal;font-family:'Fraunces',serif;font-weight:400;font-size:16px;line-height:1.35;vertical-align:middle}
+.idx-months td{text-align:right;vertical-align:middle}
+.idx-months td b{display:block;font-family:'Fraunces',serif;font-weight:500;font-size:19px;color:var(--ink);line-height:1.2}
+.idx-months td small{display:block;font-size:11.5px;color:var(--muted)}
+.idx-months td.cur{background:rgba(47,64,52,.045)}
+.idx-months td.cur b{color:var(--forest)}
+.idx-months thead th.cur{background:rgba(47,64,52,.045)}
+.idx-months .few{font-size:11.5px;font-style:italic;color:var(--stone-text,#726a5c)}
 @media(max-width:600px){.idx-stats{grid-template-columns:1fr 1fr}.idx-tbl{font-size:13px}.idx-answer{font-size:15.5px}.idx-now .price-range{font-size:27px}
-.idx-bygroup thead{display:none}.idx-bygroup,.idx-bygroup tbody,.idx-bygroup tr,.idx-bygroup th,.idx-bygroup td{display:block;width:auto}
-.idx-bygroup tr{padding:12px 14px;border-bottom:1px solid var(--line)}.idx-bygroup tr:last-child{border-bottom:0}
-.idx-bygroup tbody th,.idx-bygroup td{padding:0;border:0}.idx-bygroup tbody th{margin-bottom:8px;width:auto}}
+.idx-months,.idx-months thead,.idx-months tbody{display:block}
+.idx-months thead tr{display:grid;grid-template-columns:repeat(var(--nc,3),1fr)}.idx-months thead th:first-child{display:none}
+.idx-months thead th{padding:10px 12px}
+.idx-months tbody tr{display:grid;grid-template-columns:repeat(var(--nc,3),1fr)}
+.idx-months tbody th{grid-column:1/-1;padding:12px 12px 4px;border:0}
+.idx-months td{padding:6px 12px 12px;border-bottom:1px solid var(--line)}.idx-months tr:last-child td{border-bottom:0}
+.idx-months td b{font-size:18px}}
 """
 if "/* IDX-GEN:START */" in s:
     s = re.sub(r"/\* IDX-GEN:START \*/\n[\s\S]*?/\* IDX-GEN:END \*/", lambda m: "/* IDX-GEN:START */\n" + CSS + "/* IDX-GEN:END */", s, count=1)

@@ -1146,13 +1146,13 @@ Lô có view hồ, đồi, toàn cảnh nhích lên +6 % so với 6/2026 · mẫ
 
 Trung vị giá rao, triệu đồng/m², đo 25/9/2026. Nguồn và cách tính ở mục 03.
 
-Loại đất | Các tháng đủ số, mới nhất trước
-Đất nền tách thửa 150–300 m² | 9/2026 3,67 19 tin · đang đo 6/2026 3,73 41 tin
-Lô khoảng 500 m² có thổ cư | 9/2026 2,24 39 tin · đang đo 7/2026 3,16 12 tin 6/2026 2,76 22 tin
-Đất trên 1.000 m² | 9/2026 1,38 32 tin · đang đo 7/2026 0,54 23 tin 6/2026 0,99 13 tin
-Lô có view hồ, đồi, toàn cảnh | 9/2026 3,16 13 tin · đang đo 6/2026 2,98 30 tin
+Loại đất | 9/2026 đang đo | 7/2026 | 6/2026
+Đất nền tách thửa 150–300 m² | 3,67 19 tin | dưới 10 tin | 3,73 41 tin
+Lô khoảng 500 m² có thổ cư | 2,24 39 tin | 3,16 12 tin | 2,76 22 tin
+Đất trên 1.000 m² | 1,38 32 tin | 0,54 23 tin | 0,99 13 tin
+Lô có view hồ, đồi, toàn cảnh | 3,16 13 tin | dưới 10 tin | 2,98 30 tin
 
-Mỗi loại chỉ hiện tháng có từ 10 tin rao trở lên; tháng ít tin hơn thì bỏ, không điền số ước. Tháng 8/2026 không loại nào đủ 10 tin nên không có trong bảng. Từ tháng 10/2026 đo mỗi tuần nên sẽ ít tháng hụt hơn.
+Chỉ tính khi một loại có từ 10 tin rao trong tháng; ít hơn thì ghi "dưới 10 tin", không điền số ước. Tháng 8/2026 không loại nào đủ 10 tin nên không có cột. Từ tháng 10/2026 đo mỗi tuần nên sẽ ít ô hụt hơn.
 
 Số này lấy từ đâu và chưa cho biết gì
 

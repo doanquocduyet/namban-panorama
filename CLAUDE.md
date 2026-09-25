@@ -292,10 +292,13 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   FAQ không dùng chung câu văn. Thêm khối mới thì quét lại cụm 6 chữ lặp trong thân trang.
 - **Mẫu hai kỳ khác hẳn (|Δ| > 40 %) → in "không so được — mẫu hai tháng khác nhau", KHÔNG in %.**
   Từng in "+154 % khác hẳn" cỡ 28px — số tự nói "đừng tin tôi" mà vẫn đứng hàng chính; đã bỏ.
-- **Bảng diễn biến = mỗi loại đất một dòng, chỉ hiện tháng đủ 10 tin (Chú chốt 25/9/2026: ô "—"
-  nhìn cùi bắp).** Không còn ma trận tháng × loại có ô trống. Tháng mà KHÔNG loại nào đủ số (vd
-  8/2026) thì ghi chú nêu tên tháng đó. Ô thiếu KHÔNG điền số ước từ vài tin (7/2026 tách thửa
-  chỉ 6 tin, view 9 tin — dưới ngưỡng). Đừng quay lại dạng ma trận có "—", đừng hạ ngưỡng 10 cho đủ ô.
+- **Bảng diễn biến = cột cố định theo tháng, tên tháng ghi MỘT lần ở đầu cột (chốt 25/9/2026 sau hai
+  vòng Chú báo khó đọc).** Hàng = bốn loại đất, cột = các tháng có ít nhất một loại đủ số, mới nhất
+  trước; cột tháng hiện tại tô nền forest rất nhạt. Ô một loại chưa đủ 10 tin ghi chữ nhỏ nghiêng
+  **"dưới 10 tin"** — KHÔNG dùng "—" (Chú: "nhìn cùi bắp"), KHÔNG điền số ước, KHÔNG hạ ngưỡng. Tháng
+  mà không loại nào đủ số (vd 8/2026) thì không có cột, ghi chú nêu tên tháng. Mobile: hàng tên tháng
+  giữ trên đầu, mỗi loại đất một khối, ba ô số thẳng cột bên dưới. Hai bản đã thử và bỏ: ma trận có
+  "—", và dạng mỗi dòng tự ghi tháng của nó (cột lệch tháng, đọc rối).
 - **KHÔNG có bảng giá theo khu (Chú chốt 25/9/2026: "không thực tế").** Từng có bảng trung vị
   gộp mọi loại đất theo Đông Thanh / Mê Linh / Gia Lâm — bỏ vì gộp loại đất nên số không nói lên
   giá thật của khu, và 357/640 tin chỉ ghi "Nam Ban". Mục 06 giữ các ô dẫn sang bài từng khu, không
