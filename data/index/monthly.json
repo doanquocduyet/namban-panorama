@@ -7,7 +7,7 @@
   "license": "Trích dẫn tự do, ghi nguồn Namban Panorama",
   "unit_price": "VND/m2",
   "area": "Xã Nam Ban Lâm Hà, Lâm Đồng (thị trấn Nam Ban cũ, Đông Thanh, Mê Linh, Gia Lâm — từ 1/7/2025)",
-  "method": "Tin rao công khai trên guland.vn, batdongsanonline.vn, datnenlamdong.com.vn, thuviennhadat.vn, muaban.net, mogi.vn, nambanvillas.vn; kiểm robots.txt và điều khoản từng nguồn; lọc đúng xã; loại tin thiếu giá hoặc diện tích; khử trùng theo khu + diện tích ±2% + giá ±3%; trung vị chỉ tính khi nhóm có từ 10 tin. \"posted\" = xếp theo ngày đăng ghi trên trang nguồn; \"refreshed_guland\" = tin Guland xếp theo ngày cập nhật (không phải ngày đăng). Bảng tháng (không phải mốc nền) bổ sung tin rao do nambanvillas.vn tổng hợp tại /thi-truong/tin-rao-dat-nam-ban-moi/ (video môi giới và sàn, có ngày đăng, đã mở lại nguồn gốc): bỏ tin ngoài xã, bỏ tin diện tích/giá lệch nhau, gộp trùng với tin tự đo theo diện tích ±2% + giá ±3% không xét khu; không tính vào số tin đang treo. Giá rao, chưa phải giá đã chốt. Không lưu tựa, mô tả, ảnh, số điện thoại, tên người đăng.",
+  "method": "Tin rao công khai trên guland.vn, batdongsanonline.vn, datnenlamdong.com.vn, thuviennhadat.vn, muaban.net, mogi.vn, nambanvillas.vn; kiểm robots.txt và điều khoản từng nguồn; lọc đúng xã; loại tin thiếu giá hoặc diện tích; khử trùng theo khu + diện tích ±2% + giá ±3%; trung vị chỉ tính khi nhóm có từ 10 tin. \"posted\" = xếp theo ngày đăng ghi trên trang nguồn; \"refreshed_guland\" = tin Guland xếp theo ngày cập nhật (không phải ngày đăng). Bảng tháng (không phải mốc nền) bổ sung tin rao qua video môi giới và sàn (có ngày đăng, đã đối chiếu nguồn gốc): bỏ tin ngoài xã, bỏ tin diện tích/giá lệch nhau, gộp trùng với tin tự đo theo diện tích ±2% + giá ±3% không xét khu; không tính vào số tin đang treo. Giá rao, chưa phải giá đã chốt. Không lưu tựa, mô tả, ảnh, số điện thoại, tên người đăng.",
   "min_n": 10,
   "generated_at": "2026-09-25T19:25+07:00",
   "measured_on": "2026-09-25",
@@ -560,7 +560,7 @@
     "sources": {
      "thuviennhadat.vn": 5,
      "guland.vn": 89,
-     "nambanvillas.vn/tin-rao": 41
+     "video môi giới + sàn (tổng hợp)": 41
     }
    },
    "posted": {
@@ -627,7 +627,7 @@
     "villas_n": 0,
     "sources": {
      "thuviennhadat.vn": 5,
-     "nambanvillas.vn/tin-rao": 41
+     "video môi giới + sàn (tổng hợp)": 41
     }
    },
    "refreshed_guland": {
@@ -767,7 +767,7 @@
      "batdongsanonline.vn": 4,
      "nambanvillas.vn": 1,
      "guland.vn": 45,
-     "nambanvillas.vn/tin-rao": 23
+     "video môi giới + sàn (tổng hợp)": 23
     }
    },
    "posted": {
@@ -836,7 +836,7 @@
      "thuviennhadat.vn": 2,
      "batdongsanonline.vn": 4,
      "nambanvillas.vn": 1,
-     "nambanvillas.vn/tin-rao": 23
+     "video môi giới + sàn (tổng hợp)": 23
     }
    },
    "refreshed_guland": {
@@ -976,7 +976,7 @@
      "batdongsanonline.vn": 3,
      "thuviennhadat.vn": 1,
      "guland.vn": 22,
-     "nambanvillas.vn/tin-rao": 21
+     "video môi giới + sàn (tổng hợp)": 21
     }
    },
    "posted": {
@@ -1045,7 +1045,7 @@
      "nambanvillas.vn": 5,
      "batdongsanonline.vn": 3,
      "thuviennhadat.vn": 1,
-     "nambanvillas.vn/tin-rao": 21
+     "video môi giới + sàn (tổng hợp)": 21
     }
    },
    "refreshed_guland": {
@@ -1185,7 +1185,7 @@
      "guland.vn": 127,
      "muaban.net": 5,
      "thuviennhadat.vn": 1,
-     "nambanvillas.vn/tin-rao": 12
+     "video môi giới + sàn (tổng hợp)": 12
     }
    },
    "posted": {
@@ -1254,7 +1254,7 @@
      "nambanvillas.vn": 19,
      "muaban.net": 4,
      "thuviennhadat.vn": 1,
-     "nambanvillas.vn/tin-rao": 12
+     "video môi giới + sàn (tổng hợp)": 12
     }
    },
    "refreshed_guland": {
