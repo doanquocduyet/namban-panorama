@@ -316,7 +316,11 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
 - **HAI VAI, KHÔNG LẪN (Chú chốt 25/9/2026): Villas ĐỌC TIN + LỌC TIN ĐĂNG; Panorama LÀM BÁO CÁO INDEX.**
   Bộ đọc bên Villas kỹ hơn (mở lại nguồn gốc từng tin, gộp tin đăng lại, loại xã khác) → kết quả của nó là
   đầu vào chính cho bảng tháng. Panorama không đọc lại từng tin, chỉ gộp, tính trung vị, viết báo cáo. Bộ quét
-  7 trang của Panorama giữ làm phần bổ sung (cho số "tin đang treo" mỗi tuần). Muốn đổi vai thì hỏi Chú.
+  7 trang của Panorama giữ làm phần bổ sung (cho số "tin còn đang rao" mỗi tuần). Muốn đổi vai thì hỏi Chú.
+  **Bộ quét Panorama: GIỮ CHẠY TỰ ĐỘNG, KHÔNG SỬA NỮA (Chú chọn 25/9/2026).** Chạy trên GitHub bằng Python nên
+  không tốn token; mọi cải tiến đọc/lọc tin làm bên Villas. Tắt ngay thì tháng 9 chỉ còn 1/4 ô có số (tin Villas
+  riêng: 2/10/6/1 tin) và mất số tin còn đang rao. Chỉ đụng vào `crawl.py` khi nó hỏng (luật dừng báo nguồn về 0).
+  Trên trang ghi "tin còn đang rao", không ghi "tin đang treo" (chữ nghề, Chú hỏi "là sao").
 - **Nguồn thứ 8 — tin rao Villas tổng hợp (thêm 25/9/2026, Chú giao: "bên đó làm sâu và nhiều tin hơn",
   "Villas đã đối chiếu nguồn gốc, đáng tin").** `crawl.py villasdigest` đọc
   `nambanvillas.vn/thi-truong/tin-rao-dat-nam-ban-moi/` (video môi giới + sàn, mỗi tin có ngày, KHÔNG có link

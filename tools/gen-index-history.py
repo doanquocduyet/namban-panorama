@@ -181,13 +181,13 @@ DIGESTS = {"video môi giới + sàn (tổng hợp)", "nambanvillas.vn/tin-rao"}
 dg_n = D["meta"].get("digest_n") or 0
 dg_m = [m["month"] for m in months if DIGESTS & set(k for k, v in m["ghi_nhan"]["sources"].items() if v)]
 dg_src = " + tin rao qua video" if dg_n else ""
-dg_p = (f' Bảng diễn biến tháng {month_vi(dg_m[0]).split("/")[0]}–{month_vi(dg_m[-1])} có thêm {dg_n} tin rao qua video môi giới và sàn, mỗi tin có ngày đăng và đã được đối chiếu với nguồn&nbsp;gốc; chúng tôi bỏ tin ngoài xã Nam&nbsp;Ban, gộp trùng với tin tự đo, và không tính chúng vào số tin đang&nbsp;treo.' if dg_n and dg_m else "")
+dg_p = (f' Bảng diễn biến tháng {month_vi(dg_m[0]).split("/")[0]}–{month_vi(dg_m[-1])} có thêm {dg_n} tin rao qua video môi giới và sàn, mỗi tin có ngày đăng và đã được đối chiếu với nguồn&nbsp;gốc; chúng tôi bỏ tin ngoài xã Nam&nbsp;Ban, gộp trùng với tin tự đo, và không tính chúng vào số tin còn đang&nbsp;rao.' if dg_n and dg_m else "")
 data = f'''<dl class="idx-stats">
 <div><dt>Đơn vị</dt><dd>Triệu đồng/m², trung vị</dd></div>
 <div><dt>Loại giá</dt><dd>Giá rao, chưa phải giá chốt</dd></div>
 <div><dt>Nguồn</dt><dd>{n_src} trang rao công khai{dg_src}, gộp trùng</dd></div>
 <div><dt>Ngưỡng</dt><dd>Từ {MIN_N} tin mỗi nhóm mỗi tháng</dd></div>
-<div><dt>Kỳ đo</dt><dd><time datetime="{base["measured_on"]}">{m_on}</time> · {base["n"]} tin đang treo</dd></div>
+<div><dt>Kỳ đo</dt><dd><time datetime="{base["measured_on"]}">{m_on}</time> · {base["n"]} tin còn đang rao</dd></div>
 <div><dt>Kỳ tới</dt><dd>Đầu tháng {nxt}</dd></div>
 </dl>
 <p class="idx-body-p">Chúng tôi không đăng lại từng tin, không đăng tựa hay số điện thoại người rao, chỉ đăng số tổng&nbsp;hợp.{dg_p}</p>'''
