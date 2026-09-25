@@ -287,7 +287,7 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   tăng/giảm khi lệch >8 %; "nhích" 3–8 % coi như chưa đổi chiều) + bốn dòng chiều giá có % và tháng
   so + bảng tháng. **Lý do tháng chỉ nằm ở mục 04** (dict `REASON` là ground truth Chú cấp — 9/2026:
   mưa bão, kinh tế, cung nhiều hơn cầu); mục 01 chỉ một câu nêu nhóm nào thấp hơn khoảng nửa đầu năm
-  rồi dẫn `#tin-hieu`. Nguồn/cách tính chỉ ở mục 03. Dữ liệu mở chỉ ở mục 07. Thẻ "Đọc gì tiếp" cuối
+  rồi dẫn `#tin-hieu`. Nguồn/cách tính chỉ ở mục 03. Mục 07 chỉ còn ô trích dẫn + một dòng "Mọi trích dẫn vui lòng ghi nguồn Namban Panorama." (Chú chốt 25/9: bỏ dòng link json/csv hiển thị; file dữ liệu vẫn khai trong Dataset schema). Thẻ "Đọc gì tiếp" cuối
   trang không lặp ô đã có trong hub mục 06. FAQ được phép nhắc số (AI trích FAQ độc lập), nhưng hai câu
   FAQ không dùng chung câu văn. Thêm khối mới thì quét lại cụm 6 chữ lặp trong thân trang.
 - **Mẫu hai kỳ khác hẳn (|Δ| > 40 %) → in "không so được — mẫu hai tháng khác nhau", KHÔNG in %.**

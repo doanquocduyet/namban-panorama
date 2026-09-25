@@ -1322,7 +1322,7 @@ Tháng 9/2026, giá rao đất ở xã Nam Ban Lâm Hà, Lâm Đồng — trung 
 
 Nguồn: Namban Panorama, Namban Index, kỳ tháng 9/2026. https://nambanpanorama.com/namban-index
 
-Dữ liệu mở, dạng máy đọc được: monthly.json · monthly.csv · prices.json . Trích dẫn xin ghi nguồn Namban Panorama.
+Mọi trích dẫn vui lòng ghi nguồn Namban Panorama.
 
 Hỏi đáp nhanh giá đất Nam Ban mới nhất
 
