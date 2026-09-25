@@ -73,16 +73,16 @@ if alerts:
     print("DỪNG — không sinh lại trang:", alerts); sys.exit(3)
 
 # ---- cập nhật monthly.json ----
-real = defaultdict(list); upd = defaultdict(list)
+real = defaultdict(list); upd = defaultdict(list); allm = defaultdict(list)
 for r in kept:
     if not r["ngay_dang"]: continue
     m = r["ngay_dang"][:7]
     if m < "2026-04": continue
-    (upd if r["ngay_uoc"] else real)[m].append(r)
+    (upd if r["ngay_uoc"] else real)[m].append(r); allm[m].append(r)
 cur = TODAY.strftime("%Y-%m")
 months = {m["month"]: m for m in D["monthly"]}
-for m in sorted(set(list(real) + list(upd)) | {cur}):
-    months[m] = {"month": m, "status": "partial" if m == cur else "closed", "posted": grp(real.get(m, [])), "refreshed_guland": grp(upd.get(m, []))}
+for m in sorted(set(allm) | {cur}):
+    months[m] = {"month": m, "status": "partial" if m == cur else "closed", "ghi_nhan": grp(allm.get(m, [])), "posted": grp(real.get(m, [])), "refreshed_guland": grp(upd.get(m, []))}
 D["monthly"] = [months[k] for k in sorted(months)]
 wk = {"week": ISO_WEEK, "measured_on": TODAY.isoformat(), "new_listings": len(new_rows), "snapshot": base}
 D["weekly"] = [w for w in prev_weeks if w["week"] != ISO_WEEK] + [wk]
@@ -93,7 +93,7 @@ json.dump({"hashes": sorted(seen | {r["_h"] for r in kept}), "updated": TODAY.is
 with open("data/index/monthly.csv", "w", newline="", encoding="utf-8") as f:
     w = csv.writer(f); w.writerow(["thang", "co_so", "so_tin", "nhom", "n_nhom", "trung_vi_vnd_m2", "p10_vnd_m2", "p90_vnd_m2"])
     for d in D["monthly"]:
-        for basis in ("posted", "refreshed_guland"):
+        for basis in ("ghi_nhan", "posted", "refreshed_guland"):
             for key, g in d[basis]["groups"].items(): w.writerow([d["month"], basis, d[basis]["n"], key, g["n"], g["median_vnd_m2"] or "", g["p10_vnd_m2"] or "", g["p90_vnd_m2"] or ""])
     for wq in D["weekly"]:
         for key, g in wq["snapshot"]["groups"].items(): w.writerow([wq["week"], "weekly_snapshot", wq["snapshot"]["n"], key, g["n"], g["median_vnd_m2"] or "", g["p10_vnd_m2"] or "", g["p90_vnd_m2"] or ""])
