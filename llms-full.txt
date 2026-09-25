@@ -1086,9 +1086,7 @@ Namban Index
 
 Giá đất Nam Ban 2026: bảng giá rao theo từng loại
 
-Kỳ tháng 9/2026 · đo tới 25/9/2026
-
-Lô khoảng 500 m² có thổ cư 2,24 triệu/m² (39 tin), giảm so với tháng 7; đất nền tách thửa 150–300 m² 3,67 triệu/m² (19 tin), đi ngang so với tháng 6. Giá rao trung vị, chưa phải giá chốt.
+Kỳ tháng 9/2026 · đo tới 25/9/2026 · giá rao, chưa phải giá chốt
 
 Giá đất Nam Ban tháng 9/2026 theo từng loại
 
@@ -1097,8 +1095,6 @@ Giá đất Nam Ban tháng 9/2026 theo từng loại
 3,67 tr/m²
 
 trung vị của 19 tin rao
-
-so với tháng 6/2026 (3,73) đi ngang −1 % (mẫu nhỏ)
 
 Khoảng rao nửa đầu 2026: 3–4,5 tr/m²
 
@@ -1110,8 +1106,6 @@ Lô khoảng 500 m² có thổ cư
 
 trung vị của 39 tin rao
 
-so với tháng 7/2026 (3,16) giảm −29 % (mẫu nhỏ)
-
 Khoảng rao nửa đầu 2026: chờ số thực địa
 
 Ngang 10–18 m, tách từ thời luật chưa cho tách nhỏ; ít hàng, giao dịch tốt.
@@ -1121,8 +1115,6 @@ Ngang 10–18 m, tách từ thời luật chưa cho tách nhỏ; ít hàng, giao
 1,38 tr/m²
 
 trung vị của 32 tin rao
-
-so với tháng 7/2026 (0,54) không so được (mẫu khác nhau)
 
 Khoảng rao nửa đầu 2026: 1,7–2,8 tr/m²
 
@@ -1134,27 +1126,25 @@ Lô có view hồ, đồi, toàn cảnh
 
 trung vị của 13 tin rao
 
-so với tháng 6/2026 (2,98) nhích lên +6 % (mẫu nhỏ)
-
 Khoảng rao nửa đầu 2026: 4–6 tr/m²
 
 Nhìn ra hồ, đồi hoặc toàn cảnh thị trấn; hiếm, giá theo tầm nhìn.
 
-Trung vị tháng 9/2026 của đất trên 1.000 m² và lô có view hồ, đồi, toàn cảnh đang nằm dưới khoảng rao phổ biến nửa đầu năm. Theo quan sát thực địa của Panorama, giá rao tháng 9/2026 mềm hơn vì mùa mưa bão và kinh tế: nguồn cung mùa này ra nhiều hơn cầu, người bán rao mềm hơn để ra hàng. Đây là phân tích của Panorama, chưa phải dữ kiện đã xác nhận, và chưa đủ để kết luận xu hướng dài hạn.
+Trung vị tháng 9/2026 của đất trên 1.000 m² và lô có view hồ, đồi, toàn cảnh đang thấp hơn khoảng rao nửa đầu năm. Vì sao, xem mục 04 .
 
 Giá đất Nam Ban đang tăng hay giảm?
 
-Nhìn chung giá rao đang mềm đi. Tháng 9/2026 so với tháng gần nhất có đủ số:
+Nhìn chung giá rao đang mềm đi. Tháng 9/2026 so với tháng gần nhất có đủ số của từng loại:
 
-Đất nền tách thửa 150–300 m² đi ngang
+Đất nền tách thửa 150–300 m² đi ngang −1 % so với 6/2026 · mẫu nhỏ
 
-Lô khoảng 500 m² có thổ cư giảm
+Lô khoảng 500 m² có thổ cư giảm −29 % so với 7/2026 · mẫu nhỏ
 
-Đất trên 1.000 m² chưa so được
+Đất trên 1.000 m² chưa so được mẫu hai tháng khác nhau
 
-Lô có view hồ, đồi, toàn cảnh nhích lên
+Lô có view hồ, đồi, toàn cảnh nhích lên +6 % so với 6/2026 · mẫu nhỏ
 
-Trung vị giá rao, triệu đồng/m². Nguồn: Namban Index, 7 trang rao công khai, gộp trùng, đo 25/9/2026.
+Trung vị giá rao, triệu đồng/m², đo 25/9/2026. Nguồn và cách tính ở mục 03.
 
 Loại đất | Các tháng đủ số, mới nhất trước
 Đất nền tách thửa 150–300 m² | 9/2026 3,67 19 tin · đang đo 6/2026 3,73 41 tin
@@ -1163,8 +1153,6 @@ Lô khoảng 500 m² có thổ cư | 9/2026 2,24 39 tin · đang đo 7/2026 3,16
 Lô có view hồ, đồi, toàn cảnh | 9/2026 3,16 13 tin · đang đo 6/2026 2,98 30 tin
 
 Mỗi loại chỉ hiện tháng có từ 10 tin rao trở lên; tháng ít tin hơn thì bỏ, không điền số ước. Tháng 8/2026 không loại nào đủ 10 tin nên không có trong bảng. Từ tháng 10/2026 đo mỗi tuần nên sẽ ít tháng hụt hơn.
-
-Dữ liệu mở: monthly.json · monthly.csv — trích dẫn tự do, ghi nguồn Namban Panorama.
 
 Số này lấy từ đâu và chưa cho biết gì
 
@@ -1192,7 +1180,7 @@ Kỳ tới
 
 Đầu tháng 10/2026
 
-Namban Index theo dõi 640 tin rao đang treo ở xã Nam Ban Lâm Hà (đo 25/9/2026) từ 7 trang công khai, gộp tin trùng, lọc đúng xã. Chúng tôi không đăng lại từng tin, không đăng tựa hay số điện thoại người rao — chỉ đăng số tổng hợp. Muốn biết một lô cụ thể đáng giá bao nhiêu, xem vì sao hai lô cùng diện tích khác giá .
+Chúng tôi không đăng lại từng tin, không đăng tựa hay số điện thoại người rao, chỉ đăng số tổng hợp.
 
 Giá rao bán là thứ dễ nhìn thấy nhất — dù bạn đang định mua, định bán, hay chỉ muốn biết giá đất Nam Ban hiện đang bao nhiêu, tăng hay giảm, và vì sao. Số ở trên lấy từ tin rao công khai, rồi được đối chiếu với những giao dịch thực tế đang diễn ra trong xã. Từ 1/7/2025, xã Nam Ban gồm thị trấn Nam Ban cũ và các xã Đông Thanh, Mê Linh, Gia Lâm.
 
@@ -1202,29 +1190,25 @@ Giá một lô đã thực sự bán. Namban Index đo giá rao, không đo giá
 
 Một tin biến mất chưa chắc là đã bán. Có tin gỡ vì hết hạn, có lô đổi người rao.
 
-Giá của một lô cụ thể. Diện tích, vị trí, pháp lý làm hai lô cùng loại chênh nhau nhiều; xem vì sao hai lô cùng diện tích khác giá .
+Giá của một lô cụ thể. Diện tích, vị trí, pháp lý làm hai lô cùng loại chênh nhau nhiều; cách đọc giá một lô ở mục 06 .
 
 Xu hướng dài hạn từ vài tháng số liệu. Mẫu càng nhỏ, biến động ngắn hạn càng cần đọc thận trọng.
 
 Tín hiệu thị trường đất Nam Ban tháng 9/2026
 
-Từ tháng 9, theo quan sát của chúng tôi, giá rao đất Nam Ban có dấu hiệu điều chỉnh nhẹ. Nguồn cung ra nhiều hơn cầu, mùa mưa bão làm người ta ngại lên xem đất, và người mua thận trọng hơn vì kinh tế.
-
-Dữ liệu hiện chỉ phản ánh giá rao, chưa đủ để kết luận một xu hướng giảm dài hạn.
+Từ tháng 9, theo quan sát của chúng tôi, giá rao đất Nam Ban mềm đi. Mùa mưa bão làm người ta ngại lên xem đất, người mua thận trọng hơn vì kinh tế, nên nguồn cung mùa này ra nhiều hơn cầu. Chưa đủ để kết luận một xu hướng giảm dài hạn.
 
 6 tháng đầu năm 2026
 
 Tín hiệu tích cực
 
-· Trục đường 725 đang lên dịch vụ. Nhiều quán ăn, cafe và cửa hàng dịch vụ mới khai trương dọc mặt tiền đường tỉnh lộ 725. Thương mại theo chân dân cư, không phải ngược lại.
+Trục ĐT.725 đang lên dịch vụ. Nhiều quán ăn, cà phê và cửa hàng mới mở dọc mặt đường.
 
-· Homestay mới vào vận hành. Điều đáng chú ý hơn là nhu cầu thuê nhà dài hạn tại Nam Ban — không phải du lịch ngắn ngày — đang tăng.
+Nhu cầu thuê dài hạn xuất hiện. Homestay mới vào vận hành, và nhiều người tìm thuê nhà ở Nam Ban để sống, làm việc từ xa, khác hẳn 2–3 năm trước khi khách chủ yếu nghỉ vài ngày.
 
-· Nhu cầu thuê dài hạn xuất hiện. Nhiều người bắt đầu tìm thuê nhà ở Nam Ban để sinh sống và làm việc từ xa — khác biệt so với 2–3 năm trước, khi nhu cầu chủ yếu từ khách du lịch.
+Cần theo dõi
 
-· Cần theo dõi
-
-· Nguồn cung sẽ tăng theo quy hoạch. Khi việc quy hoạch tỉnh định hướng Nam Ban thành đô thị loại III được biết rộng rãi hơn, nhiều chủ đất sẽ ra hàng. Tốt cho người mua có thông tin — nhưng cũng tăng nguy cơ bị định giá không đúng nếu thiếu cơ sở so sánh.
+Nguồn cung sẽ tăng theo quy hoạch. Khi định hướng đưa Nam Ban lên đô thị loại III được biết rộng rãi hơn, nhiều chủ đất sẽ ra hàng. Tốt cho người mua có thông tin, nhưng cũng dễ bị định giá sai nếu thiếu cơ sở so sánh.
 
 Điều bảng giá không nói được
 
@@ -1352,7 +1336,7 @@ Nhìn chung giá rao đang mềm đi. Tháng 9/2026 so với tháng gần nhất
 
 Giá đất Nam Ban có còn rẻ không?
 
-So với Đà Lạt và Bảo Lộc, mặt bằng giá Nam Ban vẫn dễ tiếp cận hơn. Nhưng giá rao và giá giao dịch thực chênh nhau đáng kể ở một số khu, nên con số 'rẻ' cần được kiểm chứng tại thực địa thay vì tin theo tin rao.
+So với Đà Lạt và Bảo Lộc, mặt bằng giá Nam Ban vẫn dễ tiếp cận hơn. Nhưng đó là so theo giá rao; giá chốt của từng lô vẫn phải kiểm tại thực địa
 
 Đất Nam Ban 500 triệu mua được gì?
 

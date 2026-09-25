@@ -281,12 +281,15 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   khoảng 500 m² có thổ cư (ngang 10–18 m, tách từ thời luật chưa cho tách nhỏ) · đất trên 1.000 m²
   (nông nghiệp tách từ rẫy) · lô có view hồ, đồi, toàn cảnh. KHÔNG dùng lại tên cũ "nông nghiệp diện
   tích lớn / khu tách thửa nhỏ / đặc biệt view". KHÔNG có mốc 2.000 m².
-- **Hai loại số, hai nhãn, không trộn:** *trung vị tin rao theo tháng* (kèm n, ngưỡng 10 tin, "—"
-  khi thiếu) và *khoảng rao phổ biến nửa đầu 2026* (quan sát thực địa, `data/prices.json`). Khi trung
-  vị tháng nằm dưới khoảng nửa đầu năm, script in đoạn `idx-why` nêu tên nhóm + lý do tháng từ dict
-  `REASON` trong script. **Lý do 9/2026 là ground truth của Chú:** *mưa bão và kinh tế, nguồn cung
-  mùa này ra nhiều hơn cầu.* Tháng mới không có dòng trong `REASON` thì script in câu trung tính,
-  không tự bịa lý do.
+- **MỖI THỨ CHỈ MỘT NHÀ (Chú chốt 25/9/2026: "rà trùng, rút gọn").** Header chỉ có H1 + một dòng kỳ,
+  không câu số (số nằm ngay ở bốn ô). Mục 01 = **giá bao nhiêu** (trung vị + n + khoảng rao nửa đầu
+  năm + ghi chú loại), KHÔNG có dòng so sánh. Mục 02 = **tăng hay giảm**: một câu kết luận (chỉ tính
+  tăng/giảm khi lệch >8 %; "nhích" 3–8 % coi như chưa đổi chiều) + bốn dòng chiều giá có % và tháng
+  so + bảng tháng. **Lý do tháng chỉ nằm ở mục 04** (dict `REASON` là ground truth Chú cấp — 9/2026:
+  mưa bão, kinh tế, cung nhiều hơn cầu); mục 01 chỉ một câu nêu nhóm nào thấp hơn khoảng nửa đầu năm
+  rồi dẫn `#tin-hieu`. Nguồn/cách tính chỉ ở mục 03. Dữ liệu mở chỉ ở mục 07. Thẻ "Đọc gì tiếp" cuối
+  trang không lặp ô đã có trong hub mục 06. FAQ được phép nhắc số (AI trích FAQ độc lập), nhưng hai câu
+  FAQ không dùng chung câu văn. Thêm khối mới thì quét lại cụm 6 chữ lặp trong thân trang.
 - **Mẫu hai kỳ khác hẳn (|Δ| > 40 %) → in "không so được — mẫu hai tháng khác nhau", KHÔNG in %.**
   Từng in "+154 % khác hẳn" cỡ 28px — số tự nói "đừng tin tôi" mà vẫn đứng hàng chính; đã bỏ.
 - **Bảng diễn biến = mỗi loại đất một dòng, chỉ hiện tháng đủ 10 tin (Chú chốt 25/9/2026: ô "—"

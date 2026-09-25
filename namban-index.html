@@ -170,7 +170,7 @@ a,button{touch-action:manipulation;}
   "headline": "Giá đất Nam Ban 2026: bảng giá rao theo từng loại",
   "description": "Giá rao đất Nam Ban 2026 theo bốn loại: đất nền tách thửa 150–300 m², lô khoảng 500 m² có thổ cư, đất trên 1.000 m², lô có view. Trung vị theo tháng, tăng hay giảm, giá theo khu và dữ liệu mở.",
   "datePublished": "2026-06-01",
-  "dateModified": "2026-09-25T10:59:00+07:00",
+  "dateModified": "2026-09-25T11:02:00+07:00",
   "author": {
     "@type": "Person",
     "@id": "https://nambanpanorama.com/#founder",
@@ -229,7 +229,7 @@ a,button{touch-action:manipulation;}
       "name": "Giá đất Nam Ban có còn rẻ không?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "So với Đà Lạt và Bảo Lộc, mặt bằng giá Nam Ban vẫn dễ tiếp cận hơn. Nhưng giá rao và giá giao dịch thực chênh nhau đáng kể ở một số khu, nên con số 'rẻ' cần được kiểm chứng tại thực địa thay vì tin theo tin rao."
+        "text": "So với Đà Lạt và Bảo Lộc, mặt bằng giá Nam Ban vẫn dễ tiếp cận hơn. Nhưng đó là so theo giá rao; giá chốt của từng lô vẫn phải kiểm tại thực địa"
       }
     },
     {
@@ -401,6 +401,10 @@ nav{background:rgba(241,236,226,1);}
 <style id="idx-v2">
 h2.idx-section-title{margin-top:0;line-height:1.25}
 .idx-header #pm-updated{display:none!important}
+.idx-sig-h{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--forest);font-weight:500;margin:18px 0 4px}
+.idx-sig-h.watch{color:var(--clay-text,#9a5b37)}
+.idx-list strong{font-weight:500}
+.idx-list li,.signal-now p,.idx-body-p,.idx-answer{text-wrap:pretty}
 h3.idx-sub{font-family:'Fraunces',serif;font-weight:400;font-size:19px;margin:28px 0 4px;color:var(--ink)}
 .signal-now{background:rgba(47,64,52,.05);padding:18px 20px 6px 20px;border-radius:3px;margin:8px 0 12px 0}
 .signal-now p{font-size:16px;line-height:1.7;margin:0 0 12px}
@@ -418,19 +422,19 @@ h3.idx-sub{font-family:'Fraunces',serif;font-weight:400;font-size:19px;margin:28
 /* IDX-GEN:START */
 .idx-header p.idx-period{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--line);margin:0 0 14px;max-width:none;line-height:1.6}
 .idx-period .nw{white-space:nowrap}
-.idx-header p.idx-lead{font-family:'Fraunces',serif;font-size:clamp(18px,2.4vw,23px);line-height:1.45;color:#f4efe6;max-width:34em;text-wrap:pretty;margin:0}
-.idx-lead b{font-weight:500;color:#fff}
 .idx-kicker{font-size:13.5px;color:var(--muted);margin:-8px 0 14px}
 .idx-answer{font-size:16.5px;line-height:1.7;margin:0 0 14px;text-wrap:pretty}
 .idx-why{font-size:15px;line-height:1.7;margin:16px 0 0;text-wrap:pretty;color:var(--ink)}
 .idx-why b{font-weight:500}
 .idx-dirs{list-style:none;margin:0 0 22px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 28px;border-top:1px solid var(--line)}
-.idx-dirs li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.idx-dirs li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.idx-dirs .d{display:flex;flex-direction:column;align-items:flex-end;text-align:right}
 .idx-dirs b{font-weight:500;color:var(--ink);white-space:nowrap}
+.idx-dirs small{font-size:11.5px;color:var(--muted);white-space:nowrap}
 .idx-dirs em{font-style:italic;color:var(--muted);white-space:nowrap;font-size:14px}
 @media(max-width:600px){.idx-dirs{grid-template-columns:1fr}}
 .idx-now{grid-template-columns:repeat(4,1fr);grid-auto-rows:auto}
-.idx-now .price-cell{padding:22px 18px 16px;display:grid;grid-row:span 6;grid-template-rows:subgrid;row-gap:0;align-content:start}
+.idx-now .price-cell{padding:22px 18px 16px;display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:0;align-content:start}
 .idx-now .price-tier{margin-bottom:10px;align-self:end}
 .idx-now .price-desc{display:flex;flex-direction:column;margin-top:2px}
 .idx-now .cmp-l{font-size:12.5px;color:var(--muted)}
@@ -487,7 +491,7 @@ h3.idx-sub{font-family:'Fraunces',serif;font-weight:400;font-size:19px;margin:28
 </style>
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","url":"https://nambanpanorama.com/namban-index","speakable":{"@type":"SpeakableSpecification","cssSelector":[".idx-lead","h1"]}}
+{"@context":"https://schema.org","@type":"WebPage","url":"https://nambanpanorama.com/namban-index","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".idx-answer"]}}
 </script>
 <script type="application/ld+json">
 {
@@ -596,8 +600,8 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
     <div class="idx-eyebrow">Namban Index</div>
     <h1>Giá đất Nam Ban 2026: bảng giá rao theo từng loại</h1>
 <!-- IDX-LEAD:START (sinh bởi tools/gen-index-history.py — đừng sửa tay) -->
-<p class="idx-period">Kỳ tháng 9/2026 · đo tới <span class="nw">25/9/2026</span></p>
-<p class="idx-lead">Lô khoảng 500 m² có thổ cư <b>2,24 triệu/m²</b> (39&nbsp;tin), giảm so với tháng 7; đất nền tách thửa 150–300 m² <b>3,67 triệu/m²</b> (19&nbsp;tin), đi&nbsp;ngang so với tháng 6. Giá rao trung vị, chưa phải giá&nbsp;chốt.</p>
+<p class="idx-period">Kỳ tháng 9/2026 · đo tới <span class="nw">25/9/2026</span> · giá rao, chưa phải giá&nbsp;chốt</p>
+
 <!-- IDX-LEAD:END -->
   </div>
 </div>
@@ -608,8 +612,8 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <!-- IDX-NOW:START (sinh bởi tools/gen-index-history.py — đừng sửa tay) -->
 <div class="idx-section-label">01 — Giá kỳ này</div>
 <h2 class="idx-section-title">Giá đất Nam Ban tháng 9/2026 theo từng loại</h2>
-<div class="price-grid idx-now"><div class="price-cell"><div class="price-tier">Đất nền tách thửa 150–300&nbsp;m²</div><div class="price-range">3,67 <span class="idx-unit">tr/m²</span></div><div class="price-unit">trung vị của 19 tin rao</div><div class="price-desc"><span class="cmp-l">so với tháng 6/2026 (3,73)</span><span class="cmp-v"><b>đi&nbsp;ngang</b>&nbsp;−1&nbsp;% <small>(mẫu&nbsp;nhỏ)</small></span></div><div class="price-band">Khoảng rao nửa đầu 2026: <b>3–4,5&nbsp;tr/m²</b></div><div class="price-total">Nền nhỏ trong khu đã tách, có thổ cư, xây được ngay.</div></div><div class="price-cell"><div class="price-tier">Lô khoảng 500&nbsp;m² có thổ cư</div><div class="price-range">2,24 <span class="idx-unit">tr/m²</span></div><div class="price-unit">trung vị của 39 tin rao</div><div class="price-desc"><span class="cmp-l">so với tháng 7/2026 (3,16)</span><span class="cmp-v"><b>giảm</b>&nbsp;−29&nbsp;% <small>(mẫu&nbsp;nhỏ)</small></span></div><div class="price-band">Khoảng rao nửa đầu 2026: chờ số thực&nbsp;địa</div><div class="price-total">Ngang 10–18&nbsp;m, tách từ thời luật chưa cho tách nhỏ; ít hàng, giao dịch tốt.</div></div><div class="price-cell"><div class="price-tier">Đất trên 1.000&nbsp;m²</div><div class="price-range">1,38 <span class="idx-unit">tr/m²</span></div><div class="price-unit">trung vị của 32 tin rao</div><div class="price-desc"><span class="cmp-l">so với tháng 7/2026 (0,54)</span><span class="cmp-v"><b>không so được</b> <small>(mẫu khác&nbsp;nhau)</small></span></div><div class="price-band">Khoảng rao nửa đầu 2026: <b>1,7–2,8&nbsp;tr/m²</b></div><div class="price-total">Phần nhiều là nông nghiệp tách ra từ rẫy, chưa đủ điều kiện tách nhỏ.</div></div><div class="price-cell"><div class="price-tier">Lô có view hồ, đồi, toàn cảnh</div><div class="price-range">3,16 <span class="idx-unit">tr/m²</span></div><div class="price-unit">trung vị của 13 tin rao</div><div class="price-desc"><span class="cmp-l">so với tháng 6/2026 (2,98)</span><span class="cmp-v"><b>nhích&nbsp;lên</b>&nbsp;+6&nbsp;% <small>(mẫu&nbsp;nhỏ)</small></span></div><div class="price-band">Khoảng rao nửa đầu 2026: <b>4–6&nbsp;tr/m²</b></div><div class="price-total">Nhìn ra hồ, đồi hoặc toàn cảnh thị trấn; hiếm, giá theo tầm nhìn.</div></div></div>
-<p class="idx-why">Trung vị tháng 9/2026 của đất trên 1.000 m² và lô có view hồ, đồi, toàn cảnh đang nằm <b>dưới</b> khoảng rao phổ biến nửa đầu năm. Theo quan sát thực địa của Panorama, giá rao tháng 9/2026 mềm hơn vì mùa mưa bão và kinh tế: nguồn cung mùa này ra nhiều hơn cầu, người bán rao mềm hơn để ra hàng. Đây là phân tích của Panorama, chưa phải dữ kiện đã xác nhận, và chưa đủ để kết luận xu hướng dài&nbsp;hạn.</p>
+<div class="price-grid idx-now"><div class="price-cell"><div class="price-tier">Đất nền tách thửa 150–300&nbsp;m²</div><div class="price-range">3,67 <span class="idx-unit">tr/m²</span></div><div class="price-unit">trung vị của 19 tin rao</div><div class="price-band">Khoảng rao nửa đầu 2026: <b>3–4,5&nbsp;tr/m²</b></div><div class="price-total">Nền nhỏ trong khu đã tách, có thổ cư, xây được ngay.</div></div><div class="price-cell"><div class="price-tier">Lô khoảng 500&nbsp;m² có thổ cư</div><div class="price-range">2,24 <span class="idx-unit">tr/m²</span></div><div class="price-unit">trung vị của 39 tin rao</div><div class="price-band">Khoảng rao nửa đầu 2026: chờ số thực&nbsp;địa</div><div class="price-total">Ngang 10–18&nbsp;m, tách từ thời luật chưa cho tách nhỏ; ít hàng, giao dịch tốt.</div></div><div class="price-cell"><div class="price-tier">Đất trên 1.000&nbsp;m²</div><div class="price-range">1,38 <span class="idx-unit">tr/m²</span></div><div class="price-unit">trung vị của 32 tin rao</div><div class="price-band">Khoảng rao nửa đầu 2026: <b>1,7–2,8&nbsp;tr/m²</b></div><div class="price-total">Phần nhiều là nông nghiệp tách ra từ rẫy, chưa đủ điều kiện tách nhỏ.</div></div><div class="price-cell"><div class="price-tier">Lô có view hồ, đồi, toàn cảnh</div><div class="price-range">3,16 <span class="idx-unit">tr/m²</span></div><div class="price-unit">trung vị của 13 tin rao</div><div class="price-band">Khoảng rao nửa đầu 2026: <b>4–6&nbsp;tr/m²</b></div><div class="price-total">Nhìn ra hồ, đồi hoặc toàn cảnh thị trấn; hiếm, giá theo tầm nhìn.</div></div></div>
+<p class="idx-why">Trung vị tháng 9/2026 của đất trên 1.000 m² và lô có view hồ, đồi, toàn cảnh đang thấp hơn khoảng rao nửa đầu năm. Vì sao, <a href="#tin-hieu">xem&nbsp;mục&nbsp;04</a>.</p>
 <!-- IDX-NOW:END -->
 
   <hr>
@@ -618,10 +622,10 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <!-- IDX-HIST:START (sinh bởi tools/gen-index-history.py — đừng sửa tay) -->
 <div class="idx-section-label">02 — Diễn biến</div>
 <h2 class="idx-section-title">Giá đất Nam Ban đang tăng hay giảm?</h2>
-<p class="idx-answer">Nhìn chung giá rao đang mềm&nbsp;đi. Tháng 9/2026 so với tháng gần nhất có đủ&nbsp;số:</p>
-<ul class="idx-dirs"><li><span>Đất nền tách thửa 150–300&nbsp;m²</span><b>đi ngang</b></li><li><span>Lô khoảng 500&nbsp;m² có thổ cư</span><b>giảm</b></li><li><span>Đất trên 1.000&nbsp;m²</span><em>chưa so được</em></li><li><span>Lô có view hồ, đồi, toàn cảnh</span><b>nhích lên</b></li></ul>
+<p class="idx-answer">Nhìn chung giá rao đang mềm&nbsp;đi. Tháng 9/2026 so với tháng gần nhất có đủ số của từng&nbsp;loại:</p>
+<ul class="idx-dirs"><li><span>Đất nền tách thửa 150–300&nbsp;m²</span><span class="d"><b>đi ngang&nbsp;−1&nbsp;%</b><small>so với 6/2026 · mẫu nhỏ</small></span></li><li><span>Lô khoảng 500&nbsp;m² có thổ cư</span><span class="d"><b>giảm&nbsp;−29&nbsp;%</b><small>so với 7/2026 · mẫu nhỏ</small></span></li><li><span>Đất trên 1.000&nbsp;m²</span><span class="d"><em>chưa so được</em><small>mẫu hai tháng khác nhau</small></span></li><li><span>Lô có view hồ, đồi, toàn cảnh</span><span class="d"><b>nhích lên&nbsp;+6&nbsp;%</b><small>so với 6/2026 · mẫu nhỏ</small></span></li></ul>
 <figure class="idx-fig pm-selectable">
-<figcaption>Trung vị giá rao, triệu đồng/m². Nguồn: Namban&nbsp;Index, 7&nbsp;trang rao công khai, gộp&nbsp;trùng, đo&nbsp;25/9/2026.</figcaption>
+<figcaption>Trung vị giá rao, triệu đồng/m², đo&nbsp;25/9/2026. Nguồn và cách tính ở mục&nbsp;03.</figcaption>
 <div class="idx-tblwrap"><table class="idx-tbl idx-bygroup">
 <thead><tr><th scope="col">Loại đất</th><th scope="col">Các tháng đủ số, mới nhất trước</th></tr></thead>
 <tbody>
@@ -632,7 +636,6 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 </tbody></table></div>
 </figure>
 <p class="idx-note">Mỗi loại chỉ hiện tháng có từ 10 tin rao trở lên; tháng ít tin hơn thì bỏ, không điền số ước. Tháng 8/2026 không loại nào đủ 10 tin nên không có trong bảng. Từ tháng 10/2026 đo mỗi tuần nên sẽ ít tháng hụt&nbsp;hơn.</p>
-<p class="idx-dl">Dữ liệu mở: <a href="/data/index/monthly.json">monthly.json</a> · <a href="/data/index/monthly.csv">monthly.csv</a> — trích dẫn tự do, ghi nguồn Namban&nbsp;Panorama.</p>
 <!-- IDX-HIST:END -->
 
   <hr>
@@ -649,35 +652,36 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <div><dt>Kỳ đo</dt><dd><time datetime="2026-09-25">25/9/2026</time> · 640 tin đang treo</dd></div>
 <div><dt>Kỳ tới</dt><dd>Đầu tháng 10/2026</dd></div>
 </dl>
-<p class="idx-answer">Namban Index theo dõi <strong>640 tin rao đang treo</strong> ở xã Nam&nbsp;Ban Lâm&nbsp;Hà (đo 25/9/2026) từ 7 trang công khai, gộp tin trùng, lọc đúng xã. Chúng tôi không đăng lại từng tin, không đăng tựa hay số điện thoại người rao — chỉ đăng số tổng hợp. Muốn biết một lô cụ thể đáng giá bao nhiêu, xem <a href="/dinh-gia-dat-nam-ban">vì sao hai lô cùng diện tích khác&nbsp;giá</a>.</p>
+<p class="idx-body-p">Chúng tôi không đăng lại từng tin, không đăng tựa hay số điện thoại người rao, chỉ đăng số tổng&nbsp;hợp.</p>
 <!-- IDX-DATA:END -->
   <p class="idx-body-p">Giá rao bán là thứ dễ nhìn thấy nhất — dù bạn đang định mua, định bán, hay chỉ muốn biết giá đất Nam&nbsp;Ban hiện đang bao nhiêu, tăng hay giảm, và vì sao. Số ở trên lấy từ tin rao công khai, rồi được đối chiếu với những giao dịch thực tế đang diễn ra trong&nbsp;xã. Từ 1/7/2025, xã Nam&nbsp;Ban gồm thị trấn Nam&nbsp;Ban cũ và các xã Đông&nbsp;Thanh, Mê&nbsp;Linh, Gia&nbsp;Lâm.</p>
   <h3 class="idx-sub">Dữ liệu này chưa cho biết gì</h3>
   <ul class="idx-list">
     <li>Giá một lô đã thực sự bán. Namban Index đo giá rao, không đo giá đã chốt.</li>
     <li>Một tin biến mất chưa chắc là đã bán. Có tin gỡ vì hết hạn, có lô đổi người rao.</li>
-    <li>Giá của một lô cụ thể. Diện tích, vị trí, pháp lý làm hai lô cùng loại chênh nhau nhiều; xem <a href="/dinh-gia-dat-nam-ban">vì sao hai lô cùng diện tích khác giá</a>.</li>
+    <li>Giá của một lô cụ thể. Diện tích, vị trí, pháp lý làm hai lô cùng loại chênh nhau nhiều; cách đọc giá một lô <a href="#hub">ở&nbsp;mục&nbsp;06</a>.</li>
     <li>Xu hướng dài hạn từ vài tháng số liệu. Mẫu càng nhỏ, biến động ngắn hạn càng cần đọc thận trọng.</li>
   </ul>
 
   <hr>
 
   <!-- 04 TÍN HIỆU -->
-  <div class="idx-section-label">04 — Tín hiệu · phân tích của Panorama</div>
+  <div class="idx-section-label" id="tin-hieu">04 — Tín hiệu · phân tích của Panorama</div>
   <h2 class="idx-section-title">Tín hiệu thị trường đất Nam Ban tháng 9/2026</h2>
   <div class="signal-now">
-    <p>Từ tháng 9, theo quan sát của chúng tôi, giá rao đất Nam Ban có dấu hiệu điều chỉnh nhẹ. Nguồn cung ra nhiều hơn cầu, mùa mưa bão làm người ta ngại lên xem đất, và người mua thận trọng hơn vì kinh&nbsp;tế.</p>
-    <p>Dữ liệu hiện chỉ phản ánh giá rao, chưa đủ để kết luận một xu hướng giảm dài&nbsp;hạn.</p>
+    <p>Từ tháng 9, theo quan sát của chúng tôi, giá rao đất Nam Ban mềm đi. Mùa mưa bão làm người ta ngại lên xem đất, người mua thận trọng hơn vì kinh tế, nên nguồn cung mùa này ra nhiều hơn cầu. Chưa đủ để kết luận một xu hướng giảm dài&nbsp;hạn.</p>
   </div>
   <h3 class="idx-sub">6 tháng đầu năm 2026</h3>
-
-  <div style="margin-top:20px;">
-    <p style="font-size:14px;color:var(--forest);font-weight:500;margin-bottom:16px;"><span class="signal-dot green" style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--forest);margin-right:8px;vertical-align:middle;"></span>Tín hiệu tích cực</p>
-    <p style="font-size:14.5px;color:var(--ink);line-height:1.7;margin-bottom:10px;">· <strong>Trục đường 725 đang lên dịch vụ.</strong> Nhiều quán ăn, cafe và cửa hàng dịch vụ mới khai trương dọc mặt tiền đường tỉnh lộ 725. Thương mại theo chân dân cư, không phải ngược lại.</p>
-    <p style="font-size:14.5px;color:var(--ink);line-height:1.7;margin-bottom:10px;">· <strong>Homestay mới vào vận hành.</strong> Điều đáng chú ý hơn là nhu cầu thuê nhà dài hạn tại Nam Ban — không phải du lịch ngắn ngày — đang tăng.</p>
-    <p style="font-size:14.5px;color:var(--ink);line-height:1.7;margin-bottom:20px;">· <strong>Nhu cầu thuê dài hạn xuất hiện.</strong> Nhiều người bắt đầu tìm thuê nhà ở Nam Ban để sinh sống và làm việc từ xa — khác biệt so với 2–3 năm trước, khi nhu cầu chủ yếu từ khách du lịch.</p>
-    <p style="font-size:14px;color:var(--clay-text,#9a5b37);font-weight:500;margin-bottom:16px;">· Cần theo dõi</p>
-    <p style="font-size:14.5px;color:var(--ink);line-height:1.7;">· <strong>Nguồn cung sẽ tăng theo quy hoạch.</strong> Khi việc quy hoạch tỉnh định hướng Nam Ban thành đô thị loại III được biết rộng rãi hơn, nhiều chủ đất sẽ ra hàng. Tốt cho người mua có thông tin — nhưng cũng tăng nguy cơ bị định giá không đúng nếu thiếu cơ sở so sánh.</p>
+  <div class="idx-sig">
+    <p class="idx-sig-h">Tín hiệu tích cực</p>
+    <ul class="idx-list">
+      <li><strong>Trục ĐT.725 đang lên dịch vụ.</strong> Nhiều quán ăn, cà phê và cửa hàng mới mở dọc mặt&nbsp;đường.</li>
+      <li><strong>Nhu cầu thuê dài hạn xuất hiện.</strong> Homestay mới vào vận hành, và nhiều người tìm thuê nhà ở Nam Ban để sống, làm việc từ xa, khác hẳn 2–3 năm trước khi khách chủ yếu nghỉ vài&nbsp;ngày.</li>
+    </ul>
+    <p class="idx-sig-h watch">Cần theo dõi</p>
+    <ul class="idx-list">
+      <li><strong>Nguồn cung sẽ tăng theo quy hoạch.</strong> Khi định hướng đưa Nam Ban lên đô thị loại III được biết rộng rãi hơn, nhiều chủ đất sẽ ra hàng. Tốt cho người mua có thông tin, nhưng cũng dễ bị định giá sai nếu thiếu cơ&nbsp;sở&nbsp;so&nbsp;sánh.</li>
+    </ul>
   </div>
 
   <hr>
@@ -692,7 +696,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
     <div class="idx-cite-actions"><button class="idx-act" type="button" id="copyQuote"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="1.5"/><path d="M15 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3"/></svg><span>Chép trích dẫn</span></button></div>
   </div>
 
-  <p class="idx-body-p">Điều đáng nhìn ở Nam Ban không phải giá đất, mà là <strong style="font-weight:500;">con người đang đến đây và lý do họ đến</strong>. Năm quan sát dưới đây là của Panorama; chuyện vì sao vùng này nhiều giao dịch hơn các vùng ven khác, chúng tôi gỡ ra ở <a href="/vi-sao-nam-ban-nhieu-giao-dich">vì sao đất Nam&nbsp;Ban nhiều người mua bán hơn các vùng ven Đà&nbsp;Lạt khác</a>.</p>
+  <p class="idx-body-p">Điều đáng nhìn ở Nam Ban không phải giá đất, mà là <strong style="font-weight:500;">con người đang đến đây và lý do họ đến</strong>. Năm quan sát dưới đây là của Panorama; chuyện vì sao vùng này nhiều giao dịch hơn các vùng ven khác, chúng tôi gỡ ra ở <a href="/vi-sao-nam-ban-nhieu-giao-dich">vì sao đất Nam&nbsp;Ban nhiều người mua bán hơn các vùng ven Đà&nbsp;Lạt&nbsp;khác</a>.</p>
 
   <div class="obs">
     <div class="obs-item">
@@ -727,7 +731,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   <hr>
 
   <!-- 06 BÊN TRONG INDEX (hub) -->
-  <div class="idx-section-label">06 — Bên trong Namban Index</div>
+  <div class="idx-section-label" id="hub">06 — Bên trong Namban Index</div>
   <h2 class="idx-section-title">Đất từng khu, cách đọc giá một lô, pháp lý và chi phí</h2>
   <p class="idx-kicker">Bảng giá là cửa vào. Mỗi ô dưới đây là một bài riêng của Panorama, đọc tiếp tùy việc bạn đang&nbsp;cần.</p>
 
@@ -785,7 +789,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <!-- IDX-FAQ:START (sinh bởi tools/gen-index-history.py — đừng sửa tay) -->
 <h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:19px;line-height:1.35;margin:26px 0 8px;color:var(--ink);">Giá đất Nam Ban hiện nay bao nhiêu một mét?</h3><p style="font-size:16px;line-height:1.72;color:var(--muted);margin:0;font-weight:300;">Theo Namban Index, tháng 9/2026 trung vị giá rao ở xã Nam Ban Lâm Hà, triệu đồng/m²: đất nền tách thửa 150–300 m² 3,67; lô khoảng 500 m² có thổ cư 2,24; đất trên 1.000 m² 1,38; lô có view hồ, đồi, toàn cảnh 3,16. Khoảng rao phổ biến nửa đầu 2026 theo quan sát thực địa: đất nền tách thửa 150–300 m² 3–4,5; đất trên 1.000 m² 1,7–2,8; lô có view hồ, đồi, toàn cảnh 4–6. Đây là giá rao, chưa phải giá chốt; mỗi lô khác nhau tùy vị trí, pháp lý, thương lượng.</p>
 <h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:19px;line-height:1.35;margin:26px 0 8px;color:var(--ink);">Giá đất Nam Ban đang tăng hay giảm?</h3><p style="font-size:16px;line-height:1.72;color:var(--muted);margin:0;font-weight:300;">Nhìn chung giá rao đang mềm đi. Tháng 9/2026 so với tháng gần nhất có đủ số: đất nền tách thửa 150–300 m² đi ngang; lô khoảng 500 m² có thổ cư giảm; đất trên 1.000 m² không so được vì mẫu hai tháng khác hẳn; lô có view hồ, đồi, toàn cảnh nhích lên. Theo quan sát thực địa của Panorama, giá rao tháng 9/2026 mềm hơn vì mùa mưa bão và kinh tế: nguồn cung mùa này ra nhiều hơn cầu, người bán rao mềm hơn để ra hàng. Đây là giá rao; chưa đủ để kết luận xu hướng dài hạn.</p>
-<h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:19px;line-height:1.35;margin:26px 0 8px;color:var(--ink);">Giá đất Nam Ban có còn rẻ không?</h3><p style="font-size:16px;line-height:1.72;color:var(--muted);margin:0;font-weight:300;">So với Đà Lạt và Bảo Lộc, mặt bằng giá Nam Ban vẫn dễ tiếp cận hơn. Nhưng giá rao và giá giao dịch thực chênh nhau đáng kể ở một số khu, nên con số 'rẻ' cần được kiểm chứng tại thực địa thay vì tin theo tin rao.</p>
+<h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:19px;line-height:1.35;margin:26px 0 8px;color:var(--ink);">Giá đất Nam Ban có còn rẻ không?</h3><p style="font-size:16px;line-height:1.72;color:var(--muted);margin:0;font-weight:300;">So với Đà Lạt và Bảo Lộc, mặt bằng giá Nam Ban vẫn dễ tiếp cận hơn. Nhưng đó là so theo giá rao; giá chốt của từng lô vẫn phải kiểm tại thực địa</p>
 <h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:19px;line-height:1.35;margin:26px 0 8px;color:var(--ink);">Đất Nam Ban 500 triệu mua được gì?</h3><p style="font-size:16px;line-height:1.72;color:var(--muted);margin:0;font-weight:300;">Tầm 500 triệu tới 1,2 tỷ thường rơi vào khu tách thửa nhỏ có thổ cư, diện tích 150–300 m², hạ tầng điện nước đã có hoặc đang hoàn thiện — hợp xây nhỏ hoặc nhà vườn cuối tuần.</p>
 <h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:19px;line-height:1.35;margin:26px 0 8px;color:var(--ink);">Phân khúc đất Nam Ban nào dễ bán lại nhất?</h3><p style="font-size:16px;line-height:1.72;color:var(--muted);margin:0;font-weight:300;">Theo quan sát thị trường, lô có view hồ hoặc view toàn cảnh thường dễ bán lại hơn — người mua tìm view thật hiếm khi hối tiếc. Khoảng rao phổ biến nửa đầu 2026 của nhóm này là 4–6 triệu/m², tổng giá phổ biến 1,2–1,8 tỷ một lô; trung vị tin rao từng tháng xem ở mục 01.</p>
 <h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:19px;line-height:1.35;margin:26px 0 8px;color:var(--ink);">Vì sao giá rao và giá bán thật ở Nam Ban chênh nhau?</h3><p style="font-size:16px;line-height:1.72;color:var(--muted);margin:0;font-weight:300;">Giá rao là giá người bán muốn, không phải giá giao dịch được. Ở một số khu hai con số này chênh nhau đáng kể, nên con số "rẻ" cần kiểm chứng tại thực địa thay vì tin theo tin rao.</p>
@@ -806,28 +810,10 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <div class="next-read">
   <div class="next-read-progress">Hành trình hiểu Nam Ban</div>
   <div class="next-read-done">Bạn vừa hiểu: <b>Giá rao đất Nam&nbsp;Ban và tín&nbsp;hiệu&nbsp;thị&nbsp;trường</b></div>
-  <a href="dinh-gia-dat-nam-ban" class="next-card">
-    <div class="next-card-step">Bước tiếp theo</div>
-    <div class="next-card-title">Vì sao hai lô cùng diện tích khác giá</div>
-    <div class="next-card-desc">Hiểu bảng giá rồi, giờ hiểu cách một lô cụ thể được định giá.</div>
-    <span class="next-card-arrow">→</span>
-  </a>
   <a href="tiem-nang-dau-tu" class="next-card">
     <div class="next-card-step">Bước tiếp theo</div>
     <div class="next-card-title">Tiềm năng đầu tư & rủi ro</div>
     <div class="next-card-desc">Hiểu giá rồi, giờ hiểu cơ hội — và 6 rủi ro thật ít người nói.</div>
-    <span class="next-card-arrow">→</span>
-  </a>
-  <a href="quy-hoach-2050" class="next-card">
-    <div class="next-card-step">Hoặc quay lại</div>
-    <div class="next-card-title">Quy hoạch 2050</div>
-    <div class="next-card-desc">Xem Nam Ban trên bản đồ phát triển dài hạn của Lâm Đồng.</div>
-    <span class="next-card-arrow">→</span>
-  </a>
-  <a href="ban-dat-nam-ban" class="next-card">
-    <div class="next-card-step">Nếu bạn đang muốn bán</div>
-    <div class="next-card-title">Bán đất Nam Ban</div>
-    <div class="next-card-desc">Vì sao lô này ra hàng, lô kia nằm mãi — và định giá sai là lý do số một.</div>
     <span class="next-card-arrow">→</span>
   </a>
 </div>
