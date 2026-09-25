@@ -1,13 +1,23 @@
 #!/usr/bin/env python3
-"""Sinh mục 02 (Giá đất Nam Ban đang tăng hay giảm?) và mục 06 của namban-index.html từ data/index/monthly.json,
-thêm dòng "trung vị tin rao" vào 3 ô mục 01. Chạy: python3 tools/gen-index-history.py
-Chỉ thay phần giữa các cặp marker IDX-HIST / IDX-OBS; cập nhật Dataset JSON-LD + dateModified.
-Người đọc chỉ cần: loại đất nào · giá trung bình bao nhiêu · tăng hay giảm. Không báo cáo tin đăng.
+"""Sinh các khối số của namban-index.html từ data/index/monthly.json (+ data/prices.json, data/index/editorial.json nếu có).
+Chạy: python3 tools/gen-index-history.py  (workflow index-weekly.yml chạy sau mỗi lần đo)
+
+Chỉ thay phần giữa các cặp marker — đừng sửa tay bên trong:
+  IDX-LEAD  header: dòng kỳ + MỘT câu đáp (giá · tăng/giảm), kiểu Zillow/Nationwide
+  IDX-NOW   mục 01: bốn ô giá kỳ này (trung vị + n + so kỳ trước + khoảng rao nửa đầu năm) + lý do tháng
+  IDX-HIST  mục 02: đoạn đáp + bảng tháng + chú thích + link dữ liệu mở
+  IDX-DATA  mục 03: bảng Stats 6 cặp (đơn vị · loại giá · nguồn · ngưỡng · kỳ đo · kỳ tới) + đoạn "n tin rao"
+  IDX-KHU   mục 06: bảng giá theo khu (mọi loại đất gộp) có link sang bài khu
+  IDX-CITE  mục 07: ô trích dẫn có số của kỳ
+  IDX-FAQ   khối FAQ hiển thị + toàn bộ FAQPage JSON-LD (2 câu sinh theo số + 5 câu tĩnh)
+  IDX-GEN   CSS của các khối trên (trong <style id="idx-v2">)
+Nếp: một bộ phân loại 4 nhóm cho mọi khối · số kèm n và ngày · "—" khi chưa đủ 10 tin · không in % khi mẫu hai kỳ khác hẳn.
 Số từ sổ thực địa Panorama (data/index/editorial.json, nếu có) được ghi dấu † — dùng khi tin rao chưa đủ 10."""
 import json, re, os, datetime as dt
 
 P = "namban-index.html"
 D = json.load(open("data/index/monthly.json", encoding="utf-8"))
+PR = json.load(open("data/prices.json", encoding="utf-8"))
 ED = json.load(open("data/index/editorial.json", encoding="utf-8")) if os.path.exists("data/index/editorial.json") else {}
 MIN_N = D["meta"].get("min_n", 10)
 NOW = dt.datetime.now(dt.timezone(dt.timedelta(hours=7)))
@@ -15,9 +25,27 @@ GROUPS = [("tach_thua_150_300", "Đất nền tách thửa 150–300&nbsp;m²", 
           ("lo_500_tho_cu", "Lô khoảng 500&nbsp;m² có thổ cư", "lô khoảng 500 m² có thổ cư"),
           ("dat_tren_1000", "Đất trên 1.000&nbsp;m²", "đất trên 1.000 m²"),
           ("view", "Lô có view hồ, đồi, toàn cảnh", "lô có view hồ, đồi, toàn cảnh")]
+LABEL = {k: l for k, l, _ in GROUPS}; LOW = {k: lo for k, _, lo in GROUPS}
+NOTE = {"tach_thua_150_300": "Nền nhỏ trong khu đã tách, có thổ cư, xây được ngay.",
+        "lo_500_tho_cu": "Ngang 10–18&nbsp;m, tách từ thời luật chưa cho tách nhỏ; ít hàng, giao dịch tốt.",
+        "dat_tren_1000": "Phần nhiều là nông nghiệp tách ra từ rẫy, chưa đủ điều kiện tách nhỏ.",
+        "view": "Nhìn ra hồ, đồi hoặc toàn cảnh thị trấn; hiếm, giá theo tầm nhìn."}
+# khoảng rao phổ biến nửa đầu 2026 (quan sát thực địa, data/prices.json) — map id cũ → nhóm
+RANGE_MAP = {"nong-nghiep-dien-tich-lon": "dat_tren_1000", "tach-thua-tho-cu": "tach_thua_150_300", "view-doi-view-ho": "view"}
+RANGE = {}
+for seg in PR["periods"][0]["segments"]:
+    k = RANGE_MAP.get(seg["id"])
+    if k: RANGE[k] = (seg["price_min_vnd_m2"], seg["price_max_vnd_m2"], seg.get("total_price_note"))
+# lý do của tháng — CHỈ ghi khi Chú xác nhận (ground truth thực địa); tháng không có dòng thì không in
+REASON = {"2026-09": "Theo quan sát thực địa của Panorama, giá rao tháng 9/2026 mềm hơn vì mùa mưa bão và kinh tế: nguồn cung mùa này ra nhiều hơn cầu, người bán rao mềm hơn để ra hàng."}
+KHU = [("Đông Thanh", "Đông Thanh", "/dat-dong-thanh-nam-ban"), ("Mê Linh", "Mê Linh", "/dat-me-linh-nam-ban"),
+       ("Gia Lâm", "Gia Lâm", "/dat-gia-lam-nam-ban"), ("Nam Ban", "Chỉ ghi “Nam Ban”, không nêu khu", None)]
 
 def tr(v): return f"{v/1e6:.2f}".replace(".", ",")
+def tr1(v): return (f"{v/1e6:.1f}".rstrip("0").rstrip(".")).replace(".", ",")
 def month_vi(m): y, mo = m.split("-"); return f"{int(mo)}/{y}"
+def next_month(m):
+    y, mo = map(int, m.split("-")); return f"{mo % 12 + 1}/{y + (mo == 12)}"
 def val(m, key):
     """(median_vnd, n, nguồn) cho tháng m, nhóm key: tin rao đủ 10 → 'rao'; không thì sổ thực địa nếu có → 'so'; không thì None"""
     g = m["ghi_nhan"]["groups"][key]
@@ -29,48 +57,86 @@ def trend(cur, prev):
     d = (cur - prev) / prev * 100
     w = "đi&nbsp;ngang" if abs(d) < 3 else ("nhích&nbsp;lên" if 3 <= d <= 8 else "nhích&nbsp;xuống" if -8 <= d <= -3 else ("tăng" if 8 < d <= 40 else "giảm" if -40 <= d < -8 else "khác&nbsp;hẳn"))
     return d, w
+def plain(s): return re.sub(r"<[^>]+>", "", s).replace("&nbsp;", " ")
 
 months = D["monthly"]; last = months[-1]; base = D["baseline"]
-m_on = dt.date.fromisoformat(base["measured_on"]).strftime("%-d/%-m/%Y"); last_m = month_vi(last["month"])
+m_on = dt.date.fromisoformat(base["measured_on"]).strftime("%-d/%-m/%Y"); last_m = month_vi(last["month"]); nxt = next_month(last["month"])
 
-# ---- ba ô + câu trả lời ----
-cells = []; ans = []; live = {}
+# ---- số của kỳ này, theo nhóm ----
+cur = {}   # key -> dict(v, n, src, prev_m, prev_v, d, w)
 for key, label, low in GROUPS:
-    cur = val(last, key)
-    if not cur: continue
+    c = val(last, key)
+    if not c: continue
     prev = None
     for m in reversed(months[:-1]):
         v = val(m, key)
         if v: prev = (m["month"], v); break
-    big = f'<div class="price-range">{tr(cur[0])} <span class="idx-unit">tr/m²</span></div>'
-    src = f'{cur[1]} tin rao' if cur[2] == "rao" else 'sổ thực địa Panorama†'
-    if prev:
-        d, w = trend(cur[0], prev[1][0]); sign = "+" if d > 0 else "−"
-        small = "&nbsp;<small>(mẫu khác nhau, so&nbsp;tham&nbsp;khảo)</small>" if w == "khác&nbsp;hẳn" else ("&nbsp;<small>(mẫu&nbsp;nhỏ)</small>" if (cur[2] == "rao" and cur[1] < 20) or (prev[1][2] == "rao" and (prev[1][1] or 0) < 20) else "")
-        cmp = f'So với tháng {month_vi(prev[0])} ({tr(prev[1][0])}): <b>{w}</b>&nbsp;{sign}{abs(d):.0f}&nbsp;%{small}'
-        ans.append(f"{low.capitalize()} <strong>{tr(cur[0])} triệu/m²</strong> ({src}), so với tháng {month_vi(prev[0])} là {tr(prev[1][0])} — <strong>{w}</strong> ({sign}{abs(d):.0f}&nbsp;%).")
-    else:
-        cmp = "Chưa có tháng trước để so"
-        ans.append(f"{low.capitalize()} <strong>{tr(cur[0])} triệu/m²</strong> ({src}).")
-    NOTE = {"tach_thua_150_300": "Nền nhỏ trong khu đã tách, có thổ cư, xây được ngay.",
-            "lo_500_tho_cu": "Ngang 10–18&nbsp;m, tách từ thời luật chưa cho tách nhỏ; ít hàng, giao dịch tốt.",
-            "dat_tren_1000": "Phần nhiều là nông nghiệp tách ra từ rẫy, chưa đủ điều kiện tách nhỏ.",
-            "view": "Nhìn ra hồ, đồi hoặc toàn cảnh thị trấn; hiếm, giá theo tầm nhìn."}
-    cells.append(f'<div class="price-cell"><div class="price-tier">{label}</div>{big}<div class="price-unit">Tháng {last_m} · {src}</div><div class="price-desc">{cmp}</div><div class="price-total">{NOTE[key]}</div></div>')
-    live[key] = f'Trung vị tin rao {last_m}: <b>{tr(cur[0])} tr/m²</b> ({src})'
-answer = f"Tháng {last_m} (đo tới {m_on}): " + " ".join(ans) + " Đây là giá rao trung vị, chưa phải giá đã&nbsp;chốt."
+    row = {"v": c[0], "n": c[1], "src": c[2], "prev": prev}
+    if prev: row["d"], row["w"] = trend(c[0], prev[1][0])
+    cur[key] = row
+def src_txt(r): return f'{r["n"]} tin rao' if r["src"] == "rao" else "sổ thực địa Panorama†"
+def cmp_txt(r):
+    if not r.get("prev"): return "Chưa có tháng trước để so"
+    pm, pv = r["prev"]
+    if r["w"] == "khác&nbsp;hẳn": return f'So với tháng {month_vi(pm)} ({tr(pv[0])}): <b>không so được</b> — mẫu hai tháng khác&nbsp;nhau'
+    sign = "+" if r["d"] > 0 else "−"
+    small = "&nbsp;<small>(mẫu&nbsp;nhỏ)</small>" if (r["src"] == "rao" and r["n"] < 20) or (pv[2] == "rao" and (pv[1] or 0) < 20) else ""
+    return f'So với tháng {month_vi(pm)} ({tr(pv[0])}): <b>{r["w"]}</b>&nbsp;{sign}{abs(r["d"]):.0f}&nbsp;%{small}'
+def sent(key, r):
+    s = f'{LOW[key].capitalize()} <strong>{tr(r["v"])} triệu/m²</strong> ({src_txt(r)})'
+    if not r.get("prev"): return s + "."
+    pm, pv = r["prev"]
+    if r["w"] == "khác&nbsp;hẳn": return s + f'; tháng {month_vi(pm)} là {tr(pv[0])} nhưng mẫu hai tháng khác hẳn nhau nên không&nbsp;so.'
+    sign = "+" if r["d"] > 0 else "−"
+    return s + f', so với tháng {month_vi(pm)} là {tr(pv[0])} — <strong>{r["w"]}</strong> ({sign}{abs(r["d"]):.0f}&nbsp;%).'
 
-# ---- bảng tháng: chỉ tháng có ít nhất một nhóm đủ số ----
+# ---- IDX-LEAD: dòng kỳ + một câu đáp (hai nhóm mẫu lớn nhất có thể so được) ----
+lead_keys = sorted([k for k, r in cur.items() if r.get("prev") and r["w"] != "khác&nbsp;hẳn"], key=lambda k: -cur[k]["n"])[:2] or sorted(cur, key=lambda k: -cur[k]["n"])[:2]
+def lead_part(key):
+    r = cur[key]; s = f'{LOW[key]} <b>{tr(r["v"])} triệu/m²</b> ({r["n"]} tin)'
+    if r.get("prev") and r["w"] != "khác&nbsp;hẳn": s += f', {r["w"]} so với tháng {month_vi(r["prev"][0]).split("/")[0]}'
+    return s
+lead = f'''<p class="idx-period">Kỳ tháng {last_m} · đo tới {m_on} · <span class="nw">chốt số mỗi tháng</span></p>
+<p class="idx-lead">Tháng {last_m}, giá rao {lead_part(lead_keys[0])}; {lead_part(lead_keys[1])}. Đây là giá rao trung vị ở xã Nam&nbsp;Ban Lâm&nbsp;Hà, chưa phải giá&nbsp;chốt.</p>'''
+
+# ---- IDX-NOW: mục 01 ----
+cells = []; below = []
+for key, label, low in GROUPS:
+    r = cur.get(key)
+    if not r: continue
+    rng = RANGE.get(key)
+    rng_html = f'<div class="price-band">Khoảng rao phổ biến nửa đầu 2026: <b>{tr1(rng[0])}–{tr1(rng[1])} tr/m²</b></div>' if rng else ""
+    if rng and r["v"] < rng[0]: below.append(low)
+    cells.append(f'<div class="price-cell"><div class="price-tier">{label}</div><div class="price-range">{tr(r["v"])} <span class="idx-unit">tr/m²</span></div><div class="price-unit">Trung vị tháng {last_m} · {src_txt(r)}</div><div class="price-desc">{cmp_txt(r)}</div>{rng_html}<div class="price-total">{NOTE[key]}</div></div>')
+why = ""
+if below:
+    lst = (", ".join(below[:-1]) + " và " + below[-1]) if len(below) > 1 else below[0]
+    why = f'<p class="idx-why">Trung vị tháng {last_m} của {lst} đang nằm <b>dưới</b> khoảng rao phổ biến nửa đầu năm. '
+    why += (REASON.get(last["month"], "Hai số đo hai thứ khác nhau: khoảng nửa đầu năm là quan sát thực địa, trung vị tháng là tin rao đang treo.") + " ")
+    why += 'Đây là phân tích của Panorama, chưa phải dữ kiện đã xác nhận, và chưa đủ để kết luận xu hướng dài&nbsp;hạn.</p>'
+now = f'''<div class="idx-section-label">01 — Giá kỳ này</div>
+<h2 class="idx-section-title">Giá đất Nam Ban tháng {last_m} theo từng loại</h2>
+<p class="idx-kicker">Giá rao trung vị, triệu đồng/m², xã Nam&nbsp;Ban Lâm&nbsp;Hà — chưa phải giá&nbsp;chốt.</p>
+<div class="price-grid idx-now">{"".join(cells)}</div>
+{why}'''
+
+# ---- IDX-HIST: mục 02 ----
+ans = " ".join(sent(k, cur[k]) for k, _, _ in GROUPS if k in cur)
+answer = f"Tháng {last_m} (đo tới {m_on}): " + ans + " Đây là giá rao trung vị, chưa phải giá đã&nbsp;chốt."
 rows = []; shown = []
 for m in reversed(months):
     vs = [val(m, k) for k, _, _ in GROUPS]
     if not any(vs): continue
     shown.append(m["month"])
     tag = ' <sup class="idx-tmp" title="tháng đang diễn ra, số tới ngày đo">tạm</sup>' if m["status"] == "partial" else ""
-    tds = "".join(f'<td class="num"><b>{tr(v[0])}</b><small>{(str(v[1]) + " tin") if v[2] == "rao" else "sổ thực địa†"}</small></td>' if v else '<td class="num dash">—</td>' for v in vs)
+    tds = "".join(f'<td class="num" data-g="{plain(LABEL[k])}"><b>{tr(v[0])}</b><small>{(str(v[1]) + " tin") if v[2] == "rao" else "sổ thực địa†"}</small></td>' if v else f'<td class="num dash" data-g="{plain(LABEL[k])}">—</td>' for (k, _, _), v in zip(GROUPS, vs))
     rows.append(f'<tr><th scope="row"><time datetime="{m["month"]}">{month_vi(m["month"])}</time>{tag}</th>{tds}</tr>')
 first_shown = min(shown)
-table = f'''<figure class="idx-fig pm-selectable">
+dagger = " † Số từ sổ giao dịch thực địa của Panorama, dùng cho tháng tin rao chưa đủ." if "†" in "".join(rows) + "".join(cells) else ""
+hist = f'''<div class="idx-section-label">02 — Diễn biến</div>
+<h2 class="idx-section-title">Giá đất Nam Ban đang tăng hay giảm?</h2>
+<p class="idx-answer">{answer}</p>
+<figure class="idx-fig pm-selectable">
 <figcaption>Trung vị giá rao theo tháng, triệu đồng/m², xã Nam&nbsp;Ban Lâm&nbsp;Hà. Nguồn: Namban&nbsp;Index — tin rao công khai của 7&nbsp;trang, gộp&nbsp;trùng, đo&nbsp;{m_on}.</figcaption>
 <div class="idx-tblwrap"><table class="idx-tbl">
 <thead><tr><th scope="col">Tháng</th>{"".join(f'<th scope="col" class="num">{lab}</th>' for _, lab, _ in GROUPS)}</tr></thead>
@@ -78,51 +144,105 @@ table = f'''<figure class="idx-fig pm-selectable">
 {chr(10).join(rows)}
 </tbody></table></div>
 </figure>
-<p class="idx-note">"—": tháng đó nhóm chưa đủ {MIN_N} tin rao, không tính.{" † Số từ sổ giao dịch thực địa của Panorama, dùng cho tháng tin rao chưa đủ." if "†" in "".join(rows) + "".join(cells) else ""} Bảng nối dài về trước khi có số thực địa; từ tháng 10/2026 mỗi tuần thêm một lần&nbsp;đo.</p>
+<p class="idx-note">"—": tháng đó nhóm chưa đủ {MIN_N} tin rao, không tính.{dagger} Bảng nối dài về trước khi có số thực địa; từ tháng 10/2026 mỗi tuần thêm một lần&nbsp;đo.</p>
 <p class="idx-dl">Dữ liệu mở: <a href="/data/index/monthly.json">monthly.json</a> · <a href="/data/index/monthly.csv">monthly.csv</a> — trích dẫn tự do, ghi nguồn Namban&nbsp;Panorama.</p>'''
 
-hist = f'''<div class="idx-section-label">02 — Diễn biến</div>
-<h2 class="idx-section-title">Giá đất Nam Ban đang tăng hay giảm?</h2>
-<p class="idx-answer">{answer}</p>
-<div class="price-grid idx-now">{"".join(cells)}</div>
-{table}'''
+# ---- IDX-DATA: mục 03 ----
+n_src = 7  # danh sách nguồn quét (meta.method) — không đếm theo tháng có tin
+data = f'''<dl class="idx-stats">
+<div><dt>Đơn vị</dt><dd>Triệu đồng/m², trung vị</dd></div>
+<div><dt>Loại giá</dt><dd>Giá rao, chưa phải giá chốt</dd></div>
+<div><dt>Nguồn</dt><dd>{n_src} trang rao công khai, gộp trùng</dd></div>
+<div><dt>Ngưỡng</dt><dd>Từ {MIN_N} tin mỗi nhóm mỗi tháng</dd></div>
+<div><dt>Kỳ đo</dt><dd><time datetime="{base["measured_on"]}">{m_on}</time> · {base["n"]} tin đang treo</dd></div>
+<div><dt>Kỳ tới</dt><dd>Đầu tháng {nxt}</dd></div>
+</dl>
+<p class="idx-answer">Namban Index theo dõi <strong>{base["n"]} tin rao đang treo</strong> ở xã Nam&nbsp;Ban Lâm&nbsp;Hà (đo {m_on}) từ {n_src} trang công khai, gộp tin trùng, lọc đúng xã. Chúng tôi không đăng lại từng tin, không đăng tựa hay số điện thoại người rao — chỉ đăng số tổng hợp. Muốn biết một lô cụ thể đáng giá bao nhiêu, xem <a href="/dinh-gia-dat-nam-ban">vì sao hai lô cùng diện tích khác&nbsp;giá</a>.</p>'''
 
-obs = f'''<p class="idx-answer">Namban Index theo dõi <strong>{base['n']} tin rao đang treo</strong> ở xã Nam&nbsp;Ban Lâm&nbsp;Hà (đo {m_on}) từ 7 trang công khai, gộp tin trùng, lọc đúng xã. Chúng tôi không đăng lại từng tin, không đăng tựa hay số điện thoại người rao — chỉ đăng số tổng hợp. Muốn biết một lô cụ thể đáng giá bao nhiêu, xem <a href="/dinh-gia-dat-nam-ban">vì sao hai lô cùng diện tích khác&nbsp;giá</a>.</p>'''
+# ---- IDX-KHU: giá theo khu (mọi loại đất gộp) ----
+bk = base.get("by_khu", {})
+krows = []
+for k, name, href in KHU:
+    g = bk.get(k)
+    if not g or g["n"] < MIN_N: continue
+    nm = f'<a href="{href}">{name}</a>' if href else name
+    v = f'<b>{tr(g["median_vnd_m2"])}</b>' if g["median_vnd_m2"] else "—"
+    krows.append(f'<tr><th scope="row">{nm}</th><td class="num" data-g="Trung vị, tr/m²">{v}</td><td class="num" data-g="Số tin">{g["n"]}</td></tr>')
+khu = f'''<h3 class="idx-sub">Giá theo khu, tin đang treo {m_on}</h3>
+<figure class="idx-fig pm-selectable">
+<div class="idx-tblwrap"><table class="idx-tbl idx-khu">
+<thead><tr><th scope="col">Khu</th><th scope="col" class="num">Trung vị, tr/m²</th><th scope="col" class="num">Số tin</th></tr></thead>
+<tbody>
+{chr(10).join(krows)}
+</tbody></table></div>
+<figcaption>Gộp mọi loại đất trong khu, nên chênh giữa các khu một phần là do loại đất khác nhau — so trong cùng loại thì xem bốn nhóm ở mục 01. Bấm tên khu để đọc bài về khu&nbsp;đó.</figcaption>
+</figure>'''
 
+# ---- IDX-CITE ----
+cite_nums = "; ".join(f'{LOW[k]} {tr(cur[k]["v"])}' for k, _, _ in GROUPS if k in cur)
+cite = f'''<div class="idx-cite pm-selectable">
+<p id="citeText">Tháng {last_m}, giá rao đất ở xã Nam Ban Lâm Hà, <span class="nw">Lâm Đồng</span> — trung vị theo Namban Index, triệu đồng/m²: {cite_nums}. Giá rao, chưa phải giá chốt; đo tới {m_on}.</p>
+<p class="src" id="citeSrc">Nguồn: Namban Panorama, Namban Index, kỳ tháng {last_m}. https://nambanpanorama.com/namban-index</p>
+<div class="idx-cite-actions"><button class="idx-act" type="button" id="copyCite"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="1.5"/><path d="M15 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3"/></svg><span>Chép trích dẫn</span></button><button class="idx-act" type="button" id="copyLink"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.2 1.2"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.2-1.2"/></svg><span>Chép link</span></button></div>
+</div>'''
+
+# ---- IDX-FAQ: 2 câu sinh theo số + 5 câu tĩnh ----
+q1 = f"Theo Namban Index, tháng {last_m} trung vị giá rao ở xã Nam Ban Lâm Hà, triệu đồng/m²: {cite_nums}. "
+if RANGE: q1 += "Khoảng rao phổ biến nửa đầu 2026 theo quan sát thực địa: " + "; ".join(f'{LOW[k]} {tr1(RANGE[k][0])}–{tr1(RANGE[k][1])}' for k, _, _ in GROUPS if k in RANGE) + ". "
+q1 += "Đây là giá rao, chưa phải giá chốt; mỗi lô khác nhau tùy vị trí, pháp lý, thương lượng."
+q2 = f"Tháng {last_m} so với tháng gần nhất có đủ số: " + "; ".join(
+    f'{LOW[k]} {plain(cur[k]["w"]) if cur[k]["w"] != "khác&nbsp;hẳn" else "không so được vì mẫu hai tháng khác hẳn"}' if cur[k].get("prev") else f'{LOW[k]} chưa có tháng trước để so'
+    for k, _, _ in GROUPS if k in cur) + ". "
+q2 += (REASON.get(last["month"], "") + " " if REASON.get(last["month"]) else "") + "Đây là giá rao; chưa đủ để kết luận xu hướng dài hạn."
+FAQ = [("Giá đất Nam Ban hiện nay bao nhiêu một mét?", q1),
+       ("Giá đất Nam Ban đang tăng hay giảm?", q2),
+       ("Giá đất Nam Ban có còn rẻ không?", "So với Đà Lạt và Bảo Lộc, mặt bằng giá Nam Ban vẫn dễ tiếp cận hơn. Nhưng giá rao và giá giao dịch thực chênh nhau đáng kể ở một số khu, nên con số 'rẻ' cần được kiểm chứng tại thực địa thay vì tin theo tin rao."),
+       ("Đất Nam Ban 500 triệu mua được gì?", "Tầm 500 triệu tới 1,2 tỷ thường rơi vào khu tách thửa nhỏ có thổ cư, diện tích 150–300 m², hạ tầng điện nước đã có hoặc đang hoàn thiện — hợp xây nhỏ hoặc nhà vườn cuối tuần."),
+       ("Phân khúc đất Nam Ban nào dễ bán lại nhất?", "Theo quan sát thị trường, lô có view hồ hoặc view toàn cảnh thường dễ bán lại hơn — người mua tìm view thật hiếm khi hối tiếc. Khoảng rao phổ biến nửa đầu 2026 của nhóm này là 4–6 triệu/m², tổng giá phổ biến 1,2–1,8 tỷ một lô; trung vị tin rao từng tháng xem ở mục 01."),
+       ("Vì sao giá rao và giá bán thật ở Nam Ban chênh nhau?", "Giá rao là giá người bán muốn, không phải giá giao dịch được. Ở một số khu hai con số này chênh nhau đáng kể, nên con số \"rẻ\" cần kiểm chứng tại thực địa thay vì tin theo tin rao."),
+       ("Mua đất nông nghiệp diện tích lớn ở Nam Ban tầm bao nhiêu?", "Đất nông nghiệp trên 1.000 m², chưa tách thửa, có khoảng rao phổ biến nửa đầu 2026 là 1,7–2,8 triệu/m² — tổng giá phổ biến 4,5–15 tỷ tùy diện tích; trung vị tin rao từng tháng xem ở mục 01. Hợp làm vườn canh tác hoặc giữ dài hạn; cần kiểm kỹ lộ giới và khả năng chuyển đổi.")]
+H3 = 'style="font-family:\'Fraunces\',serif;font-weight:500;font-size:19px;line-height:1.35;margin:26px 0 8px;color:var(--ink);"'
+PP = 'style="font-size:16px;line-height:1.72;color:var(--muted);margin:0;font-weight:300;"'
+faq_html = "\n".join(f'<h3 {H3}>{q}</h3><p {PP}>{a}</p>' for q, a in FAQ)
+faq_ld = json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ]}, ensure_ascii=False, indent=2)
+
+# ---- ghép vào trang ----
 s = open(P, encoding="utf-8").read()
-def replace_block(s, start_pat, end, body):
-    st = re.search(start_pat, s).group(0); a = s.index(st) + len(st); b = s.index(end)
+def replace_block(s, tag, body):
+    st = re.search(rf"<!-- {tag}:START[^>]*-->", s).group(0); a = s.index(st) + len(st); end = f"<!-- {tag}:END -->"; b = s.index(end)
     return s[:a] + "\n" + body + "\n" + s[b:]
-s = replace_block(s, r"<!-- IDX-HIST:START[^>]*-->", "<!-- IDX-HIST:END -->", hist)
-s = replace_block(s, r"<!-- IDX-OBS:START[^>]*-->", "<!-- IDX-OBS:END -->", obs)
+for tag, body in [("IDX-LEAD", lead), ("IDX-NOW", now), ("IDX-HIST", hist), ("IDX-DATA", data), ("IDX-KHU", khu), ("IDX-CITE", cite), ("IDX-FAQ", faq_html)]:
+    s = replace_block(s, tag, body)
+s = re.sub(r'<script type="application/ld\+json">\s*\{\s*"@context": "https://schema.org",\s*"@type": "FAQPage",[\s\S]*?\}\s*</script>', lambda m: '<script type="application/ld+json">\n' + faq_ld + '\n</script>', s, count=1)
 
-# ---- mục 01: dòng trung vị tin rao dưới "Tổng giá phổ biến" của 3 ô (thứ tự ô: nông nghiệp lớn · tách thửa thổ cư · view) ----
-order = ["dat_tren_1000", "tach_thua_150_300", "view"]
-s = re.sub(r'\n\s*<div class="price-live">.*?</div>', '', s, flags=re.S)
-i = [0]
-def _add(m):
-    key = order[i[0]] if i[0] < len(order) else None; i[0] += 1
-    return m.group(0) + (f'\n      <div class="price-live">{live[key]}</div>' if key in live else '')
-s = re.sub(r'<div class="price-total">[^<]*</div>', _add, s, count=3)
-
-CSS = """.idx-answer{font-size:16.5px;line-height:1.7;margin:0 0 14px;text-wrap:pretty}
+CSS = """.idx-header p.idx-period{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--line);margin:0 0 14px;max-width:none;line-height:1.6}
+.idx-period .nw{white-space:nowrap}
+.idx-header p.idx-lead{font-family:'Fraunces',serif;font-size:clamp(18px,2.4vw,23px);line-height:1.45;color:#f4efe6;max-width:34em;text-wrap:pretty;margin:0}
+.idx-lead b{font-weight:500;color:#fff}
+.idx-kicker{font-size:13.5px;color:var(--muted);margin:-8px 0 14px}
+.idx-answer{font-size:16.5px;line-height:1.7;margin:0 0 14px;text-wrap:pretty}
+.idx-why{font-size:15px;line-height:1.7;margin:16px 0 0;text-wrap:pretty;color:var(--ink)}
+.idx-why b{font-weight:500}
 .idx-now{grid-template-columns:repeat(4,1fr)}
 .idx-now .price-cell{padding:22px 18px 16px}
 @media(max-width:900px){.idx-now{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.idx-now{grid-template-columns:1fr}}
 .idx-now .price-range{font-size:28px}
 .idx-unit{font-family:'Be Vietnam Pro',sans-serif;font-size:13px;color:var(--muted);letter-spacing:.2px}
+.idx-now .price-desc{text-wrap:pretty}
 .idx-now .price-desc b{font-weight:500;color:var(--ink)}
 .idx-now .price-desc small{font-size:11.5px;color:var(--stone-text,#726a5c)}
-.price-live{margin-top:8px;font-size:12.5px;color:var(--muted);line-height:1.45;font-style:normal}
-.price-live b{font-weight:500;color:var(--forest)}
+.price-band{margin-top:8px;font-size:12.5px;color:var(--muted);line-height:1.45}
+.price-band b{font-weight:500;color:var(--forest)}
 .idx-fig{margin:18px 0 10px}
 .idx-fig figcaption{font-size:13px;color:var(--muted);line-height:1.5;margin:0 0 8px;text-wrap:pretty}
+.idx-fig table+figcaption,.idx-fig .idx-tblwrap+figcaption{margin:8px 0 0}
 .idx-tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:3px;background:var(--card)}
 .idx-tbl{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
 .idx-tbl th,.idx-tbl td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.4}
 .idx-tbl thead th{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;vertical-align:bottom}
 .idx-tbl tbody th{font-weight:500;color:var(--ink);white-space:nowrap}
+.idx-tbl tbody th a{color:var(--forest);text-decoration:none;border-bottom:1px solid var(--line)}
 .idx-tbl .num{text-align:right}
 .idx-tbl td b{font-family:'Fraunces',serif;font-weight:500;font-size:17px;color:var(--ink)}
 .idx-tbl td small{display:block;font-size:11.5px;color:var(--muted)}
@@ -132,10 +252,19 @@ CSS = """.idx-answer{font-size:16.5px;line-height:1.7;margin:0 0 14px;text-wrap:
 .idx-note{font-size:13.5px;color:var(--muted);line-height:1.6;margin:10px 0 0;text-wrap:pretty}
 .idx-note a,.idx-dl a,.idx-answer a{color:var(--forest);text-decoration:none;border-bottom:1px solid var(--line)}
 .idx-dl{font-size:13.5px;color:var(--muted);margin:10px 0 4px}
-@media(max-width:600px){.idx-tbl{font-size:13px}.idx-tbl th,.idx-tbl td{padding:9px 8px}.idx-tbl td b{font-size:15.5px}.idx-tbl thead th{font-size:10px}.idx-answer{font-size:15.5px}.idx-now .price-range{font-size:27px}}
+.idx-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden;margin:0 0 18px}
+.idx-stats div{background:var(--card);padding:12px 14px}
+.idx-stats dt{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--stone-text,#726a5c);font-weight:500;margin-bottom:4px}
+.idx-stats dd{margin:0;font-size:14px;line-height:1.45;color:var(--ink)}
+@media(max-width:600px){.idx-stats{grid-template-columns:1fr 1fr}.idx-tbl{font-size:13px}.idx-answer{font-size:15.5px}.idx-now .price-range{font-size:27px}
+.idx-tbl thead{display:none}.idx-tbl,.idx-tbl tbody,.idx-tbl tr{display:block}.idx-tbl tr{padding:4px 12px 8px;border-bottom:1px solid var(--line)}.idx-tbl tr:last-child{border-bottom:0}
+.idx-tbl tbody th{display:block;padding:8px 0 2px;border:0;font-family:'Fraunces',serif;font-size:16px;white-space:normal}
+.idx-tbl td{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:4px 0;border:0}
+.idx-tbl td::before{content:attr(data-g);font-size:12.5px;color:var(--muted);text-align:left;flex:1;line-height:1.35}
+.idx-tbl td b{font-size:16px}.idx-tbl td small{display:inline;margin-left:6px}.idx-tbl td.dash{font-size:15px}}
 """
 if "/* IDX-GEN:START */" in s:
-    s = re.sub(r"/\* IDX-GEN:START \*/\n[\s\S]*?/\* IDX-GEN:END \*/", "/* IDX-GEN:START */\n" + CSS + "/* IDX-GEN:END */", s, count=1)
+    s = re.sub(r"/\* IDX-GEN:START \*/\n[\s\S]*?/\* IDX-GEN:END \*/", lambda m: "/* IDX-GEN:START */\n" + CSS + "/* IDX-GEN:END */", s, count=1)
 else:
     s = s.replace('<style id="idx-v2">\n', '<style id="idx-v2">\n/* IDX-GEN:START */\n' + CSS + '/* IDX-GEN:END */\n', 1)
 
@@ -147,6 +276,6 @@ open(P, "w", encoding="utf-8").write(s)
 
 for m in re.finditer(r'<script type="application/ld\+json">(.*?)</script>', s, re.S): json.loads(m.group(1))
 for m in re.finditer(r"<style[^>]*>(.*?)</style>", s, re.S): assert m.group(1).count("{") == m.group(1).count("}")
-for t in ["div", "figure", "table", "thead", "tbody", "tr", "th", "td", "p", "h2"]:
+for t in ["div", "figure", "table", "thead", "tbody", "tr", "th", "td", "p", "h2", "h3", "dl", "dt", "dd"]:
     o = len(re.findall(rf"<{t}\b[^>]*>", s)); c = len(re.findall(rf"</{t}>", s)); assert o == c, (t, o, c)
-print("OK:", len(rows), "tháng trong bảng ·", len(cells), "ô · dateModified", NOW.strftime("%Y-%m-%d %H:%M"))
+print("OK:", len(rows), "tháng trong bảng ·", len(cells), "ô ·", len(krows), "khu ·", len(FAQ), "FAQ · dateModified", NOW.strftime("%Y-%m-%d %H:%M"))
