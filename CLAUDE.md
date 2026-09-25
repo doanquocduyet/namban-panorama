@@ -326,11 +326,11 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   ngoại lệ Chú cấp 25/9/2026 cho riêng trang này, không áp cho bài thường). Ảnh cũ `namban-index-gia-dat.jpg` đã xóa.
 - Giọng: thân bài "chúng tôi"; "tôi" chỉ trong khối trích có nút chép (`#khong-phai-da-lat-gia-re`)
   và **câu chốt founder ở cuối bài** (`figure.idx-coda`).
-- **Câu chốt founder = dải xanh rừng cuối bài (Chú chốt 25/9/2026: "câu chốt của founder, nổi bật
-  nhưng sang, đưa xuống cuối").** Nằm SAU FAQ, TRƯỚC nút Chia sẻ, rộng hết màn hình, nền
-  `--forest-deep` cùng tông đầu trang: dấu mở ngoặc clay-soft, hai đoạn nghiêng, câu hỏi cuối chữ
-  đứng to hơn, vạch mảnh, tên + vai trò + tháng tách dòng. Giữ nguyên văn Chú, không sửa chữ.
-  Không đưa lại vào giữa bài, không thêm nút. Câu dẫn Chú viết ("Giá rao bán là thứ dễ nhìn thấy nhất…")
+- **Câu chốt founder ở cuối bài, thiết kế TRẦM (Chú chốt 25/9/2026: "đừng làm quá lố — người ta
+  thích con người và phẩm chất Panorama, không phải làm nổi lên").** Nằm sau FAQ, trước nút Chia sẻ,
+  trong cột bài như FAQ: một vạch mảnh `--line` phía trên, MỘT đoạn chữ Fraunces cỡ thân bài màu ink,
+  dòng ký tên nhỏ màu muted. Đã thử dải nền xanh đậm rộng hết màn hình + dấu ngoặc to + câu hỏi phóng
+  lớn → Chú bỏ. Không nền tối, không dấu ngoặc trang trí, không chữ phóng to, không nút. Giữ nguyên văn. Câu dẫn Chú viết ("Giá rao bán là thứ dễ nhìn thấy nhất…")
   nằm ở mục 03, không ở header.
 - **Sổ chờ Index (mở khi đủ dữ liệu, Luật 14):** mục "Kỳ trước" mỗi tháng một trang khi bảng có ≥3
   tháng liền · sparkline SVG khi ≥4 kỳ · bảng so Nam Ban / Nam Hà / Tà Nung khi tự đo được cả ba với
