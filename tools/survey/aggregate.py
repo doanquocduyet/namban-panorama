@@ -62,8 +62,13 @@ prev_weeks = D.get("weekly", [])
 if seen and len(new_rows) < 15: alerts.append(f"chỉ {len(new_rows)} tin mới trong tuần (<15)")
 base = grp(kept)
 if prev_weeks:
-    pm = prev_weeks[-1]["snapshot"]["groups"]["dat_duoi_2000"]["median_vnd_m2"]; cm = base["groups"]["dat_duoi_2000"]["median_vnd_m2"]
-    if pm and cm and abs(cm - pm) / pm > .25: alerts.append(f"trung vị đất <2.000 lệch {100*(cm-pm)/pm:.0f}% so tuần trước")
+    # so từng nhóm có ở cả hai tuần (dùng .get: tên nhóm từng đổi 25/9/2026, khóa cũ 'dat_duoi_2000' làm run #4 chết)
+    pg = prev_weeks[-1]["snapshot"].get("groups", {})
+    for key, cg in base["groups"].items():
+        og = pg.get(key) or {}
+        pm, cm = og.get("median_vnd_m2"), cg.get("median_vnd_m2")
+        if pm and cm and og.get("n", 0) >= 30 and cg.get("n", 0) >= 30 and abs(cm - pm) / pm > .25:
+            alerts.append(f"trung vị {cg['label']} lệch {100*(cm-pm)/pm:.0f}% so tuần trước")
     for s_, n in prev_weeks[-1]["snapshot"]["sources"].items():
         if n > 0 and raw_by_src.get(s_, 0) == 0: alerts.append(f"nguồn {s_} về 0 tin (tuần trước {n}) — nghi bị chặn")
 if base["n"] and base["villas_n"] / base["n"] > .4: alerts.append(f"Villas chiếm {100*base['villas_n']/base['n']:.0f}% (>40%)")
