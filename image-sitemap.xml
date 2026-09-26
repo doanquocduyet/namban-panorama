@@ -91,6 +91,11 @@
     <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-toan-canh-og.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/chi-phi-san-lap-ha-tang-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/duong-dat-song-doi-nam-ban.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/chi-phi-san-lap-ha-tang-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/cho-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/cho-thang-long-nam-ban-2.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/cho-nam-ban-buoi-toi.webp</image:loc></image:image>

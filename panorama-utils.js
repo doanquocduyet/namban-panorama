@@ -25,7 +25,9 @@
       "quy-hoach-chung-nam-ban","dat-nguon-goc-lam-nghiep-nam-ban","doc-tin-rao-dat-nam-ban",
       /* thêm 17/9/2026 — /do-cao-nam-ban có hẳn một mục đọc độ cao của LÔ (dốc, taluy,
          chênh mặt đường) và dẫn sang /truoc-khi-xuong-tien, nên thuộc diện §2.2 */
-      "do-cao-nam-ban"];
+      "do-cao-nam-ban",
+      /* thêm 26/9/2026 — bài chi phí san lấp, làm hạ tầng một lô đất: phân tích chi phí đất, thuộc diện §2.2 */
+      "chi-phi-san-lap-ha-tang-nam-ban"];
     var slug=(location.pathname||"").replace(/\/+$/,"").split("/").pop().replace(/\.html$/,"");
     if(slug===""||IN.indexOf(slug)===-1)return;
     if(document.getElementById("pm-endcontact"))return;

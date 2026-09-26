@@ -8,8 +8,8 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 420,
- "unused_count": 69,
+ "total_images": 421,
+ "unused_count": 68,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
   "ban-an-trang-tri-giang-sinh.webp",
@@ -37,7 +37,6 @@
   "cong-khai-lay-y-kien-quy-hoach-chung-xa.webp",
   "dien-linh-tuyen-nam-ban.webp",
   "doi-che-chua-ro-vi-tri.jpg",
-  "duong-dat-song-doi-nam-ban.webp",
   "duong-deo-mua-suong-mo.webp",
   "duong-ta-nung-nam-ban-dt725.webp",
   "ga-tha-vuon-dat-do-nam-ban.webp",
@@ -1023,6 +1022,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "chi-phi-san-lap-ha-tang-nam-ban.jpg": {
+   "kb": 188,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "chi-phi-san-lap-ha-tang-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
@@ -2194,8 +2207,11 @@
     1200,
     1600
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "chi-phi-san-lap-ha-tang-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "duong-deo-mua-suong-mo.webp": {
    "kb": 34,
@@ -4563,6 +4579,9 @@
      "ref",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
