@@ -1020,6 +1020,17 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     có trong thân bài.
     **KHÓA:** Không đổi title/H1 bài /nam-ha-sap-nhap-nam-ban tới hết 25/10/2026. (Chờ Google
     đọc lại tựa mới; đổi tiếp giữa chừng thì không biết tựa nào đem lại kết quả.)
+    **26c — BẰNG CHỨNG TỪ 5 TRANG KẾT QUẢ CHÚ DÁN (24–26/9/2026), tổng hợp ở
+    `docs/len-top-search-tong-hop.md`.** Cả bốn bài hụt top đều có tựa do người viết đặt, lệch
+    chữ với câu gõ ("có đặc sản gì" ↔ "là gì", "hết bao nhiêu tiền" ↔ "giá bao nhiêu", "là gì,
+    ở đâu" ↔ "ở đâu"). Quy trình khi Chú dán một trang kết quả: (1) tìm trang nhà của key;
+    (2) tựa + H1 **mở đầu nguyên văn câu gõ**; (3) FAQ đầu = câu đó, câu đầu của đáp là đáp án,
+    có số + ngày; (4) mỗi câu ở ô "Mọi người cũng hỏi" chưa có nhà thì thêm FAQ; (5) sửa chỗ AI
+    Overview đang nói sai, có nguồn; (6) link từ /hoi-nhanh với chữ đúng câu tra; (7) báo Chú yêu
+    cầu lập chỉ mục, rồi để yên 3–4 tuần. Key giao dịch ("bán đất … giá rẻ") là làn Villas —
+    Panorama chỉ giữ vế thông tin, không làm trang rao. Đã áp 26/9: `/dac-san-nam-ban`,
+    `/len-tho-cu-het-bao-nhieu-tien`, `/nam-ban-la-gi`, `/mua-dat-nam-ban-500-trieu-1-ty` —
+    **khóa tựa bốn bài này tới hết 25/10/2026**, cùng lý do như bài Nam Hà.
 
 ---
 
