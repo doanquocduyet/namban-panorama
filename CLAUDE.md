@@ -1029,8 +1029,9 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     Overview đang nói sai, có nguồn; (6) link từ /hoi-nhanh với chữ đúng câu tra; (7) báo Chú yêu
     cầu lập chỉ mục, rồi để yên 3–4 tuần. Key giao dịch ("bán đất … giá rẻ") là làn Villas —
     Panorama chỉ giữ vế thông tin, không làm trang rao. Đã áp 26/9: `/dac-san-nam-ban`,
-    `/len-tho-cu-het-bao-nhieu-tien`, `/nam-ban-la-gi`, `/mua-dat-nam-ban-500-trieu-1-ty` —
-    **khóa tựa bốn bài này tới hết 25/10/2026**, cùng lý do như bài Nam Hà.
+    `/len-tho-cu-het-bao-nhieu-tien`, `/nam-ban-la-gi`, `/mua-dat-nam-ban-500-trieu-1-ty`,
+    `/chuyen-len-nam-ban-song` (key "lên nam ban làm gì để sống", H1 đổi 26/9, mục "sống bằng gì" đưa lên đầu) —
+    **khóa tựa năm bài này tới hết 25/10/2026**, cùng lý do như bài Nam Hà.
     **26d — CHIA KEY CHI PHÍ VỚI VILLAS (Chú chốt 26/9/2026).** Panorama giữ mọi key **hỏi thông
     tin chi phí** ("chi phí san lấp, làm hạ tầng", "lên thổ cư giá bao nhiêu", "tách thửa", "sang
     tên"). Villas là trang bán hàng + dịch vụ: 7 trang chi phí bên đó đã đổi tựa sang "Dịch vụ …" /
