@@ -482,6 +482,10 @@
     <image:image><image:loc>https://nambanpanorama.com/images/homestay-nam-ban-co-lai-khong.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/hop-tac-canh-tac-dat-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/hop-tac-canh-tac-dat-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/toan-canh-nam-ban-nhin-tu-tren-cao-lam-ha-lam-dong.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/view-tam-trinh-nam-ban.webp</image:loc></image:image>
@@ -929,6 +933,10 @@
     <loc>https://nambanpanorama.com/thon-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-dong-dat-trien-doi.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/thon-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/thue-nguoi-lam-vuon-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/thue-nguoi-lam-vuon-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/thuong-mai-dien-tu-nam-ban</loc>

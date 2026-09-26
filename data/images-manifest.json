@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 427,
+ "total_images": 429,
  "unused_count": 66,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -300,6 +300,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -569,6 +572,9 @@
    "used_in": {
     "du-lich-nong-nghiep-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -1808,6 +1814,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -2183,6 +2192,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -3256,6 +3268,20 @@
     ]
    }
   },
+  "hop-tac-canh-tac-dat-nam-ban.jpg": {
+   "kb": 78,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "hop-tac-canh-tac-dat-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
   "ht86-gia-lam.webp": {
    "kb": 194,
    "dims": [
@@ -3282,6 +3308,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -5901,6 +5930,9 @@
    "used_in": {
     "khi-hau-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -6154,6 +6186,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "thue-nguoi-lam-vuon-nam-ban.jpg": {
+   "kb": 181,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "thue-nguoi-lam-vuon-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
@@ -6558,6 +6604,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },

@@ -33,7 +33,9 @@
       /* thêm 26/9/2026 — bảng giá đất nhà nước, bài đất, thuộc diện §2.2 */
       "bang-gia-dat-nam-ban",
       /* thêm 26/9/2026 — đấu giá đất, bài thị trường, thuộc diện §2.2 */
-      "dau-gia-dat-nam-ban"];
+      "dau-gia-dat-nam-ban",
+      /* thêm 26/9/2026 — hợp tác canh tác, bài giữ đất / cho thuê đất, thuộc diện §2.2 */
+      "hop-tac-canh-tac-dat-nam-ban"];
     var slug=(location.pathname||"").replace(/\/+$/,"").split("/").pop().replace(/\.html$/,"");
     if(slug===""||IN.indexOf(slug)===-1)return;
     if(document.getElementById("pm-endcontact"))return;
