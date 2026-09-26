@@ -7657,7 +7657,7 @@ Giá thị trường là giá bạn trả cho người bán. Ở Nam Ban giữa 
 
 Bảng giá đất là con số nhà nước ban hành. Ngày 30/12/2025, Hội đồng nhân dân tỉnh Lâm Đồng thông qua Nghị quyết 82/2025/NQ-HĐND — bảng giá đất mới, hiệu lực từ 1/1/2026, kèm 124 phụ lục chi tiết từng xã phường. 
 
-Hai con số này khác nhau. Giá thị trường thường cao gấp ba đến năm lần bảng giá — có nơi gấp năm đến tám lần. 
+Hai con số này khác nhau. Giá thị trường thường cao hơn bảng giá, và chênh bao nhiêu thì tùy từng vị trí. 
 
 Bảng giá thấp thì tiền lên thổ cư cũng thấp. Vấn đề nằm ở chỗ khác — ở diện tích nào được tính mức nào. 
 
@@ -7737,7 +7737,7 @@ Cái bẫy thời điểm
 
 Tiền tính theo bảng giá đất tại thời điểm có quyết định cho phép chuyển mục đích — không phải lúc bạn nộp hồ sơ. 
 
-Trước đây bảng giá đất giữ nguyên 5 năm. Từ 1/1/2026, theo Luật Đất đai 2024, bảng giá được cập nhật hàng năm. 
+Trước đây bảng giá đất giữ nguyên 5 năm. Từ 1/1/2026, bảng giá chỉ điều chỉnh khi cần (Nghị quyết 254/2025/QH15), nhưng hệ số điều chỉnh giá đất thì tỉnh ban hành mỗi năm. 
 
 Nghĩa là: nộp hồ sơ tháng 11, quyết định ra tháng 2 năm sau — bạn tính theo bảng giá năm cũ, nhưng nộp theo bảng giá năm mới. 
 
@@ -7793,7 +7793,7 @@ Biết trước thì tính đúng được.
 
 Nguồn 
 
-Luật Đất đai 2024 — từ 1/1/2026 bảng giá đất được cập nhật hằng năm (trước đây giữ nguyên 5 năm). Mức phí cụ thể tính theo bảng giá đất của tỉnh Lâm Đồng tại thời điểm nộp hồ sơ. 
+Luật Đất đai 2024 và Nghị quyết 254/2025/QH15 — từ 1/1/2026 bảng giá đất chỉ điều chỉnh khi cần, hệ số điều chỉnh giá đất ban hành hằng năm (trước đây giữ nguyên 5 năm). Mức phí cụ thể tính theo bảng giá đất của tỉnh Lâm Đồng tại thời điểm nộp hồ sơ. 
 
 Câu hỏi thường gặp 
 
@@ -7815,7 +7815,7 @@ Hạn mức đất ở Lâm Đồng là bao nhiêu?
 
 Bảng giá đất Lâm Đồng có phải giá thị trường không? 
 
-Không. Bảng giá đất do nhà nước ban hành, dùng để tính thuế, phí, tiền sử dụng đất và bồi thường. Giá thị trường là giá hai bên thỏa thuận, thường cao hơn bảng giá ba đến năm lần. Nhưng tiền lên thổ cư thì tính theo bảng giá — không theo giá bạn mua. 
+Không. Bảng giá đất do nhà nước ban hành, dùng để tính thuế, phí, tiền sử dụng đất và bồi thường. Giá thị trường là giá hai bên thỏa thuận, thường cao hơn bảng giá, chênh bao nhiêu tùy từng vị trí. Nhưng tiền lên thổ cư thì tính theo bảng giá — không theo giá bạn mua. 
 
 Bảng giá đất Lâm Đồng dùng để làm gì? 
 
@@ -7831,7 +7831,7 @@ Ba lý do: lấy giá mua bán để tính thay vì bảng giá đất; tưởng
 
 Nộp hồ sơ cuối năm có bị tính giá năm sau không? 
 
-Có thể. Tiền tính theo bảng giá đất tại thời điểm có quyết định cho phép chuyển mục đích, không phải lúc nộp hồ sơ. Từ 1/1/2026 bảng giá đất cập nhật hàng năm — nên nộp cuối năm mà quyết định ra năm sau thì áp bảng giá mới. 
+Có thể. Tiền tính theo giá đất tại thời điểm có quyết định cho phép chuyển mục đích, không phải lúc nộp hồ sơ. Từ 2026 bảng giá chỉ điều chỉnh khi cần (Nghị quyết 254/2025/QH15), nhưng hệ số điều chỉnh giá đất được ban hành mỗi năm — nên quyết định ra năm sau có thể áp con số khác lúc nộp. 
 
 Đất Nam Ban bị thu hồi thì đền bù bao nhiêu? 
 
@@ -11157,7 +11157,7 @@ Nam Ban thuộc tỉnh Lâm Đồng. Từ giữa năm 2025, khu vực Nam Ban n�
 
 Nam Ban có khí hậu thế nào?
 
-Cao nguyên 800–1000m, quanh năm khoảng 18–25°C, mát. Có hai mùa mưa và khô khá rõ; mùa mưa khoảng tháng 4 đến tháng 11, xê dịch tùy năm.
+Mát, kiểu khí hậu cao nguyên, ấm hơn Đà Lạt vì thấp hơn chừng 500 m. Theo báo cáo quy hoạch tỉnh Lâm Đồng (2022), vùng cao 800–1.100 m có nhiệt độ trung bình năm khoảng 19–21°C. Mùa mưa khoảng tháng 5 đến tháng 11.
 
 Nam Ban cách Đà Lạt bao xa?
 
@@ -17214,7 +17214,7 @@ Tóm tắt: Chi phí đất đai ở Nam Ban không phải một khoản. Thuế
 
 Khi chuyển nhượng: người bán chịu thuế thu nhập cá nhân 2% giá chuyển nhượng (Luật Thuế thu nhập cá nhân 2025 Điều 14, Nghị định 253/2026/NĐ-CP, áp dụng từ 1/7/2026); người mua chịu lệ phí trước bạ 0,5% giá trị nhà đất. Luật cho phép hai bên thỏa thuận khác. Nếu giá ghi trên hợp đồng thấp hơn bảng giá đất của tỉnh thì cơ quan thuế ấn định theo bảng giá đất.
 
-Cái neo chung: gần như mọi nghĩa vụ tài chính về đất tính theo BẢNG GIÁ ĐẤT do nhà nước ban hành, không theo giá hai bên mua bán — tiền chuyển mục đích sử dụng, lệ phí trước bạ, thuế sử dụng đất hằng năm, tiền bồi thường khi thu hồi, tiền phạt vi phạm, giá khởi điểm đấu giá. Từ 1/1/2026 theo Luật Đất đai 2024, bảng giá đất được cập nhật hằng năm thay vì giữ nguyên năm năm; Lâm Đồng áp Nghị quyết 82/2025/NQ-HĐND hiệu lực 1/1/2026, bãi bỏ các bảng giá cũ.
+Cái neo chung: gần như mọi nghĩa vụ tài chính về đất tính theo BẢNG GIÁ ĐẤT do nhà nước ban hành, không theo giá hai bên mua bán — tiền chuyển mục đích sử dụng, lệ phí trước bạ, thuế sử dụng đất hằng năm, tiền bồi thường khi thu hồi, tiền phạt vi phạm, giá khởi điểm đấu giá. Từ 1/1/2026, theo Nghị quyết 254/2025/QH15, bảng giá đất chỉ điều chỉnh khi cần và hệ số điều chỉnh giá đất ban hành hằng năm; Lâm Đồng áp Nghị quyết 82/2025/NQ-HĐND hiệu lực 1/1/2026, bãi bỏ các bảng giá cũ.
 
 Các nhóm khoản khác: công chứng, đo đạc và trích đo (chỉ bắt buộc khi sổ thiếu sơ đồ, sơ đồ thiếu kích thước, hoặc diện tích và kích thước không khớp), tách thửa và hợp thửa, làm sổ lần đầu, cấp đổi và cấp lại, cho tặng và thừa kế trong gia đình (miễn thuế thu nhập cá nhân với một số quan hệ nhưng không miễn hết mọi khoản), thế chấp và xóa đăng ký.
 

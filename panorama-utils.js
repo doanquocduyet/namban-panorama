@@ -29,7 +29,11 @@
       /* thêm 26/9/2026 — bài chi phí san lấp, làm hạ tầng một lô đất: phân tích chi phí đất, thuộc diện §2.2 */
       "chi-phi-san-lap-ha-tang-nam-ban",
       /* thêm 26/9/2026 — đọc giá rao, bẫy đất rẻ: bài thị trường, thuộc diện §2.2 */
-      "dat-nam-ban-gia-re"];
+      "dat-nam-ban-gia-re",
+      /* thêm 26/9/2026 — bảng giá đất nhà nước, bài đất, thuộc diện §2.2 */
+      "bang-gia-dat-nam-ban",
+      /* thêm 26/9/2026 — đấu giá đất, bài thị trường, thuộc diện §2.2 */
+      "dau-gia-dat-nam-ban"];
     var slug=(location.pathname||"").replace(/\/+$/,"").split("/").pop().replace(/\.html$/,"");
     if(slug===""||IN.indexOf(slug)===-1)return;
     if(document.getElementById("pm-endcontact"))return;

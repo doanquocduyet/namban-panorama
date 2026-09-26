@@ -8,8 +8,8 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 422,
- "unused_count": 68,
+ "total_images": 427,
+ "unused_count": 66,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
   "ban-an-trang-tri-giang-sinh.webp",
@@ -25,7 +25,6 @@
   "bo-booth-vao-vu-vua-nam-ban.webp",
   "bon-hoa-ven-hang-rao-nam-ban.webp",
   "bui-hoa-tim-ven-duong-gia-lam.webp",
-  "ca-phe-che-bien-rua-qua-nam-ban.webp",
   "ca-phe-qua-xanh-macro-nam-ban.webp",
   "cafe-chaponte-noi-that.jpg",
   "cay-xang-petrolimex-nam-ban.webp",
@@ -65,7 +64,6 @@
   "san-vuon-ban-dem-nam-ban.webp",
   "san-vuon-hoa-va-doi-nam-ban.webp",
   "san-vuon-nha-hoa-gia-lam-nam-ban.webp",
-  "suong-mu-vuon-doi-21-9-2026.webp",
   "tam-giac-mach-nhin-qua-cua-xe-nam-ban.webp",
   "tam-pin-mat-troi-nam-ban.webp",
   "tra-cuu-quy-hoach-tren-man-hinh.webp",
@@ -290,6 +288,20 @@
    ],
    "used_in": {},
    "status": "unused"
+  },
+  "bang-gia-dat-nam-ban.jpg": {
+   "kb": 215,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "bang-gia-dat-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
   },
   "bang-gia-ve-xe-da-lat-dam-rong.webp": {
    "kb": 267,
@@ -554,8 +566,11 @@
     1300,
     1949
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "du-lich-nong-nghiep-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "ca-phe-chin-vang-tren-cay-nam-ban.webp": {
    "kb": 259,
@@ -1637,6 +1652,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -1776,6 +1794,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "dau-gia-dat-nam-ban.jpg": {
+   "kb": 176,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dau-gia-dat-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
@@ -2137,6 +2169,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "du-lich-nong-nghiep-nam-ban.jpg": {
+   "kb": 169,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "du-lich-nong-nghiep-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
@@ -3222,6 +3268,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "khi-hau-nam-ban.jpg": {
+   "kb": 165,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "khi-hau-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
@@ -4838,6 +4898,9 @@
     "dau-tam-nam-ban.html": [
      "display"
     ],
+    "du-lich-nong-nghiep-nam-ban.html": [
+     "display"
+    ],
     "image-sitemap.xml": [
      "ref"
     ]
@@ -5835,8 +5898,11 @@
     1600,
     870
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "khi-hau-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "suong-nam-ban.jpg": {
    "kb": 295,
@@ -6478,6 +6544,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "tuyen-tranh-nam-ban.jpg": {
+   "kb": 99,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "tuyen-tranh-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },

@@ -31,6 +31,10 @@
     <image:image><image:loc>https://nambanpanorama.com/images/quy-hoach-2050.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/bang-gia-dat-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/bang-gia-dat-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/brief-01</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/ranh-gioi-xa-nam-ban-lam-ha-gis.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-toan-canh-nong-nghiep-flycam.webp</image:loc></image:image>
@@ -252,6 +256,10 @@
     <image:image><image:loc>https://nambanpanorama.com/images/og-dat.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/dau-gia-dat-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/dau-gia-dat-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/dau-tam-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/dau-tam-nam-ban.jpg</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/nuong-dau-tam-nam-ban.webp</image:loc></image:image>
@@ -307,6 +315,12 @@
   <url>
     <loc>https://nambanpanorama.com/doc-tin-rao-dat-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/doc-tin-rao-dat-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/du-lich-nong-nghiep-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/nuong-dau-tam-nam-ban.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/ca-phe-che-bien-rua-qua-nam-ban.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/du-lich-nong-nghiep-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/duong-di-nam-ban</loc>
@@ -488,6 +502,11 @@
     <image:image><image:loc>https://nambanpanorama.com/images/deo-ta-nung.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/linh-an-pagoda-lady-buddha-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/thac-voi-og.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/khi-hau-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/suong-mu-vuon-doi-21-9-2026.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/khi-hau-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/khu-nao-o-nam-ban</loc>
@@ -956,6 +975,10 @@
     <image:image><image:loc>https://nambanpanorama.com/images/dong-thanh-view-o-to.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/duong-be-tong-doi-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/truoc-khi-xuong-tien.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/tuyen-tranh-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/tuyen-tranh-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/ve-nam-ban-lam-gi</loc>

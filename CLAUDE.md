@@ -138,6 +138,12 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
    `citation`, không tên văn bản. Nguồn ngoài cho khoảng rộng hơn (11–25°C). Chưa đủ căn cứ
    để đổi, cũng chưa đủ để chắc — nên **bài MỚI đừng ghi số nhiệt độ** (`/do-cao-nam-ban` cố
    ý không có số nào). Muốn chốt thì phải tìm được văn bản khí tượng, không lấy từ bài du lịch.
+   **ĐÃ TÌM ĐƯỢC NGUỒN (26/9/2026) — nhà là `/khi-hau-nam-ban`:** Báo cáo ĐMC Quy hoạch tỉnh Lâm Đồng
+   2021–2030 (7/2022, lamdong.gov.vn): dải cao **800–1.100 m (Nam Ban) nhiệt độ trung bình năm khoảng
+   19–21°C**, trên 1.500 m (Đà Lạt) khoảng 18°C; trạm Liên Khương (957 m) khoảng 21,4°C, mưa khoảng
+   1.615 mm (1980–2017); mùa mưa tỉnh **tháng 5–11**, mùa khô 12–4. "18–25°C" là số **của cả tỉnh**
+   (Niên giám thống kê), không phải của Nam Ban. Bài mới muốn ghi nhiệt độ thì dùng 19–21°C kèm nguồn;
+   các bài cũ ghi 18–25°C chưa mở đợt dọn (Luật 14).
 
    **Tên địa danh (đã research 7/2026)**: giữ **"Chùa Linh Ẩn" (Linh Ẩn Tự)** vì đây là tên
    MẠNH SEO — trang chính quyền lamdong.gov.vn + mọi trang du lịch lớn + 100% kết quả search
@@ -1039,6 +1045,17 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     `/dat-nam-ban-gia-re` (bài mới 26/9, key "đất nam ban giá rẻ" và các biến thể),
     `/chuyen-len-nam-ban-song` (key "lên nam ban làm gì để sống", H1 đổi 26/9, mục "sống bằng gì" đưa lên đầu) —
     **khóa tựa sáu bài này tới hết 25/10/2026**, cùng lý do như bài Nam Hà.
+    **26e — ĐỢT BÀI BỔ SUNG 26/9/2026 (đối chiếu 72 trang Villas, 0 trùng nội dung đáng kể):** thêm
+    `/bang-gia-dat-nam-ban` (Phụ lục 35, NQ 82/2025/NQ-HĐND), `/dau-gia-dat-nam-ban`, `/tuyen-tranh-nam-ban`,
+    `/khi-hau-nam-ban`, `/du-lich-nong-nghiep-nam-ban`; đổi tựa `/nam-ban-co-dang-song` sang "Nam Ban có
+    đáng sống không?…". Ba sự thật đã kiểm, đừng viết ngược: (1) **đấu giá đất ở Nam Ban tới 9/2026 chỉ
+    thấy tài sản thi hành án và ngân hàng**, chưa thấy phiên nhà nước giao đất ở; (2) **chưa có dự án
+    "tuyến tránh Nam Ban"** nào được công bố (có ĐT.725C tránh Tà Nung trong QĐ 1727/QĐ-TTg, đường tránh
+    Đinh Văn trong QĐ 662/QĐ-UBND, và đề xuất tuyến thác Voi – Liên Khương); (3) **"Nam Ban Sala" không có
+    văn bản chính thức nào**, công ty đứng tên đăng ký ngành chính là đất nghĩa trang — Panorama không
+    viết bài này. **Bảng giá đất KHÔNG còn bắt buộc cập nhật hằng năm**: NQ 254/2025/QH15 (hiệu lực
+    1/1/2026) — bảng giá chỉ sửa khi cần, hệ số điều chỉnh giá đất ban hành mỗi năm; đã sửa ở
+    `/chi-phi-dat-dai-nam-ban`, `/len-tho-cu-het-bao-nhieu-tien`, `llms-full.txt`.
     **26d — HAI WEB CÙNG ĐÁNH MỘT KEY LÀ BÌNH THƯỜNG (Chú chốt lần cuối 26/9/2026, thay mọi ghi chú
     "nhường key" trước đó).** Hai tên miền độc lập được Google chấm riêng, cùng nằm trang 1 là chiếm hai chỗ.
     "Tự giành chỗ" chỉ xảy ra giữa hai trang **trong cùng một web** — nên trong Panorama vẫn giữ mỗi key
