@@ -1027,14 +1027,21 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     (2) tựa + H1 **mở đầu nguyên văn câu gõ**; (3) FAQ đầu = câu đó, câu đầu của đáp là đáp án,
     có số + ngày; (4) mỗi câu ở ô "Mọi người cũng hỏi" chưa có nhà thì thêm FAQ; (5) sửa chỗ AI
     Overview đang nói sai, có nguồn; (6) link từ /hoi-nhanh với chữ đúng câu tra; (7) báo Chú yêu
-    cầu lập chỉ mục, rồi để yên 3–4 tuần. Key giao dịch ("bán đất … giá rẻ") là làn Villas —
-    Panorama chỉ giữ vế thông tin, không làm trang rao. Đã áp 26/9: `/dac-san-nam-ban`,
+    cầu lập chỉ mục, rồi để yên 3–4 tuần. Key giao dịch ("bán đất … giá rẻ") thì Panorama
+    vẫn đánh, nhưng bằng góc thông tin (số Index, bẫy), không làm trang rao — xem 26d. Đã áp 26/9: `/dac-san-nam-ban`,
     `/len-tho-cu-het-bao-nhieu-tien`, `/nam-ban-la-gi`,
     `/mua-dat-nam-ban-500-trieu-1-ty` (tựa chốt lại cùng ngày: "500 triệu đến 1 tỷ mua được đất gì ở Nam Ban?" —
-    bỏ "Đất Nam Ban giá rẻ" ở đầu vì key đó là của trang Villas `/dat-nam-ban-gia-re/` đang top),
+    key "đất Nam Ban giá rẻ" có nhà riêng là `/dat-nam-ban-gia-re`, để hai trang Panorama không giành nhau),
+    `/dat-nam-ban-gia-re` (bài mới 26/9, key "đất nam ban giá rẻ" và các biến thể),
     `/chuyen-len-nam-ban-song` (key "lên nam ban làm gì để sống", H1 đổi 26/9, mục "sống bằng gì" đưa lên đầu) —
-    **khóa tựa năm bài này tới hết 25/10/2026**, cùng lý do như bài Nam Hà.
-    **26d — CHIA KEY CHI PHÍ VỚI VILLAS (Chú chốt 26/9/2026).** Panorama giữ mọi key **hỏi thông
+    **khóa tựa sáu bài này tới hết 25/10/2026**, cùng lý do như bài Nam Hà.
+    **26d — HAI WEB CÙNG ĐÁNH MỘT KEY LÀ BÌNH THƯỜNG (Chú chốt lần cuối 26/9/2026, thay mọi ghi chú
+    "nhường key" trước đó).** Hai tên miền độc lập được Google chấm riêng, cùng nằm trang 1 là chiếm hai chỗ.
+    "Tự giành chỗ" chỉ xảy ra giữa hai trang **trong cùng một web** — nên trong Panorama vẫn giữ mỗi key
+    một nhà. Rủi ro thật chỉ hai: (1) hai bài na ná nhau — cùng dàn ý, câu chữ, chép số của nhau → mỗi bên
+    viết góc riêng; (2) link qua lại dày đặc kiểu web vệ tinh → đã chặn bằng luật Villas không link sang
+    Panorama. **Góc riêng:** Villas = lô thật, giá thật, dịch vụ, nút gọi; Panorama = phân tích, số đo
+    Index, hướng dẫn. KHÔNG ép bên nào đổi tựa vì bên kia đang đánh cùng key. Chi tiết đợt chi phí: Panorama giữ mọi key **hỏi thông
     tin chi phí** ("chi phí san lấp, làm hạ tầng", "lên thổ cư giá bao nhiêu", "tách thửa", "sang
     tên"). Villas là trang bán hàng + dịch vụ: 7 trang chi phí bên đó đã đổi tựa sang "Dịch vụ …" /
     "Mua lô đã có hạ tầng hay tự làm", giữ nguyên đường dẫn. **Luật 3 web: Villas KHÔNG link sang

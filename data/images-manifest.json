@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 421,
+ "total_images": 422,
  "unused_count": 68,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -1036,6 +1036,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -1620,6 +1623,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "dat-nam-ban-gia-re.jpg": {
+   "kb": 262,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dat-nam-ban-gia-re.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
@@ -2210,6 +2227,9 @@
    "used_in": {
     "chi-phi-san-lap-ha-tang-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -3540,6 +3560,9 @@
     "giu-dat-nam-ban-tu-xa.html": [
      "og",
      "twitter"
+    ],
+    "dat-nam-ban-gia-re.html": [
+     "display"
     ],
     "mua-dat-nam-ban.html": [
      "display"

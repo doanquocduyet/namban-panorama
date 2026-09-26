@@ -116,8 +116,8 @@
   </url>
   <url>
     <loc>https://nambanpanorama.com/chuyen-len-nam-ban-song</loc>
-    <image:image><image:loc>https://nambanpanorama.com/images/tram-y-te-xa-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/banh-cuon-cho-gia-lam-mat-tien-toi.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/tram-y-te-xa-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/duong-doi-view-thung-lung.jpg</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/hieu-thuoc-cua-hang-nam-ban-toi.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/chuyen-len-nam-ban-song.jpg</image:loc></image:image>
@@ -200,6 +200,11 @@
     <loc>https://nambanpanorama.com/dat-nam-ban-duong-dat</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/me-linh-rung-thong-duong-dat.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/dat-nam-ban-duong-dat.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/dat-nam-ban-gia-re</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/lo-dat-do-thuc-te.jpg</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/dat-nam-ban-gia-re.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/dat-nam-ban-kinh-doanh-gi</loc>
