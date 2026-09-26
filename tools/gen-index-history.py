@@ -139,7 +139,7 @@ answer = f'{verdict} Tháng {last_m} so với tháng gần nhất có đủ số
 dirs_html = '<ul class="idx-dirs">' + "".join(items) + '</ul>'
 rows = []; chron = months  # cũ → mới
 # cột = tháng có ít nhất một loại đủ số, mới nhất trước; tên tháng ghi MỘT lần ở đầu cột
-cols = [m for m in reversed(chron) if any(val(m, k) for k, _, _ in GROUPS)]
+cols = [m for m in reversed(chron) if any(val(m, k) or m["ghi_nhan"]["groups"][k].get("median_small_vnd_m2") for k, _, _ in GROUPS)]
 first_shown = min(m["month"] for m in cols)
 for key, label, low in GROUPS:
     tds = []
@@ -150,8 +150,11 @@ for key, label, low in GROUPS:
             n_txt = f'{v[1]}&nbsp;tin' if v[2] == "rao" else "sổ thực địa†"
             tds.append(f'<td{cls} data-m="{mv}"><b>{tr(v[0])}</b><small>{n_txt}</small></td>')
         else:
-            n_raw = m["ghi_nhan"]["groups"][key]["n"]
-            tds.append(f'<td{cls} data-m="{mv}"><span class="few">dưới {MIN_N}&nbsp;tin</span></td>')
+            g = m["ghi_nhan"]["groups"][key]; n_raw = g["n"]
+            if g.get("median_small_vnd_m2"):   # 5–9 tin: in số, gắn "mẫu nhỏ" (Chú chốt 26/9/2026 — ô trống nhìn thiếu số liệu)
+                tds.append(f'<td class="{"cur " if i == 0 else ""}sm" data-m="{mv}"><b>{tr(g["median_small_vnd_m2"])}</b><small>{n_raw}&nbsp;tin · mẫu&nbsp;nhỏ</small></td>')
+            else:
+                tds.append(f'<td{cls} data-m="{mv}"><span class="few">{n_raw}&nbsp;tin, chưa đủ để&nbsp;tính</span></td>' if n_raw else f'<td{cls} data-m="{mv}"><span class="few">chưa có&nbsp;tin</span></td>')
     rows.append(f'<tr><th scope="row">{label}</th>{"".join(tds)}</tr>')
 CUR = ' class="cur"'
 TMP = '<small>đang đo</small>'
@@ -160,7 +163,7 @@ span = [m["month"] for m in chron if first_shown <= m["month"] <= last["month"]]
 shown_m = {m["month"] for m in cols}
 empty_months = [month_vi(m) for m in span if m not in shown_m]
 dagger = " † Số từ sổ giao dịch thực địa của Panorama, dùng cho tháng tin rao chưa đủ." if "†" in "".join(rows) + "".join(cells) else ""
-gap = (f' Tháng {", ".join(empty_months)} không loại nào đủ {MIN_N} tin nên không có&nbsp;cột.' if empty_months else "")
+gap = (f' Tháng {", ".join(empty_months)} không loại nào có từ 5 tin nên không có&nbsp;cột.' if empty_months else "")
 hist = f'''<div class="idx-section-label">02 — Diễn biến</div>
 <h2 class="idx-section-title">Giá đất Nam Ban đang tăng hay giảm?</h2>
 <p class="idx-answer">{answer}</p>
@@ -173,7 +176,7 @@ hist = f'''<div class="idx-section-label">02 — Diễn biến</div>
 {chr(10).join(rows)}
 </tbody></table></div>
 </figure>
-<p class="idx-note">Chỉ tính khi một loại có từ {MIN_N} tin rao trong tháng; ít hơn thì ghi "dưới {MIN_N} tin", không điền số&nbsp;ước.{gap}{dagger} Từ tháng 10/2026 đo mỗi tuần nên sẽ ít ô hụt&nbsp;hơn.</p>'''
+<p class="idx-note">Ô có từ {MIN_N} tin là trung vị đủ tin cậy, dùng để kết luận tăng hay giảm. Ô ghi "mẫu nhỏ" là trung vị của 5–9 tin: vẫn là số thật, đọc để tham khảo, không dùng để so tăng giảm. Dưới 5 tin thì không tính, vì trung vị lúc đó chỉ là giá của một hai&nbsp;lô.{gap}{dagger}</p>'''
 
 # ---- IDX-DATA: mục 03 ----
 n_src = 7  # danh sách nguồn quét (meta.method) — không đếm theo tháng có tin
@@ -333,6 +336,7 @@ CSS = """.idx-tbl.idx-stock tbody th{white-space:normal}
 .idx-months td.cur{background:rgba(47,64,52,.045)}
 .idx-months td.cur b{color:var(--forest)}
 .idx-months thead th.cur{background:rgba(47,64,52,.045)}
+.idx-months td.sm b{color:var(--muted);font-weight:400}
 .idx-months .few{font-size:11.5px;font-style:italic;color:var(--stone-text,#726a5c)}
 @media(max-width:600px){.idx-stats{grid-template-columns:1fr 1fr}.idx-tbl{font-size:13px}.idx-answer{font-size:15.5px}.idx-now .price-range{font-size:27px}
 .idx-months,.idx-months thead,.idx-months tbody{display:block}

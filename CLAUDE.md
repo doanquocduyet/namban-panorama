@@ -316,8 +316,14 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   Từng in "+154 % khác hẳn" cỡ 28px — số tự nói "đừng tin tôi" mà vẫn đứng hàng chính; đã bỏ.
 - **Bảng diễn biến = cột cố định theo tháng, tên tháng ghi MỘT lần ở đầu cột (chốt 25/9/2026 sau hai
   vòng Chú báo khó đọc).** Hàng = bốn loại đất, cột = các tháng có ít nhất một loại đủ số, mới nhất
-  trước; cột tháng hiện tại tô nền forest rất nhạt. Ô một loại chưa đủ 10 tin ghi chữ nhỏ nghiêng
-  **"dưới 10 tin"** — KHÔNG dùng "—" (Chú: "nhìn cùi bắp"), KHÔNG điền số ước, KHÔNG hạ ngưỡng. Tháng
+  trước; cột tháng hiện tại tô nền forest rất nhạt. **ĐỔI 26/9/2026 (Chú: "dưới 10 tin thì vẫn có số liệu
+  cụ thể, ghi vậy nhìn không chuyên nghiệp"):** ô 5–9 tin **in trung vị thật** (`median_small_vnd_m2` do
+  `aggregate.py` lưu riêng) kèm nhãn nhỏ "9 tin · mẫu nhỏ", chữ số màu muted; ô dưới 5 tin ghi "N tin, chưa đủ
+  để tính". Kết luận tăng/giảm, % so tháng, bốn ô mục 01 VẪN chỉ dùng ô từ 10 tin — số mẫu nhỏ chỉ để tham
+  khảo. KHÔNG dùng "—" (Chú: "nhìn cùi bắp"), KHÔNG điền số ước.
+  **Khối "Tổng hợp N tin còn đang rao" ở mục 03 (Chú giao 25/9/2026):** số tin + khoảng giá phổ biến p10–p90
+  theo 4 loại, số tin theo khu (không giá theo khu), tự sinh từ `baseline`. Cố ý KHÔNG in trung vị ở khối này
+  để khỏi tranh với mục 01. Tên loại hai tầng (tên chính + chi tiết chữ nhỏ) để không rớt chữ ở 390. Tháng
   mà không loại nào đủ số (vd 8/2026) thì không có cột, ghi chú nêu tên tháng. Mobile: hàng tên tháng
   giữ trên đầu, mỗi loại đất một khối, ba ô số thẳng cột bên dưới. Hai bản đã thử và bỏ: ma trận có
   "—", và dạng mỗi dòng tự ghi tháng của nó (cột lệch tháng, đọc rối).

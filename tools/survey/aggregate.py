@@ -10,6 +10,7 @@ from collections import defaultdict, Counter
 TODAY = dt.date.today(); ISO_WEEK = TODAY.strftime("%G-W%V")
 IN = {"Nam Ban", "Đông Thanh", "Mê Linh", "Gia Lâm"}
 MIN_N = 10
+MIN_SMALL = 5   # 5–9 tin: vẫn lưu trung vị riêng (median_small_vnd_m2), trang in kèm nhãn "mẫu nhỏ" — Chú chốt 26/9/2026
 P = "data/index/monthly.json"; SEEN_P = "data/index/seen.json"
 D = json.load(open(P, encoding="utf-8"))
 seen = set(json.load(open(SEEN_P)).get("hashes", [])) if glob.glob(SEEN_P) else set()
@@ -58,7 +59,7 @@ def grp(rs):
     for key, label, f in G:
         xs = [r["_m2"] for r in rs if f(r)]
         ok = len(xs) >= MIN_N
-        out["groups"][key] = {"label": label, "n": len(xs), "median_vnd_m2": int(st.median(xs)) if ok else None, "p10_vnd_m2": int(q(xs, .1)) if ok else None, "p90_vnd_m2": int(q(xs, .9)) if ok else None}
+        out["groups"][key] = {"label": label, "n": len(xs), "median_vnd_m2": int(st.median(xs)) if ok else None, "p10_vnd_m2": int(q(xs, .1)) if ok else None, "p90_vnd_m2": int(q(xs, .9)) if ok else None, "median_small_vnd_m2": int(st.median(xs)) if MIN_SMALL <= len(xs) < MIN_N else None}
     out["by_khu"] = {k: {"n": len([r for r in rs if r["_khu"] == k]), "median_vnd_m2": (int(st.median([r["_m2"] for r in rs if r["_khu"] == k])) if len([r for r in rs if r["_khu"] == k]) >= MIN_N else None)} for k in ["Nam Ban", "Đông Thanh", "Mê Linh", "Gia Lâm", "chưa rõ khu"]}
     out["villas_n"] = len([r for r in rs if r["nguon"] == "nambanvillas.vn"]); out["sources"] = dict(Counter(r["nguon"] for r in rs))
     return out
