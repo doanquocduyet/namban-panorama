@@ -80,6 +80,10 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
   `sitemap.xml` + `robots.txt` + `llms.txt` / `llms-full.txt` + `feed.xml` + `/images/`.
 - 1 trong 3 web cùng chủ: **Panorama** (tạo trust, không bán) · Villas `nambanvillas.vn`
   (bán đất) · Greenspacers `greenspacers.vn` (giữ đất). **Repo này CHỈ lo Panorama.**
+- **PANORAMA ↔ VILLAS — ĐÃ CHỐT, KHÔNG BÀN LẠI (Chú chốt 26/9/2026): CÙNG KEY, KHÁC NỘI DUNG VÀ STYLE.**
+  Hai web được đánh cùng một từ khóa. Villas: lô thật, giá thật, dịch vụ, nút gọi. Panorama: phân tích,
+  số đo Index, hướng dẫn, giọng publication. Không ép bên nào đổi tựa vì bên kia cùng key; không chép dàn
+  ý/câu chữ của nhau; Villas không link sang Panorama. Trong nội bộ Panorama vẫn mỗi key một trang. Chi tiết §6 Luật 26d.
 
 ---
 
