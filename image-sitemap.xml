@@ -100,6 +100,10 @@
     <image:image><image:loc>https://nambanpanorama.com/images/chi-phi-san-lap-ha-tang-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/chi-phi-trong-ca-phe-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/chi-phi-trong-ca-phe-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/cho-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/cho-thang-long-nam-ban-2.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/cho-nam-ban-buoi-toi.webp</image:loc></image:image>
