@@ -1086,7 +1086,7 @@ Namban Index
 
 Giá đất Nam Ban 2026: bảng giá rao theo từng loại
 
-Kỳ tháng 9/2026 · đo tới 25/9/2026 · giá rao, chưa phải giá chốt
+Kỳ tháng 9/2026 · đo tới 26/9/2026 · giá rao, chưa phải giá chốt
 
 Đo và tổng hợp bởi Namban Panorama, tại Nam Ban · cách đo
 
@@ -1096,9 +1096,9 @@ Trung vị: xếp các tin rao từ thấp tới cao, lấy giá ở giữa.
 
 Đất nền tách thửa 150–300 m²
 
-3,59 tr/m²
+3,67 tr/m²
 
-trung vị của 22 tin rao
+trung vị của 21 tin rao
 
 Khoảng rao nửa đầu 2026: 3–4,5 tr/m²
 
@@ -1106,9 +1106,9 @@ Nền nhỏ trong khu đã tách, có thổ cư, xây được ngay.
 
 Lô khoảng 500 m² có thổ cư
 
-2,13 tr/m²
+2,26 tr/m²
 
-trung vị của 40 tin rao
+trung vị của 38 tin rao
 
 Khoảng rao nửa đầu 2026: chờ số thực địa
 
@@ -1116,9 +1116,9 @@ Ngang 10–18 m, tách từ thời luật chưa cho tách nhỏ; ít hàng, giao
 
 Đất trên 1.000 m²
 
-1,38 tr/m²
+1,44 tr/m²
 
-trung vị của 36 tin rao
+trung vị của 35 tin rao
 
 Khoảng rao nửa đầu 2026: 1,7–2,8 tr/m²
 
@@ -1140,23 +1140,23 @@ Giá đất Nam Ban đang tăng hay giảm?
 
 Nhìn chung giá rao đang mềm đi. Tháng 9/2026 so với tháng gần nhất có đủ số của từng loại:
 
-Đất nền tách thửa 150–300 m² nhích xuống −6 % so với 6/2026
+Đất nền tách thửa 150–300 m² nhích lên +5 % so với 8/2026 · mẫu nhỏ
 
-Lô khoảng 500 m² có thổ cư giảm −19 % so với 8/2026 · mẫu nhỏ
+Lô khoảng 500 m² có thổ cư giảm −14 % so với 8/2026 · mẫu nhỏ
 
 Đất trên 1.000 m² chưa so được mẫu hai tháng khác nhau
 
 Lô có view hồ, đồi, toàn cảnh đi ngang −1 % so với 8/2026 · mẫu nhỏ
 
-Trung vị giá rao, triệu đồng/m², đo 25/9/2026. Nguồn và cách tính ở mục 03.
+Trung vị giá rao, triệu đồng/m², đo 26/9/2026. Nguồn và cách tính ở mục 03.
 
 Loại đất | 9/2026 đang đo | 8/2026 | 7/2026 | 6/2026
-Đất nền tách thửa 150–300 m² | 3,59 22 tin | dưới 10 tin | dưới 10 tin | 3,82 48 tin
-Lô khoảng 500 m² có thổ cư | 2,13 40 tin | 2,63 12 tin | 2,68 18 tin | 2,96 33 tin
-Đất trên 1.000 m² | 1,38 36 tin | dưới 10 tin | 0,91 28 tin | 1,00 21 tin
+Đất nền tách thửa 150–300 m² | 3,67 21 tin | 3,51 10 tin | 3,49 9 tin · mẫu nhỏ | 3,82 48 tin
+Lô khoảng 500 m² có thổ cư | 2,26 38 tin | 2,63 12 tin | 2,68 18 tin | 2,96 33 tin
+Đất trên 1.000 m² | 1,44 35 tin | 1,20 9 tin · mẫu nhỏ | 0,91 28 tin | 1,00 21 tin
 Lô có view hồ, đồi, toàn cảnh | 3,16 15 tin | 3,19 12 tin | 3,69 12 tin | 3,01 35 tin
 
-Chỉ tính khi một loại có từ 10 tin rao trong tháng; ít hơn thì ghi "dưới 10 tin", không điền số ước. Từ tháng 10/2026 đo mỗi tuần nên sẽ ít ô hụt hơn.
+Ô có từ 10 tin là trung vị đủ tin cậy, dùng để kết luận tăng hay giảm. Ô ghi "mẫu nhỏ" là trung vị của 5–9 tin: vẫn là số thật, đọc để tham khảo, không dùng để so tăng giảm. Dưới 5 tin thì không tính, vì trung vị lúc đó chỉ là giá của một hai lô.
 
 Số này lấy từ đâu và chưa cho biết gì
 
@@ -1178,7 +1178,7 @@ Từ 10 tin mỗi nhóm mỗi tháng
 
 Kỳ đo
 
-25/9/2026 · 634 tin còn đang rao
+26/9/2026 · 638 tin còn đang rao
 
 Kỳ tới
 
@@ -1186,17 +1186,17 @@ Kỳ tới
 
 Chúng tôi không đăng lại từng tin, không đăng tựa hay số điện thoại người rao, chỉ đăng số tổng hợp. Bảng diễn biến tháng 6–9/2026 có thêm 105 tin rao qua video môi giới và sàn, mỗi tin có ngày đăng và đã được đối chiếu với nguồn gốc; chúng tôi bỏ tin ngoài xã Nam Ban, gộp trùng với tin tự đo, và không tính chúng vào số tin còn đang rao.
 
-Tổng hợp 634 tin còn đang rao ngày 25/9/2026
+Tổng hợp 638 tin còn đang rao ngày 26/9/2026
 
 Loại đất | Số tin | Giá phổ biến triệu/m²
 Đất nền tách thửa 150–300 m² | 128 | 2,5–4,8
 Lô khoảng 500 m² có thổ cư | 155 | 1,4–3,9
-Đất trên 1.000 m² phần nhiều là nông nghiệp | 129 | 0,3–2,6
+Đất trên 1.000 m² phần nhiều là nông nghiệp | 129 | 0,3–2,7
 Lô có view hồ, đồi, toàn cảnh | 140 | 1,7–4,7
 
 Khoảng giá phổ biến: bỏ 10 % tin rẻ nhất và 10 % tin đắt nhất, lấy khoảng còn lại. Tính trên mọi tin còn đang rao ngày đo, không theo tháng đăng, nên không so thẳng với bốn ô ở mục 01.
 
-Theo khu: chỉ ghi “Nam Ban” 356 · Đông Thanh 116 · Mê Linh 82 · Gia Lâm 26 · không ghi khu 54. 94 tin là nhà hoặc biệt thự; 128 tin đất có diện tích nằm ngoài ba nhóm diện tích trên (ví dụ dưới 150 m², 300–350 m², 700–1.000 m²) — vẫn được đếm, không vào ô nào.
+Theo khu: chỉ ghi “Nam Ban” 356 · Đông Thanh 119 · Mê Linh 83 · Gia Lâm 26 · không ghi khu 54. 97 tin là nhà hoặc biệt thự; 129 tin đất có diện tích nằm ngoài ba nhóm diện tích trên (ví dụ dưới 150 m², 300–350 m², 700–1.000 m²) — vẫn được đếm, không vào ô nào.
 
 Giá rao bán là thứ dễ nhìn thấy nhất — dù bạn đang định mua, định bán, hay chỉ muốn biết giá đất Nam Ban hiện đang bao nhiêu, tăng hay giảm, và vì sao. Số ở trên lấy từ tin rao công khai, rồi được đối chiếu với những giao dịch thực tế đang diễn ra trong xã. Từ 1/7/2025, xã Nam Ban gồm thị trấn Nam Ban cũ và các xã Đông Thanh, Mê Linh, Gia Lâm.
 
@@ -1330,7 +1330,7 @@ So thẳng về giá, khí hậu và cách sống.
 
 Trích dẫn Namban Index
 
-Tháng 9/2026, giá rao đất ở xã Nam Ban Lâm Hà, Lâm Đồng — trung vị theo Namban Index, triệu đồng/m²: đất nền tách thửa 150–300 m² 3,59; lô khoảng 500 m² có thổ cư 2,13; đất trên 1.000 m² 1,38; lô có view hồ, đồi, toàn cảnh 3,16. Giá rao, chưa phải giá chốt; đo tới 25/9/2026.
+Tháng 9/2026, giá rao đất ở xã Nam Ban Lâm Hà, Lâm Đồng — trung vị theo Namban Index, triệu đồng/m²: đất nền tách thửa 150–300 m² 3,67; lô khoảng 500 m² có thổ cư 2,26; đất trên 1.000 m² 1,44; lô có view hồ, đồi, toàn cảnh 3,16. Giá rao, chưa phải giá chốt; đo tới 26/9/2026.
 
 Nguồn: Namban Panorama, Namban Index, kỳ tháng 9/2026. https://nambanpanorama.com/namban-index
 
@@ -1340,11 +1340,11 @@ Hỏi đáp nhanh giá đất Nam Ban mới nhất
 
 Giá đất Nam Ban hiện nay bao nhiêu một mét?
 
-Theo Namban Index, tháng 9/2026 trung vị giá rao ở xã Nam Ban Lâm Hà, triệu đồng/m²: đất nền tách thửa 150–300 m² 3,59; lô khoảng 500 m² có thổ cư 2,13; đất trên 1.000 m² 1,38; lô có view hồ, đồi, toàn cảnh 3,16. Khoảng rao phổ biến nửa đầu 2026 theo quan sát thực địa: đất nền tách thửa 150–300 m² 3–4,5; đất trên 1.000 m² 1,7–2,8; lô có view hồ, đồi, toàn cảnh 4–6. Đây là giá rao, chưa phải giá chốt; mỗi lô khác nhau tùy vị trí, pháp lý, thương lượng.
+Theo Namban Index, tháng 9/2026 trung vị giá rao ở xã Nam Ban Lâm Hà, triệu đồng/m²: đất nền tách thửa 150–300 m² 3,67; lô khoảng 500 m² có thổ cư 2,26; đất trên 1.000 m² 1,44; lô có view hồ, đồi, toàn cảnh 3,16. Khoảng rao phổ biến nửa đầu 2026 theo quan sát thực địa: đất nền tách thửa 150–300 m² 3–4,5; đất trên 1.000 m² 1,7–2,8; lô có view hồ, đồi, toàn cảnh 4–6. Đây là giá rao, chưa phải giá chốt; mỗi lô khác nhau tùy vị trí, pháp lý, thương lượng.
 
 Giá đất Nam Ban đang tăng hay giảm?
 
-Nhìn chung giá rao đang mềm đi. Tháng 9/2026 so với tháng gần nhất có đủ số: đất nền tách thửa 150–300 m² nhích xuống; lô khoảng 500 m² có thổ cư giảm; đất trên 1.000 m² không so được vì mẫu hai tháng khác hẳn; lô có view hồ, đồi, toàn cảnh đi ngang. Theo quan sát thực địa của Panorama, giá rao tháng 9/2026 mềm hơn vì mùa mưa bão và kinh tế: nguồn cung mùa này ra nhiều hơn cầu, người bán rao mềm hơn để ra hàng. Đây là giá rao; chưa đủ để kết luận xu hướng dài hạn.
+Nhìn chung giá rao đang mềm đi. Tháng 9/2026 so với tháng gần nhất có đủ số: đất nền tách thửa 150–300 m² nhích lên; lô khoảng 500 m² có thổ cư giảm; đất trên 1.000 m² không so được vì mẫu hai tháng khác hẳn; lô có view hồ, đồi, toàn cảnh đi ngang. Theo quan sát thực địa của Panorama, giá rao tháng 9/2026 mềm hơn vì mùa mưa bão và kinh tế: nguồn cung mùa này ra nhiều hơn cầu, người bán rao mềm hơn để ra hàng. Đây là giá rao; chưa đủ để kết luận xu hướng dài hạn.
 
 Giá đất Nam Ban có còn rẻ không?
 
