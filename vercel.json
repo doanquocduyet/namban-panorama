@@ -144,11 +144,6 @@
       "permanent": true
     },
     {
-      "source": "/khi-hau-nam-ban",
-      "destination": "/nam-ban-co-dang-song",
-      "permanent": true
-    },
-    {
       "source": "/nam-ban-o-dau",
       "destination": "/quy-hoach-2050",
       "permanent": true

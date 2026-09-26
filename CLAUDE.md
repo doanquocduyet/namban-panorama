@@ -264,6 +264,10 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
   → **mỗi câu hỏi nhỏ một trang trả lời gọn, nối về hub** là hướng ăn điểm nhất. Theo dõi bằng Search Console
   (mục Search generative AI, giữ "Include") và Bing Webmaster Tools → AI Performance (câu hỏi thật khiến
   ChatGPT/Copilot trích mình).
+- **Slug mới → kiểm `vercel.json` trước (vấp thật 26/9/2026).** `/khi-hau-nam-ban` đăng xong vẫn bị một luật
+  `redirects` cũ (25/8/2026, lúc slug này đã bị xóa) chuyển 308 sang `/nam-ban-co-dang-song` — trang có trong repo,
+  sitemap, hub, mà người đọc và Google không bao giờ tới được. Đặt slug mới hoặc dựng lại slug cũ thì
+  `grep '"/<slug>"' vercel.json`; có luật thì gỡ. Sau deploy, `curl -sI` từng link mới phải ra **200**, không phải 308.
 - Xong: `git add -A && git commit && git push origin main` → chờ Vercel → **báo link**.
 
 ### Ô TÌM KIẾM — CHỈ TRANG CHỦ + THANH MENU (Chú chốt 9/9/2026)
