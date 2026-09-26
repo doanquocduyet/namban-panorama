@@ -1031,6 +1031,14 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     Panorama chỉ giữ vế thông tin, không làm trang rao. Đã áp 26/9: `/dac-san-nam-ban`,
     `/len-tho-cu-het-bao-nhieu-tien`, `/nam-ban-la-gi`, `/mua-dat-nam-ban-500-trieu-1-ty` —
     **khóa tựa bốn bài này tới hết 25/10/2026**, cùng lý do như bài Nam Hà.
+    **26d — CHIA KEY CHI PHÍ VỚI VILLAS (Chú chốt 26/9/2026).** Panorama giữ mọi key **hỏi thông
+    tin chi phí** ("chi phí san lấp, làm hạ tầng", "lên thổ cư giá bao nhiêu", "tách thửa", "sang
+    tên"). Villas là trang bán hàng + dịch vụ: 7 trang chi phí bên đó đã đổi tựa sang "Dịch vụ …" /
+    "Mua lô đã có hạ tầng hay tự làm", giữ nguyên đường dẫn. **Luật 3 web: Villas KHÔNG link sang
+    Panorama** — đừng đề xuất Villas dẫn link về bài Panorama. Đừng đổi tựa bài Panorama sang câu
+    không ai gõ để "nhường" Villas (đề xuất "cách tự ước chi phí làm hạ tầng đất vườn" đã bị bác).
+    Số máy múc Chú cấp: "xe múc, xe nhỏ và xe lớn" (gõ Telex: "nbhort" = nhỏ, "lo0wn" = lớn) —
+    400–800 nghìn/giờ là máy múc cỡ nhỏ tới lớn, bao công + dầu; **xe lu, xe ben chưa có số riêng**.
 
 ---
 
