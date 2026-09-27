@@ -388,6 +388,18 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   sang `none`, MP3 xóa. Các hub `/dat` `/dau-tu` `/nam-ban` `/hoi-nhanh` `/trao-doi` `/doc-lo-dat`
   vốn không có container nên chưa bao giờ có audio. Bài ngắn nhưng là văn (`/dac-san-nam-ban` 279 từ,
   `/mot-ngay-o-nam-ban` 338 từ) GIỮ audio. Trang mới dạng danh sách/bảng/hub → đặt `none` ngay từ đầu.
+  **MỞ RỘNG 27/9/2026 (Chú chốt: "bỏ hết audio ở các bài tiếng nước ngoài; các bài tiếng Việt như Index, báo cáo,
+  nhiều số liệu và phức tạp cũng bỏ luôn"):** (1) **Mọi trang ngoại ngữ (en/fr/zh/ko/ja) KHÔNG có audio** — code đã
+  chặn sẵn (`panorama-utils.js` bỏ qua khi `lang≠vi`, `gen_audio_edge.py` bỏ qua trang ngoại ngữ); đừng mở lại, đừng
+  gắn MP3. Lý do: không giúp lên top/AI, giọng máy nước ngoài đọc sai tên tiếng Việt, tốn công bảo trì. (2) **24 bài
+  tiếng Việt dày số liệu đổi sang `content="none"`, MP3 đã xóa** (thư mục audio 458 → 383 MB): bảng giá đất, khí hậu,
+  chi phí trồng cà phê, chi phí san lấp, chi phí đất đai, lên thổ cư, xây nhà nhỏ bao nhiêu tiền, thuê người làm vườn,
+  sào bơ lời bao nhiêu, mua vườn cà phê, đấu giá, đất giá rẻ, tuyến tránh, du lịch nông nghiệp, quy hoạch chung, bản đồ
+  quy hoạch, quy hoạch 2050, chuyển mục đích, đất vườn xây được gì, tách thửa, đường Hà Bắc, Lâm Hà trước/sau sáp nhập,
+  xã Nam Ban Lâm Hà, đọc tin rao. Cách chọn: lời đọc dày số (≥ ~50 con số/1.000 từ) hoặc có bảng giá/chi phí/số liệu/
+  quy định. **GIỮ audio** cho bài văn có bảng so sánh bằng chữ ("Muốn gì / Nghiêng về", Nam Ban hay D'ran…), bài
+  mùa vụ, bài chuyện. **Bài mới thuộc loại số liệu/chi phí/quy định/báo cáo → đặt `none` ngay khi dựng**, đừng để
+  `audio-auto` sinh rồi mới gỡ.
 - **og:image của Index = ảnh Chú thiết kế** (`/images/namban-index.jpg`, 1200×630, có chữ trên hình —
   ngoại lệ Chú cấp 25/9/2026 cho riêng trang này, không áp cho bài thường). Ảnh cũ `namban-index-gia-dat.jpg` đã xóa.
 - Giọng: thân bài "chúng tôi"; "tôi" chỉ trong khối trích có nút chép (`#khong-phai-da-lat-gia-re`)
