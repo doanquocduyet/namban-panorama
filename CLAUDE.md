@@ -175,13 +175,17 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
    1.615 mm (1980–2017); mùa mưa tỉnh **tháng 5–11**, mùa khô 12–4. "18–25°C" là số **của cả tỉnh**
    (Niên giám thống kê), không phải của Nam Ban. Bài mới muốn ghi nhiệt độ thì dùng 19–21°C kèm nguồn;
    các bài cũ ghi 18–25°C chưa mở đợt dọn (Luật 14).
-   **MÙA MƯA — HAI SỐ ĐANG CÙNG ĐỨNG, CHỜ CHÚ CHỐT (27/9/2026).** Bài cũ ghi **"khoảng tháng 4 đến
-   tháng 11"**: 24 file ghi bằng số + 14 file ghi bằng chữ ("tháng Tư tới tháng Mười Một"), gộp lại
-   **31 file** (có file ghi cả hai kiểu). **"Tháng 5–11"** là mùa mưa **cả tỉnh** theo báo cáo quy hoạch,
-   nhà ở `/khi-hau-nam-ban` (4 file: trang đó, `/nam-ban-la-gi`, `llms.txt`, `llms-full.txt`). Chưa đồng bộ
-   hai bên khi Chú chưa nói mùa mưa ở Nam Ban thực tế bắt đầu tháng 4 hay tháng 5. Bài mới: tả mùa mưa
-   Nam Ban thì theo số bài cũ, nói số tỉnh thì ghi rõ là số tỉnh kèm nguồn. **Quét số liệu luôn quét cả
-   chữ lẫn số** (Luật 3) — ngày 27/9 em Code quét thiếu dạng chữ nên báo sai "site không có chuẩn 4–11".
+   **MÙA MƯA / MÙA KHÔ — ĐÃ CHỐT, ĐỪNG HỎI LẠI (Chú chốt 27/9/2026, đã nói nhiều lần): "mùa mưa
+   không có năm nào giống năm nào, chỉ ghi KHOẢNG mà thôi — đó là thời tiết của cả thế giới".**
+   Không chốt tháng bắt đầu, không hỏi Chú "tháng 4 hay tháng 5", không mở đợt đồng bộ số. Luật duy
+   nhất: **mọi câu nói tháng mùa mưa / mùa khô phải có "khoảng"** (hoặc "chừng", "thường", "tùy năm").
+   Hai cách ghi đang cùng đứng và đều đúng vì đều là khoảng: bài Nam Ban ghi *khoảng tháng 4 đến tháng 11*
+   (31 file); số của cả tỉnh theo báo cáo quy hoạch là *khoảng tháng 5–11*, nhà ở `/khi-hau-nam-ban`.
+   Quét 27/9/2026 (mọi trang vi + `llms.txt` + `llms-full.txt`, cả chữ lẫn số): đã thêm "khoảng" ở mọi câu
+   còn ghi phẳng — `/khi-hau-nam-ban` (câu tóm tắt, description, schema), `/hoi-nhanh`, `/thac-voi-nam-ban`,
+   `/vua-mua-dat-nam-ban-lam-gi`, và 9 câu cũ trong `llms-full.txt` (còn ghi "tháng 5–10", "tháng 5 đến 11"
+   trong khi HTML đã sửa). Chỉ chừa câu **dẫn nguyên văn tài liệu** ("Theo tài liệu của tỉnh…") vì đoạn đó
+   đã tự kết bằng "khoảng… tùy năm". **Quét số liệu luôn quét cả chữ lẫn số** (Luật 3).
 
    **Tên địa danh (đã research 7/2026)**: giữ **"Chùa Linh Ẩn" (Linh Ẩn Tự)** vì đây là tên
    MẠNH SEO — trang chính quyền lamdong.gov.vn + mọi trang du lịch lớn + 100% kết quả search

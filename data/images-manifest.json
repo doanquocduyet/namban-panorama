@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 433,
+ "total_images": 434,
  "unused_count": 66,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -3623,9 +3623,6 @@
     840
    ],
    "used_in": {
-    "san-bay-lien-khuong-mo-lai.html": [
-     "display"
-    ],
     "image-sitemap.xml": [
      "ref"
     ]
@@ -4690,12 +4687,15 @@
    "status": "unused"
   },
   "nam-ban-vista.webp": {
-   "kb": 140,
+   "kb": 147,
    "dims": [
     1600,
-    900
+    840
    ],
    "used_in": {
+    "san-bay-lien-khuong-mo-lai.html": [
+     "display"
+    ],
     "mua-dat-nam-ban.html": [
      "display"
     ],
@@ -5438,11 +5438,6 @@
     630
    ],
    "used_in": {
-    "san-bay-lien-khuong-mo-lai.html": [
-     "og",
-     "schema",
-     "twitter"
-    ],
     "image-sitemap.xml": [
      "ref"
     ]
@@ -5822,6 +5817,20 @@
    ],
    "used_in": {},
    "status": "unused"
+  },
+  "san-bay-lien-khuong-mo-lai.jpg": {
+   "kb": 127,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "san-bay-lien-khuong-mo-lai.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
   },
   "san-vuon-ban-dem-nam-ban.webp": {
    "kb": 243,
@@ -6598,6 +6607,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
