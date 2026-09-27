@@ -8,8 +8,8 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 434,
- "unused_count": 66,
+ "total_images": 438,
+ "unused_count": 70,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
   "ban-an-trang-tri-giang-sinh.webp",
@@ -45,7 +45,10 @@
   "hoa-vuon-nam-ban-04.webp",
   "hoa-vuon-nam-ban-05.webp",
   "lam-banh-cuon-nam-ban.webp",
+  "lien-khuong-bang-gio-bay.webp",
   "lien-khuong-mo-lai.jpg",
+  "lien-khuong-mo-lai.webp",
+  "lien-khuong-sanh-nha-ga.webp",
   "mam-com-toi-nam-ban.webp",
   "me-linh-vuon-doi-cao.webp",
   "mon-nuoc-rau-song.webp",
@@ -53,6 +56,7 @@
   "nam-ban-vista.jpg",
   "nha-ong-mai-doc-san-trong.webp",
   "nha-tho-giao-xu-nam-ban.webp",
+  "og-san-bay-lien-khuong-mo-lai.jpg",
   "phac-thao-khu-dat-2.jpg",
   "phac-thao-khu-dat.jpg",
   "pho-nam-ban-dem-hang-dong-cua.webp",
@@ -3607,6 +3611,27 @@
     ]
    }
   },
+  "lien-khuong-bang-gio-bay.webp": {
+   "kb": 175,
+   "dims": [
+    1600,
+    1067
+   ],
+   "used_in": {},
+   "status": "unused"
+  },
+  "lien-khuong-may-bay-xe-thang.webp": {
+   "kb": 149,
+   "dims": [
+    1485,
+    1059
+   ],
+   "used_in": {
+    "duong-di-nam-ban.html": [
+     "display"
+    ]
+   }
+  },
   "lien-khuong-mo-lai.jpg": {
    "kb": 183,
    "dims": [
@@ -3622,11 +3647,41 @@
     1600,
     840
    ],
+   "used_in": {},
+   "status": "unused"
+  },
+  "lien-khuong-nha-ga.webp": {
+   "kb": 130,
+   "dims": [
+    1414,
+    944
+   ],
    "used_in": {
-    "image-sitemap.xml": [
-     "ref"
+    "san-bay-lien-khuong-mo-lai.html": [
+     "display"
     ]
    }
+  },
+  "lien-khuong-san-do-dem.webp": {
+   "kb": 69,
+   "dims": [
+    1600,
+    1068
+   ],
+   "used_in": {
+    "san-bay-lien-khuong-mo-lai.html": [
+     "display"
+    ]
+   }
+  },
+  "lien-khuong-sanh-nha-ga.webp": {
+   "kb": 267,
+   "dims": [
+    1600,
+    1065
+   ],
+   "used_in": {},
+   "status": "unused"
   },
   "linh-an-pagoda-lady-buddha-nam-ban.webp": {
    "kb": 252,
@@ -4686,24 +4741,6 @@
    "used_in": {},
    "status": "unused"
   },
-  "nam-ban-vista.webp": {
-   "kb": 147,
-   "dims": [
-    1600,
-    840
-   ],
-   "used_in": {
-    "san-bay-lien-khuong-mo-lai.html": [
-     "display"
-    ],
-    "mua-dat-nam-ban.html": [
-     "display"
-    ],
-    "image-sitemap.xml": [
-     "ref"
-    ]
-   }
-  },
   "nam-ban-vuon-doi-xa.webp": {
    "kb": 79,
    "dims": [
@@ -5437,11 +5474,8 @@
     1200,
     630
    ],
-   "used_in": {
-    "image-sitemap.xml": [
-     "ref"
-    ]
-   }
+   "used_in": {},
+   "status": "unused"
   },
   "og-sap-nhap-nam-ban-dat.jpg": {
    "kb": 225,
@@ -5819,7 +5853,7 @@
    "status": "unused"
   },
   "san-bay-lien-khuong-mo-lai.jpg": {
-   "kb": 127,
+   "kb": 131,
    "dims": [
     1200,
     630
@@ -5829,6 +5863,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },

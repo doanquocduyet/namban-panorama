@@ -332,6 +332,7 @@
     <image:image><image:loc>https://nambanpanorama.com/images/deo-ta-nung.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/ban-do-sai-gon-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/tram-dung-chan-deo-dai-ninh.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/lien-khuong-may-bay-xe-thang.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/bang-gia-ve-xe-da-lat-dam-rong.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/duong-len-nam-ban-thi-cong.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/duong-di-nam-ban.jpg</image:loc></image:image>
@@ -676,7 +677,6 @@
     <loc>https://nambanpanorama.com/mua-dat-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/lo-dat-do-thuc-te.jpg</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/hoa-ca-phe-thung-lung.jpg</image:loc></image:image>
-    <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-vista.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/do-dat-giu-ranh.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/og-mua-dat-nam-ban.jpg</image:loc></image:image>
   </url>
@@ -908,8 +908,9 @@
   </url>
   <url>
     <loc>https://nambanpanorama.com/san-bay-lien-khuong-mo-lai</loc>
-    <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-vista.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/lien-khuong-nha-ga.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/van-ban-lien-khuong.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/lien-khuong-san-do-dem.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/san-bay-lien-khuong-mo-lai.jpg</image:loc></image:image>
   </url>
   <url>
