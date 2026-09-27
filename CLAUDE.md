@@ -1094,6 +1094,15 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     kiểm 27/9/2026; ông Dậu – Bảo Lâm bán 50.000 đồng năm 2023, Dân trí 10/6/2024) — đã vào `/vuon-bo-loi-bao-nhieu`.
     (3) **Công đào hố + trồng bơ: KHÔNG ghi số** tới khi có 2–3 báo giá thật ở Nam Ban. Định mức QĐ 17/2026 của
     Lâm Đồng là định mức cây xanh đô thị (hố 40×40), đừng nhân nó thành "giá công trồng bơ Nam Ban".
+    (4) **Giá thuê chỗ ở Nam Ban (Chú cấp 27/9/2026):** villa mới xây 8–15 triệu/tháng (tùy nhiều yếu tố), nhà cho
+    thuê bình thường 4–8 triệu/tháng, khách sạn 250–800 nghìn/đêm, homestay đầu tư bài bản làm chuyên nghiệp
+    800 nghìn–1,2 triệu/đêm. Đã vào `/en/long-term-rental-nam-ban`, `/ko/dalat-handal-salgi`,
+    `/homestay-nam-ban-co-lai-khong` (thay mức cũ 400 nghìn–1 triệu/đêm). Quy đổi USD theo ~26.000 đồng/USD.
+    **Cụm khách nước ngoài (27/9/2026):** EN = hub cho mọi khách nước ngoài, KO = nhánh 한달살기; chưa làm FR/ZH/JA
+    (chưa thấy nhu cầu). Đã sửa câu SAI "mua đất qua vợ/chồng người Việt là đường phổ biến, chắc nhất" ở 5 ngôn ngữ —
+    đúng luật: người nước ngoài không đứng tên sổ đỏ, mua trong hôn nhân sổ chỉ ghi tên người Việt, người nước ngoài
+    chỉ sở hữu nhà trong dự án thương mại. Trang tiếng Hàn dùng `word-break:keep-all`. Chờ làm: bài EN chi phí sống,
+    bài EN visa + tạm trú 1–3 tháng (rà pháp lý riêng).
 
 ---
 
