@@ -1077,7 +1077,7 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     **26f — CỤM CÀ PHÊ / BƠ / DÂU TẰM ĐÃ DÀY, RÀ NHÀ TRƯỚC KHI VIẾT (Chú nhắc 26/9/2026: "bài bơ và cafe
     đã viết rất nhiều, kể cả dâu tằm").** Hơn 30 trang vi đụng tới vườn. Nhà của từng câu, đừng mở trang mới:
     loài cà phê → `/ca-phe-nam-ban` · mùa hoa, mùa hái, công hái theo ngày → `/mua-ca-phe-nam-ban` ·
-    năng suất, chi phí CHĂM 50–70 triệu/ha/năm, lời bao nhiêu → `/mua-vuon-ca-phe-nam-ban` · mua đất có vườn
+    năng suất, chi phí CHĂM 55–85 triệu/ha/năm, lời bao nhiêu → `/mua-vuon-ca-phe-nam-ban` · mua đất có vườn
     cà phê → `/mua-dat-co-vuon-ca-phe` · chi phí TRỒNG MỚI, mật độ, giá cây giống → `/chi-phi-trong-ca-phe-nam-ban`
     (26/9) · bơ lời bao nhiêu, mật độ bơ, chi phí sào bơ 8–15 triệu/năm → `/vuon-bo-loi-bao-nhieu` · mua đất có
     vườn bơ, bơ mấy năm cho trái → `/mua-dat-co-vuon-bo` · mùa bơ, giá bơ tại vườn → `/mua-bo-nam-ban` · diện
@@ -1086,8 +1086,14 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     `/hop-tac-canh-tac-dat-nam-ban`. **Không làm trang "chi phí trồng bơ" riêng** — khi có giá giống bơ thì thêm
     mục vào `/vuon-bo-loi-bao-nhieu`. Trước khi viết bài vườn mới: quét FAQPage toàn site tìm câu gần giống
     (đã bắt được câu dâu tằm trùng giữa `/du-lich-nong-nghiep-nam-ban` và `/dau-tam-nam-ban`, gỡ khỏi schema bài mới).
-    **Số còn lệch, chờ Chú:** công hái "khoảng 1.000 đồng/ký" ở `/mua-vuon-ca-phe-nam-ban` so với báo 1.800–2.000
-    đồng/ký (vụ 2024–2025, xã khác trong tỉnh).
+    **Số đã chốt 27/9/2026 (Chú gửi bản rà nhiều nguồn):** (1) **công hái cà phê** — bỏ "1.000 đồng/ký"; dùng
+    mặt bằng **Lâm Đồng vụ 2025–2026: 1.500–2.000 đồng/ký quả tươi** (vụ trước 1.000–1.200; Người Lao Động qua
+    VietnamBiz 29/12/2025), luôn ghi "chưa có số riêng cho Nam Ban". Kéo theo `/mua-vuon-ca-phe-nam-ban`: tiền hái
+    vườn 2,5 tấn nhân ~19–25 triệu, chi phí 55–85 triệu/ha, lời 160–190 triệu, dòng tiền **0,6–1,1 %** giá trị đất
+    (bản cũ ghi "1–2 %" là tính sai). (2) **Cây bơ 034 ghép 45.000–55.000 đồng/cây** (giá niêm yết ba vườn ươm,
+    kiểm 27/9/2026; ông Dậu – Bảo Lâm bán 50.000 đồng năm 2023, Dân trí 10/6/2024) — đã vào `/vuon-bo-loi-bao-nhieu`.
+    (3) **Công đào hố + trồng bơ: KHÔNG ghi số** tới khi có 2–3 báo giá thật ở Nam Ban. Định mức QĐ 17/2026 của
+    Lâm Đồng là định mức cây xanh đô thị (hố 40×40), đừng nhân nó thành "giá công trồng bơ Nam Ban".
 
 ---
 
