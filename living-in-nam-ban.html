@@ -328,7 +328,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
 <nav>
   <div class="navin">
-    <a class="logo" href="/en/">Namban Panorama <span class="logo-intel">Intelligence</span></a>
+    <a class="logo" href="/en">Namban Panorama <span class="logo-intel">Intelligence</span></a>
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
     <div class="navlinks" id="navlinks">
       <a href="/en/nam-ban">About Nam Ban</a>
@@ -336,7 +336,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
     </div>
   </div>
 </nav>
-<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="/en/">Home</a><span class="sep">›</span><a href="/en/nam-ban">About Nam Ban</a><span class="sep">›</span><span class="cur">Living in Nam Ban</span></nav></div>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="/en">Home</a><span class="sep">›</span><a href="/en/nam-ban">About Nam Ban</a><span class="sep">›</span><span class="cur">Living in Nam Ban</span></nav></div>
 
 <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
 <button class="mobile-close" id="mobileClose" onclick="toggleMenu()" aria-label="Close">×</button>
@@ -346,7 +346,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   <a href="/en/trao-doi" onclick="toggleMenu()">Get in touch</a>
 </div>
 
-<div class="art-back"><a href="/en/" onclick="if(document.referrer&&document.referrer.indexOf(location.hostname)>-1){history.back();return false;}">← Back</a></div>
+<div class="art-back"><a href="/en" onclick="if(document.referrer&&document.referrer.indexOf(location.hostname)>-1){history.back();return false;}">← Back</a></div>
 <div class="art-header">
   <div class="issue-line">
     <span class="issue-badge">About Nam Ban</span>
