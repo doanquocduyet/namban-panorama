@@ -43,6 +43,16 @@ tiếp phần thuộc repo này**, KHÔNG liệt kê phương án, KHÔNG hỏi 
 nói một câu ngắn nếu thật sự không phân biệt được đâu là việc chính.
 Dám phản biện khi có cái SAI THẬT (vai tỉnh táo viên), nhưng không tự ý đề xuất dừng dự án.
 
+**PHIẾU TỪ Ô CONTENT — Ô CODE LÀ CHUẨN (Chú chốt 27/9/2026: "ô này sửa hàng ngàn lần nên cứ ô
+code này mà làm; bên ô kia góp ý đúng thì làm, không thì không sửa").** Ô content (các "cháu" viết
+phiếu) không thấy hết hiện trạng repo. Trước khi thi công một phiếu: kiểm từng giả định trên repo
+thật (link đã có chưa, chuỗi cũ còn không, số đếm có đúng không, nguồn có khớp không). Đúng → làm
+nguyên văn. Sai → không làm, báo lại lý do bằng số đo. Ô content phải ghi **"hiện trạng đã kiểm tại
+commit …"** ở dòng đầu phiếu, và **mỗi chủ đề chỉ một phiếu đã chốt** (không phiếu chồng phiếu).
+**Link trong thân bài:** mỗi trang một link cùng đích, chữ trên link là cụm danh từ tả bài đích
+(không "đây", "xem thêm", "tại đây" — rà 27/9: còn 0). **Trang sống** (`/nam-ban-co-gi-moi`, các hub)
+được miễn luật một link: mỗi mục tin dẫn về bài nhà của nó, hai mục cùng nói một chuyện thì hai link.
+
 ### ⚠️ CHÚ NHẮC ĐI NHẮC LẠI CẢ THÁNG — GOM 1 CHỖ, ĐỪNG ĐỂ NHẮC NỮA
 
 Rà 135 tin của Chú, đây là những lỗi Claude tái phạm nhiều nhất. Kiểm 5 mục này TRƯỚC khi
@@ -90,7 +100,11 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
 ## 2. LUẬT NỘI DUNG (không được phạm)
 
 1. Publication, KHÔNG landing bán. **Cấm CTA bán**: "liên hệ ngay", "mua ngay", "đăng ký
-   nhận giá", "trả lời trong ngày", "không cần đăng ký". Giọng "chúng tôi".
+   nhận giá", "trả lời trong ngày", "không cần đăng ký".
+   **Giọng toàn site (chốt 27/9/2026, theo nếp thật đã đo):** **"tôi"** khi Chú kể, nhận định,
+   chứng kiến; **"chúng tôi"** khi Panorama làm việc (theo dõi dữ liệu, tổng hợp, cập nhật, đo Index).
+   Đo 27/9: 121 trang vi chỉ xưng "tôi", 12 trang chỉ "chúng tôi", 8 trang có cả hai. Dòng "thân bài
+   chúng tôi" ở mục `/namban-index` chỉ áp cho trang đó. Đừng đi đổi giọng hàng loạt theo một chiều.
 2. Không lôi tên/mặt/SĐT chủ ra giữa trang chủ hay chèn CTA bán giữa bài. Liên hệ nằm ở:
    (a) footer (chữ trầm) + trang `trao-doi`; (b) **một khối liên hệ trầm cuối bài** — CHỈ ở
    bài phân tích về đất/mua bán/thị trường/BĐS/index (không phải mọi bài). Khối đặt SAU
@@ -144,6 +158,13 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
    1.615 mm (1980–2017); mùa mưa tỉnh **tháng 5–11**, mùa khô 12–4. "18–25°C" là số **của cả tỉnh**
    (Niên giám thống kê), không phải của Nam Ban. Bài mới muốn ghi nhiệt độ thì dùng 19–21°C kèm nguồn;
    các bài cũ ghi 18–25°C chưa mở đợt dọn (Luật 14).
+   **MÙA MƯA — HAI SỐ ĐANG CÙNG ĐỨNG, CHỜ CHÚ CHỐT (27/9/2026).** Bài cũ ghi **"khoảng tháng 4 đến
+   tháng 11"**: 24 file ghi bằng số + 14 file ghi bằng chữ ("tháng Tư tới tháng Mười Một"), gộp lại
+   **31 file** (có file ghi cả hai kiểu). **"Tháng 5–11"** là mùa mưa **cả tỉnh** theo báo cáo quy hoạch,
+   nhà ở `/khi-hau-nam-ban` (4 file: trang đó, `/nam-ban-la-gi`, `llms.txt`, `llms-full.txt`). Chưa đồng bộ
+   hai bên khi Chú chưa nói mùa mưa ở Nam Ban thực tế bắt đầu tháng 4 hay tháng 5. Bài mới: tả mùa mưa
+   Nam Ban thì theo số bài cũ, nói số tỉnh thì ghi rõ là số tỉnh kèm nguồn. **Quét số liệu luôn quét cả
+   chữ lẫn số** (Luật 3) — ngày 27/9 em Code quét thiếu dạng chữ nên báo sai "site không có chuẩn 4–11".
 
    **Tên địa danh (đã research 7/2026)**: giữ **"Chùa Linh Ẩn" (Linh Ẩn Tự)** vì đây là tên
    MẠNH SEO — trang chính quyền lamdong.gov.vn + mọi trang du lịch lớn + 100% kết quả search
@@ -402,7 +423,7 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   `audio-auto` sinh rồi mới gỡ.
 - **og:image của Index = ảnh Chú thiết kế** (`/images/namban-index.jpg`, 1200×630, có chữ trên hình —
   ngoại lệ Chú cấp 25/9/2026 cho riêng trang này, không áp cho bài thường). Ảnh cũ `namban-index-gia-dat.jpg` đã xóa.
-- Giọng: thân bài "chúng tôi"; "tôi" chỉ trong khối trích có nút chép (`#khong-phai-da-lat-gia-re`)
+- Giọng (CHỈ trang `/namban-index`, không phải luật toàn site — xem §2.1): thân bài "chúng tôi"; "tôi" chỉ trong khối trích có nút chép (`#khong-phai-da-lat-gia-re`)
   và **câu chốt founder ở cuối bài** (`figure.idx-coda`).
 - **Câu chốt founder cuối bài — ĐÃ CHỐT 25/9/2026 sau 3 demo (Chú chọn bố cục B + kiểu chữ A, bỏ
   nhãn "Lời kết").** Sau FAQ, trước nút Chia sẻ. Dải rộng hết màn hình, nền forest 10 % pha lên
