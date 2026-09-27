@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 432,
+ "total_images": 433,
  "unused_count": 66,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -1504,6 +1504,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -3009,6 +3012,9 @@
     "ho-tron-nam-ban.html": [
      "display"
     ],
+    "trung-thu-nam-ban.html": [
+     "display"
+    ],
     "image-sitemap.xml": [
      "ref"
     ]
@@ -3836,6 +3842,9 @@
      "og",
      "ref",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -6577,6 +6586,20 @@
    ],
    "used_in": {},
    "status": "unused"
+  },
+  "trung-thu-nam-ban.jpg": {
+   "kb": 148,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "trung-thu-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
   },
   "truoc-khi-xuong-tien.jpg": {
    "kb": 102,

@@ -991,6 +991,11 @@
     <image:image><image:loc>https://nambanpanorama.com/images/trao-doi.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/trung-thu-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/ho-tron-nam-ban-toan-canh-flycam.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/trung-thu-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/truoc-khi-xuong-tien</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/dong-thanh-view-o-to.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/duong-be-tong-doi-nam-ban.webp</image:loc></image:image>
