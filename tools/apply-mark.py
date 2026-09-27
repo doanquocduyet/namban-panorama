@@ -40,12 +40,15 @@ def main():
     with open(MARK, encoding="utf-8") as fh:
         mark = json.load(fh)
     slug, field = mark["slug"], mark["field"]
+    # Khớp theo khoá mục (`key`, mặc định = slug) — xem fb-post.mark_posted.
+    # Phiếu cũ không có `key` thì rơi về slug như trước.
+    key = mark.get("key") or slug
 
     with open(QUEUE, encoding="utf-8") as fh:
         queue = json.load(fh)
 
     for post in queue:
-        if post.get("slug") != slug:
+        if (post.get("key") or post.get("slug")) != key:
             continue
         if post.get(field):
             print("Bài %r đã có dấu %r từ trước — không ghi đè." % (slug, field))

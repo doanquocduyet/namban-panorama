@@ -43,6 +43,23 @@ tiếp phần thuộc repo này**, KHÔNG liệt kê phương án, KHÔNG hỏi 
 nói một câu ngắn nếu thật sự không phân biệt được đâu là việc chính.
 Dám phản biện khi có cái SAI THẬT (vai tỉnh táo viên), nhưng không tự ý đề xuất dừng dự án.
 
+**MỌI THAY ĐỔI KHÔNG ĐƯỢC LÀM TỤT SEO / AEO / GEO / UX / UI — CHỈ ĐƯỢC NÂNG LÊN (Chú chốt
+27/9/2026).** Trước khi làm, hỏi: việc này có làm mất từ khóa, mất link, mất schema, vỡ chữ, chậm
+trang, tràn khổ, sai dữ kiện không? Có → không làm, hoặc làm cách khác. Phiếu nào bắt buộc làm giảm
+một thứ trong năm thứ đó thì báo Chú trước, kèm số đo.
+
+**MẠNG XÃ HỘI (Facebook / Instagram / Threads) — ƯU TIÊN TIN MỚI (Chú chốt 27/9/2026).** Hàng đợi
+`data/fb-queue.json`, thang `priority`: **0 = sự kiện / tin mới trong tuần** (mỗi mục mới của
+`/nam-ban-co-gi-moi`, bài sự kiện như Trung thu, mưa lũ, sân bay…) · 1 = tin cập nhật · 2 = bài nền
+về Nam Ban · 5 = còn lại. **Mỗi lần thêm mục tin mới vào `/nam-ban-co-gi-moi` hoặc đăng bài sự kiện →
+thêm luôn một mục `priority: 0` vào hàng đợi** trong cùng commit. Trang đã từng đăng (bài sân bay,
+chính trang `/nam-ban-co-gi-moi`) mà có tin mới thì thêm **mục mới có `key` riêng** (`<slug>#<ngày>-<chủ đề>`),
+`full: false`, câu mồi `message` + bản Threads `threads` viết tay (≤ ~440 ký tự, link tự nối). Không có
+`key` thì bộ đánh dấu khớp theo slug, trúng mục cũ đã đăng → **mục mới đăng lặp mỗi ngày** (lỗi đã vá
+27/9/2026 trong `fb-post.py` + `apply-mark.py` + `social-post.py`). Ảnh og của bài có chữ cũ/sai thì khai
+`image` riêng cho mục đó. Chạy khô được: `FB_DRY_RUN=1 python3 tools/fb-post.py`,
+`PLATFORM=threads SOCIAL_DRY_RUN=1 python3 tools/social-post.py`.
+
 **PHIẾU TỪ Ô CONTENT — Ô CODE LÀ CHUẨN (Chú chốt 27/9/2026: "ô này sửa hàng ngàn lần nên cứ ô
 code này mà làm; bên ô kia góp ý đúng thì làm, không thì không sửa").** Ô content (các "cháu" viết
 phiếu) không thấy hết hiện trạng repo. Trước khi thi công một phiếu: kiểm từng giả định trên repo

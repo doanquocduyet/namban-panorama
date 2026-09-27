@@ -132,6 +132,12 @@ def mark_posted(post, field, pid):
     """
     rec = {
         "slug": post.get("slug"),
+        # Khoá riêng của MỤC hàng đợi (27/9/2026). Một trang có thể được đăng
+        # nhiều lần — mỗi tin mới của /nam-ban-co-gi-moi, bản cập nhật của bài
+        # sân bay. Khớp theo slug thì phiếu trúng mục CŨ đã đăng, mục mới không
+        # bao giờ được đánh dấu → đăng lặp mỗi ngày. Mục không ghi `key` thì
+        # khoá = slug, y như trước.
+        "key": post.get("key") or post.get("slug"),
         "field": field,
         "id": pid,
         "at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
@@ -414,6 +420,11 @@ def resolve_page(token):
 # Chú chốt 22/9/2026: ƯU TIÊN đăng bài CẬP NHẬT THÔNG TIN và bài VỀ NAM BAN
 # trước. Trước đó bộ chọn lấy `due[0]` — tức thuần thứ tự trong file, ai nạp
 # trước đi trước. Giờ xếp theo `priority` rồi mới tới `date`:
+#   0 = SỰ KIỆN / TIN MỚI trong tuần (Chú chốt 27/9/2026): mỗi mục mới của
+#       /nam-ban-co-gi-moi, bài sự kiện (Trung thu…), mưa lũ, sân bay… Đăng
+#       trước mọi thứ vì tin mau cũ. Trang đã đăng rồi mà có tin mới → thêm
+#       MỤC MỚI có `key` riêng (vd "san-bay-lien-khuong-mo-lai#2026-09-singapore"),
+#       `full: false`, câu mồi `message` + bản Threads `threads` viết tay.
 #   1 = tin cập nhật (hạ tầng, buổi làm việc, tiến độ, mốc có ngày tháng)
 #   2 = bài nền về Nam Ban (vùng đất, dữ kiện, đời sống)
 #   5 = còn lại (đất, mua bán, thao tác) — mặc định khi mục không ghi

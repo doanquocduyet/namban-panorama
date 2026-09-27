@@ -350,7 +350,21 @@ def main():
         limit = None
     else:
         limit = fb.THREADS_LIMIT
-        if post.get("slug"):
+        # Mục có `threads` viết tay (27/9/2026) → dùng luôn, kèm link. Cần cho
+        # mục CẬP NHẬT một trang đã đăng (vd bài sân bay thêm tin Singapore,
+        # mỗi tin mới của /nam-ban-co-gi-moi): bóc đầu bài web ra là đăng lại
+        # đoạn mở bài cũ, không phải tin mới. Mục `full: false` mà không có
+        # `threads` thì cũng KHÔNG bóc bài web — lùi về câu mồi viết tay.
+        hand = post.get("threads", "").strip()
+        if hand:
+            one = (hand + "\n\n" + link).strip() if link else hand
+            if len(one) > limit:
+                print("Threads: `threads` viết tay %d ký tự, quá trần %d — lùi về câu mồi."
+                      % (len(one), limit))
+                one = None
+            else:
+                print("Threads: dùng bản viết tay · %d ký tự" % len(one))
+        elif post.get("slug") and post.get("full", True):
             one, nsent = th_one(post["slug"], link)
             if one:
                 print("Threads: gói 1 bài · %d ký tự · %d câu dẫn"
