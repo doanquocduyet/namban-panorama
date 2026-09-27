@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 430,
+ "total_images": 432,
  "unused_count": 66,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -1074,6 +1074,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -1487,6 +1490,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "dalat-handal-salgi.jpg": {
+   "kb": 126,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "ko/dalat-handal-salgi.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
@@ -3805,6 +3822,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "long-term-rental-nam-ban.jpg": {
+   "kb": 174,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "en/long-term-rental-nam-ban.html": [
+     "og",
+     "ref",
+     "twitter"
     ]
    }
   },

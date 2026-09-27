@@ -360,7 +360,7 @@
     <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-toan-canh-og.jpg</image:loc></image:image>
   </url>
   <url>
-    <loc>https://nambanpanorama.com/en/</loc>
+    <loc>https://nambanpanorama.com/en</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/toan-canh-nam-ban-nhin-tu-tren-cao-lam-ha-lam-dong.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/view-tam-trinh-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/og-home.jpg</image:loc></image:image>
@@ -368,6 +368,10 @@
   <url>
     <loc>https://nambanpanorama.com/en/land-prices-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-toan-canh-og.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/en/long-term-rental-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/long-term-rental-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/en/nam-ban-master-plan-2050</loc>
@@ -529,6 +533,10 @@
   <url>
     <loc>https://nambanpanorama.com/kinh-te-so-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/kinh-te-so-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/ko/dalat-handal-salgi</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/dalat-handal-salgi.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/ko/nam-ban-kokkiri-pokpo</loc>

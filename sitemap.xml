@@ -10,10 +10,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://nambanpanorama.com/en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nambanpanorama.com/"/>
   </url>
-  <url><loc>https://nambanpanorama.com/en/nam-ban</loc><lastmod>2026-08-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+  <url><loc>https://nambanpanorama.com/en/nam-ban</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://nambanpanorama.com/nam-ban"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://nambanpanorama.com/en/nam-ban"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nambanpanorama.com/nam-ban"/>
+  </url>
+  <url><loc>https://nambanpanorama.com/en/long-term-rental-nam-ban</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nambanpanorama.com/en/long-term-rental-nam-ban"/>
+  </url>
+  <url><loc>https://nambanpanorama.com/ko/dalat-handal-salgi</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://nambanpanorama.com/ko/dalat-handal-salgi"/>
   </url>
   <url><loc>https://nambanpanorama.com/en/foreigners-buying-land-nam-ban</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://nambanpanorama.com/en/foreigners-buying-land-nam-ban"/>
@@ -186,7 +192,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nambanpanorama.com/living-in-nam-ban"/>
   </url>
   <url>
-    <loc>https://nambanpanorama.com/fr/vivre-a-nam-ban</loc><lastmod>2026-08-27</lastmod>
+    <loc>https://nambanpanorama.com/fr/vivre-a-nam-ban</loc><lastmod>2026-09-27</lastmod>
     <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -199,7 +205,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nambanpanorama.com/living-in-nam-ban"/>
   </url>
   <url>
-    <loc>https://nambanpanorama.com/zh/zai-nam-ban-shenghuo</loc><lastmod>2026-08-27</lastmod>
+    <loc>https://nambanpanorama.com/zh/zai-nam-ban-shenghuo</loc><lastmod>2026-09-27</lastmod>
     <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -212,7 +218,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nambanpanorama.com/living-in-nam-ban"/>
   </url>
   <url>
-    <loc>https://nambanpanorama.com/ko/nam-ban-salm</loc><lastmod>2026-08-27</lastmod>
+    <loc>https://nambanpanorama.com/ko/nam-ban-salm</loc><lastmod>2026-09-27</lastmod>
     <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -225,7 +231,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nambanpanorama.com/living-in-nam-ban"/>
   </url>
   <url>
-    <loc>https://nambanpanorama.com/ja/nam-ban-kurashi</loc><lastmod>2026-08-27</lastmod>
+    <loc>https://nambanpanorama.com/ja/nam-ban-kurashi</loc><lastmod>2026-09-27</lastmod>
     <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
