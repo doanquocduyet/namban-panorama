@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 438,
+ "total_images": 440,
  "unused_count": 70,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -3629,6 +3629,9 @@
    "used_in": {
     "duong-di-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -3659,6 +3662,9 @@
    "used_in": {
     "san-bay-lien-khuong-mo-lai.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -3671,6 +3677,9 @@
    "used_in": {
     "san-bay-lien-khuong-mo-lai.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -4272,6 +4281,20 @@
     ]
    }
   },
+  "nam-ban-chua-lanh.jpg": {
+   "kb": 127,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "nam-ban-chua-lanh.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
   "nam-ban-co-hop-voi-ban.jpg": {
    "kb": 62,
    "dims": [
@@ -4740,6 +4763,21 @@
    ],
    "used_in": {},
    "status": "unused"
+  },
+  "nam-ban-vista.webp": {
+   "kb": 147,
+   "dims": [
+    1600,
+    840
+   ],
+   "used_in": {
+    "mua-dat-nam-ban.html": [
+     "display"
+    ],
+    "nam-ban-chua-lanh.html": [
+     "display"
+    ]
+   }
   },
   "nam-ban-vuon-doi-xa.webp": {
    "kb": 79,
