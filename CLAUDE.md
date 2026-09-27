@@ -1103,7 +1103,7 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     `/dat-nam-ban-gia-re` (bài mới 26/9, key "đất nam ban giá rẻ" và các biến thể),
     `/chuyen-len-nam-ban-song` (key "lên nam ban làm gì để sống", H1 đổi 26/9, mục "sống bằng gì" đưa lên đầu) —
     **khóa tựa sáu bài này tới hết 25/10/2026**, cùng lý do như bài Nam Hà.
-    **27/9/2026 — key "nam ban chữa lành"** (Chú dán trang kết quả): site chưa có trang nào → dựng `/nam-ban-chua-lanh`
+    **27/9/2026 — key "nam ban chữa lành"** (Chú dán trang kết quả): site chưa có trang nào → dựng `/nam-ban-chua-lanh` — **tựa Chú chốt 27/9: "Đi chữa lành ở Nam Ban: nên đi đâu, ở đâu, mùa nào?"** (mở đầu bằng cụm Chú đưa; slug giữ nguyên)
     (tựa mở đầu nguyên văn câu gõ; góc riêng: không có "khu chữa lành", nhịp chậm, khi nào KHÔNG hợp, chữ "chữa lành" trong
     tin rao đất). Sửa hai chỗ AI Overview đang chép sai từ bài báo 2024: "thị trấn thuộc huyện Lâm Hà" (từ 1/7/2025 là xã
     Nam Ban Lâm Hà) và "khoảng 20 km²" (là thị trấn cũ 2.089 ha; xã nay khoảng 117 km²). KHÔNG nêu tên "Đồi Chữa Lành – Mê Linh
