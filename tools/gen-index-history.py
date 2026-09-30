@@ -131,7 +131,11 @@ for k, label, low in GROUPS:
     r = cur[k]
     if w:
         pm, pv = r["prev"]; sign = "+" if r["d"] > 0 else "−"
-        small = " · mẫu nhỏ" if (r["src"] == "rao" and r["n"] < 20) or (pv[2] == "rao" and (pv[1] or 0) < 20) else ""
+        # Dưới 20 tin ở một trong hai tháng thì vẫn nhắc thận trọng, nhưng KHÔNG dùng chữ "mẫu nhỏ" — chữ đó
+        # từ 26/9/2026 là nhãn riêng của ô 5–9 tin trong bảng; dùng lại ở đây là hai nghĩa va nhau (sửa 30/9/2026).
+        # Ghi "ít tin" (số tin từng tháng đã có ngay trong bảng bên dưới); giữ ngắn để tên loại đất không gãy ở 390.
+        small = (" · ít&nbsp;tin"
+                 if (r["src"] == "rao" and r["n"] < 20) or (pv[2] == "rao" and (pv[1] or 0) < 20) else "")
         items.append(f'<li><span>{label}</span><span class="d"><b>{w}&nbsp;{sign}{abs(r["d"]):.0f}&nbsp;%</b><small>so với {month_vi(pm)}{small}</small></span></li>')
     else:
         items.append(f'<li><span>{label}</span><span class="d"><em>chưa so được</em><small>mẫu hai tháng khác nhau</small></span></li>')
