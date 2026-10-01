@@ -1,0 +1,328 @@
+{
+ "ngay_do": "2026-10-02",
+ "phieu": "So sánh giá rao Nam Ban – Tà Nung – Đà Lạt, 2/10/2026",
+ "cach_do": "Giống mốc nền Namban Index: tin còn đang rao tại ngày đo, 7 trang tin rao công khai (kiểm robots.txt), loại tin thiếu giá/diện tích, gộp trùng diện tích ±2% và giá ±3% trong cùng vùng, bỏ tin đăng trước 2026. Giá rao, chưa phải giá chốt. Dưới 10 tin: mẫu nhỏ, không tính trung vị. Đơn vị đồng/m² đất.",
+ "vung": {
+  "Nam Ban": {
+   "n": 648,
+   "nguon": {
+    "batdongsanonline.vn": 12,
+    "thuviennhadat.vn": 15,
+    "guland.vn": 285,
+    "nambanvillas.vn": 117,
+    "muaban.net": 5,
+    "datnenlamdong.com.vn": 214
+   },
+   "loai_theo_crawl": {
+    "đất nền dự án": 3,
+    "đất <2.000 m² chưa rõ thổ cư": 241,
+    "đất <2.000 m² có thổ cư": 202,
+    "nhà / biệt thự": 98,
+    "đất ≥2.000 m² (nông nghiệp / diện tích lớn) · có nhà": 19,
+    "đất ≥2.000 m² (nông nghiệp / diện tích lớn)": 64,
+    "đất <2.000 m² nông nghiệp / vườn": 21
+   },
+   "groups": {
+    "tach_thua_150_300": {
+     "label": "Đất nền tách thửa 150–300 m²",
+     "n": 131,
+     "median_vnd_m2": 3598484,
+     "p10_vnd_m2": 2569832,
+     "p90_vnd_m2": 5309734,
+     "ghi": null
+    },
+    "lo_500_tho_cu": {
+     "label": "Lô khoảng 500 m² có thổ cư",
+     "n": 159,
+     "median_vnd_m2": 2325581,
+     "p10_vnd_m2": 1491546,
+     "p90_vnd_m2": 4190476,
+     "ghi": null
+    },
+    "dat_tren_1000": {
+     "label": "Đất trên 1.000 m²",
+     "n": 133,
+     "median_vnd_m2": 1190476,
+     "p10_vnd_m2": 292092,
+     "p90_vnd_m2": 2650916,
+     "ghi": null
+    },
+    "view": {
+     "label": "Lô có view hồ, đồi, toàn cảnh",
+     "n": 141,
+     "median_vnd_m2": 2975000,
+     "p10_vnd_m2": 1714285,
+     "p90_vnd_m2": 4759036,
+     "ghi": null
+    },
+    "nha": {
+     "label": "Nhà / biệt thự (m² đất)",
+     "n": 98,
+     "median_vnd_m2": 5053155,
+     "p10_vnd_m2": 1888528,
+     "p90_vnd_m2": 12567945,
+     "ghi": null
+    }
+   }
+  },
+  "Tà Nung": {
+   "n": 61,
+   "nguon": {
+    "thuviennhadat.vn": 3,
+    "guland.vn": 37,
+    "batdongsanonline.vn": 2,
+    "datnenlamdong.com.vn": 19
+   },
+   "loai_theo_crawl": {
+    "đất <2.000 m² chưa rõ thổ cư": 30,
+    "đất <2.000 m² có thổ cư": 7,
+    "đất ≥2.000 m² (nông nghiệp / diện tích lớn)": 14,
+    "nhà / biệt thự": 6,
+    "đất ≥2.000 m² (nông nghiệp / diện tích lớn) · có nhà": 1,
+    "đất <2.000 m² nông nghiệp / vườn": 3
+   },
+   "groups": {
+    "tach_thua_150_300": {
+     "label": "Đất nền tách thửa 150–300 m²",
+     "n": 11,
+     "median_vnd_m2": 10396039,
+     "p10_vnd_m2": 9200000,
+     "p90_vnd_m2": 12606837,
+     "ghi": null
+    },
+    "lo_500_tho_cu": {
+     "label": "Lô khoảng 500 m² có thổ cư",
+     "n": 8,
+     "median_vnd_m2": null,
+     "p10_vnd_m2": null,
+     "p90_vnd_m2": null,
+     "ghi": "mẫu nhỏ"
+    },
+    "dat_tren_1000": {
+     "label": "Đất trên 1.000 m²",
+     "n": 28,
+     "median_vnd_m2": 2452696,
+     "p10_vnd_m2": 677418,
+     "p90_vnd_m2": 8218212,
+     "ghi": null
+    },
+    "view": {
+     "label": "Lô có view hồ, đồi, toàn cảnh",
+     "n": 2,
+     "median_vnd_m2": null,
+     "p10_vnd_m2": null,
+     "p90_vnd_m2": null,
+     "ghi": "mẫu nhỏ"
+    },
+    "nha": {
+     "label": "Nhà / biệt thự (m² đất)",
+     "n": 6,
+     "median_vnd_m2": null,
+     "p10_vnd_m2": null,
+     "p90_vnd_m2": null,
+     "ghi": "mẫu nhỏ"
+    }
+   }
+  },
+  "Đà Lạt nội thành (ghi rõ phường 1–12)": {
+   "n": 301,
+   "nguon": {
+    "mogi.vn": 3,
+    "batdongsanonline.vn": 44,
+    "guland.vn": 235,
+    "muaban.net": 19
+   },
+   "loai_theo_crawl": {
+    "nhà / biệt thự": 130,
+    "đất <2.000 m² có thổ cư": 26,
+    "đất <2.000 m² chưa rõ thổ cư": 121,
+    "đất ≥2.000 m² (nông nghiệp / diện tích lớn)": 16,
+    "đất <2.000 m² nông nghiệp / vườn": 7,
+    "đất ≥2.000 m² (nông nghiệp / diện tích lớn) · có nhà": 1
+   },
+   "groups": {
+    "tach_thua_150_300": {
+     "label": "Đất nền tách thửa 150–300 m²",
+     "n": 44,
+     "median_vnd_m2": 20255348,
+     "p10_vnd_m2": 1640537,
+     "p90_vnd_m2": 58055204,
+     "ghi": null
+    },
+    "lo_500_tho_cu": {
+     "label": "Lô khoảng 500 m² có thổ cư",
+     "n": 28,
+     "median_vnd_m2": 12543685,
+     "p10_vnd_m2": 863636,
+     "p90_vnd_m2": 57364993,
+     "ghi": null
+    },
+    "dat_tren_1000": {
+     "label": "Đất trên 1.000 m²",
+     "n": 33,
+     "median_vnd_m2": 7857142,
+     "p10_vnd_m2": 538385,
+     "p90_vnd_m2": 49305463,
+     "ghi": null
+    },
+    "view": {
+     "label": "Lô có view hồ, đồi, toàn cảnh",
+     "n": 14,
+     "median_vnd_m2": 25368929,
+     "p10_vnd_m2": 6257804,
+     "p90_vnd_m2": 56737663,
+     "ghi": null
+    },
+    "nha": {
+     "label": "Nhà / biệt thự (m² đất)",
+     "n": 130,
+     "median_vnd_m2": 49191358,
+     "p10_vnd_m2": 8506339,
+     "p90_vnd_m2": 89541467,
+     "ghi": null
+    }
+   }
+  },
+  "Đà Lạt ven khác (Xuân Thọ, Xuân Trường, Trạm Hành)": {
+   "n": 164,
+   "nguon": {
+    "batdongsanonline.vn": 3,
+    "mogi.vn": 2,
+    "guland.vn": 85,
+    "muaban.net": 2,
+    "thuviennhadat.vn": 54,
+    "datnenlamdong.com.vn": 18
+   },
+   "loai_theo_crawl": {
+    "đất <2.000 m² chưa rõ thổ cư": 49,
+    "nhà / biệt thự": 62,
+    "đất ≥2.000 m² (nông nghiệp / diện tích lớn)": 23,
+    "đất ≥2.000 m² (nông nghiệp / diện tích lớn) · có nhà": 3,
+    "đất <2.000 m² có thổ cư": 24,
+    "đất <2.000 m² nông nghiệp / vườn": 3
+   },
+   "groups": {
+    "tach_thua_150_300": {
+     "label": "Đất nền tách thửa 150–300 m²",
+     "n": 11,
+     "median_vnd_m2": 13833333,
+     "p10_vnd_m2": 5309734,
+     "p90_vnd_m2": 32619047,
+     "ghi": null
+    },
+    "lo_500_tho_cu": {
+     "label": "Lô khoảng 500 m² có thổ cư",
+     "n": 17,
+     "median_vnd_m2": 7796610,
+     "p10_vnd_m2": 810188,
+     "p90_vnd_m2": 21571464,
+     "ghi": null
+    },
+    "dat_tren_1000": {
+     "label": "Đất trên 1.000 m²",
+     "n": 43,
+     "median_vnd_m2": 2288329,
+     "p10_vnd_m2": 320634,
+     "p90_vnd_m2": 7990214,
+     "ghi": null
+    },
+    "view": {
+     "label": "Lô có view hồ, đồi, toàn cảnh",
+     "n": 10,
+     "median_vnd_m2": 6549019,
+     "p10_vnd_m2": 1508486,
+     "p90_vnd_m2": 27731968,
+     "ghi": null
+    },
+    "nha": {
+     "label": "Nhà / biệt thự (m² đất)",
+     "n": 62,
+     "median_vnd_m2": 48224637,
+     "p10_vnd_m2": 5559944,
+     "p90_vnd_m2": 96181001,
+     "ghi": null
+    }
+   }
+  },
+  "Đà Lạt (chỉ ghi Đà Lạt, không nêu phường/xã)": {
+   "n": 56,
+   "nguon": {
+    "mogi.vn": 56
+   },
+   "loai_theo_crawl": {
+    "nhà / biệt thự": 32,
+    "đất <2.000 m² chưa rõ thổ cư": 21,
+    "đất <2.000 m² có thổ cư": 1,
+    "đất <2.000 m² nông nghiệp / vườn": 1,
+    "đất ≥2.000 m² (nông nghiệp / diện tích lớn)": 1
+   },
+   "groups": {
+    "tach_thua_150_300": {
+     "label": "Đất nền tách thửa 150–300 m²",
+     "n": 9,
+     "median_vnd_m2": null,
+     "p10_vnd_m2": null,
+     "p90_vnd_m2": null,
+     "ghi": "mẫu nhỏ"
+    },
+    "lo_500_tho_cu": {
+     "label": "Lô khoảng 500 m² có thổ cư",
+     "n": 3,
+     "median_vnd_m2": null,
+     "p10_vnd_m2": null,
+     "p90_vnd_m2": null,
+     "ghi": "mẫu nhỏ"
+    },
+    "dat_tren_1000": {
+     "label": "Đất trên 1.000 m²",
+     "n": 2,
+     "median_vnd_m2": null,
+     "p10_vnd_m2": null,
+     "p90_vnd_m2": null,
+     "ghi": "mẫu nhỏ"
+    },
+    "view": {
+     "label": "Lô có view hồ, đồi, toàn cảnh",
+     "n": 8,
+     "median_vnd_m2": null,
+     "p10_vnd_m2": null,
+     "p90_vnd_m2": null,
+     "ghi": "mẫu nhỏ"
+    },
+    "nha": {
+     "label": "Nhà / biệt thự (m² đất)",
+     "n": 32,
+     "median_vnd_m2": 38665892,
+     "p10_vnd_m2": 25155379,
+     "p90_vnd_m2": 63403034,
+     "ghi": null
+    }
+   }
+  }
+ },
+ "ghi_chu": {
+  "dong_tho": {
+   "Nam Ban (dòng thô crawl.py, đã bỏ nhóm video tổng hợp)": 1436,
+   "vùng khác (dòng thô)": 2106
+  },
+  "phan_vung_dong_tho_vung_khac": {
+   "Đà Lạt nội thành (ghi rõ phường 1–12)": 1004,
+   "Đà Lạt ven khác (Xuân Thọ, Xuân Trường, Trạm Hành)": 401,
+   "ngoài vùng: dong thanh": 215,
+   "Tà Nung": 129,
+   "ngoài vùng: nam ban": 125,
+   "Đà Lạt (chỉ ghi Đà Lạt, không nêu phường/xã)": 98,
+   "ngoài vùng: xuan huong": 82,
+   "ngoài vùng: me linh": 10,
+   "ngoài vùng: lam ha": 8,
+   "ngoài vùng: lam vien": 8,
+   "ngoài vùng: cam ly": 7,
+   "ngoài vùng: bao loc": 5,
+   "ngoài vùng: bao lam": 5,
+   "ngoài vùng: lang biang": 4,
+   "ngoài vùng: langbiang": 3,
+   "ngoài vùng: duc trong": 1,
+   "ngoài vùng: don duong": 1
+  }
+ }
+}
