@@ -240,6 +240,10 @@
     <image:image><image:loc>https://nambanpanorama.com/images/dat-nguon-goc-lam-nghiep-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/dat-phan-lo-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/dat-phan-lo-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/dat-the-am-the-duong</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/dat-doi-ven-rung-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/dat-the-am-the-duong.jpg</image:loc></image:image>

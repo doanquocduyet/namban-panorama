@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 440,
+ "total_images": 441,
  "unused_count": 70,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -1785,6 +1785,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "dat-phan-lo-nam-ban.jpg": {
+   "kb": 207,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dat-phan-lo-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
