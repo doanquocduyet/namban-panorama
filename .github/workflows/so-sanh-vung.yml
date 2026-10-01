@@ -1,0 +1,67 @@
+name: So sánh giá rao Nam Ban – Tà Nung – Đà Lạt (chạy tay)
+# Phiếu 2/10/2026: một lượt đo riêng, KHÔNG thay workflow Index hằng tuần.
+# Nam Ban đo bằng chính crawl.py (không sửa); Tà Nung / Đà Lạt bằng tools/survey/so-sanh-vung.py.
+# Mỗi nguồn một máy (mỗi máy chỉ gọi một host, nhịp nghỉ như Index). Chạy từ GitHub vì guland chặn máy khác bằng Cloudflare
+# — không vượt chặn. Kết quả chỉ là số tổng hợp: tools/survey/so-sanh-da-lat-<ngày>.json (tools/ không lên web).
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: index-weekly
+  cancel-in-progress: false
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 110
+    strategy:
+      fail-fast: false
+      matrix:
+        source: [guland, batdongsanonline, datnenlamdong, thuviennhadat, muaban, mogi, nambanvillas]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests beautifulsoup4 lxml
+      - name: Nam Ban cùng ngày — crawl.py nguyên bản
+        run: timeout 30m python tools/survey/crawl.py ${{ matrix.source }} || echo "hết giờ/lỗi — giữ phần đã có"
+      - name: Tà Nung / Đà Lạt — bản chạy riêng
+        if: matrix.source != 'nambanvillas'
+        run: timeout 75m python tools/survey/so-sanh-vung.py ${{ matrix.source }} || echo "hết giờ/lỗi — giữ phần đã có"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vung-${{ matrix.source }}
+          path: |
+            survey/out/
+            survey/out-vung/
+          retention-days: 3
+          if-no-files-found: ignore
+  gop:
+    needs: crawl
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: vung-*
+          path: survey/
+          merge-multiple: true
+      - name: Gộp số tổng hợp
+        run: |
+          ls -R survey | head -40
+          tail -n 3 survey/out/log-*.txt survey/out-vung/log-*.txt || true
+          python tools/survey/so-sanh-aggregate.py
+      - name: Commit số tổng hợp (không URL, không tựa)
+        run: |
+          rm -rf survey
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/survey/so-sanh-da-lat-*.json
+          git commit -m "Lượt đo so sánh giá rao Nam Ban – Tà Nung – Đà Lạt (số tổng hợp) [skip ci]" || exit 0
+          for i in 1 2 3 4 5; do git push origin HEAD:main && break; git pull --rebase origin main; done
