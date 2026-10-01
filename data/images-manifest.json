@@ -2351,6 +2351,11 @@
      "schema",
      "twitter"
     ],
+    "thi-truong-dat-nam-ban-6-thang-dau-nam-2026.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
     "image-sitemap.xml": [
      "ref"
     ]
@@ -3035,6 +3040,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "data/fb-queue.json": [
+     "schema"
     ],
     "image-sitemap.xml": [
      "ref"
@@ -3789,6 +3797,11 @@
      "schema",
      "twitter"
     ],
+    "thi-truong-dat-nam-ban-quy-3-2026.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
     "image-sitemap.xml": [
      "ref"
     ]
@@ -4292,6 +4305,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -4776,6 +4792,9 @@
     ],
     "nam-ban-chua-lanh.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -4818,6 +4837,11 @@
     630
    ],
    "used_in": {
+    "thi-truong-dat-nam-ban-2026.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
     "namban-index.html": [
      "og",
      "ref",
