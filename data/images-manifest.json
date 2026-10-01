@@ -1799,6 +1799,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -6266,6 +6269,11 @@
     630
    ],
    "used_in": {
+    "nam-ban-giong-vung-nao-tren-the-gioi.html": [
+     "og",
+     "schema",
+     "twitter"
+    ],
     "ja/nam-ban-zou-no-taki.html": [
      "og",
      "twitter"

@@ -740,6 +740,10 @@
     <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-co-sap-nhap-da-lat.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/nam-ban-giong-vung-nao-tren-the-gioi</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/thac-voi-og.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/nam-ban-hay-di-linh</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/dong-thanh-camping-san-go.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/og-nam-ban-hay-di-linh.jpg</image:loc></image:image>
