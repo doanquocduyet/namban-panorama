@@ -8,8 +8,8 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 441,
- "unused_count": 70,
+ "total_images": 442,
+ "unused_count": 69,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
   "ban-an-trang-tri-giang-sinh.webp",
@@ -67,7 +67,6 @@
   "ruong-bap-nam-ban.webp",
   "san-vuon-ban-dem-nam-ban.webp",
   "san-vuon-hoa-va-doi-nam-ban.webp",
-  "san-vuon-nha-hoa-gia-lam-nam-ban.webp",
   "tam-giac-mach-nhin-qua-cua-xe-nam-ban.webp",
   "tam-pin-mat-troi-nam-ban.webp",
   "tra-cuu-quy-hoach-tren-man-hinh.webp",
@@ -6002,8 +6001,11 @@
     1200,
     1600
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "thue-nha-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "sau-rieng-nam-ban.jpg": {
    "kb": 114,
@@ -6390,6 +6392,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "thue-nha-nam-ban.jpg": {
+   "kb": 212,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "thue-nha-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },

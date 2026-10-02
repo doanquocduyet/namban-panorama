@@ -978,6 +978,11 @@
     <image:image><image:loc>https://nambanpanorama.com/images/thue-nguoi-lam-vuon-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/thue-nha-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/san-vuon-nha-hoa-gia-lam-nam-ban.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/thue-nha-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/thuong-mai-dien-tu-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/thuong-mai-dien-tu-nam-ban.jpg</image:loc></image:image>
   </url>
