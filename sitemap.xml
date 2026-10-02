@@ -10,13 +10,23 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://nambanpanorama.com/en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nambanpanorama.com/"/>
   </url>
-  <url><loc>https://nambanpanorama.com/en/nam-ban</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+  <url><loc>https://nambanpanorama.com/en/nam-ban</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://nambanpanorama.com/nam-ban"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://nambanpanorama.com/en/nam-ban"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nambanpanorama.com/nam-ban"/>
   </url>
   <url><loc>https://nambanpanorama.com/en/long-term-rental-nam-ban</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://nambanpanorama.com/en/long-term-rental-nam-ban"/>
+  </url>
+  <url><loc>https://nambanpanorama.com/en/vietnam-visa-long-stay-da-lat</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nambanpanorama.com/en/vietnam-visa-long-stay-da-lat"/>
+  </url>
+  <url><loc>https://nambanpanorama.com/en/cost-of-living-nam-ban-da-lat</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nambanpanorama.com/en/cost-of-living-nam-ban-da-lat"/>
+  </url>
+  <url><loc>https://nambanpanorama.com/en/linh-an-pagoda-nam-ban</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nambanpanorama.com/en/linh-an-pagoda-nam-ban"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://nambanpanorama.com/chua-linh-an-nam-ban"/>
   </url>
   <url><loc>https://nambanpanorama.com/ko/dalat-handal-salgi</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://nambanpanorama.com/ko/dalat-handal-salgi"/>
@@ -186,7 +196,7 @@
   </url>
   <url>
     <loc>https://nambanpanorama.com/living-in-nam-ban</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://nambanpanorama.com/nam-ban-co-dang-song"/>
@@ -345,7 +355,7 @@
   <url><loc>https://nambanpanorama.com/nam-ban-hay-don-duong</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://nambanpanorama.com/nam-ban-hay-duc-trong</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://nambanpanorama.com/nam-ban-hay-lac-duong</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://nambanpanorama.com/chua-linh-an-nam-ban</loc><lastmod>2026-09-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nambanpanorama.com/chua-linh-an-nam-ban</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://nambanpanorama.com/len-lam-dong-song-lam-gi</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://nambanpanorama.com/lam-dong-co-gi-de-lam-an</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://nambanpanorama.com/len-lam-dong-nen-song-o-dau</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>

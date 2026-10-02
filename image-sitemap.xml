@@ -361,6 +361,10 @@
     <image:image><image:loc>https://nambanpanorama.com/images/og-elephant-waterfall-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/en/cost-of-living-nam-ban-da-lat</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/cost-of-living-nam-ban-da-lat.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/en/foreigners-buying-land-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-toan-canh-og.jpg</image:loc></image:image>
   </url>
@@ -373,6 +377,10 @@
   <url>
     <loc>https://nambanpanorama.com/en/land-prices-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-toan-canh-og.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/en/linh-an-pagoda-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/chua-linh-an-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/en/long-term-rental-nam-ban</loc>
@@ -391,6 +399,10 @@
     <loc>https://nambanpanorama.com/en/trao-doi</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/founder.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/trao-doi.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://nambanpanorama.com/en/vietnam-visa-long-stay-da-lat</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/vietnam-visa-long-stay-da-lat.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://nambanpanorama.com/fr/cascade-des-elephants-nam-ban</loc>

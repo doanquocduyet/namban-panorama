@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 442,
+ "total_images": 444,
  "unused_count": 69,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -1200,6 +1200,11 @@
      "schema",
      "twitter"
     ],
+    "en/linh-an-pagoda-nam-ban.html": [
+     "og",
+     "ref",
+     "twitter"
+    ],
     "image-sitemap.xml": [
      "ref"
     ]
@@ -1424,6 +1429,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "cost-of-living-nam-ban-da-lat.jpg": {
+   "kb": 162,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "en/cost-of-living-nam-ban-da-lat.html": [
+     "og",
+     "ref",
+     "twitter"
     ]
    }
   },
@@ -6004,6 +6023,9 @@
    "used_in": {
     "thue-nha-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -6406,6 +6428,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -6872,6 +6897,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "vietnam-visa-long-stay-da-lat.jpg": {
+   "kb": 216,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "en/vietnam-visa-long-stay-da-lat.html": [
+     "og",
+     "ref",
+     "twitter"
     ]
    }
   },
