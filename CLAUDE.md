@@ -48,6 +48,12 @@ Dám phản biện khi có cái SAI THẬT (vai tỉnh táo viên), nhưng khôn
 trang, tràn khổ, sai dữ kiện không? Có → không làm, hoặc làm cách khác. Phiếu nào bắt buộc làm giảm
 một thứ trong năm thứ đó thì báo Chú trước, kèm số đo.
 
+**TIN CÓ BÀI NHÀ → VÀO BÀI NHÀ, KHÔNG VÀO `/nam-ban-co-gi-moi` (Chú chốt 2/10/2026).** Ca thật: thông báo sân bay
+Liên Khương thôi đọc loa gọi khách (1/10–1/11/2026) — Chú: "đưa vào bài viết liên quan tới sân bay, không phải mục Nam Ban có
+gì mới". Tin vận hành của một chủ đề đã có bài riêng (sân bay, cầu Tổng Đội, hồ Tròn…) thì thêm mục/FAQ/nguồn vào bài đó và
+hàng đợi MXH (`key` riêng, `full:false`). `/nam-ban-co-gi-moi` chỉ nhận tin về chính xã Nam Ban (xã làm việc, dự án, quy hoạch,
+đời sống trong xã). Phân vân thì hỏi.
+
 **MẠNG XÃ HỘI (Facebook / Instagram / Threads) — ƯU TIÊN TIN MỚI (Chú chốt 27/9/2026).** Hàng đợi
 `data/fb-queue.json`, thang `priority`: **0 = sự kiện / tin mới trong tuần** (mỗi mục mới của
 `/nam-ban-co-gi-moi`, bài sự kiện như Trung thu, mưa lũ, sân bay…) · 1 = tin cập nhật · 2 = bài nền
