@@ -116,7 +116,7 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
 - **PANORAMA ↔ VILLAS — ĐÃ CHỐT, KHÔNG BÀN LẠI (Chú chốt 26/9/2026): CÙNG KEY, KHÁC NỘI DUNG VÀ STYLE.**
   Hai web được đánh cùng một từ khóa. Villas: lô thật, giá thật, dịch vụ, nút gọi. Panorama: phân tích,
   số đo Index, hướng dẫn, giọng publication. Không ép bên nào đổi tựa vì bên kia cùng key; không chép dàn
-  ý/câu chữ của nhau; Villas không link sang Panorama. Trong nội bộ Panorama vẫn mỗi key một trang. Chi tiết §6 Luật 26d.
+  ý/câu chữ của nhau. **Link giữa 3 web đã mở có kiểm soát (Chú gật 2/10/2026)** — xem §6 Luật 26g. Trong nội bộ Panorama vẫn mỗi key một trang. Chi tiết §6 Luật 26d.
 
 ---
 
@@ -1136,6 +1136,22 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     Nam Ban Lâm Hà) và "khoảng 20 km²" (là thị trấn cũ 2.089 ha; xã nay khoảng 117 km²). KHÔNG nêu tên "Đồi Chữa Lành – Mê Linh
     Panorama" hay homestay nào (§5 kill-list luật 2). Câu "giá phòng một đêm" nhà ở `/homestay-nam-ban-co-lai-khong`, bài mới
     chỉ dẫn link. Đã thêm câu "Đi Nam Ban chữa lành thì đi đâu?" vào `/hoi-nhanh`. **Khóa tựa tới hết 27/10/2026.**
+    **26g — LINK GIỮA 3 WEB: MỞ CÓ KIỂM SOÁT (Chú gật 2/10/2026, ô Villas và ô Panorama cùng thống nhất).**
+    (1) **Chỉ trong câu chữ**, đúng chỗ người đọc cần đi tiếp. KHÔNG ở chân trang, thanh menu, khối lặp, trang lô.
+    (2) **Trần:** Villas → Panorama 10–15 link; **Panorama → Villas tối đa 5 link**; Panorama → GreenSpace chỉ ở bài nói về
+    trông coi, làm vườn, lấn ranh (trỏ `greenspacers.vn/quan-ly-dat-nam-ban` hoặc `/xu-ly-lan-chiem-dat-tu-xa`, không trỏ trang chủ).
+    (3) **Mỗi link sang Villas/GreenSpace phải nói rõ cùng chủ** ("tôi có…", "web bán đất cùng chủ với Panorama") — minh bạch là
+    thứ giữ trust của publication. (4) **Không link giữa hai trang trùng ý định**, cả hai chiều: đất giá rẻ, phân lô, Nam Hà sáp
+    nhập, bảng giá đất 2026, đấu giá, sân bay, khí hậu, Nam Ban có gì, có đáng sống, đất Đông Thanh, đất Mê Linh, tách thửa,
+    lên thổ cư, `/mua-dat-nam-ban-500-trieu-1-ty` ↔ `/dat-nam-ban-duoi-1-ty/`, `/namban-index` ↔ `/thi-truong/gia-dat-nam-ban-hom-nay/`.
+    (5) Link sang web khác mở tab mới (`target="_blank" rel="noopener"`). (6) **Số giá: hai số, hai định nghĩa** — Namban Index =
+    giá rao thị trường (trung vị 4 loại đất); Villas = "giá các lô Nam Ban Villas đang bán". Panorama KHÔNG lấy số của Villas làm
+    giá thị trường; Villas muốn nói giá thị trường thì trích Index kèm nguồn + ngày. (7) Người viết chung: anh Đoàn Quốc Duyệt,
+    `@id` `https://nambanpanorama.com/#founder`. (8) Panorama không link tới trang "Nam Ban Sala" của Villas.
+    **Link Panorama → Villas đang có (5/5):** 4 bài khu (`/dat-trung-tam-nam-ban`, `/dat-dong-thanh-nam-ban`, `/dat-me-linh-nam-ban`,
+    `/dat-gia-lam-nam-ban`, trỏ trang chủ Villas, câu "tôi có Nam Ban Villas") + `/doc-tin-rao-dat-nam-ban` → trang tin rao mới.
+    **Đã đủ trần — muốn thêm thì phải bỏ một link cũ.** Link Panorama → GreenSpace: `/giu-dat-nam-ban-tu-xa`,
+    `/dat-nam-ban-chua-xay`, `/mua-nha-nam-ban-khong-o`.
     **26e — ĐỢT BÀI BỔ SUNG 26/9/2026 (đối chiếu 72 trang Villas, 0 trùng nội dung đáng kể):** thêm
     `/bang-gia-dat-nam-ban` (Phụ lục 35, NQ 82/2025/NQ-HĐND), `/dau-gia-dat-nam-ban`, `/tuyen-tranh-nam-ban`,
     `/khi-hau-nam-ban`, `/du-lich-nong-nghiep-nam-ban`; đổi tựa `/nam-ban-co-dang-song` sang "Nam Ban có
@@ -1151,13 +1167,11 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     "nhường key" trước đó).** Hai tên miền độc lập được Google chấm riêng, cùng nằm trang 1 là chiếm hai chỗ.
     "Tự giành chỗ" chỉ xảy ra giữa hai trang **trong cùng một web** — nên trong Panorama vẫn giữ mỗi key
     một nhà. Rủi ro thật chỉ hai: (1) hai bài na ná nhau — cùng dàn ý, câu chữ, chép số của nhau → mỗi bên
-    viết góc riêng; (2) link qua lại dày đặc kiểu web vệ tinh → đã chặn bằng luật Villas không link sang
-    Panorama. **Góc riêng:** Villas = lô thật, giá thật, dịch vụ, nút gọi; Panorama = phân tích, số đo
+    viết góc riêng; (2) link qua lại dày đặc kiểu web vệ tinh → chặn bằng trần số link và luật chỉ đặt trong câu chữ (Luật 26g). **Góc riêng:** Villas = lô thật, giá thật, dịch vụ, nút gọi; Panorama = phân tích, số đo
     Index, hướng dẫn. KHÔNG ép bên nào đổi tựa vì bên kia đang đánh cùng key. Chi tiết đợt chi phí: Panorama giữ mọi key **hỏi thông
     tin chi phí** ("chi phí san lấp, làm hạ tầng", "lên thổ cư giá bao nhiêu", "tách thửa", "sang
     tên"). Villas là trang bán hàng + dịch vụ: 7 trang chi phí bên đó đã đổi tựa sang "Dịch vụ …" /
-    "Mua lô đã có hạ tầng hay tự làm", giữ nguyên đường dẫn. **Luật 3 web: Villas KHÔNG link sang
-    Panorama** — đừng đề xuất Villas dẫn link về bài Panorama. Đừng đổi tựa bài Panorama sang câu
+    "Mua lô đã có hạ tầng hay tự làm", giữ nguyên đường dẫn. **Luật 3 web: xem 26g** (thay câu cũ "Villas không link sang Panorama"). Đừng đổi tựa bài Panorama sang câu
     không ai gõ để "nhường" Villas (đề xuất "cách tự ước chi phí làm hạ tầng đất vườn" đã bị bác).
     Số máy múc Chú cấp: "xe múc, xe nhỏ và xe lớn" (gõ Telex: "nbhort" = nhỏ, "lo0wn" = lớn) —
     400–800 nghìn/giờ là máy múc cỡ nhỏ tới lớn, bao công + dầu; **xe lu, xe ben chưa có số riêng**.
