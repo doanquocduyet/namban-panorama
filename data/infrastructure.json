@@ -36,16 +36,19 @@
         "load_standard": "HL.93 (xe tải qua được)",
         "route_length_m": 331,
         "extras": "365 m đường gom dân sinh; 90 m đường dọc sông; tường chắn taluy; 9 trụ đèn LED cao 9 m",
-        "budget_vnd": 26750000000,
+        "budget_vnd": 32000000000,
+        "construction_package_vnd": 26756739046,
         "contractor": "Công ty cổ phần Xây dựng và Tư vấn Đầu tư 18",
         "start_date": "2026-07-14",
-        "expected_completion": "2027-11-10"
+        "expected_completion": "2027-11-10",
+        "expected_completion_note": "Theo hợp đồng 10/11/2027; tới 19/9/2026 đã xong cọc khoan nhồi và bê tông bệ mố, dự kiến xong trước tháng 6/2027"
       },
       "construction_note": "Theo thiết kế, cầu cũ được tận dụng làm cầu tạm; do bồi thường giải phóng mặt bằng chưa xong nên chưa có cầu tạm — người dân tạm chọn tuyến khác trong lúc thi công.",
       "sources": [
         "Thông báo số 55/TB-BQLDALH ngày 10/7/2026 — Ban Quản lý dự án đầu tư xây dựng khu vực Lâm Hà",
         "Bản tin UBND xã Nam Ban Lâm Hà ngày 14/7/2026",
-        "Khảo sát và ảnh hiện trường Namban Panorama, 14/7/2026"
+        "Khảo sát và ảnh hiện trường Namban Panorama, 14/7/2026",
+        "Báo Xây dựng, 19/9/2026 — tổng mức đầu tư 32 tỷ đồng, tiến độ thi công"
       ]
     },
     {
