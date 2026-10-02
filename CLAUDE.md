@@ -179,8 +179,10 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
    2021–2030 (7/2022, lamdong.gov.vn): dải cao **800–1.100 m (Nam Ban) nhiệt độ trung bình năm khoảng
    19–21°C**, trên 1.500 m (Đà Lạt) khoảng 18°C; trạm Liên Khương (957 m) khoảng 21,4°C, mưa khoảng
    1.615 mm (1980–2017); mùa mưa tỉnh **tháng 5–11**, mùa khô 12–4. "18–25°C" là số **của cả tỉnh**
-   (Niên giám thống kê), không phải của Nam Ban. Bài mới muốn ghi nhiệt độ thì dùng 19–21°C kèm nguồn;
-   các bài cũ ghi 18–25°C chưa mở đợt dọn (Luật 14).
+   (Niên giám thống kê), không phải của Nam Ban. Bài mới muốn ghi nhiệt độ thì dùng 19–21°C kèm nguồn.
+   **ĐÃ DỌN 2/10/2026 (Chú gật "làm tất cả"):** mọi câu gán "18–25°C" cho Nam Ban (19 trang vi/en/fr + `llms.txt`,
+   `llms-full.txt`, feed) đổi thành "nhiệt độ trung bình năm khoảng 19–21°C"; ô số hub `/nam-ban` ghi "19–21°C · Nhiệt độ TB năm";
+   bảng so vùng `/tiem-nang-dau-tu` ghi Nam Ban "khoảng 19–21°C (TB năm)", Đà Lạt "khoảng 18°C (TB năm)". Quét lại phải = 0.
    **MÙA MƯA / MÙA KHÔ — ĐÃ CHỐT, ĐỪNG HỎI LẠI (Chú chốt 27/9/2026, đã nói nhiều lần): "mùa mưa
    không có năm nào giống năm nào, chỉ ghi KHOẢNG mà thôi — đó là thời tiết của cả thế giới".**
    Không chốt tháng bắt đầu, không hỏi Chú "tháng 4 hay tháng 5", không mở đợt đồng bộ số. Luật duy

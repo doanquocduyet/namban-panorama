@@ -1464,11 +1464,11 @@ Cách TP.HCM (xe hơi)
 
 ~5 giờ
 
-Khí hậu cao nguyên
+Nhiệt độ
 
-15–20°C
+khoảng 18°C (TB năm)
 
-18–25°C
+khoảng 19–21°C (TB năm)
 
 20–25°C
 
@@ -2143,7 +2143,7 @@ Sau sáp nhập, xã Nam Ban Lâm Hà gồm các khu vực Đông Thanh, Mê Lin
 • Diện tích tự nhiên: 117,53 km² (11.753 ha).
 • Dân số: khoảng 33.000 người, trong đó đồng bào dân tộc thiểu số 3.189 người (9,75%).
 • Độ cao: 800–1.000m so với mực nước biển, trên thềm chuyển tiếp giữa cao nguyên và bình nguyên.
-• Khí hậu: nhiệt độ trung bình năm 18–25°C, thấp nhất khoảng 12°C (tháng 12–1), đất đỏ bazan phì nhiêu.
+• Khí hậu: nhiệt độ trung bình năm khoảng 19–21°C, thấp nhất khoảng 12°C (tháng 12–1), đất đỏ bazan phì nhiêu.
 • Định hướng: trở thành xã nông thôn mới hiện đại, định hướng lên Phường và đô thị loại III trong tương lai.
 
 Quy hoạch không chia Nam Ban thành "đất đẹp" và "đất xấu". Nó chia thành các phân khu có chức năng khác nhau — và đó mới là thứ quyết định bạn xây được gì trên mảnh đất của mình.
@@ -2961,7 +2961,7 @@ Nhịp nào hợp ai (gợi ý đọc đất của Panorama): mua để dành �
 
 URL: https://nambanpanorama.com/rau-hoa-cay-do-la-nam-ban
 
-Nói ngắn gọn: ngoài cà phê, bơ và dâu tằm, đất Nam Ban còn trồng rau màu, hoa nhà kính, chuối, chanh dây và cây đô la lấy cành bán cho shop hoa. Nhà kính ở đây chưa nhiều, khung cảnh còn giống Đà Lạt hồi xưa. Đây là những cây cho vòng quay nhanh, hợp với người ở tại chỗ hơn là người mua đất để dành. Nam Ban cách Đà Lạt ~25km qua đèo Tà Nung, cao 800–1.000m (thấp hơn Đà Lạt chừng 500m), khí hậu 18–25°C, đất đỏ bazan.
+Nói ngắn gọn: ngoài cà phê, bơ và dâu tằm, đất Nam Ban còn trồng rau màu, hoa nhà kính, chuối, chanh dây và cây đô la lấy cành bán cho shop hoa. Nhà kính ở đây chưa nhiều, khung cảnh còn giống Đà Lạt hồi xưa. Đây là những cây cho vòng quay nhanh, hợp với người ở tại chỗ hơn là người mua đất để dành. Nam Ban cách Đà Lạt ~25km qua đèo Tà Nung, cao 800–1.000m (thấp hơn Đà Lạt chừng 500m), nhiệt độ trung bình năm khoảng 19–21°C, đất đỏ bazan.
 
 Trồng màu (làm màu): cách gọi chung cho cây ngắn ngày — khoai lang, khoai tây, bắp, đậu phộng, đậu cô ve, đậu que, dưa leo, bí, cà chua, ớt, hành, tỏi, gừng, cải, xà lách và các loại rau. Một vụ vài chục ngày tới vài tháng, tiền quay nhanh hơn cà phê/bơ. Đất làm màu cần cao ráo, thoát nước, lên luống cao 20–30cm chống ngập (mùa mưa khoảng tháng 4 đến tháng 11). Là nghề đi vườn mỗi ngày; thường nằm xen giữa vườn cà phê ở chỗ đất bằng, gần nước.
 
@@ -3139,7 +3139,7 @@ URL: https://nambanpanorama.com/nam-ban-mua-nao
 
 Nói ngắn gọn: không có mùa nào đẹp nhất, chỉ có mùa hợp việc mình định làm. Lần đầu biết Nam Ban → tháng 3 (hoa cà phê trắng đồi) hoặc đầu tháng 11 (dã quỳ vàng đèo Tà Nung). Đi xem đất → nên đi hai lần: mùa khô (xem nước, view, chạy nhiều lô) và mùa mưa (xem thoát nước, taluy, đường vào lúc xấu nhất). Tính chuyển lên sống → ở thử một mùa mưa.
 
-Lịch vùng: mùa khô ~tháng 12–4 (trời trong, sáng lạnh); mùa mưa ~tháng 5–11 (mưa rào, ẩm cao); hoa cà phê tháng 2–4 rộ tháng 3; bơ 034 tháng 4–6 (rộ cuối tháng 5 đầu tháng 6), Booth tháng 8–12; dã quỳ cuối tháng 10–giữa 11; thác Voi nhiều nước tháng 9–11. Nam Ban cao 800–1.000m, 18–25°C, cách Đà Lạt ~25km. Mùa cà phê (tháng 11) là lúc đọc được nhiều nhất về dòng tiền vùng.
+Lịch vùng: mùa khô ~tháng 12–4 (trời trong, sáng lạnh); mùa mưa ~tháng 5–11 (mưa rào, ẩm cao); hoa cà phê tháng 2–4 rộ tháng 3; bơ 034 tháng 4–6 (rộ cuối tháng 5 đầu tháng 6), Booth tháng 8–12; dã quỳ cuối tháng 10–giữa 11; thác Voi nhiều nước tháng 9–11. Nam Ban cao 800–1.000m, nhiệt độ trung bình năm khoảng 19–21°C, cách Đà Lạt ~25km. Mùa cà phê (tháng 11) là lúc đọc được nhiều nhất về dòng tiền vùng.
 
 ---
 
@@ -4649,7 +4649,7 @@ Nam Ban trồng được hoa gì?
 Tóm tắt: Cao 800–1000m, đất đỏ bazan — Nam Ban trồng được gần hết hoa của vùng Đà Lạt. Thấy nhiều nhất là sao nhái, dừa cạn, mười giờ, xác pháo, hoa giấy, hồng, cẩm tú cầu. Riêng đào Nhật Tân là chuyện của vùng này.
 
 Nếu hỏi nhanh:
-cao 800–1000m, 18–25°C, đất đỏ bazan — Nam Ban trồng được gần hết những gì Đà Lạt trồng được. Thấy nhiều nhất ngoài đời là sao nhái, dừa cạn, mười giờ, xác pháo, hoa giấy, hoa hồng, cẩm tú cầu. Riêng đào Nhật Tân thì là chuyện của vùng này — người Hà Nội mang giống vào từ thời kinh tế mới. Và dã quỳ thì không ai trồng, cứ tới mùa là vàng cả đường.
+cao 800–1000m, nhiệt độ trung bình năm khoảng 19–21°C, đất đỏ bazan — Nam Ban trồng được gần hết những gì Đà Lạt trồng được. Thấy nhiều nhất ngoài đời là sao nhái, dừa cạn, mười giờ, xác pháo, hoa giấy, hoa hồng, cẩm tú cầu. Riêng đào Nhật Tân thì là chuyện của vùng này — người Hà Nội mang giống vào từ thời kinh tế mới. Và dã quỳ thì không ai trồng, cứ tới mùa là vàng cả đường.
 
 Người mới lên hay hỏi đất này trồng hoa gì được. Câu trả lời thật ra hơi chán: gần như cái gì cũng được.
 
@@ -4785,7 +4785,7 @@ Câu hỏi thường gặp
 
 Nam Ban trồng được hoa gì?
 
-Cao 800–1000m, khí hậu 18–25°C, đất đỏ bazan nên trồng được phần lớn các loại hoa của vùng Đà Lạt. Thấy nhiều nhất ngoài thực tế là sao nhái, dừa cạn, mười giờ, xác pháo, hoa giấy, hoa hồng và cẩm tú cầu.
+Cao 800–1000m, nhiệt độ trung bình năm khoảng 19–21°C, đất đỏ bazan nên trồng được phần lớn các loại hoa của vùng Đà Lạt. Thấy nhiều nhất ngoài thực tế là sao nhái, dừa cạn, mười giờ, xác pháo, hoa giấy, hoa hồng và cẩm tú cầu.
 
 Vì sao Nam Ban có đào Nhật Tân?
 
@@ -6946,7 +6946,7 @@ Công nhật ở đây 400–600 nghìn một ngày, và việc thì nhiều: h�
 
 Nghỉ hưu ở Nam Ban có hợp không? 
 
-Hợp với người tìm khí hậu mát (18–25°C quanh năm) và nhịp chậm. Trong xã có trạm y tế và phòng khám đa khoa; cần bệnh viện thì Đà Lạt 45 phút hoặc Đinh Văn. Nên chọn nhà gần trung tâm xã — gần chợ, gần trạm y tế, đường ô tô vào tận nơi. 
+Hợp với người tìm khí hậu mát (nhiệt độ trung bình năm khoảng 19–21°C) và nhịp chậm. Trong xã có trạm y tế và phòng khám đa khoa; cần bệnh viện thì Đà Lạt 45 phút hoặc Đinh Văn. Nên chọn nhà gần trung tâm xã — gần chợ, gần trạm y tế, đường ô tô vào tận nơi. 
 
 Đưa cả gia đình lên Nam Ban thì con học ở đâu? 
 
@@ -8849,14 +8849,14 @@ Trao đổi với người ở đây
 
 URL: https://nambanpanorama.com/mua-dat-duong-gia-nam-ban
 
-Tóm tắt: Khí hậu 18–25°C quanh năm, chi phí sống 200 nghìn một ngày. Nhưng tiêu chí chọn đất dưỡng già khác hẳn mua để đầu tư — và nhiều người chọn sai.
+Tóm tắt: Khí hậu mát, nhiệt độ trung bình năm khoảng 19–21°C, chi phí sống 200 nghìn một ngày. Nhưng tiêu chí chọn đất dưỡng già khác hẳn mua để đầu tư — và nhiều người chọn sai.
 
 Về Nam Ban Tháng 7, 2026 
 
 Mua đất dưỡng già ở Nam Ban: nhà vườn cho vợ chồng về hưu 
 
 Trả lời nhanh 
-Nam Ban hợp làm nhà vườn dưỡng già: 18–25°C quanh năm, nhịp chậm, chi phí sống khoảng 200 nghìn một người một ngày. Đất còn rẻ — nông nghiệp 1,7–2,8 triệu/m², thổ cư 3–4,5 triệu. Nhưng tiêu chí chọn đất dưỡng già khác hẳn mua để đầu tư. Bốn thứ phải có: gần trung tâm xã (chợ, trạm y tế), đường ô tô vào tận nơi, thế đất cao không trũng, và có hàng xóm. Bệnh viện gần nhất ở Đà Lạt hoặc Đinh Văn — chừng 45 phút. Một lô view đẹp trên đỉnh dốc, xa mọi thứ, là lựa chọn tệ cho người lớn tuổi — dù nó chụp ảnh rất đẹp. 
+Nam Ban hợp làm nhà vườn dưỡng già: khí hậu mát (nhiệt độ trung bình năm khoảng 19–21°C), nhịp chậm, chi phí sống khoảng 200 nghìn một người một ngày. Đất còn rẻ — nông nghiệp 1,7–2,8 triệu/m², thổ cư 3–4,5 triệu. Nhưng tiêu chí chọn đất dưỡng già khác hẳn mua để đầu tư. Bốn thứ phải có: gần trung tâm xã (chợ, trạm y tế), đường ô tô vào tận nơi, thế đất cao không trũng, và có hàng xóm. Bệnh viện gần nhất ở Đà Lạt hoặc Đinh Văn — chừng 45 phút. Một lô view đẹp trên đỉnh dốc, xa mọi thứ, là lựa chọn tệ cho người lớn tuổi — dù nó chụp ảnh rất đẹp. 
 
 Người tìm đất dưỡng già thường không phải người sẽ ở. 
 
@@ -8958,7 +8958,7 @@ Câu hỏi thường gặp
 
 Nam Ban có hợp mua đất dưỡng già không? 
 
-Hợp với người tìm khí hậu mát (18–25°C quanh năm) và nhịp chậm. Chi phí sống khoảng 200 nghìn một người một ngày. Trong xã có trạm y tế và phòng khám đa khoa; cần bệnh viện thì Đà Lạt hoặc Đinh Văn, chừng 45 phút. 
+Hợp với người tìm khí hậu mát (nhiệt độ trung bình năm khoảng 19–21°C) và nhịp chậm. Chi phí sống khoảng 200 nghìn một người một ngày. Trong xã có trạm y tế và phòng khám đa khoa; cần bệnh viện thì Đà Lạt hoặc Đinh Văn, chừng 45 phút. 
 
 Mua đất dưỡng già nên chọn bao nhiêu mét vuông? 
 
@@ -9249,13 +9249,13 @@ Hỏi nhanh — đáp gọn (2026). →
 
 Độ cao 
 
-18–25°C 
+19–21°C 
 
-Nhiệt độ 
+Nhiệt độ TB năm 
 
-Tháng 5–11 
+Tháng 4–11 
 
-Mùa mưa
+Mùa mưa (khoảng)
 
 ---
 
@@ -9339,7 +9339,7 @@ Không hẳn. Nam Ban cho cảm giác Đà Lạt hơn, nhưng một số khu ven
 
 Nam Ban ở đâu, cách Đà Lạt bao xa? 
 
-Nam Ban thuộc xã Nam Ban Lâm Hà, tỉnh Lâm Đồng, cách Đà Lạt khoảng 25km qua đèo Tà Nung (chừng 45 phút), cao 800-1000 m, khí hậu 18-25 °C quanh năm. Hồ Kala của Di Linh nằm xa Đà Lạt hơn nhiều. 
+Nam Ban thuộc xã Nam Ban Lâm Hà, tỉnh Lâm Đồng, cách Đà Lạt khoảng 25km qua đèo Tà Nung (chừng 45 phút), cao 800-1000 m, khí hậu mát, nhiệt độ trung bình năm khoảng 19–21°C. Hồ Kala của Di Linh nằm xa Đà Lạt hơn nhiều. 
 
 Có 2 tỷ nên mua đất Nam Ban hay Di Linh? 
 
@@ -11127,7 +11127,7 @@ Về hành chính, từ giữa năm 2025 Nam Ban thuộc xã Nam Ban Lâm Hà, t
 
 Nam Ban là vùng như thế nào?
 
-Đất cao nguyên, độ cao 800–1000m, quanh năm tầm 18–25°C — mát, không nóng gắt như đồng bằng, cũng không lạnh sâu như trung tâm Đà Lạt. Cả xã rộng khoảng 117 km², dân số khoảng 33.000 người theo hồ sơ quy hoạch chung phê duyệt giữa năm 2026, gộp từ thị trấn Nam Ban cũ với ba xã Đông Thanh, Mê Linh, Gia Lâm.
+Đất cao nguyên, độ cao 800–1000m, nhiệt độ trung bình năm khoảng 19–21°C — mát, không nóng gắt như đồng bằng, cũng không lạnh sâu như trung tâm Đà Lạt. Cả xã rộng khoảng 117 km², dân số khoảng 33.000 người theo hồ sơ quy hoạch chung phê duyệt giữa năm 2026, gộp từ thị trấn Nam Ban cũ với ba xã Đông Thanh, Mê Linh, Gia Lâm.
 
 Nhìn quanh chủ yếu là đồi cà phê, xen vườn dâu tằm, cây bơ, rau hoa. Đất đỏ bazan. Một cái tên hay: “Lâm Hà” ghép từ Lâm Đồng và Hà Nội, vì mấy chục năm trước người Hà Nội vào đây khai khẩn lập nghiệp — nên tới giờ giọng nói, món ăn ở đây vẫn đậm chất Bắc.
 
@@ -17669,7 +17669,7 @@ Tóm tắt: Nhà ở Nam Ban để không khác nhà dưới phố: mùa mưa k�
 
 Mua nhà rồi chưa ở thường xuyên là chuyện bình thường. Nhưng nhà khác đất: đất để không thì cỏ mọc, cắt là xong; nhà để không thì hỏng dần từ bên trong. Ở Nam Ban mưa kéo dài khoảng từ tháng tư tới tháng mười một — quá nửa năm ẩm liên tục.
 
-KHÍ HẬU: vùng cao 800–1000m, nhiệt độ quanh năm 18–25°C. Chênh lệch ngày đêm lớn nên hơi nước đọng trên bề mặt lạnh. Nhà có người ở thì mở cửa, nấu ăn, hơi ẩm đi ra; nhà đóng kín thì hơi ẩm ở lại. Đất đỏ bazan giữ nước và lô đẹp thường có độ dốc, nước mưa chảy quanh chân nhà suốt mấy tháng nên đường thoát dễ tắc mà không ai biết.
+KHÍ HẬU: vùng cao 800–1000m, nhiệt độ trung bình năm khoảng 19–21°C. Chênh lệch ngày đêm lớn nên hơi nước đọng trên bề mặt lạnh. Nhà có người ở thì mở cửa, nấu ăn, hơi ẩm đi ra; nhà đóng kín thì hơi ẩm ở lại. Đất đỏ bazan giữ nước và lô đẹp thường có độ dốc, nước mưa chảy quanh chân nhà suốt mấy tháng nên đường thoát dễ tắc mà không ai biết.
 
 NHÀ GỖ KHÁC NHÀ XÂY: nhà xây thì thứ hiện ra trước là ẩm mốc ở chân tường, góc khuất, trần nhà vệ sinh, mặt sau tủ kê sát tường — xử lý được. Nhà gỗ thông (khá phổ biến ở Nam Ban) thì gỗ hút rồi nhả ẩm theo mùa, cửa nẻo co giãn, và mối phải tính từ đầu chứ không phải tính khi thấy. Nhà gỗ có người ở thì phát hiện sớm; đóng cửa nửa năm thì không ai đụng vào để mà biết.
 
@@ -17701,7 +17701,7 @@ KHÔNG phải vì đất ở Nam Ban đẹp hơn chỗ khác. Là vì nhiều th
 
 5. NGHỈ DƯỠNG CÓ SẴN, không phải nơi đang hứa: chùa Linh Ẩn với tượng Quan Thế Âm cao 71m, thác Voi ngay cạnh, vùng trồng cà phê, bơ, dâu tằm thật.
 
-6. NGÔI NHÀ THỨ HAI: đi về trong ngày, tầm tiền không buộc bán bớt tài sản dưới phố, lên là có chỗ đi, có hàng xóm sẵn trong xóm đã ở năm mươi năm, thời tiết 18–25°C. Phần phải tính là mùa mưa khoảng tháng 4 đến tháng 11.
+6. NGÔI NHÀ THỨ HAI: đi về trong ngày, tầm tiền không buộc bán bớt tài sản dưới phố, lên là có chỗ đi, có hàng xóm sẵn trong xóm đã ở năm mươi năm, nhiệt độ trung bình năm khoảng 19–21°C. Phần phải tính là mùa mưa khoảng tháng 4 đến tháng 11.
 
 7. THỊ TRẤN NHỎ CÓ NGƯỜI Ở THẬT. Xã rộng 117 km², dân hơn 33.000; riêng đô thị Nam Ban đã được quy hoạch tỉnh định hướng là đô thị loại III. Chợ họp sớm, trường, trạm, quán xá, xóm làng năm mươi năm, đường mang tên phố Hà Nội.
 
