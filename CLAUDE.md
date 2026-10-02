@@ -801,6 +801,25 @@ biết bài viết vào đợt mưa nào — KHÔNG đổi H1 khi thêm dòng c�
 Hai số bị gỡ vì không kiểm được nguồn: lượng mưa Sơn Điền 112mm / Đơn Dương 66mm / Lạc Dương
 55mm, và chữ "phối hợp UNICEF". Có văn bản gốc thì mới được thêm lại (§2.6).
 
+### ĐỢT 2/10/2026 — DỮ KIỆN ĐÃ KIỂM, ĐỪNG VIẾT NGƯỢC
+
+- **Cầu Tiền Lâm (cầu Tổng Đội): tổng mức đầu tư 32 tỷ đồng.** 26,76 tỷ chỉ là giá trúng thầu gói xây lắp số 07 —
+  bản cũ ghi "vốn/tổng vốn 26,75 tỷ" là sai chữ, đã sửa toàn site. Hợp đồng xong 10/11/2027; tới 19/9/2026 đã xong cọc
+  khoan nhồi + bệ mố, dự kiến xong **trước tháng 6/2027** (Báo Xây dựng 19/9/2026). Câu viết: "hợp đồng ghi 11/2027,
+  dự kiến trước 6/2027" — đừng xóa mốc hợp đồng.
+- **Cao tốc Dầu Giây – Liên Khương:** chưa có mốc thông xe cả tuyến. Dầu Giây – Tân Phú mục tiêu cuối 2026 nhưng 4/2026
+  bị nhắc chậm (Báo Chính phủ 21/4/2026); Tân Phú – Bảo Lộc tỉnh yêu cầu cơ bản xong mặt bằng 15/10/2026 (Báo Lâm Đồng
+  29/9/2026). KHÔNG ghi "Dầu Giây – Tân Phú xong 2027". Nhà: FAQ ở `/duong-di-nam-ban`.
+- **Thuế giữ đất:** đất nông nghiệp hộ gia đình, cá nhân miễn thuế SDĐNN tới hết 31/12/2030 (NQ 216/2025/QH15); đất ở
+  0,03% phần trong hạn mức (Luật Thuế SDĐ phi nông nghiệp, Điều 7). Nhà: FAQ ở `/chi-phi-dat-dai-nam-ban`.
+- **Visa (trang EN `/en/vietnam-visa-long-stay-da-lat`):** miễn 45 ngày cho 24 nước (NQ 44 + NQ 229), e-visa 90 ngày
+  25/50 USD (TT 28/2026/TT-BTC, từ 1/4/2026), phạt chủ nhà không khai báo 1–3 khách 3–5 triệu (NĐ 282/2025, từ 15/12/2025).
+- **Trang mới đợt này:** `/thue-nha-nam-ban` (nhà của key "thuê nhà Nam Ban"; `/o-thu-…` giữ góc "ở thử trước khi mua"),
+  `/en/cost-of-living-nam-ban-da-lat`, `/en/linh-an-pagoda-nam-ban` (cặp hreflang với `/chua-linh-an-nam-ban`).
+- **SỔ CHỜ — mâu thuẫn T-20:** `/nam-ban-co-gi-moi` (mục "Bốn công trình hạ tầng", 9/2026) ghi T-20 "dự kiến xong tháng
+  11/2026"; `/duong-ha-bac-nam-ban` ghi "chưa có mốc nào được công bố". Chưa tìm ra nguồn của câu 11/2026 — hỏi Chú,
+  có văn bản thì sửa bài đường Hà Bắc theo, không thì gỡ câu ở co-gi-moi.
+
 ### SỔ CHỜ ẢNH — CÒN HAI BÀI TRỐNG, CHỜ CHÚ CHỤP (mở 8/9/2026, bài suối xong 24/9)
 
 Hai bài còn lại dưới đây (`/nha-go-thong-nam-ban`, `/10-10-1975-nam-ban`) **cố ý không có ảnh trong thân bài** — kho không có tấm nào đúng chủ đề,
