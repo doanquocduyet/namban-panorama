@@ -816,9 +816,9 @@ Hai số bị gỡ vì không kiểm được nguồn: lượng mưa Sơn Điề
   25/50 USD (TT 28/2026/TT-BTC, từ 1/4/2026), phạt chủ nhà không khai báo 1–3 khách 3–5 triệu (NĐ 282/2025, từ 15/12/2025).
 - **Trang mới đợt này:** `/thue-nha-nam-ban` (nhà của key "thuê nhà Nam Ban"; `/o-thu-…` giữ góc "ở thử trước khi mua"),
   `/en/cost-of-living-nam-ban-da-lat`, `/en/linh-an-pagoda-nam-ban` (cặp hreflang với `/chua-linh-an-nam-ban`).
-- **SỔ CHỜ — mâu thuẫn T-20:** `/nam-ban-co-gi-moi` (mục "Bốn công trình hạ tầng", 9/2026) ghi T-20 "dự kiến xong tháng
-  11/2026"; `/duong-ha-bac-nam-ban` ghi "chưa có mốc nào được công bố". Chưa tìm ra nguồn của câu 11/2026 — hỏi Chú,
-  có văn bản thì sửa bài đường Hà Bắc theo, không thì gỡ câu ở co-gi-moi.
+- **T-20 (đường Hà Bắc) — Chú chốt 2/10/2026:** "chưa có mốc nào được công bố, nhưng đơn vị thi công cố gắng hoàn thiện
+  xong trước Tết 2027". Câu cũ "dự kiến xong tháng 11/2026" ở `/nam-ban-co-gi-moi` + `llms` là SAI, đã gỡ. Viết luôn hai vế:
+  không có mốc văn bản · mục tiêu của bên thi công là trước Tết 2027. Nhà: `/duong-ha-bac-nam-ban` (H2 + FAQ "khi nào xong").
 
 ### SỔ CHỜ ẢNH — CÒN HAI BÀI TRỐNG, CHỜ CHÚ CHỤP (mở 8/9/2026, bài suối xong 24/9)
 
