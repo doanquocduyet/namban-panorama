@@ -1136,6 +1136,15 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     Nam Ban Lâm Hà) và "khoảng 20 km²" (là thị trấn cũ 2.089 ha; xã nay khoảng 117 km²). KHÔNG nêu tên "Đồi Chữa Lành – Mê Linh
     Panorama" hay homestay nào (§5 kill-list luật 2). Câu "giá phòng một đêm" nhà ở `/homestay-nam-ban-co-lai-khong`, bài mới
     chỉ dẫn link. Đã thêm câu "Đi Nam Ban chữa lành thì đi đâu?" vào `/hoi-nhanh`. **Khóa tựa tới hết 27/10/2026.**
+    **3/10/2026 — cụm key "ven Đà Lạt" (Chú dán 7 trang kết quả).** Nhà của từng key, đừng mở trang thứ hai:
+    "đất nam ban giá rẻ" → `/dat-nam-ban-gia-re` (đã có, tựa đang khóa) · "đất ven đà lạt giá rẻ" → `/dat-gan-da-lat`
+    (tựa đổi 3/10: "Đất ven Đà Lạt giá rẻ ở đâu? Vì sao nhiều người tìm đất gần Đà Lạt ở Nam Ban" — giữ cả key cũ "đất gần
+    Đà Lạt") · "vùng ven đà lạt nào tốt nhất", "ven đà lạt nên chọn ở đâu", "đất ven đà lạt nên mua/chọn ở đâu", "vì sao nam
+    ban ven đà lạt tốt nhất" → bài mới `/vung-ven-da-lat-nao-tot-nhat` (bảng tám vùng, dữ kiện CHỈ lấy từ các bài so sánh
+    cặp trong repo; giá chỉ đưa số Nam Ban tự đo — Luật 23). `/len-lam-dong-nen-song-o-dau` giữ góc "cả tỉnh, theo mục đích
+    lên ở"; `/vi-sao-nam-ban-nhieu-giao-dich` giữ góc "vì sao đông người mua bán". Dữ kiện đã sửa ở `/dat-gan-da-lat`: D'ran
+    đi lối Trại Mát qua **đèo D'ran** (khoảng 35–40 km), KHÔNG phải đèo Ngoạn Mục; "Lạc Dương" từ 1/7/2025 tách hai (thị trấn
+    cũ + xã Lát → phường Lang Biang – Đà Lạt; xã Lạc Dương mới là nơi khác). **Khóa tựa hai bài này tới hết 3/11/2026.**
     **26g — LINK GIỮA 3 WEB: MỞ CÓ KIỂM SOÁT (Chú gật 2/10/2026, ô Villas và ô Panorama cùng thống nhất).**
     (1) **Chỉ trong câu chữ**, đúng chỗ người đọc cần đi tiếp. KHÔNG ở chân trang, thanh menu, khối lặp, trang lô.
     (2) **Trần:** Villas → Panorama 10–15 link; **Panorama → Villas tối đa 5 link**; Panorama → GreenSpace chỉ ở bài nói về
