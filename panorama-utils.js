@@ -39,7 +39,9 @@
       /* thêm 1/10/2026 — cụm thị trường đất Nam Ban 2026 (6 tháng, quý 3, bài trụ), thuộc diện §2.2 */
       "thi-truong-dat-nam-ban-6-thang-dau-nam-2026","thi-truong-dat-nam-ban-quy-3-2026","thi-truong-dat-nam-ban-2026",
       /* thêm 1/10/2026 — đất phân lô Nam Ban: bài đất / mua bán, thuộc diện §2.2 */
-      "dat-phan-lo-nam-ban"];
+      "dat-phan-lo-nam-ban",
+      /* thêm 3/10/2026 — vùng ven Đà Lạt nào tốt nhất, đất ven Đà Lạt nên mua ở đâu: bài chọn vùng mua đất, thuộc diện §2.2 */
+      "vung-ven-da-lat-nao-tot-nhat"];
     var slug=(location.pathname||"").replace(/\/+$/,"").split("/").pop().replace(/\.html$/,"");
     if(slug===""||IN.indexOf(slug)===-1)return;
     if(document.getElementById("pm-endcontact"))return;

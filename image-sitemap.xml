@@ -1070,6 +1070,11 @@
     <image:image><image:loc>https://nambanpanorama.com/images/vua-mua-dat-nam-ban-lam-gi.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/vung-ven-da-lat-nao-tot-nhat</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/toan-canh-nam-ban-thac-voi-tuong-phat.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/vung-ven-da-lat-nao-tot-nhat.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/vuon-bo-loi-bao-nhieu</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/bo-dong-lanh-may-hut.jpg</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/hat-bo-dong-bao-nam-ban.webp</image:loc></image:image>

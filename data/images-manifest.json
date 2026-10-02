@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 444,
+ "total_images": 445,
  "unused_count": 69,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -1443,6 +1443,9 @@
      "og",
      "ref",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -6540,6 +6543,9 @@
    "used_in": {
     "dat.html": [
      "css"
+    ],
+    "vung-ven-da-lat-nao-tot-nhat.html": [
+     "display"
     ]
    }
   },
@@ -6911,6 +6917,9 @@
      "og",
      "ref",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -6980,6 +6989,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "vung-ven-da-lat-nao-tot-nhat.jpg": {
+   "kb": 217,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "vung-ven-da-lat-nao-tot-nhat.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
