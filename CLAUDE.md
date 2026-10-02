@@ -112,7 +112,7 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
 - Cấu trúc: `index.html` + ~30 bài `.html` + `nav.css` + `panorama-article.css` +
   `sitemap.xml` + `robots.txt` + `llms.txt` / `llms-full.txt` + `feed.xml` + `/images/`.
 - 1 trong 3 web cùng chủ: **Panorama** (tạo trust, không bán) · Villas `nambanvillas.vn`
-  (bán đất) · Greenspacers `greenspacers.vn` (giữ đất). **Repo này CHỈ lo Panorama.**
+  (bán đất) · GreenSpacers `greenspacers.vn` (giữ đất). **Repo này CHỈ lo Panorama.**
 - **PANORAMA ↔ VILLAS — ĐÃ CHỐT, KHÔNG BÀN LẠI (Chú chốt 26/9/2026): CÙNG KEY, KHÁC NỘI DUNG VÀ STYLE.**
   Hai web được đánh cùng một từ khóa. Villas: lô thật, giá thật, dịch vụ, nút gọi. Panorama: phân tích,
   số đo Index, hướng dẫn, giọng publication. Không ép bên nào đổi tựa vì bên kia cùng key; không chép dàn
@@ -1147,9 +1147,9 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     cũ + xã Lát → phường Lang Biang – Đà Lạt; xã Lạc Dương mới là nơi khác). **Khóa tựa hai bài này tới hết 3/11/2026.**
     **26g — LINK GIỮA 3 WEB: MỞ CÓ KIỂM SOÁT (Chú gật 2/10/2026, ô Villas và ô Panorama cùng thống nhất).**
     (1) **Chỉ trong câu chữ**, đúng chỗ người đọc cần đi tiếp. KHÔNG ở chân trang, thanh menu, khối lặp, trang lô.
-    (2) **Trần:** Villas → Panorama 10–15 link; **Panorama → Villas tối đa 5 link**; Panorama → GreenSpace chỉ ở bài nói về
+    (2) **Trần:** Villas → Panorama 10–15 link; **Panorama → Villas tối đa 5 link**; Panorama → GreenSpacers chỉ ở bài nói về
     trông coi, làm vườn, lấn ranh (trỏ `greenspacers.vn/quan-ly-dat-nam-ban` hoặc `/xu-ly-lan-chiem-dat-tu-xa`, không trỏ trang chủ).
-    (3) **Mỗi link sang Villas/GreenSpace phải nói rõ cùng chủ** ("tôi có…", "web bán đất cùng chủ với Panorama") — minh bạch là
+    (3) **Mỗi link sang Villas/GreenSpacers phải nói rõ cùng chủ** ("tôi có…", "web bán đất cùng chủ với Panorama") — minh bạch là
     thứ giữ trust của publication. (4) **Không link giữa hai trang trùng ý định**, cả hai chiều: đất giá rẻ, phân lô, Nam Hà sáp
     nhập, bảng giá đất 2026, đấu giá, sân bay, khí hậu, Nam Ban có gì, có đáng sống, đất Đông Thanh, đất Mê Linh, tách thửa,
     lên thổ cư, `/mua-dat-nam-ban-500-trieu-1-ty` ↔ `/dat-nam-ban-duoi-1-ty/`, `/namban-index` ↔ `/thi-truong/gia-dat-nam-ban-hom-nay/`.
@@ -1159,8 +1159,9 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     `@id` `https://nambanpanorama.com/#founder`. (8) Panorama không link tới trang "Nam Ban Sala" của Villas.
     **Link Panorama → Villas đang có (5/5):** 4 bài khu (`/dat-trung-tam-nam-ban`, `/dat-dong-thanh-nam-ban`, `/dat-me-linh-nam-ban`,
     `/dat-gia-lam-nam-ban`, trỏ trang chủ Villas, câu "tôi có Nam Ban Villas") + `/doc-tin-rao-dat-nam-ban` → trang tin rao mới.
-    **Đã đủ trần — muốn thêm thì phải bỏ một link cũ.** Link Panorama → GreenSpace: `/giu-dat-nam-ban-tu-xa`,
+    **Đã đủ trần — muốn thêm thì phải bỏ một link cũ.** Link Panorama → GreenSpacers: `/giu-dat-nam-ban-tu-xa`,
     `/dat-nam-ban-chua-xay`, `/mua-nha-nam-ban-khong-o`.
+    GreenSpacers đã có sameAs trỏ https://nambanpanorama.com/#founder và 2 link vào /dinh-gia-dat-nam-ban, /namban-index (tính vào phần link vào Panorama).
     **26e — ĐỢT BÀI BỔ SUNG 26/9/2026 (đối chiếu 72 trang Villas, 0 trùng nội dung đáng kể):** thêm
     `/bang-gia-dat-nam-ban` (Phụ lục 35, NQ 82/2025/NQ-HĐND), `/dau-gia-dat-nam-ban`, `/tuyen-tranh-nam-ban`,
     `/khi-hau-nam-ban`, `/du-lich-nong-nghiep-nam-ban`; đổi tựa `/nam-ban-co-dang-song` sang "Nam Ban có

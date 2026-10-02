@@ -9,7 +9,7 @@ hàng đợi ở `data/fb-queue.json`. Chạy trên runner GitHub (phiên Claude
 `graph.facebook.com`). **Chỉ cần một secret `FB_PAGE_TOKEN`** — page token tự gắn
 với đúng một Trang nên script hỏi `GET /me` ra Page ID, rồi đối chiếu username với
 `nambanpanorama`; lệch thì dừng, không đăng. Chốt này có thật vì Chú quản ba Trang
-(Panorama · Villas · Greenspacers), bấm nhầm ở bước lấy token là bài Panorama rơi
+(Panorama · Villas · GreenSpacers), bấm nhầm ở bước lấy token là bài Panorama rơi
 lên tường Trang bán đất. Chưa cấp token thì workflow chạy khô, in bài ra, thoát sạch.
 
 Đọc `CLAUDE.md` §2 trước khi viết bất cứ dòng nào lên Facebook. Trang Facebook là
@@ -226,7 +226,7 @@ Add).
 
 | Rủi ro | Đã chặn thế nào |
 |---|---|
-| Token cấp nhầm Trang Villas / Greenspacers | Script hỏi `GET /me`, đối chiếu username với `nambanpanorama`, lệch thì **dừng, không đăng** |
+| Token cấp nhầm Trang Villas / GreenSpacers | Script hỏi `GET /me`, đối chiếu username với `nambanpanorama`, lệch thì **dừng, không đăng** |
 | Bài có chữ CTA bán (§2.1) | 12 chuỗi cấm kiểm **trước khi gọi API** — `liên hệ ngay`, `mua ngay`, `chốt ngay`, `nhanh tay`… dính một chữ là dừng |
 | Đăng nhầm bài chưa có trên web | Kiểm `slug` có file `.html` thật không, không có thì dừng |
 | Link ngoài làm tụt tiếp cận | Link bài **luôn nằm ở comment 1**, không nằm trong caption |
