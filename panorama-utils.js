@@ -750,7 +750,11 @@
     a.style.cssText='display:inline-block;margin:4px auto 14px;font-size:12px;letter-spacing:.3px;color:'+c+';text-decoration:underline;text-decoration-color:'+(dark?'rgba(179,168,146,.4)':'rgba(110,103,89,.4)')+';text-underline-offset:3px;';
     var w=document.createElement('div'); w.appendChild(a);
     var meta=f.querySelector('.meta');
-    if(meta&&meta.parentNode===f) f.insertBefore(w,meta); else f.appendChild(w);
+    // Chân trang kiểu hub (footer > .wrap, 27 trang): đặt TRONG .wrap, một dòng riêng — đặt ngoài thì dính mép trái (sửa 4/10/2026)
+    var host=f.querySelector(':scope > .wrap');
+    if(meta&&meta.parentNode===f) f.insertBefore(w,meta);
+    else if(host){ w.style.flexBasis='100%'; host.appendChild(w); }
+    else f.appendChild(w);
   }catch(e){}
 })();
 
