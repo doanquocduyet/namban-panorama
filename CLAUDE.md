@@ -1390,6 +1390,8 @@ Nội dung (bài nào, ở đâu, link gì) là một hệ thống; phân cấp 
 không được tự ý làm thay đổi nhau: không sửa nội dung để chữa một lỗi thuần thị giác, không đổi IA để layout đẹp hơn.
 
 ### 8.1 Đã làm 4/10/2026 — trạng thái hiện tại của 3 hub
+**KHÓA bản `2a1b662` (Chú chốt 4/10/2026: "khóa, đừng bày thêm").** Không chỉnh giao diện ba hub nữa; hub chỉ đổi khi
+có lý do IA thật (Chú duyệt). Việc từ đây: chất lượng bài, ý định tìm kiếm, thực thể, link nội bộ, dữ liệu.
 - CSS chung ở **cuối `hub-system.css`** (khối "③ PHÂN CẤP CHƯƠNG"), áp cho `body.hub-guide` (/dat), `.hub-story`
   (/nam-ban), `.hub-dossier` (/dau-tu). Muốn chỉnh thì sửa ở đó, đừng dán CSS vào từng trang.
 - **Tên chương là `<h2 class="heye">`** trong `<section class="hgroup">` — /nam-ban 4 chương, /dat 7, /dau-tu 5.
