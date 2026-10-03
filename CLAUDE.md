@@ -65,6 +65,14 @@ góc nhìn riêng) + vài bài nhỏ + phần còn lại trong `<details class="
 trong HTML (không JS) — đủ 88 link / 78 URL như trước. So sánh & câu hỏi hiện đủ 6. Ba bài hồ thuộc Vùng đất, không thuộc
 Con người. Không bài nào hiện hai lần ở phần nhìn thấy (`/nam-ban-co-dang-song` đã là "Nên đọc trước"). Đổi bài lớn = quyết
 định biên tập, hỏi Chú; thêm bài mới vào hub thì đưa vào `<details>` của nhóm, đừng đẩy lên hàng lớn.
+**HUB `/dau-tu` — KHÓA 4/10/2026 (Chú gật live):** 5 mục theo thứ tự ra quyết định: 01 Thị trường & dữ liệu · 02 Quy hoạch &
+không gian · 03 Hạ tầng & kết nối · 04 Giá vốn, pháp lý & dòng tiền · 05 Đọc một thương vụ (kết bằng dòng dẫn "Về Đất →").
+Mục 04 đi **giá mua → chi phí (chi phí đất đai, chuyển mục đích, san lấp/hạ tầng) → "Sau giá vốn · khai thác và dòng tiền"**;
+khối "Rủi ro không nằm ngoài bài toán giá vốn" nằm ngay sau 04. Không thêm mục, không thêm bài "rủi ro", không đặt form —
+khối Trao đổi gửi thẳng Zalo; khối Brief giữ như `/nam-ban`, `/dat`. ItemList = 31 bài đúng thứ tự trên trang.
+**Cụm "đất Nam Ban có rủi ro gì" — ĐỂ YÊN (Chú chốt 4/10/2026):** `/truoc-khi-xuong-tien` đứng đầu kết quả thường, AI Overview
+trích nó và `/tiem-nang-dau-tu`. Không đổi tựa, không thêm FAQ, không mở `/dat-nam-ban-co-rui-ro-gi`. Đừng sửa thứ đang thắng
+chỉ vì AI viết sai một câu (vd "thị trấn Nam Ban" là AI chép từ báo ngoài).
 
 **MẠNG XÃ HỘI (Facebook / Instagram / Threads) — ƯU TIÊN TIN MỚI (Chú chốt 27/9/2026).** Hàng đợi
 `data/fb-queue.json`, thang `priority`: **0 = sự kiện / tin mới trong tuần** (mỗi mục mới của
