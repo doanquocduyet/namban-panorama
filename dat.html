@@ -262,6 +262,44 @@ a,button{touch-action:manipulation;}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
   nav,.nav{background:rgba(241,236,226,1)!important;}
 }
+
+/* ==== Hub /dat Phase 1 (bố cục B như /nam-ban): 3 bài lớn + bài nhỏ + <details>; link thu gọn nằm sẵn trong HTML ==== */
+.dat-steps{padding:30px 0 4px;}
+.dat-steps .ds-k{display:block;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--clay-text,#9a5b37);font-weight:500;margin-bottom:12px;}
+.dat-steps .ds-row{display:flex;flex-wrap:wrap;gap:8px 10px;}
+.dat-steps .ds-row a{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;font-size:13px;letter-spacing:.2px;color:var(--ink);text-decoration:none;white-space:nowrap;transition:border-color .3s,color .3s;}
+.dat-steps .ds-row a:hover{border-color:var(--clay-text,#9a5b37);color:var(--clay-text,#9a5b37);}
+@media(max-width:640px){.dat-steps .ds-row{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 -24px;padding:0 24px 4px;}.dat-steps .ds-row::-webkit-scrollbar{display:none;}}
+.hgroup[id],.lead-art{scroll-margin-top:96px;}
+.lead-art+.hgroup{margin-top:36px;}
+.feat3{display:grid;grid-template-columns:repeat(3,1fr);column-gap:40px;border-top:1px solid var(--line);margin:0 0 4px;}
+.feat3 a{display:block;padding:22px 0 26px;text-decoration:none;}
+.feat3 a:hover .kb-t{color:var(--clay-text,#9a5b37);}
+.feat3 .kb-t{display:block;font-family:'Fraunces',serif;font-size:23px;line-height:1.2;letter-spacing:-.2px;color:var(--ink);margin-bottom:10px;text-wrap:balance;transition:color .3s;}
+.feat3 .kb-s{display:block;font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:14px;line-height:1.55;color:var(--muted);text-wrap:pretty;}
+.feat3 .kb-n,.feat3 br{display:none;}
+.kb.small a .kb-s,.kb.small a br{display:none;}
+.kb.small a{padding:14px 2px;}
+.kb.small .kb-t{font-size:16.5px;}
+.kb.vis a:last-child{border-bottom:1px solid var(--line);}
+details.more{border-bottom:1px solid var(--line);}
+details.more>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:17px 2px;font-size:13px;letter-spacing:.3px;color:var(--clay-text,#9a5b37);}
+details.more>summary::-webkit-details-marker{display:none;}
+details.more>summary::after{content:"+";font-family:'Fraunces',serif;font-size:20px;line-height:1;color:var(--stone-text,#726a5c);}
+details.more[open]>summary::after{content:"–";}
+details.more>.kb{border-top:1px solid var(--line);}
+details.more>.kb a:last-child{border-bottom:0;}
+@media(max-width:780px){.feat3{grid-template-columns:1fr;}.feat3 a{padding:18px 0 20px;border-bottom:1px solid var(--line);}.feat3 a:last-child{border-bottom:0;}}
+@media(min-width:900px){
+.kb.small{display:grid;grid-template-columns:repeat(3,1fr);column-gap:40px;}
+.kb.small a{border-bottom:0;padding:16px 0 20px;}
+.kb.vis.small a:last-child{border-bottom:0;}
+.kb.small a:hover{padding-left:0;}
+.kb.small a:hover .kb-t{color:var(--clay-text,#9a5b37);}
+.kb.small .kb-n{display:none;}
+.kb.small .kb-t{font-size:17px;line-height:1.35;text-wrap:balance;transition:color .3s;}
+.kb.small+details.more{border-top:1px solid var(--line);}
+}
 </style>
 <link rel="stylesheet" href="/hub-system.css">
 <style>
@@ -352,6 +390,11 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <main>
   <div class="wrap">
 
+    <div class="dat-steps" role="navigation" aria-label="Bạn đang ở bước nào">
+      <span class="ds-k">Bạn đang ở đâu?</span>
+      <div class="ds-row"><a href="#gia">Chưa biết giá</a><a href="#chon-khu">Đang chọn khu</a><a href="#muc-dich">Mua để làm gì</a><a href="#doc-lo">Đang xem một lô</a><a href="#phap-ly">Sắp đặt cọc</a><a href="#sau-khi-mua">Đã có đất</a></div>
+    </div>
+
     <section class="lead-art">
       <div class="kicker">Nên đọc trước</div>
       <a href="/namban-index"> <h2>Giá đất Nam Ban 2026: bảng giá rao theo từng loại</h2>
@@ -360,116 +403,138 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
       </a>
     </section>
 
+    <section class="hgroup" id="gia">
+      <div class="heye">Giá đất Nam Ban</div>
+      <div class="feat3">
+      <a href="/bang-gia-dat-nam-ban"><span><span class="kb-t">Bảng giá đất Nam Ban 2026</span><br><span class="kb-s">Giá nhà nước từng đoạn ĐT.725, đất nông nghiệp, hệ số hẻm và chiều sâu.</span></span><span class="kb-n">→</span></a>
+      <a href="/dinh-gia-dat-nam-ban"><span><span class="kb-t">Định giá đất Nam Ban</span><br><span class="kb-s">Vì sao hai lô cùng diện tích lại khác giá.</span></span><span class="kb-n">→</span></a>
+      <a href="/dat-nam-ban-gia-re"><span><span class="kb-t">Đất Nam Ban giá rẻ</span><br><span class="kb-s">Bao nhiêu là rẻ thật theo Namban Index, và sáu kiểu rẻ là bẫy.</span></span><span class="kb-n">→</span></a>
+      </div>
+      <div class="kb small vis">
+      <a href="/dau-gia-dat-nam-ban"><span><span class="kb-t">Đấu giá đất Nam Ban 2026</span><br><span class="kb-s">Các phiên đang có là đất thi hành án và ngân hàng — cách đọc giá khởi điểm.</span></span><span class="kb-n">→</span></a>
+      <a href="/chi-phi-san-lap-ha-tang-nam-ban"><span><span class="kb-t">Chi phí san lấp, làm hạ tầng</span><br><span class="kb-s">Đo đạc, cắm ranh, máy múc, cột điện, đèn, đường bê tông — tính theo từng khoản.</span></span><span class="kb-n">→</span></a>
+      </div>
+    </section>
     <figure class="hub-band"><img fetchpriority="high" src="/images/ho-bai-cong-hoang-hon.jpg" width="1600" height="1200" decoding="async" alt="Hoàng hôn trên hồ Bãi Công, Nam Ban — mặt nước phản chiếu trời cam"><figcaption>Hồ Bãi Công lúc chiều tắt — khu đất quanh hồ là chỗ giá đi nhanh nhất Nam Ban.</figcaption></figure>
 
-    <section class="pick-sec">
-      <div class="heye">Trước khi xuống tiền <span class="gnum">30 bài</span></div>
-      <div class="pick-grid">
-        <a href="/truoc-khi-xuong-tien" class="lead"><span class="pk-k">Đọc trước tiên</span><span class="pk-t">Mua đất Nam Ban cần lưu ý gì</span><span class="pk-s">Sáu điều người sống ở đây nhìn thấy mà người mới thì không — thế đất, đường nước từng đi qua, lối vào mùa mưa, ranh giới thật ngoài thực địa, và cái giá sau khi cộng đủ mọi khoản.</span></a>
-        <a href="/mua-dat-nam-ban-de-lam-gi"><span class="pk-t">Mua đất Nam Ban để làm gì</span><span class="pk-s">Bốn người mua chấm cùng một lô ra bốn điểm khác nhau — xác định mục đích trước khi đi xem.</span></a>
-        <a href="/dat-nam-ban-cuoi-tuan"><span class="pk-t">Mua đất Nam Ban để cuối tuần lên chơi</span><span class="pk-s">Đường ô tô vào tận đất, dịch vụ đủ gần, hàng xóm ở thật, diện tích vừa đủ — tiêu chí khác hẳn người ở hẳn.</span></a>
-        <a href="/brief-03"><span class="pk-t">Đất 1.000m² ở Nam Ban: vì sao lô nào cũng chừng đó</span><span class="pk-s">Brief 03 — đất lớn ở đây thường là đất nông nghiệp; tách thửa mỗi phần từ 1.000m².</span></a>
-        <a href="/dat-phan-lo-nam-ban"><span class="pk-t">Đất phân lô Nam Ban — vì sao nhiều cụm mới</span><span class="pk-s">Cụm mới từ đâu ra, vì sao lô hay 100–300 m², và nên hỏi gì trước một cụm.</span></a>
-        <a href="/mua-chung-dat-nam-ban"><span class="pk-t">Mua chung đất Nam Ban có nên không</span><span class="pk-s">Khó không nằm ở lúc góp tiền — ai đứng tên, chia phần mặt tiền cho ai, và mảnh đó có tách được không.</span></a>
-        <a href="/mua-dat-nam-ban-hop-dong-uy-quyen"><span class="pk-t">Mua đất Nam Ban bằng hợp đồng ủy quyền: cần biết gì?</span><span class="pk-s">Ký ủy quyền xong, trên giấy đất vẫn của người bán. Rủi ro nằm đâu, và ba câu nên hỏi trước khi đưa tiền.</span></a>
-        <a href="/chuan-bi-truoc-khi-ban-dat-nam-ban"><span class="pk-t">Bán đất Nam Ban: cần làm gì trước khi rao?</span><span class="pk-s">Bốn việc làm trước khi đăng tin — giấy tờ, mốc ranh, đường vào, bộ ảnh mới. Và ba dấu hiệu cho biết rao sai chỗ nào.</span></a>
-        <a href="/dat-nam-ban-xuong-gia-ban-hay-giu"><span class="pk-t">Mua đất Nam Ban rồi giá xuống: nên bán hay giữ?</span><span class="pk-s">Lỗ trên giấy khác lỗ thật. Ba con số tự trả lời giùm — còn giữ được bao lâu, giữ tốn gì, bán thu về thật bao nhiêu.</span></a>
-        <a href="/mua-nha-xay-san-nam-ban"><span class="pk-t">Mua nhà xây sẵn ở Nam Ban</span><span class="pk-s">Brief 07 — mua đất thì kiểm thứ sắp xây, mua nhà thì kiểm thứ đã xây rồi: hồ sơ, móng, thoát nước.</span></a>
-        <a href="/dat-nam-ban-duong-dat"><span class="pk-t">Đất Nam Ban đường đất, view đẹp</span><span class="pk-s">Brief 04 — rẻ hơn vì phần việc chưa ai làm; ba câu phải hỏi trước khi tính tiền làm đường.</span></a>
-        <a href="/dat-nam-ban-tho-cu-san"><span class="pk-t">Lô Nam Ban đã làm đẹp, thổ cư sẵn, tách sẵn</span><span class="pk-s">Brief 05 — phần chênh đó đang mua cho mình thứ gì, và vì sao lô đã makeup phải hỏi kỹ hơn.</span></a>
-        <a href="/lo-dat-nam-ban-binh-thuong"><span class="pk-t">Lô đất Nam Ban bình thường, không có gì nổi bật</span><span class="pk-s">Brief 06 — không có gì để khoe, nhưng dễ vào và dễ ra nhất trong ba kiểu lô.</span></a>
-        <a href="/mua-dat-nam-ban"><span class="pk-t">Mua đất Nam Ban — hỏi &amp; đáp</span><span class="pk-s">Giá, loại đất, view, pháp lý — gọn.</span></a>
-        <a href="/o-thu-nam-ban-truoc-khi-mua-dat"><span class="pk-t">Ở thử Nam Ban trước khi mua đất</span><span class="pk-s">Ở một mùa mới thấy cái thật — mùa mưa, tối vắng, nhịp sống hợp không.</span></a>
-        <a href="/khu-nao-o-nam-ban"><span class="pk-t">Khu nào ở Nam Ban</span><span class="pk-s">Đọc từng khu trước khi đi xem đất.</span></a>
-        <a href="/dat-the-am-the-duong"><span class="pk-t">Thế đất âm, thế đất dương</span><span class="pk-s">Đọc đất cao thấp hơn đường, đất dốc và đất từng san lấp — hình dung xây được gì.</span></a>
-        <a href="/doc-the-dat-nam-ban"><span class="pk-t">Đọc thế đất Nam Ban</span><span class="pk-s">Dốc, taluy, và chỗ nước từng chảy qua.</span></a>
-        <a href="/loi-di-chung-dat-nam-ban"><span class="pk-t">Đất có lối đi chung, đất đi nhờ đường</span><span class="pk-s">Đường người ta đang đi qua lô có thể là chủ cũ cho đi nhờ, hoặc là quyền luật cho — kiểu sau đi theo thửa đất khi đổi chủ.</span></a>
-        <a href="/do-dac-dat-nam-ban"><span class="pk-t">Đo đạc đất Nam Ban — sổ và thực tế có khớp không</span><span class="pk-s">Diện tích ngoài thực địa khác sổ đỏ thì hiểu thế nào; phần đo dư chưa chắc là đất được thêm.</span></a>
-        <a href="/nguoi-ngoai-tinh-mua-dat-nam-ban"><span class="pk-t">Người ở tỉnh khác mua đất Nam Ban</span><span class="pk-s">Đất có sổ và chưa có sổ khác nhau thế nào; ai đứng tên hồ sơ, nên hỏi gì trước khi xuống tiền.</span></a>
-        <a href="/dat-nguon-goc-lam-nghiep-nam-ban"><span class="pk-t">Đất có nguồn gốc lâm nghiệp ở Nam Ban</span><span class="pk-s">Xã đang rà soát đất lâm nghiệp 2026 — nguồn gốc thửa là câu nên hỏi trước khi mua.</span></a>
-        <a href="/bang-gia-dat-nam-ban"><span class="pk-t">Bảng giá đất Nam Ban 2026</span><span class="pk-s">Giá nhà nước từng đoạn ĐT.725, đất nông nghiệp, hệ số hẻm và chiều sâu.</span></a>
-        <a href="/dau-gia-dat-nam-ban"><span class="pk-t">Đấu giá đất Nam Ban 2026</span><span class="pk-s">Các phiên đang có là đất thi hành án và ngân hàng — cách đọc giá khởi điểm.</span></a>
-        <a href="/dat-nam-ban-gia-re"><span class="pk-t">Đất Nam Ban giá rẻ</span><span class="pk-s">Bao nhiêu là rẻ thật theo Namban Index, và sáu kiểu rẻ là bẫy.</span></a>
-        <a href="/dat-gan-da-lat"><span class="pk-t">Đất ven Đà Lạt giá rẻ ở đâu</span><span class="pk-s">Nam Ban cách Đà Lạt khoảng 25 km — rẻ hơn bao nhiêu, đổi lại điều gì.</span></a>
-        <a href="/vung-ven-da-lat-nao-tot-nhat"><span class="pk-t">Vùng ven Đà Lạt nào tốt nhất</span><span class="pk-s">Tám vùng so theo mục đích: nên chọn ở đâu, đất nên mua ở đâu.</span></a>
-        <a href="/chi-phi-san-lap-ha-tang-nam-ban"><span class="pk-t">Chi phí san lấp, làm hạ tầng</span><span class="pk-s">Đo đạc, cắm ranh, máy múc, cột điện, đèn, đường bê tông — tính theo từng khoản.</span></a>
-        <a href="/len-tho-cu-het-bao-nhieu-tien"><span class="pk-t">Lên thổ cư hết bao nhiêu tiền</span><span class="pk-s">Cái "giảm 70%" chỉ áp cho phần trong hạn mức đất ở tại xã.</span></a>
-        <a href="/chuyen-muc-dich-su-dung-dat-nam-ban"><span class="pk-t">Chuyển mục đích sử dụng đất Nam Ban</span><span class="pk-s">206 quyết định trong năm 2026 — lúc nhiều lúc dừng, và điều đó nói gì về thời điểm.</span></a>
-        <a href="/ban-dat-nam-ban"><span class="pk-t">Bán đất Nam Ban</span><span class="pk-s">Vì sao lô này ra hàng, lô kia nằm mãi.</span></a>
-        <a href="/hop-tac-canh-tac-dat-nam-ban"><span class="pk-t">Hợp tác canh tác đất Nam Ban</span><span class="pk-s">Cho mượn, cho thuê hay ăn chia — lấy lại đất khi nào, cây trồng thuộc về ai.</span></a>
-        <a href="/vua-mua-dat-nam-ban-lam-gi"><span class="pk-t">Vừa mua đất xong — làm gì tiếp</span><span class="pk-s">Sang tên, san đất, trồng cây: bốn việc tháng đầu.</span></a>
-        <a href="/xay-nha-o-nam-ban"><span class="pk-t">Xây nhà ở Nam Ban</span><span class="pk-s">Thổ cư, vật liệu, thợ, đất đồi — mấy điều nên biết trước khi khởi công.</span></a>
-        <a href="/dinh-gia-dat-nam-ban"><span class="pk-t">Định giá đất Nam Ban</span><span class="pk-s">Vì sao hai lô cùng diện tích lại khác giá.</span></a>
-        <a href="/quy-trinh-mua-dat-nam-ban"><span class="pk-t">Quy trình mua đất Nam Ban</span><span class="pk-s">Mua đất đi qua những bước nào, từ xem lô tới sang tên.</span></a>
-        <a href="/coc-dat-nam-ban"><span class="pk-t">Cọc đất Nam Ban: cọc bao nhiêu, giấy viết thế nào</span><span class="pk-s">Không có mức cọc nào bắt buộc. Chỗ quyết định mất tiền hay không nằm ở chữ trên tờ giấy — đặt cọc, hay tiền trả trước.</span></a>
+    <section class="hgroup" id="chon-khu">
+      <div class="heye">Chọn khu trước khi chọn lô</div>
+      <div class="feat3">
+      <a href="/khu-nao-o-nam-ban"><span><span class="kb-t">Khu nào ở Nam Ban</span><br><span class="kb-s">Đọc từng khu trước khi đi xem đất.</span></span><span class="kb-n">→</span></a>
+      <a href="/nen-xem-khu-nao-o-nam-ban"><span><span class="kb-t">Nên xem khu nào trước</span><br><span class="kb-s">Trung tâm, Đông Thanh, Gia Lâm, Mê Linh — bốn vùng, bốn tính nết.</span></span><span class="kb-n">→</span></a>
+      <a href="/ho-o-nam-ban"><span><span class="kb-t">Hồ ở Nam Ban</span><br><span class="kb-s">Cả cụm hồ trong một bài, và bốn thứ phải nhìn khi xem đất gần mặt nước.</span></span><span class="kb-n">→</span></a>
+      </div>
+      <div class="kb small vis">
+      <a href="/ho-bai-cong-nam-ban"><span><span class="kb-t">Hồ Bãi Công ở Nam Ban</span><br><span class="kb-s">Đường vào, giá đất và khu villa quanh hồ thủy lợi.</span></span><span class="kb-n">→</span></a>
+      <a href="/ho-tu-liem-nam-ban"><span><span class="kb-t">Hồ Từ Liêm ở Nam Ban</span><br><span class="kb-s">Hồ nhỏ nằm lọt trong khu dân cư có trường, có làng nghề — cách ĐT.725 khoảng 700m.</span></span><span class="kb-n">→</span></a>
+      <a href="/ho-thanh-tri-nam-ban"><span><span class="kb-t">Hồ Thanh Trì ở Nam Ban</span><br><span class="kb-s">Thật ra là hai hồ chứ không phải một — và hai văn bản của tỉnh ghi diện tích khác nhau.</span></span><span class="kb-n">→</span></a>
       </div>
     </section>
-
-    <figure class="hub-band"><img src="/images/dai-ngam-nam-ban.jpg" width="1600" height="906" loading="lazy" decoding="async" alt="Người ngồi ngắm toàn cảnh thung lũng Nam Ban từ đài ngắm trên đồi"><figcaption>Cái gọi là “view” — ngồi xuống một lúc là biết lô đất đáng bao nhiêu.</figcaption></figure>
-
-    <section class="pick-sec">
-      <div class="heye">Vườn &amp; cây trên đất <span class="gnum">7 bài</span></div>
-      <div class="pick-grid">
-        <a href="/dat-nam-ban-trong-cay-gi"><span class="pk-t">Đất Nam Ban trồng cây gì có dòng tiền</span><span class="pk-s">Cà phê một lần cuối năm, bơ hai mùa, dâu nửa tháng một lứa — mỗi cây một nhịp tiền.</span></a>
-        <a href="/gia-ca-phe-va-gia-dat-nam-ban"><span class="pk-t">Giá cà phê tăng thì giá đất có tăng theo</span><span class="pk-s">Nông sản tạo dòng tiền, tiền quay về đất thế nào — và vì sao đừng đọc giá đất qua mỗi giá cà phê.</span></a>
-        <a href="/mua-dat-co-vuon-ca-phe"><span class="pk-t">Mua đất có sẵn vườn cà phê</span><span class="pk-s">Cây tính vào giá hay tính riêng — ghi rõ trước khi ký.</span></a>
-        <a href="/mua-dat-nam-ban-co-nguoi-dang-canh-tac"><span class="pk-t">Mua đất đang có người canh tác</span><span class="pk-s">Người đang làm vườn là người thuê, người chăm công hay làm chung — năm kiểu nhìn giống nhau, sang tay thì khác hẳn.</span></a>
-        <a href="/mua-dat-co-vuon-bo"><span class="pk-t">Mua đất có sẵn vườn bơ</span><span class="pk-s">Cây bơ cộng thêm bao nhiêu — tùy bạn mua để làm gì.</span></a>
-        <a href="/dau-tam-nam-ban"><span class="pk-t">Mua đất có sẵn vườn dâu tằm</span><span class="pk-s">Vì sao vườn dâu thường không được cộng vào giá đất.</span></a>
-        <a href="/rau-hoa-cay-do-la-nam-ban"><span class="pk-t">Rau, hoa và cây đô la</span><span class="pk-s">Những cây ngắn ngày cho vòng quay nhanh ở Nam Ban.</span></a>
+    <section class="hgroup" id="muc-dich">
+      <div class="heye">Mua để làm gì, lô kiểu nào</div>
+      <div class="feat3">
+      <a href="/mua-dat-nam-ban-de-lam-gi"><span><span class="kb-t">Mua đất Nam Ban để làm gì</span><br><span class="kb-s">Bốn người mua chấm cùng một lô ra bốn điểm khác nhau — xác định mục đích trước khi đi xem.</span></span><span class="kb-n">→</span></a>
+      <a href="/dat-nam-ban-cuoi-tuan"><span><span class="kb-t">Mua đất Nam Ban để cuối tuần lên chơi</span><br><span class="kb-s">Đường ô tô vào tận đất, dịch vụ đủ gần, hàng xóm ở thật, diện tích vừa đủ — tiêu chí khác hẳn người ở hẳn.</span></span><span class="kb-n">→</span></a>
+      <a href="/mua-dat-co-vuon-ca-phe"><span><span class="kb-t">Mua đất có sẵn vườn cà phê</span><br><span class="kb-s">Cây tính vào giá hay tính riêng — ghi rõ trước khi ký.</span></span><span class="kb-n">→</span></a>
       </div>
-    </section>
-
-    <!-- NHỊP THỞ · dải dữ kiện giá (số 6/2026, khớp bài giá & quiz) -->
-    <div class="facts">
-      <div class="fct"><div class="fn">1,7–2,8tr</div><div class="fl">Đất nông nghiệp /m²</div></div>
-      <div class="fct"><div class="fn">3–4,5tr</div><div class="fl">Có thổ cư /m²</div></div>
-      <div class="fct"><div class="fn">4–6tr</div><div class="fl">View hồ / toàn cảnh /m²</div></div>
-    </div>
-    <p style="text-align:center;font-size:12.5px;color:var(--muted);margin:2px 0 0;letter-spacing:.2px;line-height:1.5;">Giá chào bán / tham khảo, tháng 6/2026 — không phải giá chốt của từng lô.</p>
-
-    <section class="pick-sec">
-      <div class="heye">Khu vực &amp; ranh giới <span class="gnum">8 bài</span></div>
-      <div class="pick-grid">
-        <a href="/mua-dat-da-lat-chon-nam-ban"><span class="pk-t">Tính mua đất Đà Lạt, dừng ở Nam Ban</span><span class="pk-s">Vì sao nhiều người khởi đầu từ Đà Lạt rồi mở ra vùng ven.</span></a>
-        <a href="/nen-xem-khu-nao-o-nam-ban"><span class="pk-t">Nên xem khu nào trước</span><span class="pk-s">Trung tâm, Đông Thanh, Gia Lâm, Mê Linh — bốn vùng, bốn tính nết.</span></a>
-        <a href="/ho-bai-cong-nam-ban"><span class="pk-t">Hồ Bãi Công ở Nam Ban</span><span class="pk-s">Đường vào, giá đất và khu villa quanh hồ thủy lợi.</span></a>
-        <a href="/ho-tu-liem-nam-ban"><span class="pk-t">Hồ Từ Liêm ở Nam Ban</span><span class="pk-s">Hồ nhỏ nằm lọt trong khu dân cư có trường, có làng nghề — cách ĐT.725 khoảng 700m.</span></a>
-        <a href="/ho-thanh-tri-nam-ban"><span class="pk-t">Hồ Thanh Trì ở Nam Ban</span><span class="pk-s">Thật ra là hai hồ chứ không phải một — và hai văn bản của tỉnh ghi diện tích khác nhau.</span></a>
-        <a href="/ho-o-nam-ban"><span class="pk-t">Hồ ở Nam Ban</span><span class="pk-s">Cả cụm hồ trong một bài, và bốn thứ phải nhìn khi xem đất gần mặt nước.</span></a>
-        <a href="/xay-nha-nho-nam-ban-bao-nhieu-tien"><span class="pk-t">Xây một căn nhỏ hết bao nhiêu tiền</span><span class="pk-s">Đơn giá mét vuông, và mấy khoản không nằm trong bảng giá nào.</span></a>
-        <a href="/nha-go-nam-ban"><span class="pk-t">Nhà gỗ ở Nam Ban</span><span class="pk-s">Bền tới đâu qua bảy tháng mưa, có phải xin phép không, và đất vườn dựng được chưa.</span></a>
-        <a href="/nha-go-thong-nam-ban"><span class="pk-t">Nhà gỗ thông ở Nam Ban</span><span class="pk-s">Vì sao hai báo giá cùng tên chênh gấp rưỡi — và thép tiền chế so thế nào cho đúng.</span></a>
-        <a href="/dat-giap-rung-thong-nam-ban"><span class="pk-t">Đất giáp rừng thông ở Nam Ban</span><span class="pk-s">Mát, yên, tầm nhìn khó bị chắn — đổi lại là cháy mùa khô, cây đổ và ranh không mốc.</span></a>
-        <a href="/xay-nha-giap-ho-nam-ban"><span class="pk-t">Xây nhà giáp hồ ở Nam Ban</span><span class="pk-s">Hồ thủy lợi không có con số chung — phải tra mốc chỉ giới của từng hồ.</span></a>
-        <a href="/xay-nha-giap-suoi-nam-ban"><span class="pk-t">Xây nhà giáp suối ở Nam Ban</span><span class="pk-s">Hành lang bảo vệ nguồn nước 5m hay 10m, và ba rủi ro: lũ, xói bờ, mùa khô cạn.</span></a>
-        <a href="/xay-nha-giap-rung-thong-nam-ban"><span class="pk-t">Xây nhà giáp rừng thông ở Nam Ban</span><span class="pk-s">Đặt nhà theo chiều cao cây, mái chịu lá kim, móng tính rễ thông.</span></a>
-        <a href="/dat-giap-ho-nam-ban"><span class="pk-t">Mua đất giáp hồ ở Nam Ban</span><span class="pk-s">Sáu hồ là sáu bài toán — mốc chỉ giới, mực nước mùa cạn, và hồ có dự án gì không.</span></a>
-        <a href="/dat-giap-suoi-nam-ban"><span class="pk-t">Mua đất giáp suối ở Nam Ban</span><span class="pk-s">Suối thật hay mương tưới, và hành lang bảo vệ lấy mất bao nhiêu diện tích.</span></a>
-        <a href="/view-panorama-nam-ban"><span class="pk-t">View panorama Nam Ban</span><span class="pk-s">View hồ, view suối, view rừng thông — mấy chữ trong tin rao không cùng một nghĩa.</span></a>
-        <a href="/nam-ban-hay-don-duong"><span class="pk-t">Nam Ban hay Đơn Dương</span><span class="pk-s">Hai vùng ven Đà Lạt, hai hệ sinh thái, hai kiểu người mua.</span></a>
-        <a href="/nam-ban-hay-lac-duong"><span class="pk-t">Nam Ban hay Lạc Dương</span><span class="pk-s">Đất vườn cà phê hay núi rừng, du lịch — và Lạc Dương giờ tách làm hai nơi.</span></a>
-        <a href="/nam-ban-hay-di-linh"><span class="pk-t">Nam Ban hay Di Linh</span><span class="pk-s">Di Linh sống bằng cà phê và quốc lộ; Nam Ban sống bằng người từ nơi khác lên chọn một lối sống. Hai bản chất, không chỉ hai vị trí.</span></a>
+      <div class="kb small vis">
+      <a href="/mua-dat-co-vuon-bo"><span><span class="kb-t">Mua đất có sẵn vườn bơ</span><br><span class="kb-s">Cây bơ cộng thêm bao nhiêu — tùy bạn mua để làm gì.</span></span><span class="kb-n">→</span></a>
+      <a href="/dat-nam-ban-trong-cay-gi"><span><span class="kb-t">Đất Nam Ban trồng cây gì có dòng tiền</span><br><span class="kb-s">Cà phê một lần cuối năm, bơ hai mùa, dâu nửa tháng một lứa — mỗi cây một nhịp tiền.</span></span><span class="kb-n">→</span></a>
+      <a href="/mua-nha-xay-san-nam-ban"><span><span class="kb-t">Mua nhà xây sẵn ở Nam Ban</span><br><span class="kb-s">Brief 07 — mua đất thì kiểm thứ sắp xây, mua nhà thì kiểm thứ đã xây rồi: hồ sơ, móng, thoát nước.</span></span><span class="kb-n">→</span></a>
       </div>
-    </section>
-
-    <section class="hgroup">
-      <div class="heye">Đọc lô đất</div>
+      <details class="more"><summary>Thêm 11 bài · mua để làm gì, lô kiểu nào</summary>
       <div class="kb">
+      <a href="/o-thu-nam-ban-truoc-khi-mua-dat"><span><span class="kb-t">Ở thử Nam Ban trước khi mua đất</span><br><span class="kb-s">Ở một mùa mới thấy cái thật — mùa mưa, tối vắng, nhịp sống hợp không.</span></span><span class="kb-n">→</span></a>
+      <a href="/brief-03"><span><span class="kb-t">Đất 1.000m² ở Nam Ban: vì sao lô nào cũng chừng đó</span><br><span class="kb-s">Brief 03 — đất lớn ở đây thường là đất nông nghiệp; tách thửa mỗi phần từ 1.000m².</span></span><span class="kb-n">→</span></a>
+      <a href="/dat-nam-ban-duong-dat"><span><span class="kb-t">Đất Nam Ban đường đất, view đẹp</span><br><span class="kb-s">Brief 04 — rẻ hơn vì phần việc chưa ai làm; ba câu phải hỏi trước khi tính tiền làm đường.</span></span><span class="kb-n">→</span></a>
+      <a href="/dat-nam-ban-tho-cu-san"><span><span class="kb-t">Lô Nam Ban đã làm đẹp, thổ cư sẵn, tách sẵn</span><br><span class="kb-s">Brief 05 — phần chênh đó đang mua cho mình thứ gì, và vì sao lô đã makeup phải hỏi kỹ hơn.</span></span><span class="kb-n">→</span></a>
+      <a href="/lo-dat-nam-ban-binh-thuong"><span><span class="kb-t">Lô đất Nam Ban bình thường, không có gì nổi bật</span><br><span class="kb-s">Brief 06 — không có gì để khoe, nhưng dễ vào và dễ ra nhất trong ba kiểu lô.</span></span><span class="kb-n">→</span></a>
+      <a href="/dat-phan-lo-nam-ban"><span><span class="kb-t">Đất phân lô Nam Ban — vì sao nhiều cụm mới</span><br><span class="kb-s">Cụm mới từ đâu ra, vì sao lô hay 100–300 m², và nên hỏi gì trước một cụm.</span></span><span class="kb-n">→</span></a>
+      <a href="/mua-chung-dat-nam-ban"><span><span class="kb-t">Mua chung đất Nam Ban có nên không</span><br><span class="kb-s">Khó không nằm ở lúc góp tiền — ai đứng tên, chia phần mặt tiền cho ai, và mảnh đó có tách được không.</span></span><span class="kb-n">→</span></a>
+      <a href="/mua-dat-nam-ban-co-nguoi-dang-canh-tac"><span><span class="kb-t">Mua đất đang có người canh tác</span><br><span class="kb-s">Người đang làm vườn là người thuê, người chăm công hay làm chung — năm kiểu nhìn giống nhau, sang tay thì khác hẳn.</span></span><span class="kb-n">→</span></a>
+      <a href="/dau-tam-nam-ban"><span><span class="kb-t">Mua đất có sẵn vườn dâu tằm</span><br><span class="kb-s">Vì sao vườn dâu thường không được cộng vào giá đất.</span></span><span class="kb-n">→</span></a>
+      <a href="/rau-hoa-cay-do-la-nam-ban"><span><span class="kb-t">Rau, hoa và cây đô la</span><br><span class="kb-s">Những cây ngắn ngày cho vòng quay nhanh ở Nam Ban.</span></span><span class="kb-n">→</span></a>
+      <a href="/gia-ca-phe-va-gia-dat-nam-ban"><span><span class="kb-t">Giá cà phê tăng thì giá đất có tăng theo</span><br><span class="kb-s">Nông sản tạo dòng tiền, tiền quay về đất thế nào — và vì sao đừng đọc giá đất qua mỗi giá cà phê.</span></span><span class="kb-n">→</span></a>
+      </div></details>
+    </section>
+    <section class="hgroup" id="doc-lo">
+      <div class="heye">Đọc một mảnh đất</div>
+      <div class="feat3">
+      <a href="/truoc-khi-xuong-tien"><span><span class="kb-t">Mua đất Nam Ban cần lưu ý gì</span><br><span class="kb-s">Sáu điều người sống ở đây nhìn thấy mà người mới thì không — thế đất, đường nước từng đi qua, lối vào mùa mưa, ranh giới thật ngoài thực địa, và cái giá sau khi cộng đủ mọi khoản.</span></span><span class="kb-n">→</span></a>
+      <a href="/doc-the-dat-nam-ban"><span><span class="kb-t">Đọc thế đất Nam Ban</span><br><span class="kb-s">Dốc, taluy, và chỗ nước từng chảy qua.</span></span><span class="kb-n">→</span></a>
       <a href="/doc-lo-dat"><span><span class="kb-t">Thẩm định lô đất Nam Ban</span><br><span class="kb-s">Đọc pháp lý, dòng tiền, rủi ro công khai.</span></span><span class="kb-n">→</span></a>
-      <a href="/doc-lo-dat-02-view-ho"><span><span class="kb-t">Lô 2.300m² view hồ — nên hay không</span><br><span class="kb-s">Một lô cụ thể, đọc kỹ trước khi nhắc tới.</span></span><span class="kb-n">→</span></a>
       </div>
-    </section>
-    <section class="hgroup">
-      <div class="heye">Pháp lý &amp; sáp nhập</div>
+      <div class="kb small vis">
+      <a href="/dat-the-am-the-duong"><span><span class="kb-t">Thế đất âm, thế đất dương</span><br><span class="kb-s">Đọc đất cao thấp hơn đường, đất dốc và đất từng san lấp — hình dung xây được gì.</span></span><span class="kb-n">→</span></a>
+      <a href="/do-dac-dat-nam-ban"><span><span class="kb-t">Đo đạc đất Nam Ban — sổ và thực tế có khớp không</span><br><span class="kb-s">Diện tích ngoài thực địa khác sổ đỏ thì hiểu thế nào; phần đo dư chưa chắc là đất được thêm.</span></span><span class="kb-n">→</span></a>
+      <a href="/view-panorama-nam-ban"><span><span class="kb-t">View panorama Nam Ban</span><br><span class="kb-s">View hồ, view suối, view rừng thông — mấy chữ trong tin rao không cùng một nghĩa.</span></span><span class="kb-n">→</span></a>
+      </div>
+      <details class="more"><summary>Thêm 5 bài · đọc một mảnh đất</summary>
       <div class="kb">
+      <a href="/doc-lo-dat-02-view-ho"><span><span class="kb-t">Lô 2.300m² view hồ — nên hay không</span><br><span class="kb-s">Một lô cụ thể, đọc kỹ trước khi nhắc tới.</span></span><span class="kb-n">→</span></a>
+      <a href="/dat-giap-ho-nam-ban"><span><span class="kb-t">Mua đất giáp hồ ở Nam Ban</span><br><span class="kb-s">Sáu hồ là sáu bài toán — mốc chỉ giới, mực nước mùa cạn, và hồ có dự án gì không.</span></span><span class="kb-n">→</span></a>
+      <a href="/dat-giap-suoi-nam-ban"><span><span class="kb-t">Mua đất giáp suối ở Nam Ban</span><br><span class="kb-s">Suối thật hay mương tưới, và hành lang bảo vệ lấy mất bao nhiêu diện tích.</span></span><span class="kb-n">→</span></a>
+      <a href="/dat-giap-rung-thong-nam-ban"><span><span class="kb-t">Đất giáp rừng thông ở Nam Ban</span><br><span class="kb-s">Mát, yên, tầm nhìn khó bị chắn — đổi lại là cháy mùa khô, cây đổ và ranh không mốc.</span></span><span class="kb-n">→</span></a>
+      <a href="/mua-dat-nam-ban"><span><span class="kb-t">Mua đất Nam Ban — hỏi &amp; đáp</span><br><span class="kb-s">Giá, loại đất, view, pháp lý — gọn.</span></span><span class="kb-n">→</span></a>
+      </div></details>
+    </section>
+    <section class="hgroup" id="phap-ly">
+      <div class="heye">Pháp lý và trước khi đặt cọc</div>
+      <div class="feat3">
+      <a href="/tra-cuu-dat-nam-ban"><span><span class="kb-t">Tra cứu đất Nam Ban — xem thông tin thửa ở đâu</span><br><span class="kb-s">Cổng dữ liệu tỉnh, VNeID, cơ quan quản lý đất đai — và cái online không thay được.</span></span><span class="kb-n">→</span></a>
+      <a href="/quy-trinh-mua-dat-nam-ban"><span><span class="kb-t">Quy trình mua đất Nam Ban</span><br><span class="kb-s">Mua đất đi qua những bước nào, từ xem lô tới sang tên.</span></span><span class="kb-n">→</span></a>
+      <a href="/coc-dat-nam-ban"><span><span class="kb-t">Cọc đất Nam Ban: cọc bao nhiêu, giấy viết thế nào</span><br><span class="kb-s">Không có mức cọc nào bắt buộc. Chỗ quyết định mất tiền hay không nằm ở chữ trên tờ giấy — đặt cọc, hay tiền trả trước.</span></span><span class="kb-n">→</span></a>
+      </div>
+      <div class="kb small vis">
+      <a href="/len-tho-cu-het-bao-nhieu-tien"><span><span class="kb-t">Lên thổ cư hết bao nhiêu tiền</span><br><span class="kb-s">Cái "giảm 70%" chỉ áp cho phần trong hạn mức đất ở tại xã.</span></span><span class="kb-n">→</span></a>
+      <a href="/loi-di-chung-dat-nam-ban"><span><span class="kb-t">Đất có lối đi chung, đất đi nhờ đường</span><br><span class="kb-s">Đường người ta đang đi qua lô có thể là chủ cũ cho đi nhờ, hoặc là quyền luật cho — kiểu sau đi theo thửa đất khi đổi chủ.</span></span><span class="kb-n">→</span></a>
+      <a href="/dat-nguon-goc-lam-nghiep-nam-ban"><span><span class="kb-t">Đất có nguồn gốc lâm nghiệp ở Nam Ban</span><br><span class="kb-s">Xã đang rà soát đất lâm nghiệp 2026 — nguồn gốc thửa là câu nên hỏi trước khi mua.</span></span><span class="kb-n">→</span></a>
+      </div>
+      <details class="more"><summary>Thêm 5 bài · pháp lý và trước khi đặt cọc</summary>
+      <div class="kb">
+      <a href="/chuyen-muc-dich-su-dung-dat-nam-ban"><span><span class="kb-t">Chuyển mục đích sử dụng đất Nam Ban</span><br><span class="kb-s">206 quyết định trong năm 2026 — lúc nhiều lúc dừng, và điều đó nói gì về thời điểm.</span></span><span class="kb-n">→</span></a>
+      <a href="/nguoi-ngoai-tinh-mua-dat-nam-ban"><span><span class="kb-t">Người ở tỉnh khác mua đất Nam Ban</span><br><span class="kb-s">Đất có sổ và chưa có sổ khác nhau thế nào; ai đứng tên hồ sơ, nên hỏi gì trước khi xuống tiền.</span></span><span class="kb-n">→</span></a>
+      <a href="/mua-dat-nam-ban-hop-dong-uy-quyen"><span><span class="kb-t">Mua đất Nam Ban bằng hợp đồng ủy quyền: cần biết gì?</span><br><span class="kb-s">Ký ủy quyền xong, trên giấy đất vẫn của người bán. Rủi ro nằm đâu, và ba câu nên hỏi trước khi đưa tiền.</span></span><span class="kb-n">→</span></a>
       <a href="/nam-ban-thuoc-xa-nao"><span><span class="kb-t">Nam Ban thuộc xã nào sau sáp nhập</span><br><span class="kb-s">Xã Nam Ban Lâm Hà — sổ đỏ và thủ tục.</span></span><span class="kb-n">→</span></a>
       <a href="/sap-nhap-nam-ban-dat"><span><span class="kb-t">Sáp nhập ảnh hưởng gì tới giá đất</span><br><span class="kb-s">Vòng sắp xếp hành chính và tác động thật.</span></span><span class="kb-n">→</span></a>
+      </div></details>
+    </section>
+    <section class="hgroup" id="sau-khi-mua">
+      <div class="heye">Mua xong, hoặc đang có đất</div>
+      <div class="feat3">
+      <a href="/vua-mua-dat-nam-ban-lam-gi"><span><span class="kb-t">Vừa mua đất xong — làm gì tiếp</span><br><span class="kb-s">Sang tên, san đất, trồng cây: bốn việc tháng đầu.</span></span><span class="kb-n">→</span></a>
+      <a href="/xay-nha-o-nam-ban"><span><span class="kb-t">Xây nhà ở Nam Ban</span><br><span class="kb-s">Thổ cư, vật liệu, thợ, đất đồi — mấy điều nên biết trước khi khởi công.</span></span><span class="kb-n">→</span></a>
       <a href="/giu-dat-nam-ban-tu-xa"><span><span class="kb-t">Mua đất xong, ở xa thì giữ đất kiểu gì</span><br><span class="kb-s">Cho canh tác không mất quyền — giữ sổ đỏ, thỏa thuận rõ.</span></span><span class="kb-n">→</span></a>
-      <a href="/tra-cuu-dat-nam-ban"><span><span class="kb-t">Tra cứu đất Nam Ban — xem thông tin thửa ở đâu</span><br><span class="kb-s">Cổng dữ liệu tỉnh, VNeID, cơ quan quản lý đất đai — và cái online không thay được.</span></span><span class="kb-n">→</span></a>
+      </div>
+      <div class="kb small vis">
+      <a href="/xay-nha-nho-nam-ban-bao-nhieu-tien"><span><span class="kb-t">Xây một căn nhỏ hết bao nhiêu tiền</span><br><span class="kb-s">Đơn giá mét vuông, và mấy khoản không nằm trong bảng giá nào.</span></span><span class="kb-n">→</span></a>
+      <a href="/ban-dat-nam-ban"><span><span class="kb-t">Bán đất Nam Ban</span><br><span class="kb-s">Vì sao lô này ra hàng, lô kia nằm mãi.</span></span><span class="kb-n">→</span></a>
+      <a href="/dat-nam-ban-xuong-gia-ban-hay-giu"><span><span class="kb-t">Mua đất Nam Ban rồi giá xuống: nên bán hay giữ?</span><br><span class="kb-s">Lỗ trên giấy khác lỗ thật. Ba con số tự trả lời giùm — còn giữ được bao lâu, giữ tốn gì, bán thu về thật bao nhiêu.</span></span><span class="kb-n">→</span></a>
+      </div>
+      <details class="more"><summary>Thêm 7 bài · mua xong, hoặc đang có đất</summary>
+      <div class="kb">
+      <a href="/nha-go-nam-ban"><span><span class="kb-t">Nhà gỗ ở Nam Ban</span><br><span class="kb-s">Bền tới đâu qua bảy tháng mưa, có phải xin phép không, và đất vườn dựng được chưa.</span></span><span class="kb-n">→</span></a>
+      <a href="/nha-go-thong-nam-ban"><span><span class="kb-t">Nhà gỗ thông ở Nam Ban</span><br><span class="kb-s">Vì sao hai báo giá cùng tên chênh gấp rưỡi — và thép tiền chế so thế nào cho đúng.</span></span><span class="kb-n">→</span></a>
+      <a href="/xay-nha-giap-ho-nam-ban"><span><span class="kb-t">Xây nhà giáp hồ ở Nam Ban</span><br><span class="kb-s">Hồ thủy lợi không có con số chung — phải tra mốc chỉ giới của từng hồ.</span></span><span class="kb-n">→</span></a>
+      <a href="/xay-nha-giap-suoi-nam-ban"><span><span class="kb-t">Xây nhà giáp suối ở Nam Ban</span><br><span class="kb-s">Hành lang bảo vệ nguồn nước 5m hay 10m, và ba rủi ro: lũ, xói bờ, mùa khô cạn.</span></span><span class="kb-n">→</span></a>
+      <a href="/xay-nha-giap-rung-thong-nam-ban"><span><span class="kb-t">Xây nhà giáp rừng thông ở Nam Ban</span><br><span class="kb-s">Đặt nhà theo chiều cao cây, mái chịu lá kim, móng tính rễ thông.</span></span><span class="kb-n">→</span></a>
+      <a href="/chuan-bi-truoc-khi-ban-dat-nam-ban"><span><span class="kb-t">Bán đất Nam Ban: cần làm gì trước khi rao?</span><br><span class="kb-s">Bốn việc làm trước khi đăng tin — giấy tờ, mốc ranh, đường vào, bộ ảnh mới. Và ba dấu hiệu cho biết rao sai chỗ nào.</span></span><span class="kb-n">→</span></a>
+      <a href="/hop-tac-canh-tac-dat-nam-ban"><span><span class="kb-t">Hợp tác canh tác đất Nam Ban</span><br><span class="kb-s">Cho mượn, cho thuê hay ăn chia — lấy lại đất khi nào, cây trồng thuộc về ai.</span></span><span class="kb-n">→</span></a>
+      </div></details>
+    </section>
+    <section class="hgroup" id="so-sanh">
+      <div class="heye">So sánh và câu hỏi liên quan</div>
+      <div class="feat3">
+      <a href="/mua-dat-da-lat-chon-nam-ban"><span><span class="kb-t">Tính mua đất Đà Lạt, dừng ở Nam Ban</span><br><span class="kb-s">Vì sao nhiều người khởi đầu từ Đà Lạt rồi mở ra vùng ven.</span></span><span class="kb-n">→</span></a>
+      <a href="/vung-ven-da-lat-nao-tot-nhat"><span><span class="kb-t">Vùng ven Đà Lạt nào tốt nhất</span><br><span class="kb-s">Tám vùng so theo mục đích: nên chọn ở đâu, đất nên mua ở đâu.</span></span><span class="kb-n">→</span></a>
+      <a href="/dat-gan-da-lat"><span><span class="kb-t">Đất ven Đà Lạt giá rẻ ở đâu</span><br><span class="kb-s">Nam Ban cách Đà Lạt khoảng 25 km — rẻ hơn bao nhiêu, đổi lại điều gì.</span></span><span class="kb-n">→</span></a>
+      </div>
+      <div class="kb small vis">
+      <a href="/nam-ban-hay-di-linh"><span><span class="kb-t">Nam Ban hay Di Linh</span><br><span class="kb-s">Di Linh sống bằng cà phê và quốc lộ; Nam Ban sống bằng người từ nơi khác lên chọn một lối sống. Hai bản chất, không chỉ hai vị trí.</span></span><span class="kb-n">→</span></a>
+      <a href="/nam-ban-hay-lac-duong"><span><span class="kb-t">Nam Ban hay Lạc Dương</span><br><span class="kb-s">Đất vườn cà phê hay núi rừng, du lịch — và Lạc Dương giờ tách làm hai nơi.</span></span><span class="kb-n">→</span></a>
+      <a href="/nam-ban-hay-don-duong"><span><span class="kb-t">Nam Ban hay Đơn Dương</span><br><span class="kb-s">Hai vùng ven Đà Lạt, hai hệ sinh thái, hai kiểu người mua.</span></span><span class="kb-n">→</span></a>
       </div>
     </section>
-
   </div>
 </main>
 
