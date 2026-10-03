@@ -365,6 +365,20 @@ details.more>.kb{border-top:1px solid var(--line);}
 details.more>.kb a:last-child{border-bottom:0;}
 .pick-sec .kb.small{margin-top:14px;}
 @media(max-width:780px){.feat3{grid-template-columns:1fr;}.feat3 a{padding:18px 0 20px;border-bottom:1px solid var(--line);}.feat3 a:last-child{border-bottom:0;}}
+/* Máy tính (≥900px): bài dẫn rộng hết, hai bài lớn còn lại đứng cạnh nhau; bài nhỏ thành hàng 3 cột thẳng cột với 3 bài lớn */
+@media(min-width:900px){
+body.hub-story .pick-sec .pick-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:56px;}
+body.hub-story .pick-sec .pick-grid a.lead{grid-column:1/-1;}
+body.hub-story .pick-sec .pick-grid a:not(.lead){max-width:none;border-bottom:0;margin-bottom:var(--s4,32px);padding-bottom:0;}
+.kb.small{display:grid;grid-template-columns:repeat(3,1fr);column-gap:40px;}
+.kb.small a{border-bottom:0;padding:16px 0 20px;}
+.kb.vis.small a:last-child{border-bottom:0;}
+.kb.small a:hover{padding-left:0;}
+.kb.small a:hover .kb-t{color:var(--clay-text,#9a5b37);}
+.kb.small .kb-n{display:none;}
+.kb.small .kb-t{font-size:17px;line-height:1.35;text-wrap:balance;transition:color .3s;}
+.kb.small+details.more{border-top:1px solid var(--line);}
+}
 </style>
 <link rel="stylesheet" href="/hub-system.css">
 <style>
@@ -530,12 +544,12 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
         <section class="hgroup">
       <div class="heye">Vùng đất &amp; đời sống</div>
       <div class="feat3">
-      <a href="/5km-o-nam-ban"><span><span class="kb-t">Ở Nam Ban, 5 km có gần không</span><br><span class="kb-s">Khoảng cách trên bản đồ và khoảng cách để sống là hai chuyện khác nhau.</span></span><span class="kb-n">→</span></a>
+      <a href="/5km-o-nam-ban"><span><span class="kb-t">Ở Nam Ban, 5&nbsp;km có gần không</span><br><span class="kb-s">Khoảng cách trên bản đồ và khoảng cách để sống là hai chuyện khác nhau.</span></span><span class="kb-n">→</span></a>
       <a href="/nuoc-o-nam-ban"><span><span class="kb-t">Nước ở Nam Ban — có nước máy không, giếng bao sâu</span><br><span class="kb-s">Nước máy đã về dọc ĐT.725, phần lớn khu còn lại dùng giếng khoan — mùa khô có cạn, nước có phèn không.</span></span><span class="kb-n">→</span></a>
       <a href="/nam-ban-mua-nao"><span><span class="kb-t">Nên đi Nam Ban mùa nào</span><br><span class="kb-s">Hoa cà phê tháng Ba, dã quỳ đầu tháng Mười Một, xem đất nên đi cả hai mùa.</span></span><span class="kb-n">→</span></a>
       </div>
       <div class="kb small vis">
-      <a href="/duong-di-nam-ban"><span><span class="kb-t">Đường đi Nam Ban — từ Sài Gòn, Đà Lạt, sân bay</span><br><span class="kb-s">Tuyến nào nhanh, đoạn nào hay kẹt, và hai lối vào Nam Ban.</span></span><span class="kb-n">→</span></a>
+      <a href="/duong-di-nam-ban"><span><span class="kb-t">Đường đi Nam Ban — từ Sài Gòn, Đà&nbsp;Lạt, sân&nbsp;bay</span><br><span class="kb-s">Tuyến nào nhanh, đoạn nào hay kẹt, và hai lối vào Nam Ban.</span></span><span class="kb-n">→</span></a>
       <a href="/ho-o-nam-ban"><span><span class="kb-t">Hồ ở Nam Ban — những cái có tên trong hồ sơ</span><br><span class="kb-s">Bãi Công, Từ Liêm, Ba Đình, Thanh Trì, Đông Thanh — cái nào là gì, và vì sao không cái nào là hồ du lịch.</span></span><span class="kb-n">→</span></a>
       </div>
       <details class="more"><summary>Thêm 26 bài · vùng đất & đời sống</summary>
