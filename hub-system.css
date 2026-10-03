@@ -210,3 +210,53 @@ main{padding:var(--s2) 0 var(--s6);}
 @media(prefers-reduced-motion:reduce){
   .pick-grid a,.kb a{transition:none;}
 }
+
+/* ═══ ③ PHÂN CẤP CHƯƠNG — chung 3 hub (Chú gật 4/10/2026) ════════
+   Chương (số + tên Fraunces + vạch mực) → bài chính lớn nhất → hai bài
+   vừa → bài phụ nhỏ, trầm → "Thêm N bài" lùi cuối. Chỉ đổi thị giác;
+   tên chương là <h2>, chữ giữ nguyên. Số chương do CSS đếm (/dat, /nam-ban)
+   hoặc lấy .gnum có sẵn trong HTML (/dau-tu).                         */
+:is(.hub-guide,.hub-story,.hub-dossier) main .wrap{counter-reset:chap;}
+:is(.hub-guide,.hub-story,.hub-dossier) main .hgroup{counter-increment:chap;margin-top:96px;margin-bottom:0;}
+:is(.hub-guide,.hub-story,.hub-dossier) main .hgroup>.heye{
+  display:block;text-align:left;font-family:'Fraunces',serif;font-size:27px;font-weight:400;
+  letter-spacing:-.3px;text-transform:none;color:var(--ink);line-height:1.25;text-wrap:balance;
+  margin:0;padding:0 0 18px;border-bottom:1px solid var(--ink);
+}
+:is(.hub-guide,.hub-story,.hub-dossier) main .hgroup>.heye::before{
+  content:counter(chap,decimal-leading-zero);display:block;width:auto;height:auto;background:none;border-radius:0;
+  font-family:'Be Vietnam Pro',sans-serif;font-size:11px;font-weight:500;letter-spacing:.16em;line-height:1.4;
+  color:var(--stone-text,#726a5c);margin-bottom:10px;
+}
+:is(.hub-guide,.hub-story,.hub-dossier) main .hgroup>.heye::after{content:none;display:none;}
+.hub-dossier main .hgroup>.heye::before{content:none;display:none;}
+.hub-dossier main .hgroup>.heye .gnum{
+  display:block;font-family:'Be Vietnam Pro',sans-serif;font-size:11px;font-weight:500;letter-spacing:.16em;
+  line-height:1.4;color:var(--stone-text,#726a5c);margin:0 0 10px;
+}
+/* chương có câu dẫn: vạch kẻ chạy dưới câu dẫn */
+.hub-dossier main .hgroup>.heye:has(+ .g-intro){border-bottom:0;padding-bottom:0;}
+.hub-dossier main .hgroup>.g-intro{font-size:14px;color:var(--muted);max-width:640px;margin:12px 0 0;padding-bottom:18px;}
+.hub-dossier main .hgroup>.g-intro+.feat3{border-top:1px solid var(--ink);}
+.hub-dossier main .hgroup>.g-sub{margin-top:34px;}
+/* bài chính: 1 lớn + 2 vừa */
+:is(.hub-guide,.hub-story,.hub-dossier) main .feat3{grid-template-columns:1.5fr 1fr 1fr;column-gap:44px;margin-top:6px;}
+:is(.hub-guide,.hub-story,.hub-dossier) main .feat3 a{padding:26px 0 30px;}
+:is(.hub-guide,.hub-story,.hub-dossier) main .feat3 a:first-child .kb-t{font-size:24px;line-height:1.2;letter-spacing:-.3px;}
+:is(.hub-guide,.hub-story,.hub-dossier) main .feat3 a:not(:first-child) .kb-t{font-size:18px;line-height:1.3;}
+:is(.hub-guide,.hub-story,.hub-dossier) main .feat3 a:not(:first-child) .kb-s{font-size:13px;}
+/* bài phụ và "Thêm N bài": lùi hẳn */
+:is(.hub-guide,.hub-story,.hub-dossier) main .kb.small{border-top:1px solid var(--line);}
+:is(.hub-guide,.hub-story,.hub-dossier) main .kb.small .kb-t{font-size:15.5px;color:#3b3731;}
+:is(.hub-guide,.hub-story,.hub-dossier) main details.more>summary{font-size:12px;color:var(--stone-text,#726a5c);}
+@media(max-width:780px){
+  :is(.hub-guide,.hub-story,.hub-dossier) main .hgroup{margin-top:68px;}
+  :is(.hub-guide,.hub-story,.hub-dossier) main .hgroup>.heye{font-size:23px;padding-bottom:14px;}
+  :is(.hub-guide,.hub-story,.hub-dossier) main .feat3{grid-template-columns:1fr;}
+  :is(.hub-guide,.hub-story,.hub-dossier) main .feat3 a{padding:18px 0 20px;}
+  :is(.hub-guide,.hub-story,.hub-dossier) main .feat3 a:first-child .kb-t{font-size:22px;}
+}
+/* tên bài ngắn: cân dòng để không rớt một chữ; dòng mô tả: tránh dòng cuối cụt */
+:is(.hub-guide,.hub-story,.hub-dossier) main .hgroup .kb a .kb-t{display:block;text-wrap:balance;}
+:is(.hub-guide,.hub-story,.hub-dossier) main .hgroup .kb a br{display:none;}
+:is(.hub-guide,.hub-story,.hub-dossier) main .hgroup .kb:not(.small) a .kb-s{display:block;margin-top:3px;text-wrap:pretty;}

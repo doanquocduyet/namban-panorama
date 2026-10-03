@@ -1380,3 +1380,65 @@ xã), đó là mâu thuẫn thật — gom về số tròn, đừng giữ cả h
 
 **Ghi nhớ chung cho §7:** cả 6 điểm trên đều là ca *"checker báo lỗi nhưng nội dung đang đúng"*.
 Đây chính là Luật 14 trong thực tế — **chứng minh cải thiện trước, sửa sau.**
+
+---
+
+## 8. HUB — PHÂN CẤP THỊ GIÁC + CHỖ CHO BÀI MỚI (Chú gật 4/10/2026; phiếu "XXI. PANORAMA HUB VISUAL HIERARCHY")
+
+**CONTENT GROWS. IA DOES NOT GROW CHAOTICALLY. VISUAL COMPLEXITY MUST NOT GROW WITH CONTENT VOLUME.**
+Nội dung (bài nào, ở đâu, link gì) là một hệ thống; phân cấp thị giác là hệ thống khác. Hai hệ thống
+không được tự ý làm thay đổi nhau: không sửa nội dung để chữa một lỗi thuần thị giác, không đổi IA để layout đẹp hơn.
+
+### 8.1 Đã làm 4/10/2026 — trạng thái hiện tại của 3 hub
+- CSS chung ở **cuối `hub-system.css`** (khối "③ PHÂN CẤP CHƯƠNG"), áp cho `body.hub-guide` (/dat), `.hub-story`
+  (/nam-ban), `.hub-dossier` (/dau-tu). Muốn chỉnh thì sửa ở đó, đừng dán CSS vào từng trang.
+- **Tên chương là `<h2 class="heye">`** trong `<section class="hgroup">` — /nam-ban 4 chương, /dat 7, /dau-tu 5.
+  Chữ giữ nguyên văn. Cấu trúc ngữ nghĩa: **H1 hub → H2 chương → tên bài là link** (KHÔNG biến tên bài thành H2).
+- Số chương: /dat và /nam-ban do CSS đếm (`counter(chap)`, không nằm trong HTML); /dau-tu dùng `.gnum` có sẵn.
+- Thang chữ: số 11px sans · chương Fraunces 27px (mobile 23) + vạch mực 1px · bài đầu 24px (mobile 22) · hai bài
+  sau 18px · bài phụ 15,5px màu trầm · "Thêm N bài" 12px. Cột bài chính 1,5 / 1 / 1. Trước mỗi chương 96px (mobile 68).
+- /dau-tu: chương có câu dẫn thì vạch kẻ chạy dưới câu dẫn. Câu dẫn chương CHỈ có ở /dau-tu — không ép /nam-ban, /dat.
+- Tên bài trong danh sách là khối riêng + `text-wrap:balance`; dòng mô tả `pretty`. Đo bằng font thật 6 khổ:
+  từ ~50 chỗ rớt một chữ còn 0.
+- Chưa làm, muốn làm phải hỏi Chú: mục lục số chương chạy dọc lề (cần JS), câu dẫn cho mọi chương.
+
+### 8.2 Cấp bậc mỗi hub phải đọc ra được bằng mắt
+HUB (H1) → CHƯƠNG → (cụm con, chỉ khi thật cần) → BÀI CHÍNH → BÀI PHỤ → THU GỌN (`<details>`).
+Không để chương, cụm con và tên bài cùng một độ nặng thị giác. Phân cấp bằng cỡ chữ, độ đậm, khoảng trắng,
+vị trí, vạch mảnh — **không bằng màu, card, badge, icon, shadow, gradient**. Không làm tiêu đề "to đùng" để gây chú ý.
+Nhìn một màn hình phải trả lời được trong vài giây: tôi ở đâu · chương nào · bài nào quan trọng nhất · đọc gì
+tiếp · muốn sâu hơn thì ở đâu. Không trả lời được → phân cấp chưa đạt.
+
+### 8.3 Vai trò bài trong một chương
+LEAD = bài quan trọng nhất với ý định của chương · SECONDARY = bài hỗ trợ chính · SUPPORTING = câu hỏi cụ thể,
+bổ sung · COLLAPSED = vẫn cần được tìm thấy nhưng không cần chiếm mắt. **"3 lớn + vài nhỏ" là nếp tham khảo,
+không phải luật**: số bài hiện ra tùy độ quan trọng, hành trình người đọc, độ sâu, số bài mạnh đang có. Không viết
+thêm bài hay thêm mục chỉ để layout cân.
+
+### 8.4 Ba hub — ba hành trình, một ngôn ngữ thị giác
+`/nam-ban` = hiểu Nam Ban · `/dat` = đánh giá / mua một mảnh đất · `/dau-tu` = đánh giá thị trường, thesis, một
+thương vụ. Dùng chung ngôn ngữ thị giác, KHÔNG ép chung cấu trúc nội dung. Hub mới sau này cũng vậy.
+
+### 8.5 Bài mới vào hub — quy trình
+Ý định tìm kiếm chính (+ thực thể chính; có thể kèm nhiều câu tra/thực thể phụ) → kiểm trùng ý định trong Panorama
+→ chọn hub → chọn chương → chọn vai trò (mặc định **SUPPORTING hoặc COLLAPSED** — đưa bài lên hàng lớn là quyết
+định biên tập, hỏi Chú) → link nội bộ thật sự hữu ích (theo quan hệ ý nghĩa và hành trình; không ép đủ số lượng,
+không bắt buộc hai chiều) → cập nhật hub (link nằm sẵn trong HTML) → QA SEO/AEO/GEO/UX.
+Ví dụ "chi phí làm sổ đất Nam Ban": ý định chi phí/pháp lý → /dat "Pháp lý và trước khi đặt cọc" hoặc /dau-tu
+"Giá vốn, pháp lý & dòng tiền" tùy ý định chính → vai SUPPORTING → không mở chương, không mở hub.
+**Bài mới không tự làm đổi IA hay layout của hub.** Không vừa chương nào thì DỪNG và báo
+`IA CONFLICT — bài mới chưa có vị trí phù hợp trong hub. Không tự tạo section.` Chú duyệt rồi mới đổi.
+
+### 8.6 Mobile, desktop, ảnh
+Mobile có phân cấp riêng, không chỉ thu nhỏ desktop; không cuộn ngang để chứa điều hướng (ngoại lệ đã có: dải nút
+"Đọc theo thứ tự/Bạn đang ở đâu?" ở /dat, /dau-tu); không carousel khi danh sách đọc thẳng được. Desktop không thêm
+sidebar lớn cho "sang". Ảnh là nhịp nghỉ (khoảng 1 ảnh / 2–3 chương), không phải thumbnail cho mọi bài; chương có
+thể hoàn toàn bằng chữ.
+
+### 8.7 QA sau mỗi lượt sửa thị giác hub
+360 / 390 / 768 / 1024 / 1440 / 1920: phân cấp chương và bài chính/phụ · khoảng trắng · ngắt dòng (đo bằng font
+thật: tải CSS Google Fonts về và chặn request bằng `page.route`, vì máy QA không tải được font — font dự phòng
+ngắt dòng khác hẳn) · không tràn ngang · neo nhảy không bị thanh menu che (96px) · `<details>` mở/đóng · vùng chạm
+≥ 44px · tương phản · link, title, schema, H1 KHÔNG đổi so với trước.
+Nguyên tắc cuối: làm hub đẹp bằng **bớt nhiễu + tạo cấp bậc + tạo khoảng trống + làm rõ bước tiếp theo**,
+không bằng thêm UI.
