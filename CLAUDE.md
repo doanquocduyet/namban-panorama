@@ -60,6 +60,11 @@ bump `dateModified` + `lastmod` sitemap của `/nam-ban`; workflow `hub-news-syn
 Mỗi mục hiện ngày + tiêu đề + link bài nhà (không có thì dẫn về trang tin); muốn thêm một dòng mô tả ngắn thì gắn
 `data-hub-sum="…"` vào `.tl-item` đó. Bài rời khối tin mà hub không còn link nào khác → đưa vào nhóm cố định phù hợp
 (đã làm 3/10 cho sân bay, cầu Tổng Đội, cà phê và AI) để hub không mất link.
+**HUB `/nam-ban` BỐ CỤC B (Chú chốt 3/10/2026):** mỗi nhóm 3 bài lớn (flagship, chọn theo vai: hiểu → tự đặt mình vào →
+góc nhìn riêng) + vài bài nhỏ + phần còn lại trong `<details class="more">` "Thêm N bài · …". Link trong `<details>` nằm sẵn
+trong HTML (không JS) — đủ 88 link / 78 URL như trước. So sánh & câu hỏi hiện đủ 6. Ba bài hồ thuộc Vùng đất, không thuộc
+Con người. Không bài nào hiện hai lần ở phần nhìn thấy (`/nam-ban-co-dang-song` đã là "Nên đọc trước"). Đổi bài lớn = quyết
+định biên tập, hỏi Chú; thêm bài mới vào hub thì đưa vào `<details>` của nhóm, đừng đẩy lên hàng lớn.
 
 **MẠNG XÃ HỘI (Facebook / Instagram / Threads) — ƯU TIÊN TIN MỚI (Chú chốt 27/9/2026).** Hàng đợi
 `data/fb-queue.json`, thang `priority`: **0 = sự kiện / tin mới trong tuần** (mỗi mục mới của
