@@ -371,6 +371,11 @@
 .closing-phone a{color:#d9b896;text-decoration:none;display:inline-block;padding:6px 8px;margin:-6px -8px;}
 .closing-mail{font-size:11px;letter-spacing:.4px;margin-top:7px;}
 .closing-mail a{color:#a6b09c;text-decoration:none;display:inline-block;padding:8px;margin:-8px;}
+/* Chữ ký dưới ảnh đèo (3/10/2026, Chú chọn phương án 1): canh trái thẳng mép chữ in trong ảnh */
+.closing-cap{background:#1e2a20;padding:15px 0 15px 22px;display:flex;align-items:center;gap:14px;}
+.closing-cap::before{content:"";width:22px;height:1px;background:#bb8862;flex:none;}
+.closing-sign{margin:0;font-family:'Be Vietnam Pro',sans-serif;font-weight:300;font-size:10.5px;letter-spacing:.4em;text-transform:uppercase;color:rgba(245,241,232,.88);white-space:nowrap;}
+@media(min-width:1024px){.closing-cap{padding:20px 0 20px 4.85vw;gap:18px;}.closing-cap::before{width:32px;}.closing-sign{font-size:11.5px;letter-spacing:.46em;}}
 @media(max-width:640px){.closing-quote{font-size:18px;}.closing-photo{min-height:260px;}.closing-lead{font-size:12.5px;}}
 
 /* ==== Tinh chỉnh CHỈ desktop (min-width:1024) — mobile & tablet giữ nguyên ==== */
@@ -818,6 +823,7 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <!-- CHÂN TRANG: đèo → xanh → đen -->
 <footer class="closing">
   <div class="closing-photo"></div>
+  <div class="closing-cap"><p class="closing-sign" lang="en">Nam Ban awaits you</p></div>
   <div class="closing-body">
     <div class="closing-green">
       <p class="closing-lead">Một quyết định tốt luôn bắt đầu từ một góc nhìn đầy đủ.</p>
