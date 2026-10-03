@@ -33,6 +33,18 @@ for p in sorted(glob.glob("*.html") + glob.glob("*/*.html")):
     s = open(p, encoding="utf-8").read()
     pub, mod = dates(s)
     t = OLD.sub("", s)
+    if not mod:
+        # Trang tổng hợp (CollectionPage, vd /nam-ban-co-gi-moi — thêm 3/10/2026): CHỈ thay ngày ngay trong ô
+        # "Cập nhật …" đã có sẵn ở .issue-date; không chèn dòng mới vào trang không có ô đó (/brief, các hub).
+        cm = re.search(r'"@type": "CollectionPage"[\s\S]*?"dateModified": "(\d{4}-\d{2}-\d{2})', s)
+        u = re.search(r'<span class="issue-date">(?:\s*[Cc](?:ẬP NHẬT|ập nhật)[^<]*|<time id="pm-updated" datetime="[^"]*">[^<]*</time>)</span>', t)
+        if cm and u:
+            y, m, d = cm.group(1).split("-")
+            lab = ("Cập nhật " if 'lang="vi"' in s[:600] else "Updated ") + f"{int(d)}/{int(m)}/{y}"
+            t = t[:u.start()] + f'<span class="issue-date"><time id="pm-updated" datetime="{cm.group(1)}">{lab}</time></span>' + t[u.end():]
+            if t != s:
+                open(p, "w", encoding="utf-8").write(t); changed += 1; added += 1
+            continue
     if mod and re.fullmatch(r"\d{4}-\d{2}-\d{2}", mod) and not (pub and mod <= pub):
         y, m, d = mod.split("-")
         lab = ("Cập nhật " if 'lang="vi"' in s[:600] else "Updated ") + f"{int(d)}/{int(m)}/{y}"

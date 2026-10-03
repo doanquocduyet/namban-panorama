@@ -28,7 +28,7 @@ jobs:
         run: |
           git config user.name "namban-hub-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add nam-ban.html sitemap.xml
+          git add nam-ban.html sitemap.xml nam-ban-co-gi-moi.html
           if git diff --cached --quiet; then
             echo "Hub đã khớp, không commit."
             exit 0
