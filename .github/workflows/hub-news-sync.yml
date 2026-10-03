@@ -1,0 +1,44 @@
+name: Đồng bộ khối "Nam Ban có gì mới" trên hub /nam-ban
+# /nam-ban-co-gi-moi là nguồn; hub /nam-ban hiện 3 tin mới nhất. Mỗi lần trang tin đổi
+# trên main, script ghi lại khối giữa hai marker HUB-NEWS trong nam-ban.html (HTML tĩnh,
+# không JS — bot AI đọc được). Không đổi gì thì không commit, không tốn lượt deploy.
+on:
+  push:
+    branches: [main]
+    paths: ['nam-ban-co-gi-moi.html']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: hub-news-sync
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Lấy 3 tin mới nhất vào hub
+        run: python3 tools/sync-hub-news.py
+      - name: Ghi ngày cập nhật tĩnh cho bot
+        run: python3 tools/sync-updated-date.py
+      - name: Commit & push nếu hub đổi
+        run: |
+          git config user.name "namban-hub-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add nam-ban.html sitemap.xml
+          if git diff --cached --quiet; then
+            echo "Hub đã khớp, không commit."
+            exit 0
+          fi
+          git commit -m "Hub /nam-ban: cập nhật 3 tin mới nhất từ /nam-ban-co-gi-moi"
+          for i in 1 2 3 4 5; do
+            if git push; then echo "Đã push."; exit 0; fi
+            echo "Push bị từ chối, rebase rồi thử lại (lần $i)..."
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort; exit 1; }
+            sleep $((i*3))
+          done
+          exit 1

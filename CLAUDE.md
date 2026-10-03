@@ -54,6 +54,13 @@ gì mới". Tin vận hành của một chủ đề đã có bài riêng (sân b
 hàng đợi MXH (`key` riêng, `full:false`). `/nam-ban-co-gi-moi` chỉ nhận tin về chính xã Nam Ban (xã làm việc, dự án, quy hoạch,
 đời sống trong xã). Phân vân thì hỏi.
 
+**KHỐI "NAM BAN CÓ GÌ MỚI" TRÊN HUB `/nam-ban` TỰ SINH (Chú gật 3/10/2026).** `/nam-ban-co-gi-moi` là nguồn,
+`/nam-ban` hiện 3 mục đầu. `tools/sync-hub-news.py` ghi HTML tĩnh giữa marker `HUB-NEWS:START/END` (đừng sửa tay),
+bump `dateModified` + `lastmod` sitemap của `/nam-ban`; workflow `hub-news-sync.yml` tự chạy khi trang tin đổi trên `main`.
+Mỗi mục hiện ngày + tiêu đề + link bài nhà (không có thì dẫn về trang tin); muốn thêm một dòng mô tả ngắn thì gắn
+`data-hub-sum="…"` vào `.tl-item` đó. Bài rời khối tin mà hub không còn link nào khác → đưa vào nhóm cố định phù hợp
+(đã làm 3/10 cho sân bay, cầu Tổng Đội, cà phê và AI) để hub không mất link.
+
 **MẠNG XÃ HỘI (Facebook / Instagram / Threads) — ƯU TIÊN TIN MỚI (Chú chốt 27/9/2026).** Hàng đợi
 `data/fb-queue.json`, thang `priority`: **0 = sự kiện / tin mới trong tuần** (mỗi mục mới của
 `/nam-ban-co-gi-moi`, bài sự kiện như Trung thu, mưa lũ, sân bay…) · 1 = tin cập nhật · 2 = bài nền
