@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 446,
+ "total_images": 447,
  "unused_count": 69,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -1800,6 +1800,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -6387,6 +6390,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "thu-tuc-len-tho-cu-nam-ban.jpg": {
+   "kb": 170,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "thu-tuc-len-tho-cu-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },

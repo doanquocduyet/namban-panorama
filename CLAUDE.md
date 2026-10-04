@@ -789,6 +789,10 @@ mở ra là trang mỏng — `/so-hoa-nam-ban` đang giữ vai này) · `/dich-v
 (Panorama không hướng dẫn thủ tục) · `/to-cong-nghe-so-cong-dong-nam-ban` (bản tin không có dữ
 liệu về mô hình tại Nam Ban).
 
+**Ngoại lệ chú chốt 5/10/2026:** `/thu-tuc-len-tho-cu-nam-ban` được viết thủ tục chi tiết theo hồ sơ thực tế chú làm. Không áp
+ngoại lệ này cho bài khác khi chưa có chú duyệt. Vai 3 bài: `/chuyen-muc-dich` = có chuyển được không · `/thu-tuc-len-tho-cu`
+= làm thế nào · `/len-tho-cu-het-bao-nhieu-tien` = tốn bao nhiêu.
+
 **Luật viết kèm:** mô hình chung ≠ sự thật về Nam Ban. Ca thật 18/9/2026 ở
 `/nam-ban-tap-huan-chuyen-doi-so-2026`: bản đầu tả Tổ công nghệ số cộng đồng là "người quen mặt
 trong thôn, được tập huấn rồi về chỉ lại" — đó là mô tả mô hình nói chung, còn bản tin của xã

@@ -991,6 +991,10 @@
     <image:image><image:loc>https://nambanpanorama.com/images/thon-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/thu-tuc-len-tho-cu-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/thu-tuc-len-tho-cu-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/thue-nguoi-lam-vuon-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/thue-nguoi-lam-vuon-nam-ban.jpg</image:loc></image:image>
   </url>
