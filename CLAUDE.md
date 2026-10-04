@@ -1397,7 +1397,7 @@ trên mobile của bản hai bố cục cũ đã hết). Thứ tự: nhãn "Trao
 người đang đọc về Nam Ban," + 2 đoạn) → ký tên ảnh tròn màu (`founder.webp`) + `<h2>` tên → lời mời chữ "Gửi thẳng một tin
 qua Zalo →" (gạch chân mảnh, KHÔNG nút khối, KHÔNG icon) → "hoặc thư điện tử · SĐT" → dòng ba sự thật ("Hơn 190 trang ghi
 chép · Giá đất đo mỗi tuần · Ảnh chụp tại chỗ" — số trang đếm từ `search-index.json`, đừng tăng khi chưa đếm lại) → ảnh
-`doi-ca-phe-suong-nam-ban.webp` (đủ trần 2 bài cùng `/do-cao-nam-ban`) → câu ký → footer. Đừng dựng lại form hay khối
+`doi-ca-phe-suong-nam-ban.webp` (đủ trần 2 bài cùng `/do-cao-nam-ban`; KHÔNG chú thích dưới ảnh — Chú gỡ 4/10) → câu ký → footer. Đừng dựng lại form hay khối
 "Cứ nhắn" thứ hai.
 
 ### 7.4 Pillar — GIẢI MÂU THUẪN
