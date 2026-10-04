@@ -1,5 +1,6 @@
 name: Báo cáo index Google Search Console
-# Tự đọc trạng thái index từng URL (URL Inspection API) → ghi docs/gsc-status.md.
+# Tự đọc trạng thái index từng URL (URL Inspection API) → docs/gsc-status.md,
+# và từ khoá · vị trí · lượt hiện · lượt bấm (Search Analytics API) → docs/gsc-queries.md.
 # Chạy tự động thứ Hai hằng tuần + chạy tay khi cần.
 # CHỈ hoạt động sau khi Chú thêm secret GSC_SA_JSON (xem hướng dẫn). Chưa có secret → no-op.
 on:
@@ -26,12 +27,17 @@ jobs:
           GSC_SA_JSON: ${{ secrets.GSC_SA_JSON }}
           GSC_SITE: ${{ vars.GSC_SITE || 'sc-domain:nambanpanorama.com' }}
         run: python3 scripts/gsc_report.py
+      - name: Đọc từ khoá · vị trí · lượt bấm (Search Analytics) → docs/gsc-queries.md
+        env:
+          GSC_SA_JSON: ${{ secrets.GSC_SA_JSON }}
+          GSC_SITE: ${{ vars.GSC_SITE || 'sc-domain:nambanpanorama.com' }}
+        run: python3 scripts/gsc_queries.py
       - name: Commit báo cáo nếu đổi
         run: |
           git config user.name "namban-gsc-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add docs/gsc-status.md 2>/dev/null || true
+          for f in docs/gsc-status.md docs/gsc-queries.md docs/gsc; do [ -e "$f" ] && git add "$f"; done
           if git diff --cached --quiet; then echo "Không đổi / chưa cấu hình secret."; else
-            git commit -m "GSC: cập nhật báo cáo trạng thái index [skip ci]"
-            git push
+            git commit -m "GSC: cập nhật báo cáo index + từ khoá [skip ci]"
+            for i in 1 2 3 4 5; do git push && break; git pull --rebase origin main; sleep $((i*3)); done
           fi
