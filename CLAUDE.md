@@ -165,6 +165,24 @@ sửa theo suy đoán** · **không tự chấm điểm kiểu 8/10 khi không c
 **Đề xuất việc mới luôn đúng 5 dòng:** Vấn đề · Dữ liệu chứng minh · Web nên xử lý · Việc cần làm · Các web khác có cần làm gì.
 Không cần làm thì nói thẳng: **"KHÔNG CẦN LÀM."**
 
+**CROSS-SITE LINK UX (Chú chốt 4/10/2026) — LINK VÌ NHU CẦU NGƯỜI ĐỌC, KHÔNG VÌ GIỚI THIỆU HỆ SINH THÁI.**
+- Câu dẫn sang web khác = bước tiếp theo của người đọc: *nhu cầu / câu hỏi thật → bước tiếp → trang phù hợp*. Mẫu: "Đã hiểu
+  khu vực rồi thì có thể xem những lô đất đang bán ở trung tâm Nam Ban tại Nam Ban Villas." · "Ở xa mà cần người tại chỗ? Xem
+  dịch vụ quản lý đất Nam Ban tại GreenSpacers."
+- **Cấm trong câu cho khách:** "cùng chủ", "cùng người phụ trách", "cùng hệ/hệ sinh thái", "tôi còn có web…", "web này chỉ chia
+  sẻ…", "web này không bán đất…", "bên kia là web bán đất…". Quan hệ giữa 3 web chỉ khai ở schema (`#founder` worksFor/sameAs),
+  `llms.txt` và dữ liệu cho máy.
+- Tên web chỉ nhắc khi giúp người đọc biết mình sẽ đi đâu; chữ trên link đã đủ rõ thì thôi.
+- **Không sửa câu đang tốt chỉ để mọi câu cùng một khuôn.** Đồng bộ nằm ở nguyên tắc, không ở câu chữ. Câu đã đúng nhu cầu,
+  đúng trang đích, tự nhiên, không giải thích hệ thống → GIỮ.
+- **Ngoại lệ — GIỮ:** câu bảo vệ người đọc / công khai lợi ích ("Panorama không bán lô này và không đại diện cho bên bán"),
+  phương pháp và nguồn dữ liệu, xung đột lợi ích, bên bán, phạm vi trách nhiệm. Đó là disclosure, không phải giải thích hệ thống.
+- Trước khi sửa một câu cross-site, hỏi: người đọc đang ở đâu · cần gì tiếp · trang đích có giải quyết đúng không · câu có tự
+  nhiên không · có đang giải thích hệ thống không · câu hiện tại đã tốt chưa (tốt rồi → KHÔNG SỬA).
+- Vai Panorama: giúp HIỂU Nam Ban trước khi quyết định; khi người đọc đã chuyển sang nhu cầu xem tài sản cụ thể thì mới dẫn
+  sang Villas, bằng ngôn ngữ nhu cầu thực tế. Ba web là ba cánh cửa: HIỂU → XEM/MUA/BÁN/THUÊ → SỞ HỮU/CHĂM/QUẢN LÝ.
+- Rà 4/10/2026: 9 câu dẫn (5 sang Villas, 4 sang GreenSpacers) đã viết theo luật này — còn 0 câu "cùng chủ" trên trang tiếng Việt.
+
 **Mục tiêu:** người tìm bất kỳ câu hỏi quan trọng nào về Nam Ban đều gặp đúng lớp thông tin của hệ thống —
 HIỂU → ĐÁNH GIÁ → MUA → SỞ HỮU → QUẢN LÝ. Mỗi web mạnh trong vai của mình, đỡ hai web kia đúng lúc, không cạnh tranh máy móc.
 
