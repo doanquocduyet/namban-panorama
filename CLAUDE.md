@@ -1209,8 +1209,10 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     `@id` `https://nambanpanorama.com/#founder`. (8) Panorama không link tới trang "Nam Ban Sala" của Villas.
     **Link Panorama → Villas đang có (5/5, cập nhật 4/10/2026 theo rà soát của ô Villas):** `/dat-dong-thanh-nam-ban` → cụm lô
     ven hồ Đông Thanh (`/dat-nen/cum-dong-thanh-lakeview-retreat/`) · `/dat-me-linh-nam-ban` → `/dat-ven-da-lat/` · `/dat-gia-lam-nam-ban`
-    và `/dat-trung-tam-nam-ban` GIỮ trang chủ Villas (Villas có `/dat-gia-lam-nam-ban/`, `/dat-trung-tam-thi-tran-nam-ban/` nhưng đó là cặp
-    trùng ý định — điểm 4; chờ Villas có trang cụm lô cụ thể ở hai khu này) · `/doc-tin-rao-dat-nam-ban` → trang tin rao mới. Cả 5 mở tab mới,
+    → `/dat-gia-lam-nam-ban/` · `/dat-trung-tam-nam-ban` → `/dat-trung-tam-thi-tran-nam-ban/` · `/doc-tin-rao-dat-nam-ban` → trang tin rao
+    mới. **ĐÍNH CHÍNH ĐIỂM 4 (Chú chốt 4/10/2026, "nói rất nhiều lần rồi"): CÙNG KEY NHƯNG NỘI DUNG HOÀN TOÀN KHÁC THÌ LINK ĐƯỢC** — bài
+    khu Panorama (phân tích vùng) link sang trang khu Villas (lô, giá thật) cùng tên khu là đúng. Điểm 4 chỉ còn cấm link giữa hai trang
+    **na ná nhau về nội dung** (cùng dàn ý, chép câu, chép số); đừng lấy "trùng key" làm lý do không link nữa. Cả 5 mở tab mới,
     câu ghi "web bán đất cùng chủ với Panorama". Schema: `#founder` có `worksFor` Nam Ban Villas + GreenSpacers và `sameAs`
     `https://nambanvillas.vn/gioi-thieu/#doan-quoc-duyet` (Villas trỏ ngược lại). `llms.txt` có mục "Cùng người phụ trách".
     **Đã đủ trần — muốn thêm thì phải bỏ một link cũ.** Link Panorama → GreenSpacers: `/giu-dat-nam-ban-tu-xa`,
