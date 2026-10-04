@@ -667,6 +667,17 @@ Thêm bài mới: theo hệ A thì **nhớ nạp `nav.css`**.
   **chưa có quyền Contents: Write** trên repo (không liên quan public/private). Đây là việc
   Chú phải tự cấp — dán link + hướng dẫn từng bước, rồi chờ Chú xác nhận mới push lại.
 
+### Báo cáo từ khoá GSC Panorama + Villas — MÃ HOÁ, KHÔNG ĐỂ CHỮ TRƠN (4/10/2026)
+- Repo này **công khai**. Chú cấp service account Panorama quyền đọc `sc-domain:nambanvillas.vn` và chọn giữ số riêng
+  tư → `scripts/gsc_queries.py` ghi báo cáo Panorama, Villas và bảng so 2 web vào thư mục tạm, `tools/gsc-encrypt.sh`
+  mã hoá (AES-256 + RSA-OAEP, khoá công khai `scripts/gsc-public.pem`) rồi mới commit `docs/gsc-private/latest.*` và
+  `<ngày>.*`. Workflow `gsc-report.yml`, thứ Hai hằng tuần. **Không bao giờ commit báo cáo từ khoá dạng chữ trơn.**
+- **Khoá mở:** Google Doc "namban-panorama — khoá mở báo cáo GSC (đừng xoá, đừng chia sẻ)" trong Drive
+  nambanpanorama@gmail.com (id `1SRBcAKlaUR_8LEdzB_8iHz36P4n351pqIHvsIh3jJZs`). Mở: đọc Doc bằng Drive MCP → lưu vào
+  scratchpad → `tools/gsc-decrypt.sh <file> latest <scratchpad>/gsc`. Khoá và bản giải mã chỉ ở scratchpad, không vào repo.
+- Không tạo được repo riêng (GitHub App 403), không đọc được artifact — nên chọn cách này. Bản Panorama 1/10/2026 từng
+  commit chữ trơn (`d2cc69c`), đã gỡ khỏi cây; lịch sử git vẫn còn, chỉ số của Panorama.
+
 ### Chạy Playwright QA (môi trường web session)
 - Playwright cài global tại `/opt/node22/lib/node_modules`; Chromium tại
   `/opt/pw-browsers/chromium-1194/chrome-linux/chrome`.
