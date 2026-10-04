@@ -9,6 +9,11 @@ on:
   schedule:
     - cron: '0 2 * * 1'
   workflow_dispatch:
+    inputs:
+      chi_tu_khoa:
+        description: "Chỉ đọc từ khoá (bỏ bước kiểm index từng URL, ~25 phút)"
+        type: boolean
+        default: false
 permissions:
   contents: write
 concurrency:
@@ -25,6 +30,7 @@ jobs:
       - name: Cài thư viện Google
         run: pip install --quiet google-auth requests
       - name: Đọc GSC + ghi báo cáo
+        if: ${{ !inputs.chi_tu_khoa }}
         env:
           GSC_SA_JSON: ${{ secrets.GSC_SA_JSON }}
           GSC_SITE: ${{ vars.GSC_SITE || 'sc-domain:nambanpanorama.com' }}

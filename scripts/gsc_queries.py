@@ -89,11 +89,13 @@ def by_query(rows, host):
         d["clicks"] += r["clicks"]
         d["imp"] += r["impressions"]
         d["posw"] += r["position"] * r["impressions"]
-        d["pages"][p] = d["pages"].get(p, 0) + r["impressions"]
+        d["pages"][p] = {"imp": r["impressions"], "clicks": r["clicks"], "pos": round(r["position"], 1)}
     for d in out.values():
         d["pos"] = round(d["posw"] / d["imp"], 1) if d["imp"] else None
-        d["page"] = short(max(d["pages"], key=d["pages"].get), host)
+        d["page"] = short(max(d["pages"], key=lambda k: d["pages"][k]["imp"]), host)
         d["n_pages"] = len(d["pages"])
+        # Giữ từng trang (để soi từ khoá nhiều trang cùng hiện: trang nào, vị trí bao nhiêu)
+        d["by_page"] = {short(k, host): v for k, v in sorted(d["pages"].items(), key=lambda kv: -kv[1]["imp"])}
         del d["posw"], d["pages"]
     return out
 
@@ -170,6 +172,10 @@ def report(sess, cfg, site, win):
     multi = sorted([(q, d) for q, d in cur.items() if d["n_pages"] > 1 and d["imp"] >= MIN_IMP], key=lambda x: -x[1]["imp"])[:20]
     L += [f"\n## Một từ khoá, nhiều trang của {cfg['name']} cùng hiện (soi xem có tự giành chỗ không)\n", HEAD]
     L += [row(q, d) for q, d in multi] or EMPTY
+    for q, d in multi:
+        L.append(f"\n**{q}** — từng trang:\n")
+        L.append("| Trang | Vị trí | Lượt hiện | Lượt bấm |\n|---|---|---|---|")
+        L += [f"| {pg} | {v['pos']} | {v['imp']} | {v['clicks']} |" for pg, v in d["by_page"].items()]
 
     L += ["\n## 30 trang nhiều lượt hiện nhất\n", "| Trang | Lượt hiện | Lượt bấm | Vị trí |\n|---|---|---|---|"]
     L += [f"| {short(r['keys'][0], host)} | {r['impressions']} | {r['clicks']} | {round(r['position'], 1)} |"
