@@ -1199,8 +1199,11 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     (1) **Chỉ trong câu chữ**, đúng chỗ người đọc cần đi tiếp. KHÔNG ở chân trang, thanh menu, khối lặp, trang lô.
     (2) **Trần:** Villas → Panorama 10–15 link; **Panorama → Villas tối đa 5 link**; Panorama → GreenSpacers chỉ ở bài nói về
     trông coi, làm vườn, lấn ranh (trỏ `greenspacers.vn/quan-ly-dat-nam-ban` hoặc `/xu-ly-lan-chiem-dat-tu-xa`, không trỏ trang chủ).
-    (3) **Mỗi link sang Villas/GreenSpacers phải nói rõ cùng chủ** ("tôi có…", "web bán đất cùng chủ với Panorama") — minh bạch là
-    thứ giữ trust của publication. (4) **Không link giữa hai trang trùng ý định**, cả hai chiều: đất giá rẻ, phân lô, Nam Hà sáp
+    (3) **ĐỔI 4/10/2026 (Chú chốt: "mấy câu giải thích như này đọc chán quá"): câu link KHÔNG giải thích hệ thống** — không "tôi có…",
+    không "web bán đất cùng chủ với Panorama", không "Panorama chỉ chia sẻ chuyện vùng đất". Viết như bước tiếp theo của người đọc:
+    *"Đã hiểu khu vực rồi thì có thể xem [những lô đất đang bán ở Gia Lâm] tại Nam Ban Villas."* · *"Ở xa mà cần người tại chỗ…?
+    Có thể xem [dịch vụ quản lý đất Nam Ban] tại GreenSpacers."* Chữ trên link tả trang đích, tên web đứng ngoài link. Chuyện cùng
+    chủ đã minh bạch ở schema (`#founder` worksFor + sameAs) và `llms.txt` mục "Cùng người phụ trách" — không nhắc lại trong câu. (4) **Không link giữa hai trang trùng ý định**, cả hai chiều: đất giá rẻ, phân lô, Nam Hà sáp
     nhập, bảng giá đất 2026, đấu giá, sân bay, khí hậu, Nam Ban có gì, có đáng sống, đất Đông Thanh, đất Mê Linh, tách thửa,
     lên thổ cư, `/mua-dat-nam-ban-500-trieu-1-ty` ↔ `/dat-nam-ban-duoi-1-ty/`, `/namban-index` ↔ `/thi-truong/gia-dat-nam-ban-hom-nay/`.
     (5) Link sang web khác mở tab mới (`target="_blank" rel="noopener"`). (6) **Số giá: hai số, hai định nghĩa** — Namban Index =
@@ -1213,7 +1216,7 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     mới. **ĐÍNH CHÍNH ĐIỂM 4 (Chú chốt 4/10/2026, "nói rất nhiều lần rồi"): CÙNG KEY NHƯNG NỘI DUNG HOÀN TOÀN KHÁC THÌ LINK ĐƯỢC** — bài
     khu Panorama (phân tích vùng) link sang trang khu Villas (lô, giá thật) cùng tên khu là đúng. Điểm 4 chỉ còn cấm link giữa hai trang
     **na ná nhau về nội dung** (cùng dàn ý, chép câu, chép số); đừng lấy "trùng key" làm lý do không link nữa. Cả 5 mở tab mới,
-    câu ghi "web bán đất cùng chủ với Panorama". Schema: `#founder` có `worksFor` Nam Ban Villas + GreenSpacers và `sameAs`
+    câu viết theo (3). Schema: `#founder` có `worksFor` Nam Ban Villas + GreenSpacers và `sameAs`
     `https://nambanvillas.vn/gioi-thieu/#doan-quoc-duyet` (Villas trỏ ngược lại). `llms.txt` có mục "Cùng người phụ trách".
     **Đã đủ trần — muốn thêm thì phải bỏ một link cũ.** Link Panorama → GreenSpacers: `/giu-dat-nam-ban-tu-xa`,
     `/dat-nam-ban-chua-xay`, `/mua-nha-nam-ban-khong-o`.
