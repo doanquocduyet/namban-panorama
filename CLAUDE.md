@@ -1391,12 +1391,14 @@ Bốn kiểu **báo động giả** của bộ đo, gặp lại thì đừng tin
 - Câu hỏi trùng với nhãn khối `.quick-answer` (`/chua-linh-an-nam-ban`, `/nuoc-o-nam-ban`):
   bộ đo khớp `<strong>` đầu bài trước, không phải `<h3>` FAQ thật ở dưới.
 
-**Một điểm thật, KHÔNG phải lỗi schema, chưa sửa:** `/trao-doi` (và `/en/trao-doi`) có **hai
-bố cục** — `.pc-view` (có `<h1>` + 2 `<h2>`) ẩn ở ≤880px, và khối `td-main` cho mobile dùng
-`<div class="td-h1">` làm tiêu đề. Nên trên mobile (Google index theo mobile) `<h1>` đang
-`display:none`. Trang liên hệ, không phải trang tranh hạng → tác động thấp. Hai form cùng
-`id="td-hint"` nhưng JS tìm hint **trong form đang gửi** (`f.querySelector`) nên không lỗi
-chức năng. Muốn gọn thì gộp về một bố cục responsive — đó là việc thiết kế, hỏi Chú trước.
+**`/trao-doi` — ĐÃ ĐỔI SANG "LÁ THƯ" (Chú chốt 4/10/2026, phương án 1, ảnh màu).** Bỏ hẳn form (dropdown, ô tên/SĐT, nút
+Gửi, script Google Form) ở cả `/trao-doi` lẫn `/en/trao-doi`. Một bố cục chung PC + mobile nên H1 hiện ở mọi khổ (lỗi H1 ẩn
+trên mobile của bản hai bố cục cũ đã hết). Thứ tự: nhãn "Trao đổi" → H1 "Kể cho *Panorama* nghe." → lá thư ngắn ("Gửi bạn,
+người đang đọc về Nam Ban," + 2 đoạn) → ký tên ảnh tròn màu (`founder.webp`) + `<h2>` tên → lời mời chữ "Gửi thẳng một tin
+qua Zalo →" (gạch chân mảnh, KHÔNG nút khối, KHÔNG icon) → "hoặc thư điện tử · SĐT" → dòng ba sự thật ("Hơn 190 trang ghi
+chép · Giá đất đo mỗi tuần · Ảnh chụp tại chỗ" — số trang đếm từ `search-index.json`, đừng tăng khi chưa đếm lại) → ảnh
+`doi-ca-phe-suong-nam-ban.webp` (đủ trần 2 bài cùng `/do-cao-nam-ban`) → câu ký → footer. Đừng dựng lại form hay khối
+"Cứ nhắn" thứ hai.
 
 ### 7.4 Pillar — GIẢI MÂU THUẪN
 

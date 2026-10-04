@@ -260,7 +260,6 @@
   <url>
     <loc>https://nambanpanorama.com/dat</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/ho-bai-cong-hoang-hon.jpg</image:loc></image:image>
-    <image:image><image:loc>https://nambanpanorama.com/images/dai-ngam-nam-ban.jpg</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/og-dat.jpg</image:loc></image:image>
   </url>
   <url>
@@ -398,6 +397,7 @@
   <url>
     <loc>https://nambanpanorama.com/en/trao-doi</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/founder.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/doi-ca-phe-suong-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/trao-doi.jpg</image:loc></image:image>
   </url>
   <url>
@@ -1030,8 +1030,8 @@
   </url>
   <url>
     <loc>https://nambanpanorama.com/trao-doi</loc>
-    <image:image><image:loc>https://nambanpanorama.com/images/toan-canh-nam-ban-nhin-tu-tren-cao-lam-ha-lam-dong.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/founder.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/doi-ca-phe-suong-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/trao-doi.jpg</image:loc></image:image>
   </url>
   <url>

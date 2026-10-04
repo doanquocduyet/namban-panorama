@@ -1506,9 +1506,6 @@
     906
    ],
    "used_in": {
-    "dat.html": [
-     "display"
-    ],
     "nam-ban-hay-dran.html": [
      "og",
      "twitter"
@@ -2211,6 +2208,12 @@
    ],
    "used_in": {
     "do-cao-nam-ban.html": [
+     "display"
+    ],
+    "trao-doi.html": [
+     "display"
+    ],
+    "en/trao-doi.html": [
      "display"
     ],
     "image-sitemap.xml": [
@@ -6505,9 +6508,6 @@
     "index.html": [
      "display"
     ],
-    "trao-doi.html": [
-     "display"
-    ],
     "novaland-nam-ban.html": [
      "display"
     ],
@@ -6546,6 +6546,9 @@
     ],
     "vung-ven-da-lat-nao-tot-nhat.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -7003,6 +7006,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
