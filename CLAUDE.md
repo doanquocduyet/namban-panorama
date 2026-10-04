@@ -140,6 +140,36 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
 
 ---
 
+## 1b. NAM BAN ECOSYSTEM — LUẬT VẬN HÀNH CHUNG 3 WEB (Chú chốt 4/10/2026)
+
+**Ô này là WORKER CỦA PANORAMA.** Chỉ tự quyết trong phạm vi Panorama. Việc thuộc Villas hoặc GreenSpacers → báo sang
+ô đó (qua Chú), không tự làm thay.
+
+**Vai trò:**
+- **Namban Panorama — HIỂU NAM BAN**, xây cộng đồng người chất ở Nam Ban. Vùng đất, con người, đời sống, quy hoạch, hạ tầng,
+  thị trường, Namban Index, phân tích, rủi ro, quyết định. Không biến Panorama thành trang bán hàng.
+- **Nam Ban Villas — MUA / BÁN / CHO THUÊ.** Tài sản thật, lô thật, giá đang bán, trạng thái tài sản. Không thành Panorama 2.
+- **GreenSpacers — SỞ HỮU / QUẢN LÝ.** Trông đất, kiểm tra đất, chăm vườn, nhà vắng chủ, dịch vụ sau khi mua. Không bán đất.
+
+**Luật chung:** ba web cùng phục vụ entity NAM BAN · không web nào độc quyền keyword — cùng key được xuất hiện nhiều web
+nếu khác góc (Panorama phân tích · Villas tài sản/giao dịch · GreenSpacers sở hữu/vận hành; khớp Luật 26d) · không nội dung
+trùng chỉ để SEO · không ép link khi người đọc không cần bước tiếp · không footer link hàng loạt, không trao đổi link cơ
+học · không PBN, backlink rác, link ẩn, review giả, giao dịch giả, AI bơm bài hàng loạt, doorway · không sửa trang đang có
+thứ hạng chỉ để "đồng bộ" khi chưa có dữ liệu chứng minh · không mở URL mới khi chưa kiểm ý định + cannibalization + IA ·
+không mở section/hub để cân layout · không dùng dữ kiện chưa kiểm · **dữ kiện giữa 3 web lệch nhau → BÁO TRƯỚC, không tự
+sửa theo suy đoán** · **không tự chấm điểm kiểu 8/10 khi không có số đo** · không đề xuất hàng loạt, chỉ chọn việc tác động rõ nhất.
+
+**Nguyên tắc:** DATA → SEARCH INTENT → DECISION → EXECUTE → MEASURE. Trước khi sửa: xác định vấn đề → kiểm dữ liệu hiện có
+→ kiểm URL liên quan → kiểm cannibalization → xác định web nào xử lý → chỉ sửa khi có lý do rõ → QA sau khi sửa.
+
+**Đề xuất việc mới luôn đúng 5 dòng:** Vấn đề · Dữ liệu chứng minh · Web nên xử lý · Việc cần làm · Các web khác có cần làm gì.
+Không cần làm thì nói thẳng: **"KHÔNG CẦN LÀM."**
+
+**Mục tiêu:** người tìm bất kỳ câu hỏi quan trọng nào về Nam Ban đều gặp đúng lớp thông tin của hệ thống —
+HIỂU → ĐÁNH GIÁ → MUA → SỞ HỮU → QUẢN LÝ. Mỗi web mạnh trong vai của mình, đỡ hai web kia đúng lúc, không cạnh tranh máy móc.
+
+---
+
 ## 2. LUẬT NỘI DUNG (không được phạm)
 
 1. Publication, KHÔNG landing bán. **Cấm CTA bán**: "liên hệ ngay", "mua ngay", "đăng ký
