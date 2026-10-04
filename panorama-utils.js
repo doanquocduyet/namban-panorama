@@ -731,33 +731,6 @@
   }catch(e){}
 })();
 
-/* NGUỒN ƯU TIÊN TRÊN GOOGLE — một dòng chữ trầm ở footer (Chú gật 25/9/2026).
-   Google "Preferred sources" (mọi ngôn ngữ từ 30/4/2026, hiện cả trong AI Overviews/AI Mode từ 27/5/2026):
-   người đọc chọn Panorama thì Google ưu tiên hiện Panorama cho họ. Không nút, không màu nóng, không "ngay" —
-   đúng §2.1. Màu chữ theo nền footer: nền tối dùng màu chữ footer sẵn có, nền sáng dùng --muted (đủ tương phản). */
-(function(){
-  try{
-    var f=document.querySelector('footer'); if(!f||f.querySelector('.pm-prefsrc'))return;
-    var vi=(document.documentElement.lang||'vi').slice(0,2)==='vi';
-    var a=document.createElement('a');
-    a.className='pm-prefsrc';
-    a.href='https://www.google.com/preferences/source?q=nambanpanorama.com';
-    a.target='_blank'; a.rel='noopener';
-    a.textContent=vi?'Thêm Namban Panorama vào nguồn ưu tiên trên Google':'Add Namban Panorama as a preferred source on Google';
-    var bg=getComputedStyle(f).backgroundColor.match(/\d+/g)||[255,255,255];
-    var dark=(0.299*bg[0]+0.587*bg[1]+0.114*bg[2])<128 && !(bg.length>3 && +bg[3]===0);
-    var c=dark?'#b3a892':'#6e6759';
-    a.style.cssText='display:inline-block;margin:4px auto 14px;font-size:12px;letter-spacing:.3px;color:'+c+';text-decoration:underline;text-decoration-color:'+(dark?'rgba(179,168,146,.4)':'rgba(110,103,89,.4)')+';text-underline-offset:3px;';
-    var w=document.createElement('div'); w.appendChild(a);
-    var meta=f.querySelector('.meta');
-    // Chân trang kiểu hub (footer > .wrap, 27 trang): đặt TRONG .wrap, một dòng riêng — đặt ngoài thì dính mép trái (sửa 4/10/2026)
-    var host=f.querySelector(':scope > .wrap');
-    if(meta&&meta.parentNode===f) f.insertBefore(w,meta);
-    else if(host){ w.style.flexBasis='100%'; host.appendChild(w); }
-    else f.appendChild(w);
-  }catch(e){}
-})();
-
 /* SPECULATION RULES — tải trước trang kế khi người đọc rê chuột/chạm vào link.
    Dùng PREFETCH chứ KHÔNG dùng prerender: prerender chạy luôn cả JS của trang
    đích nên vừa tốn dữ liệu (khách 4G) vừa dễ làm GA4 đếm lệch. prefetch lấy

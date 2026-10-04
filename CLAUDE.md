@@ -373,9 +373,9 @@ HIỂU → ĐÁNH GIÁ → MUA → SỞ HỮU → QUẢN LÝ. Mỗi web mạnh t
   vốn ghi "CẬP NHẬT THÁNG …" thì được thay bằng ngày chính xác ngay trong ô (khỏi hai dòng "cập nhật");
   ô ghi "Tháng …, 2026" (tháng đăng) giữ nguyên, ngày cập nhật đứng cạnh. Quên chạy thì người đọc vẫn thấy
   đúng (JS tự đồng bộ chữ + `datetime` theo JSON-LD), chỉ bot thấy ngày cũ. Không đổi lời đọc audio.
-- **Dòng "nguồn ưu tiên trên Google" ở footer (Chú gật 25/9/2026)** do `panorama-utils.js` tự chèn vào mọi
-  footer, trỏ `https://www.google.com/preferences/source?q=nambanpanorama.com`. Chữ trầm 12px, màu theo nền
-  footer (tối → `#b3a892`, sáng → `--muted`), tương phản đo 4.76–7.54. Không nút, không màu nóng. Đừng dán tay.
+- **Dòng "nguồn ưu tiên trên Google" ở footer — ĐÃ GỠ 4/10/2026 (Chú: "tôi ko hiểu dòng đó là sao… bỏ đi, khó khăn
+  quá").** Người đọc Việt không biết tính năng Preferred sources, bấm vào là rời site sang Google không quay lại, Panorama
+  là bài phân tích nên ít vào khối tin. Không qua bộ lọc 2/3 (người đọc · Google · AI). Đừng dựng lại.
 - **Hướng tối ưu AI 2026 (tra 25/9/2026, nguồn Google/Bing/Ahrefs):** Google tuyên bố AI Overviews/AI Mode
   KHÔNG cần llms.txt, markdown, schema đặc biệt, chia nhỏ đoạn; Ahrefs đo thêm schema KHÔNG tăng trích dẫn →
   đừng đổ công vào đó. Chỉ 38 % trang được AI Overviews trích nằm top 10 (AI tách câu hỏi thành nhiều câu nhỏ)
