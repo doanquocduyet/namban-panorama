@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 445,
+ "total_images": 446,
  "unused_count": 69,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -1786,6 +1786,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "dat-nen-nam-ban-ngang-5m.jpg": {
+   "kb": 206,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "dat-nen-nam-ban-ngang-5m.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
@@ -3874,6 +3888,9 @@
    ],
    "used_in": {
     "dinh-gia-dat-nam-ban.html": [
+     "display"
+    ],
+    "dat-nen-nam-ban-ngang-5m.html": [
      "display"
     ],
     "image-sitemap.xml": [

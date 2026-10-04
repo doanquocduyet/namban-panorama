@@ -236,6 +236,11 @@
     <image:image><image:loc>https://nambanpanorama.com/images/dat-nam-ban-xuong-gia-ban-hay-giu.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/dat-nen-nam-ban-ngang-5m</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/lo-dat-san-xong-bo-via-cho-lap-nam-ban.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/dat-nen-nam-ban-ngang-5m.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/dat-nguon-goc-lam-nghiep-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/dat-nguon-goc-lam-nghiep-nam-ban.jpg</image:loc></image:image>
   </url>

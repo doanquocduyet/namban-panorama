@@ -30,6 +30,8 @@
       "chi-phi-san-lap-ha-tang-nam-ban",
       /* thêm 26/9/2026 — đọc giá rao, bẫy đất rẻ: bài thị trường, thuộc diện §2.2 */
       "dat-nam-ban-gia-re",
+      /* thêm 4/10/2026 — đất nền ngang 5m 500–700 triệu: bài thị trường đất, thuộc diện §2.2 */
+      "dat-nen-nam-ban-ngang-5m",
       /* thêm 26/9/2026 — bảng giá đất nhà nước, bài đất, thuộc diện §2.2 */
       "bang-gia-dat-nam-ban",
       /* thêm 26/9/2026 — đấu giá đất, bài thị trường, thuộc diện §2.2 */
