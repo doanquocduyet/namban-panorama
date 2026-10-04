@@ -1,0 +1,201 @@
+{
+"end": "2026-10-01",
+"queries": {
+"5km là xa hay gần": {
+"clicks": 0,
+"imp": 14,
+"n_pages": 1,
+"page": "/5km-o-nam-ban",
+"pos": 10.1
+},
+"bán đất nam ban": {
+"clicks": 0,
+"imp": 2,
+"n_pages": 1,
+"page": "/mua-dat-nam-ban",
+"pos": 78.5
+},
+"chợ nam ban": {
+"clicks": 0,
+"imp": 23,
+"n_pages": 9,
+"page": "/nam-ban-co-dang-song",
+"pos": 41.9
+},
+"chợ thăng long nam ban": {
+"clicks": 1,
+"imp": 4,
+"n_pages": 1,
+"page": "/cho-nam-ban",
+"pos": 3.5
+},
+"hồ mê linh": {
+"clicks": 0,
+"imp": 4,
+"n_pages": 1,
+"page": "/ho-me-linh-nam-ban-cam-ly-thuong",
+"pos": 5.5
+},
+"hồ đầm tròn": {
+"clicks": 0,
+"imp": 1,
+"n_pages": 1,
+"page": "/ho-tron-nam-ban",
+"pos": 26.0
+},
+"mê linh lâm đồng": {
+"clicks": 0,
+"imp": 1,
+"n_pages": 1,
+"page": "/dat-me-linh-nam-ban",
+"pos": 34.0
+},
+"nam ban": {
+"clicks": 0,
+"imp": 50,
+"n_pages": 4,
+"page": "/en",
+"pos": 10.1
+},
+"nam ban lâm hà": {
+"clicks": 0,
+"imp": 2,
+"n_pages": 2,
+"page": "/xa-nam-ban-lam-ha",
+"pos": 84.5
+},
+"nam ban lâm hà lâm đồng": {
+"clicks": 0,
+"imp": 2,
+"n_pages": 2,
+"page": "/xa-nam-ban-lam-ha",
+"pos": 81.0
+},
+"nam ban vietnam": {
+"clicks": 0,
+"imp": 2,
+"n_pages": 2,
+"page": "/en/nam-ban-master-plan-2050",
+"pos": 3.0
+},
+"nam bang": {
+"clicks": 0,
+"imp": 2,
+"n_pages": 2,
+"page": "/nam-ban",
+"pos": 13.5
+},
+"nam bang là gì": {
+"clicks": 0,
+"imp": 1,
+"n_pages": 1,
+"page": "/nam-ban",
+"pos": 8.0
+},
+"nam bang ở đâu": {
+"clicks": 0,
+"imp": 1,
+"n_pages": 1,
+"page": "/nam-ban-co-dang-song",
+"pos": 11.0
+},
+"nam hà là ở đâu": {
+"clicks": 0,
+"imp": 1,
+"n_pages": 1,
+"page": "/xa-nam-ha-lam-ha",
+"pos": 8.0
+},
+"nam hà lâm hà lâm đồng": {
+"clicks": 0,
+"imp": 1,
+"n_pages": 1,
+"page": "/xa-nam-ha-lam-ha",
+"pos": 65.0
+},
+"namban": {
+"clicks": 0,
+"imp": 9,
+"n_pages": 1,
+"page": "/",
+"pos": 7.6
+},
+"nậm ban": {
+"clicks": 0,
+"imp": 1,
+"n_pages": 1,
+"page": "/o-nam-ban-mot-nam-moi-biet",
+"pos": 77.0
+},
+"panorama ban": {
+"clicks": 0,
+"imp": 1,
+"n_pages": 1,
+"page": "/",
+"pos": 87.0
+},
+"phi to": {
+"clicks": 0,
+"imp": 1,
+"n_pages": 1,
+"page": "/phi-to-nam-ha-lam-ha",
+"pos": 4.0
+},
+"phi tô": {
+"clicks": 0,
+"imp": 4,
+"n_pages": 1,
+"page": "/phi-to-nam-ha-lam-ha",
+"pos": 24.8
+},
+"rao ban dat": {
+"clicks": 0,
+"imp": 2,
+"n_pages": 1,
+"page": "/chuan-bi-truoc-khi-ban-dat-nam-ban",
+"pos": 25.5
+},
+"sau khi nhận tiền đền bù": {
+"clicks": 0,
+"imp": 1,
+"n_pages": 1,
+"page": "/nhan-tien-den-bu-dat-nen-lam-gi",
+"pos": 21.0
+},
+"thị trấn nam ban": {
+"clicks": 0,
+"imp": 1,
+"n_pages": 1,
+"page": "/xa-nam-ban-lam-ha",
+"pos": 75.0
+},
+"thị trấn nam ban lâm hà": {
+"clicks": 0,
+"imp": 1,
+"n_pages": 1,
+"page": "/xa-nam-ban-lam-ha",
+"pos": 77.0
+},
+"tải trọng hl93 là gì": {
+"clicks": 0,
+"imp": 1,
+"n_pages": 1,
+"page": "/quy-hoach-2050",
+"pos": 4.0
+},
+"đất nam ban": {
+"clicks": 0,
+"imp": 7,
+"n_pages": 1,
+"page": "/mua-dat-nam-ban",
+"pos": 39.9
+}
+},
+"site": "https://nambanpanorama.com/",
+"start": "2026-09-04",
+"totals": {
+"clicks": 33,
+"impressions": 711,
+"position": 9.4
+}
+}
