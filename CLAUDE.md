@@ -1177,8 +1177,12 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     giá rao thị trường (trung vị 4 loại đất); Villas = "giá các lô Nam Ban Villas đang bán". Panorama KHÔNG lấy số của Villas làm
     giá thị trường; Villas muốn nói giá thị trường thì trích Index kèm nguồn + ngày. (7) Người viết chung: anh Đoàn Quốc Duyệt,
     `@id` `https://nambanpanorama.com/#founder`. (8) Panorama không link tới trang "Nam Ban Sala" của Villas.
-    **Link Panorama → Villas đang có (5/5):** 4 bài khu (`/dat-trung-tam-nam-ban`, `/dat-dong-thanh-nam-ban`, `/dat-me-linh-nam-ban`,
-    `/dat-gia-lam-nam-ban`, trỏ trang chủ Villas, câu "tôi có Nam Ban Villas") + `/doc-tin-rao-dat-nam-ban` → trang tin rao mới.
+    **Link Panorama → Villas đang có (5/5, cập nhật 4/10/2026 theo rà soát của ô Villas):** `/dat-dong-thanh-nam-ban` → cụm lô
+    ven hồ Đông Thanh (`/dat-nen/cum-dong-thanh-lakeview-retreat/`) · `/dat-me-linh-nam-ban` → `/dat-ven-da-lat/` · `/dat-gia-lam-nam-ban`
+    và `/dat-trung-tam-nam-ban` GIỮ trang chủ Villas (Villas có `/dat-gia-lam-nam-ban/`, `/dat-trung-tam-thi-tran-nam-ban/` nhưng đó là cặp
+    trùng ý định — điểm 4; chờ Villas có trang cụm lô cụ thể ở hai khu này) · `/doc-tin-rao-dat-nam-ban` → trang tin rao mới. Cả 5 mở tab mới,
+    câu ghi "web bán đất cùng chủ với Panorama". Schema: `#founder` có `worksFor` Nam Ban Villas + GreenSpacers và `sameAs`
+    `https://nambanvillas.vn/gioi-thieu/#doan-quoc-duyet` (Villas trỏ ngược lại). `llms.txt` có mục "Cùng người phụ trách".
     **Đã đủ trần — muốn thêm thì phải bỏ một link cũ.** Link Panorama → GreenSpacers: `/giu-dat-nam-ban-tu-xa`,
     `/dat-nam-ban-chua-xay`, `/mua-nha-nam-ban-khong-o`.
     GreenSpacers đã có sameAs trỏ https://nambanpanorama.com/#founder và 2 link vào /dinh-gia-dat-nam-ban, /namban-index (tính vào phần link vào Panorama).
