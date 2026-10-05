@@ -444,6 +444,10 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   rồi dẫn `#tin-hieu`. Nguồn/cách tính chỉ ở mục 03. Mục 07 chỉ còn ô trích dẫn + một dòng "Mọi trích dẫn vui lòng ghi nguồn Namban Panorama." (Chú chốt 25/9: bỏ dòng link json/csv hiển thị; file dữ liệu vẫn khai trong Dataset schema). Thẻ "Đọc gì tiếp" cuối
   trang không lặp ô đã có trong hub mục 06. FAQ được phép nhắc số (AI trích FAQ độc lập), nhưng hai câu
   FAQ không dùng chung câu văn. Thêm khối mới thì quét lại cụm 6 chữ lặp trong thân trang.
+- **"Kỳ này" chỉ đổi sang tháng mới khi tháng đó đủ 3/4 ô từ 10 tin (vá 5/10/2026).** Lượt đo 4/10 lấy tháng 10
+  mới 4 ngày làm kỳ chính → mục 01 còn 1/4 ô, mục 02 kết luận "mềm đi −29 %" từ 20 tin. Giờ tháng đang đo chưa đủ thì
+  giữ tháng trước làm kỳ chính; tháng mới vẫn hiện trong bảng là cột "đang đo". Bảng mobile dùng `minmax(0,1fr)` cho cả
+  hàng tên tháng lẫn hàng số — bảng có 5 tháng thì hai hàng mới thẳng cột ở 360.
 - **Mẫu hai kỳ khác hẳn (|Δ| > 40 %) → in "không so được — mẫu hai tháng khác nhau", KHÔNG in %.**
   Từng in "+154 % khác hẳn" cỡ 28px — số tự nói "đừng tin tôi" mà vẫn đứng hàng chính; đã bỏ.
 - **Bảng diễn biến = cột cố định theo tháng, tên tháng ghi MỘT lần ở đầu cột (chốt 25/9/2026 sau hai

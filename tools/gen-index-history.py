@@ -56,8 +56,15 @@ def trend(cur, prev):
     return d, w
 def plain(s): return re.sub(r"<[^>]+>", "", s).replace("&nbsp;", " ")
 
-months = D["monthly"]; last = months[-1]; base = D["baseline"]
-m_on = dt.date.fromisoformat(base["measured_on"]).strftime("%-d/%-m/%Y"); last_m = month_vi(last["month"]); nxt = next_month(last["month"])
+months = D["monthly"]; latest = months[-1]; base = D["baseline"]
+# "Kỳ này" = tháng mới nhất, TRỪ khi tháng đó còn đang đo mà chưa đủ 3/4 ô từ 10 tin — khi đó giữ tháng trước.
+# (5/10/2026: lượt đo 4/10 lấy tháng 10 mới 4 ngày làm kỳ này → mục 01 còn 1/4 ô, mục 02 kết luận "mềm đi −29 %"
+#  từ 20 tin; tháng 10 vẫn hiện trong bảng là cột "đang đo", chỉ không đứng làm kỳ chính.)
+def ready(m): return sum(1 for k, _, _ in GROUPS if val(m, k)) >= 3
+last = latest
+if latest["status"] == "partial" and not ready(latest) and len(months) > 1: last = months[-2]
+LI = months.index(last)
+m_on = dt.date.fromisoformat(base["measured_on"]).strftime("%-d/%-m/%Y"); last_m = month_vi(last["month"]); nxt = next_month(latest["month"])
 
 # ---- số của kỳ này, theo nhóm ----
 cur = {}   # key -> dict(v, n, src, prev_m, prev_v, d, w)
@@ -65,7 +72,7 @@ for key, label, low in GROUPS:
     c = val(last, key)
     if not c: continue
     prev = None
-    for m in reversed(months[:-1]):
+    for m in reversed(months[:LI]):
         v = val(m, key)
         if v: prev = (m["month"], v); break
     row = {"v": c[0], "n": c[1], "src": c[2], "prev": prev}
@@ -163,7 +170,7 @@ for key, label, low in GROUPS:
 CUR = ' class="cur"'
 TMP = '<small>đang đo</small>'
 thead = "".join(f'<th scope="col"{CUR if i == 0 else ""}><time datetime="{m["month"]}">{month_vi(m["month"])}</time>{TMP if m["status"] == "partial" else ""}</th>' for i, m in enumerate(cols))
-span = [m["month"] for m in chron if first_shown <= m["month"] <= last["month"]]
+span = [m["month"] for m in chron if first_shown <= m["month"] <= latest["month"]]
 shown_m = {m["month"] for m in cols}
 empty_months = [month_vi(m) for m in span if m not in shown_m]
 dagger = " † Số từ sổ giao dịch thực địa của Panorama, dùng cho tháng tin rao chưa đủ." if "†" in "".join(rows) + "".join(cells) else ""
@@ -344,11 +351,11 @@ CSS = """.idx-tbl.idx-stock tbody th{white-space:normal}
 .idx-months .few{font-size:11.5px;font-style:italic;color:var(--stone-text,#726a5c)}
 @media(max-width:600px){.idx-stats{grid-template-columns:1fr 1fr}.idx-tbl{font-size:13px}.idx-answer{font-size:15.5px}.idx-now .price-range{font-size:27px}
 .idx-months,.idx-months thead,.idx-months tbody{display:block}
-.idx-months thead tr{display:grid;grid-template-columns:repeat(var(--nc,3),1fr)}.idx-months thead th:first-child{display:none}
-.idx-months thead th{padding:10px 12px}
-.idx-months tbody tr{display:grid;grid-template-columns:repeat(var(--nc,3),1fr)}
+.idx-months thead tr{display:grid;grid-template-columns:repeat(var(--nc,3),minmax(0,1fr))}.idx-months thead th:first-child{display:none}
+.idx-months thead th{padding:10px 6px}
+.idx-months tbody tr{display:grid;grid-template-columns:repeat(var(--nc,3),minmax(0,1fr))}
 .idx-months tbody th{grid-column:1/-1;padding:12px 12px 4px;border:0}
-.idx-months td{padding:6px 12px 12px;border-bottom:1px solid var(--line)}.idx-months tr:last-child td{border-bottom:0}
+.idx-months td{padding:6px 6px 12px;border-bottom:1px solid var(--line)}.idx-months tr:last-child td{border-bottom:0}
 .idx-months td b{font-size:18px}}
 """
 if "/* IDX-GEN:START */" in s:
@@ -357,7 +364,7 @@ else:
     s = s.replace('<style id="idx-v2">\n', '<style id="idx-v2">\n/* IDX-GEN:START */\n' + CSS + '/* IDX-GEN:END */\n', 1)
 
 # ---- JSON-LD + dateModified ----
-s = re.sub(r'"temporalCoverage": "[^"]*"', f'"temporalCoverage": "{first_shown}/{last["month"]}"', s, count=1)
+s = re.sub(r'"temporalCoverage": "[^"]*"', f'"temporalCoverage": "{first_shown}/{latest["month"]}"', s, count=1)
 s = re.sub(r'("@type": "Dataset",[\s\S]*?"dateModified": )"[^"]*"', lambda m: m.group(1) + f'"{NOW.date().isoformat()}"', s, count=1)
 s = re.sub(r'("@type": "Article",[\s\S]*?"dateModified": )"[^"]*"', lambda m: m.group(1) + f'"{NOW.strftime("%Y-%m-%dT%H:%M:00+07:00")}"', s, count=1)
 open(P, "w", encoding="utf-8").write(s)
