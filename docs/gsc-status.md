@@ -1,12 +1,12 @@
 # Trạng thái index — Google Search Console
 
-Cập nhật: hôm nay · Property: `https://nambanpanorama.com/` · Tổng URL: 212 · **Đã index (PASS): 184**
+Cập nhật: hôm nay · Property: `https://nambanpanorama.com/` · Tổng URL: 215 · **Đã index (PASS): 187**
 
 ## Tổng hợp theo trạng thái
 
-- **184** — Đã được gửi và lập chỉ mục
-- **14** — Đã phát hiện thấy – hiện chưa được lập chỉ mục
-- **10** — Google không xác định được URL
+- **187** — Đã được gửi và lập chỉ mục
+- **16** — Đã phát hiện thấy – hiện chưa được lập chỉ mục
+- **8** — Google không xác định được URL
 - **4** — Đã thu thập dữ liệu – hiện chưa được lập chỉ mục
 
 ## Trang CHƯA index (cần chú ý)
@@ -20,14 +20,14 @@ Cập nhật: hôm nay · Property: `https://nambanpanorama.com/` · Tổng URL:
 | /mot-ngay-o-nam-ban | NEUTRAL | Đã thu thập dữ liệu – hiện chưa được lập chỉ mục |
 | /dac-san-nam-ban | NEUTRAL | Đã thu thập dữ liệu – hiện chưa được lập chỉ mục |
 | /hoi-nhanh | NEUTRAL | Đã thu thập dữ liệu – hiện chưa được lập chỉ mục |
-| /dau-gia-dat-nam-ban | NEUTRAL | Google không xác định được URL |
-| /tuyen-tranh-nam-ban | NEUTRAL | Google không xác định được URL |
+| /dau-gia-dat-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục |
+| /tuyen-tranh-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục |
 | /khi-hau-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục |
 | /du-lich-nong-nghiep-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục |
-| /thue-nguoi-lam-vuon-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục |
-| /hop-tac-canh-tac-dat-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục |
-| /chi-phi-trong-ca-phe-nam-ban | NEUTRAL | Google không xác định được URL |
-| /hoa-o-nam-ban | NEUTRAL | Google không xác định được URL |
+| /thue-nguoi-lam-vuon-nam-ban | NEUTRAL | Google không xác định được URL |
+| /hop-tac-canh-tac-dat-nam-ban | NEUTRAL | Google không xác định được URL |
+| /chi-phi-trong-ca-phe-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục |
+| /hoa-o-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục |
 | /thuy-dien-da-chomo-phi-to | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục |
 | /dat-nam-ban-kinh-doanh-gi | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục |
 | /do-cao-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục |
@@ -37,7 +37,7 @@ Cập nhật: hôm nay · Property: `https://nambanpanorama.com/` · Tổng URL:
 | /thac-voi-nam-ban | NEUTRAL | Đã thu thập dữ liệu – hiện chưa được lập chỉ mục |
 | /pickleball-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục |
 | /da-lat-di-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục |
-| /mot-ngay-lam-vuon-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục |
+| /mot-ngay-lam-vuon-nam-ban | NEUTRAL | Google không xác định được URL |
 | /nam-ban-chua-lanh | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục |
-| /trung-thu-nam-ban | NEUTRAL | Google không xác định được URL |
+| /trung-thu-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục |
 | /ram-vu-lan-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục |
