@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 447,
+ "total_images": 448,
  "unused_count": 69,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -6404,6 +6404,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -6881,6 +6884,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "tuyen-duong-dong-luc-nam-ban.jpg": {
+   "kb": 145,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "tuyen-duong-dong-luc-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },

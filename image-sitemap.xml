@@ -1055,6 +1055,10 @@
     <image:image><image:loc>https://nambanpanorama.com/images/truoc-khi-xuong-tien.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/tuyen-duong-dong-luc-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/tuyen-duong-dong-luc-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/tuyen-tranh-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/tuyen-tranh-nam-ban.jpg</image:loc></image:image>
   </url>
