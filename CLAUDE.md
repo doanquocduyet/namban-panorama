@@ -251,6 +251,9 @@ HIỂU → ĐÁNH GIÁ → MUA → SỞ HỮU → QUẢN LÝ. Mỗi web mạnh t
    **ĐÃ DỌN 2/10/2026 (Chú gật "làm tất cả"):** mọi câu gán "18–25°C" cho Nam Ban (19 trang vi/en/fr + `llms.txt`,
    `llms-full.txt`, feed) đổi thành "nhiệt độ trung bình năm khoảng 19–21°C"; ô số hub `/nam-ban` ghi "19–21°C · Nhiệt độ TB năm";
    bảng so vùng `/tiem-nang-dau-tu` ghi Nam Ban "khoảng 19–21°C (TB năm)", Đà Lạt "khoảng 18°C (TB năm)". Quét lại phải = 0.
+   **Lượt 2/10 SÓT 22 chỗ — vá 6/10/2026:** 9 trang vi (có câu viết bằng chữ "mười tám tới hai lăm độ", có câu viết
+   "18-25" gạch thường) + FAQ ja/ko (cả schema, "18〜25度"/"18~25도") + `llms.txt` + `llms-full.txt` + `data/places.json`.
+   Bộ quét đúng phải bắt cả chữ, gạch thường/dài, `~ 〜 至 đến tới`, °F 64–77; phạm vi 229 file (html mọi ngôn ngữ + txt + xml + json). Còn 0.
    **MÙA MƯA / MÙA KHÔ — ĐÃ CHỐT, ĐỪNG HỎI LẠI (Chú chốt 27/9/2026, đã nói nhiều lần): "mùa mưa
    không có năm nào giống năm nào, chỉ ghi KHOẢNG mà thôi — đó là thời tiết của cả thế giới".**
    Không chốt tháng bắt đầu, không hỏi Chú "tháng 4 hay tháng 5", không mở đợt đồng bộ số. Luật duy
@@ -399,6 +402,9 @@ HIỂU → ĐÁNH GIÁ → MUA → SỞ HỮU → QUẢN LÝ. Mỗi web mạnh t
   **index**: 28/215 URL chưa vào (docs/gsc-status.md 5/10) — 4 trang "đã thu thập, chưa index" (`/thac-voi-nam-ban`,
   `/hoi-nhanh`, `/dac-san-nam-ban`, `/mot-ngay-o-nam-ban`, không trùng, không mỏng), 24 trang "đã phát hiện"/"chưa biết URL"
   có trung vị 2–4 trang link vào (trang đã index: 6); trang chủ không link tới trang nào trong số đó.
+  **Đã làm 6/10:** khối "Mới cập nhật" trên trang chủ + 22 link trong câu từ bài đã index tới 13 trang chưa index (chỉ bọc chữ có
+  sẵn, mỗi trang nguồn một link mỗi đích, lời đọc không đổi). Không ép link cho `/tuyen-tranh-nam-ban`, `/dau-gia-dat-nam-ban`,
+  `/hoi-nhanh`, trang sự kiện (Trung thu, Vu Lan, pickleball) — chưa có câu nào tự nhiên dẫn sang. Đo lại `docs/gsc-status.md` khoảng 20/10.
 - **Slug mới → kiểm `vercel.json` trước (vấp thật 26/9/2026).** `/khi-hau-nam-ban` đăng xong vẫn bị một luật
   `redirects` cũ (25/8/2026, lúc slug này đã bị xóa) chuyển 308 sang `/nam-ban-co-dang-song` — trang có trong repo,
   sitemap, hub, mà người đọc và Google không bao giờ tới được. Đặt slug mới hoặc dựng lại slug cũ thì
