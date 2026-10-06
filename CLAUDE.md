@@ -382,6 +382,23 @@ HIỂU → ĐÁNH GIÁ → MUA → SỞ HỮU → QUẢN LÝ. Mỗi web mạnh t
   → **mỗi câu hỏi nhỏ một trang trả lời gọn, nối về hub** là hướng ăn điểm nhất. Theo dõi bằng Search Console
   (mục Search generative AI, giữ "Include") và Bing Webmaster Tools → AI Performance (câu hỏi thật khiến
   ChatGPT/Copilot trích mình).
+  **Cập nhật 6/10/2026 (đã kiểm nguồn gốc):** Google có trang hướng dẫn chính thức "AI optimization guide" (15/5, sửa
+  10/7/2026): AI Overviews + AI Mode chạy trên CÙNG hệ xếp hạng, điều kiện là trang được index + đủ điều kiện hiện snippet;
+  llms.txt, chia nhỏ nội dung, "văn phong AI", schema đều KHÔNG cần — cái Google nhấn là **nội dung gốc, không đại trà**
+  (Index, ảnh tự chụp, số có nguồn là đúng hướng). AI Overviews (10/2024) và AI Mode (7/10/2025) đều có tiếng Việt;
+  I/O 20/5/2026 gộp hai thứ thành một trải nghiệm. Search Console có báo cáo AI riêng (toàn cầu từ 31/8/2026) — chỉ có lượt
+  hiện theo trang/quốc gia/thiết bị, không có lượt bấm, không có từ khoá; site ít dữ liệu thì chưa hiện. 2026 đã có 2 core
+  update (27/3–8/4, 21/5–2/6) và 4 spam update — đợt **24/9/2026 đang chạy** (mọi ngôn ngữ); luật spam mới 13/4/2026: cấm
+  "back button hijacking" (đã kiểm: link "← Quay lại" chỉ chạy khi người đọc bấm, hợp lệ). Core Web Vitals giữ ngưỡng cũ
+  (LCP ≤ 2,5 s · INP ≤ 200 ms · CLS ≤ 0,1). Bot cần mở để được trích: Googlebot, OAI-SearchBot (ChatGPT search), PerplexityBot,
+  Claude-SearchBot + Claude-User (thêm vào robots.txt 6/10), Bingbot; GPTBot/ClaudeBot/Google-Extended chỉ là bot huấn luyện.
+  IndexNow chỉ Bing/Yandex/Naver nhận, Google KHÔNG. Thị phần VN 9/2026: Google ~93 %, Cốc Cốc ~6 %, Bing <1 %.
+  Nghiên cứu (tương quan, không phải nhân quả): nhắc thương hiệu ngoài site ~0,66–0,74 (YouTube cao nhất) so với backlink ~0,22.
+  **Nút "nguồn ưu tiên" đã hỗ trợ tiếng Việt (30/4/2026)** — nhưng Chú đã gỡ dòng này 4/10/2026, giữ quyết định đó.
+  **Rà site 6/10/2026:** 219 trang, 0 link gãy/tựa trùng/lỗi schema/lỗi hreflang; tươi trung vị 11 ngày. Vấn đề thật là
+  **index**: 28/215 URL chưa vào (docs/gsc-status.md 5/10) — 4 trang "đã thu thập, chưa index" (`/thac-voi-nam-ban`,
+  `/hoi-nhanh`, `/dac-san-nam-ban`, `/mot-ngay-o-nam-ban`, không trùng, không mỏng), 24 trang "đã phát hiện"/"chưa biết URL"
+  có trung vị 2–4 trang link vào (trang đã index: 6); trang chủ không link tới trang nào trong số đó.
 - **Slug mới → kiểm `vercel.json` trước (vấp thật 26/9/2026).** `/khi-hau-nam-ban` đăng xong vẫn bị một luật
   `redirects` cũ (25/8/2026, lúc slug này đã bị xóa) chuyển 308 sang `/nam-ban-co-dang-song` — trang có trong repo,
   sitemap, hub, mà người đọc và Google không bao giờ tới được. Đặt slug mới hoặc dựng lại slug cũ thì

@@ -20,6 +20,13 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
+# Claude-SearchBot / Claude-User: bot tìm kiếm + bot người dùng của Claude (chặn = giảm hiện diện trong câu trả lời Claude, theo tài liệu Anthropic 2026)
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
 User-agent: PerplexityBot
 Allow: /
 
