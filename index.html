@@ -818,12 +818,21 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
   </div>
 </section>
 
-
-
-
-
-
-
+<!-- HOME-LATEST:START (sinh bởi tools/sync-home-latest.py — đừng sửa tay) -->
+<section class="reveal home-latest" id="moi-cap-nhat">
+  <div class="wrap">
+    <div class="sechead"><span class="idx">04</span><h2 class="kicker" style="margin:0;">Mới cập nhật</h2></div>
+    <div class="kb">
+      <a href="/tuyen-duong-dong-luc-nam-ban"><span><span class="kb-t">Tuyến đường động lực Nam Ban: đường mới ra sân bay Liên Khương đang tới&nbsp;đâu</span><br><span class="kb-s"><time datetime="2026-10-05">Đăng 5/10/2026</time></span></span><span class="kb-n">→</span></a>
+      <a href="/thu-tuc-len-tho-cu-nam-ban"><span><span class="kb-t">Thủ tục lên thổ cư ở Nam Ban: hồ sơ gồm gì, nộp thế&nbsp;nào</span><br><span class="kb-s"><time datetime="2026-10-05">Đăng 5/10/2026</time></span></span><span class="kb-n">→</span></a>
+      <a href="/dat-nen-nam-ban-ngang-5m"><span><span class="kb-t">Đất nền Nam Ban ngang 5m giá <span style="white-space:nowrap">500–700</span> triệu thường là lô ra sao, nên xem những&nbsp;gì?</span><br><span class="kb-s"><time datetime="2026-10-04">Đăng 4/10/2026</time></span></span><span class="kb-n">→</span></a>
+      <a href="/vung-ven-da-lat-nao-tot-nhat"><span><span class="kb-t">Vùng ven Đà Lạt nào tốt nhất? Nên chọn ở đâu, mua đất ở&nbsp;đâu</span><br><span class="kb-s"><time datetime="2026-10-03">Đăng 3/10/2026</time></span></span><span class="kb-n">→</span></a>
+      <a href="/thue-nha-nam-ban"><span><span class="kb-t">Thuê nhà ở Nam Ban giá bao nhiêu một&nbsp;tháng?</span><br><span class="kb-s"><time datetime="2026-10-02">Đăng 2/10/2026</time></span></span><span class="kb-n">→</span></a>
+      <a href="/nam-ban-giong-vung-nao-tren-the-gioi"><span><span class="kb-t">Nam Ban giống vùng nào trên thế&nbsp;giới?</span><br><span class="kb-s"><time datetime="2026-10-02">Đăng 2/10/2026</time></span></span><span class="kb-n">→</span></a>
+    </div>
+  </div>
+</section>
+<!-- HOME-LATEST:END -->
 
 <!-- CHÂN TRANG: đèo → xanh → đen -->
 <footer class="closing">
@@ -1025,16 +1034,22 @@ window.addEventListener('scroll',s,{passive:true});s();})();
   if((mq&&mq('(prefers-reduced-motion:reduce)').matches) ||
      (c&&(c.saveData||/2g|slow-2g/.test(c.effectiveType||'')))) return;  // mạng yếu / tắt chuyển động → poster tĩnh, không video
 
-  // visit 1-3: video chạy NGAY, mờ chồng lên poster (lần đầu ~0.6s; quay lại hiện thẳng)
+  // visit 1-3: video chạy sau khi trang tải xong (không giành băng thông với ảnh đầu trang), mờ chồng lên poster.
+  // Điện thoại (≤440px) tải hero-m.mp4: cắt sẵn 70% phần giữa — đúng phần lọt khung hero dọc — 672×540, ~0,7 MB
+  // thay vì 3 MB (6/10/2026). Khung nhìn giữ nguyên vì object-fit:cover chỉ thấy phần giữa.
+  function start(){
   var v=document.createElement('video');
   v.muted=true;v.defaultMuted=true;v.loop=true;v.playsInline=true;
   v.setAttribute('muted','');v.setAttribute('playsinline','');
-  v.preload='auto';v.poster='/video/hero-poster.jpg';v.src='/video/hero.mp4';
+  v.preload='auto';v.poster='/video/hero-poster.jpg';
+  v.src=(mq&&mq('(max-width:440px)').matches)?'/video/hero-m.mp4':'/video/hero.mp4';   // ≤440px: khung hero ≤1,24 rộng/cao → bản cắt 1344/1080 vẫn phủ kín, khung nhìn y hệt bản gốc
   v.style.opacity=(lan>1?'1':'0');                                    // lần đầu: mờ chồng lên poster; quay lại: hiện thẳng
   v.style.transition='opacity .6s ease';
   v.addEventListener('playing',function(){ v.style.opacity='1'; },{once:true});
   box.appendChild(v);
   var p=v.play(); if(p&&p.catch) p.catch(function(){});               // lỗi phát → poster giữ nguyên
+  }
+  if(document.readyState==='complete') start(); else window.addEventListener('load',start,{once:true});
 })();
 </script>
 </body>

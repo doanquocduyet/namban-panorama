@@ -1,0 +1,41 @@
+name: Đồng bộ khối "Mới cập nhật" trên trang chủ
+# 6 bài tiếng Việt đăng gần nhất (datePublished) → index.html giữa marker HOME-LATEST (HTML tĩnh, không JS).
+# Chạy khi có trang .html đổi trên main; danh sách không đổi (sửa bài cũ) thì không commit, không tốn lượt deploy.
+on:
+  push:
+    branches: [main]
+    paths: ['*.html', '!index.html']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: home-latest
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Lấy 6 bài mới nhất vào trang chủ
+        run: python3 tools/sync-home-latest.py
+      - name: Commit & push nếu trang chủ đổi
+        run: |
+          git config user.name "namban-home-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html sitemap.xml
+          if git diff --cached --quiet; then
+            echo "Trang chủ đã khớp, không commit."
+            exit 0
+          fi
+          git commit -m "Trang chủ: cập nhật khối Mới cập nhật"
+          for i in 1 2 3 4 5; do
+            if git push; then echo "Đã push."; exit 0; fi
+            echo "Push bị từ chối, rebase rồi thử lại (lần $i)..."
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort; exit 1; }
+            sleep $((i*3))
+          done
+          exit 1

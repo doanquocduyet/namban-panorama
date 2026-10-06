@@ -50,3 +50,13 @@ xuất 1080p, rồi nén qua trang freeconvert.com/video-compressor về dưới
 
 Mặc định video nằm mờ phía sau, chữ giữ màu tối — hợp tông trầm.
 Muốn video nổi hẳn, chữ chuyển trắng: sửa `index.html`, đổi `<header>` thành `<header class="video-bold">`.
+
+## Bản điện thoại `hero-m.mp4` (6/10/2026)
+
+Điện thoại (≤ 440px) tải `hero-m.mp4` thay cho `hero.mp4`: cắt sẵn 1344×1080 ở giữa (bỏ hai bên vốn không bao giờ lọt
+khung hero dọc), thu về 672×540, H.264 CRF 27, không tiếng — **~0,7 MB thay vì 3 MB**. Khung nhìn y hệt bản gốc (tính
+bằng hình học object-fit:cover; khung hero ≤ 440px có tỷ lệ rộng/cao ≤ 1,24). Video chỉ tải sau sự kiện `load` của
+trang. Thay `hero.mp4` thì làm lại bản này:
+
+    ffmpeg -i hero.mp4 -an -vf "crop=1344:1080:288:0,scale=672:540:flags=lanczos" -c:v libx264 -preset veryslow \
+      -crf 27 -profile:v high -pix_fmt yuv420p -movflags +faststart hero-m.mp4

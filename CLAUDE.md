@@ -647,6 +647,15 @@ Site có **HAI hệ thanh nav song song**:
 Gỡ `nav.css` = vỡ thanh nav 48 trang hệ A. Đây là nợ kỹ thuật (2 template), không phải lỗi.
 Thêm bài mới: theo hệ A thì **nhớ nạp `nav.css`**.
 
+### Trang chủ — khối "Mới cập nhật" + video nhẹ cho điện thoại (Chú gật 6/10/2026: "làm tất cả những gì tốt nhất")
+- **Khối "04 · Mới cập nhật"** (sau mục 03, trước chân trang): 6 bài tiếng Việt đăng gần nhất theo `datePublished`, HTML
+  tĩnh giữa marker `HOME-LATEST:START/END` — **đừng sửa tay**. Sinh bằng `tools/sync-home-latest.py` (bỏ hub, trang tin,
+  Index, trang noindex); workflow `home-latest.yml` tự chạy khi có `.html` đổi trên `main`, chỉ commit khi danh sách đổi.
+  Lý do: 24 URL Google chưa ghé đọc đều là bài mới có ít link vào; trang chủ là trang Google ghé nhiều nhất. Tiêu đề
+  mục là `<h2 class="kicker">` (trang chủ trước đó 0 H2). Đo lại `docs/gsc-status.md` sau 2–3 tuần.
+- **Video hero:** điện thoại ≤ 440px tải `video/hero-m.mp4` (~0,7 MB, cắt sẵn phần giữa), PC/máy tính bảng giữ `hero.mp4`
+  (3 MB); video chỉ tải sau sự kiện `load`. Quy tắc 3 lần/phiên giữ nguyên. Cách làm lại bản nhẹ: `video/README.md`.
+
 ### Ghi chú ảnh trang chủ (Chú đã chốt — giữ nguyên)
 - 5 khối dưới hero có class `.reveal` (scroll-reveal fade-up, có fallback).
 - Nút chat nổi `.fab-contact` (glass 44px, viền forest, góc phải dưới).
