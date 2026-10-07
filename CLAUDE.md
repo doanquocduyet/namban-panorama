@@ -405,6 +405,18 @@ HIỂU → ĐÁNH GIÁ → MUA → SỞ HỮU → QUẢN LÝ. Mỗi web mạnh t
   **Đã làm 6/10:** khối "Mới cập nhật" trên trang chủ + 22 link trong câu từ bài đã index tới 13 trang chưa index (chỉ bọc chữ có
   sẵn, mỗi trang nguồn một link mỗi đích, lời đọc không đổi). Không ép link cho `/tuyen-tranh-nam-ban`, `/dau-gia-dat-nam-ban`,
   `/hoi-nhanh`, trang sự kiện (Trung thu, Vu Lan, pickleball) — chưa có câu nào tự nhiên dẫn sang. Đo lại `docs/gsc-status.md` khoảng 20/10.
+  **Rà 7/10/2026 (đã đọc nguồn gốc):** (1) Google sửa trang "Using generative AI content" 1/10/2026: phải tự kiểm từng
+  dữ kiện kể cả title, description, schema, alt; nên cho người đọc biết bài được làm thế nào; rater chấm thấp nội dung "ít công,
+  ít mới, ít giá trị" (QRG 4.6.5–4.6.6). Site CHƯA có trang "Về Panorama" công khai (`demo-ve-panorama` noindex, chưa duyệt) —
+  đề xuất chờ Chú. (2) Mueller 7/9/2026: Google có thể "mất niềm tin" cả site vì nhiều trang ít giá trị, hồi lại mất nhiều tháng →
+  ưu tiên làm dày bài đang có (ảnh tự chụp, số có nguồn) hơn đẻ trang mới. (3) Spam update 24/9 vẫn chạy (Google hẹn ≤ 2 tuần);
+  Gemini 3.8 vào AI Mode; Search Console có báo cáo AI toàn cầu + thử "AI Contribution" trả tiền nhà báo (chọn lọc). (4) Search
+  Profiles (Discover) chỉ ở Mỹ, đòi ≥ 100.000 người theo dõi — chưa áp. (5) ChatGPT tìm nguồn qua Bing → Bing Webmaster Tools
+  (có báo cáo AI Performance từ 2/2026) đáng làm; site chưa có meta/file xác minh Bing trong repo (có thể Chú xác minh bằng
+  nhập từ GSC). (6) Cốc Cốc nhận sitemap qua dòng `Sitemap:` trong robots.txt — đã có, không cần console. (7) Kỹ thuật đo 7/10:
+  215/215 URL sitemap trả 200 trên web thật; LCP lab 0,3–2,0 s (điện thoại chậm), CLS ~0; favicon Google đã nhận; prefetch
+  (speculationrules) đã có trong `panorama-utils.js`; schema Article bổ sung `image` (24 bài) + `mainEntityOfPage` (12 bài);
+  ảnh/audio/video được lưu đệm 1 ngày (`vercel.json`); chữ ký chân trang đạt WCAG. Nút VI/EN trang chủ tương phản 1,79 — chờ Chú.
 - **Slug mới → kiểm `vercel.json` trước (vấp thật 26/9/2026).** `/khi-hau-nam-ban` đăng xong vẫn bị một luật
   `redirects` cũ (25/8/2026, lúc slug này đã bị xóa) chuyển 308 sang `/nam-ban-co-dang-song` — trang có trong repo,
   sitemap, hub, mà người đọc và Google không bao giờ tới được. Đặt slug mới hoặc dựng lại slug cũ thì
