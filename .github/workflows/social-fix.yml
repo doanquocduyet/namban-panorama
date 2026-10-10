@@ -1,0 +1,77 @@
+name: Đính chính bài đã đăng (Facebook / Instagram / Threads)
+
+# Bấm tay khi một bài ĐÃ ĐĂNG cần đính chính (số liệu nguồn đổi sau khi đăng).
+# Không xoá bài, không đăng lại bài mới: Facebook sửa thẳng một câu (không
+# sửa được thì trả lời dưới bài), Instagram và Threads trả lời dưới bài.
+# Mỗi kênh chỉ làm một lần — xem tools/social-fix.py.
+on:
+  workflow_dispatch:
+    inputs:
+      key:
+        description: "key của mục trong data/fb-queue.json"
+        required: true
+        type: string
+      fb_find:
+        description: "Câu cũ trong bài Facebook (để trống = chỉ trả lời)"
+        required: false
+        type: string
+        default: ""
+      fb_replace:
+        description: "Câu mới thay vào bài Facebook"
+        required: false
+        type: string
+        default: ""
+      reply:
+        description: "Câu trả lời dưới bài"
+        required: true
+        type: string
+      dry_run:
+        description: "Chạy khô — chỉ đọc, không ghi gì lên mạng xã hội"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: social-post
+  cancel-in-progress: false
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Đính chính
+        env:
+          FIX_KEY: ${{ inputs.key }}
+          FIX_FB_FIND: ${{ inputs.fb_find }}
+          FIX_FB_REPLACE: ${{ inputs.fb_replace }}
+          FIX_REPLY: ${{ inputs.reply }}
+          FIX_DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+        run: python3 tools/social-fix.py
+
+      - name: Ghi lại hàng đợi
+        # Chạy cả khi bước trên báo lỗi một kênh: kênh đã xong vẫn phải được ghi,
+        # không thì lần bấm sau trả lời trùng.
+        if: always()
+        run: |
+          [ -f data/.pending-fix.json ] || { echo "Không có phiếu — không ghi gì."; exit 0; }
+          cp data/.pending-fix.json /tmp/fix.json
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            python3 tools/social-fix.py --apply /tmp/fix.json || exit 1
+            git diff --quiet -- data/fb-queue.json && { echo "Đã ghi từ trước."; exit 0; }
+            git add data/fb-queue.json
+            git commit -m "social: ghi dấu đính chính bài đã đăng"
+            git push origin HEAD:main && exit 0
+            echo "Push bị chặn, thử lại lần $i..."
+          done
+          echo "Push thất bại sau 5 lần — ĐÃ ĐÍNH CHÍNH nhưng chưa ghi dấu." >&2
+          exit 1
