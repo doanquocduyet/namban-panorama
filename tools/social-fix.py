@@ -6,9 +6,9 @@ Claude: token chỉ nằm trong secrets của repo.
 
 Vì sao có file này — ca thật 10/10/2026: mục "xã gặp doanh nghiệp, nhà đầu
 tư" đã đăng đủ ba nơi với số thu ngân sách cũ, sau đó xã sửa bản tin. Luật
-§0 là KHÔNG xoá bài, KHÔNG đăng lại bài mới (đăng lặp). Cách đính chính:
-  - Facebook: sửa thẳng nội dung bài (thay đúng một câu). Sửa không được thì
-    trả lời ngay dưới bài.
+là KHÔNG xoá bài, KHÔNG đăng lại bài mới (đăng lặp). Cách đính chính:
+  - Facebook: sửa thẳng nội dung bài (thay đúng một câu). Không đọc được hay
+    không sửa được thì trả lời ngay dưới bài.
   - Instagram, Threads: API không cho sửa chữ bài đã đăng, nên trả lời dưới bài.
 
 Biến môi trường:
@@ -20,14 +20,17 @@ Biến môi trường:
   FB_PAGE_TOKEN   token Trang (Facebook + Instagram)
   THREADS_TOKEN   token Threads
 
-Mỗi kênh chỉ làm MỘT lần: mục trong hàng đợi đã có `fix_fb` / `fix_ig` /
-`fix_threads` thì bỏ qua kênh đó, nên bấm chạy lại không sinh trả lời trùng.
+Chống trả lời trùng, hai lớp (review 10/10/2026 bắt được ca Re-run dùng lại
+ảnh chụp kho cũ, chưa có dấu của lần trước):
+  1. Dấu trong hàng đợi: mục đã có `fix_fb` / `fix_ig` / `fix_threads` thì bỏ
+     qua kênh đó. Workflow kéo `origin/main` MỚI NHẤT trước khi chạy script.
+  2. Đọc các trả lời đang có dưới bài: đã có đúng câu trả lời này thì không
+     đăng nữa, chỉ ghi dấu.
 Kết quả ghi vào phiếu `data/.pending-fix.json` sau MỖI kênh xong (kênh sau
 hỏng thì kênh trước vẫn được ghi). Workflow dán phiếu lên `origin/main` mới
-nhất bằng `python3 tools/social-fix.py --apply <phiếu>` — cùng cách
-`tools/apply-mark.py` tránh đụng độ khi push.
+nhất bằng `python3 tools/social-fix.py --apply <phiếu>`.
 
-Kết quả từng kênh in thêm dạng `::notice::` để đọc được qua API check-runs
+Kết quả từng kênh in dạng `::notice::` để đọc được qua API check-runs
 (log thô của Actions không đọc được từ phiên Claude).
 """
 import datetime
@@ -35,6 +38,8 @@ import importlib.util
 import json
 import os
 import sys
+import time
+import unicodedata
 import urllib.error
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -48,16 +53,20 @@ _spec.loader.exec_module(sp)
 fb = sp.fb
 
 
-def notice(title, msg):
-    msg = str(msg).replace("\n", " ").replace("::", ": ")
-    print("::notice title=%s::%s" % (title, msg[:900]))
+def notice(title, msg, level="notice"):
+    msg = str(msg).replace("%", "%25").replace("\r", " ").replace("\n", " ")
+    print("::%s title=%s::%s" % (level, title, msg[:900]))
 
 
 def http_err(e):
     try:
         return "%s %s" % (e.code, e.read().decode()[:500])
     except Exception:
-        return str(e)
+        return repr(e)
+
+
+def norm(s):
+    return " ".join(unicodedata.normalize("NFC", s or "").replace("\xa0", " ").split())
 
 
 def load_queue():
@@ -83,7 +92,7 @@ def apply(path):
         mark = json.load(fh)
     q = load_queue()
     item = find_item(q, mark["key"])
-    changed = False
+    changed = []
     for k, v in mark["results"].items():
         if not k.startswith("fix_"):
             continue
@@ -91,20 +100,40 @@ def apply(path):
             print("Đã có %s từ trước — giữ nguyên." % k)
             continue
         item[k] = v
-        changed = True
+        changed.append(k)
     if changed:
         with open(QUEUE, "w", encoding="utf-8") as fh:
             json.dump(q, fh, ensure_ascii=False, indent=2)
             fh.write("\n")
-        print("Đã ghi:", ", ".join(k for k in mark["results"] if k.startswith("fix_")))
+        print("Đã ghi:", ", ".join(changed))
     return 0
+
+
+def already_replied(texts, reply):
+    r = norm(reply)
+    return any(norm(t) == r for t in texts)
+
+
+def fb_comments(pid, tok):
+    d = fb.get("/%s/comments" % pid, {"fields": "message", "limit": "100"}, tok)
+    return [c.get("message", "") for c in d.get("data", [])]
+
+
+def ig_comments(mid, tok):
+    d = sp.req(sp.GRAPH, "/%s/comments" % mid, {"fields": "text", "limit": "100"}, tok, "GET")
+    return [c.get("text", "") for c in d.get("data", [])]
+
+
+def th_replies(tid, tok):
+    d = sp.req(sp.THREADS, "/%s/replies" % tid, {"fields": "text"}, tok, "GET")
+    return [c.get("text", "") for c in d.get("data", [])]
 
 
 def main():
     key = os.environ.get("FIX_KEY", "").strip()
-    find = os.environ.get("FIX_FB_FIND", "").strip()
-    repl = os.environ.get("FIX_FB_REPLACE", "").strip()
-    reply = os.environ.get("FIX_REPLY", "").strip()
+    find = norm(os.environ.get("FIX_FB_FIND", ""))
+    repl = norm(os.environ.get("FIX_FB_REPLACE", ""))
+    reply = norm(os.environ.get("FIX_REPLY", ""))
     dry = os.environ.get("FIX_DRY_RUN") == "1"
     fbtok = os.environ.get("FB_PAGE_TOKEN", "").strip()
     thtok = os.environ.get("THREADS_TOKEN", "").strip()
@@ -112,11 +141,19 @@ def main():
         raise SystemExit("DỪNG — thiếu FIX_KEY hoặc FIX_REPLY.")
     if bool(find) != bool(repl):
         raise SystemExit("DỪNG — FIX_FB_FIND và FIX_FB_REPLACE phải đi cùng nhau.")
+    if len(reply) > 480:
+        raise SystemExit("DỪNG — câu trả lời %d ký tự, Threads chỉ nhận tới 500." % len(reply))
     item = find_item(load_queue(), key)
     stamp = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")
     results = {}
     failed = []
     print("Mục:", key, "· chạy khô" if dry else "· CHẠY THẬT")
+
+    def done(field, value, title):
+        notice(title, value)
+        if not dry:
+            results[field] = value
+            write_pending(key, results)
 
     # ---------------------------------------------------------------- Facebook
     pid = item.get("posted_id")
@@ -126,39 +163,68 @@ def main():
         notice("Facebook", "bỏ qua — thiếu id bài hoặc FB_PAGE_TOKEN")
     else:
         try:
-            cur = fb.get("/%s" % pid, {"fields": "message"}, fbtok).get("message", "")
-            n_old, n_new = (cur.count(find), cur.count(repl)) if find else (0, 0)
-            notice("Facebook đọc", "bài %s · %d ký tự · câu cũ %d lần · câu mới %d lần"
-                   % (pid, len(cur), n_old, n_new))
-            done = None
-            if find and n_old == 0 and n_new >= 1:
-                done = "sửa bài (đã có câu mới từ trước) " + stamp
-            elif not dry and find and n_old == 1:
-                try:
-                    fb.api("/%s" % pid, {"message": cur.replace(find, repl)}, fbtok)
-                    after = fb.get("/%s" % pid, {"fields": "message"}, fbtok).get("message", "")
-                    if repl in after and find not in after:
-                        done = "sửa bài " + stamp
+            page, who = fb.resolve_page(fbtok)
+            if not pid.startswith(page + "_"):
+                raise RuntimeError("bài %s không thuộc Trang %s (%s)" % (pid, page, who))
+            cur = None
+            try:
+                raw = fb.get("/%s" % pid, {"fields": "message"}, fbtok).get("message", "")
+                cur = unicodedata.normalize("NFC", raw).replace("\xa0", " ")
+            except urllib.error.HTTPError as e:
+                notice("Facebook đọc lỗi", http_err(e) + " — chuyển sang trả lời")
+            n_old = cur.count(find) if (cur is not None and find) else 0
+            n_new = cur.count(repl) if (cur is not None and find) else 0
+            if cur is not None:
+                notice("Facebook đọc", "Trang %s · bài %s · %d ký tự · câu cũ %d lần · câu mới %d lần"
+                       % (who, pid, len(cur), n_old, n_new))
+            if find and cur is not None and n_old == 0 and n_new >= 1:
+                done("fix_fb", "sửa bài (đã có câu mới từ trước) " + stamp, "Facebook xong")
+            elif dry:
+                notice("Facebook (chạy khô)", "sẽ sửa thẳng nội dung" if n_old == 1
+                       else "sẽ trả lời dưới bài (nếu chưa có câu trả lời y hệt)")
+            else:
+                edited = False
+                if find and n_old == 1:
+                    try:
+                        res = fb.api("/%s" % pid, {"message": cur.replace(find, repl)}, fbtok)
+                        notice("Facebook sửa", "API trả về %s" % json.dumps(res, ensure_ascii=False))
+                        for wait in (0, 6):
+                            time.sleep(wait)
+                            try:
+                                after = fb.get("/%s" % pid, {"fields": "message"}, fbtok).get("message", "")
+                            except urllib.error.HTTPError as e:
+                                notice("Facebook đọc lại lỗi", http_err(e))
+                                after = ""
+                            after = unicodedata.normalize("NFC", after).replace("\xa0", " ")
+                            if repl in after and find not in after:
+                                edited = True
+                                break
+                        if not edited and res.get("success") is True:
+                            # API báo thành công: tin API, KHÔNG trả lời thêm (tránh
+                            # đính chính hai lần). Ghi rõ là chưa đọc lại được.
+                            edited = True
+                            notice("Facebook sửa", "API báo success nhưng đọc lại chưa thấy câu mới — coi như đã sửa, không trả lời thêm")
+                    except urllib.error.HTTPError as e:
+                        notice("Facebook sửa lỗi", http_err(e) + " — chuyển sang trả lời")
+                if edited:
+                    done("fix_fb", "sửa bài " + stamp, "Facebook xong")
+                else:
+                    try:
+                        existing = fb_comments(pid, fbtok)
+                    except urllib.error.HTTPError as e:
+                        existing = []
+                        notice("Facebook đọc bình luận lỗi", http_err(e) + " — chỉ dựa vào dấu trong hàng đợi")
+                    if already_replied(existing, reply):
+                        done("fix_fb", "đã có trả lời y hệt từ trước " + stamp, "Facebook xong")
                     else:
-                        notice("Facebook sửa", "API trả về nhưng nội dung chưa đổi — chuyển sang trả lời")
-                except urllib.error.HTTPError as e:
-                    notice("Facebook sửa lỗi", http_err(e) + " — chuyển sang trả lời")
-            if dry:
-                notice("Facebook (chạy khô)", "sẽ %s" % (
-                    "sửa thẳng nội dung" if n_old == 1 else "trả lời dưới bài"))
-            elif not done:
-                c = fb.api("/%s/comments" % pid, {"message": reply}, fbtok)
-                done = "trả lời %s %s" % (c["id"], stamp)
-            if done and not dry:
-                results["fix_fb"] = done
-                notice("Facebook xong", done)
-                write_pending(key, results)
+                        c = fb.api("/%s/comments" % pid, {"message": reply}, fbtok)
+                        done("fix_fb", "trả lời %s %s" % (c["id"], stamp), "Facebook xong")
         except urllib.error.HTTPError as e:
             failed.append("facebook")
-            notice("Facebook lỗi", http_err(e))
+            notice("Facebook lỗi", http_err(e), "error")
         except Exception as e:
             failed.append("facebook")
-            notice("Facebook lỗi", repr(e))
+            notice("Facebook lỗi", repr(e), "error")
 
     # --------------------------------------------------------------- Instagram
     mid = item.get("posted_ig_id")
@@ -169,20 +235,25 @@ def main():
     else:
         try:
             ig, uname = sp.ig_target(fbtok)
-            notice("Instagram đọc", "@%s · bài %s" % (uname, mid))
-            if dry:
+            try:
+                existing = ig_comments(mid, fbtok)
+            except urllib.error.HTTPError as e:
+                existing = []
+                notice("Instagram đọc bình luận lỗi", http_err(e) + " — chỉ dựa vào dấu trong hàng đợi")
+            notice("Instagram đọc", "@%s · bài %s · %d bình luận" % (uname, mid, len(existing)))
+            if already_replied(existing, reply):
+                done("fix_ig", "đã có trả lời y hệt từ trước " + stamp, "Instagram xong")
+            elif dry:
                 notice("Instagram (chạy khô)", "sẽ trả lời dưới bài")
             else:
                 r = sp.req(sp.GRAPH, "/%s/comments" % mid, {"message": reply}, fbtok)
-                results["fix_ig"] = "trả lời %s %s" % (r["id"], stamp)
-                notice("Instagram xong", results["fix_ig"])
-                write_pending(key, results)
+                done("fix_ig", "trả lời %s %s" % (r["id"], stamp), "Instagram xong")
         except urllib.error.HTTPError as e:
             failed.append("instagram")
-            notice("Instagram lỗi", http_err(e))
+            notice("Instagram lỗi", http_err(e), "error")
         except Exception as e:
             failed.append("instagram")
-            notice("Instagram lỗi", repr(e))
+            notice("Instagram lỗi", repr(e), "error")
 
     # ----------------------------------------------------------------- Threads
     tid = item.get("posted_threads_id")
@@ -192,22 +263,36 @@ def main():
         notice("Threads", "bỏ qua — thiếu id bài hoặc THREADS_TOKEN")
     else:
         try:
-            uid, uname = sp.th_target(thtok)
-            notice("Threads đọc", "@%s · bài %s · câu trả lời %d ký tự" % (uname, tid, len(reply)))
             if dry:
+                # Chạy khô chỉ đọc: không gọi th_target (nó gia hạn token).
+                me = sp.req(sp.THREADS, "/me", {"fields": "id,username"}, thtok, "GET")
+                uid, uname = me["id"], (me.get("username") or "")
+                if uname and not sp.same_handle(uname.lower(), sp.EXPECT_THREADS):
+                    raise RuntimeError("Token trỏ tới Threads %r" % uname)
+            else:
+                uid, uname = sp.th_target(thtok)
+            existing = None
+            try:
+                existing = th_replies(tid, thtok)
+            except urllib.error.HTTPError as e:
+                notice("Threads đọc trả lời lỗi", http_err(e) + " — chỉ dựa vào dấu trong hàng đợi")
+            notice("Threads đọc", "@%s · bài %s · câu trả lời %d ký tự · %s"
+                   % (uname, tid, len(reply),
+                      "chưa đọc được trả lời" if existing is None else "%d trả lời" % len(existing)))
+            if existing is not None and already_replied(existing, reply):
+                done("fix_threads", "đã có trả lời y hệt từ trước " + stamp, "Threads xong")
+            elif dry:
                 notice("Threads (chạy khô)", "sẽ trả lời dưới bài")
             else:
                 rid = sp.th_publish(thtok, uid, {"media_type": "TEXT", "text": reply,
                                                  "reply_to_id": tid})
-                results["fix_threads"] = "trả lời %s %s" % (rid, stamp)
-                notice("Threads xong", results["fix_threads"])
-                write_pending(key, results)
+                done("fix_threads", "trả lời %s %s" % (rid, stamp), "Threads xong")
         except urllib.error.HTTPError as e:
             failed.append("threads")
-            notice("Threads lỗi", http_err(e))
+            notice("Threads lỗi", http_err(e), "error")
         except Exception as e:
             failed.append("threads")
-            notice("Threads lỗi", repr(e))
+            notice("Threads lỗi", repr(e), "error")
 
     if failed:
         print("Kênh lỗi:", ", ".join(failed), file=sys.stderr)

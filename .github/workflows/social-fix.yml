@@ -34,7 +34,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: social-post
+  group: social-fix
   cancel-in-progress: false
 
 jobs:
@@ -42,6 +42,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+
+      - name: Lấy hàng đợi mới nhất
+        # Re-run dùng lại ảnh chụp kho lúc bấm lần đầu — chưa có dấu fix_* của
+        # lần trước, chạy lại sẽ trả lời trùng. Luôn đọc main mới nhất.
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+          rm -f data/.pending-fix.json
 
       - name: Đính chính
         env:
@@ -67,11 +75,11 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             python3 tools/social-fix.py --apply /tmp/fix.json || exit 1
-            git diff --quiet -- data/fb-queue.json && { echo "Đã ghi từ trước."; exit 0; }
+            git diff --quiet -- data/fb-queue.json && { echo "::notice title=Ghi dấu::đã có từ trước"; exit 0; }
             git add data/fb-queue.json
             git commit -m "social: ghi dấu đính chính bài đã đăng"
-            git push origin HEAD:main && exit 0
+            git push origin HEAD:main && { echo "::notice title=Ghi dấu::đã ghi $(git rev-parse --short HEAD)"; exit 0; }
             echo "Push bị chặn, thử lại lần $i..."
           done
-          echo "Push thất bại sau 5 lần — ĐÃ ĐÍNH CHÍNH nhưng chưa ghi dấu." >&2
+          echo "::error title=Ghi dấu::ĐÃ ĐÍNH CHÍNH nhưng chưa ghi dấu fix_* lên main — ĐỪNG bấm chạy lại"
           exit 1
