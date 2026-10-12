@@ -136,7 +136,7 @@ def main():
     byslug={os.path.splitext(os.path.basename(f))[0]:f for f in article_files()}
     targets=list(byslug) if SCOPE=="all" else [s.strip() for s in SCOPE.split(",") if s.strip()]
     print("Giọng:",VOICE,"| tốc độ:",RATE,"|",len(targets),"bài")
-    done=0
+    done=0; errs=[]
     for slug in targets:
         fp=byslug.get(slug)
         if not fp: print("  bỏ (không thấy):",slug); continue
@@ -152,11 +152,15 @@ def main():
         try:
             n=asyncio.run(synth_to(text, mp3, voice_for(fp)))
         except Exception as e:
-            print("  LỖI:",slug,e); continue
+            print("  LỖI:",slug,e); errs.append(slug)
+            print(f"::error title=audio {slug}::{str(e)[:200]}"); continue
         add_meta(fp,slug); done+=1
         print(f"  ✓ {slug}.mp3 ({n//1024} KB)")
         time.sleep(1)   # giãn giữa các bài, tránh bị chặn tốc độ
     print(f"\nXong: {done} bài.")
+    if errs:
+        print(f"::warning title=audio::{len(errs)} bài lỗi, giữ MP3 cũ: {', '.join(errs)}")
+        if done==0: sys.exit(1)   # không sinh được bài nào → báo đỏ, đừng để run "success" mà không có MP3 mới
 
 if __name__=="__main__":
     main()
