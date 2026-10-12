@@ -36,6 +36,16 @@ def part_raw():
             continue
         r["_m2"] = t / a; r["_k"] = slugkhu(r); good.append(r)
     lamha = re.compile(r"lam-ha|lam-dong|nam-ban")
+    for khu in ("Nam Ban", "Mê Linh", "Gia Lâm", "chưa rõ khu"):
+        for month in ("2026-09", "2026-10"):
+            dt = [r for r in good if r["_k"] == khu and (r["ngay_dang"] or "")[:7] == month]
+            if not dt: continue
+            ok = [r for r in dt if lamha.search(r["url"].lower())]
+            med = lambda xs: "%.2f tr" % (st.median([x["_m2"] for x in xs]) / 1e6) if xs else "-"
+            hi = sorted(dt, key=lambda r: -r["_m2"])[:6]
+            notice("%s %s" % (khu, month), "%d tin (trung vị %s) · có dấu Lâm Hà: %d (trung vị %s) · nguồn %s · giá cao nhất: %s"
+                   % (len(dt), med(dt), len(ok), med(ok), dict(Counter(r["nguon"] for r in dt)),
+                      " | ".join("%s %.1f tr" % (r["url"].split("/", 3)[-1][:70], r["_m2"] / 1e6) for r in hi)))
     for month in ("2026-08", "2026-09", "2026-10"):
         dt = [r for r in good if r["_k"] == "Đông Thanh" and (r["ngay_dang"] or "")[:7] == month]
         if not dt: continue
@@ -75,6 +85,30 @@ def part_live():
         bc = c.text_of(s.select_one(".breadcrumb") or s.select_one("nav[aria-label*=read]") or s.select_one("ol"))[:140]
         out.append("%s · địa chỉ JSON-LD: %s · breadcrumb: %s" % (u.split("/", 3)[-1][:80], (addr or "")[:120], bc))
     notice("guland 6 tin đầu trang Đông Thanh", " | ".join(out))
+    for name, url, pat, host in (("guland Đông Thanh", base, r"/post/", "guland.vn"),
+                                 ("guland thị trấn Nam Ban", "https://guland.vn/mua-ban-bat-dong-san-thi-tran-nam-ban-huyen-lam-ha-lam-dong", r"/post/", "guland.vn"),
+                                 ("thuviennhadat Đông Thanh", "https://thuviennhadat.vn/ban-nha-dat-xa-dong-thanh", None, "thuviennhadat.vn")):
+        rr = r if url == base else c.get(host, url)
+        if rr is None:
+            notice("Khung " + name, "không mở được"); continue
+        sp_ = c.soup_of(rr)
+        groups = defaultdict(list)
+        for a in sp_.find_all("a", href=True):
+            h = a["href"]
+            if pat and not re.search(pat, h): continue
+            if not pat and not re.search(r"/\d{5,}|\.html?$|-pr\d+|/tin-", h): continue
+            chain = []
+            for anc in a.parents:
+                if anc.name in ("body", "html", "[document]"): break
+                cls = ".".join((anc.get("class") or [])[:2])
+                chain.append(anc.name + ("." + cls if cls else "") + ("#" + anc.get("id") if anc.get("id") else ""))
+                if len(chain) >= 4: break
+            key = " < ".join(chain[1:4])
+            lam = "LH" if re.search(r"lam-ha|lam-dong|nam-ban|dong-thanh|me-linh|gia-lam", h.lower()) else "--"
+            groups[key].append(lam + ":" + h.split("/", 3)[-1][:60])
+        msg = " ‖ ".join("[%s] %d link, có dấu LH %d: %s" % (k, len(v), sum(1 for x in v if x.startswith("LH")), " | ".join(v[:3]))
+                         for k, v in sorted(groups.items(), key=lambda kv: -len(kv[1]))[:6])
+        notice("Khung " + name, "URL cuối %s ‖ %s" % (rr.url, msg))
 
 if __name__ == "__main__":
     part_raw()
