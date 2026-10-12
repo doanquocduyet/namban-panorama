@@ -115,7 +115,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/index namban-index.html llms-full.txt
+          git add data/index namban-index.html llms-full.txt sitemap.xml
           wk=$(date -u -d "$REPLAY_DATE" +%G-W%V)
           git commit -m "Index: tính lại lượt $wk và tháng $MONTHS sau khi lọc tin ngoài vùng (bấm tay)" || exit 0
           for i in 1 2 3 4 5; do git push origin HEAD:main && exit 0; git pull --rebase origin main; done

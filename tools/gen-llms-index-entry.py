@@ -23,11 +23,12 @@ for m in re.finditer(pat, body):
     mm = re.fullmatch(r"@@TBL(\d+)@@", t)
     if mm: lines.append(tables[int(mm.group(1))]); continue
     if t: lines.append(t)
-H = "## Giá đất Nam Ban 2026: bảng giá rao theo từng loại"
+H = "## Giá đất Nam Ban hôm nay: giá rao từng loại đất, đo mỗi tuần"
 entry = f"{H}\n\nURL: https://nambanpanorama.com/namban-index\n\nTóm tắt: {desc}\n\n" + "\n\n".join(lines) + "\n"
 
 L = open("llms-full.txt", encoding="utf-8").read(); before = L.count("https://nambanpanorama.com/")
-a = L.index(H); b = L.index("\n---\n", a)
+# tìm entry theo URL, không theo tựa (tựa đổi 12/10/2026 thì vẫn tìm được)
+u = L.index("\nURL: https://nambanpanorama.com/namban-index\n"); a = L.rindex("\n## ", 0, u) + 1; b = L.index("\n---\n", a)
 L2 = L[:a] + entry + L[b:]
 blocks = L2.split("\n---\n")
 multi = [i for i, k in enumerate(blocks) if k.count("\nURL: https://") > 1]; empty = [i for i, k in enumerate(blocks) if not k.strip()]

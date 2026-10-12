@@ -76,7 +76,15 @@ jobs:
           rm -rf survey/out
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/index namban-index.html llms-full.txt
+          git add data/index namban-index.html llms-full.txt sitemap.xml
           if [ "${{ steps.agg.outputs.rc }}" = "0" ]; then msg="Index: số đo giá rao tuần $(date -u +%G-W%V) (tự động)"; else msg="Index: cảnh báo tuần $(date -u +%G-W%V) — không sửa trang (tự động)"; fi
           git commit -m "$msg" || exit 0
           for i in 1 2 3 4 5; do git push origin HEAD:main && break; git pull --rebase origin main; done
+      - name: Báo IndexNow trang Index vừa đổi số (Bing, Copilot, ChatGPT search)
+        # commit của bot đẩy bằng GITHUB_TOKEN không kích workflow indexnow.yml, nên báo thẳng ở đây
+        if: steps.agg.outputs.rc == '0'
+        run: |
+          sleep 90
+          curl -sS -X POST "https://api.indexnow.org/indexnow" -H "Content-Type: application/json; charset=utf-8" \
+            -d '{"host":"nambanpanorama.com","key":"aeba74e4ac00031d44bcb9899ddda293","keyLocation":"https://nambanpanorama.com/aeba74e4ac00031d44bcb9899ddda293.txt","urlList":["https://nambanpanorama.com/namban-index"]}' \
+            -w "\nHTTP %{http_code}\n" || true

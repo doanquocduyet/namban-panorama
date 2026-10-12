@@ -96,7 +96,7 @@ def sent(key, r):
     return s + f', so với tháng {month_vi(pm)} là {tr(pv[0])} — <strong>{r["w"]}</strong> ({sign}{abs(r["d"]):.0f}&nbsp;%).'
 
 # ---- IDX-LEAD: dòng kỳ + dòng ký tên (ai đo, ở đâu, dẫn xuống cách đo) ----
-lead = f'''<p class="idx-period">Kỳ tháng {last_m} · đo tới <span class="nw">{m_on}</span> · giá rao, chưa phải giá&nbsp;chốt</p>
+lead = f'''<p class="idx-period">Kỳ tháng {last_m} · đo tới <time class="nw" datetime="{base["measured_on"]}">{m_on}</time> · giá rao, chưa phải giá&nbsp;chốt</p>
 <p class="idx-by">Đo và tổng hợp bởi Namban&nbsp;Panorama, <span class="nw">tại Nam Ban · <a href="#du-lieu">cách đo</a></span></p>'''
 
 # ---- IDX-NOW: mục 01 ----
@@ -244,17 +244,22 @@ cite = f'''<div class="idx-cite pm-selectable">
 </div>'''
 
 # ---- IDX-FAQ: 2 câu sinh theo số + 5 câu tĩnh ----
-q1 = f"Theo Namban Index, tháng {last_m} trung vị giá rao ở xã Nam Ban Lâm Hà, triệu đồng/m²: {cite_nums}. "
+q1 = f"Theo Namban Index, đo tới {m_on}: trung vị giá rao tháng {last_m} ở xã Nam Ban Lâm Hà, Lâm Đồng, triệu đồng/m²: {cite_nums}. "
 if RANGE: q1 += "Khoảng rao phổ biến nửa đầu 2026 theo quan sát thực địa: " + "; ".join(f'{LOW[k]} {tr1(RANGE[k][0])}–{tr1(RANGE[k][1])}' for k, _, _ in GROUPS if k in RANGE) + ". "
 q1 += "Đây là giá rao, chưa phải giá chốt; mỗi lô khác nhau tùy vị trí, pháp lý, thương lượng."
 q2 = plain(verdict) + f" Tháng {last_m} so với tháng gần nhất có đủ số: " + "; ".join(
     f'{LOW[k]} {plain(cur[k]["w"]) if cur[k]["w"] != "khác&nbsp;hẳn" else "không so được vì mẫu hai tháng khác hẳn"}' if cur[k].get("prev") else f'{LOW[k]} chưa có tháng trước để so'
     for k, _, _ in GROUPS if k in cur) + ". "
 q2 += (REASON.get(last["month"], "") + " " if REASON.get(last["month"]) else "") + "Đây là giá rao; chưa đủ để kết luận xu hướng dài hạn."
-FAQ = [("Giá đất Nam Ban hiện nay bao nhiêu một mét?", q1),
+# Câu 1 mở bằng đúng cụm người ta gõ ("giá đất Nam Ban hôm nay"); câu 3, 4 trả lời hai chỗ hay nhầm (bao lâu cập nhật,
+# "thị trấn Nam Ban" trên tin rao). Câu "500 triệu mua được gì" có nhà riêng ở /mua-dat-nam-ban-500-trieu-1-ty nên không đặt ở đây (§7.3).
+q3 = (f"Mỗi tuần một lần. Sau mỗi lượt quét, số tin còn đang rao và trung vị của tháng đang đo được tính lại; lần đo gần nhất là {m_on}. "
+      "Tháng mới chỉ thay tháng trước làm kỳ chính khi ít nhất ba trong bốn loại đất có từ 10 tin trở lên; chưa đủ thì giữ kỳ trước và ghi rõ ngày đo.")
+FAQ = [("Giá đất Nam Ban hôm nay bao nhiêu một mét vuông?", q1),
        ("Giá đất Nam Ban đang tăng hay giảm?", q2),
-       ("Giá đất Nam Ban có còn rẻ không?", "So với Đà Lạt và Bảo Lộc, mặt bằng giá Nam Ban vẫn dễ tiếp cận hơn. Nhưng đó là so theo giá rao; giá chốt của từng lô vẫn phải kiểm tại thực địa"),
-       ("Đất Nam Ban 500 triệu mua được gì?", "Tầm 500 triệu tới 1,2 tỷ thường rơi vào khu tách thửa nhỏ có thổ cư, diện tích 150–300 m², hạ tầng điện nước đã có hoặc đang hoàn thiện — hợp xây nhỏ hoặc nhà vườn cuối tuần."),
+       ("Namban Index cập nhật giá đất Nam Ban bao lâu một lần?", q3),
+       ("Giá đất \"thị trấn Nam Ban\" trên các trang rao bây giờ là giá ở đâu?", "Là giá ở xã Nam Ban Lâm Hà. Từ 1/7/2025, thị trấn Nam Ban cùng ba xã Đông Thanh, Mê Linh, Gia Lâm nhập thành xã Nam Ban Lâm Hà và cấp huyện không còn, nhưng nhiều tin rao vẫn ghi địa chỉ cũ \"thị trấn Nam Ban, huyện Lâm Hà\". Namban Index tính chung cho cả xã mới theo bốn loại đất, không theo ranh thị trấn cũ; tin ở xã Nam Hà bên cạnh không được tính."),
+       ("Giá đất Nam Ban có còn rẻ không?", "So với Đà Lạt và Bảo Lộc, mặt bằng giá Nam Ban vẫn dễ tiếp cận hơn. Nhưng đó là so theo giá rao; giá chốt của từng lô vẫn phải kiểm tại thực địa."),
        ("Phân khúc đất Nam Ban nào dễ bán lại nhất?", "Theo quan sát thị trường, lô có view hồ hoặc view toàn cảnh thường dễ bán lại hơn — người mua tìm view thật hiếm khi hối tiếc. Khoảng rao phổ biến nửa đầu 2026 của nhóm này là 4–6 triệu/m², tổng giá phổ biến 1,2–1,8 tỷ một lô; trung vị tin rao từng tháng xem ở mục 01."),
        ("Vì sao giá rao và giá bán thật ở Nam Ban chênh nhau?", "Giá rao là giá người bán muốn, không phải giá giao dịch được. Ở một số khu hai con số này chênh nhau đáng kể, nên con số \"rẻ\" cần kiểm chứng tại thực địa thay vì tin theo tin rao."),
        ("Mua đất nông nghiệp diện tích lớn ở Nam Ban tầm bao nhiêu?", "Đất nông nghiệp trên 1.000 m², chưa tách thửa, có khoảng rao phổ biến nửa đầu 2026 là 1,7–2,8 triệu/m² — tổng giá phổ biến 4,5–15 tỷ tùy diện tích; trung vị tin rao từng tháng xem ở mục 01. Hợp làm vườn canh tác hoặc giữ dài hạn; cần kiểm kỹ lộ giới và khả năng chuyển đổi.")]
@@ -367,9 +372,24 @@ else:
 s = re.sub(r'"temporalCoverage": "[^"]*"', f'"temporalCoverage": "{first_shown}/{latest["month"]}"', s, count=1)
 s = re.sub(r'("@type": "Dataset",[\s\S]*?"dateModified": )"[^"]*"', lambda m: m.group(1) + f'"{NOW.date().isoformat()}"', s, count=1)
 s = re.sub(r'("@type": "Article",[\s\S]*?"dateModified": )"[^"]*"', lambda m: m.group(1) + f'"{NOW.strftime("%Y-%m-%dT%H:%M:00+07:00")}"', s, count=1)
+# ---- mô tả trang (meta, og, Article) mang số + ngày đo: đoạn trích Google và AI đọc thấy giá ngay ----
+SHORT = {"tach_thua_150_300": "đất nền tách thửa", "lo_500_tho_cu": "lô 500 m² có thổ cư", "dat_tren_1000": "đất trên 1.000 m²", "view": "lô view"}
+parts = [f'{SHORT[k]} {tr(cur[k]["v"])}' for k, _, _ in GROUPS if k in cur]
+if parts: parts[0] += " tr/m²"
+desc = (f"Giá đất Nam Ban hôm nay theo Namban Index (đo tới {m_on}): " + ", ".join(parts) +
+        f" — trung vị giá rao tháng {last_m}, xã Nam Ban Lâm Hà, Lâm Đồng. Đo mỗi tuần, có số tin và cách đo.")
+s = re.sub(r'(<meta name="description" content=")[^"]*(">)', lambda m: m.group(1) + desc + m.group(2), s, count=1)
+s = re.sub(r'(<meta property="og:description" content=")[^"]*(">)', lambda m: m.group(1) + desc + m.group(2), s, count=1)
+s = re.sub(r'("@type": "Article",[\s\S]*?"description": )"[^"]*"', lambda m: m.group(1) + json.dumps(desc, ensure_ascii=False), s, count=1)
 open(P, "w", encoding="utf-8").write(s)
 
 for m in re.finditer(r'<script type="application/ld\+json">(.*?)</script>', s, re.S): json.loads(m.group(1))
+# ---- sitemap: lastmod của /namban-index theo ngày đo (trước đây đứng yên khi trang đổi mỗi tuần) ----
+SM = "sitemap.xml"
+if os.path.exists(SM):
+    t = open(SM, encoding="utf-8").read()
+    t2 = re.sub(r'(<loc>https://nambanpanorama\.com/namban-index</loc><lastmod>)[^<]*(</lastmod><changefreq>)[^<]*', lambda m: m.group(1) + NOW.date().isoformat() + m.group(2) + "weekly", t, count=1)
+    if t2 != t: open(SM, "w", encoding="utf-8").write(t2)
 for m in re.finditer(r"<style[^>]*>(.*?)</style>", s, re.S): assert m.group(1).count("{") == m.group(1).count("}")
 for t in ["div", "figure", "table", "thead", "tbody", "tr", "th", "td", "p", "h2", "h3", "dl", "dt", "dd"]:
     o = len(re.findall(rf"<{t}\b[^>]*>", s)); c = len(re.findall(rf"</{t}>", s)); assert o == c, (t, o, c)

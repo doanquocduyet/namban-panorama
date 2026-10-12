@@ -523,6 +523,21 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   không tốn token; mọi cải tiến đọc/lọc tin làm bên Villas. Tắt ngay thì tháng 9 chỉ còn 1/4 ô có số (tin Villas
   riêng: 2/10/6/1 tin) và mất số tin còn đang rao. Chỉ đụng vào `crawl.py` khi nó hỏng (luật dừng báo nguồn về 0).
   Trên trang ghi "tin còn đang rao", không ghi "tin đang treo" (chữ nghề, Chú hỏi "là sao").
+- **KEY "GIÁ ĐẤT NAM BAN (HÔM NAY)" — NHÀ LÀ `/namban-index` (Chú giao 12/10/2026: "dùng tất cả mọi cách").** Tựa/H1/og/headline:
+  *"Giá đất Nam Ban hôm nay: giá rao từng loại đất, đo mỗi tuần"* (bỏ chữ "bảng giá" — đó là key của `/bang-gia-dat-nam-ban`, giá nhà
+  nước). **Khóa tựa tới hết 12/11/2026.** `gen-index-history.py` giờ sinh luôn meta/og/Article description có số + ngày đo, FAQ #1
+  "Giá đất Nam Ban hôm nay bao nhiêu một mét vuông?" (đáp mở bằng "đo tới …"), FAQ "bao lâu cập nhật", FAQ "giá thị trấn Nam Ban
+  trên tin rao là giá ở đâu" (sửa chỗ AI Overview còn gọi "thị trấn Nam Ban, huyện Lâm Hà"), và bump `lastmod` + `changefreq weekly`
+  của `/namban-index` trong `sitemap.xml` (trước đó lastmod đứng yên dù trang đổi mỗi tuần). Workflow tuần commit thêm `sitemap.xml`
+  và tự báo IndexNow (commit của bot không kích `indexnow.yml`). Câu "500 triệu mua được gì" đã rời FAQ Index (nhà: `/mua-dat-nam-ban-500-trieu-1-ty`);
+  câu "giá bao nhiêu một mét" đã rời schema `/mua-dat-nam-ban` và `/mua-dat-nam-ban-500-trieu-1-ty` (vẫn hiện, dẫn về Index).
+  Mục 03 có dòng phân biệt giá rao với bảng giá nhà nước + link `/bang-gia-dat-nam-ban`. Chữ trên link vào Index nên là
+  "giá đất Nam Ban hôm nay", không dùng "bảng giá".
+- **Số tháng 9 cũ (4,06/2,33/1,37/3,16, 656 tin ngày 4/10) đã thay ở mọi bài trích làm "giá hiện tại" (12/10/2026):** `/dat-nam-ban-gia-re`,
+  `/mua-dat-nam-ban-500-trieu-1-ty`, `/dat-gan-da-lat`, `/vung-ven-da-lat-nao-tot-nhat`, `/dat-nen-nam-ban-ngang-5m` (khoảng giữa 3,5–3,7,
+  bảng 5x20…5x40 tính lại), `/hoi-nhanh`, `llms.txt`, `llms-full.txt`, `feed.xml`. Hai báo cáo `/thi-truong-dat-nam-ban-2026` và
+  `/thi-truong-dat-nam-ban-quy-3-2026` chỉ thêm ô **"Đính chính 12/10/2026"** đầu bài — thân bài (nhận định theo số cũ) chờ Chú quyết viết lại.
+  Câu "131 tin ngày 2/10" trong mục tín hiệu của Index giữ nguyên (số đo có ngày, không tính lại được).
 - **SỰ CỐ 12/10/2026 — TIN NƠI KHÁC LẪN VÀO NHÓM "ĐÔNG THANH" (đã vá, Chú xác nhận số sai).** Lượt W41 đổi kỳ chính
   sang tháng 10 với đất nền **9,15 tr/m²**. Nguyên nhân: trang danh sách "xã Đông Thanh" của guland/thuviennhadat cài
   tin nổi bật nơi khác (nhà phố TP.HCM, Hà Nội, Đà Nẵng, Bình Dương, Hóc Môn…); tin không có địa chỉ JSON-LD nên bộ

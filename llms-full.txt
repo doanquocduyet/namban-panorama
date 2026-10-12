@@ -1060,15 +1060,15 @@ NAMBAN PANORAMA
 
 ---
 
-## Giá đất Nam Ban 2026: bảng giá rao theo từng loại
+## Giá đất Nam Ban hôm nay: giá rao từng loại đất, đo mỗi tuần
 
 URL: https://nambanpanorama.com/namban-index
 
-Tóm tắt: Giá rao đất Nam Ban 2026 theo bốn loại: đất nền tách thửa 150–300 m², lô khoảng 500 m² có thổ cư, đất trên 1.000 m², lô có view. Trung vị theo tháng, tăng hay giảm, giá theo khu và dữ liệu mở.
+Tóm tắt: Giá đất Nam Ban hôm nay theo Namban Index (đo tới 11/10/2026): đất nền tách thửa 3,67 tr/m², lô 500 m² có thổ cư 2,24, đất trên 1.000 m² 1,60, lô view 2,32 — trung vị giá rao tháng 9/2026, xã Nam Ban Lâm Hà, Lâm Đồng. Đo mỗi tuần, có số tin và cách đo.
 
 Namban Index
 
-Giá đất Nam Ban 2026: bảng giá rao theo từng loại
+Giá đất Nam Ban hôm nay: giá rao từng loại đất, đo mỗi tuần
 
 Kỳ tháng 9/2026 · đo tới 11/10/2026 · giá rao, chưa phải giá chốt
 
@@ -1193,6 +1193,8 @@ Một tin biến mất chưa chắc là đã bán. Có tin gỡ vì hết hạn,
 Giá của một lô cụ thể. Diện tích, vị trí, pháp lý làm hai lô cùng loại chênh nhau nhiều; cách đọc giá một lô ở mục 06 .
 
 Xu hướng dài hạn từ vài tháng số liệu. Mẫu càng nhỏ, biến động ngắn hạn càng cần đọc thận trọng.
+
+Giá đất của Nhà nước. Bảng giá tỉnh dùng để tính thuế, tiền sử dụng đất là một con số khác hẳn giá rao; số năm 2026 cho từng đoạn đường nằm ở bảng giá đất Nam Ban 2026 .
 
 Tín hiệu thị trường đất Nam Ban tuần đầu tháng 10/2026
 
@@ -1330,21 +1332,25 @@ Mọi trích dẫn vui lòng ghi nguồn Namban Panorama.
 
 Hỏi đáp nhanh giá đất Nam Ban mới nhất
 
-Giá đất Nam Ban hiện nay bao nhiêu một mét?
+Giá đất Nam Ban hôm nay bao nhiêu một mét vuông?
 
-Theo Namban Index, tháng 9/2026 trung vị giá rao ở xã Nam Ban Lâm Hà, triệu đồng/m²: đất nền tách thửa 150–300 m² 3,67; lô khoảng 500 m² có thổ cư 2,24; đất trên 1.000 m² 1,60; lô có view hồ, đồi, toàn cảnh 2,32. Khoảng rao phổ biến nửa đầu 2026 theo quan sát thực địa: đất nền tách thửa 150–300 m² 3–4,5; đất trên 1.000 m² 1,7–2,8; lô có view hồ, đồi, toàn cảnh 4–6. Đây là giá rao, chưa phải giá chốt; mỗi lô khác nhau tùy vị trí, pháp lý, thương lượng.
+Theo Namban Index, đo tới 11/10/2026: trung vị giá rao tháng 9/2026 ở xã Nam Ban Lâm Hà, Lâm Đồng, triệu đồng/m²: đất nền tách thửa 150–300 m² 3,67; lô khoảng 500 m² có thổ cư 2,24; đất trên 1.000 m² 1,60; lô có view hồ, đồi, toàn cảnh 2,32. Khoảng rao phổ biến nửa đầu 2026 theo quan sát thực địa: đất nền tách thửa 150–300 m² 3–4,5; đất trên 1.000 m² 1,7–2,8; lô có view hồ, đồi, toàn cảnh 4–6. Đây là giá rao, chưa phải giá chốt; mỗi lô khác nhau tùy vị trí, pháp lý, thương lượng.
 
 Giá đất Nam Ban đang tăng hay giảm?
 
 Nhìn chung giá rao đang mềm đi. Tháng 9/2026 so với tháng gần nhất có đủ số: đất nền tách thửa 150–300 m² đi ngang; lô khoảng 500 m² có thổ cư giảm; đất trên 1.000 m² không so được vì mẫu hai tháng khác hẳn; lô có view hồ, đồi, toàn cảnh giảm. Theo quan sát thực địa của Panorama, giá rao tháng 9/2026 mềm hơn vì mùa mưa bão và kinh tế: nguồn cung mùa này ra nhiều hơn cầu, người bán rao mềm hơn để ra hàng. Đây là giá rao; chưa đủ để kết luận xu hướng dài hạn.
 
+Namban Index cập nhật giá đất Nam Ban bao lâu một lần?
+
+Mỗi tuần một lần. Sau mỗi lượt quét, số tin còn đang rao và trung vị của tháng đang đo được tính lại; lần đo gần nhất là 11/10/2026. Tháng mới chỉ thay tháng trước làm kỳ chính khi ít nhất ba trong bốn loại đất có từ 10 tin trở lên; chưa đủ thì giữ kỳ trước và ghi rõ ngày đo.
+
+Giá đất "thị trấn Nam Ban" trên các trang rao bây giờ là giá ở đâu?
+
+Là giá ở xã Nam Ban Lâm Hà. Từ 1/7/2025, thị trấn Nam Ban cùng ba xã Đông Thanh, Mê Linh, Gia Lâm nhập thành xã Nam Ban Lâm Hà và cấp huyện không còn, nhưng nhiều tin rao vẫn ghi địa chỉ cũ "thị trấn Nam Ban, huyện Lâm Hà". Namban Index tính chung cho cả xã mới theo bốn loại đất, không theo ranh thị trấn cũ; tin ở xã Nam Hà bên cạnh không được tính.
+
 Giá đất Nam Ban có còn rẻ không?
 
-So với Đà Lạt và Bảo Lộc, mặt bằng giá Nam Ban vẫn dễ tiếp cận hơn. Nhưng đó là so theo giá rao; giá chốt của từng lô vẫn phải kiểm tại thực địa
-
-Đất Nam Ban 500 triệu mua được gì?
-
-Tầm 500 triệu tới 1,2 tỷ thường rơi vào khu tách thửa nhỏ có thổ cư, diện tích 150–300 m², hạ tầng điện nước đã có hoặc đang hoàn thiện — hợp xây nhỏ hoặc nhà vườn cuối tuần.
+So với Đà Lạt và Bảo Lộc, mặt bằng giá Nam Ban vẫn dễ tiếp cận hơn. Nhưng đó là so theo giá rao; giá chốt của từng lô vẫn phải kiểm tại thực địa.
 
 Phân khúc đất Nam Ban nào dễ bán lại nhất?
 
@@ -2555,9 +2561,9 @@ Trao đổi với người ở đây
 
 URL: https://nambanpanorama.com/dat-gan-da-lat
 
-Tóm tắt: Đất ven Đà Lạt giá rẻ ở đâu? Nam Ban cách Đà Lạt khoảng 25 km; giá rao tháng 9/2026 theo Namban Index: nền tách thửa 150–300 m² khoảng 4,06 triệu/m², đất trên 1.000 m² 1,37 triệu/m². Rẻ hơn ra sao, đổi lại điều gì.
+Tóm tắt: Đất ven Đà Lạt giá rẻ ở đâu? Nam Ban cách Đà Lạt khoảng 25 km; giá rao tháng 9/2026 theo Namban Index: nền tách thửa 150–300 m² khoảng 3,67 triệu/m², đất trên 1.000 m² 1,60 triệu/m². Rẻ hơn ra sao, đổi lại điều gì.
 
-Trả lời nhanhNam Ban thuộc xã Nam Ban Lâm Hà, tỉnh Lâm Đồng (từ 1/7/2025), cách Đà Lạt khoảng 25km qua đèo Tà Nung — đi chừng 45 phút. Giá rao tháng 9/2026 (Namban Index): nền tách thửa 150–300 m² khoảng 4,06 triệu/m², lô khoảng 500 m² có thổ cư 2,33 triệu/m², đất trên 1.000 m² 1,37 triệu/m², lô có view 3,16 triệu/m². Đánh đổi: tiện ích lớn (bệnh viện, trường) vẫn dựa vào Đà Lạt.
+Trả lời nhanhNam Ban thuộc xã Nam Ban Lâm Hà, tỉnh Lâm Đồng (từ 1/7/2025), cách Đà Lạt khoảng 25km qua đèo Tà Nung — đi chừng 45 phút. Giá rao tháng 9/2026 (Namban Index): nền tách thửa 150–300 m² khoảng 3,67 triệu/m², lô khoảng 500 m² có thổ cư 2,24 triệu/m², đất trên 1.000 m² 1,60 triệu/m², lô có view 2,32 triệu/m². Đánh đổi: tiện ích lớn (bệnh viện, trường) vẫn dựa vào Đà Lạt.
 
 Nếu bạn đang tìm đất gần Đà Lạt vì thấy đất trong thành phố ngày một đắt, thì Nam Ban là một trong những vùng ven gần nhất đáng để biết — gần Đà Lạt, qua đèo Tà Nung, cùng kiểu khí hậu mát, nhưng giá đất mềm hơn hẳn. Bài này nói thẳng Nam Ban nằm ở đâu, rẻ hơn ra sao, và đổi lại bạn đánh đổi điều gì — để bạn cân nhắc cho bình tĩnh. Cách Đà Lạt khoảng 25 cây số, qua đèo Tà Nung — chừng 45 phút xe.
 
@@ -2578,7 +2584,7 @@ Có một điều nhiều người lỡ ghé Nam Ban chơi hay kể lại: nó g
 
 Đất gần Đà Lạt giá rẻ hơn — rẻ hơn bao nhiêu, đổi lại gì?
 
-Chúng tôi đo giá rao ở Nam Ban hằng tuần trong Namban Index. Trung vị giá rao tháng 9/2026: đất nền tách thửa 150–300 m² khoảng 4,06 triệu/m², lô khoảng 500 m² có thổ cư 2,33 triệu/m², đất trên 1.000 m² 1,37 triệu/m², lô có view hồ, đồi 3,16 triệu/m² — mềm hơn nhiều so với mặt bằng trong Đà Lạt. Một nền 150 m² ở mức giữa chừng 610 triệu. Đây là giá rao, chưa phải giá chốt; bao nhiêu là rẻ thật ở Nam Ban có bài riêng.
+Chúng tôi đo giá rao ở Nam Ban hằng tuần trong Namban Index. Trung vị giá rao tháng 9/2026: đất nền tách thửa 150–300 m² khoảng 3,67 triệu/m², lô khoảng 500 m² có thổ cư 2,24 triệu/m², đất trên 1.000 m² 1,60 triệu/m², lô có view hồ, đồi 2,32 triệu/m² — mềm hơn nhiều so với mặt bằng trong Đà Lạt. Một nền 150 m² ở mức giữa chừng 550 triệu. Đây là giá rao, chưa phải giá chốt; bao nhiêu là rẻ thật ở Nam Ban có bài riêng.
 
 Đổi lại, bạn cần chấp nhận vài thứ: xa trung tâm hơn nên đi lại lâu hơn; tiện ích (bệnh viện lớn, trường, hàng quán đa dạng) vẫn dựa vào Đà Lạt; và một số khu hạ tầng còn đang hoàn thiện dần. Rẻ hơn là có lý do của nó — biết trước thì bạn chọn được mảnh hợp, thay vì kỳ vọng một thứ không có ở tầm tiền này.
 
@@ -2632,7 +2638,7 @@ Nếu bạn đang nhắm vùng ven Đà Lạt và muốn hiểu thêm một đi�
 
 Câu hỏi nhanh
 
-Đất ven Đà Lạt giá rẻ ở đâu?Rẻ hơn Đà Lạt là các vùng ven xa trung tâm hơn, như Nam Ban, Đức Trọng, Đơn Dương, D'ran. Ở Nam Ban, cách Đà Lạt khoảng 25 km qua đèo Tà Nung, giá rao tháng 9/2026 theo Namban Index: nền tách thửa 150–300 m² khoảng 4,06 triệu/m², đất trên 1.000 m² khoảng 1,37 triệu/m². Chúng tôi chỉ tự đo giá ở Nam Ban, nên không đưa số của vùng khác. Lô rẻ hơn hẳn mức chung thường thiếu thổ cư, đường hoặc sổ riêng.
+Đất ven Đà Lạt giá rẻ ở đâu?Rẻ hơn Đà Lạt là các vùng ven xa trung tâm hơn, như Nam Ban, Đức Trọng, Đơn Dương, D'ran. Ở Nam Ban, cách Đà Lạt khoảng 25 km qua đèo Tà Nung, giá rao tháng 9/2026 theo Namban Index: nền tách thửa 150–300 m² khoảng 3,67 triệu/m², đất trên 1.000 m² khoảng 1,60 triệu/m². Chúng tôi chỉ tự đo giá ở Nam Ban, nên không đưa số của vùng khác. Lô rẻ hơn hẳn mức chung thường thiếu thổ cư, đường hoặc sổ riêng.
 
 Nam Ban cách Đà Lạt bao nhiêu km?Khoảng 25 cây số, đi qua đèo Tà Nung. Nhưng con số đó ít nghĩa với đường đèo — tính bằng thời gian đúng hơn: chừng 45 phút xe, không phải 25–30 phút như vài nơi vẫn ghi. Đường quanh co, không phải đường thẳng, nên 25km ở đây không giống 25km đường bằng.
 
@@ -2642,7 +2648,7 @@ Nam Ban nằm phía nào của Đà Lạt?Phía Tây Đà Lạt, qua đèo Tà N
 
 Nam Ban có phải vùng ven Đà Lạt không?Có. Nam Ban là một trong những vùng ven gần Đà Lạt nhất, cách khoảng 25 cây số qua đèo Tà Nung, đi chừng 45 phút. Cùng kiểu khí hậu cao nguyên, ở độ cao 800–1.000m, nhiệt độ trung bình năm khoảng 19–21°C, nhưng có nhịp sống và mặt bằng giá đất riêng chứ không phải phiên bản thu nhỏ của Đà Lạt.
 
-Đất gần Đà Lạt ở Nam Ban giá khoảng bao nhiêu?Theo Namban Index, trung vị giá rao tháng 9/2026: đất nền tách thửa 150–300 m² khoảng 4,06 triệu/m², lô khoảng 500 m² có thổ cư 2,33 triệu/m², đất trên 1.000 m² 1,37 triệu/m², lô có view hồ, đồi 3,16 triệu/m². Một nền 150 m² ở mức giữa chừng 610 triệu. Mức 12–20 triệu/m² mà vài nơi ghi cho Nam Ban cao hơn nhiều so với giá rao chúng tôi đo được: chín phần mười tin rao nền tách thửa nằm dưới khoảng 5,1 triệu/m² (mốc 27/9/2026). Đây là giá rao, chưa phải giá chốt.
+Đất gần Đà Lạt ở Nam Ban giá khoảng bao nhiêu?Theo Namban Index, trung vị giá rao tháng 9/2026: đất nền tách thửa 150–300 m² khoảng 3,67 triệu/m², lô khoảng 500 m² có thổ cư 2,24 triệu/m², đất trên 1.000 m² 1,60 triệu/m², lô có view hồ, đồi 2,32 triệu/m². Một nền 150 m² ở mức giữa chừng 550 triệu. Mức 12–20 triệu/m² mà vài nơi ghi cho Nam Ban cao hơn nhiều so với giá rao chúng tôi đo được: chín phần mười tin rao nền tách thửa nằm dưới khoảng 5,1 triệu/m² (mốc 11/10/2026). Đây là giá rao, chưa phải giá chốt.
 
 Vì sao đất gần Đà Lạt lại rẻ hơn trong thành phố?Chủ yếu vì xa trung tâm hơn, tiện ích còn dựa vào Đà Lạt, và một phần hạ tầng đang hoàn thiện. Rẻ hơn đi kèm đánh đổi về khoảng cách và sự tiện lợi.
 
@@ -2650,7 +2656,7 @@ Kinh nghiệm mua đất ven Đà Lạt — cần biết gì trước?Ba điều
 
 Vùng ven Đà Lạt nào đáng sống nhất?Không có "nhất". Nam Ban yên, mát, qua đèo Tà Nung là tới Đà Lạt, giá mềm. Phía Lang Biang sát Đà Lạt, lạnh hơn. Đức Trọng bằng phẳng, sầm uất, có sân bay. Cầu Đất cao, nhiều đồi chè. D'ran tĩnh, hợp người tìm sự vắng vẻ. Câu hỏi đúng không phải "vùng nào tốt nhất" mà "mình muốn sống thế nào".
 
-Đất ven Đà Lạt dưới 1 tỷ có mua được không?Được, nếu chấp nhận xa trung tâm hơn. Ở Nam Ban, theo giá rao tháng 9/2026, nền tách thửa có thổ cư quanh 4 triệu/m², nên dưới 1 tỷ mua được nền khoảng 150–200 m², hoặc một mảnh đất nông nghiệp rộng hơn nhiều (đất trên 1.000 m² quanh 1,37 triệu/m²). Trong Đà Lạt, số tiền đó gần như không mua được gì đáng kể.
+Đất ven Đà Lạt dưới 1 tỷ có mua được không?Được, nếu chấp nhận xa trung tâm hơn. Ở Nam Ban, theo giá rao tháng 9/2026, nền tách thửa có thổ cư quanh 3,7 triệu/m², nên dưới 1 tỷ mua được nền khoảng 150–250 m², hoặc một mảnh đất nông nghiệp rộng hơn nhiều (đất trên 1.000 m² quanh 1,60 triệu/m²). Trong Đà Lạt, số tiền đó gần như không mua được gì đáng kể.
 
 ---
 
@@ -6565,7 +6571,7 @@ Bán đất Nam Ban 2026 phải nộp thuế bao nhiêu?
 
 Đọc gì tiếp: 
 
-Giá đất Nam Ban 2026: bảng giá rao theo từng loại 
+Giá đất Nam Ban hôm nay: giá rao từng loại đất 
 
 Nam Ban thuộc xã nào sau sáp nhập? 
 
@@ -6939,7 +6945,7 @@ Tóm tắt: Tổng hợp bài về giá đất, pháp lý, thủ tục và cách
 
 Nên đọc trước 
 
-Giá đất Nam Ban 2026: bảng giá rao theo từng loại 
+Giá đất Nam Ban hôm nay: giá rao từng loại đất 
 
 Giá theo từng loại đất, tín hiệu thị trường và những gì con số không nói ra. Bài nền để đọc mọi lô sau này. 
 Đọc bài → 
@@ -8090,7 +8096,7 @@ Một sào bơ cho bao nhiêu tiền?
 
 Mua đất có sẵn vườn bơ: cây bơ tính thế nào? 
 
-Giá đất Nam Ban 2026: bảng giá rao theo từng loại 
+Giá đất Nam Ban hôm nay: giá rao từng loại đất 
 
 Tính lên Nam Ban vào mùa bơ? 
 
@@ -18023,12 +18029,12 @@ Hỏi: Làm 100 m đường bê tông vào lô đất tốn bao nhiêu?
 
 URL: https://nambanpanorama.com/dat-nam-ban-gia-re
 
-Tóm tắt: Đất Nam Ban giá rẻ bao nhiêu? Namban Index tháng 9/2026: nền tách thửa 150–300 m² trung vị 4,06 triệu/m², phần mười tin rẻ nhất dưới 2,5 triệu/m² (nền 150 m² chừng 380 triệu); đất trên 1.000 m² trung vị 1,37 triệu/m². Và sáu kiểu rẻ là bẫy.
+Tóm tắt: Đất Nam Ban giá rẻ bao nhiêu? Namban Index tháng 9/2026: nền tách thửa 150–300 m² trung vị 3,67 triệu/m², phần mười tin rẻ nhất dưới 2,6 triệu/m² (nền 150 m² chừng 390 triệu); đất trên 1.000 m² trung vị 1,60 triệu/m². Và sáu kiểu rẻ là bẫy.
 
-Nếu hỏi nhanh. Đất Nam Ban giá rẻ có hai kiểu. Rẻ theo tổng tiền là nền tách thửa 150–300 m²: trung vị giá rao tháng 9/2026 khoảng 4,06 triệu/m², một nền 150 m² ở mức giữa chừng 610 triệu; phần mười tin rao rẻ nhất dưới khoảng 2,5 triệu/m², tức nền 150 m² chừng 380 triệu. Rẻ theo mét vuông là đất trên 1.000 m²: trung vị khoảng 1,37 triệu/m², nhưng phần nhiều là đất nông nghiệp, muốn xây phải lên thổ cư. Lô rẻ hơn hẳn các mức này thường thiếu một thứ: thổ cư, đường, điện, sổ riêng, hoặc lời rao chưa thật. Số lấy từ Namban Index, là giá rao, chưa phải giá chốt.
+Nếu hỏi nhanh. Đất Nam Ban giá rẻ có hai kiểu. Rẻ theo tổng tiền là nền tách thửa 150–300 m²: trung vị giá rao tháng 9/2026 khoảng 3,67 triệu/m², một nền 150 m² ở mức giữa chừng 550 triệu; phần mười tin rao rẻ nhất dưới khoảng 2,6 triệu/m², tức nền 150 m² chừng 390 triệu. Rẻ theo mét vuông là đất trên 1.000 m²: trung vị khoảng 1,60 triệu/m², nhưng phần nhiều là đất nông nghiệp, muốn xây phải lên thổ cư. Lô rẻ hơn hẳn các mức này thường thiếu một thứ: thổ cư, đường, điện, sổ riêng, hoặc lời rao chưa thật. Số lấy từ Namban Index, là giá rao, chưa phải giá chốt.
 
 Hỏi: Đất Nam Ban giá rẻ là bao nhiêu tiền?
-Đáp: Theo Namban Index, trung vị giá rao tháng 9/2026: nền tách thửa 150–300 m² khoảng 4,06 triệu/m², lô khoảng 500 m² có thổ cư 2,33 triệu/m², đất trên 1.000 m² 1,37 triệu/m². Phần mười tin rao rẻ nhất (ngày 4/10/2026) nằm dưới khoảng 2,5 triệu/m² với nền tách thửa, 1,5 triệu/m² với lô 500 m², 0,3 triệu/m² với đất trên 1.000 m². Một nền 150 m² ở ngưỡng rẻ đó chừng 380 triệu. Đây là giá rao, chưa phải giá chốt.
+Đáp: Theo Namban Index, trung vị giá rao tháng 9/2026: nền tách thửa 150–300 m² khoảng 3,67 triệu/m², lô khoảng 500 m² có thổ cư 2,24 triệu/m², đất trên 1.000 m² 1,60 triệu/m². Phần mười tin rao rẻ nhất (ngày 11/10/2026) nằm dưới khoảng 2,6 triệu/m² với nền tách thửa, 1,4 triệu/m² với lô 500 m², 0,3 triệu/m² với đất trên 1.000 m². Một nền 150 m² ở ngưỡng rẻ đó chừng 390 triệu. Đây là giá rao, chưa phải giá chốt.
 
 Hỏi: Vì sao có lô đất Nam Ban rẻ bất thường?
 Đáp: Lô rao dưới hẳn mặt bằng thường thiếu một thứ: không có thổ cư, đường đất hoặc đi nhờ lối, xa điện chưa có mặt bằng, giấy tờ chưa sạch (sổ chung, hợp đồng ủy quyền, nguồn gốc lâm nghiệp), vướng quy hoạch, hoặc lời rao chưa thật. Thiếu thứ gì thì sau này trả tiền cho thứ đó.
@@ -18389,6 +18395,8 @@ Tóm tắt: Thị trường đất Nam Ban sau 9 tháng đầu năm 2026: giá r
 
 Nếu hỏi nhanhSau 9 tháng đầu năm 2026, thị trường đất Nam Ban có nhiều thay đổi trên giấy hơn ngoài giá. Quy hoạch tỉnh điều chỉnh xếp Nam Ban vào đô thị loại III (6/6), quy hoạch chung xã được duyệt (30/6), sân bay Liên Khương khai thác lại (19/8), quy định tách thửa mới áp dụng (20/8). Giá rao tháng 9 theo Namban Index: đất nền 150–300 m² 4,06 triệu/m², lô khoảng 500 m² có thổ cư 2,33, đất trên 1.000 m² 1,37, lô có view 3,16. Thị trường đang phân hóa theo từng loại đất hơn là cùng tăng hay cùng giảm; theo quan sát thực địa của chúng tôi, từ tháng 9 giá mềm đi. Chưa có số giao dịch đã chốt để nói cả vùng đang tăng hay giảm. Nhận định của chúng tôi: cuối năm 2026 giá rao nhiều khả năng đi ngang, có chỗ mềm thêm; năm 2027 thị trường tiếp tục phân hóa, nền nhỏ có thổ cư và pháp lý sạch có thể nhích trước, đất lớn đi chậm.
 
+Đính chính 12/10/2026: Số tháng 9 trong bài được tính khi một phần tin rao nơi khác còn lẫn vào nguồn đo. Sau khi lọc, trung vị tháng 9/2026 là: đất nền tách thửa 150–300 m² 3,67 triệu/m², lô khoảng 500 m² có thổ cư 2,24, đất trên 1.000 m² 1,60, lô có view 2,32. So với tháng 6, ba trong bốn loại đất rao thấp hơn, nên câu "giá rao chưa đi một hướng chung" trong bài không còn đúng với số đã lọc. Diễn biến mới nhất ở Namban Index.
+
 Bạn có thể đang ở một trong mấy chỗ. Mới nghe tên Nam Ban và muốn biết năm nay vùng này ra sao. Đã đi xem đất vài lần, đang cân nhắc. Hoặc đã có một lô ở đây và muốn biết lô mình đang đứng giữa một thị trường thế nào. Bài này gom 9 tháng lại thành một bức tranh cho cả ba.
 
 Nam Ban ở đây là xã Nam Ban Lâm Hà, Lâm Đồng: từ 1/7/2025 gồm thị trấn Nam Ban cũ và các xã Đông Thanh, Mê Linh, Gia Lâm, rộng khoảng 117 km², cách Đà Lạt khoảng 25km qua đèo Tà Nung. Chi tiết từng giai đoạn nằm ở hai bài riêng: 6 tháng đầu năm 2026 và quý 3/2026. Bài này sẽ được cập nhật khi có số quý 4.
@@ -18562,6 +18570,8 @@ URL: https://nambanpanorama.com/thi-truong-dat-nam-ban-quy-3-2026
 Tóm tắt: Quý 3/2026 ở Nam Ban: bốn loại đất không đi cùng một hướng, lô 500 m² giảm đều bốn tháng, tháng 9 giá mềm đi ngoài thực địa. Kèm sân bay mở lại, tách thửa mới, cầu Tổng Đội.
 
 Nếu hỏi nhanhQuý 3/2026, giá rao đất Nam Ban không đi cùng một hướng. Theo Namban Index, trung vị tháng 9 (đo tới 27/9): đất nền 150–300 m² 4,06 triệu/m², cao hơn tháng 6 (3,82); lô khoảng 500 m² có thổ cư 2,33, giảm đều từ 2,88 của tháng 6; đất trên 1.000 m² 1,37; lô có view 3,16. Theo quan sát thực địa của chúng tôi, từ tháng 9 giá mềm đi: hàng ra nhiều hơn người hỏi, mưa bão, người mua thận trọng hơn. Quý này cũng có cầu Tổng Đội khởi công (14/7), sân bay Liên Khương khai thác lại (19/8) và quy định tách thửa mới (20/8).
+
+Đính chính 12/10/2026: Cột tháng 9 trong bài được tính khi một phần tin rao nơi khác (nhà phố TP.HCM, Hà Nội…) còn lẫn vào nhóm Đông Thanh của hai trang rao. Sau khi lọc, trung vị tháng 9/2026 là: đất nền tách thửa 150–300 m² 3,67 triệu/m² (21 tin), lô khoảng 500 m² có thổ cư 2,24 (35 tin), đất trên 1.000 m² 1,60 (30 tin), lô có view 2,32 (15 tin). Những câu về tháng 9 bên dưới, như đất nền cao nhất trong bốn tháng hay lô view đi ngang, vì vậy không còn đúng; tháng 7 và tháng 8 cũng đã có thêm tin sau ngày viết. Diễn biến mới nhất ở Namban Index.
 
 Nếu bạn đã xem đất Nam Ban từ đầu năm mà chưa chốt, chắc bạn đang tự hỏi mình chờ vậy là khôn hay dại. Còn nếu bạn mới nghe sân bay mở lại, tách thửa đổi luật, chắc bạn muốn biết mấy chuyện đó đã làm giá đổi chưa. Câu trả lời ngắn cho cả hai: có đổi, nhưng mỗi loại đất đổi một kiểu.
 
@@ -18904,13 +18914,13 @@ Hỏi xem con đường đã thật sự thành đường chung hay chưa. Lối
 
 URL: https://nambanpanorama.com/dat-nen-nam-ban-ngang-5m
 
-Tóm tắt: Đất nền Nam Ban ngang 5m giá 500–700 triệu mua được lô cỡ nào? Ở mức giá rao giữa 2026 là chừng 5x25 đến 5x35. Dạo này nhiều hàng: cách chọn lô, lô 4,5m cũ, thổ cư, lối đi.
+Tóm tắt: Đất nền Nam Ban ngang 5m giá 500–700 triệu mua được lô cỡ nào? Ở mức giá rao giữa 2026 là chừng 5x27 đến 5x40. Dạo này nhiều hàng: cách chọn lô, lô 4,5m cũ, thổ cư, lối đi.
 
-Nếu hỏi nhanh: Ở Nam Ban, 500–700 triệu thường mua được một lô ngang 5 m, dài chừng 25–35 m (khoảng 125–195 m²), tính theo mức giá rao giữa của nhóm nền tách thửa năm 2026 (3,6–4,06 triệu/m²). Cùng số tiền, các lô vẫn chênh nhau khá nhiều về diện tích, thổ cư và đường vào. Hai, ba tháng nay nhóm này ra hàng nhiều, người mua có điều kiện đặt vài lô cạnh nhau trước khi quyết định.
+Nếu hỏi nhanh: Ở Nam Ban, 500–700 triệu thường mua được một lô ngang 5 m, dài chừng 27–40 m (khoảng 135–200 m²), tính theo mức giá rao giữa của nhóm nền tách thửa năm 2026 (3,5–3,7 triệu/m²). Cùng số tiền, các lô vẫn chênh nhau khá nhiều về diện tích, thổ cư và đường vào. Hai, ba tháng nay nhóm này ra hàng nhiều, người mua có điều kiện đặt vài lô cạnh nhau trước khi quyết định.
 
-Quy đổi ở mức giá rao giữa (trung vị nhóm nền tách thửa 150–300 m² của Namban Index: 4,06 triệu/m² tin đăng tháng 9/2026; 3,60 triệu/m² tin còn rao ngày 2/10/2026): 5x20 m (100 m²) khoảng 360–410 triệu; 5x25 m (125 m²) khoảng 450–510 triệu; 5x30 m (150 m²) khoảng 540–610 triệu; 5x35 m (175 m²) khoảng 630–710 triệu; 5x40 m (200 m²) khoảng 720–810 triệu. Giá rao, chưa phải giá chốt. Khoảng giá phổ biến của nhóm 2,6–5,1 triệu/m² (đo 27/9/2026).
+Quy đổi ở mức giá rao giữa (trung vị nhóm nền tách thửa 150–300 m² của Namban Index: 3,67 triệu/m² tin đăng tháng 9/2026, tính lại 12/10/2026; 3,48 triệu/m² tin còn rao ngày 11/10/2026): 5x20 m (100 m²) khoảng 350–370 triệu; 5x25 m (125 m²) khoảng 440–460 triệu; 5x30 m (150 m²) khoảng 520–550 triệu; 5x35 m (175 m²) khoảng 610–640 triệu; 5x40 m (200 m²) khoảng 700–730 triệu. Giá rao, chưa phải giá chốt. Khoảng giá phổ biến của nhóm 2,6–5,1 triệu/m² (đo 27/9/2026).
 
-Nhiều hàng: đo ngày 2/10/2026, nhóm nền tách thửa 150–300 m² có 131 tin còn rao cùng lúc. Nhận định của tác giả: hàng đến từ đợt chuyển mục đích sang đất ở (hồ sơ nộp trước khi xã tạm dừng nhận từ 17/4; tháng 7/2026 có 38 quyết định) và hồ sơ tách thửa nộp trước 20/8 có thể vẫn giải quyết theo mức cũ.
+Nhiều hàng: đo ngày 11/10/2026, nhóm nền tách thửa 150–300 m² có 108 tin còn rao cùng lúc. Nhận định của tác giả: hàng đến từ đợt chuyển mục đích sang đất ở (hồ sơ nộp trước khi xã tạm dừng nhận từ 17/4; tháng 7/2026 có 38 quyết định) và hồ sơ tách thửa nộp trước 20/8 có thể vẫn giải quyết theo mức cũ.
 
 Tuần đầu tháng 10, thị trường loại lô này tách làm hai: lô view rất đẹp hoặc gần trung tâm vẫn ra hàng dễ; lô bình thường trong cụm thì nằm lâu hơn.
 
@@ -19232,14 +19242,14 @@ Câu này khác câu trên ở một chỗ: có tiền đặt vào. Nên ngoài 
 Bảng — Giá rao đất Nam Ban, tháng 9/2026
 
 Loại đất | Trung vị giá rao
-Đất nền tách thửa 150–300 m² | 4,06 triệu/m²
-Lô khoảng 500 m² có thổ cư | 2,33 triệu/m²
-Đất trên 1.000 m² | 1,37 triệu/m²
-Lô có view hồ, đồi, toàn cảnh | 3,16 triệu/m²
+Đất nền tách thửa 150–300 m² | 3,67 triệu/m²
+Lô khoảng 500 m² có thổ cư | 2,24 triệu/m²
+Đất trên 1.000 m² | 1,60 triệu/m²
+Lô có view hồ, đồi, toàn cảnh | 2,32 triệu/m²
 
 Nguồn: Namban Index, trung vị giá rao tháng 9/2026. Đây là giá rao, chưa phải giá chốt.
 
-Đổi ra tiền cả lô: một nền 150 m² ở mức giữa chừng 610 triệu. Lô rao rẻ hơn hẳn mức chung thường thiếu một thứ, cách nhận ra ở bài đất Nam Ban giá rẻ: bao nhiêu là rẻ thật.
+Đổi ra tiền cả lô: một nền 150 m² ở mức giữa chừng 550 triệu. Lô rao rẻ hơn hẳn mức chung thường thiếu một thứ, cách nhận ra ở bài đất Nam Ban giá rẻ: bao nhiêu là rẻ thật.
 
 Vì sao nhiều người chọn Nam Ban trong các vùng ven Đà Lạt?
 
@@ -19247,7 +19257,7 @@ Nam Ban không phải vùng ven tốt nhất. Nhưng có mấy lý do khiến nh
 
 - Gần cả hai đầu. Lên Đà Lạt khoảng 25 km, ra sân bay Liên Khương khoảng 20 km, đi lối ngã ba Cửa Rừng, khỏi qua đèo.
 
-- Tầm tiền vừa phải. Nền tách thửa có thổ cư ở mức giữa chừng 610 triệu, theo giá rao tháng 9/2026.
+- Tầm tiền vừa phải. Nền tách thửa có thổ cư ở mức giữa chừng 550 triệu, theo giá rao tháng 9/2026.
 
 - Có hàng để mua. Nam Ban là thị trấn cũ, đất phần nhiều của hộ dân, nên có lô để chọn, không phải chờ một dự án hứa sẽ thành.
 
@@ -19291,7 +19301,7 @@ Chọn theo thứ mình cần mỗi ngày. Cần dịch vụ, trường, đi l�
 
 Đất ven Đà Lạt nên mua ở đâu?
 
-Ở vùng mình đã hiểu và kiểm được: sổ riêng, loại đất, đường vào mùa mưa, quy hoạch. Về giá, Namban Panorama chỉ tự đo ở Nam Ban: tháng 9/2026, trung vị giá rao nền tách thửa 150–300 m² khoảng 4,06 triệu/m², đất trên 1.000 m² khoảng 1,37 triệu/m². Đây là giá rao, chưa phải giá chốt.
+Ở vùng mình đã hiểu và kiểm được: sổ riêng, loại đất, đường vào mùa mưa, quy hoạch. Về giá, Namban Panorama chỉ tự đo ở Nam Ban: tháng 9/2026, trung vị giá rao nền tách thửa 150–300 m² khoảng 3,67 triệu/m², đất trên 1.000 m² khoảng 1,60 triệu/m². Đây là giá rao, chưa phải giá chốt.
 
 Vì sao nhiều người chọn Nam Ban trong các vùng ven Đà Lạt?
 
