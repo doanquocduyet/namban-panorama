@@ -29,22 +29,23 @@ seen = set(json.load(open(SEEN_P)).get("hashes", [])) if glob.glob(SEEN_P) else 
 #  (1) mọi nguồn: đường dẫn có địa danh nơi khác (khớp trọn cụm) mà KHÔNG có dấu riêng của Nam Ban → bỏ;
 #  (2) guland/thuviennhadat mang nhãn "Đông Thanh" (đúng nhóm bị lẫn) → đường dẫn phải có dấu địa phương.
 # Cố ý KHÔNG đưa vào danh sách nơi khác: tên trùng thôn Nam Ban (long-bien, dong-ha, ba-dinh, tu-liem, thanh-tri, gia-lam,
-# me-linh…) và chữ thường dễ nhầm (hai-phong = "hai phòng", da-nang = "đã nâng", can-ho, hue, sai-gon, bao-loc, tan-phu).
+# me-linh…), chữ thường dễ nhầm (hai-phong = "hai phòng", da-nang = "đã nâng", cu-chi = "thổ cư chỉ", long-an = "Thăng Long
+# an ninh", nha-trang = "nhà trắng", can-ho, hue, sai-gon, bao-loc, tan-phu) và Đà Lạt (tin Nam Ban hay ghi "cách TP Đà Lạt
+# 9 km", "23 km tới hồ Xuân Hương" — soát bằng diagnose.py tokens 12/10/2026).
 def _tok(*names):  # khớp trọn cụm giữa dấu "-" hoặc "/" (tránh "gia-lam-ha-noi" bị đọc thành "lam-ha")
     return re.compile(r"(?:^|[-/])(?:%s)(?=$|[-/])" % "|".join(names))
 STRONG_LOCAL = _tok(r"lam-ha(?!-noi)", "nam-ban", "namban", r"dt-?725", r"tl-?725", "tinh-lo-725", "duong-725",
                     "thac-voi", "linh-an", "bai-cong", "tong-doi")
 LOCAL = re.compile(STRONG_LOCAL.pattern + "|" + _tok("dong-thanh", "me-linh", "gia-lam(?!-ha-noi)", "buon-chuoi").pattern)
 FOREIGN = _tok("ho-chi-minh", "tphcm", "tp-hcm", "ha-noi", "hanoi", "tp-da-nang", "thanh-pho-da-nang", "quan-[a-z-]*-da-nang",
-               "tp-hai-phong", "thanh-pho-hai-phong", "can-tho", "tien-giang", "my-tho", "binh-duong", "dong-nai", "long-an",
-               "vung-tau", "ba-ria", "khanh-hoa", "nha-trang", "thu-duc", "go-vap", "binh-thanh", "tan-binh", "phu-nhuan",
-               "binh-tan", "cam-le", "hoc-mon", "cu-chi", "thanh-xuan", "cau-giay", "hoang-mai", "ha-dong", "kim-giang",
+               "tp-hai-phong", "thanh-pho-hai-phong", "can-tho", "tien-giang", "my-tho", "binh-duong", "dong-nai", "tinh-long-an",
+               "vung-tau", "ba-ria", "khanh-hoa", "tp-nha-trang", "thanh-pho-nha-trang", "thu-duc", "go-vap", "binh-thanh", "tan-binh", "phu-nhuan",
+               "binh-tan", "cam-le", "hoc-mon", "huyen-cu-chi", "thanh-xuan", "cau-giay", "hoang-mai", "ha-dong", "kim-giang",
                "tan-dinh", "ben-thanh", "khanh-hoi", r"quan-\d+", r"phuong-\d+", "chung-cu", "can-ho-chung-cu", "thanh-hoa",
                "quang-tri", "nghe-an", "ha-tinh", "thai-binh", "nam-dinh", "ninh-binh", "bac-ninh", "quang-ninh", "thua-thien-hue",
                "quang-nam", "quang-ngai", "binh-dinh", "phu-yen", "gia-lai", "dak-lak", "kon-tum", "dak-nong", "binh-thuan",
-               "ninh-thuan", "tay-ninh", "binh-phuoc", "ben-tre", "vinh-long", "an-giang", "kien-giang", "phu-quoc", "ca-mau",
-               "bac-lieu", "soc-trang", "tra-vinh", "dong-thap", "hau-giang",
-               "thanh-pho-da-lat", "tp-da-lat", "xuan-huong", "lam-vien", "lang-biang")
+               "ninh-thuan", "tay-ninh", "binh-phuoc", "ben-tre", "vinh-long", "tinh-an-giang", "kien-giang", "phu-quoc", "ca-mau",
+               "bac-lieu", "soc-trang", "tra-vinh", "dong-thap", "hau-giang")
 NEED_LOCAL = {"guland.vn", "thuviennhadat.vn"}
 def foreign(r):
     """Trả lý do bỏ ('token' / 'need_local') hoặc None."""
