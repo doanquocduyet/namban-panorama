@@ -1,0 +1,29 @@
+name: Namban Index — chẩn đoán tin lẫn (chỉ đọc)
+# Bấm tay. Tải dòng thô 30 ngày của các lượt đo gần nhất + mở thử trang guland, in kết quả dạng ::notice::.
+# Không ghi gì vào repo. Xem tools/survey/diagnose.py.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests beautifulsoup4 lxml
+      - name: Tải dòng thô các lượt đo gần nhất
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p survey/diag
+          for id in $(gh run list --workflow index-weekly.yml --limit 8 --json databaseId --jq '.[].databaseId'); do
+            gh run download "$id" -n "tin-rao-$id" -D "survey/diag/$id" 2>/dev/null && echo "lấy được $id" || echo "không có artifact $id"
+          done
+          ls -R survey/diag | head -40
+      - name: Chẩn đoán
+        run: python tools/survey/diagnose.py
