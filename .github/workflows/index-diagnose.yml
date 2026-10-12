@@ -25,5 +25,7 @@ jobs:
             gh run download "$id" -n "tin-rao-$id" -D "survey/diag/$id" 2>/dev/null && echo "lấy được $id" || echo "không có artifact $id"
           done
           ls -R survey/diag | head -40
+      - name: Tin bị loại vì địa danh (soát loại oan)
+        run: python tools/survey/diagnose.py tokens
       - name: Chẩn đoán
         run: python tools/survey/diagnose.py

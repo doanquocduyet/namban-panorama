@@ -110,7 +110,32 @@ def part_live():
                          for k, v in sorted(groups.items(), key=lambda kv: -len(kv[1]))[:6])
         notice("Khung " + name, "URL cuối %s ‖ %s" % (rr.url, msg))
 
+def part_tokens():
+    """Tin bị foreign() loại: token nào bắt, theo nguồn (để soát loại oan)."""
+    spec = importlib.util.spec_from_file_location("agg_src", "tools/survey/aggregate.py")
+    src = open("tools/survey/aggregate.py", encoding="utf-8").read()
+    ns = {"re": re}
+    exec(src[src.index("def _tok"):src.index("def slugkhu")], ns)
+    F, S, foreign = ns["FOREIGN"], ns["STRONG_LOCAL"], ns["foreign"]
+    rows, seen = [], set()
+    for f in sorted(glob.glob("survey/diag/**/tin-rao-*.csv", recursive=True)):
+        for r in csv.DictReader(open(f, encoding="utf-8")):
+            u = r["url"].split("?")[0]
+            if u in seen: continue
+            seen.add(u); rows.append(r)
+    by = defaultdict(list)
+    for r in rows:
+        why = foreign(r)
+        if why != "token": continue
+        u = r["url"].lower().split("?")[0].split("/", 3)[-1]
+        m = F.search(u)
+        by[r["nguon"]].append("%s ⟨%s⟩ %s" % (u[:95], m.group(0).strip("-/") if m else "?", r.get("ngay_dang", "")[:7]))
+    for src_, xs in sorted(by.items(), key=lambda kv: -len(kv[1]))[:8]:
+        notice("Loại vì địa danh — %s (%d tin)" % (src_, len(xs)), " | ".join(xs[:14]))
+
 if __name__ == "__main__":
+    if len(sys.argv) > 1 and sys.argv[1] == "tokens":
+        part_tokens(); sys.exit(0)
     part_raw()
     try:
         part_live()
