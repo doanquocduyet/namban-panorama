@@ -145,23 +145,36 @@ def strip_vn(s):
 EXCL = [("nam hà", "Nam Hà"), ("phi tô", "Phi Tô"), ("tà nung", "Tà Nung"), ("đinh văn", "Đinh Văn"), ("đạ đờn", "Đạ Đờn"),
         ("tân hà", "Tân Hà"), ("tân văn", "Tân Văn"), ("hoài đức", "Hoài Đức"), ("phúc thọ", "Phúc Thọ"), ("đan phượng", "Đan Phượng"),
         ("liên hà", "Liên Hà"), ("phú sơn", "Phú Sơn"), ("tân thanh", "Tân Thanh"), ("bảo lộc", "Bảo Lộc"), ("di linh", "Di Linh"),
-        ("đức trọng", "Đức Trọng"), ("lạc dương", "Lạc Dương"), ("đơn dương", "Đơn Dương"), ("cam ly", "Cam Ly"), ("xuân trường", "Xuân Trường"), ("trại mát", "Trại Mát"),
-        # 12/10/2026: tin nổi bật nơi khác cài trên trang danh sách (xem aggregate.py, foreign())
-        ("hồ chí minh", "TP.HCM"), ("tp.hcm", "TP.HCM"), ("tp hcm", "TP.HCM"), ("tphcm", "TP.HCM"), ("sài gòn", "TP.HCM"),
-        ("hà nội", "Hà Nội"), ("đà nẵng", "Đà Nẵng"), ("hải phòng", "Hải Phòng"), ("cần thơ", "Cần Thơ"), ("tiền giang", "Tiền Giang"),
-        ("bình dương", "Bình Dương"), ("đồng nai", "Đồng Nai"), ("long an", "Long An"), ("vũng tàu", "Vũng Tàu"), ("khánh hòa", "Khánh Hòa"),
-        ("nha trang", "Nha Trang"), ("thủ đức", "TP.HCM"), ("gò vấp", "TP.HCM"), ("bình thạnh", "TP.HCM"), ("tân bình", "TP.HCM"),
-        ("phú nhuận", "TP.HCM"), ("bình tân", "TP.HCM"), ("chung cư", "căn hộ chung cư"), ("căn hộ", "căn hộ chung cư")]
+        ("đức trọng", "Đức Trọng"), ("lạc dương", "Lạc Dương"), ("đơn dương", "Đơn Dương"), ("cam ly", "Cam Ly"), ("xuân trường", "Xuân Trường"), ("trại mát", "Trại Mát")]
 INCL = [("đông thanh", "Đông Thanh"), ("dong thanh", "Đông Thanh"), ("mê linh", "Mê Linh"), ("buôn chuối", "Mê Linh"), ("gia lâm", "Gia Lâm"),
         ("nam ban", "Nam Ban"), ("thăng long", "Nam Ban"), ("chi lăng", "Nam Ban"), ("đông anh", "Nam Ban"), ("bãi công", "Nam Ban"),
         ("từ liêm", "Nam Ban"), ("thanh trì", "Nam Ban"), ("linh ẩn", "Nam Ban"), ("thác voi", "Nam Ban"), ("tổng đội", "Nam Ban"), ("ba đình", "Nam Ban"),
         ("hai bà trưng", "Nam Ban"), ("hoàn kiếm", "Nam Ban"), ("đống đa", "Nam Ban"), ("đt 725", "Nam Ban"), ("đt725", "Nam Ban"), ("tl725", "Nam Ban")]
+
+# 12/10/2026: tin nổi bật nơi khác cài trên trang danh sách (xem aggregate.py, foreign()). Thành phố/tỉnh xa chỉ dùng để
+# loại khi tựa/địa chỉ KHÔNG có địa danh nào của Nam Ban ("chủ ở Sài Gòn cần bán lô Nam Ban" vẫn giữ); so trọn từ, không
+# so chuỗi con ("nhà nội thất" ≠ "hà nội", "Thăng Long an ninh" ≠ "long an").
+CITY = [("hồ chí minh", "TP.HCM"), ("tp.hcm", "TP.HCM"), ("tp hcm", "TP.HCM"), ("tphcm", "TP.HCM"), ("sài gòn", "TP.HCM"),
+        ("thủ đức", "TP.HCM"), ("gò vấp", "TP.HCM"), ("bình thạnh", "TP.HCM"), ("tân bình", "TP.HCM"), ("phú nhuận", "TP.HCM"),
+        ("bình tân", "TP.HCM"), ("hóc môn", "TP.HCM"), ("hà nội", "Hà Nội"), ("đà nẵng", "Đà Nẵng"), ("hải phòng", "Hải Phòng"),
+        ("cần thơ", "Cần Thơ"), ("tiền giang", "Tiền Giang"), ("bình dương", "Bình Dương"), ("đồng nai", "Đồng Nai"),
+        ("long an", "Long An"), ("vũng tàu", "Vũng Tàu"), ("khánh hòa", "Khánh Hòa"), ("nha trang", "Nha Trang"),
+        ("chung cư", "căn hộ chung cư")]
+HANOI_SHARED = {"ba đình", "hai bà trưng", "hoàn kiếm", "đống đa", "đông anh", "từ liêm", "thanh trì", "gia lâm", "mê linh"}
+_W = "a-zà-ỹđ0-9"
+def _has(word, text): return re.search(r"(?<![%s])%s(?![%s])" % (_W, re.escape(word), _W), text) is not None
 
 def classify_khu(title, addr, ctx):
     """ctx: khu mặc định do trang danh sách (vd 'Nam Ban' khi lấy từ list thị trấn Nam Ban) hoặc None."""
     a = strip_vn(addr or ""); t = strip_vn(title or "")
     ex_a = [n for k, n in EXCL if k in a]; ex_t = [n for k, n in EXCL if k in t]
     in_a = [n for k, n in INCL if k in a]; in_t = [n for k, n in INCL if k in t]
+    if not in_a and not in_t:
+        city = [n for k, n in CITY if _has(k, a) or _has(k, t)]
+        if city: return "ngoài xã: " + city[0]
+    # tên thôn Nam Ban trùng tên quận/huyện Hà Nội: có chữ "Hà Nội" mà không có địa danh riêng của Nam Ban → Hà Nội
+    keys = {k for k, _ in INCL if k in a or k in t}
+    if (_has("hà nội", a) or _has("hà nội", t)) and keys and keys <= HANOI_SHARED: return "ngoài xã: Hà Nội"
     if ex_a: return "ngoài xã: " + ex_a[0]
     if in_a:
         # ưu tiên tên xã cụ thể hơn "Nam Ban" nếu cả hai

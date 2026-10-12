@@ -33,6 +33,9 @@ permissions:
 concurrency:
   group: index-weekly
   cancel-in-progress: false
+defaults:
+  run:
+    shell: bash   # Actions chạy bash -eo pipefail: aggregate lỗi thì bước đỏ, không bị tee che
 jobs:
   rebuild:
     runs-on: ubuntu-latest
@@ -59,12 +62,17 @@ jobs:
           done
           ls raw
           [ -d "raw/$REPLAY_RUN" ] || { echo "::error title=Thiếu dòng thô::không có artifact tin-rao-$REPLAY_RUN"; exit 1; }
+          latest=$(gh run list --workflow index-weekly.yml --status success --limit 1 --json databaseId --jq '.[0].databaseId')
+          [ "$latest" = "$REPLAY_RUN" ] || { echo "::error title=Không phải lượt mới nhất::lượt đo mới nhất là $latest — chạy lại $REPLAY_RUN sẽ đè lên số mới hơn"; exit 1; }
+          [[ "$REPLAY_DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || { echo "::error title=Ngày sai::$REPLAY_DATE"; exit 1; }
       - name: 1 — chạy lại lượt đo
         run: |
           rm -rf survey/out; mkdir -p survey/out
           find "raw/$REPLAY_RUN" -name 'tin-rao-*.csv' -exec cp {} survey/out/ \;
           git show "$SEEN_REF:data/index/seen.json" > data/index/seen.json
+          [ "$(ls survey/out/tin-rao-*.csv | wc -l)" -ge 6 ] || { echo "::error title=Thiếu nguồn::$(ls survey/out)"; exit 1; }
           AGG_TODAY="$REPLAY_DATE" AGG_NO_STOP=1 python tools/survey/aggregate.py | tee /tmp/agg1.txt
+          grep -q '^OK tuần' /tmp/agg1.txt || { echo "::error title=Chạy lại lượt đo::không thấy dòng OK"; exit 1; }
           echo "::notice title=Chạy lại lượt đo::$(grep -E 'Tin ngoài vùng|^OK|CẢNH BÁO' /tmp/agg1.txt | tr '\n' ' ' | cut -c1-900)"
       - name: 2 — tính lại các tháng từ dòng thô gộp
         run: |
@@ -74,6 +82,7 @@ jobs:
           done
           ls survey/out | wc -l
           AGG_TODAY="$REPLAY_DATE" AGG_REBUILD_ONLY=1 AGG_REBUILD_MONTHS="$MONTHS" python tools/survey/aggregate.py | tee /tmp/agg2.txt
+          grep -q '^REBUILD xong' /tmp/agg2.txt || { echo "::error title=Tính lại tháng::không thấy dòng REBUILD xong"; exit 1; }
           echo "::notice title=Tính lại tháng::$(grep -E 'Tin ngoài vùng|REBUILD' /tmp/agg2.txt | tr '\n' ' ' | cut -c1-900)"
           rm -rf survey/out
       - name: 3 — sinh lại trang
@@ -107,6 +116,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/index namban-index.html llms-full.txt
-          git commit -m "Index: tính lại tuần 41 và tháng $MONTHS sau khi lọc tin ngoài vùng (bấm tay)" || exit 0
+          wk=$(date -u -d "$REPLAY_DATE" +%G-W%V)
+          git commit -m "Index: tính lại lượt $wk và tháng $MONTHS sau khi lọc tin ngoài vùng (bấm tay)" || exit 0
           for i in 1 2 3 4 5; do git push origin HEAD:main && exit 0; git pull --rebase origin main; done
           exit 1
