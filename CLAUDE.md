@@ -85,6 +85,13 @@ chính trang `/nam-ban-co-gi-moi`) mà có tin mới thì thêm **mục mới c�
 27/9/2026 trong `fb-post.py` + `apply-mark.py` + `social-post.py`). Ảnh og của bài có chữ cũ/sai thì khai
 `image` riêng cho mục đó. Chạy khô được: `FB_DRY_RUN=1 python3 tools/fb-post.py`,
 `PLATFORM=threads SOCIAL_DRY_RUN=1 python3 tools/social-post.py`.
+**Đính chính bài ĐÃ ĐĂNG (thêm 10/10/2026, ca thật: xã sửa số thu ngân sách sau khi bài đã lên 3 kênh):** workflow
+`social-fix.yml` (bấm tay; `tools/social-fix.py`). Facebook sửa thẳng đúng một câu (`fb_find` → `fb_replace`); không
+đọc/sửa được thì trả lời dưới bài. Instagram, Threads: API không cho sửa chữ → trả lời dưới bài (`reply`). KHÔNG xoá bài,
+KHÔNG đăng bài mới. Luôn chạy `dry_run=true` trước (đọc bài thật, báo câu cũ có mấy lần). Chống trả lời trùng hai lớp:
+dấu `fix_fb/fix_ig/fix_threads` trong hàng đợi (workflow luôn đọc main mới nhất) + đọc trả lời đang có dưới bài. Kết quả
+đọc qua annotation check-runs (`gh api repos/.../check-runs/<job>/annotations`) vì log thô không đọc được từ phiên Claude.
+Instagram của Panorama là **@namban.panorama** (có dấu chấm); Threads và Trang Facebook là @nambanpanorama.
 
 **PHIẾU TỪ Ô CONTENT — Ô CODE LÀ CHUẨN (Chú chốt 27/9/2026: "ô này sửa hàng ngàn lần nên cứ ô
 code này mà làm; bên ô kia góp ý đúng thì làm, không thì không sửa").** Ô content (các "cháu" viết
@@ -516,6 +523,22 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   không tốn token; mọi cải tiến đọc/lọc tin làm bên Villas. Tắt ngay thì tháng 9 chỉ còn 1/4 ô có số (tin Villas
   riêng: 2/10/6/1 tin) và mất số tin còn đang rao. Chỉ đụng vào `crawl.py` khi nó hỏng (luật dừng báo nguồn về 0).
   Trên trang ghi "tin còn đang rao", không ghi "tin đang treo" (chữ nghề, Chú hỏi "là sao").
+- **SỰ CỐ 12/10/2026 — TIN NƠI KHÁC LẪN VÀO NHÓM "ĐÔNG THANH" (đã vá, Chú xác nhận số sai).** Lượt W41 đổi kỳ chính
+  sang tháng 10 với đất nền **9,15 tr/m²**. Nguyên nhân: trang danh sách "xã Đông Thanh" của guland/thuviennhadat cài
+  tin nổi bật nơi khác (nhà phố TP.HCM, Hà Nội, Đà Nẵng, Bình Dương, Hóc Môn…); tin không có địa chỉ JSON-LD nên bộ
+  quét gán khu theo trang danh sách. Tháng 9: 87/104 tin "Đông Thanh" là tin nơi khác; tháng 10: 72/75; tháng 8 sạch.
+  Vá: `aggregate.py` `foreign()` — (1) đường dẫn có địa danh nơi khác (khớp TRỌN CỤM) mà không có dấu riêng của Nam Ban
+  → bỏ; (2) guland/thuviennhadat mang nhãn "Đông Thanh" phải có dấu địa phương trong đường dẫn — và `crawl.py` (thành
+  phố/tỉnh xa so trọn từ, chỉ loại khi tựa/địa chỉ không có địa danh Nam Ban; tên thôn trùng quận Hà Nội + chữ "Hà Nội"
+  → ngoài xã). Đã tính lại tuần 41 và tháng 9–10 từ dòng thô 30 ngày bằng `index-rebuild.yml` (chạy khô trước, chỉ chạy
+  lại lượt đo MỚI NHẤT): tháng 9 đất nền 4,06 → **3,67**, lô 500 m² 2,33 → 2,24, đất trên 1.000 m² 1,37 → 1,60, lô view
+  3,16 → 2,32; tháng 10 sạch mới 12 tin nên kỳ chính vẫn là tháng 9. Chẩn đoán chỉ đọc: `index-diagnose.yml`
+  (`diagnose.py tokens` liệt kê tin bị loại theo nguồn + token để soát loại oan).
+  **Token cố ý KHÔNG dùng (đã loại oan tin Nam Ban khi thử):** tên thôn trùng Hà Nội (long-bien, dong-ha, ba-dinh,
+  tu-liem, thanh-tri, gia-lam, me-linh…), `tp-da-lat`/`xuan-huong` (tin Nam Ban ghi "cách TP Đà Lạt 9 km", "23 km tới hồ
+  Xuân Hương"), `cu-chi` ("thổ cư chỉ 1 tỷ"), `nha-trang` ("Đông Thanh nhà trắng"), `long-an` ("Thăng Long an ninh"),
+  `hai-phong` ("hai phòng ngủ"), `da-nang` ("đã nâng"), `lam-dong` làm dấu riêng (cả tỉnh). Thêm token mới thì chạy
+  `index-diagnose.yml` xem bước "Tin bị loại vì địa danh" trước khi tin số.
 - **Nguồn thứ 8 — tin rao Villas tổng hợp (thêm 25/9/2026, Chú giao: "bên đó làm sâu và nhiều tin hơn",
   "Villas đã đối chiếu nguồn gốc, đáng tin").** `crawl.py villasdigest` đọc
   `nambanvillas.vn/thi-truong/tin-rao-dat-nam-ban-moi/` (video môi giới + sàn, mỗi tin có ngày, KHÔNG có link
