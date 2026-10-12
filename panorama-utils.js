@@ -34,6 +34,8 @@
       "dat-nen-nam-ban-ngang-5m",
       /* thêm 5/10/2026 — thủ tục lên thổ cư: bài pháp lý đất, cùng nhóm với chuyển mục đích + lên thổ cư, thuộc diện §2.2 */
       "thu-tuc-len-tho-cu-nam-ban",
+      /* thêm 12/10/2026 — danh sách kiểm khi mua đất Nam Ban: bài mua bán đất, thuộc diện §2.2 */
+      "mua-dat-nam-ban-can-kiem-tra-gi",
       /* thêm 26/9/2026 — bảng giá đất nhà nước, bài đất, thuộc diện §2.2 */
       "bang-gia-dat-nam-ban",
       /* thêm 26/9/2026 — đấu giá đất, bài thị trường, thuộc diện §2.2 */

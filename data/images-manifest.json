@@ -8,15 +8,14 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 448,
- "unused_count": 69,
+ "total_images": 449,
+ "unused_count": 68,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
   "ban-an-trang-tri-giang-sinh.webp",
   "ban-do-cao-do-thua-dat-nam-ban.webp",
   "ban-do-quy-hoach-nam-ban-mau-tren-man-hinh.webp",
   "ban-do-quy-hoach-xa-nam-ban-gis.webp",
-  "ban-do-thua-dat-nam-ban-gis.webp",
   "ban-do-tuyen-me-linh-langbiang.webp",
   "ban-tiec-tra-kieu-co-dien.webp",
   "bien-hieu-tram-sac-gia-lam-nam-ban.webp",
@@ -166,10 +165,12 @@
     ],
     "mua-dat-nam-ban-500-trieu-1-ty.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "ban-dat-nam-ban.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -256,8 +257,14 @@
     1600,
     680
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "mua-dat-nam-ban-can-kiem-tra-gi.html": [
+     "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
   },
   "ban-do-tuyen-me-linh-langbiang.webp": {
    "kb": 173,
@@ -678,6 +685,7 @@
    "used_in": {
     "ca-phe-nam-ban.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -1278,6 +1286,7 @@
    "used_in": {
     "chuyen-len-nam-ban-song.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -1508,6 +1517,7 @@
    "used_in": {
     "nam-ban-hay-dran.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -2193,6 +2203,7 @@
    "used_in": {
     "doc-the-dat-nam-ban.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -2752,10 +2763,12 @@
     ],
     "co-nen-mua-dat-nam-ban-o-xa.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "xay-nha-o-nam-ban.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -3368,6 +3381,7 @@
    "used_in": {
     "homestay-nam-ban-co-lai-khong.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -3448,6 +3462,7 @@
    "used_in": {
     "khu-nao-o-nam-ban.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -3670,6 +3685,7 @@
    "used_in": {
     "len-tho-cu-het-bao-nhieu-tien.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -3815,6 +3831,7 @@
    "used_in": {
     "giu-dat-nam-ban-tu-xa.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "dat-nam-ban-gia-re.html": [
@@ -4088,6 +4105,7 @@
    "used_in": {
     "mua-bo-nam-ban.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -4119,6 +4137,7 @@
    "used_in": {
     "mua-ca-phe-nam-ban.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -4152,6 +4171,7 @@
    "used_in": {
     "mua-dat-co-vuon-bo.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -4168,6 +4188,7 @@
    "used_in": {
     "mua-dat-co-vuon-ca-phe.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -4184,6 +4205,24 @@
    "used_in": {
     "mua-dat-duong-gia-nam-ban.html": [
      "og",
+     "schema",
+     "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
+    ]
+   }
+  },
+  "mua-dat-nam-ban-can-kiem-tra-gi.jpg": {
+   "kb": 188,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "mua-dat-nam-ban-can-kiem-tra-gi.html": [
+     "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -4269,6 +4308,7 @@
    "used_in": {
     "mua-vuon-ca-phe-nam-ban.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -4608,6 +4648,7 @@
     ],
     "o-thu-nam-ban-truoc-khi-mua-dat.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -4668,6 +4709,7 @@
     ],
     "kinh-nghiem-mua-dat-nam-ban.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "chi-phi-dat-dai-nam-ban.html": [
@@ -4677,6 +4719,7 @@
     ],
     "mua-dat-da-lat-chon-nam-ban.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "nam-ban-sau-6h-toi.html": [
@@ -5212,6 +5255,7 @@
    "used_in": {
     "gia-ca-phe-va-gia-dat-nam-ban.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -6613,6 +6657,7 @@
    "used_in": {
     "tour-ca-phe-nam-ban.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -6898,6 +6943,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -7039,6 +7087,7 @@
    "used_in": {
     "vua-mua-dat-nam-ban-lam-gi.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [

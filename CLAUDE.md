@@ -1314,6 +1314,22 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     lên ở"; `/vi-sao-nam-ban-nhieu-giao-dich` giữ góc "vì sao đông người mua bán". Dữ kiện đã sửa ở `/dat-gan-da-lat`: D'ran
     đi lối Trại Mát qua **đèo D'ran** (khoảng 35–40 km), KHÔNG phải đèo Ngoạn Mục; "Lạc Dương" từ 1/7/2025 tách hai (thị trấn
     cũ + xã Lát → phường Lang Biang – Đà Lạt; xã Lạc Dương mới là nơi khác). **Khóa tựa hai bài này tới hết 3/11/2026.**
+    **12/10/2026 — key "mua đất nam ban cần kiểm tra gì" (Chú dán trang kết quả: Google lấy nhầm bài BÁN đất, /truoc-khi không có
+    trong top 10 dù #1 cho "lưu ý gì").** Dựng nhà mới `/mua-dat-nam-ban-can-kiem-tra-gi` — tựa *"Mua đất Nam Ban cần kiểm tra gì? 10 việc
+    nên làm trước khi đặt cọc"* (không dùng "ở đâu": key của `/tra-cuu-dat-nam-ban`; không dùng "lưu ý": key của `/truoc-khi-xuong-tien`).
+    Góc riêng: danh sách mười việc theo thứ tự + **mốc 1/7/2025 không còn Phòng TN&MT huyện Lâm Hà** (sửa chỗ AI Overview còn bảo lên
+    huyện): hồ sơ đất nộp gần nhất ở bộ phận Một cửa xã Nam Ban Lâm Hà (sang tên, tách thửa nộp được cả ở văn phòng/chi nhánh đăng ký
+    đất đai); thông tin thửa đất do Văn phòng đăng ký đất đai tỉnh + chi nhánh khu vực giữ (28 chi nhánh, Báo Lâm Đồng 12/7/2025; mô hình
+    cấp tỉnh + chi nhánh GIỮ NGUYÊN, không chuyển về xã — VBHN 90/VBHN-BNNMT, báo 8/1/2026; đừng viết "còn có thể thay đổi"); thông tin
+    về người sử dụng đất chỉ cấp khi người đó đồng ý (NĐ 101/2024 Đ61 k3). Không viết hướng dẫn thủ tục từng bước, không nêu tên chi
+    nhánh cụ thể. FAQPage chỉ giữ 3 câu (cần kiểm tra gì · "Phòng Tài nguyên và Môi trường huyện Lâm Hà còn không?" · kiểm tới đâu thì
+    dừng) — câu "hồ sơ đất Nam Ban nộp ở đâu" có nhà là `/nam-ban-thuoc-xa-nao`, đừng đưa vào schema bài này; câu "đi xem đất cần hỏi gì" chỉ hiển thị (nhà gần: `/doc-the-dat-nam-ban`). Đã gỡ khỏi schema:
+    "Mua đất Nam Ban cần kiểm tra những gì để an toàn?" ở `/mua-dat-nam-ban`, "Mua đất Nam Ban cần lưu ý điều gì?" ở `/kinh-nghiem-mua-dat-nam-ban`
+    (nhà là `/truoc-khi-xuong-tien`). og bài này cắt từ `duong-vao-khu-dat-xa-nam-ban.webp` (biển số xe đã làm mờ) — tấm lô rào cọc
+    `lo-dat-nam-ban-coc-ranh` đã làm og cho 6 bài dưới tên khác, manifest không bắt được vì og đặt tên theo slug: muốn kiểm trùng thì
+    so điểm ảnh (thu 240×126, chênh trung bình < ~10 là cùng tấm). Bài bán `/chuan-bi-truoc-khi-ban-dat-nam-ban` có một dòng `div.buyer-note` dẫn người mua sang (div nên
+    không vào lời đọc). **Khóa tựa tới hết 12/11/2026.** Đo lại 3–4 tuần: nếu `/truoc-khi` rớt khỏi #1 cho "lưu ý gì" mà trang mới thế
+    chỗ thì xem lại.
     **26g — LINK GIỮA 3 WEB: MỞ CÓ KIỂM SOÁT (Chú gật 2/10/2026, ô Villas và ô Panorama cùng thống nhất).**
     (1) **Chỉ trong câu chữ**, đúng chỗ người đọc cần đi tiếp. KHÔNG ở chân trang, thanh menu, khối lặp, trang lô.
     (2) **Trần:** Villas → Panorama 10–15 link; **Panorama → Villas tối đa 5 link**; Panorama → GreenSpacers chỉ ở bài nói về

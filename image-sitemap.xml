@@ -681,6 +681,11 @@
     <image:image><image:loc>https://nambanpanorama.com/images/ban-dat-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/mua-dat-nam-ban-can-kiem-tra-gi</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/ban-do-thua-dat-nam-ban-gis.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/mua-dat-nam-ban-can-kiem-tra-gi.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/mua-dat-nam-ban-co-nguoi-dang-canh-tac</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/vuon-xen-canh-du-du-ca-phe-nam-ban.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/mua-dat-nam-ban-co-nguoi-dang-canh-tac.jpg</image:loc></image:image>
