@@ -4,10 +4,17 @@
 - tin mới = URL chưa từng thấy (lưu băm sha1 trong data/index/seen.json, không lưu URL)
 - ĐIỀU KIỆN DỪNG: bất thường thì ghi data/index/alert.json và thoát mã 3 — workflow KHÔNG sinh lại trang.
 Chỉ số tổng hợp; không tựa, không URL, không SĐT."""
-import csv, glob, json, sys, hashlib, statistics as st, datetime as dt
+import csv, glob, json, os, re, sys, hashlib, statistics as st, datetime as dt
 from collections import defaultdict, Counter
 
-TODAY = dt.date.today(); ISO_WEEK = TODAY.strftime("%G-W%V")
+# AGG_TODAY: chạy lại một lượt đo cũ (vd tính lại tuần 41 sau khi sửa bộ lọc 12/10/2026).
+TODAY = dt.date.fromisoformat(os.environ["AGG_TODAY"]) if os.environ.get("AGG_TODAY") else dt.date.today()
+ISO_WEEK = TODAY.strftime("%G-W%V")
+# AGG_REBUILD_MONTHS="2026-09,2026-10": các tháng này được ghi đè dù mẫu mới nhỏ hơn (tháng đã lưu bị lẫn tin).
+# AGG_REBUILD_ONLY=1: chỉ tính lại các tháng đó từ dòng thô gộp nhiều lượt; KHÔNG đụng tuần, mốc nền, seen.
+REBUILD = {m.strip() for m in os.environ.get("AGG_REBUILD_MONTHS", "").split(",") if m.strip()}
+REBUILD_ONLY = os.environ.get("AGG_REBUILD_ONLY") == "1"
+NO_STOP = os.environ.get("AGG_NO_STOP") == "1" or REBUILD_ONLY
 IN = {"Nam Ban", "Đông Thanh", "Mê Linh", "Gia Lâm"}
 MIN_N = 10
 MIN_SMALL = 5   # 5–9 tin: vẫn lưu trung vị riêng (median_small_vnd_m2), trang in kèm nhãn "mẫu nhỏ" — Chú chốt 26/9/2026
@@ -15,17 +22,51 @@ P = "data/index/monthly.json"; SEEN_P = "data/index/seen.json"
 D = json.load(open(P, encoding="utf-8"))
 seen = set(json.load(open(SEEN_P)).get("hashes", [])) if glob.glob(SEEN_P) else set()
 
+# Lọc tin NGOÀI VÙNG (sự cố 12/10/2026): trang danh sách guland/thuviennhadat cài kèm tin nổi bật của nơi khác
+# (nhà phố TP.HCM, Hà Nội, Đà Nẵng…). Tin đó không ghi địa chỉ trong JSON-LD nên bộ quét gán theo khu của trang
+# danh sách → tháng 9–10 nhóm "Đông Thanh" có 87/104 và 72/75 tin là tin nơi khác, đẩy đất nền lên 9,15 tr/m².
+# Hai lớp: (1) đường dẫn mang địa danh nơi khác mà không có dấu Lâm Hà → bỏ; (2) guland, thuviennhadat bắt buộc
+# đường dẫn có dấu địa phương (tựa tin của hai trang này nằm trong đường dẫn).
+def _tok(*names):  # khớp trọn cụm giữa dấu "-" hoặc "/" (tránh "gia-lam-ha-noi" bị đọc thành "lam-ha")
+    return re.compile(r"(?:^|[-/])(?:%s)(?=$|[-/])" % "|".join(names))
+STRONG_LOCAL = _tok(r"lam-ha(?!-noi)", "lam-dong", "nam-ban", "namban", "dong-thanh", r"dt-?725", "tl-?725", "tinh-lo-725",
+                    "thac-voi", "linh-an", "bai-cong", "tong-doi")
+LOCAL = re.compile(STRONG_LOCAL.pattern + "|" + _tok("me-linh", "gia-lam(?!-ha-noi)", "buon-chuoi").pattern)
+FOREIGN = _tok("ho-chi-minh", "tphcm", "tp-hcm", "hcm", "sai-gon", "ha-noi", "hanoi", "da-nang(?!-cap)", "hai-phong", "can-tho",
+               "tien-giang", "my-tho", "binh-duong", "dong-nai", "long-an", "vung-tau", "ba-ria", "khanh-hoa", "nha-trang",
+               "thu-duc", "go-vap", "binh-thanh", "tan-binh", "tan-phu", "phu-nhuan", "binh-tan", "cam-le", "long-bien",
+               "thanh-xuan", "cau-giay", "hoang-mai", "ha-dong", "kim-giang", "tan-dinh", "ben-thanh", "khanh-hoi",
+               r"quan-\d+", r"phuong-\d+", "chung-cu", "can-ho", "thanh-hoa", "quang-tri", "dong-ha", "nghe-an", "ha-tinh",
+               "thai-binh", "nam-dinh", "ninh-binh", "bac-ninh", "quang-ninh", "hue", "quang-nam", "quang-ngai", "binh-dinh",
+               "phu-yen", "gia-lai", "dak-lak", "kon-tum", "dak-nong", "binh-thuan", "ninh-thuan", "tay-ninh", "binh-phuoc",
+               "ben-tre", "vinh-long", "an-giang", "kien-giang", "phu-quoc", "ca-mau", "bac-lieu", "soc-trang", "tra-vinh",
+               "dong-thap", "hau-giang", "bao-loc", "di-linh", "duc-trong", "don-duong", "lac-duong")
+NEED_LOCAL = {"guland.vn", "thuviennhadat.vn"}
+def foreign(r):
+    u = r["url"].lower().split("?")[0].split("/", 3)[-1]
+    if FOREIGN.search(u) and not STRONG_LOCAL.search(u): return True
+    if r["nguon"] in NEED_LOCAL and not LOCAL.search(u): return True
+    return False
+
 def slugkhu(r):
+    # bộ quét đã kết luận "ngoài xã" / "nhiều địa danh" thì đường dẫn không được ghi đè
+    if r["khu"].startswith("ngoài xã") or r["khu"].startswith("mơ hồ (nhiều"): return r["khu"]
     u = r["url"].lower().split("/", 3)[-1]
     for k, n in (("dong-thanh", "Đông Thanh"), ("me-linh", "Mê Linh"), ("buon-chuoi", "Mê Linh"), ("xa-gia-lam", "Gia Lâm")):
         if k in u: return n
     if r["khu"] == "mơ hồ (không nêu khu)" and r["nguon"] == "guland.vn": return "chưa rõ khu"
     return r["khu"]
-rows = []
-for f in glob.glob("survey/out/tin-rao-*.csv"): rows += list(csv.DictReader(open(f, encoding="utf-8")))
+rows, _urls = [], set()
+for f in sorted(glob.glob("survey/out/tin-rao-*.csv")):
+    for r in csv.DictReader(open(f, encoding="utf-8")):
+        u = r["url"].split("?")[0]
+        if u in _urls: continue          # gộp nhiều lượt (AGG_REBUILD_ONLY): một tin chỉ tính một lần
+        _urls.add(u); rows.append(r)
 raw_by_src = Counter(r["nguon"] for r in rows)
-good = []
+good = []; n_foreign = Counter()
 for r in rows:
+    if foreign(r):
+        n_foreign[r["nguon"]] += 1; continue
     if not (r.get("dien_tich_m2") and r.get("gia_ca_lo_vnd")): continue
     a = float(r["dien_tich_m2"]); t = float(r["gia_ca_lo_vnd"]); m2 = t / a
     if not (1e5 <= m2 <= 1e8 and 5e7 <= t <= 2e11): continue
@@ -85,6 +126,9 @@ if prev_weeks:
         if n > 0 and raw_by_src.get(s_, 0) == 0: alerts.append(f"nguồn {s_} về 0 tin (tuần trước {n}) — nghi bị chặn")
 if base["n"] and base["villas_n"] / base["n"] > .4: alerts.append(f"Villas chiếm {100*base['villas_n']/base['n']:.0f}% (>40%)")
 if base["n"] < 100: alerts.append(f"tổng chỉ {base['n']} tin sau khử trùng (<100)")
+print("Tin ngoài vùng bị loại:", dict(n_foreign))
+if alerts and NO_STOP:
+    print("CẢNH BÁO (không dừng — AGG_NO_STOP/AGG_REBUILD_ONLY):", alerts); alerts = []
 if alerts:
     json.dump({"tuan": ISO_WEEK, "ngay": TODAY.isoformat(), "canh_bao": alerts, "tong_tin": base["n"], "tin_moi": len(new_rows)}, open("data/index/alert.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("DỪNG — không sinh lại trang:", alerts); sys.exit(3)
@@ -103,10 +147,16 @@ months = {m["month"]: m for m in D["monthly"]}
 for m in sorted(set(allm) | {cur}):
     new = {"month": m, "status": "partial" if m == cur else "closed", "ghi_nhan": grp(allm.get(m, [])), "posted": grp(real.get(m, [])), "refreshed_guland": grp(upd.get(m, []))}
     old = months.get(m)
-    if m != cur and old and new["ghi_nhan"]["n"] < old["ghi_nhan"]["n"]:
+    if REBUILD_ONLY and m not in REBUILD: continue
+    if m != cur and old and new["ghi_nhan"]["n"] < old["ghi_nhan"]["n"] and m not in REBUILD:
         old["status"] = "closed"; continue
     months[m] = new
 D["monthly"] = [months[k] for k in sorted(months)]
+if REBUILD_ONLY:
+    D["meta"]["rebuilt"] = {"months": sorted(REBUILD), "at": dt.datetime.now(dt.timezone(dt.timedelta(hours=7))).isoformat(timespec="minutes"),
+                            "note": "tính lại sau khi lọc tin ngoài vùng (sự cố 12/10/2026)"}
+    json.dump(D, open(P, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    print("REBUILD xong:", {m: months[m]["ghi_nhan"]["n"] for m in sorted(REBUILD) if m in months}); sys.exit(0)
 wk = {"week": ISO_WEEK, "measured_on": TODAY.isoformat(), "new_listings": len(new_rows), "snapshot": base}
 D["weekly"] = [w for w in prev_weeks if w["week"] != ISO_WEEK] + [wk]
 D["baseline"] = {"measured_on": TODAY.isoformat(), "label": f"Mốc nền: toàn bộ tin đang treo ngày {TODAY.strftime('%-d/%-m/%Y')}, sau khử trùng", **base}

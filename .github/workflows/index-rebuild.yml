@@ -1,0 +1,112 @@
+name: Namban Index — tính lại sau khi sửa bộ lọc (bấm tay)
+# Dùng khi số đã lưu bị sai (vd sự cố 12/10/2026: tin nơi khác lẫn vào nhóm "Đông Thanh").
+# 1) Chạy lại một lượt đo cũ (replay_run) với bộ lọc hiện tại, seen.json lấy ở commit trước lượt đó (seen_ref).
+# 2) Tính lại các tháng (months) từ dòng thô gộp của mọi lượt đo còn artifact (30 ngày) — ghi đè dù mẫu nhỏ hơn.
+# 3) Sinh lại trang + llms-full. dry_run: chỉ in số (::notice::), không commit.
+on:
+  workflow_dispatch:
+    inputs:
+      replay_run:
+        description: "id lượt đo (index-weekly) cần chạy lại"
+        required: true
+        type: string
+      replay_date:
+        description: "ngày đo của lượt đó (YYYY-MM-DD, giờ UTC)"
+        required: true
+        type: string
+      seen_ref:
+        description: "commit lấy data/index/seen.json trước lượt đó"
+        required: true
+        type: string
+      months:
+        description: "các tháng tính lại, cách nhau dấu phẩy"
+        required: true
+        type: string
+        default: "2026-09,2026-10"
+      dry_run:
+        description: "Chạy khô — chỉ in số, không commit"
+        type: boolean
+        default: true
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: index-weekly
+  cancel-in-progress: false
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      REPLAY_RUN: ${{ inputs.replay_run }}
+      REPLAY_DATE: ${{ inputs.replay_date }}
+      SEEN_REF: ${{ inputs.seen_ref }}
+      MONTHS: ${{ inputs.months }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Tải dòng thô các lượt đo còn lưu
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p raw
+          for id in $(gh run list --workflow index-weekly.yml --limit 12 --json databaseId --jq '.[].databaseId'); do
+            gh run download "$id" -n "tin-rao-$id" -D "raw/$id" 2>/dev/null && echo "lấy được $id" || echo "không có artifact $id"
+          done
+          ls raw
+          [ -d "raw/$REPLAY_RUN" ] || { echo "::error title=Thiếu dòng thô::không có artifact tin-rao-$REPLAY_RUN"; exit 1; }
+      - name: 1 — chạy lại lượt đo
+        run: |
+          rm -rf survey/out; mkdir -p survey/out
+          find "raw/$REPLAY_RUN" -name 'tin-rao-*.csv' -exec cp {} survey/out/ \;
+          git show "$SEEN_REF:data/index/seen.json" > data/index/seen.json
+          AGG_TODAY="$REPLAY_DATE" AGG_NO_STOP=1 python tools/survey/aggregate.py | tee /tmp/agg1.txt
+          echo "::notice title=Chạy lại lượt đo::$(grep -E 'Tin ngoài vùng|^OK|CẢNH BÁO' /tmp/agg1.txt | tr '\n' ' ' | cut -c1-900)"
+      - name: 2 — tính lại các tháng từ dòng thô gộp
+        run: |
+          rm -rf survey/out; mkdir -p survey/out
+          for d in raw/*; do id=$(basename "$d")
+            find "$d" -name 'tin-rao-*.csv' | while read -r f; do cp "$f" "survey/out/tin-rao-r${id}-$(basename "$f" | sed 's/^tin-rao-//')"; done
+          done
+          ls survey/out | wc -l
+          AGG_TODAY="$REPLAY_DATE" AGG_REBUILD_ONLY=1 AGG_REBUILD_MONTHS="$MONTHS" python tools/survey/aggregate.py | tee /tmp/agg2.txt
+          echo "::notice title=Tính lại tháng::$(grep -E 'Tin ngoài vùng|REBUILD' /tmp/agg2.txt | tr '\n' ' ' | cut -c1-900)"
+          rm -rf survey/out
+      - name: 3 — sinh lại trang
+        run: |
+          python tools/gen-index-history.py
+          python tools/gen-llms-index-entry.py || echo "::warning title=llms-full::không đồng bộ (Luật 25 chặn)"
+      - name: Báo số
+        run: |
+          python - <<'PY'
+          import json, re, html
+          d = json.load(open("data/index/monthly.json", encoding="utf-8"))
+          def fmt(g):
+              return " · ".join("%s %s (n=%d)" % (v["label"].split(" ")[0] + " " + v["label"].split(" ")[1],
+                                ("%.2f" % (v["median_vnd_m2"] / 1e6)) if v.get("median_vnd_m2") else ("mẫu nhỏ %.2f" % (v["median_small_vnd_m2"] / 1e6) if v.get("median_small_vnd_m2") else "-"),
+                                v["n"]) for k, v in g["groups"].items())
+          for m in d["monthly"][-4:]:
+              g = m["ghi_nhan"]
+              print("::notice title=Tháng %s (%s, %d tin)::%s · khu %s" % (m["month"], m["status"], g["n"], fmt(g),
+                    {k: (v["n"], v["median_vnd_m2"]) for k, v in g["by_khu"].items()}))
+          w = d["weekly"][-1]
+          print("::notice title=Tuần %s (%s)::%d tin còn rao · %s" % (w["week"], w["measured_on"], w["snapshot"]["n"], fmt(w["snapshot"])))
+          s = open("namban-index.html", encoding="utf-8").read()
+          t = " ".join(html.unescape(re.sub(r"<[^>]+>", " ", s)).replace("\xa0", " ").split())
+          m = re.search(r"Kỳ tháng \d+/2026 · đo tới [0-9/]+", t)
+          i = t.find("01 — Giá kỳ này")
+          print("::notice title=Trang::%s ‖ %s" % (m.group(0) if m else "?", t[i:i+700]))
+          PY
+      - name: Commit
+        if: ${{ !inputs.dry_run }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/index namban-index.html llms-full.txt
+          git commit -m "Index: tính lại tuần 41 và tháng $MONTHS sau khi lọc tin ngoài vùng (bấm tay)" || exit 0
+          for i in 1 2 3 4 5; do git push origin HEAD:main && exit 0; git pull --rebase origin main; done
+          exit 1

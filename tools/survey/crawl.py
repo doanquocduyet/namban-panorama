@@ -145,7 +145,13 @@ def strip_vn(s):
 EXCL = [("nam hà", "Nam Hà"), ("phi tô", "Phi Tô"), ("tà nung", "Tà Nung"), ("đinh văn", "Đinh Văn"), ("đạ đờn", "Đạ Đờn"),
         ("tân hà", "Tân Hà"), ("tân văn", "Tân Văn"), ("hoài đức", "Hoài Đức"), ("phúc thọ", "Phúc Thọ"), ("đan phượng", "Đan Phượng"),
         ("liên hà", "Liên Hà"), ("phú sơn", "Phú Sơn"), ("tân thanh", "Tân Thanh"), ("bảo lộc", "Bảo Lộc"), ("di linh", "Di Linh"),
-        ("đức trọng", "Đức Trọng"), ("lạc dương", "Lạc Dương"), ("đơn dương", "Đơn Dương"), ("cam ly", "Cam Ly"), ("xuân trường", "Xuân Trường"), ("trại mát", "Trại Mát")]
+        ("đức trọng", "Đức Trọng"), ("lạc dương", "Lạc Dương"), ("đơn dương", "Đơn Dương"), ("cam ly", "Cam Ly"), ("xuân trường", "Xuân Trường"), ("trại mát", "Trại Mát"),
+        # 12/10/2026: tin nổi bật nơi khác cài trên trang danh sách (xem aggregate.py, foreign())
+        ("hồ chí minh", "TP.HCM"), ("tp.hcm", "TP.HCM"), ("tp hcm", "TP.HCM"), ("tphcm", "TP.HCM"), ("sài gòn", "TP.HCM"),
+        ("hà nội", "Hà Nội"), ("đà nẵng", "Đà Nẵng"), ("hải phòng", "Hải Phòng"), ("cần thơ", "Cần Thơ"), ("tiền giang", "Tiền Giang"),
+        ("bình dương", "Bình Dương"), ("đồng nai", "Đồng Nai"), ("long an", "Long An"), ("vũng tàu", "Vũng Tàu"), ("khánh hòa", "Khánh Hòa"),
+        ("nha trang", "Nha Trang"), ("thủ đức", "TP.HCM"), ("gò vấp", "TP.HCM"), ("bình thạnh", "TP.HCM"), ("tân bình", "TP.HCM"),
+        ("phú nhuận", "TP.HCM"), ("bình tân", "TP.HCM"), ("chung cư", "căn hộ chung cư"), ("căn hộ", "căn hộ chung cư")]
 INCL = [("đông thanh", "Đông Thanh"), ("dong thanh", "Đông Thanh"), ("mê linh", "Mê Linh"), ("buôn chuối", "Mê Linh"), ("gia lâm", "Gia Lâm"),
         ("nam ban", "Nam Ban"), ("thăng long", "Nam Ban"), ("chi lăng", "Nam Ban"), ("đông anh", "Nam Ban"), ("bãi công", "Nam Ban"),
         ("từ liêm", "Nam Ban"), ("thanh trì", "Nam Ban"), ("linh ẩn", "Nam Ban"), ("thác voi", "Nam Ban"), ("tổng đội", "Nam Ban"), ("ba đình", "Nam Ban"),
