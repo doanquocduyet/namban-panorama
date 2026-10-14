@@ -383,6 +383,13 @@ HIỂU → ĐÁNH GIÁ → MUA → SỞ HỮU → QUẢN LÝ. Mỗi web mạnh t
   vốn ghi "CẬP NHẬT THÁNG …" thì được thay bằng ngày chính xác ngay trong ô (khỏi hai dòng "cập nhật");
   ô ghi "Tháng …, 2026" (tháng đăng) giữ nguyên, ngày cập nhật đứng cạnh. Quên chạy thì người đọc vẫn thấy
   đúng (JS tự đồng bộ chữ + `datetime` theo JSON-LD), chỉ bot thấy ngày cũ. Không đổi lời đọc audio.
+  (14/10/2026: script giờ có phương án cuối "h1 bất kỳ" như JS, nên 21 bài template cũ không có `.art-header` cũng có ngày tĩnh.)
+- **KHOÁ TỰA — `python3 tools/check-title-locks.py` TRƯỚC MỖI LẦN PUSH (học Villas 13/10/2026).** Danh sách `tools/title-locks.json`
+  (không lên web): 42 trang = mọi khoá tựa trong CLAUDE.md + trang có lượt hiện GSC 28 ngày tới 9/10/2026. So title + H1 theo chữ
+  người đọc thấy (thêm `&nbsp;`, `<br>`, span nowrap không tính là đổi). Lệch → báo đỏ, trả lại tựa cũ. Chú duyệt đổi tựa thì chạy
+  `--update <slug>`. Workflow `title-lock-check.yml` chạy lại sau mỗi lần `main` đổi (chỉ báo, không chặn được push — nên phải chạy
+  tay trước). Khoá có hạn (`until`) tự hết; trang mới lên hạng thì thêm vào danh sách. Villas rớt key "giá đất nam ban hôm nay" sau 4 lần
+  đổi tựa trong 8 ngày — đây là lý do có bộ kiểm.
 - **Dòng "nguồn ưu tiên trên Google" ở footer — ĐÃ GỠ 4/10/2026 (Chú: "tôi ko hiểu dòng đó là sao… bỏ đi, khó khăn
   quá").** Người đọc Việt không biết tính năng Preferred sources, bấm vào là rời site sang Google không quay lại, Panorama
   là bài phân tích nên ít vào khối tin. Không qua bộ lọc 2/3 (người đọc · Google · AI). Đừng dựng lại.
@@ -988,6 +995,32 @@ Hai số bị gỡ vì không kiểm được nguồn: lượng mưa Sơn Điề
 - **T-20 (đường Hà Bắc) — Chú chốt 2/10/2026:** "chưa có mốc nào được công bố, nhưng đơn vị thi công cố gắng hoàn thiện
   xong trước Tết 2027". Câu cũ "dự kiến xong tháng 11/2026" ở `/nam-ban-co-gi-moi` + `llms` là SAI, đã gỡ. Viết luôn hai vế:
   không có mốc văn bản · mục tiêu của bên thi công là trước Tết 2027. Nhà: `/duong-ha-bac-nam-ban` (H2 + FAQ "khi nào xong").
+
+### ĐỢT 13–14/10/2026 — ÁP BÀI HỌC LÊN TOP CỦA VILLAS (Chú: "làm gì tốt nhất thì làm, không ảnh hưởng top hiện tại")
+
+5 lăng kính rà + 5 người phản biện; chỉ áp sửa đã qua phản biện; KHÔNG đổi title/H1 nào (bộ kiểm 42 trang báo OK).
+- **LỆ PHÍ TRƯỚC BẠ ĐẤT TÍNH THEO BẢNG GIÁ — ĐÚNG, ĐỪNG "SỬA" THEO VILLAS.** Bài học số 5 của Villas ("trước bạ tính theo giá
+  hợp đồng nếu cao hơn bảng giá, NĐ 10/2022") là quy định CŨ. Từ 1/7/2025: Thông tư 67/2025/TT-BTC Điều 2 bãi bỏ quy định "giá đất
+  tại hợp đồng chuyển quyền sử dụng đất cao hơn giá UBND tỉnh ban hành thì tính theo giá hợp đồng" (điểm a k1 Đ3 TT 13/2022), để
+  khớp Điều 159 Luật Đất đai 2024. Nghị định 175/2025 chỉ giữ giá hợp đồng cho **hợp đồng mua bán nhà, đất** (đất gắn nhà, không tách
+  giá đất) khi cao hơn. Đất vườn, đất nền chuyển nhượng → trước bạ theo bảng giá. Đã bỏ 6 đề xuất sửa phần này; đã báo Chú để Villas kiểm.
+- **Thuế TNCN 2% tính trên giá hợp đồng**; hợp đồng không ghi giá hoặc ghi thấp hơn bảng giá (× hệ số, nếu có) thì tính theo mức đó —
+  không phải "điểm mới 2026", có từ TT 92/2015, NĐ 253/2026 giữ lại. **Miễn thuế** chỉ cho nhà ở, đất ở DUY NHẤT tại Việt Nam, có quyền
+  ≥ 183 ngày, bán trọn; đất nông nghiệp thuần không được miễn (đã sửa câu "bất động sản duy nhất" ở `/ban-dat-nam-ban`, `/nam-ban-thuoc-xa-nao`).
+- Đã sửa: "chiều dài" → "chiều sâu" 10 m (`/tach-thua`) · "khu bảo tồn không xây được nhà" → "về nguyên tắc không phát triển đất ở"
+  (`/len-tho-cu`) · "thị trấn Nam Ban" thể hiện tại → "thị trấn Nam Ban cũ" (`/cay-xang`, `/chua-linh-an`, `/nam-ban-co-gi`) · QĐ 2786
+  "xếp vào nhóm đô thị loại III", không phải "công nhận" · "đã ai cọc chưa" → không tra được, ghi thành cam kết trong giấy cọc
+  (`/quy-trinh`) · sổ chung: giấy tay/vi bằng không xác lập quyền, sổ chung chỉ khi tên mình có trên sổ (`/mua-dat-nam-ban`) · câu "giá
+  rao và giá chốt chênh đáng kể" (không số đo) → "chưa nguồn nào đo" (Index qua bộ sinh, `/hoi-nhanh`) · 19 chỗ 72 m² cũ trong `llms-full.txt`.
+- Link: 12 chữ neo về đúng nhà ("xã Nam Ban Lâm Hà" → `/xa-nam-ban-lam-ha`, "chợ Nam Ban/chợ Thăng Long" → `/cho-nam-ban`, "đèo Tà Nung"
+  → `/da-lat-di-nam-ban`, bỏ chữ neo "ở đây/bài này"). Schema: 24 bài nối tác giả `#founder`, 11 bài sửa `image` khớp og, trang chủ
+  `dateModified` khớp sitemap (`sync-home-latest.py` giờ bump cả hai). FAQ: gỡ khỏi schema 7 câu có nhà khác (vẫn hiện trên trang); thêm FAQ đúng key "Nam Ban có đáng sống không?" ở nhà của nó.
+- **KHÔNG làm, cố ý:** sửa `/truoc-khi-xuong-tien` (để yên dù Villas gợi ý thêm mục "lưu ý") · đổi tựa trang lệch Luật 22 đang có hạng
+  (102 trang lệch title/H1, đa số là tựa = H1 + phụ đề) · rải chữ neo "kiểm tra" sang trang mới (đo lại sau 3–4 tuần) · thêm FAQ "cọc bao
+  nhiêu" (đã có H2 đúng câu) · số "15 ngày" thủ tục (chưa kiểm được sau NĐ 49/2026).
+- **Chờ Chú:** giờ họp chợ lệch 3 bài (5–8h / 6–8h / "đông nhất buổi sáng") · lập trường sổ chung ở `/hoi-nhanh` #19 vs #41 · mô tả
+  `/chi-phi-dat-dai-nam-ban` "tất cả neo vào bảng giá" (thuế 2% tính theo giá hợp đồng) · "mức 20% trên lãi đã chính thức bỏ" (chỉ là dự
+  thảo) · "người thân trực hệ" hẹp hơn luật · trang công khai "Panorama làm nội dung thế nào" · `data/prices.json` dùng tên phân khúc cũ.
 
 ### SỔ CHỜ ẢNH — CÒN HAI BÀI TRỐNG, CHỜ CHÚ CHỤP (mở 8/9/2026, bài suối xong 24/9)
 

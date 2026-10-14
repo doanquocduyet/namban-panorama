@@ -81,8 +81,14 @@ b = s.index("<!-- HOME-LATEST:END -->") + len("<!-- HOME-LATEST:END -->")
 if s[a:b] == block:
     print("Khối Mới cập nhật đã khớp, không ghi.")
     raise SystemExit(0)
-open(p, "w", encoding="utf-8").write(s[:a] + block + s[b:])
-today = dt.datetime.now(dt.timezone(dt.timedelta(hours=7))).strftime("%Y-%m-%d")
+now = dt.datetime.now(dt.timezone(dt.timedelta(hours=7)))
+today = now.strftime("%Y-%m-%d")
+# dateModified của WebPage trang chủ đi cùng lastmod sitemap (trước 13/10/2026 chỉ bump lastmod → hai ngày lệch nhau)
+new, n = re.subn(r'("dateModified": ")[^"]+(")', r"\g<1>" + now.strftime("%Y-%m-%dT%H:%M:00+07:00") + r"\g<2>",
+                 s[:a] + block + s[b:], count=1)
+if n != 1:
+    raise SystemExit("!! không tìm thấy dateModified trong index.html")
+open(p, "w", encoding="utf-8").write(new)
 sm = open("sitemap.xml", encoding="utf-8").read()
 sm2 = re.sub(r"(<loc>https://nambanpanorama.com/</loc><lastmod>)[^<]*", r"\g<1>" + today, sm, count=1)
 if sm2 != sm:

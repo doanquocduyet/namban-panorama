@@ -56,7 +56,7 @@ for p in sorted(glob.glob("*.html") + glob.glob("*/*.html")):
         elif i:
             t = t[:i.end()] + SPAN.format(iso=mod, label=lab) + t[i.end():]
         else:
-            h = re.search(r'<div class="art-header">[\s\S]*?</h1>', t)
+            h = re.search(r'<div class="art-header">[\s\S]*?</h1>', t) or re.search(r'<h1[\s>][\s\S]*?</h1>', t)
             if not h:
                 if t != s: open(p, "w", encoding="utf-8").write(t); removed += 1
                 continue

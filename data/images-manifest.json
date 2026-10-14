@@ -4724,6 +4724,7 @@
     ],
     "nam-ban-sau-6h-toi.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "mua-lon-nam-ban.html": [
@@ -4733,10 +4734,12 @@
     ],
     "5km-o-nam-ban.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "pickleball-nam-ban.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "dat-nam-ban-chua-xay.html": [
@@ -4755,6 +4758,7 @@
     ],
     "o-nam-ban-mot-nam-moi-biet.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "mua-nha-nam-ban-khong-o.html": [
@@ -4801,18 +4805,6 @@
     450
    ],
    "used_in": {
-    "nam-ban-sau-6h-toi.html": [
-     "schema"
-    ],
-    "5km-o-nam-ban.html": [
-     "schema"
-    ],
-    "pickleball-nam-ban.html": [
-     "schema"
-    ],
-    "o-nam-ban-mot-nam-moi-biet.html": [
-     "schema"
-    ],
     "en/foreigners-buying-land-nam-ban.html": [
      "schema"
     ],
@@ -5222,6 +5214,7 @@
    "used_in": {
     "brief-01.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -5356,6 +5349,8 @@
    "used_in": {
     "dieu-de-lai-cho-con.html": [
      "og",
+     "ref",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -5390,6 +5385,7 @@
    "used_in": {
     "doc-lo-dat.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -5424,6 +5420,7 @@
    "used_in": {
     "google-maps-khong-noi-ve-nam-ban.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -5454,17 +5451,9 @@
     630
    ],
    "used_in": {
-    "dieu-de-lai-cho-con.html": [
-     "ref",
-     "schema"
-    ],
     "index.html": [
      "og",
      "twitter"
-    ],
-    "vuon-bo-loi-bao-nhieu.html": [
-     "ref",
-     "schema"
     ],
     "en/index.html": [
      "og",
@@ -5612,6 +5601,7 @@
    "used_in": {
     "nguoi-nam-ban-anh-nam.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -5628,6 +5618,7 @@
    "used_in": {
     "nguoi-nam-ban-chi-trang.html": [
      "og",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [
@@ -5689,6 +5680,8 @@
    "used_in": {
     "vuon-bo-loi-bao-nhieu.html": [
      "og",
+     "ref",
+     "schema",
      "twitter"
     ],
     "image-sitemap.xml": [

@@ -1,0 +1,299 @@
+{
+  "note": "Khoá title/H1. Kiểm: python3 tools/check-title-locks.py. Đổi có chủ ý (Chú duyệt): --update <slug>. Không lên web (.vercelignore chặn tools/).",
+  "locks": [
+    {
+      "slug": "/truoc-khi-xuong-tien",
+      "until": "none",
+      "reason": "ĐỂ YÊN (Chú chốt 4/10/2026): #1 cho 'mua đất nam ban lưu ý gì', AI Overview trích; không đổi tựa, không thêm FAQ",
+      "title": "Mua đất Nam Ban cần lưu ý gì: 6 điều người ở đây thấy, người mới không thấy — Namban Panorama",
+      "h1": "Mua đất Nam Ban cần lưu ý gì:<br> 6 điều người ở đây thấy, người mới không thấy"
+    },
+    {
+      "slug": "/tiem-nang-dau-tu",
+      "until": "none",
+      "reason": "Cụm 'đất Nam Ban có rủi ro gì' ĐỂ YÊN (4/10/2026): AI Overview trích, không đổi tựa; cũng đang có hạng theo GSC",
+      "title": "Có nên mua đất Nam Ban 2026? Cơ hội và rủi ro không ai nói thẳng | Namban Panorama",
+      "h1": "Có nên mua đất Nam&nbsp;Ban 2026?<br> Cơ hội và rủi ro không ai nói&nbsp;thẳng"
+    },
+    {
+      "slug": "/namban-index",
+      "until": "2026-11-12",
+      "reason": "Khóa tựa key 'giá đất Nam Ban hôm nay' (12/10/2026); title/H1 nằm ngoài marker, bot tuần không đụng; cũng đang có hạng theo GSC",
+      "title": "Giá đất Nam Ban hôm nay: giá rao từng loại đất, đo mỗi tuần | Namban Panorama",
+      "h1": "Giá đất Nam&nbsp;Ban hôm nay: giá&nbsp;rao từng loại đất, đo mỗi&nbsp;tuần"
+    },
+    {
+      "slug": "/nam-ha-sap-nhap-nam-ban",
+      "until": "2026-10-25",
+      "reason": "KHÓA Luật 26b: không đổi title/H1, chờ Google đọc lại tựa mới",
+      "title": "Nam Hà sáp nhập Nam Ban chưa? Nếu sáp nhập thì có những thay đổi gì? | Namban Panorama",
+      "h1": "Nam&nbsp;Hà sáp nhập Nam&nbsp;Ban chưa?<br> Nếu sáp nhập thì có những&nbsp;thay&nbsp;đổi&nbsp;gì?"
+    },
+    {
+      "slug": "/dac-san-nam-ban",
+      "until": "2026-10-25",
+      "reason": "Luật 26c (26/9/2026): tựa mở đầu nguyên văn câu gõ, khóa tựa sáu bài chờ Google đọc lại",
+      "title": "Đặc sản Nam Ban là gì? Cà phê, tơ tằm, bơ 034, hồng, gà nuôi bắp | Namban Panorama",
+      "h1": "Đặc sản Nam Ban là gì?"
+    },
+    {
+      "slug": "/len-tho-cu-het-bao-nhieu-tien",
+      "until": "2026-10-25",
+      "reason": "Luật 26c (26/9/2026): tựa mở đầu nguyên văn câu gõ, khóa tựa sáu bài chờ Google đọc lại",
+      "title": "Đất Nam Ban lên thổ cư giá bao nhiêu? Cách tính 30%, 50%, 100% và cái bẫy \"giảm 70%\" | Namban Panorama",
+      "h1": "Đất Nam&nbsp;Ban lên thổ&nbsp;cư <span style=\"white-space:nowrap\">giá bao nhiêu?</span>"
+    },
+    {
+      "slug": "/nam-ban-la-gi",
+      "until": "2026-10-25",
+      "reason": "Luật 26c (26/9/2026): tựa mở đầu nguyên văn câu gõ, khóa tựa sáu bài chờ Google đọc lại",
+      "title": "Nam Ban ở đâu? Nam Ban là gì? Xã Nam Ban Lâm Hà, cách Đà Lạt 25km | Namban Panorama",
+      "h1": "<span style=\"white-space:nowrap\">Nam Ban ở đâu?</span> <span style=\"white-space:nowrap\">Nam Ban là gì?</span>"
+    },
+    {
+      "slug": "/mua-dat-nam-ban-500-trieu-1-ty",
+      "until": "2026-10-25",
+      "reason": "Luật 26c (26/9/2026): tựa mở đầu nguyên văn câu gõ, khóa tựa sáu bài chờ Google đọc lại",
+      "title": "500 triệu đến 1 tỷ mua được đất gì ở Nam Ban? Giá rao từng loại đất và cái rẻ nào là bẫy | Namban Panorama",
+      "h1": "<span style=\"white-space:nowrap\">500 triệu đến 1 tỷ</span> <span style=\"white-space:nowrap\">mua được đất gì</span> <span style=\"white-space:nowrap\">ở Nam&nbsp;Ban?</span>"
+    },
+    {
+      "slug": "/dat-nam-ban-gia-re",
+      "until": "2026-10-25",
+      "reason": "Luật 26c (26/9/2026): tựa mở đầu nguyên văn câu gõ, khóa tựa sáu bài chờ Google đọc lại",
+      "title": "Đất Nam Ban giá rẻ: bao nhiêu là rẻ thật? Giá rao từng loại đất và những kiểu rẻ là bẫy | Namban Panorama",
+      "h1": "Đất Nam&nbsp;Ban giá rẻ: <span style=\"white-space:nowrap\">bao nhiêu</span> là rẻ&nbsp;thật?"
+    },
+    {
+      "slug": "/chuyen-len-nam-ban-song",
+      "until": "2026-10-25",
+      "reason": "Luật 26c (26/9/2026): tựa mở đầu nguyên văn câu gõ, khóa tựa sáu bài chờ Google đọc lại",
+      "title": "Lên Nam Ban làm gì để sống? Công việc, chi phí, trường học, y tế, internet | Namban Panorama",
+      "h1": "Lên Nam&nbsp;Ban làm gì <span style=\"white-space:nowrap\">để sống?</span>"
+    },
+    {
+      "slug": "/nam-ban-chua-lanh",
+      "until": "2026-10-27",
+      "reason": "Key 'nam ban chữa lành', tựa Chú chốt 27/9/2026, khóa tựa",
+      "title": "Đi chữa lành ở Nam Ban: nên đi đâu, ở đâu, mùa nào? | Namban Panorama",
+      "h1": "Đi chữa lành <span style=\"white-space:nowrap\">ở Nam Ban:</span> <span style=\"white-space:nowrap\">nên đi đâu,</span> <span style=\"white-space:nowrap\">ở đâu,</span> <span style=\"white-space:nowrap\">mùa nào?</span>"
+    },
+    {
+      "slug": "/dat-gan-da-lat",
+      "until": "2026-11-03",
+      "reason": "Cụm key 'ven Đà Lạt' (3/10/2026), khóa tựa; cũng đang có hạng theo GSC",
+      "title": "Đất ven Đà Lạt giá rẻ ở đâu? Vì sao nhiều người tìm đất gần Đà Lạt ở Nam Ban | Namban Panorama",
+      "h1": "Đất ven Đà&nbsp;Lạt giá rẻ ở&nbsp;đâu?<br> Vì sao nhiều người tìm đất gần Đà&nbsp;Lạt ở Nam&nbsp;Ban"
+    },
+    {
+      "slug": "/vung-ven-da-lat-nao-tot-nhat",
+      "until": "2026-11-03",
+      "reason": "Cụm key 'ven Đà Lạt' (3/10/2026), khóa tựa",
+      "title": "Vùng ven Đà Lạt nào tốt nhất? Nên chọn ở đâu, mua đất ở đâu | Namban Panorama",
+      "h1": "Vùng ven Đà&nbsp;Lạt nào tốt nhất?<br> Nên chọn ở&nbsp;đâu, mua&nbsp;đất&nbsp;ở&nbsp;đâu"
+    },
+    {
+      "slug": "/mua-dat-nam-ban-can-kiem-tra-gi",
+      "until": "2026-11-12",
+      "reason": "Key 'mua đất nam ban cần kiểm tra gì', mới đăng 12/10/2026, khóa tựa, để yên",
+      "title": "Mua đất Nam Ban cần kiểm tra gì? 10 việc nên làm trước khi đặt cọc | Namban Panorama",
+      "h1": "Mua đất Nam&nbsp;Ban cần kiểm&nbsp;tra&nbsp;gì?<br>10&nbsp;việc nên làm trước&nbsp;khi&nbsp;đặt&nbsp;cọc"
+    },
+    {
+      "slug": "/dat",
+      "until": "none",
+      "reason": "Hub KHÓA bản 2a1b662 (4/10/2026) — khoá bố cục, không phải khoá tựa; đổi hub cần lý do IA + Chú duyệt",
+      "title": "Đất Nam Ban — tổng hợp bài viết | Namban Panorama",
+      "h1": "Đất Nam Ban"
+    },
+    {
+      "slug": "/dau-tu",
+      "until": "none",
+      "reason": "Hub /dau-tu KHÓA 4/10/2026 + bản 2a1b662 — khoá bố cục/IA, không phải khoá tựa; đổi cần Chú duyệt",
+      "title": "Đầu tư Nam Ban: thị trường, quy hoạch, giá vốn và dòng tiền | Namban Panorama",
+      "h1": "Đầu tư Nam Ban"
+    },
+    {
+      "slug": "/lam-ha-truoc-va-sau-sap-nhap",
+      "until": "none",
+      "reason": "đang có hạng theo GSC",
+      "title": "Lâm Hà trước và sau sáp nhập: huyện cũ nay còn xã nào, Nam Ban thành xã gì | Namban Panorama",
+      "h1": "Lâm Hà trước và sau sáp nhập: nay còn những xã nào?"
+    },
+    {
+      "slug": "/en",
+      "until": "none",
+      "reason": "đang có hạng theo GSC",
+      "title": "Namban Panorama — See the whole picture of Nam Ban before you decide",
+      "h1": "See the <em>whole picture</em><br>of Nam Ban<br><span class=\"h1-l3\">before you decide.</span>"
+    },
+    {
+      "slug": "/living-in-nam-ban",
+      "until": "none",
+      "reason": "đang có hạng theo GSC",
+      "title": "Living in Nam Ban: What Is It Really Like? | Namban Panorama",
+      "h1": "Living in Nam Ban:<br> What Is It Really Like?"
+    },
+    {
+      "slug": "/xa-nam-ban-lam-ha",
+      "until": "none",
+      "reason": "đang có hạng theo GSC",
+      "title": "Xã Nam Ban Lâm Hà: lịch sử, diện tích, dân số, địa giới | Namban Panorama",
+      "h1": "Xã Nam&nbsp;Ban Lâm&nbsp;Hà:<br> lịch sử, diện tích, dân số"
+    },
+    {
+      "slug": "/nam-ban",
+      "until": "none",
+      "reason": "đang có hạng theo GSC; hub cũng KHÓA bản 2a1b662 (4/10/2026)",
+      "title": "Về Nam Ban — tổng hợp bài viết | Namban Panorama",
+      "h1": "Về Nam Ban"
+    },
+    {
+      "slug": "/",
+      "until": "none",
+      "reason": "đang có hạng theo GSC (tính cả /ra → 308 về /)",
+      "title": "Namban Panorama — Hiểu toàn cảnh Nam Ban trước khi xuống tiền",
+      "h1": "Thấy <em>toàn cảnh</em><br> Nam Ban<br> <span class=\"h1-l3\">trước khi xuống tiền</span>"
+    },
+    {
+      "slug": "/ko/dalat-handal-salgi",
+      "until": "none",
+      "reason": "đang có hạng theo GSC",
+      "title": "달랏 한달살기, 남반에서 한 달 살기: 숙소·비용·교통·비자 | Namban Panorama",
+      "h1": "달랏 한달살기, <span style=\"white-space:nowrap\">남반에서 한 달 살기</span>"
+    },
+    {
+      "slug": "/nam-ban-co-dang-song",
+      "until": "none",
+      "reason": "đang có hạng theo GSC",
+      "title": "Nam Ban có đáng sống không? Sống ở Nam Ban thực sự như thế nào | Namban Panorama",
+      "h1": "Nam&nbsp;Ban có <span style=\"white-space:nowrap\">đáng sống không?</span><br><span style=\"white-space:nowrap\">Sống ở Nam&nbsp;Ban</span> thực sự <span style=\"white-space:nowrap\">như thế nào</span>"
+    },
+    {
+      "slug": "/ho-tron-nam-ban",
+      "until": "none",
+      "reason": "đang có hạng theo GSC",
+      "title": "Hồ Tròn ở Nam Ban: trong giấy nó tên là hồ Ba Đình | Namban Panorama",
+      "h1": "Hồ Tròn ở Nam&nbsp;Ban:<br> trong giấy nó tên là hồ Ba&nbsp;Đình"
+    },
+    {
+      "slug": "/duong-nam-ban-phi-to-da-lat",
+      "until": "none",
+      "reason": "đang có hạng theo GSC",
+      "title": "Đường mới Nam Ban đi Đà Lạt qua Phi Tô: tuyến đèo vừa thông | Namban Panorama",
+      "h1": "Đường mới từ Nam Ban lên Đà Lạt qua Phi Tô"
+    },
+    {
+      "slug": "/so-sanh-nam-ban-bao-loc-da-lat",
+      "until": "none",
+      "reason": "đang có hạng theo GSC",
+      "title": "Nam Ban hay Bảo Lộc, Đà Lạt? So sánh thẳng thắn về giá, khí hậu và cách sống — Namban Panorama",
+      "h1": "Nam Ban hay<br> Bảo Lộc, Đà Lạt?"
+    },
+    {
+      "slug": "/en/long-term-rental-nam-ban",
+      "until": "none",
+      "reason": "đang có hạng theo GSC",
+      "title": "Long-Term Rental Near Da Lat: Renting a House or Villa in Nam Ban | Namban Panorama",
+      "h1": "Long-term rental near Da Lat: renting a house or villa in Nam&nbsp;Ban"
+    },
+    {
+      "slug": "/mua-dat-nam-ban",
+      "until": "none",
+      "reason": "đang có hạng theo GSC",
+      "title": "Mua đất Nam Ban: hỏi & đáp giá, loại đất, view, pháp lý | Namban Panorama",
+      "h1": "Mua đất Nam Ban:<br> những câu hỏi thường gặp"
+    },
+    {
+      "slug": "/phi-to-nam-ha-lam-ha",
+      "until": "none",
+      "reason": "đang có hạng theo GSC",
+      "title": "Phi Tô ở đâu? Vùng cà phê, thanh long nay thuộc xã Nam Hà Lâm Hà | Namban Panorama",
+      "h1": "Phi Tô ở đâu, giờ thuộc xã nào?"
+    },
+    {
+      "slug": "/ha-noi-nam-ban-hop-tac-2026",
+      "until": "none",
+      "reason": "đang có hạng theo GSC",
+      "title": "Hà Nội làm việc với xã Nam Ban Lâm Hà 17/9/2026: bàn những gì | Namban Panorama",
+      "h1": "Nam&nbsp;Ban có gì mới sau buổi làm việc<br> với Hà&nbsp;Nội ngày&nbsp;17/9"
+    },
+    {
+      "slug": "/co-nen-mua-dat-nam-ban-o-xa",
+      "until": "none",
+      "reason": "đang có hạng theo GSC",
+      "title": "Có nên mua đất Nam Ban để ở? Điều nhiều người chỉ hiểu sau khi lên ở thử | Namban Panorama",
+      "h1": "Có nên mua đất Nam Ban để ở? Điều nhiều người chỉ hiểu sau khi lên ở thử"
+    },
+    {
+      "slug": "/ho-me-linh-nam-ban-cam-ly-thuong",
+      "until": "none",
+      "reason": "đang có hạng theo GSC",
+      "title": "Hồ Mê Linh Nam Ban và đập Cam Ly Thượng ở đâu? | Namban Panorama",
+      "h1": "Hồ Mê&nbsp;Linh Nam&nbsp;Ban – đập Cam Ly&nbsp;Thượng:<br> góc hồ giáp <span style=\"white-space:nowrap\">Tà&nbsp;Nung Đà&nbsp;Lạt</span>"
+    },
+    {
+      "slug": "/trao-doi",
+      "until": "none",
+      "reason": "đang có hạng theo GSC; H1 lá thư Chú chốt 4/10/2026",
+      "title": "Trao đổi về Nam Ban — Namban Panorama",
+      "h1": "Kể cho<br><em>Panorama</em>&nbsp;nghe."
+    },
+    {
+      "slug": "/cay-xang-petro-moi-o-nam-ban",
+      "until": "none",
+      "reason": "đang có hạng theo GSC",
+      "title": "Cây xăng mới ở Nam Ban: hai trạm Petrolimex trên ĐT.725 | Namban Panorama",
+      "h1": "Cây xăng mới ở Nam&nbsp;Ban:<br> hai trạm Petrolimex trên&nbsp;ĐT.725"
+    },
+    {
+      "slug": "/5km-o-nam-ban",
+      "until": "none",
+      "reason": "đang có hạng theo GSC",
+      "title": "Ở Nam Ban, 5 km không phải lúc nào cũng là 5 km | Namban Panorama",
+      "h1": "Ở Nam Ban, 5 km có gần không?"
+    },
+    {
+      "slug": "/duong-di-nam-ban",
+      "until": "none",
+      "reason": "đang có hạng theo GSC",
+      "title": "Sài Gòn đi lên Nam Ban bằng đường nào? Từ Đà Lạt, sân bay Liên Khương | Namban Panorama",
+      "h1": "Sài Gòn đi lên Nam Ban bằng đường nào"
+    },
+    {
+      "slug": "/len-lam-dong-nen-song-o-dau",
+      "until": "none",
+      "reason": "đang có hạng theo GSC",
+      "title": "Lên Lâm Đồng nên sống ở đâu? Cách chọn vùng, từ Bảo Lộc tới Nam Ban | Namban Panorama",
+      "h1": "Lên Lâm Đồng nên sống ở đâu?"
+    },
+    {
+      "slug": "/mua-lon-nam-ban",
+      "until": "none",
+      "reason": "đang có hạng theo GSC; H1 giữ 'mấy ngày này' (Chú chốt 24/9/2026)",
+      "title": "Mưa lớn ở Nam Ban: mấy ngày này nên nhìn đất thế nào | Namban Panorama",
+      "h1": "Mưa lớn ở Nam&nbsp;Ban:<br> mấy ngày này nên nhìn&nbsp;đất&nbsp;thế&nbsp;nào"
+    },
+    {
+      "slug": "/xa-nam-ha-lam-ha",
+      "until": "none",
+      "reason": "đang có hạng theo GSC",
+      "title": "Xã Nam Hà Lâm Hà ở đâu? Vùng cà phê rộng, thoáng cạnh Nam Ban | Namban Panorama",
+      "h1": "Xã Nam Hà Lâm Hà là vùng thế nào?"
+    },
+    {
+      "slug": "/thon-nam-ban",
+      "until": "none",
+      "reason": "đang có hạng theo GSC",
+      "title": "Nam Ban có những thôn nào? Tên 17 thôn mới và tên thôn cũ | Namban Panorama",
+      "h1": "Nam Ban có những thôn nào? Tên thôn mới và tên thôn cũ"
+    },
+    {
+      "slug": "/brief-01",
+      "until": "none",
+      "reason": "đang có hạng theo GSC",
+      "title": "Nam Ban sau sáp nhập: bản đồ vừa vẽ lại — điều nhà đầu tư cần biết | Namban Panorama",
+      "h1": "Nam Ban không còn là Nam Ban?<br> Bản đồ vừa được vẽ lại"
+    }
+  ]
+}

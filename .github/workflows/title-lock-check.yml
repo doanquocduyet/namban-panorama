@@ -1,0 +1,16 @@
+name: Kiểm tựa đang khoá
+# Báo đỏ khi title/H1 của trang đang khoá hoặc đang có hạng bị đổi (danh sách: tools/title-locks.json).
+# Không sửa gì, chỉ báo; đổi có chủ ý thì chạy tools/check-title-locks.py --update <slug>.
+on:
+  push:
+    branches: [main]
+    paths: ['**/*.html', 'tools/title-locks.json', 'tools/check-title-locks.py']
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: So title/H1 với danh sách khoá
+        run: python3 tools/check-title-locks.py
