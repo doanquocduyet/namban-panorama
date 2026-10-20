@@ -47,7 +47,9 @@
       /* thêm 1/10/2026 — đất phân lô Nam Ban: bài đất / mua bán, thuộc diện §2.2 */
       "dat-phan-lo-nam-ban",
       /* thêm 3/10/2026 — vùng ven Đà Lạt nào tốt nhất, đất ven Đà Lạt nên mua ở đâu: bài chọn vùng mua đất, thuộc diện §2.2 */
-      "vung-ven-da-lat-nao-tot-nhat"];
+      "vung-ven-da-lat-nao-tot-nhat",
+      /* thêm 20/10/2026 — kinh doanh bất động sản ở Nam Ban (môi giới, mua bán, chia lô, cho thuê, dịch vụ): bài thị trường / mua bán đất, thuộc diện §2.2 */
+      "kinh-doanh-bat-dong-san-nam-ban"];
     var slug=(location.pathname||"").replace(/\/+$/,"").split("/").pop().replace(/\.html$/,"");
     if(slug===""||IN.indexOf(slug)===-1)return;
     if(document.getElementById("pm-endcontact"))return;

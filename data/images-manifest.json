@@ -8,7 +8,7 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 450,
+ "total_images": 451,
  "unused_count": 68,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
@@ -109,6 +109,9 @@
      "og",
      "schema",
      "twitter"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -3577,6 +3580,20 @@
     ]
    }
   },
+  "kinh-doanh-bat-dong-san-nam-ban.jpg": {
+   "kb": 193,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "kinh-doanh-bat-dong-san-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
   "kinh-te-so-nam-ban.jpg": {
    "kb": 83,
    "dims": [
@@ -3870,6 +3887,9 @@
    ],
    "used_in": {
     "kinh-nghiem-mua-dat-nam-ban.html": [
+     "display"
+    ],
+    "kinh-doanh-bat-dong-san-nam-ban.html": [
      "display"
     ],
     "image-sitemap.xml": [

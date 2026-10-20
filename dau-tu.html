@@ -36,7 +36,8 @@
 {
  "@context": "https://schema.org",
  "@type": "CollectionPage",
-  "dateModified": "2026-10-04T00:43:00+07:00",
+ "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".dt-q", ".dt-answer .quick-answer"]},
+  "dateModified": "2026-10-20T12:05:00+07:00",
  "@id": "https://nambanpanorama.com/dau-tu#page",
  "url": "https://nambanpanorama.com/dau-tu",
  "name": "Đầu tư Nam Ban: thị trường, quy hoạch, giá vốn và dòng tiền",
@@ -57,7 +58,7 @@
  },
  "mainEntity": {
   "@type": "ItemList",
-  "numberOfItems": 31,
+  "numberOfItems": 32,
   "itemListElement": [
    {
     "@type": "ListItem",
@@ -218,30 +219,36 @@
    {
     "@type": "ListItem",
     "position": 27,
+    "url": "https://nambanpanorama.com/kinh-doanh-bat-dong-san-nam-ban",
+    "name": "Kinh doanh bất động sản ở Nam Ban là làm gì"
+   },
+   {
+    "@type": "ListItem",
+    "position": 28,
     "url": "https://nambanpanorama.com/chi-phi-trong-ca-phe-nam-ban",
     "name": "Trồng cà phê chi phí bao nhiêu"
    },
    {
     "@type": "ListItem",
-    "position": 28,
+    "position": 29,
     "url": "https://nambanpanorama.com/vuon-bo-loi-bao-nhieu",
     "name": "Một sào bơ cho bao nhiêu tiền"
    },
    {
     "@type": "ListItem",
-    "position": 29,
+    "position": 30,
     "url": "https://nambanpanorama.com/mua-dat-nam-ban-500-trieu-1-ty",
     "name": "500 triệu đến 1 tỷ mua được đất gì ở Nam Ban"
    },
    {
     "@type": "ListItem",
-    "position": 30,
+    "position": 31,
     "url": "https://nambanpanorama.com/kinh-nghiem-mua-dat-nam-ban",
     "name": "Kinh nghiệm mua đất Nam Ban"
    },
    {
     "@type": "ListItem",
-    "position": 31,
+    "position": 32,
     "url": "https://nambanpanorama.com/truoc-khi-xuong-tien",
     "name": "Mua đất Nam Ban cần lưu ý gì"
    }
@@ -425,6 +432,20 @@ a,button{touch-action:manipulation;}
 @media(max-width:640px){.bh-form{flex-direction:column;align-items:stretch;}.bh-form button{align-self:flex-start;}}
 
 /* ==== Hub /dau-tu bố cục B (draft 3/10/2026): 5 phần theo thứ tự đọc của người bỏ vốn ==== */
+/* khối trả lời nhanh "Đầu tư bất động sản ở Nam Ban là làm gì?" — Chú duyệt 20/10/2026 */
+.dt-answer{max-width:760px;margin:40px 0 8px;}
+.dt-q{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(22px,2.6vw,27px);line-height:1.25;color:var(--ink);margin:0 0 16px;text-wrap:balance;}
+.dt-answer .quick-answer{border-left:3px solid var(--clay-soft);background:rgba(157,93,56,.05);padding:14px 18px;margin:0 0 22px;border-radius:0 4px 4px 0;font-size:16px;line-height:1.72;color:#2b2822;text-wrap:pretty;}
+.dt-answer .quick-answer strong{color:var(--forest);}
+.dt-list{list-style:none;margin:0;padding:0;counter-reset:dtl;}
+.dt-list li{counter-increment:dtl;position:relative;padding:14px 0 14px 34px;border-top:1px solid var(--line);font-size:15.5px;line-height:1.68;color:var(--ink);text-wrap:pretty;}
+.dt-list li:last-child{border-bottom:1px solid var(--line);}
+.dt-list li::before{content:counter(dtl,decimal-leading-zero);position:absolute;left:0;top:15px;font-size:12px;letter-spacing:.6px;color:var(--forest);font-weight:500;}
+.dt-list li strong{font-weight:500;color:var(--forest-deep);}
+.dt-go{display:block;margin-top:6px;font-size:14px;color:var(--muted);}
+.dt-go a,.dt-more a{color:var(--forest);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}
+.dt-more{font-size:15.5px;line-height:1.68;color:var(--ink);margin:18px 0 0;text-wrap:pretty;}
+@media(max-width:640px){.dt-answer{margin-top:30px;}.dt-list li{padding-left:30px;font-size:15px;}}
 .dt-intro{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(19px,2.2vw,22px);line-height:1.5;color:var(--ink);max-width:720px;margin:46px 0 0;}
 .dat-steps{padding:26px 0 4px;}
 .dat-steps .ds-k{display:block;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--clay-text,#9a5b37);font-weight:500;margin-bottom:12px;}
@@ -565,6 +586,21 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 
     <p class="dt-intro">Nếu đang đánh giá Nam&nbsp;Ban như một thị trường để bỏ vốn, hãy bắt đầu từ dữ liệu và quy hoạch, sau đó tính giá vốn thực và cuối cùng mới đọc từng thương&nbsp;vụ&nbsp;cụ&nbsp;thể.</p>
 
+    <section class="dt-answer" aria-labelledby="dt-q">
+      <h2 id="dt-q" class="dt-q">Đầu tư bất động sản ở Nam&nbsp;Ban là làm&nbsp;gì?</h2>
+      <div class="quick-answer"><strong>Nếu hỏi nhanh.</strong> Là bỏ vốn vào một mảnh đất hay căn nhà ở Nam&nbsp;Ban rồi chờ nó tăng giá trị hoặc cho ra dòng tiền. Phần việc thật nằm ở năm chuyện làm trước khi xuống tiền: chọn loại tài sản, định giá, tính chi phí giữ, tính thời gian thủ tục, và biết trước ai sẽ mua&nbsp;lại.</div>
+      <ol class="dt-list">
+        <li><strong>Chọn tài sản theo người sẽ mua lại.</strong> Nền nhỏ, lô khoảng 500&nbsp;m², vườn trên 1.000&nbsp;m², lô view: mỗi loại có một kiểu người mua tiếp theo. Từ khoảng tháng 8 tới tháng 10/2026, lô ngang 5&nbsp;m giá 500–700&nbsp;triệu ra hàng nhiều hơn người hỏi; lô khoảng 500&nbsp;m² giao dịch tốt hơn. <span class="dt-go">→ <a href="/mua-dat-nam-ban-de-lam-gi">Mua đất để làm&nbsp;gì</a> · <a href="/lo-dat-nam-ban-binh-thuong">Lô bình thường hợp với&nbsp;ai</a></span></li>
+        <li><strong>Định giá bằng số đo, không bằng lời rao.</strong> Giá rao chưa phải giá chốt; đặt lô định mua cạnh các lô cùng loại đang rao rồi mới nói đắt hay rẻ. <span class="dt-go">→ <a href="/dinh-gia-dat-nam-ban">Định giá đất&nbsp;Nam&nbsp;Ban</a> · <a href="/namban-index">Namban&nbsp;Index</a></span></li>
+        <li><strong>Tính chi phí giữ đất mỗi năm.</strong> Thuế đất ở hằng năm (đất nông nghiệp của hộ gia đình đang được miễn tới hết 2030), công trông coi, phát cỏ, và tiền vốn nằm im. Lúc bán còn 2% thuế thu nhập cá nhân trên giá bán. <span class="dt-go">→ <a href="/chi-phi-dat-dai-nam-ban">Chi phí đất&nbsp;đai</a> · <a href="/giu-dat-nam-ban-tu-xa">Giữ đất từ&nbsp;xa</a></span></li>
+        <li><strong>Đưa thời gian thủ tục vào kế hoạch.</strong> Chuyển sang đất ở có đợt nhận, đợt dừng; tách thửa có mức tối thiểu mới từ 20/8/2026. Đừng tính lãi theo lời hứa "sau này lên thổ cư được". <span class="dt-go">→ <a href="/truoc-khi-xuong-tien">Trước khi xuống&nbsp;tiền</a> · <a href="/chuyen-muc-dich-su-dung-dat-nam-ban">Chuyển mục đích sử dụng&nbsp;đất</a></span></li>
+        <li><strong>Biết trước đường thoát.</strong> Nếu cần bán trong một năm thì bán cho ai, giá nào; nếu chưa bán được thì giữ tiếp được bao lâu. <span class="dt-go">→ <a href="/dat-nam-ban-xuong-gia-ban-hay-giu">Giá xuống: bán hay&nbsp;giữ</a> · <a href="/ban-dat-nam-ban">Bán đất&nbsp;Nam&nbsp;Ban</a></span></li>
+      </ol>
+      <p class="dt-more">Muốn làm nghề quanh đất — môi giới, mua bán, chia lô, cho thuê, dịch vụ — chứ không chỉ bỏ vốn, xem bài <a href="/kinh-doanh-bat-dong-san-nam-ban">kinh doanh bất động sản ở Nam&nbsp;Ban</a>.</p>
+    </section>
+
+
+
     <div class="dat-steps" role="navigation" aria-label="Đi tới từng phần">
       <span class="ds-k">Đọc theo thứ tự</span>
       <div class="ds-row"><a href="#thesis">Thị trường</a><a href="#quy-hoach">Quy hoạch</a><a href="#ha-tang">Hạ tầng</a><a href="#gia-von">Giá vốn &amp; dòng tiền</a><a href="#thuong-vu">Đọc một thương vụ</a></div>
@@ -630,8 +666,9 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
       <a href="/homestay-nam-ban-co-lai-khong"><span><span class="kb-t">Homestay Nam Ban có lãi không</span><br><span class="kb-s">Công suất thật, chi phí vận hành, và cái bẫy chọn sai vị trí khiến phòng để trống nửa năm.</span></span><span class="kb-n">→</span></a>
       <a href="/mua-vuon-ca-phe-nam-ban"><span><span class="kb-t">Mua vườn cà phê có dòng tiền không</span><br><span class="kb-s">Dòng tiền thật nhưng nhỏ — giá trị chính nằm ở đất.</span></span><span class="kb-n">→</span></a>
       </div>
-      <details class="more"><summary>Thêm 2 bài · dòng tiền từ vườn</summary>
+      <details class="more"><summary>Thêm 3 bài · nghề quanh đất, dòng tiền từ vườn</summary>
       <div class="kb">
+      <a href="/kinh-doanh-bat-dong-san-nam-ban"><span><span class="kb-t">Kinh doanh bất động sản ở Nam&nbsp;Ban là làm&nbsp;gì</span><br><span class="kb-s">Môi giới, mua đi bán lại, gom lô tách thửa, xây nhà bán, cho thuê, dịch vụ quanh đất — tiền vào từ đâu, mất ở đâu.</span></span><span class="kb-n">→</span></a>
       <a href="/chi-phi-trong-ca-phe-nam-ban"><span><span class="kb-t">Trồng cà phê chi phí bao nhiêu</span><br><span class="kb-s">Giá cây giống, số cây mỗi ha, ba năm kiến thiết — và vì sao chưa có con số tổng.</span></span><span class="kb-n">→</span></a>
       <a href="/vuon-bo-loi-bao-nhieu"><span><span class="kb-t">Một sào bơ cho bao nhiêu tiền</span><br><span class="kb-s">Bóc phép tính dòng tiền thật của một vườn bơ Nam Ban.</span></span><span class="kb-n">→</span></a>
       </div></details>

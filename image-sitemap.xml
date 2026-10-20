@@ -553,6 +553,11 @@
     <image:image><image:loc>https://nambanpanorama.com/images/khu-nao-o-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/kinh-doanh-bat-dong-san-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/lo-dat-me-linh-lam-mong.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/kinh-doanh-bat-dong-san-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/kinh-nghiem-mua-dat-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/lo-dat-me-linh-lam-mong.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/nam-ban-toan-canh-og.jpg</image:loc></image:image>

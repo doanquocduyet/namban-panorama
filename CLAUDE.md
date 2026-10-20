@@ -69,7 +69,12 @@ Con người. Không bài nào hiện hai lần ở phần nhìn thấy (`/nam-b
 không gian · 03 Hạ tầng & kết nối · 04 Giá vốn, pháp lý & dòng tiền · 05 Đọc một thương vụ (kết bằng dòng dẫn "Về Đất →").
 Mục 04 đi **giá mua → chi phí (chi phí đất đai, chuyển mục đích, san lấp/hạ tầng) → "Sau giá vốn · khai thác và dòng tiền"**;
 khối "Rủi ro không nằm ngoài bài toán giá vốn" nằm ngay sau 04. Không thêm mục, không thêm bài "rủi ro", không đặt form —
-khối Trao đổi gửi thẳng Zalo; khối Brief giữ như `/nam-ban`, `/dat`. ItemList = 31 bài đúng thứ tự trên trang.
+khối Trao đổi gửi thẳng Zalo; khối Brief giữ như `/nam-ban`, `/dat`. ItemList = các bài trong 5 mục, đúng thứ tự trên trang
+(32 bài từ 20/10/2026, thêm `/kinh-doanh-bat-dong-san-nam-ban` vào `<details>` mục 04); link trong khối trả lời nhanh đầu trang KHÔNG tính.
+**Khối trả lời nhanh (Chú duyệt 20/10/2026):** H2 "Đầu tư bất động sản ở Nam Ban là làm gì?" + "Nếu hỏi nhanh" + 5 bước, đặt giữa câu mở
+đầu và "Đọc theo thứ tự"; không phải chương (không `.hgroup`, không `.heye`), CSS riêng trong `<style>` của trang. Đừng thêm khối thứ hai.
+**Sổ chờ:** Luật Kinh doanh BĐS (sửa đổi) đang trình Quốc hội (NQ 184/NQ-CP 9/7/2026) — thông qua thì xem lại 3 câu về môi giới ở
+`/kinh-doanh-bat-dong-san-nam-ban` (thân bài, mục "Mỗi cách cần gì", FAQ #2).
 **Cụm "đất Nam Ban có rủi ro gì" — ĐỂ YÊN (Chú chốt 4/10/2026):** `/truoc-khi-xuong-tien` đứng đầu kết quả thường, AI Overview
 trích nó và `/tiem-nang-dau-tu`. Không đổi tựa, không thêm FAQ, không mở `/dat-nam-ban-co-rui-ro-gi`. Đừng sửa thứ đang thắng
 chỉ vì AI viết sai một câu (vd "thị trấn Nam Ban" là AI chép từ báo ngoài).
