@@ -28,8 +28,8 @@ if not exist "live\node_modules" (
 )
 
 echo.
-echo  Dang mo bang dieu khien... (DUNG TAT cua so den nay trong luc live)
-start "" /min cmd /c "timeout /t 3 /nobreak >nul & explorer http://localhost:3000/live/control.html"
+echo  Dang mo bang dieu khien va cua so live 9:16... (DUNG TAT cua so den nay trong luc live)
+start "" /min "%~dp0live\mo-man-hinh.bat"
 cd live
 node server.mjs
 pause

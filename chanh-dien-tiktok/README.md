@@ -9,6 +9,8 @@ Dựa trên mã nguồn mở **Chánh Điện Online** của Kent Juno (giấy p
 | Thêm | Để làm gì |
 |---|---|
 | Nút chạy một chạm `BAM-DE-CHAY-WINDOWS.bat` (Mac: `BAM-DE-CHAY-MAC.command`) | Tự kiểm Node.js, tự cài thư viện lần đầu, tự mở bảng điều khiển. Không phải gõ lệnh. |
+| Nút cập nhật `CAP-NHAT-WINDOWS.bat` | Bấm một lần là lấy bản sửa mới nhất từ GitHub, không mất cấu hình, sổ công đức, ảnh và bài giảng của chú. |
+| Cửa sổ live dọc mở sẵn | Nút chạy tự mở cửa sổ live bằng Edge: tự phát tiếng, không bị Windows làm chậm khi bị che. |
 | File `cau-hinh.json` tự lưu | Tên thiền đường, dòng phụ, giọng đọc, nhịp mõ, username kênh… sửa trên bảng điều khiển là lưu luôn. Tắt máy mở lại không mất. |
 | Tự kết nối lại TikTok | Nhớ username kênh. Mở chương trình trước khi bật LIVE cũng được: cứ 60 giây nó thử vào phòng một lần, rớt mạng cũng tự vào lại. Bấm **Ngắt** thì dừng hẳn. |
 | Lời giảng liên tục | Đọc lần lượt các bài trong thư mục `bai-giang` (12 bài soạn sẵn), có phụ đề trên màn hình. Quà luôn được đọc trước lời giảng. |
@@ -25,22 +27,49 @@ Dựa trên mã nguồn mở **Chánh Điện Online** của Kent Juno (giấy p
 1. **Cài Node.js.** Vào https://nodejs.org/en/download → bấm nút tải bản **LTS** cho Windows → mở file vừa tải → bấm **Next** liên tục → **Install** → **Finish**.
 2. **Tải bộ này về máy.** Giải nén ra một thư mục dễ tìm, ví dụ `D:\chanh-dien-tiktok`.
 3. **Bấm đúp `BAM-DE-CHAY-WINDOWS.bat`.** Windows có thể hiện khung xanh "Windows protected your PC" → bấm **More info** → **Run anyway**.
-4. Lần đầu sẽ thấy cửa sổ đen chạy chữ 1–2 phút (đang cài thư viện). Xong thì trình duyệt tự mở **Bảng điều khiển**.
-5. **Không tắt cửa sổ đen** trong lúc live. Tắt nó là tắt chương trình.
+4. Lần đầu sẽ thấy cửa sổ đen chạy chữ 1–2 phút (đang cài thư viện).
+5. Xong thì tự mở **hai cửa sổ**: Bảng điều khiển (trình duyệt thường) và **cửa sổ live dọc** (Microsoft Edge, tiêu đề "Overlay 9:16 · Chánh Điện LIVE"). Cửa sổ dọc tự phát tiếng, không cần bấm gì.
+6. **Không tắt cửa sổ đen** trong lúc live. Tắt nó là tắt chương trình.
 
 Từ lần sau chỉ cần bấm đúp `BAM-DE-CHAY-WINDOWS.bat`.
 
 ## Lên sóng TikTok LIVE
 
-1. Trên **Bảng điều khiển**, bấm **Mở màn hình overlay 9:16**. Một cửa sổ dọc hiện ra.
-2. Trong cửa sổ dọc đó, bấm nút **Bấm để bật âm thanh** một lần (trình duyệt chặn tự phát tiếng).
-3. Mở **TikTok LIVE Studio** → **Add source** (Thêm nguồn) → **Window capture** (Chụp cửa sổ) → chọn cửa sổ có chữ "Overlay 9:16". Kéo cho vừa khung dọc.
-   - Dùng OBS thì chọn **Browser source**, URL `http://localhost:3000/live/overlay.html`, rộng 1080, cao 1920.
-4. Trong LIVE Studio, chọn âm thanh để người xem nghe được tiếng của trình duyệt (nhạc, mõ, giọng đọc).
-5. Bấm **Go LIVE** trên TikTok.
-6. Quay lại **Bảng điều khiển**, ô **Username kênh đang live** gõ `@tenkenhcuachu` → bấm **Kết nối**. Thấy chữ xanh `TikTok: @… ✓` là xong. Username được nhớ, lần sau tự vào.
+**Trước hết, tài khoản phải được phép LIVE từ máy tính.** Điều kiện do TikTok đặt (tuổi, số người theo dõi…) và mỗi nguồn nói một số khác nhau. Cách chắc nhất: tải TikTok LIVE Studio, đăng nhập, nó báo ngay tài khoản có dùng được không.
+
+**Bước 1 · Cài TikTok LIVE Studio (làm một lần)**
+1. Vào https://www.tiktok.com/studio/download → bấm **Tải xuống cho Windows**. Chỉ tải từ trang của TikTok.
+2. Mở file vừa tải → cài như phần mềm thường.
+3. Mở TikTok LIVE Studio → **Đăng nhập** bằng tài khoản TikTok của kênh (quét mã QR bằng điện thoại: ứng dụng TikTok → ô tìm kiếm có biểu tượng quét, hoặc **Hồ sơ → ☰ → Quét mã**).
+4. Nếu LIVE Studio báo tài khoản chưa đủ điều kiện, dừng ở đây: phải nuôi kênh tới khi TikTok mở quyền.
+
+**Bước 2 · Đưa chánh điện vào khung live (làm một lần, LIVE Studio tự nhớ)**
+1. Bấm đúp `BAM-DE-CHAY-WINDOWS.bat`, chờ cửa sổ live dọc hiện ra. **Đừng thu nhỏ cửa sổ này** (được phép để nó nằm sau cửa sổ khác).
+2. Trong LIVE Studio, chuyển khung hình sang **Dọc** (nút đổi hướng ngay trên khung xem trước).
+3. Bấm **Thêm nguồn** (Add source) → **Chụp cửa sổ** (Window capture) → chọn cửa sổ **Overlay 9:16 · Chánh Điện LIVE** → **Xác nhận**.
+4. Kéo các góc khung cho phủ kín khung dọc.
+5. Nếu khung chỉ thấy màu đen: xóa nguồn đó, thêm lại bằng **Chụp màn hình** (Display capture) rồi cắt lấy vùng cửa sổ dọc.
+6. Âm thanh: trong phần âm thanh của LIVE Studio, bật **âm thanh máy tính / hệ thống** (Desktop audio) để người xem nghe nhạc, mõ, lời giảng. Tắt micro nếu không nói.
+
+**Bước 3 · Lên sóng (mỗi lần live)**
+1. Bấm đúp `BAM-DE-CHAY-WINDOWS.bat`.
+2. Mở TikTok LIVE Studio → gõ tiêu đề live, ví dụ "Tụng kinh an yên mỗi tối · bình luận để vào thiền" → chọn chủ đề → bấm **Phát LIVE** (Go LIVE).
+3. Trên Bảng điều khiển, ô **Username kênh đang live** gõ `@tenkenhcuachu` → bấm **Kết nối**. Thấy chữ xanh `TikTok: @… ✓` là xong. Lần sau nó tự kết nối, không phải gõ lại.
+4. Dùng điện thoại khác vào live của chính mình, bình luận "nam" để thấy mình vào ngồi. Có tiếng, có người vào là chạy đúng.
+5. Kết thúc: bấm **Kết thúc LIVE** trong LIVE Studio, rồi tắt cửa sổ đen.
 
 Chưa live vẫn thử được: mục **Thử tương tác**, **Đổ người mẫu**, **Bot mô phỏng**. Bot chỉ hiện trên máy mình, không phải người xem thật.
+
+**Đừng để live chạy một mình suốt đêm.** Các hướng dẫn về TikTok LIVE đều cho thấy TikTok hạn chế đề xuất, có khi chặn kiếm tiền, với live chỉ có màn hình chạy sẵn, giọng máy, không người thật tương tác. Nên có người ngồi live: bật micro chào người mới vào, đọc lời nguyện của người tặng quà, hoặc gắn thêm một camera nhỏ quay tay gõ mõ.
+
+## Cập nhật bản mới
+
+Mỗi khi Claude sửa xong và báo "đã cập nhật":
+1. Tắt cửa sổ đen nếu đang chạy.
+2. Bấm đúp `CAP-NHAT-WINDOWS.bat` → bấm phím bất kỳ → chờ chữ "Xong".
+3. Bấm đúp `BAM-DE-CHAY-WINDOWS.bat` để chạy lại.
+
+Nút cập nhật luôn thay file chương trình bằng bản mới. Nó **không đụng** tới `cau-hinh.json`, sổ công đức, nhạc chú tự thêm. Ảnh, nhạc và bài giảng đã có trên máy thì giữ nguyên (chú sửa `hall.jpg` hay một bài giảng thì không bị ghi đè). GitHub cần khoảng 5 phút để có bản mới, cập nhật sớm quá thì bấm lại.
 
 ## Nhạc nền
 
@@ -100,4 +129,4 @@ MIT. Giữ nguyên file `LICENSE` (ghi tên tác giả gốc Kent Juno) khi chia
 
 ---
 
-Ghi chú kỹ thuật: thư mục này tạm nằm trên nhánh `claude/chua-online-tiktok-bzmruf` của kho Namban Panorama. **Không gộp vào `main`**, vì `main` tự đăng lên nambanpanorama.com. Nên chuyển sang một kho GitHub riêng.
+Ghi chú kỹ thuật: thêm hoặc bớt file thì chạy `python3 tao-cap-nhat.py` để làm mới `cap-nhat.txt` (danh sách cho nút cập nhật) rồi commit. Thư mục này tạm nằm trên nhánh `claude/chua-online-tiktok-bzmruf` của kho Namban Panorama. **Không gộp vào `main`**, vì `main` tự đăng lên nambanpanorama.com. Nên chuyển sang một kho GitHub riêng.
