@@ -1,0 +1,18 @@
+{
+  "tenKenhTikTok": "",
+  "tuDongKetNoi": true,
+  "caiDat": {
+    "title": "Thiền Đường An Nhiên",
+    "subtitle": "Nam Mô A Di Đà Phật",
+    "voice": "vi-VN-NamMinhNeural",
+    "pitch": -18,
+    "rate": -20,
+    "music": true,
+    "mo": true,
+    "moBpm": 52,
+    "autoChant": true,
+    "chantEveryMin": 3,
+    "seatMode": "auto",
+    "joinOnEnter": false
+  }
+}
