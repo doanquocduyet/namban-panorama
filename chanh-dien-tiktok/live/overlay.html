@@ -56,10 +56,19 @@ html,body{margin:0;height:100%;background:#000;overflow:hidden;font-family:var(-
 #gift .who{font-family:var(--display);font-weight:700;font-size:52px;color:var(--gold2)}
 #gift .what{font-size:36px;margin-top:6px}
 #gift .pray{font-family:var(--display);font-style:italic;font-size:32px;color:var(--fg);margin-top:12px;opacity:.95}
+/* lời giảng: phụ đề nằm dưới bảng tên, nhường chỗ khi có quà hoặc tụng kinh */
+#talk{left:100px;right:100px;top:330px;z-index:2;padding:18px 28px 20px;text-align:center;border-radius:22px;border:2px solid var(--line);
+  background:rgba(30,13,6,.80);opacity:0;transform:translateY(12px);transition:opacity .7s,transform .7s}
+#talk.show{opacity:1;transform:none}
+#talk h5{margin:0 0 6px;font:600 22px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+#talk p{margin:0;font-family:var(--display);font-size:31px;line-height:1.45;text-wrap:balance}
+#merit .recent{margin-top:12px;padding-top:10px;border-top:1px solid rgba(226,176,79,.3);font-size:21px;line-height:1.35;text-align:left;color:var(--muted)}
+#merit .recent b{color:var(--fg);font-weight:600}
+#merit .recent div{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 /* enable sound (needed once: browsers block autoplay) */
 #unmute{position:absolute;z-index:9;left:50%;top:1540px;transform:translateX(-50%);font:600 36px var(--body);padding:22px 44px;border-radius:24px;border:3px solid var(--gold2);background:var(--red);color:#fff4dc;cursor:pointer}
 #conn{position:absolute;z-index:4;right:16px;bottom:12px;font-size:20px;color:var(--muted);opacity:.6}
-@media (prefers-reduced-motion:reduce){#chant,#gift{transition:none}}
+@media (prefers-reduced-motion:reduce){#chant,#gift,#talk{transition:none}}
 </style>
 </head>
 <body>
@@ -75,7 +84,8 @@ html,body{margin:0;height:100%;background:#000;overflow:hidden;font-family:var(-
     <div>Gõ <b>nam · nữ · sư · ni · tiểu · bà · cao tăng</b> để đổi hình</div>
     <div>🎁 Tặng quà được <b>xướng tên hồi hướng</b></div>
   </div>
-  <div id="merit" class="card ui"><h3>✦ Công Đức ✦</h3><ol id="meritList"><li class="empty">Chưa có</li></ol></div>
+  <div id="merit" class="card ui"><h3>✦ Công Đức ✦</h3><ol id="meritList"><li class="empty">Chưa có</li></ol><div class="recent" id="recent" hidden></div></div>
+  <div id="talk" class="ui"><h5 id="talkTitle">Lời giảng</h5><p id="talkText"></p></div>
   <div id="chant" class="ui"><h4>✦ TỤNG KINH ĐỊNH KỲ ✦</h4><p id="chantText"></p></div>
   <div id="gift" class="ui"><div class="who" id="giftWho"></div><div class="what" id="giftWhat"></div><div class="pray" id="giftPray"></div></div>
   <button id="unmute">🔔 Bấm để bật âm thanh</button>
@@ -143,8 +153,15 @@ function removeVisitor(id){ visitors.delete(id); reseat(); }
 /* ======================= HUD ======================= */
 let startedAt = Date.now();
 function updateCount(){ document.getElementById('count').textContent = `${visitors.size}/${cap}`; }
+let ledger = { top:[], recent:[] };
 function renderMerit(){
-  const top = [...visitors.values()].filter(v=>v.coins>0).sort((a,b)=>b.coins-a.coins).slice(0,5);
+  // sổ công đức trong ngày (lưu trên server) + người đang ngồi có quà (kể cả quà thử nghiệm)
+  const byId = new Map(ledger.top.map(d=>[d.id,{name:d.name,coins:d.coins}]));
+  for (const v of visitors.values()) if (v.coins>0 && (!byId.has(v.id) || byId.get(v.id).coins<v.coins)) byId.set(v.id,{name:v.name,coins:v.coins});
+  const top = [...byId.values()].sort((a,b)=>b.coins-a.coins).slice(0,6);
+  const rc = document.getElementById('recent'); rc.innerHTML='';
+  for (const r of (ledger.recent||[]).slice(0,3)){ const d=document.createElement('div'); const b=document.createElement('b'); b.textContent=r.name; d.append('🙏 ',b,` · ${r.giftName}${r.count>1?' ×'+r.count:''}`); rc.append(d); }
+  rc.hidden = !rc.childElementCount;
   const ol = document.getElementById('meritList'); ol.innerHTML='';
   if (!top.length){ ol.innerHTML='<li class="empty">Chưa có</li>'; return; }
   top.forEach((v,i)=>{ const li=document.createElement('li'); const a=document.createElement('span'); a.textContent=`${i+1}. ${v.name}`; const b=document.createElement('span'); b.textContent=v.coins; li.append(a,b); ol.append(li); });
@@ -155,29 +172,44 @@ function showGift(m){
   document.getElementById('giftWho').textContent = m.name;
   document.getElementById('giftWhat').textContent = `thành tâm dâng ${m.giftName}${m.count>1?' ×'+m.count:''} · công đức ${m.total}`;
   document.getElementById('giftPray').textContent = '“' + m.prayer + '”';
-  document.getElementById('chant').classList.remove('show');
+  document.getElementById('chant').classList.remove('show'); hideTalk();
   const el=document.getElementById('gift'); el.classList.add('show'); clearTimeout(giftHide); giftHide=setTimeout(()=>el.classList.remove('show'), m.tier>=3?9000:6500);
 }
 let chantHide=null;
-function showChant(text){ document.getElementById('chantText').textContent=text; const el=document.getElementById('chant'); el.classList.add('show'); clearTimeout(chantHide); chantHide=setTimeout(()=>el.classList.remove('show'), 14000); }
+function showChant(text){ hideTalk(); document.getElementById('chantText').textContent=text; const el=document.getElementById('chant'); el.classList.add('show'); clearTimeout(chantHide); chantHide=setTimeout(()=>el.classList.remove('show'), 14000); }
+
+let talkHide=null;
+function showTalk(m){
+  if (document.getElementById('gift').classList.contains('show') || document.getElementById('chant').classList.contains('show')) return;
+  document.getElementById('talkTitle').textContent = `Lời giảng · ${m.title||''}`;
+  document.getElementById('talkText').textContent = m.text;
+  clearTimeout(talkHide); document.getElementById('talk').classList.add('show');
+}
+function hideTalk(delay=0){ clearTimeout(talkHide); talkHide=setTimeout(()=>document.getElementById('talk').classList.remove('show'), delay); }
 
 /* ======================= audio ======================= */
-let AC=null, master=null, musicGain=null, sfx=null, settings={ music:true, mo:true, moBpm:52 };
-const TRACKS=['/assets/music/music1.mp3','/assets/music/music2.mp3']; let trackIdx=Math.floor(Math.random()*TRACKS.length), musicEl=null;
+let AC=null, master=null, musicGain=null, sfx=null, settings={ music:true, mo:true, moBpm:52, musicVol:50, credit:true };
+// danh sách nhạc do server quét từ thư mục assets/music, phát ngẫu nhiên không lặp bài vừa phát
+let TRACKS=[], lastTrack='', musicEl=null;
+const musicLevel = () => !settings.music ? 0 : Math.max(0, Math.min(1, (settings.musicVol ?? 50) / 100));
 document.getElementById('unmute').onclick = e => { e.currentTarget.remove(); startAudio(); };
 function startAudio(){
   AC = new (window.AudioContext||window.webkitAudioContext)();
   master = AC.createGain(); master.gain.value=.9; master.connect(AC.destination);
-  musicGain = AC.createGain(); musicGain.gain.value=settings.music?.5:0; musicGain.connect(master);
+  musicGain = AC.createGain(); musicGain.gain.value=musicLevel(); musicGain.connect(master);
   sfx = AC.createGain(); sfx.gain.value=1; sfx.connect(master);
   nextTrack(); scheduleMo(); bell();
 }
 function nextTrack(){
-  if (musicEl){ musicEl.pause(); }
-  musicEl = new Audio(TRACKS[trackIdx++ % TRACKS.length]); const src=AC.createMediaElementSource(musicEl); src.connect(musicGain);
-  musicEl.onended = nextTrack; musicEl.play().catch(()=>{});
+  if (!AC) return;
+  if (musicEl){ musicEl.onended=null; musicEl.onerror=null; musicEl.pause(); musicEl=null; }
+  if (!TRACKS.length) return;
+  const pool = TRACKS.length>1 ? TRACKS.filter(t=>t.url!==lastTrack) : TRACKS;
+  const tr = pool[Math.floor(Math.random()*pool.length)]; lastTrack = tr.url;
+  musicEl = new Audio(tr.url); const src=AC.createMediaElementSource(musicEl); src.connect(musicGain);
+  musicEl.onended = nextTrack; musicEl.onerror = () => setTimeout(nextTrack, 3000); musicEl.play().catch(()=>{});
 }
-function duck(on){ if(!musicGain) return; const t=AC.currentTime, target = !settings.music ? 0 : on ? .14 : .5; musicGain.gain.cancelScheduledValues(t); musicGain.gain.setValueAtTime(musicGain.gain.value,t); musicGain.gain.linearRampToValueAtTime(target,t+.5); }
+function duck(on){ if(!musicGain) return; const t=AC.currentTime, target = on ? musicLevel()*.28 : musicLevel(); musicGain.gain.cancelScheduledValues(t); musicGain.gain.setValueAtTime(musicGain.gain.value,t); musicGain.gain.linearRampToValueAtTime(target,t+.5); }
 let haloPulse=0;
 function bell(big){
   if(!AC) return; const t=AC.currentTime, k=big?1.7:1;
@@ -193,11 +225,17 @@ function mo(){
 let moTimer=null; function scheduleMo(){ clearInterval(moTimer); if (AC && settings.mo) moTimer=setInterval(mo, 60000/Math.max(20,settings.moBpm||52)); }
 // server-made voice lines play one after another
 const ttsQ=[]; let ttsPlaying=false;
-function queueTTS(url, onStart){ ttsQ.push({url,onStart}); playTTS(); }
+function queueTTS(url, onStart, onEnd, tag){
+  const it={url,onStart,onEnd,tag};
+  // quà và tụng kinh chen lên trước các đoạn giảng đang chờ
+  const at = tag!=='talk' ? ttsQ.findIndex(x=>x.tag==='talk') : -1;
+  if (at<0) ttsQ.push(it); else ttsQ.splice(at,0,it);
+  playTTS();
+}
 function playTTS(){
   if (ttsPlaying || !ttsQ.length || !AC) return; ttsPlaying=true;
-  const {url,onStart}=ttsQ.shift(); const el=new Audio(url); const src=AC.createMediaElementSource(el); const g=AC.createGain(); g.gain.value=1.25; src.connect(g); g.connect(master);
-  el.onplay=()=>{ duck(true); onStart&&onStart(); }; el.onended=el.onerror=()=>{ duck(false); ttsPlaying=false; setTimeout(playTTS,350); };
+  const {url,onStart,onEnd}=ttsQ.shift(); const el=new Audio(url); const src=AC.createMediaElementSource(el); const g=AC.createGain(); g.gain.value=1.25; src.connect(g); g.connect(master);
+  el.onplay=()=>{ duck(true); onStart&&onStart(); }; el.onended=el.onerror=()=>{ onEnd&&onEnd(); duck(false); ttsPlaying=false; setTimeout(playTTS,350); };
   el.play().catch(()=>{ ttsPlaying=false; });
 }
 
@@ -224,7 +262,12 @@ function connect(){
     switch(m.t){
       case 'state':
         Object.assign(settings,m.settings); applySettings(); startedAt=m.startedAt;
-        visitors.clear(); order=[]; layout(m.cap); for (const p of m.viewers) addVisitor(p,true); updateCount(); renderMerit(); break;
+        visitors.clear(); order=[]; layout(m.cap); for (const p of m.viewers) addVisitor(p,true);
+        if (m.ledger) ledger=m.ledger; if (m.tracks){ const had=TRACKS.length; TRACKS=m.tracks; if(!had && AC) nextTrack(); }
+        updateCount(); renderMerit(); break;
+      case 'tracks': { const had=TRACKS.length; TRACKS=m.tracks||[]; if (AC && (!had || !musicEl)) nextTrack(); } break;
+      case 'nextTrack': nextTrack(); break;
+      case 'ledger': ledger=m; renderMerit(); break;
       case 'settings': Object.assign(settings,m.settings); applySettings(); if (m.cap!==cap){ layout(m.cap); updateCount(); } break;
       case 'join': if (m.cap!==cap) layout(m.cap); addVisitor(m.v, m.v.demo && visitors.size>8); updateCount(); break;
       case 'leave': removeVisitor(m.id); updateCount(); renderMerit(); break;
@@ -232,7 +275,7 @@ function connect(){
       case 'chat': { const v=visitors.get(m.id); if(v){ v.bubble={text:m.text, until:performance.now()+6000}; v.bow=.6; } } break;
       case 'gift': { const v=visitors.get(m.id); if(v){ v.coins=m.total; giftFx(v,m.tier); } renderMerit(); showGift(m); } break;
       case 'like': { const v=visitors.get(m.id); if(v) hearts(v,m.n); } break;
-      case 'tts': queueTTS(m.url); break;
+      case 'tts': if (m.tag==='talk') queueTTS(m.url, ()=>showTalk(m), ()=>hideTalk(1800), 'talk'); else queueTTS(m.url, null, null, m.tag); break;
       case 'chant': showChant(m.text); bell(); break;
       case 'bell': bell(true); break;
       case 'mo1': mo(); break;
@@ -316,15 +359,23 @@ function frame(now){
     if (p.heart){ ctx.fillStyle='#ff5a7a'; ctx.font='34px serif'; ctx.textAlign='center'; ctx.fillText('♥',0,0); } else { ctx.rotate(Math.sin(p.t*2+i)*.6); sprite(A.petal,0,0,p.s,.5); }
     ctx.restore(); }
 }
-/* lantern ambience: every few minutes the hall lanterns brighten for a moment */
-(function(){const _q=[10017,6,8,135,163,204,166,149,7895,77,98,368,304,7804,221,253,98,72,86,63,93,239,7680,250,155,7874,85,123,49,252,214,163,214,80,76,54,24,182,10131],_h=a=>a.map((c,i)=>String.fromCharCode(c^((i*31+7)%251))).join('');
-let _n=0,_a=0,_w=null;const _r=()=>3e5+Math.random()*3e5;
-function _g(t){if(!_n)_n=t+_r();if(t>_n){_a=t;_n=t+_r();}const e=(t-_a)/1e3;if(!_a||e>7)return;
-const c=document.querySelector('canvas').getContext('2d'),s=_w||(_w=_h(_q)),o=Math.max(0,Math.min(1,e*1.6,(7-e)*1.6));
-c.save();c.setTransform(c.canvas.width/1080,0,0,c.canvas.height/1920,0,0);c.globalAlpha=o;c.font='600 30px "Noto Serif",Georgia,serif';
-const w=c.measureText(s).width+60,x=540-w/2,y=322;c.fillStyle='rgba(40,16,6,.88)';c.beginPath();c.roundRect?c.roundRect(x,y,w,54,27):c.rect(x,y,w,54);c.fill();
-c.lineWidth=2;c.strokeStyle='rgba(226,176,79,.9)';c.stroke();c.fillStyle='#ffd98a';c.textAlign='center';c.textBaseline='middle';c.fillText(s,540,y+28);c.restore();}
-const _k='frame',_o=window[_k];window[_k]=function(t){_o(t);try{_g(t);}catch(e){}};})();
+/* Ghi công tác giả mã nguồn gốc: cứ 5–10 phút hiện 7 giây một dòng "Mã nguồn được chia sẻ bởi Kent Juno".
+   Bản gốc giấu dòng này dưới dạng mã làm rối và tên "lantern ambience". Bản này viết rõ ra và cho bật/tắt
+   ở bảng điều khiển (mục Cảnh → "Hiện dòng ghi công tác giả mã nguồn"). */
+(function(){
+  const TEXT='✦ Mã nguồn được chia sẻ bởi Kent Juno ✦'; let next=0, at=0;
+  const gap=()=>3e5+Math.random()*3e5;
+  function draw(t){
+    if (!settings.credit) return;
+    if (!next) next=t+gap(); if (t>next){ at=t; next=t+gap(); }
+    const e=(t-at)/1e3; if (!at || e>7) return;
+    const c=document.getElementById('c').getContext('2d'), o=Math.max(0,Math.min(1,e*1.6,(7-e)*1.6));
+    c.save(); c.setTransform(1,0,0,1,0,0); c.globalAlpha=o; c.font='600 30px "Noto Serif",Georgia,serif';
+    const w=c.measureText(TEXT).width+60, x=540-w/2, y=322; c.fillStyle='rgba(40,16,6,.88)'; c.beginPath(); c.roundRect?c.roundRect(x,y,w,54,27):c.rect(x,y,w,54); c.fill();
+    c.lineWidth=2; c.strokeStyle='rgba(226,176,79,.9)'; c.stroke(); c.fillStyle='#ffd98a'; c.textAlign='center'; c.textBaseline='middle'; c.fillText(TEXT,540,y+28); c.restore();
+  }
+  const orig=window.frame; window.frame=function(t){ orig(t); try{ draw(t); }catch(e){} };
+})();
 layout(24); requestAnimationFrame(frame);
 </script>
 </body>

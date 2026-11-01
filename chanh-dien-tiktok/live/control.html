@@ -63,6 +63,10 @@ button.red{background:var(--red);border-color:#b84a33}
     <p class="hint">Chỉ đọc sự kiện công khai của phòng live (bình luận, quà, tim). Không cần mật khẩu hay cookie TikTok. Phải bật LIVE trước rồi mới kết nối.</p>
     <button class="gold" id="btnOverlay">Mở màn hình overlay 9:16</button>
     <p class="hint">Trong TikTok LIVE Studio: Add source → Window capture → chọn cửa sổ overlay. Bấm "bật âm thanh" một lần trong cửa sổ đó.</p>
+    <h2>Sổ công đức hôm nay</h2>
+    <p class="hint" id="ledgerSum">Chưa có quà</p>
+    <div id="ledgerBox" style="max-height:220px;overflow:auto"><table style="width:100%;border-collapse:collapse;font-size:13px"><tbody id="ledgerBody"></tbody></table></div>
+    <p class="hint">Lưu tự động trong thư mục <b>cong-duc</b> (mỗi ngày một file). Quà thử nghiệm và bot không ghi sổ.</p>
     <h2>Trong sân chùa</h2>
     <div id="people"><table><tbody id="peopleBody"><tr><td class="hint">Chưa có ai</td><td></td></tr></tbody></table></div>
   </section>
@@ -112,6 +116,17 @@ button.red{background:var(--red);border-color:#b84a33}
       <label>Đọc kinh mỗi (phút)<input id="chantEveryMin" type="number" min="1" max="60" value="3"></label>
     </div>
     <div class="row"><button id="btnBell">🔔 Thỉnh chuông</button><button id="btnMo">Gõ mõ</button></div>
+    <h2>Nhạc nền</h2>
+    <label>Âm lượng nhạc (%)<input id="musicVol" type="range" min="0" max="100" step="5" value="50"></label>
+    <div class="row"><button id="btnNext">⏭ Bài nhạc khác</button><span class="hint" id="trackInfo"></span></div>
+    <p class="hint">Bỏ file .mp3 vào thư mục <b>assets/music</b> là tự vào danh sách (2 phút quét một lần). Chỉ dùng nhạc chú có quyền phát: nhạc có bản quyền dễ làm TikTok tắt tiếng hoặc dừng live.</p>
+    <h2>Lời giảng liên tục</h2>
+    <label class="check"><input type="checkbox" id="talk" checked> Đọc lời giảng khi không có quà và tụng kinh</label>
+    <div class="row">
+      <label>Nghỉ giữa hai đoạn (giây)<input id="talkGapSec" type="number" min="0" max="30" value="2"></label>
+      <button id="btnSkipTalk">⏭ Bài giảng khác</button><button id="btnReload">↻ Nạp lại bài giảng + nhạc</button>
+    </div>
+    <p class="hint">Bài giảng là các file .txt trong thư mục <b>bai-giang</b>. Sửa xong bấm "Nạp lại". Quà luôn được đọc trước lời giảng.</p>
     <h2>Cảnh</h2>
     <label>Tên thiền đường<input id="title" value="Thiền Đường An Nhiên"></label>
     <label>Dòng phụ<input id="subtitle" value="Nam Mô A Di Đà Phật"></label>
@@ -119,6 +134,7 @@ button.red{background:var(--red);border-color:#b84a33}
       <label>Số chỗ ngồi<select id="seatMode"><option value="auto">Tự mở rộng 24 → 100</option><option value="24">24</option><option value="36">36</option><option value="64">64</option><option value="100">100</option></select></label>
     </div>
     <label class="check"><input type="checkbox" id="joinOnEnter"> Người vào phòng cũng được ngồi (không cần bình luận)</label>
+    <label class="check"><input type="checkbox" id="credit" checked> Thỉnh thoảng hiện dòng ghi công tác giả mã nguồn (Kent Juno)</label>
   </section>
 </div>
 
@@ -133,9 +149,15 @@ const $ = id => document.getElementById(id);
 let ws = null;
 const send = (cmd, extra={}) => ws?.readyState===1 && ws.send(JSON.stringify({ t:'ctl', cmd, ...extra }));
 function logLine(s){ const el=$('log'); el.textContent += s + '\n'; el.scrollTop = el.scrollHeight; }
-const SETTING_IDS = ['voice','pitch','rate','music','mo','autoChant','moBpm','chantEveryMin','title','subtitle','seatMode','joinOnEnter'];
+const SETTING_IDS = ['voice','pitch','rate','music','mo','autoChant','moBpm','chantEveryMin','title','subtitle','seatMode','joinOnEnter','musicVol','talk','talkGapSec','credit'];
 function fillSettings(s){ for (const k of SETTING_IDS){ const el=$(k); if (!el || s[k]===undefined) continue; if (el.type==='checkbox') el.checked=!!s[k]; else el.value=s[k]; } }
-function readSettings(){ const o={}; for (const k of SETTING_IDS){ const el=$(k); o[k] = el.type==='checkbox' ? el.checked : el.type==='number' ? +el.value : el.value; } return o; }
+function readSettings(){ const o={}; for (const k of SETTING_IDS){ const el=$(k); o[k] = el.type==='checkbox' ? el.checked : (el.type==='number'||el.type==='range') ? +el.value : el.value; } return o; }
+function renderLedger(L){
+  if (!L) return;
+  $('ledgerSum').textContent = L.donors ? `${L.day} · ${L.donors} người · tổng giá trị quà ${L.total} xu` : `${L.day} · chưa có quà`;
+  const tb=$('ledgerBody'); tb.innerHTML='';
+  (L.all||[]).forEach((d,i)=>{ const tr=document.createElement('tr'); for (const [txt,al] of [[`${i+1}. ${d.name}`,'left'],[`${d.gifts} quà`,'right'],[`${d.coins} ✧`,'right']]){ const td=document.createElement('td'); td.textContent=txt; td.style.textAlign=al; td.style.padding='4px 6px'; td.style.borderBottom='1px solid #2e1c10'; tr.append(td); } tb.append(tr); });
+}
 const people = new Map();
 function renderPeople(){
   const tb=$('peopleBody'); tb.innerHTML='';
@@ -154,7 +176,9 @@ function connect(){
   ws.onclose = () => { $('srv').textContent='Server: mất kết nối'; $('srv').className='chip bad'; setTimeout(connect, 2000); };
   ws.onmessage = e => {
     const m = JSON.parse(e.data);
-    if (m.t==='state'){ fillSettings(m.settings); setTT(m.tiktok); $('hdrTitle').textContent=m.settings.title||''; if (m.savedId && !$('uid').value) $('uid').value='@'+m.savedId; $('autoConn').checked=m.autoConnect!==false; people.clear(); for (const v of m.viewers) people.set(v.id,v); renderPeople(); }
+    if (m.t==='state'){ fillSettings(m.settings); setTT(m.tiktok); $('hdrTitle').textContent=m.settings.title||''; if (m.savedId && !$('uid').value) $('uid').value='@'+m.savedId; $('autoConn').checked=m.autoConnect!==false; renderLedger(m.ledger); $('trackInfo').textContent = `${(m.tracks||[]).length} bài trong danh sách`; people.clear(); for (const v of m.viewers) people.set(v.id,v); renderPeople(); }
+    else if (m.t==='ledger') renderLedger(m);
+    else if (m.t==='tracks') $('trackInfo').textContent = `${m.tracks.length} bài trong danh sách`;
     else if (m.t==='logs'){ $('log').textContent=''; m.lines.forEach(logLine); }
     else if (m.t==='log') logLine(m.line);
     else if (m.t==='tiktok') setTT(m);
@@ -180,6 +204,9 @@ $('btnBots').onclick = () => send('bots', { on: $('btnBots').textContent.include
 $('btnSay').onclick = () => send('say', { text: $('sayText').value });
 $('btnChant').onclick = () => send('chant');
 $('btnBell').onclick = () => send('bell');
+$('btnNext').onclick = () => send('nextTrack');
+$('btnSkipTalk').onclick = () => send('skipTalk');
+$('btnReload').onclick = () => send('reloadTalks');
 $('btnMo').onclick = () => send('mo');
 for (const k of SETTING_IDS) $(k).addEventListener('change', () => send('settings', { settings: readSettings() }));
 </script>

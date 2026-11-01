@@ -32,6 +32,10 @@ const settings = {
   autoChant: true, chantEveryMin: 3,
   seatMode: 'auto',                  // auto | 24 | 36 | 64 | 100
   joinOnEnter: false,                // also seat viewers who only enter the room
+  musicVol: 50,                      // % âm lượng nhạc nền
+  talk: true,                        // đọc lời giảng liên tục giữa các lượt quà / tụng kinh
+  talkGapSec: 2,                     // nghỉ giữa hai đoạn giảng
+  credit: true,                      // thỉnh thoảng hiện dòng ghi công tác giả mã nguồn gốc
   gifts: { readAll: true, minDiamonds: 1 },
 };
 const viewers = new Map();           // id -> { id, name, skin, avatar, coins, joinedAt, lastAt, lastText, lastTextAt, demo }
@@ -59,7 +63,7 @@ function skinFromText(t){
 const DEFAULT_SKINS = ['man', 'woman', 'woman', 'man', 'granny'];
 
 function pub(v){ return { id:v.id, name:v.name, skin:v.skin, avatar:v.avatar||'', coins:v.coins, demo:!!v.demo }; }
-function snapshot(){ return { t:'state', settings, viewers:[...viewers.values()].map(pub), cap: capacity(), startedAt, tiktok: tiktokState, savedId: config.tenKenhTikTok, autoConnect: config.tuDongKetNoi }; }
+function snapshot(){ return { t:'state', settings, viewers:[...viewers.values()].map(pub), cap: capacity(), startedAt, tiktok: tiktokState, savedId: config.tenKenhTikTok, autoConnect: config.tuDongKetNoi, tracks, ledger: ledgerView() }; }
 
 function seat(id, name, opts = {}){
   let v = viewers.get(id);
@@ -70,7 +74,7 @@ function seat(id, name, opts = {}){
     viewers.delete(quiet.id); broadcast({ t:'leave', id: quiet.id });
   }
   v = { id, name: (name||id).slice(0, 18), skin: opts.skin || DEFAULT_SKINS[viewers.size % DEFAULT_SKINS.length],
-        avatar: opts.avatar || '', coins: 0, joinedAt: Date.now(), lastAt: Date.now(), demo: !!opts.demo };
+        avatar: opts.avatar || '', coins: opts.demo ? 0 : (ledger.donors?.[id]?.coins || 0), joinedAt: Date.now(), lastAt: Date.now(), demo: !!opts.demo };
   viewers.set(id, v);
   broadcast({ t:'join', v: pub(v), cap: capacity() });
   return { v, isNew:true };
@@ -83,8 +87,24 @@ function onChat(id, name, text, avatar){
   const { v, isNew } = seat(id, name, { avatar, skin: want || undefined });
   if (!v) return;
   if (!isNew && want && want !== v.skin){ v.skin = want; broadcast({ t:'skin', id, skin: want }); }
+  if (isBad(text)) { v.lastText = ''; addLog(`🚫 Ẩn bình luận có từ cấm của ${v.name}`); return; }
   v.lastText = text; v.lastTextAt = Date.now();
   broadcast({ t:'chat', id, name: v.name, text });
+}
+
+/* ---------------------------------------------- lọc từ cấm + lời nguyện */
+// So theo TỪ NGUYÊN VẸN (giữ dấu), để "các", "lớn"… không bị bắt nhầm. Thêm từ trong cau-hinh.json → "tuCam".
+const BAD_DEFAULT = ['đm','dm','đcm','dcm','đmm','dmm','đéo','địt','lồn','cặc','đĩ','vcl','vkl','vl','clm','cc','óc chó','con chó','súc vật','mẹ mày','bố mày'];
+let badWords = [...BAD_DEFAULT];
+const norm = t => ' ' + String(t).toLowerCase().normalize('NFC').replace(/[^\p{L}\p{N}]+/gu, ' ').trim() + ' ';
+function isBad(t){ const w = norm(t); return badWords.some(b => w.includes(' ' + b + ' ')); }
+// Bình luận chỉ được đọc làm lời hồi hướng khi giống một lời cầu nguyện, không có link, không có từ cấm.
+const PRAY_WORDS = ['cầu','nguyện','mong','xin','bình an','an lạc','sức khỏe','sức khoẻ','mạnh khỏe','mạnh khoẻ','hồi hướng','siêu thoát','vãng sanh','vãng sinh','tai qua','nam mô','a di đà','phật'];
+function prayerFrom(v){
+  const t = v.lastText || '';
+  if (!t || Date.now() - v.lastTextAt > 90_000 || t.length < 7 || t.length > 110) return null;
+  if (isBad(t) || /https?:|www\.|\.com|\d{6,}/i.test(t)) return null;
+  const w = norm(t); return PRAY_WORDS.some(k => w.includes(' ' + k + ' ')) ? t.replace(/[.!?…\s]+$/u, '') : null;
 }
 
 function onGift(id, name, giftName, count, diamonds, avatar){
@@ -93,7 +113,8 @@ function onGift(id, name, giftName, count, diamonds, avatar){
   if (!v) return;
   const coins = Math.max(1, (diamonds || 1) * (count || 1));
   v.coins += coins;
-  const prayer = (v.lastText && Date.now() - v.lastTextAt < 90_000 && v.lastText.length > 6) ? v.lastText : pickPrayer();
+  const prayer = prayerFrom(v) || pickPrayer();
+  recordGift(v, giftName, count, coins);
   const tier = coins >= 99 ? 3 : coins >= 10 ? 2 : 1;
   const line = `Nam mô A Di Đà Phật. Phật tử ${spoken(v.name)} thành tâm dâng ${giftName}${count > 1 ? ', ' + count + ' lần' : ''}. ${prayer}.`;
   broadcast({ t:'gift', id, name: v.name, giftName, count, coins, total: v.coins, tier, prayer });
@@ -110,7 +131,15 @@ const spoken = s => String(s).replace(/[_@.]+/g, ' ').replace(/[^\p{L}\p{N}\s]/g
 /* ------------------------------------------------------------------ TTS */
 const ttsQueue = []; let ttsBusy = false, ttsSeq = 0;
 function esc(s){ return String(s).replace(/[<>&"']/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&apos;'}[c])); }
-function say(text, meta = {}){ if (ttsQueue.length >= 15) { addLog('Hàng đợi giọng đọc đầy, bỏ qua 1 câu'); return; } ttsQueue.push({ text: String(text).slice(0, 500), meta }); pumpTTS(); }
+// Ưu tiên: quà > tụng kinh / thông báo > lời giảng. Lời giảng chỉ được sinh khi hàng đợi trống.
+const PRIO = { gift: 0, chant: 1, say: 1, talk: 2 };
+let audioBusyUntil = 0;                 // ước lượng lúc overlay đọc xong câu cuối (MP3 96 kbps → 12.000 byte/giây)
+function say(text, meta = {}){
+  if (ttsQueue.length >= 15) { addLog('Hàng đợi giọng đọc đầy, bỏ qua 1 câu'); return; }
+  const item = { text: String(text).slice(0, 500), meta, p: PRIO[meta.tag] ?? 1 };
+  const at = ttsQueue.findIndex(x => x.p > item.p); if (at < 0) ttsQueue.push(item); else ttsQueue.splice(at, 0, item);
+  pumpTTS();
+}
 async function pumpTTS(){
   if (ttsBusy || !ttsQueue.length) return; ttsBusy = true;
   const { text, meta } = ttsQueue.shift();
@@ -122,7 +151,9 @@ async function pumpTTS(){
     const chunks = [];
     await new Promise((res, rej) => { audioStream.on('data', c => chunks.push(c)); audioStream.on('close', res); audioStream.on('error', rej); });
     try { tts.close(); } catch {}
-    fs.writeFileSync(path.join(TTS_DIR, file), Buffer.concat(chunks));
+    const buf = Buffer.concat(chunks);
+    fs.writeFileSync(path.join(TTS_DIR, file), buf);
+    audioBusyUntil = Math.max(Date.now(), audioBusyUntil) + buf.length / 12 + 400;
     broadcast({ t:'tts', url: `/live/tts/${file}`, text, ...meta });
     const old = fs.readdirSync(TTS_DIR).sort(); while (old.length > 40) { try { fs.unlinkSync(path.join(TTS_DIR, old.shift())); } catch {} }
   } catch (e) { addLog('TTS lỗi: ' + (e?.message || e)); }
@@ -138,7 +169,80 @@ const CHANTS = [
 let chantIdx = 0, chantTimer = null;
 function chant(){ const text = CHANTS[chantIdx++ % CHANTS.length]; broadcast({ t:'chant', text }); say(text, { tag:'chant' }); }
 function scheduleChant(){ clearInterval(chantTimer); if (settings.autoChant) chantTimer = setInterval(chant, Math.max(1, settings.chantEveryMin) * 60_000); }
-scheduleChant();
+scheduleChant();                                   // lịch tụng kinh lần đầu
+
+/* ------------------------------------------------------- lời giảng liên tục */
+// Mỗi file .txt trong ../bai-giang là một bài. Dòng đầu "# Tên bài". Các đoạn cách nhau bằng một dòng trống.
+const TALK_DIR = path.join(ROOT, 'bai-giang');
+let talks = [], talkOrder = [], talkPos = { bai: 0, doan: 0 };
+function splitChunks(par){
+  const sents = par.replace(/\s+/g, ' ').trim().match(/[^.!?…]+[.!?…]*/gu) || [];
+  const out = []; let cur = '';
+  for (const x of sents.map(t => t.trim()).filter(Boolean)){ if ((cur + ' ' + x).trim().length > 230 && cur){ out.push(cur); cur = x; } else cur = (cur + ' ' + x).trim(); }
+  if (cur) out.push(cur); return out;
+}
+function loadTalks(){
+  try {
+    talks = fs.readdirSync(TALK_DIR).filter(f => f.toLowerCase().endsWith('.txt')).sort().map(f => {
+      const raw = fs.readFileSync(path.join(TALK_DIR, f), 'utf8').replace(/\r/g, '').replace(/^\uFEFF/, '');
+      const lines = raw.split('\n'); let title = f.replace(/\.txt$/i, '').replace(/^\d+[-_ ]*/, '').replace(/-/g, ' ');
+      if (lines[0]?.startsWith('#')) { title = lines.shift().replace(/^#+\s*/, '').trim(); }
+      const chunks = lines.join('\n').split(/\n\s*\n/).map(p => p.trim()).filter(Boolean).flatMap(splitChunks);
+      return { title: title.slice(0, 60), chunks };
+    }).filter(t => t.chunks.length);
+  } catch { talks = []; }
+  talkOrder = talks.map((_, i) => i).sort(() => Math.random() - .5); talkPos = { bai: 0, doan: 0 };
+  addLog(`📖 Nạp ${talks.length} bài giảng (${talks.reduce((a, t) => a + t.chunks.length, 0)} đoạn)`);
+}
+function overlayCount(){ let n = 0; for (const c of wss.clients) if (c.role === 'overlay' && c.readyState === 1) n++; return n; }
+setInterval(() => {
+  if (!settings.talk || !talks.length || ttsBusy || ttsQueue.length || !overlayCount()) return;
+  if (Date.now() < audioBusyUntil - 1500 + settings.talkGapSec * 1000) return;
+  const t = talks[talkOrder[talkPos.bai % talkOrder.length]];
+  const text = t.chunks[talkPos.doan];
+  say(text, { tag: 'talk', title: t.title, part: talkPos.doan + 1, parts: t.chunks.length });
+  if (++talkPos.doan >= t.chunks.length){ talkPos.doan = 0; if (++talkPos.bai % talkOrder.length === 0) talkOrder.sort(() => Math.random() - .5); }
+}, 500);
+
+/* ------------------------------------------------------------ nhạc nền */
+// Mọi file .mp3 trong ../assets/music đều vào danh sách phát. Thêm/bớt file không cần khởi động lại (quét mỗi 2 phút).
+const MUSIC_DIR = path.join(ROOT, 'assets', 'music');
+let tracks = [];
+function scanMusic(){
+  let list = [];
+  try { list = fs.readdirSync(MUSIC_DIR).filter(f => /\.mp3$/i.test(f) && !f.startsWith('.')).sort(); } catch {}
+  const next = list.map(f => ({ url: '/assets/music/' + encodeURIComponent(f), name: f.replace(/\.mp3$/i, '').replace(/[-_]+/g, ' ') }));
+  if (JSON.stringify(next) !== JSON.stringify(tracks)) { tracks = next; broadcast({ t:'tracks', tracks }); addLog(`🎵 Danh sách nhạc: ${tracks.length} bài`); }
+}
+setInterval(scanMusic, 120_000);
+
+/* ------------------------------------------------------- sổ công đức theo ngày */
+// Lưu ở ../cong-duc/YYYY-MM-DD.json (ngoài thư mục phục vụ web). Khởi động lại không mất, sang ngày mới thì mở sổ mới.
+const LEDGER_DIR = path.join(ROOT, 'cong-duc');
+const today = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; };
+let ledger = { day: '', donors: {}, recent: [], total: 0 };
+function ledgerFile(day){ return path.join(LEDGER_DIR, day + '.json'); }
+function openLedger(){
+  const day = today(); if (ledger.day === day) return;
+  ledger = { day, donors: {}, recent: [], total: 0 };
+  try { const raw = JSON.parse(fs.readFileSync(ledgerFile(day), 'utf8')); if (raw && raw.donors) ledger = { day, donors: raw.donors, recent: raw.recent || [], total: +raw.total || 0 }; } catch {}
+  for (const v of viewers.values()) if (!v.demo) v.coins = ledger.donors[v.id]?.coins || 0;
+}
+let ledgerTimer = null;
+function saveLedger(){ clearTimeout(ledgerTimer); ledgerTimer = setTimeout(() => { try { fs.mkdirSync(LEDGER_DIR, { recursive: true }); fs.writeFileSync(ledgerFile(ledger.day), JSON.stringify(ledger, null, 1)); } catch (e) { addLog('Không lưu được sổ công đức: ' + e.message); } }, 500); }
+function ledgerView(n = 8){
+  const top = Object.entries(ledger.donors).map(([id, d]) => ({ id, name: d.name, coins: d.coins, gifts: d.gifts })).sort((a, b) => b.coins - a.coins);
+  return { t:'ledger', day: ledger.day, total: ledger.total, donors: top.length, top: top.slice(0, n), all: top.slice(0, 200), recent: ledger.recent.slice(-6).reverse() };
+}
+function recordGift(v, giftName, count, coins){
+  openLedger();
+  if (String(v.id).startsWith('sim_') || v.demo) return;          // thử nghiệm / bot không ghi sổ
+  const d = ledger.donors[v.id] ||= { name: v.name, coins: 0, gifts: 0, first: Date.now() };
+  d.name = v.name; d.coins += coins; d.gifts += count; d.last = Date.now();
+  ledger.total += coins; ledger.recent.push({ name: v.name, giftName, count, coins, at: Date.now() }); if (ledger.recent.length > 50) ledger.recent.shift();
+  v.coins = d.coins; saveLedger(); broadcast(ledgerView());
+}
+setInterval(() => { if (ledger.day !== today()) { openLedger(); broadcast(ledgerView()); addLog('📒 Sang ngày mới, mở sổ công đức mới'); } }, 60_000);
 
 /* --------------------------------------------------------------- TikTok */
 let TikTokLib = null;
@@ -212,6 +316,9 @@ function onControl(m){
     case 'gift': { const n = String(m.name || 'Khách').slice(0, 18); onGift('sim_' + n, n, String(m.gift || 'Hoa hồng').slice(0, 30), clamp(m.count, 1, 99), clamp(m.diamonds, 1, 50000)); break; }
     case 'fill': fillDemo(clamp(m.n, 1, 100)); addLog(`Đổ người mẫu: ${viewers.size} người`); break;
     case 'clear': clearSeats(); break;
+    case 'nextTrack': broadcast({ t:'nextTrack' }); break;
+    case 'reloadTalks': loadTalks(); scanMusic(); break;
+    case 'skipTalk': talkPos.doan = 0; talkPos.bai++; addLog('⏭ Chuyển sang bài giảng khác'); break;
     case 'bell': broadcast({ t:'bell' }); break;
     case 'mo': broadcast({ t:'mo1' }); break;
     case 'chant': chant(); break;
@@ -228,7 +335,8 @@ const SETTING_RULES = {
   title: v => String(v).slice(0, 40), subtitle: v => String(v).slice(0, 60),
   voice: v => ['vi-VN-NamMinhNeural', 'vi-VN-HoaiMyNeural'].includes(v) ? v : settings.voice,
   pitch: v => clamp(v, -50, 50), rate: v => clamp(v, -50, 50), moBpm: v => clamp(v, 20, 120), chantEveryMin: v => clamp(v, 1, 60),
-  music: Boolean, mo: Boolean, autoChant: Boolean, joinOnEnter: Boolean,
+  music: Boolean, mo: Boolean, autoChant: Boolean, joinOnEnter: Boolean, talk: Boolean, credit: Boolean,
+  musicVol: v => clamp(v, 0, 100), talkGapSec: v => clamp(v, 0, 30),
   seatMode: v => ['auto', '24', '36', '64', '100'].includes(String(v)) ? String(v) : 'auto',
 };
 const clamp = (v, a, b) => Math.max(a, Math.min(b, Math.round(+v || 0)));
@@ -244,6 +352,7 @@ function loadConfig(){
     const raw = JSON.parse(fs.readFileSync(file, 'utf8'));
     if (typeof raw.tenKenhTikTok === 'string') config.tenKenhTikTok = cleanId(raw.tenKenhTikTok);
     if (typeof raw.tuDongKetNoi === 'boolean') config.tuDongKetNoi = raw.tuDongKetNoi;
+    if (Array.isArray(raw.tuCam)) { config.tuCam = raw.tuCam.filter(x => typeof x === 'string' && x.trim()).map(x => norm(x).trim()).slice(0, 500); badWords = [...new Set([...BAD_DEFAULT, ...config.tuCam])]; }
     if (raw.caiDat && typeof raw.caiDat === 'object') applySettings(raw.caiDat);
     addLog('Đã nạp cấu hình từ ' + path.basename(file));
   } catch (e) { if (e.code !== 'ENOENT') addLog('cau-hinh.json lỗi, dùng mặc định: ' + e.message); }
@@ -253,7 +362,7 @@ function saveConfig(){
   clearTimeout(saveTimer);
   saveTimer = setTimeout(() => {
     const { gifts, ...caiDat } = settings;
-    const out = { tenKenhTikTok: config.tenKenhTikTok, tuDongKetNoi: config.tuDongKetNoi, caiDat };
+    const out = { tenKenhTikTok: config.tenKenhTikTok, tuDongKetNoi: config.tuDongKetNoi, tuCam: config.tuCam || [], caiDat };
     try { fs.writeFileSync(CONFIG_FILE, JSON.stringify(out, null, 2) + '\n', 'utf8'); } catch (e) { addLog('Không lưu được cau-hinh.json: ' + e.message); }
   }, 400);
 }
@@ -338,7 +447,7 @@ wss.on('connection', (ws, req) => {
   });
 });
 loadConfig();                                      // after wss exists: addLog() broadcasts
-scheduleChant();
+scheduleChant(); loadTalks(); scanMusic(); openLedger();
 server.listen(PORT, HOST, () => {
   addLog(`Server chạy tại http://localhost:${PORT}  ·  Bảng điều khiển: http://localhost:${PORT}/live/control.html  ·  Overlay: http://localhost:${PORT}/live/overlay.html`);
   if (config.tuDongKetNoi && config.tenKenhTikTok) { addLog(`Sẽ tự kết nối @${config.tenKenhTikTok} (thử lại mỗi 60 giây nếu kênh chưa live)`); connectTikTok(config.tenKenhTikTok, { auto: true }); }

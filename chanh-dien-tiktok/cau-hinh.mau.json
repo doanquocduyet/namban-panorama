@@ -13,6 +13,11 @@
     "autoChant": true,
     "chantEveryMin": 3,
     "seatMode": "auto",
-    "joinOnEnter": false
-  }
+    "joinOnEnter": false,
+    "musicVol": 50,
+    "talk": true,
+    "talkGapSec": 2,
+    "credit": true
+  },
+  "tuCam": []
 }
