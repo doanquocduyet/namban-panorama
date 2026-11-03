@@ -36,7 +36,8 @@ for seg in PR["periods"][0]["segments"]:
     k = RANGE_MAP.get(seg["id"])
     if k: RANGE[k] = (seg["price_min_vnd_m2"], seg["price_max_vnd_m2"], seg.get("total_price_note"))
 # lý do của tháng — CHỈ ghi khi Chú xác nhận (ground truth thực địa); tháng không có dòng thì không in
-REASON = {"2026-09": "Theo quan sát thực địa của Panorama, giá rao tháng 9/2026 mềm hơn vì mùa mưa bão và kinh tế: nguồn cung mùa này ra nhiều hơn cầu, người bán rao mềm hơn để ra hàng."}
+REASON = {"2026-09": "Theo quan sát thực địa của Panorama, giá rao tháng 9/2026 mềm hơn vì mùa mưa bão và kinh tế: nguồn cung mùa này ra nhiều hơn cầu, người bán rao mềm hơn để ra hàng.",
+          "2026-10": "Theo quan sát thực địa của Panorama, tháng 10/2026 cung nhiều cầu ít; nhiều người bán muốn giải quyết việc nhanh nên giảm giá sâu để bán nhanh."}
 
 def tr(v): return f"{v/1e6:.2f}".replace(".", ",")
 def tr1(v): return (f"{v/1e6:.1f}".rstrip("0").rstrip(".")).replace(".", ",")
@@ -125,12 +126,25 @@ def dirw(k):
     if not r.get("prev") or r["w"] == "khác&nbsp;hẳn": return None
     return plain(r["w"])
 dirs = {k: dirw(k) for k, _, _ in GROUPS if k in cur}
-down = [k for k, w in dirs.items() if w == "giảm"]   # chỉ tính lệch rõ (>8 %); "nhích" 3–8 % coi như chưa đổi chiều
-up = [k for k, w in dirs.items() if w == "tăng"]
-if down and not up: verdict = "Nhìn chung giá rao đang mềm&nbsp;đi."
+# Luật kết luận chung (sửa 3/11/2026, Chú duyệt): loại "ít tin" (dưới 20 tin ở một trong hai tháng so) KHÔNG được
+# tự quyết câu kết — kỳ 10/2026 từng in "đang tăng" chỉ vì lô view +27 % trên nền tháng 9 có 15 tin, trong khi ba loại
+# còn lại đi ngang hoặc nhích xuống. Lệch rõ (>8 %) vẫn quyết trước; không có lệch rõ thì từ hai loại cùng "nhích"
+# một chiều (3–8 %) trở lên mới nói "nhích", còn lại là "gần như đứng yên".
+def few(k):
+    r = cur[k]; pv = r["prev"][1]
+    return (r["src"] == "rao" and r["n"] < 20) or (pv[2] == "rao" and (pv[1] or 0) < 20)
+vote = {k: w for k, w in dirs.items() if w and not few(k)}
+down = [k for k, w in vote.items() if w == "giảm"]
+up = [k for k, w in vote.items() if w == "tăng"]
+ndown = [k for k, w in vote.items() if w == "nhích xuống"]
+nup = [k for k, w in vote.items() if w == "nhích lên"]
+if not vote: verdict = "Chưa đủ tin để nói chiều chung của giá&nbsp;rao."
+elif down and not up: verdict = "Nhìn chung giá rao đang mềm&nbsp;đi."
 elif up and not down: verdict = "Nhìn chung giá rao đang&nbsp;tăng."
-elif not up and not down: verdict = "Nhìn chung giá rao gần như đứng&nbsp;yên."
-else: verdict = "Mỗi loại đi một chiều, chưa có xu hướng&nbsp;chung."
+elif up and down: verdict = "Mỗi loại đi một chiều, chưa có xu hướng&nbsp;chung."
+elif len(ndown) >= 2 and not nup: verdict = "Nhìn chung giá rao nhích&nbsp;xuống."
+elif len(nup) >= 2 and not ndown: verdict = "Nhìn chung giá rao nhích&nbsp;lên."
+else: verdict = "Nhìn chung giá rao gần như đứng&nbsp;yên."
 items = []
 for k, label, low in GROUPS:
     if k not in dirs: continue
@@ -248,7 +262,7 @@ q1 = f"Theo Namban Index, đo tới {m_on}: trung vị giá rao tháng {last_m} 
 if RANGE: q1 += "Khoảng rao phổ biến nửa đầu 2026 theo quan sát thực địa: " + "; ".join(f'{LOW[k]} {tr1(RANGE[k][0])}–{tr1(RANGE[k][1])}' for k, _, _ in GROUPS if k in RANGE) + ". "
 q1 += "Đây là giá rao, chưa phải giá chốt; mỗi lô khác nhau tùy vị trí, pháp lý, thương lượng."
 q2 = plain(verdict) + f" Tháng {last_m} so với tháng gần nhất có đủ số: " + "; ".join(
-    f'{LOW[k]} {plain(cur[k]["w"]) if cur[k]["w"] != "khác&nbsp;hẳn" else "không so được vì mẫu hai tháng khác hẳn"}' if cur[k].get("prev") else f'{LOW[k]} chưa có tháng trước để so'
+    f'{LOW[k]} {plain(cur[k]["w"]) if cur[k]["w"] != "khác&nbsp;hẳn" else "không so được vì mẫu hai tháng khác hẳn"}{" (ít tin)" if cur[k]["w"] != "khác&nbsp;hẳn" and few(k) else ""}' if cur[k].get("prev") else f'{LOW[k]} chưa có tháng trước để so'
     for k, _, _ in GROUPS if k in cur) + ". "
 q2 += (REASON.get(last["month"], "") + " " if REASON.get(last["month"]) else "") + "Đây là giá rao; chưa đủ để kết luận xu hướng dài hạn."
 # Câu 1 mở bằng đúng cụm người ta gõ ("giá đất Nam Ban hôm nay"); câu 3, 4 trả lời hai chỗ hay nhầm (bao lâu cập nhật,

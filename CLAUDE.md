@@ -493,8 +493,16 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   không câu số (số nằm ngay ở bốn ô). Mục 01 = **giá bao nhiêu** (trung vị + n + khoảng rao nửa đầu
   năm + ghi chú loại), KHÔNG có dòng so sánh. Mục 02 = **tăng hay giảm**: một câu kết luận (chỉ tính
   tăng/giảm khi lệch >8 %; "nhích" 3–8 % coi như chưa đổi chiều) + bốn dòng chiều giá có % và tháng
-  so + bảng tháng. **Lý do tháng chỉ nằm ở mục 04** (dict `REASON` là ground truth Chú cấp — 9/2026:
-  mưa bão, kinh tế, cung nhiều hơn cầu); mục 01 chỉ một câu nêu nhóm nào thấp hơn khoảng nửa đầu năm
+  so + bảng tháng. **Luật câu kết (sửa 3/11/2026, Chú duyệt):** loại "ít tin" (dưới 20 tin ở một trong hai
+  tháng so) KHÔNG tự quyết câu kết chung — kỳ 10/2026 từng in "đang tăng" chỉ vì lô view +27 % trên nền tháng 9
+  có 15 tin. Lệch rõ >8 % quyết trước; không có thì ≥2 loại cùng "nhích" một chiều → "nhích xuống/lên"; còn lại
+  "gần như đứng yên". Loại ít tin vẫn hiện dòng riêng, FAQ ghi "(ít tin)". **Lý do tháng chỉ nằm ở mục 04** (dict `REASON` là ground truth Chú cấp — 9/2026:
+  mưa bão, kinh tế, cung nhiều hơn cầu; 10/2026: cung nhiều cầu ít, nhiều người bán muốn giải quyết nhanh nên
+  giảm giá sâu để bán nhanh). **Giá tháng = ghi chú trên Index, KHÔNG mở trang tháng (Chú chốt 3/11/2026):** mỗi
+  tháng một khối "Tín hiệu thị trường đất Nam Ban tháng M/YYYY" đầu mục 04 (viết tay). **Báo cáo quý = bài riêng**
+  (`/thi-truong-dat-nam-ban-quy-N-YYYY`), Index chỉ giữ khối `#bao-cao-quy` cuối mục 04: vài con số chính mỗi quý +
+  link bài chi tiết. Quý 1/2026 không có số (Index chưa có tin tháng 1–3); quý 1–2 dẫn về bài 6 tháng đầu năm.
+  Bài quý 4/2026 viết đầu tháng 1/2027. Mục 01 chỉ một câu nêu nhóm nào thấp hơn khoảng nửa đầu năm
   rồi dẫn `#tin-hieu`. Nguồn/cách tính chỉ ở mục 03. Mục 07 chỉ còn ô trích dẫn + một dòng "Mọi trích dẫn vui lòng ghi nguồn Namban Panorama." (Chú chốt 25/9: bỏ dòng link json/csv hiển thị; file dữ liệu vẫn khai trong Dataset schema). Thẻ "Đọc gì tiếp" cuối
   trang không lặp ô đã có trong hub mục 06. FAQ được phép nhắc số (AI trích FAQ độc lập), nhưng hai câu
   FAQ không dùng chung câu văn. Thêm khối mới thì quét lại cụm 6 chữ lặp trong thân trang.
@@ -1023,9 +1031,44 @@ Hai số bị gỡ vì không kiểm được nguồn: lượng mưa Sơn Điề
 - **KHÔNG làm, cố ý:** sửa `/truoc-khi-xuong-tien` (để yên dù Villas gợi ý thêm mục "lưu ý") · đổi tựa trang lệch Luật 22 đang có hạng
   (102 trang lệch title/H1, đa số là tựa = H1 + phụ đề) · rải chữ neo "kiểm tra" sang trang mới (đo lại sau 3–4 tuần) · thêm FAQ "cọc bao
   nhiêu" (đã có H2 đúng câu) · số "15 ngày" thủ tục (chưa kiểm được sau NĐ 49/2026).
-- **Chờ Chú:** giờ họp chợ lệch 3 bài (5–8h / 6–8h / "đông nhất buổi sáng") · lập trường sổ chung ở `/hoi-nhanh` #19 vs #41 · mô tả
+- **Đã chốt, đừng hỏi lại (Chú 3/11/2026):** giờ chợ đã thống nhất ở bài nhà `/cho-nam-ban` ("họp cả ngày, đông nhất buổi sáng") —
+  không mở đợt đồng bộ giờ chợ. Y tế trong xã: "trạm y tế và phòng khám đa khoa Nam Ban" (Chú đã viết); tuyến trên ở Đinh Văn gọi
+  "Trung tâm Y tế khu vực Lâm Hà" (Báo Lâm Đồng 28/10/2026), không ghi "Bệnh viện Đa khoa Lâm Hà".
+- **Chờ Chú:** lập trường sổ chung ở `/hoi-nhanh` #19 vs #41 · mô tả
   `/chi-phi-dat-dai-nam-ban` "tất cả neo vào bảng giá" (thuế 2% tính theo giá hợp đồng) · "mức 20% trên lãi đã chính thức bỏ" (chỉ là dự
   thảo) · "người thân trực hệ" hẹp hơn luật · trang công khai "Panorama làm nội dung thế nào" · `data/prices.json` dùng tên phân khúc cũ.
+
+### ĐỢT 2–3/11/2026 — RÀ TIN MỚI (176 tin, 2 đợt, có kiểm chéo) — DỮ KIỆN ĐÃ KIỂM, ĐỪNG VIẾT NGƯỢC
+Báo cáo đầy đủ nằm ở scratchpad phiên 2/11 (không vào repo). Chú gật "làm nhóm I + II" ngày 3/11/2026.
+- **Đô thị loại III:** văn bản công bố là **QĐ 1078/QĐ-UBND ngày 30/3/2026** (hiệu lực từ ngày ký), phạm vi "một phần xã Nam Ban
+  Lâm Hà (thị trấn Nam Ban trước sắp xếp)", **20,47 km²**, trước đó loại V (QĐ 2739/QĐ-UBND 21/12/2015). QĐ 2786 (6/6/2026, quy hoạch
+  tỉnh) chỉ giữ Nam Ban ở loại III. KHÔNG viết "xã Nam Ban Lâm Hà là đô thị loại III" hay "từ 6/6/2026".
+- **Miễn giấy phép xây dựng:** điểm g khoản 2 Điều 43 Luật Xây dựng 2025 — nhà dưới 7 tầng, dưới 500 m² sàn chỉ được miễn khi KHÔNG
+  nằm trong khu vực xây dựng của quy hoạch chung xã / khu vực có quy chế quản lý kiến trúc. Nam Ban có quy hoạch chung xã (30/6/2026)
+  → nhiều khu phải xin phép. Cấm câu "nhà ở thông thường ở Nam Ban gần như không phải xin phép". QĐ 89/2026/QĐ-UBND (hiệu lực
+  28/10/2026): giấy phép xây dựng CÓ THỜI HẠN, nhà ở riêng lẻ tối đa 2 tầng, 8 m, 500 m² sàn, tồn tại tối đa 5 năm.
+- **Chậm đăng ký biến động (sang tên):** quá 30 ngày phạt 2–3 triệu đồng (khoản 2 Điều 16 NĐ 123/2024, sửa bởi NĐ 281/2026). Câu cũ
+  "phạt tới 25 triệu (NĐ 125/2020)" là SAI — NĐ 125/2020 là nghị định phạt về thuế.
+- **Hồ Ba Đình:** sáng 25/10/2026 chỉ là trồng cây và **gắn biển** công trình "Công viên cảnh quan Hồ Ba Đình"; giai đoạn 2 phấn đấu
+  2027. KHÔNG viết "khánh thành", "đã xong giai đoạn 1".
+- **Hà Nội – Lâm Đồng:** chiều 24/10/2026 ký biên bản ghi nhớ hợp tác 8 lĩnh vực, cấp tỉnh – thành phố, không có số tiền. Không viết
+  "hợp tác toàn diện", không gán thành chương trình riêng của xã.
+- **Cao tốc:** Tân Phú – Bảo Lộc (HĐND 28/10) và Bảo Lộc – Liên Khương (HĐND 8/10) đều mục tiêu thông xe kỹ thuật quý III/2028, khai
+  thác quý IV/2028; Dầu Giây – Tân Phú (Đồng Nai) chưa có mốc → vẫn "chưa có mốc thông cả tuyến".
+- **Liên Khương:** dừng hẳn phát thanh thường lệ từ 5 giờ 1/11/2026. Từ 14/10/2026 một phần xã Nam Ban nằm trong vùng cấm, hạn chế
+  bay flycam quanh sân bay (VB 18597/UBND-NC 27/10/2026). Scoot Đà Lạt – Singapore tới 2/11/2026 chưa xác nhận đôn lịch.
+- **Giá kén:** "240.000–245.000đ/kg đầu 2026" là số của 4 xã ở Đắk Lắk (Luật 23) — đã gỡ. Giá kén chỉ ghi kèm nguồn Lâm Đồng + ngày.
+- **Thác Voi:** di tích thắng cảnh quốc gia 2001; đóng hoàn toàn từ 2021 sau hai lần thu hồi dự án (2008, 2021); tỉnh đang chọn nhà
+  đầu tư (Báo Lâm Đồng 11/9/2026). Tháng 7/2026 xã yêu cầu một hộ dừng thu 60.000 đồng/khách xuống chân thác — không phải vé chính
+  thức. Không nêu tên hộ.
+- **Số Index tháng 9 cũ (4,06 / 2,33 / 1,37 / 3,16)** đã gỡ khỏi `/en/land-prices-nam-ban` và hai bài thị trường; bài MXH 1/10 đính chính
+  qua `social-fix.yml` (mục hàng đợi được gắn `key: thi-truong-dat-nam-ban-2026` ngày 3/11).
+- **Chờ văn bản:** kỳ họp Quốc hội thứ 2 khóa XVI (bế mạc khoảng 21/11/2026) — Luật Đất đai sửa đổi (dự kiến hiệu lực 1/3/2027), Luật
+  KDBĐS sửa đổi (dự thảo bỏ yêu cầu môi giới phải lập doanh nghiệp), thuế 0,2 % đất bỏ hoang (đề xuất từ 1/1/2027) · dự thảo bổ sung
+  bảng giá đất Lâm Đồng · 3 phường mới (Đức Trọng, Hàm Thuận Nam, Cư Jút; Nam Ban không có) · kết quả đấu giá 13/11/2026.
+- **Không dùng:** tin chỉ có ở Dân Việt (trang chặn máy đọc — đường Buôn Chuối "đã thảm nhựa", 34,5 tỷ đầu tư công, đề án 1.000 ha rau
+  hoa, nhà đầu tư thuê đất thác Voi) cho tới khi đọc được bản gốc · diện tích cây trồng "tại Nam Ban" trong Báo Lâm Đồng 25/10 (vô lý về
+  số học) · thu ngân sách 195 tỷ / 187 tỷ (giữ số xã sửa 10/10: 192 tỷ, 159 %) · 5.500 ha cà phê (chưa gom số).
 
 ### SỔ CHỜ ẢNH — CÒN HAI BÀI TRỐNG, CHỜ CHÚ CHỤP (mở 8/9/2026, bài suối xong 24/9)
 
