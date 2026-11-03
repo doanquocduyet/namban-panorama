@@ -5,7 +5,7 @@
     "publisher": "Namban Panorama",
     "url": "https://nambanpanorama.com/quy-hoach-2050",
     "usage": "Được trích dẫn tự do với ghi nguồn: Namban Panorama (nambanpanorama.com).",
-    "updated": "2026-07-15"
+    "updated": "2026-11-03"
   },
   "events": [
     {
@@ -25,9 +25,16 @@
     {
       "date": "2026",
       "title": "Khảo sát ứng dụng AI cho vùng nguyên liệu cà phê Nam Ban",
-      "detail": "Xã Nam Ban Lâm Hà làm việc với Công ty TNHH TNI King Coffee và Học viện AI Coffee Academy về số hóa vùng trồng, mã số vùng trồng, AI nhận diện sâu bệnh và truy xuất nguồn gốc QR; thí điểm khoảng 10 ha. Nam Ban có hơn 5.100 ha cà phê. Bối cảnh: quy định chống phá rừng EUDR của EU áp dụng từ 30/12/2026.",
+      "detail": "Xã Nam Ban Lâm Hà làm việc với Công ty TNHH TNI King Coffee và Học viện AI Coffee Academy về số hóa vùng trồng, mã số vùng trồng, AI nhận diện sâu bệnh và truy xuất nguồn gốc QR; thí điểm khoảng 10 ha. Nam Ban có hơn 5.100 ha cà phê. Bối cảnh: quy định chống phá rừng EUDR của EU (Quy định (EU) 2025/2650) áp dụng với doanh nghiệp lớn và vừa từ 30/12/2026, với cá nhân và doanh nghiệp siêu nhỏ, nhỏ từ 30/6/2027.",
       "status": "khảo sát bước đầu — chưa triển khai",
       "source": "Buổi làm việc năm 2026; ảnh Namban Panorama"
+    },
+    {
+      "date": "2026-03-30",
+      "title": "Đô thị Nam Ban được xếp loại III",
+      "detail": "UBND tỉnh Lâm Đồng ký QĐ 1078/QĐ-UBND (hiệu lực từ ngày ký) công bố danh mục đô thị loại II, III; Phụ lục 01, STT 26: đô thị Nam Ban, loại III, phạm vi một phần xã Nam Ban Lâm Hà (thị trấn Nam Ban trước sắp xếp), khoảng 20,47 km². Trước sắp xếp, thị trấn Nam Ban là đô thị loại V (QĐ 2739/QĐ-UBND ngày 21/12/2015).",
+      "status": "đã hiệu lực",
+      "source": "Quyết định 1078/QĐ-UBND ngày 30/3/2026"
     },
     {
       "date": "2026-04-14",
@@ -38,8 +45,8 @@
     },
     {
       "date": "2026-06-06",
-      "title": "Nam Ban được định hướng đô thị loại III",
-      "detail": "UBND tỉnh Lâm Đồng ký QĐ 2786/QĐ-UBND — điều chỉnh Quy hoạch tỉnh thời kỳ 2021–2030, tầm nhìn 2050; Nam Ban Lâm Hà xếp đô thị loại III.",
+      "title": "Quy hoạch tỉnh giữ Nam Ban ở đô thị loại III",
+      "detail": "UBND tỉnh Lâm Đồng ký QĐ 2786/QĐ-UBND — điều chỉnh Quy hoạch tỉnh thời kỳ 2021–2030, tầm nhìn 2050; Phụ lục I ghi Nam Ban là đô thị loại III (mức đã có từ 30/3/2026 theo QĐ 1078/QĐ-UBND).",
       "status": "đã ký",
       "source": "Quyết định 2786/QĐ-UBND ngày 6/6/2026"
     },
