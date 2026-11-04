@@ -97,6 +97,10 @@ KHÔNG đăng bài mới. Luôn chạy `dry_run=true` trước (đọc bài th�
 dấu `fix_fb/fix_ig/fix_threads` trong hàng đợi (workflow luôn đọc main mới nhất) + đọc trả lời đang có dưới bài. Kết quả
 đọc qua annotation check-runs (`gh api repos/.../check-runs/<job>/annotations`) vì log thô không đọc được từ phiên Claude.
 Instagram của Panorama là **@namban.panorama** (có dấu chấm); Threads và Trang Facebook là @nambanpanorama.
+**Bài Facebook đăng `full` (nguyên bài) thì `fb_find` phải là câu trong THÂN BÀI tại commit lúc đăng, không phải câu mồi
+`message` (vấp 4/11/2026: chạy khô báo "câu cũ 0 lần" vì tìm câu mồi; lấy câu từ `git show <commit lúc đăng>:<slug>.html`
+mới ra "1 lần"). Mục trong hàng đợi phải có `key` thì workflow mới tìm được (mục cũ không `key` → thêm `key` = slug trước).
+Đã đính chính 4/11/2026: bài `thi-truong-dat-nam-ban-2026` (số tháng 9 chưa lọc 4,06/2,33/1,37/3,16) trên cả 3 kênh.
 
 **PHIẾU TỪ Ô CONTENT — Ô CODE LÀ CHUẨN (Chú chốt 27/9/2026: "ô này sửa hàng ngàn lần nên cứ ô
 code này mà làm; bên ô kia góp ý đúng thì làm, không thì không sửa").** Ô content (các "cháu" viết
