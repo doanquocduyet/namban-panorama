@@ -489,6 +489,13 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   job `crawl` là ma trận 8 nguồn, mỗi nguồn một máy (mỗi máy chỉ gọi một host nên nhịp nghỉ với từng trang
   giữ nguyên), job `weekly` gộp artifact `raw-*` rồi aggregate → gen-index-history → **gen-llms-index-entry
   (tự đồng bộ `llms-full.txt`, không cần chạy tay nữa)** → commit. Một lượt từ ~60 phút còn ~25 phút.
+  **NHÃN KỲ TỰ ĐỔI THEO THÁNG (Chú chốt 4/11/2026: "trang chủ vẫn ghi tháng 9, tìm cách auto, tôi không nhắc nữa").**
+  Mọi chỗ ngoài trang Index cần ghi kỳ hiện tại thì bọc chữ tháng trong `<span data-idx-period>T10/2026</span>`
+  (`data-idx-period="long"` → "tháng 10/2026"); bộ sinh quét mọi `*.html` và ghi lại theo **kỳ chính** (tháng mới chưa đủ
+  3/4 ô thì vẫn là tháng trước). Đang dùng: thẻ "Namban Index · T…" ở trang chủ. Bộ sinh cũng dựng lại **dòng Index trong
+  `llms.txt`** (số, chiều giá, lý do tháng trong `REASON`, khoảng nửa đầu năm) và nhãn "Namban Index · T…" trong bản chép
+  trang chủ ở `llms-full.txt` — đừng sửa tay hai chỗ đó. Workflow tuần commit thêm `llms.txt` + mọi `.html` đã đổi.
+  Thêm nhãn kỳ ở trang mới thì dùng span này, đừng gõ cứng tháng.
 - **Một bộ phân loại 4 nhóm cho mọi khối** (Chú chốt 25/9): đất nền tách thửa 150–300 m² · lô
   khoảng 500 m² có thổ cư (ngang 10–18 m, tách từ thời luật chưa cho tách nhỏ) · đất trên 1.000 m²
   (nông nghiệp tách từ rẫy) · lô có view hồ, đồi, toàn cảnh. KHÔNG dùng lại tên cũ "nông nghiệp diện

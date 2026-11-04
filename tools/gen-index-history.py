@@ -12,7 +12,7 @@ Chỉ thay phần giữa các cặp marker — đừng sửa tay bên trong:
   IDX-GEN   CSS của các khối trên (trong <style id="idx-v2">)
 Nếp: một bộ phân loại 4 nhóm cho mọi khối · số kèm n và ngày · "—" khi chưa đủ 10 tin · không in % khi mẫu hai kỳ khác hẳn.
 Số từ sổ thực địa Panorama (data/index/editorial.json, nếu có) được ghi dấu † — dùng khi tin rao chưa đủ 10."""
-import json, re, os, datetime as dt
+import json, re, os, glob, datetime as dt
 
 P = "namban-index.html"
 D = json.load(open("data/index/monthly.json", encoding="utf-8"))
@@ -404,6 +404,51 @@ if os.path.exists(SM):
     t = open(SM, encoding="utf-8").read()
     t2 = re.sub(r'(<loc>https://nambanpanorama\.com/namban-index</loc><lastmod>)[^<]*(</lastmod><changefreq>)[^<]*', lambda m: m.group(1) + NOW.date().isoformat() + m.group(2) + "weekly", t, count=1)
     if t2 != t: open(SM, "w", encoding="utf-8").write(t2)
+# ---- nhãn kỳ ở trang khác (thêm 4/11/2026 — Chú: "trang chủ vẫn ghi tháng 9, tìm cách auto, tôi không nhắc nữa") ----
+# Trang nào cần hiện kỳ Index thì bọc chữ tháng trong <span data-idx-period>…</span> (mặc định "T10/2026");
+# data-idx-period="long" → "tháng 10/2026". Bộ sinh chạy mỗi tuần nên nhãn tự theo kỳ chính, kể cả khi
+# tháng mới chưa đủ tin (kỳ chính vẫn là tháng trước — đúng như mục 01 của Index).
+y_, mo_ = last["month"].split("-"); mo_ = int(mo_)
+PERIOD = {"": f"T{mo_}/{y_}", "short": f"T{mo_}/{y_}", "long": f"tháng {mo_}/{y_}"}
+period_pat = re.compile(r'(<span data-idx-period(?:="([a-z]*)")?>)([^<]*)(</span>)')
+period_files = []
+for fp in sorted(glob.glob("*.html") + glob.glob("*/*.html")):
+    if fp == P: continue
+    t = open(fp, encoding="utf-8").read()
+    if "data-idx-period" not in t: continue
+    t2 = period_pat.sub(lambda m: m.group(1) + PERIOD.get(m.group(2) or "", PERIOD[""]) + m.group(4), t)
+    if t2 != t: open(fp, "w", encoding="utf-8").write(t2); period_files.append(fp)
+# ---- dòng Index trong llms.txt: dựng lại theo số kỳ chính (trước đây phải sửa tay mỗi tháng) ----
+LL = "llms.txt"
+if os.path.exists(LL):
+    nums = " · ".join(f'{LOW[k]} {tr(cur[k]["v"])}' + (" triệu/m²" if i == 0 else "") + f' ({cur[k]["n"]} tin)' for i, (k, _, _) in enumerate([g for g in GROUPS if g[0] in cur]))
+    dparts, pms = [], set()
+    for k, _, _ in GROUPS:
+        r = cur.get(k)
+        if not r or not r.get("prev") or r["w"] == "khác&nbsp;hẳn": continue
+        sign = "+" if r["d"] > 0 else "−"; pms.add(r["prev"][0])
+        dparts.append(f'{LOW[k]} {plain(r["w"])} {sign}{abs(r["d"]):.0f} %' + (" (ít tin, chưa phải xu hướng)" if few(k) else ""))
+    v_ = plain(verdict).rstrip(". "); v_ = v_[:1].lower() + v_[1:]
+    cmp_ = f"tháng {int(last['month'][5:])} so tháng {int(next(iter(pms))[5:])}" if len(pms) == 1 else f"tháng {int(last['month'][5:])} so tháng gần nhất có đủ số"
+    SHORT = {"tach_thua_150_300": "tách thửa", "dat_tren_1000": "đất trên 1.000 m²", "view": "view"}
+    rng_ = " · ".join(f'{SHORT.get(k, LOW[k])} {tr1(RANGE[k][0])}–{tr1(RANGE[k][1])}' for k, _, _ in GROUPS if k in RANGE)
+    reason = (" " + REASON[last["month"]][:1].lower() + REASON[last["month"]][1:].rstrip(".")) + ";" if REASON.get(last["month"]) else ""
+    ll_line = (f"- https://nambanpanorama.com/namban-index — Giá đất Nam Ban hôm nay: giá rao xã Nam Ban Lâm Hà theo bốn loại đất, "
+               f"trung vị theo tháng, đo mỗi tuần (kỳ {last_m}, đo tới {m_on}, {base['n']} tin còn đang rao ngày {m_on}, gộp trùng; "
+               f"từ 12/10/2026 lọc bỏ tin rao nơi khác lẫn vào nguồn): {nums}; {cmp_} {v_}"
+               + (f" ({'; '.join(dparts)})" if dparts else "") + f";{reason} không phải bảng giá đất nhà nước (bảng giá 2026 ở /bang-gia-dat-nam-ban); "
+               + (f"khoảng rao phổ biến nửa đầu 2026 theo quan sát thực địa: {rng_}; " if rng_ else "")
+               + "giá rao, chưa phải giá chốt; dữ liệu mở /data/index/monthly.json + .csv; hub dẫn sang bài từng khu, đọc giá một lô, pháp lý và chi phí")
+    t = open(LL, encoding="utf-8").read()
+    t2, k = re.subn(r"^- https://nambanpanorama\.com/namban-index — .*$", lambda m: ll_line, t, count=1, flags=re.M)
+    if k == 1 and t2 != t: open(LL, "w", encoding="utf-8").write(t2); period_files.append(LL)
+# bản chép chữ trang chủ trong llms-full.txt cũng mang nhãn "Namban Index · T…/…"
+LF = "llms-full.txt"
+if os.path.exists(LF):
+    t = open(LF, encoding="utf-8").read()
+    t2 = re.sub(r"Namban Index · T\d{1,2}/\d{4}", "Namban Index · " + PERIOD[""], t)
+    if t2 != t: open(LF, "w", encoding="utf-8").write(t2); period_files.append(LF)
+if period_files: print("Nhãn kỳ", PERIOD[""], "→", ", ".join(period_files))
 for m in re.finditer(r"<style[^>]*>(.*?)</style>", s, re.S): assert m.group(1).count("{") == m.group(1).count("}")
 for t in ["div", "figure", "table", "thead", "tbody", "tr", "th", "td", "p", "h2", "h3", "dl", "dt", "dd"]:
     o = len(re.findall(rf"<{t}\b[^>]*>", s)); c = len(re.findall(rf"</{t}>", s)); assert o == c, (t, o, c)

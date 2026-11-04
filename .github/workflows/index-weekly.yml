@@ -76,7 +76,9 @@ jobs:
           rm -rf survey/out
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/index namban-index.html llms-full.txt sitemap.xml
+          # index.html + mọi trang có <span data-idx-period> + llms.txt: nhãn kỳ Index tự đổi theo tháng (4/11/2026)
+          git add data/index namban-index.html llms.txt llms-full.txt sitemap.xml
+          git add -u -- '*.html'
           if [ "${{ steps.agg.outputs.rc }}" = "0" ]; then msg="Index: số đo giá rao tuần $(date -u +%G-W%V) (tự động)"; else msg="Index: cảnh báo tuần $(date -u +%G-W%V) — không sửa trang (tự động)"; fi
           git commit -m "$msg" || exit 0
           for i in 1 2 3 4 5; do git push origin HEAD:main && break; git pull --rebase origin main; done
