@@ -626,6 +626,12 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   quy định. **GIỮ audio** cho bài văn có bảng so sánh bằng chữ ("Muốn gì / Nghiêng về", Nam Ban hay D'ran…), bài
   mùa vụ, bài chuyện. **Bài mới thuộc loại số liệu/chi phí/quy định/báo cáo → đặt `none` ngay khi dựng**, đừng để
   `audio-auto` sinh rồi mới gỡ.
+  **Rà lại 5/11/2026 (Chú nhắc "không phải bài nào cũng có audio"):** 35 trang vi đặt `none`, 0 MP3 sót; 0 trang ngoại ngữ
+  có audio; 153 trang vi có audio. Lượt sinh lại 33 bài ngày 4/11 chỉ đụng bài vốn đã có audio (script bỏ qua trang `none`).
+  Bảy bài đăng sau 27/9 có audio do `audio-auto` tự sinh (`/nam-ban-chua-lanh`, `/trung-thu-nam-ban`, `/dat-phan-lo-nam-ban`,
+  `/nam-ban-giong-vung-nao-tren-the-gioi`, `/vung-ven-da-lat-nao-tot-nhat`, `/mua-dat-nam-ban-can-kiem-tra-gi`,
+  `/kinh-doanh-bat-dong-san-nam-ban`) — đã xét theo luật trên, có người phản biện: cả bảy là văn, sự kiện, so sánh bằng chữ,
+  hướng dẫn (số và quy định chỉ một hai câu rồi dẫn sang bài `none`), nên **GIỮ audio cả bảy**. Đừng rà lại bảy bài này.
 - **og:image của Index = ảnh Chú thiết kế** (`/images/namban-index.jpg`, 1200×630, có chữ trên hình —
   ngoại lệ Chú cấp 25/9/2026 cho riêng trang này, không áp cho bài thường). Ảnh cũ `namban-index-gia-dat.jpg` đã xóa.
 - Giọng (CHỈ trang `/namban-index`, không phải luật toàn site — xem §2.1): thân bài "chúng tôi"; "tôi" chỉ trong khối trích có nút chép (`#khong-phai-da-lat-gia-re`)
