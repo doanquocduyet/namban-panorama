@@ -1309,6 +1309,13 @@ xảy ra. Đọc trước khi tin bất kỳ con số nào do script sinh ra.
     **Hệ quả cho người bấm nút: với BÀI MỚI thì đừng dispatch `generate-audio-free` nữa** —
     `audio-auto` đã sinh sẵn rồi, dispatch thêm chỉ tạo ra đúng cái đụng độ này. Chỉ dispatch
     cho bài CŨ vừa sửa chữ.
+    **21e — RUN "SUCCESS" VẪN CÓ THỂ RA MP3 THIẾU ĐOẠN (vá 4/11/2026, ca thật).** Lượt sinh lại 33 bài chạy 3 giờ,
+    báo success, nhưng 7 MP3 hụt 1/3 tới gần hết lời đọc: khúc 4.000 chữ quá 90 giây, hỏng cả ba lần thì script cũ
+    bỏ qua khúc đó và vẫn ghi file. Đã sửa `scripts/gen_audio_edge.py`: khúc 1.500 chữ, chờ 150 giây, thử 5 lần
+    (nghỉ 3–24 giây), hỏng một khúc là không ghi file, giữ MP3 cũ. **Kiểm sau mỗi lượt sinh nhiều bài:** so dung
+    lượng MP3 chia số chữ lời đọc (`narration()`) với trung vị các bài; bài nào dưới ~0,85 là hụt. Lượt nhiều bài mà
+    runner GitHub bị chặn tốc độ thì sinh ngay trong phiên Claude được: chạy chính script qua proxy của phiên (bọc
+    `certifi` trỏ CA bundle của proxy + `proxy=HTTPS_PROXY`, không tắt kiểm TLS), lớp bọc để ở scratchpad.
 
 22. **TỰA HỨA GÌ THÌ THÂN BÀI PHẢI CÓ** (khóa 6/9/2026, ca thật `/duong-ha-bac-nam-ban`). Đổi tựa
     thành "Nam Ban – Mê Linh" trong khi **"Mê Linh" xuất hiện 0 lần** trong thân bài là tựa hứa

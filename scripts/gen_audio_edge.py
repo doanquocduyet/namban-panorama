@@ -18,7 +18,11 @@ VOICE = os.environ.get("VOICE", "vi-VN-NamMinhNeural").strip()
 RATE = os.environ.get("RATE", "-4%").strip()
 SCOPE = os.environ.get("SCOPE", "dat-nam-ban-trong-cay-gi").strip()
 OVERWRITE = os.environ.get("OVERWRITE", "0").strip() == "1"
-MAX_CHARS = 4000
+# 4/11/2026: hạ 4000 → 1500. Khúc 4000 chữ ≈ 4–5 phút audio, máy chủ giọng đọc chậm là quá 90 giây,
+# hỏng cả ba lần thì bản cũ vẫn ghi MP3 THIẾU khúc đó (7/31 bài đợt 4/11 hụt 1/3 lời đọc mà run vẫn "success").
+MAX_CHARS = 1500
+CHUNK_TIMEOUT = 150   # giây cho một khúc
+ATTEMPTS = 5
 
 class Grab(HTMLParser):
     def __init__(self):
@@ -118,13 +122,20 @@ async def synth_to(text, path, voice):
             if ch["type"]=="audio": d+=ch["data"]
         return d
     data=b""
-    for c in chunk(text, MAX_CHARS):
-        for attempt in range(3):
+    parts=chunk(text, MAX_CHARS)
+    for i, c in enumerate(parts, 1):
+        for attempt in range(1, ATTEMPTS+1):
             try:
-                data += await asyncio.wait_for(_one(c), timeout=90)   # không bao giờ treo quá 90s/khúc
+                d = await asyncio.wait_for(_one(c), timeout=CHUNK_TIMEOUT)   # không treo quá CHUNK_TIMEOUT/khúc
+                if len(d) < 1024: raise RuntimeError("khúc rỗng")
+                data += d
                 break
             except Exception as e:
-                print("    khúc lỗi, thử lại:", str(e)[:80]); await asyncio.sleep(2)
+                print(f"    khúc {i}/{len(parts)} lỗi lần {attempt} ({type(e).__name__}: {str(e)[:60]})")
+                if attempt == ATTEMPTS:
+                    # thiếu một khúc là MP3 nhảy cóc giữa bài — thà giữ file cũ còn hơn ghi bản thiếu
+                    raise RuntimeError(f"khúc {i}/{len(parts)} hỏng sau {ATTEMPTS} lần — giữ file cũ")
+                await asyncio.sleep(3 * 2 ** (attempt - 1))   # 3, 6, 12, 24 giây
         await asyncio.sleep(0.5)   # nghỉ nhẹ, tránh bị chặn tốc độ
     if len(data) < 1024:           # sinh hụt (bị chặn) → KHÔNG ghi đè file cũ
         raise RuntimeError("audio rỗng, có thể bị chặn tốc độ — giữ file cũ")
