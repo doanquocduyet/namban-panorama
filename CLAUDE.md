@@ -456,8 +456,12 @@ HIỂU → ĐÁNH GIÁ → MUA → SỞ HỮU → QUẢN LÝ. Mỗi web mạnh t
   nén mỗi URL (trang nặng nhất 84,6 KB). "Read more" nhảy đoạn cần nội dung mở sẵn: câu trả lời, bảng số, FAQ không đặt trong
   `<details>` đóng (đo 5/11: chỉ 3 hub dùng `<details>` cho danh sách link — đúng). (6) Tín hiệu từ chối huấn luyện AI (Google hỗ
   trợ 2027): KHÔNG đặt. (7) **KHÔNG làm** P-3 nút/link "nguồn ưu tiên" — Chú gỡ 4/10, giữ quyết định tới khi Chú tự mở lại.
-  (8) **Chờ Chú:** P-1 dòng tác giả hiện trên bài + trang tác giả (`author.url`, ProfilePage, GIỮ `@id #founder` vì Villas và
-  GreenSpacers `sameAs` tới chuỗi này) — đo 5/11: tên tác giả hiện trên 3/201 trang vi; đi cùng việc trang "Về Panorama" đang chờ.
+  (8) **P-1 tác giả — Chú chốt 5/11/2026: KHÔNG ghi "tôi viết"/tên tác giả dưới mỗi bài ("phèn quá").** Làm ngầm đúng luật:
+  mọi đối tượng Person `#founder` trong JSON-LD (608 chỗ, 212 trang) có thêm `"url"` trỏ về trang có tên + ảnh Chú —
+  `/trao-doi` (trang vi) hoặc `/en/trao-doi` (trang ngoại ngữ); `@id #founder` GIỮ NGUYÊN (Villas, GreenSpacers `sameAs` tới
+  chuỗi này). Không đổi `dateModified` vì đổi này không phải sửa nội dung. **CẤM** giấu chữ bằng CSS/JS để chỉ máy thấy (hidden
+  text / cloaking — vi phạm chính sách spam). Bài mới: khuôn `_mau-bai-viet.html` đã có `url`, chép theo. Muốn hiện tên kiểu báo
+  (ký tên cuối bài) thì hỏi Chú trước.
 - **Slug mới → kiểm `vercel.json` trước (vấp thật 26/9/2026).** `/khi-hau-nam-ban` đăng xong vẫn bị một luật
   `redirects` cũ (25/8/2026, lúc slug này đã bị xóa) chuyển 308 sang `/nam-ban-co-dang-song` — trang có trong repo,
   sitemap, hub, mà người đọc và Google không bao giờ tới được. Đặt slug mới hoặc dựng lại slug cũ thì
