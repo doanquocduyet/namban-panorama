@@ -2869,11 +2869,21 @@ Nguồn: Thông báo số 55/TB-BQLDALH ngày 10/7/2026 của Ban Quản lý d�
 
 ---
 
-## Cà phê Nam Ban và AI: King Coffee khảo sát số hóa vùng nguyên liệu
+## Cà phê Nam Ban và AI: King Coffee ký hợp tác vùng nguyên liệu 300 ha
 
 URL: https://nambanpanorama.com/ca-phe-nam-ban-ai
 
-Trả lời nhanh: Trong năm 2026, lãnh đạo xã Nam Ban Lâm Hà làm việc với Công ty TNHH TNI King Coffee và Học viện AI Coffee Academy về ứng dụng trí tuệ nhân tạo trên vùng nguyên liệu cà phê. Định hướng: số hóa vùng trồng, xây mã số vùng trồng, dùng AI nhận diện sâu bệnh và tối ưu tưới tiêu, quản lý nhật ký canh tác và truy xuất nguồn gốc bằng QR — bắt đầu từ mô hình thí điểm khoảng 10 ha. Nam Ban hiện có hơn 5.100 ha cà phê. Đây mới là bản ghi nhớ và khảo sát bước đầu, chưa phải dự án đã triển khai.
+Trả lời nhanh: Ngày 4/11/2026, UBND xã Nam Ban Lâm Hà, Công ty TNHH AI Coffee Academy (thuộc TNI King Coffee) và Hợp tác xã Cà phê Nam Ban ký biên bản ghi nhớ hợp tác xây dựng vùng nguyên liệu cà phê bền vững, quy mô ban đầu khoảng 300 ha, trong tổng hơn 5.100 ha cà phê của xã. Giai đoạn thí điểm từ tháng 1 đến tháng 6/2027 làm vườn mẫu khoảng 50 ha có cảm biến, trạm thời tiết, AI chẩn đoán sâu bệnh và drone; từ tháng 7/2027 mới phủ bản đồ số và làm hồ sơ chống phá rừng theo EUDR cho cả 300 ha. Đây là bản ghi nhớ: bản tin ký kết không nhắc giá thu mua, mức đầu tư hay nhà máy sơ chế đề xuất hôm 29/9.
+
+Ai làm việc gì: UBND xã kết nối, vận động nông hộ, hỗ trợ xác nhận ranh giới và nguồn gốc đất, giữ an ninh vùng trồng mùa thu hoạch. AI Coffee Academy cung cấp, vận hành nền tảng số, đầu tư thiết bị IoT và drone cho vườn mẫu 50 ha, cử chuyên gia đào tạo, hỗ trợ hồ sơ VietGAP. Hợp tác xã Cà phê Nam Ban gom nông hộ, hướng dẫn ghi nhật ký sản xuất, tổ chức điểm thu mua, thực hiện cam kết liên kết tiêu thụ.
+
+Lộ trình: khởi động đến tháng 11/2026 (khảo sát, chọn hộ tiên phong); thí điểm tháng 1–6/2027 (vườn mẫu IoT khoảng 50 ha); mở rộng từ tháng 7/2027 (bản đồ số, hồ sơ EUDR cho cả 300 ha). Quy mô thí điểm lớn dần qua ba lần làm việc: khoảng 10 ha (tháng 7/2026), IoT 20–30 ha (đề xuất 29/9/2026), vườn mẫu khoảng 50 ha (ghi nhớ 4/11/2026). 300 ha là chưa tới 6% trong hơn 5.100 ha cà phê của xã.
+
+Người có vườn cà phê nên để ý: bản đồ số sẽ vẽ ranh vườn tới từng thửa, nên ranh ngoài thực địa lệch với sổ sẽ lộ ra; hồ sơ phải chứng minh vườn không gắn với phá rừng sau 31/12/2020 (EUDR). Bản ghi nhớ chưa làm giá vườn hay giá đất tăng: chưa có giá thu mua, chưa có vườn mẫu chạy thật, chưa công bố vùng 300 ha nằm ở thôn nào (phân tích của Panorama).
+
+Đề xuất 29/9/2026: Công ty TNHH TNI King Coffee đề xuất vùng nguyên liệu tối thiểu 300 ha, liên kết khoảng 150–200 hộ qua hợp tác xã, nhà máy sơ chế khoảng 3–5 ha công suất khoảng 100 tấn quả tươi mỗi ngày, thí điểm IoT khoảng 20–30 ha; quy mô đầu tư, đất đai, cơ chế liên kết khi đó còn đang nghiên cứu.
+
+Bài viết tháng 7/2026 — trả lời nhanh lúc đó: Trong năm 2026, lãnh đạo xã Nam Ban Lâm Hà làm việc với Công ty TNHH TNI King Coffee và Học viện AI Coffee Academy về ứng dụng trí tuệ nhân tạo trên vùng nguyên liệu cà phê. Định hướng: số hóa vùng trồng, xây mã số vùng trồng, dùng AI nhận diện sâu bệnh và tối ưu tưới tiêu, quản lý nhật ký canh tác và truy xuất nguồn gốc bằng QR — bắt đầu từ mô hình thí điểm khoảng 10 ha. Nam Ban hiện có hơn 5.100 ha cà phê. Đây mới là bản ghi nhớ và khảo sát bước đầu, chưa phải dự án đã triển khai.
 
 Thị trường giờ mua cả dữ liệu sau hạt cà phê: Người mua lớn không còn chỉ hỏi giá và chất lượng hạt, mà hỏi trồng ở đâu, có phá rừng không, tưới bao nhiêu nước, truy được tới thửa đất nào. Cụ thể nhất là EUDR — quy định chống phá rừng của Liên minh châu Âu. Quy định áp dụng với doanh nghiệp lớn và vừa từ 30/12/2026, với cá nhân và doanh nghiệp siêu nhỏ, nhỏ từ 30/6/2027. Cà phê muốn vào EU phải chứng minh không gắn với phá rừng sau ngày 31/12/2020 và truy xuất được tới từng thửa đất có tọa độ. Ngày 20/10/2026, Cục Lâm nghiệp và Kiểm lâm công bố bản đồ ranh giới rừng năm 2020 (VFM2020.v1) phục vụ EUDR, tra tại eudr.vnforest.gov.vn. EU hiện chiếm hơn 40% xuất khẩu cà phê Việt Nam. Số hóa vùng trồng đang trở thành điều kiện để được ở lại trong cuộc chơi.
 

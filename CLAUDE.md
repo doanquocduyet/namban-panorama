@@ -1087,6 +1087,20 @@ Báo cáo đầy đủ nằm ở scratchpad phiên 2/11 (không vào repo). Chú
   hoa, nhà đầu tư thuê đất thác Voi) cho tới khi đọc được bản gốc · diện tích cây trồng "tại Nam Ban" trong Báo Lâm Đồng 25/10 (vô lý về
   số học) · thu ngân sách 195 tỷ / 187 tỷ (giữ số xã sửa 10/10: 192 tỷ, 159 %) · 5.500 ha cà phê (chưa gom số).
 
+### KING COFFEE Ở NAM BAN — NHÀ LÀ `/ca-phe-nam-ban-ai` (phiếu ô content, Chú duyệt 5/11/2026)
+- Ba mốc, đừng viết ngược: tháng 7/2026 khảo sát (thí điểm khoảng 10 ha) · 29/9/2026 đề xuất (tối thiểu 300 ha, 150–200 hộ, nhà máy
+  sơ chế 3–5 ha, IoT 20–30 ha) · **4/11/2026 ký biên bản ghi nhớ ba bên** UBND xã + Công ty TNHH AI Coffee Academy (thuộc TNI King
+  Coffee) + Hợp tác xã Cà phê Nam Ban: vùng nguyên liệu khoảng 300 ha, vườn mẫu khoảng 50 ha (thí điểm tháng 1–6/2027), bản đồ số +
+  hồ sơ EUDR cho cả 300 ha từ tháng 7/2027. **Nhà máy sơ chế KHÔNG có trong bản tin ký kết**; chưa có giá thu mua, mức đầu tư, vị trí
+  thôn. Đây là ghi nhớ, không viết "dự án đã triển khai".
+- Bài cũ được nâng thành bài chuyên (giữ slug, giữ ảnh), không mở URL mới — tránh hai trang tranh cụm "King Coffee Nam Ban". Tin mới
+  về chương trình này thì thêm mục vào bài nhà + mục `/nam-ban-co-gi-moi` + mục hàng đợi `key` riêng.
+- Kill-list §5 luật 2 ghi King Coffee là "mốc cơ sở kinh doanh": luật đó áp khi tên chỉ là mốc chỉ đường; ở đây công ty là một bên
+  ký với chính quyền xã nên được làm chủ thể tin, có FAQ.
+- **Chưa đối chiếu được bản gốc:** ngày 5/11/2026 cổng thông tin xã (nambanlamha.lamdong.gov.vn) trả 503 và ngắt kết nối từ phiên Claude,
+  báo chí chưa có bài; số liệu lấy theo phiếu Chú đã duyệt. Mở được cổng thì đối chiếu lại tên hợp tác xã (Tuổi Trẻ 24/10/2026 gọi
+  "HTX Nam Ban", 25 thành viên, khoảng 50 ha ở thôn Chi Lăng), 300 ha, 50 ha và các mốc tháng.
+
 ### SỔ CHỜ ẢNH — CÒN HAI BÀI TRỐNG, CHỜ CHÚ CHỤP (mở 8/9/2026, bài suối xong 24/9)
 
 Hai bài còn lại dưới đây (`/nha-go-thong-nam-ban`, `/10-10-1975-nam-ban`) **cố ý không có ảnh trong thân bài** — kho không có tấm nào đúng chủ đề,
