@@ -414,10 +414,11 @@ HIỂU → ĐÁNH GIÁ → MUA → SỞ HỮU → QUẢN LÝ. Mỗi web mạnh t
   (Index, ảnh tự chụp, số có nguồn là đúng hướng). AI Overviews (10/2024) và AI Mode (7/10/2025) đều có tiếng Việt;
   I/O 20/5/2026 gộp hai thứ thành một trải nghiệm. Search Console có báo cáo AI riêng (toàn cầu từ 31/8/2026) — chỉ có lượt
   hiện theo trang/quốc gia/thiết bị, không có lượt bấm, không có từ khoá; site ít dữ liệu thì chưa hiện. 2026 đã có 2 core
-  update (27/3–8/4, 21/5–2/6) và 4 spam update — đợt **24/9/2026 đang chạy** (mọi ngôn ngữ); luật spam mới 13/4/2026: cấm
+  update (27/3–8/4, 21/5–2/6) và 4 spam update — đợt cuối 24/9–8/10/2026 đã xong (status.search.google.com, kiểm 5/11; từ 8/10 không đợt nào chạy); luật spam mới 13/4/2026: cấm
   "back button hijacking" (đã kiểm: link "← Quay lại" chỉ chạy khi người đọc bấm, hợp lệ). Core Web Vitals giữ ngưỡng cũ
   (LCP ≤ 2,5 s · INP ≤ 200 ms · CLS ≤ 0,1). Bot cần mở để được trích: Googlebot, OAI-SearchBot (ChatGPT search), PerplexityBot,
-  Claude-SearchBot + Claude-User (thêm vào robots.txt 6/10), Bingbot; GPTBot/ClaudeBot/Google-Extended chỉ là bot huấn luyện.
+  Claude-SearchBot + Claude-User (thêm vào robots.txt 6/10), Bingbot; GPTBot/ClaudeBot chỉ là bot huấn luyện. Google-Extended không
+  ảnh hưởng Search nhưng điều khiển cả grounding trong Gemini (chặn là mất lượt hiện/bấm trong Gemini Apps) → giữ mở.
   IndexNow chỉ Bing/Yandex/Naver nhận, Google KHÔNG. Thị phần VN 9/2026: Google ~93 %, Cốc Cốc ~6 %, Bing <1 %.
   Nghiên cứu (tương quan, không phải nhân quả): nhắc thương hiệu ngoài site ~0,66–0,74 (YouTube cao nhất) so với backlink ~0,22.
   **Nút "nguồn ưu tiên" đã hỗ trợ tiếng Việt (30/4/2026)** — nhưng Chú đã gỡ dòng này 4/10/2026, giữ quyết định đó.
@@ -434,12 +435,29 @@ HIỂU → ĐÁNH GIÁ → MUA → SỞ HỮU → QUẢN LÝ. Mỗi web mạnh t
   đề xuất chờ Chú. (2) Mueller 7/9/2026: Google có thể "mất niềm tin" cả site vì nhiều trang ít giá trị, hồi lại mất nhiều tháng →
   ưu tiên làm dày bài đang có (ảnh tự chụp, số có nguồn) hơn đẻ trang mới. (3) Spam update 24/9 vẫn chạy (Google hẹn ≤ 2 tuần);
   Gemini 3.8 vào AI Mode; Search Console có báo cáo AI toàn cầu + thử "AI Contribution" trả tiền nhà báo (chọn lọc). (4) Search
-  Profiles (Discover) chỉ ở Mỹ, đòi ≥ 100.000 người theo dõi — chưa áp. (5) ChatGPT tìm nguồn qua Bing → Bing Webmaster Tools
+  Profiles (Discover) chỉ ở Mỹ, đòi ≥ 100.000 người theo dõi — chưa áp. (5) Copilot neo vào chỉ mục Bing (câu "ChatGPT tìm nguồn
+  qua Bing" chưa có nguồn gốc: OpenAI chỉ nói ChatGPT search dùng "nhà cung cấp tìm kiếm bên thứ ba") → Bing Webmaster Tools
   (có báo cáo AI Performance từ 2/2026) đáng làm; site chưa có meta/file xác minh Bing trong repo (có thể Chú xác minh bằng
   nhập từ GSC). (6) Cốc Cốc nhận sitemap qua dòng `Sitemap:` trong robots.txt — đã có, không cần console. (7) Kỹ thuật đo 7/10:
   215/215 URL sitemap trả 200 trên web thật; LCP lab 0,3–2,0 s (điện thoại chậm), CLS ~0; favicon Google đã nhận; prefetch
   (speculationrules) đã có trong `panorama-utils.js`; schema Article bổ sung `image` (24 bài) + `mainEntityOfPage` (12 bài);
   ảnh/audio/video được lưu đệm 1 ngày (`vercel.json`); chữ ký chân trang đạt WCAG. Nút VI/EN trang chủ tương phản 1,79 — chờ Chú.
+  **Phiếu Villas "Chuẩn Google & AI 2026" (5/11/2026) — đã rà trên repo, Chú giao "đọc kỹ, học hỏi, rà lại để làm":**
+  (1) AI Overviews/AI Mode đòi thêm công tắc Search Console → Settings → **Search generative AI** ở Include/Inherit (mặc định Include;
+  để Exclude thì biến mất khỏi AI mà web không báo gì) — Chú kiểm. Trang riêng cho từng biến thể câu hỏi / truy vấn fan-out để thao
+  túng = scaled content abuse → dòng "mỗi câu hỏi nhỏ một trang" ở trên chỉ áp khi câu đó là câu thật, chưa có nhà; không đẻ biến thể.
+  (2) **Ngày:** `gen_feed.py` lấy `pubDate` = `datePublished` (trước 5/11 lấy ngày commit git → 110 bài cùng 12/10/2026), bỏ trang
+  noindex khỏi feed; sitemap mỗi URL đúng MỘT `lastmod` (đã gỡ 8 dòng thừa), `lastmod` = ngày `dateModified` (đo 5/11: 0 lệch).
+  **Chỉ đổi `dateModified` khi sửa thân bài, dữ liệu, schema hoặc link** — không đổi khi chỉ sửa CSS, khuôn, chân trang. Đợt 3/11
+  (59 trang cùng `dateModified` 10:00) phiếu nghi nâng ngày giả — đã so từng trang với bản trước đợt: cả 59 đều có sửa dữ kiện thật
+  (1–1.282 chữ) → GIỮ, đừng trả ngày. (3) Trang chủ từng có hai khối Organization cùng `@id` — đã gộp làm một (5/11).
+  (4) IndexNow đã có (file khoá ở gốc + `indexnow.yml`); phiếu báo "không thấy" vì không biết tên file. Bing: repo chưa có
+  `msvalidate.01` / `BingSiteAuth.xml` — Chú kiểm Bing Webmaster (nhập từ Search Console). (5) Googlebot đọc tối đa 2 MB HTML chưa
+  nén mỗi URL (trang nặng nhất 84,6 KB). "Read more" nhảy đoạn cần nội dung mở sẵn: câu trả lời, bảng số, FAQ không đặt trong
+  `<details>` đóng (đo 5/11: chỉ 3 hub dùng `<details>` cho danh sách link — đúng). (6) Tín hiệu từ chối huấn luyện AI (Google hỗ
+  trợ 2027): KHÔNG đặt. (7) **KHÔNG làm** P-3 nút/link "nguồn ưu tiên" — Chú gỡ 4/10, giữ quyết định tới khi Chú tự mở lại.
+  (8) **Chờ Chú:** P-1 dòng tác giả hiện trên bài + trang tác giả (`author.url`, ProfilePage, GIỮ `@id #founder` vì Villas và
+  GreenSpacers `sameAs` tới chuỗi này) — đo 5/11: tên tác giả hiện trên 3/201 trang vi; đi cùng việc trang "Về Panorama" đang chờ.
 - **Slug mới → kiểm `vercel.json` trước (vấp thật 26/9/2026).** `/khi-hau-nam-ban` đăng xong vẫn bị một luật
   `redirects` cũ (25/8/2026, lúc slug này đã bị xóa) chuyển 308 sang `/nam-ban-co-dang-song` — trang có trong repo,
   sitemap, hub, mà người đọc và Google không bao giờ tới được. Đặt slug mới hoặc dựng lại slug cũ thì
@@ -802,11 +820,9 @@ Thêm bài mới: theo hệ A thì **nhớ nạp `nav.css`**.
   commit chữ trơn (`d2cc69c`), đã gỡ khỏi cây; lịch sử git vẫn còn, chỉ số của Panorama.
 
 ### Chạy Playwright QA (môi trường web session)
-- Playwright cài global tại `/opt/node22/lib/node_modules`; Chromium tại
-  `/opt/pw-browsers/chromium-1194/chrome-linux/chrome`.
-- Script `.cjs`: `require('/opt/node22/lib/node_modules/playwright')`,
-  `chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' })`.
-  KHÔNG chạy `playwright install`.
+- Môi trường 11/2026: Playwright và Chromium cài sẵn — `require('playwright')` (chạy với `NODE_PATH=$(npm root -g)`)
+  và `chromium.launch()` không tham số. Đường dẫn cũ `/opt/pw-browsers/chromium-1194/...` đã không còn (vấp 5/11/2026).
+  Máy nào báo thiếu trình duyệt thì dùng `executablePath: '/opt/pw-browsers/chromium'`. KHÔNG chạy `playwright install`.
 
 ---
 

@@ -30,16 +30,32 @@ def git_date(path):
         pass
     return datetime.now(timezone.utc)
 
+# pubDate = ngày ĐĂNG thật của bài (datePublished trong JSON-LD), không phải ngày commit git.
+# Trước 5/11/2026 lấy ngày commit nên 110 bài cùng ghi 12/10/2026 (ngày repo được nhân bản về máy chạy).
+def published(s):
+    for k in ("datePublished", "dateModified"):
+        m = re.search(r'"'+k+r'"\s*:\s*"([^"]+)"', s)
+        if m:
+            v = m.group(1).strip()
+            if len(v) == 10: v += "T08:00:00+07:00"
+            try:
+                d = datetime.fromisoformat(v)
+                return d if d.tzinfo else d.replace(tzinfo=timezone.utc)
+            except ValueError:
+                pass
+    return None
+
 items=[]
 for f in sorted(glob.glob("*.html")):
     if f in EXCLUDE: continue
     s=open(f,encoding="utf-8",errors="replace").read()
+    if re.search(r'<meta[^>]+name=["\']robots["\'][^>]*noindex', s, re.I): continue
     title=og(s,"og:title")
     if not title:
         m=re.search(r"<title>(.*?)</title>",s,re.S); title=m.group(1).strip() if m else f
     desc=og(s,"og:description") or meta_name(s,"description") or ""
     url=og(s,"og:url") or (SITE+"/"+f[:-5])
-    items.append((git_date(f),title,desc,url))
+    items.append((published(s) or git_date(f),title,desc,url))
 items.sort(key=lambda x:x[0],reverse=True)
 
 def esc(t): return html.escape(t or "", quote=False)
