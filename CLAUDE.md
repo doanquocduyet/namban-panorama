@@ -455,7 +455,9 @@ HIỂU → ĐÁNH GIÁ → MUA → SỞ HỮU → QUẢN LÝ. Mỗi web mạnh t
   `msvalidate.01` / `BingSiteAuth.xml` — Chú kiểm Bing Webmaster (nhập từ Search Console). (5) Googlebot đọc tối đa 2 MB HTML chưa
   nén mỗi URL (trang nặng nhất 84,6 KB). "Read more" nhảy đoạn cần nội dung mở sẵn: câu trả lời, bảng số, FAQ không đặt trong
   `<details>` đóng (đo 5/11: chỉ 3 hub dùng `<details>` cho danh sách link — đúng). (6) Tín hiệu từ chối huấn luyện AI (Google hỗ
-  trợ 2027): KHÔNG đặt. (7) **KHÔNG làm** P-3 nút/link "nguồn ưu tiên" — Chú gỡ 4/10, giữ quyết định tới khi Chú tự mở lại.
+  trợ 2027): KHÔNG đặt. (7) **KHÔNG làm** P-3 nút/link "nguồn ưu tiên". 5/11/2026 em vẽ thử một dòng chữ trầm (dưới câu dẫn
+  `/nam-ban-co-gi-moi`, dưới dòng ký tên `/namban-index`) — Chú xem: **"người đọc thấy cái này như spam"** → không gắn ở bất cứ
+  dạng nào (dòng chữ, nút Google, link sâu). Đừng đề xuất lại, kể cả khi ô khác gửi phiếu.
   (8) **P-1 tác giả — Chú chốt 5/11/2026: KHÔNG ghi "tôi viết"/tên tác giả dưới mỗi bài ("phèn quá").** Làm ngầm đúng luật:
   mọi đối tượng Person `#founder` trong JSON-LD (608 chỗ, 212 trang) có thêm `"url"` trỏ về trang có tên + ảnh Chú —
   `/trao-doi` (trang vi) hoặc `/en/trao-doi` (trang ngoại ngữ); `@id #founder` GIỮ NGUYÊN (Villas, GreenSpacers `sameAs` tới
