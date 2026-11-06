@@ -202,6 +202,17 @@ Không cần làm thì nói thẳng: **"KHÔNG CẦN LÀM."**
 **Mục tiêu:** người tìm bất kỳ câu hỏi quan trọng nào về Nam Ban đều gặp đúng lớp thông tin của hệ thống —
 HIỂU → ĐÁNH GIÁ → MUA → SỞ HỮU → QUẢN LÝ. Mỗi web mạnh trong vai của mình, đỡ hai web kia đúng lúc, không cạnh tranh máy móc.
 
+**GREENSPACERS CHUYỂN THÀNH HUB "ĐẤT VEN ĐÀ LẠT" (Chú chốt 6/11/2026).** Web GreenSpacers (`greenspace-website`) đổi vai thành hub
+4 mục Nam Ban · Đức Trọng · Di Linh · Lạc Dương + tầng so sánh chung. Ô GreenSpacers tự dựng, tự viết. Ô Panorama đã soạn bộ bàn giao
+(quyết định, IA, kỹ thuật, luật viết, dữ kiện đã kiểm 3 vùng, kế hoạch bài, chống trùng, ma trận 197 bài × 3 vùng, báo cáo nghiên cứu) để đẩy vào
+repo riêng `doanquocduyet/ven-da-lat` — GitHub App không tạo được repo (403), Chú tạo rồi em đẩy; bản nháp ở scratchpad phiên 6/11.
+Panorama GIỮ vai HIỂU NAM BAN, không đổi tựa trang nào vì hub; mục Nam Ban trên hub không chép bài Panorama, chỉ dẫn sang. Mọi cụm "Nam Ban …",
+"Nam Ban hay Đức Trọng/Di Linh/Lạc Dương", quy định cấp tỉnh vẫn là nhà Panorama; cụm riêng của 3 vùng mới là nhà hub; Panorama không mở bài mới
+về 3 vùng đó nữa. **Việc Panorama làm sau khi hub chạy** (chưa làm): sửa vai GreenSpacers ở `worksFor` (schema trang chủ, `/trao-doi`) và `llms.txt`;
+4 link tới `greenspacers.vn/quan-ly-dat-nam-ban` (`/giu-dat-nam-ban-tu-xa`, `/dat-nam-ban-chua-xay`, `/mua-nha-nam-ban-khong-o`, `/vua-mua-dat-nam-ban-lam-gi`)
+— nếu URL đó đổi/thôi dịch vụ thì sửa câu; sửa lỗi dữ kiện về Đức Trọng/Di Linh/Lạc Dương trên 7 trang (chờ Chú chốt khoảng cách Liên Nghĩa – Đà Lạt,
+đề xuất "khoảng 30 km"); khi trang vùng của hub đã index thì cân nhắc ≤ 5 link trong câu từ bài so sánh sang hub.
+
 ---
 
 ## 2. LUẬT NỘI DUNG (không được phạm)
