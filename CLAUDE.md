@@ -202,17 +202,28 @@ Không cần làm thì nói thẳng: **"KHÔNG CẦN LÀM."**
 **Mục tiêu:** người tìm bất kỳ câu hỏi quan trọng nào về Nam Ban đều gặp đúng lớp thông tin của hệ thống —
 HIỂU → ĐÁNH GIÁ → MUA → SỞ HỮU → QUẢN LÝ. Mỗi web mạnh trong vai của mình, đỡ hai web kia đúng lúc, không cạnh tranh máy móc.
 
-**GREENSPACERS CHUYỂN THÀNH HUB "ĐẤT VEN ĐÀ LẠT" (Chú chốt 6/11/2026).** Web GreenSpacers (`greenspace-website`) đổi vai thành hub
-4 mục Nam Ban · Đức Trọng · Di Linh · Lạc Dương + tầng so sánh chung. Ô GreenSpacers tự dựng, tự viết. Ô Panorama đã soạn bộ bàn giao
-(quyết định, IA, kỹ thuật, luật viết, dữ kiện đã kiểm 3 vùng, kế hoạch bài, chống trùng, ma trận 197 bài × 3 vùng, báo cáo nghiên cứu) để đẩy vào
-repo riêng `doanquocduyet/ven-da-lat` — GitHub App không tạo được repo (403), Chú tạo rồi em đẩy; bản nháp ở scratchpad phiên 6/11.
+**GREENSPACERS CHUYỂN THÀNH HUB "ĐẤT VEN ĐÀ LẠT" (Chú chốt 6/11/2026).** Giữ tên miền greenspacers.vn và repo `greenspace-website`
+("vẫn giữ greenspacers, nâng cấp và thay đổi, không cần tạo repo khác"). Ô GreenSpacers có phiếu riêng `docs/V2-PHIEU.md` (Chú chốt cùng ngày):
+web chuyên bất động sản vùng ven Đà Lạt, **5 hub** `/nam-ban` `/duc-trong` `/lac-duong` `/vung-da-lat` `/di-linh` + trụ `/ven-da-lat`; **trông coi đất
+từ xa vẫn là dịch vụ cốt lõi**; giữ 34 URL cũ (kể cả `/quan-ly-dat-nam-ban`); tối đa 2 link sang hai web kia mỗi trang. Ô GreenSpacers tự dựng, tự viết.
+Ô Panorama soạn bộ tài liệu tham khảo (dữ kiện đã kiểm Đức Trọng/Di Linh/Lạc Dương có nguồn, ma trận 197 bài × 3 vùng, 28 bài mỗi vùng, luật viết,
+báo cáo nghiên cứu) — đã đẩy 6/11/2026 lên **nhánh `claude/hub-ven-da-lat-tai-lieu`** của `greenspace-website` (18 file `docs/HUB-VDL-*.md`, commit
+`ab822f5`; repo đó riêng tư, `docs/` không lên web; bộ kiểm của repo chỉ cho tài liệu nằm thẳng trong `docs/` nên tên file dàn phẳng). Đầu README
+có bảng chỗ lệch với V2 — **V2 thắng**. Gộp vào `main` bên đó là việc của ô GreenSpacers, theo quy trình duyệt của Chú. Repo đó cấm tên web
+Panorama trong lời commit (gọi "web thứ ba").
 Panorama GIỮ vai HIỂU NAM BAN, không đổi tựa trang nào vì hub. **Cùng chủ đề giữa các web là ĐƯỢC (Chú chốt 6/11/2026: "cùng 1 chủ đề
 nhưng 3 web viết nội dung khác nhau vẫn được")** — hub viết về Nam Ban, Panorama viết về Đức Trọng/Di Linh/Lạc Dương, cả hai viết quy định
 cấp tỉnh đều được; điều kiện duy nhất là nội dung khác thật (dàn ý, câu chữ, số, ảnh, góc riêng), không chép, không viết lại bài web kia. Khớp
 Luật 26d. Trong CÙNG một web vẫn mỗi key một nhà, và hub không làm ba bài cùng khuôn cho ba vùng chỉ đổi tên. **Việc Panorama làm sau khi hub chạy** (chưa làm): sửa vai GreenSpacers ở `worksFor` (schema trang chủ, `/trao-doi`) và `llms.txt`;
 4 link tới `greenspacers.vn/quan-ly-dat-nam-ban` (`/giu-dat-nam-ban-tu-xa`, `/dat-nam-ban-chua-xay`, `/mua-nha-nam-ban-khong-o`, `/vua-mua-dat-nam-ban-lam-gi`)
-— nếu URL đó đổi/thôi dịch vụ thì sửa câu; sửa lỗi dữ kiện về Đức Trọng/Di Linh/Lạc Dương trên 7 trang (chờ Chú chốt khoảng cách Liên Nghĩa – Đà Lạt,
+— V2 giữ URL và giữ dịch vụ nên 4 link còn đúng; nếu sau này URL đó đổi/thôi dịch vụ thì sửa câu; sửa lỗi dữ kiện về Đức Trọng/Di Linh trên 7 trang (chờ Chú chốt khoảng cách Liên Nghĩa – Đà Lạt,
 đề xuất "khoảng 30 km"); khi trang vùng của hub đã index thì cân nhắc ≤ 5 link trong câu từ bài so sánh sang hub.
+**Phần Lạc Dương ĐÃ SỬA 6/11/2026** (đối chiếu bản gốc QĐ 704/QĐ-TTg 12/5/2014 + NQ 1671): đô thị vệ tinh của Đà Lạt là **Lạc Dương, Nam Ban,
+D'ran, Đại Ninh** (Liên Nghĩa – Liên Khương, Finôm – Thạnh Mỹ là đô thị chia sẻ chức năng; Di Linh không thuộc vùng phụ cận) — `/quy-hoach-2050`
++ nguồn; khu thị trấn Lạc Dương cũ **cao ngang Đà Lạt, khoảng 1.500 m** (không "cao hơn Cầu Đất", không "cao hơn Đà Lạt") — `/ca-phe-nam-ban`,
+`/lam-dong-co-gi-de-lam-an`; mốc "xã Lát cũ, từ 1/7/2025 thuộc phường Lang Biang – Đà Lạt" — `/duong-ha-bac-nam-ban`, `/thuy-dien-da-chomo-phi-to`;
+chú thích bảng "sát nhập" ở `/nam-ban-co-sap-nhap-da-lat`; "thành phố Đà Lạt" → "các phường Đà Lạt" ở `/quy-hoach-2050` + bản EN. Còn để ngỏ (ước tính
+máy, chưa sửa): câu "xã Lạc Dương cao hơn" ở `/nam-ban-hay-lac-duong`.
 
 ---
 

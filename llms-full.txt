@@ -889,7 +889,7 @@ Với một người đang cân nhắc bỏ tiền vào Nam Ban, văn bản này
 
 Nam Ban thuộc vùng nào của tỉnh mới?
 
-Đây là điểm dễ nhầm nhất — và nhiều nơi đang nói sai. Theo Quyết định 2786, xã Nam Ban Lâm Hà không nằm ở "phía Tây" tỉnh (vùng Đắk Nông cũ với bô-xít và công nghiệp nặng), mà thuộc Vùng trung tâm phía Bắc Lâm Đồng — cùng một vùng với thành phố Đà Lạt, Lạc Dương và Đam Rông.
+Đây là điểm dễ nhầm nhất — và nhiều nơi đang nói sai. Theo Quyết định 2786, xã Nam Ban Lâm Hà không nằm ở "phía Tây" tỉnh (vùng Đắk Nông cũ với bô-xít và công nghiệp nặng), mà thuộc Vùng trung tâm phía Bắc Lâm Đồng — cùng một vùng với các phường Đà Lạt, xã Lạc Dương và vùng Đam Rông.
 
 Cụ thể hơn, Nam Ban Lâm Hà nằm trong tiểu vùng Lâm Hà (gồm Nam Ban Lâm Hà, Nam Hà Lâm Hà và Phú Sơn Lâm Hà) — một mảnh ghép trực tiếp trong không gian phát triển lấy Đà Lạt làm hạt nhân. Sự khác biệt này không nhỏ: nó quyết định Nam Ban sẽ được định hình bởi câu chuyện nghỉ dưỡng cao nguyên, chứ không phải câu chuyện khai khoáng.
 
@@ -950,7 +950,7 @@ Nói cách khác: nếu phải chọn một định hướng tốt nhất cho m�
 
 Đà Lạt được quy hoạch là "điểm đến của Việt Nam và Đông Nam Á về nghỉ dưỡng" — và sẽ cần các đô thị vệ tinh san sẻ áp lực. Nam Ban đứng ngay trong vành đai đó.
 
-Quy hoạch xác định Đà Lạt phát triển cùng các đô thị vệ tinh như Lạc Dương, Di Linh, Đơn Dương, Đức Trọng để giảm áp lực cho đô thị lõi. Khi Đà Lạt ngày càng đắt đỏ và chật chội, dòng người tìm "khí hậu Đà Lạt với giá vùng ven" sẽ chảy ra các vành đai. Nam Ban — cùng vùng phía Bắc, cách Đà Lạt khoảng nửa giờ — nằm đúng hướng dòng chảy đó.
+Quy hoạch chung Đà Lạt và vùng phụ cận (Quyết định 704/QĐ-TTg ngày 12/5/2014) gọi tên bốn đô thị vệ tinh của Đà Lạt: Lạc Dương, Nam Ban, D'ran và Đại Ninh. Liên Nghĩa – Liên Khương và Finôm – Thạnh Mỹ được xếp là đô thị chia sẻ chức năng. Khi Đà Lạt ngày càng đắt đỏ và chật chội, dòng người tìm "khí hậu Đà Lạt với giá vùng ven" sẽ chảy ra các vành đai. Nam Ban — cùng vùng phía Bắc, cách Đà Lạt khoảng nửa giờ — nằm đúng hướng dòng chảy đó.
 
 Mùa cà phê trổ hoa — thung lũng Nam Ban nhìn từ trên đồi.
 
@@ -5484,7 +5484,7 @@ Nói rõ chỗ này vì trên mạng còn đầy bài từ 2014, 2019, đọc l�
 
 Vụ sập hầm năm 2014 xảy ra ở đâu?
 
-Ở phía Đạ Dâng, thôn Păng Tiêng, xã Lát, Lạc Dương — không phải bên Phi Tô.
+Ở phía Đạ Dâng, thôn Păng Tiêng, xã Lát của Lạc Dương cũ (từ 1/7/2025 thuộc phường Lang Biang – Đà Lạt) — không phải bên Phi Tô.
 
 Tháng 12/2014, đường hầm dẫn nước đang thi công thì sập, mười hai công nhân mắc kẹt bên trong. Sau hơn tám mươi giờ cứu hộ, cả mười hai người được đưa ra ngoài an toàn.
 
@@ -6657,7 +6657,7 @@ Vì sao độ cao quyết định
 
 Robusta ưa vùng thấp. Sách vở ghi dưới 1.000m, phổ biến nhất 850 đến 900m. 
 
-Arabica ưa vùng cao. Cầu Đất — nơi được xem là thủ phủ Arabica Việt Nam — nằm ở khoảng 1.650m. Lạc Dương còn cao hơn. 
+Arabica ưa vùng cao. Cầu Đất — nơi được xem là thủ phủ Arabica Việt Nam — nằm ở khoảng 1.650m. Vùng Arabica dưới chân Langbiang ở Lạc Dương cao khoảng 1.500m. 
 
 Nam Ban ở giữa. Cao hơn mức thường của Robusta, thấp hơn vùng Arabica thuần. 
 
@@ -14765,7 +14765,7 @@ Chỗ này ai cũng biết một nửa: du lịch. Nửa còn lại mới là c�
 
 Đà Lạt có hai lớp thu nhập chồng lên nhau. Một lớp chạy theo dòng khách: phòng nghỉ, quán ăn, cà phê, dịch vụ. Một lớp chạy theo nhà kính và luống rau, sáng cắt chiều lên xe. Ai làm được một trong hai lớp đó thì sống được. Ai không làm cả hai thì phải tính bài khác, vì chi phí trong một thành phố du lịch cũng theo mặt bằng du lịch.
 
-Lạc Dương ngay cạnh, lạnh hơn, cao hơn, thiên về rau hoa và cà phê arabica, thêm mảng du lịch rừng. Gần nhau vậy mà nghề đã khác rồi.
+Lạc Dương ngay cạnh, cao ngang Đà Lạt, thiên về rau hoa và cà phê arabica, thêm mảng du lịch rừng. Gần nhau vậy mà nghề đã khác rồi.
 
 Đơn Dương, Đức Trọng — nơi rau và hàng hóa chạy
 
