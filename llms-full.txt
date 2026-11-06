@@ -9297,7 +9297,7 @@ Du lịch & đặc sản
 
 Nam Ban có gì — thác Voi, chùa Linh Ẩn, săn mây 
 Những điểm đáng ghé của vùng. → Thác Voi — nên biết trước khi đi 
-Thác cao 30m, cách Đà Lạt 25km qua đèo Tà Nung. → Một ngày ở Nam Ban — đi đâu, ăn gì 
+Thác cao khoảng 30m, cách Đà Lạt 25km qua đèo Tà Nung. → Một ngày ở Nam Ban — đi đâu, ăn gì 
 Lịch trình từ sáng tới tối. → Đặc sản Nam Ban 
 Cà phê, dâu tằm, bơ và sản vật bản địa. → 
 
@@ -10060,9 +10060,11 @@ Thác Voi đổ ngay cạnh Nam Ban, cách Đà Lạt 25km
 
 Thực sự ra sao 
 
-Thác Voi hoang sơ, không chỉnh trang. Nước đổ từ suối Cam Ly, rơi mạnh xuống một vũng nước quây bởi những tảng đá lớn — chính những khối đá dưới chân thác, bị nước mài nhẵn thành hình tròn xám, là nguồn gốc cái tên. Trong truyện kể của người K'Ho, đàn voi hóa đá ở đây vì xót thương một mối tình kết thúc trước khi kịp bắt đầu. 
+Thác Voi hoang sơ, không chỉnh trang. Nước đổ từ suối Cam Ly, rơi mạnh xuống một vũng nước quây bởi những tảng đá lớn — chính những khối đá dưới chân thác, bị nước mài nhẵn thành hình tròn xám, là nguồn gốc cái tên. Trong truyện kể của người K'Ho, đàn voi hóa đá ở đây vì xót thương một mối tình kết thúc trước khi kịp bắt đầu. Tên K'Ho của thác là Liêng Rơwoa, Báo Lâm Đồng ghi đủ là Liêng Rơwoa Jơi Biêng; "thác Voi" là tên dịch nghĩa. 
 
-Đường xuống ngắn nhưng thật sự gập ghềnh: bậc đá đục vào nền đá núi lửa, rêu, và một tay vịn màu xanh bắt vào đá. Chỉ mất vài phút, nhưng hơi nước làm mọi thứ ẩm và trơn — không phải chỗ để đi dép lê. Đến vào tháng 7, 8 giữa cao điểm mùa mưa, thác gầm ấn tượng nhưng đường có thể nguy hiểm. Buổi sáng mùa khô trời quang là lúc đẹp nhất. 
+Đường xuống ngắn nhưng thật sự gập ghềnh: bậc đá đục vào nền đá núi lửa, rêu, và một tay vịn màu xanh bắt vào đá. Chỉ mất vài phút, nhưng hơi nước làm mọi thứ ẩm và trơn — không phải chỗ để đi dép lê. Đến vào tháng 7, 8 giữa cao điểm mùa mưa, thác gầm ấn tượng nhưng đường có thể nguy hiểm. Buổi sáng mùa khô trời quang là lúc đẹp nhất.
+
+Phía sau màn nước và quanh chân thác có những hang đá nằm giữa các khối đá lớn — Báo Lâm Đồng và Báo Văn hóa đều tả. Khu thác đóng cửa từ năm 2021, lối xuống không có người quản lý, nên đừng vào hang, nhất là mùa mưa. 
 
 Ngay bên cạnh 
 
@@ -10204,7 +10206,7 @@ Kết hợp gì
 
 Cả hai nơi đều nằm gần cụm điểm quen thuộc của Nam Ban. 
 
-Thác Voi — cách vài trăm mét. Thác cao ba mươi mét, di tích quốc gia. 
+Thác Voi — cách vài trăm mét. Thác cao chừng ba mươi mét, di tích quốc gia. 
 
 Chùa Linh Ẩn — nay đã đổi tên thành Thiền Viện Linh Ẩn. Tượng Quan Thế Âm cao 71 mét. 
 
@@ -10260,7 +10262,7 @@ Dễ nhất là mua tại Tám Trình, hoặc tìm sản phẩm của Hân Vinh 
 
 Đi tour cà phê Nam Ban kết hợp được gì? 
 
-Thác Voi (cao 30 mét, di tích quốc gia), Thiền Viện Linh Ẩn (tượng Quan Thế Âm cao 71 mét), và làng tơ tằm. Cả ba đều nằm gần nhau. Một ngày đủ đi hết. 
+Thác Voi (cao khoảng 30 mét, di tích quốc gia), Thiền Viện Linh Ẩn (tượng Quan Thế Âm cao 71 mét), và làng tơ tằm. Cả ba đều nằm gần nhau. Một ngày đủ đi hết. 
 
 Nam Ban khác Đà Lạt thế nào về du lịch? 
 
@@ -13273,7 +13275,7 @@ Xe con, xe khách vào tận nơi được, có chỗ đậu. Đường trong ch
 
 Tượng Quan Âm chùa Linh Ẩn cao bao nhiêu?
 
-71 mét. Khởi công 2017, khánh thành 2019, và khi hoàn thành được ghi nhận là tượng Quán Thế Âm cao nhất Việt Nam.
+71 mét. Khởi công 2017, khánh thành 2019. Khi đó báo Giác Ngộ gọi đây là tượng Quán Thế Âm cao nhất Việt Nam; tới đầu năm 2021, tượng Phật Bà Tây Bổ Đà Sơn trên núi Bà Đen, Tây Ninh, cao 72 mét đã vượt lên.
 
 Con số nghe thì biết vậy, đứng dưới chân mới hiểu cái lớn đó. Ảnh chụp làm mọi thứ phẳng đi; ngoài đời pho tượng đứng giữa nền trời, phía sau là màu xanh của đồi.
 
@@ -13283,7 +13285,9 @@ Sáng có sương thì tượng nửa ẩn nửa hiện, đứng nhìn một lú
 
 Chùa Linh Ẩn (Thiền viện Linh Ẩn) có gì, và có từ bao giờ?
 
-Trong khuôn viên có chánh điện rộng khoảng 1.457m², vườn tượng, tượng Di Lặc, cổng Tam Quan. Đi thong thả một vòng khoảng 45 phút tới một tiếng là đủ.
+Trong khuôn viên có chánh điện rộng gần 1.500m², vườn tượng, tượng Di Lặc, cổng Tam Quan. Đi thong thả một vòng khoảng 45 phút tới một tiếng là đủ.
+
+Vườn tượng có tên vườn Quan Âm Tịnh Thánh: gần 500 pho tượng Quán Thế Âm giống hệt nhau, mỗi pho cao khoảng 3m, phần lớn do Phật tử các nơi cúng dường (VnExpress, báo Giác Ngộ). Vài trang du lịch gọi nhầm đó là tượng La Hán. Tượng Di Lặc lộ thiên phía sau chùa thì theo tư liệu của chùa cao 12,5m, dựng năm 2000.
 
 Nhưng chuyện đáng nhớ hơn là chùa có từ khi nào.
 
@@ -13369,7 +13373,7 @@ Cổng thông tin du lịch Đà Lạt ghi giờ tham quan 7:00–19:00. Thực 
 
 Tượng Quan Âm chùa Linh Ẩn cao bao nhiêu?
 
-Cao 71m, khởi công 2017, khánh thành 2019; khi hoàn thành được ghi nhận là tượng Quán Thế Âm cao nhất Việt Nam.
+Cao 71m, khởi công 2017, khánh thành 2019; khi đó báo Giác Ngộ gọi là tượng Quán Thế Âm cao nhất Việt Nam; tới đầu năm 2021, tượng Phật Bà Tây Bổ Đà Sơn trên núi Bà Đen, Tây Ninh, cao 72m đã vượt lên.
 
 Thiền viện Linh Ẩn và chùa Linh Ẩn có phải một nơi không?
 
