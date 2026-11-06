@@ -206,9 +206,10 @@ HIỂU → ĐÁNH GIÁ → MUA → SỞ HỮU → QUẢN LÝ. Mỗi web mạnh t
 4 mục Nam Ban · Đức Trọng · Di Linh · Lạc Dương + tầng so sánh chung. Ô GreenSpacers tự dựng, tự viết. Ô Panorama đã soạn bộ bàn giao
 (quyết định, IA, kỹ thuật, luật viết, dữ kiện đã kiểm 3 vùng, kế hoạch bài, chống trùng, ma trận 197 bài × 3 vùng, báo cáo nghiên cứu) để đẩy vào
 repo riêng `doanquocduyet/ven-da-lat` — GitHub App không tạo được repo (403), Chú tạo rồi em đẩy; bản nháp ở scratchpad phiên 6/11.
-Panorama GIỮ vai HIỂU NAM BAN, không đổi tựa trang nào vì hub; mục Nam Ban trên hub không chép bài Panorama, chỉ dẫn sang. Mọi cụm "Nam Ban …",
-"Nam Ban hay Đức Trọng/Di Linh/Lạc Dương", quy định cấp tỉnh vẫn là nhà Panorama; cụm riêng của 3 vùng mới là nhà hub; Panorama không mở bài mới
-về 3 vùng đó nữa. **Việc Panorama làm sau khi hub chạy** (chưa làm): sửa vai GreenSpacers ở `worksFor` (schema trang chủ, `/trao-doi`) và `llms.txt`;
+Panorama GIỮ vai HIỂU NAM BAN, không đổi tựa trang nào vì hub. **Cùng chủ đề giữa các web là ĐƯỢC (Chú chốt 6/11/2026: "cùng 1 chủ đề
+nhưng 3 web viết nội dung khác nhau vẫn được")** — hub viết về Nam Ban, Panorama viết về Đức Trọng/Di Linh/Lạc Dương, cả hai viết quy định
+cấp tỉnh đều được; điều kiện duy nhất là nội dung khác thật (dàn ý, câu chữ, số, ảnh, góc riêng), không chép, không viết lại bài web kia. Khớp
+Luật 26d. Trong CÙNG một web vẫn mỗi key một nhà, và hub không làm ba bài cùng khuôn cho ba vùng chỉ đổi tên. **Việc Panorama làm sau khi hub chạy** (chưa làm): sửa vai GreenSpacers ở `worksFor` (schema trang chủ, `/trao-doi`) và `llms.txt`;
 4 link tới `greenspacers.vn/quan-ly-dat-nam-ban` (`/giu-dat-nam-ban-tu-xa`, `/dat-nam-ban-chua-xay`, `/mua-nha-nam-ban-khong-o`, `/vua-mua-dat-nam-ban-lam-gi`)
 — nếu URL đó đổi/thôi dịch vụ thì sửa câu; sửa lỗi dữ kiện về Đức Trọng/Di Linh/Lạc Dương trên 7 trang (chờ Chú chốt khoảng cách Liên Nghĩa – Đà Lạt,
 đề xuất "khoảng 30 km"); khi trang vùng của hub đã index thì cân nhắc ≤ 5 link trong câu từ bài so sánh sang hub.
