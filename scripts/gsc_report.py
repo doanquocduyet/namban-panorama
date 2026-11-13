@@ -126,7 +126,7 @@ def main():
             if r.status_code != 200:
                 try: msg = r.json().get("error", {}).get("message", "")[:200]
                 except Exception: msg = str(r.text)[:200]
-                rows.append((u, "LỖI-API", f"{r.status_code} — {msg}", ""))
+                rows.append((u, "LỖI-API", f"{r.status_code} — {msg}", "", ""))
                 if len(err_samples) < 1: err_samples.append((r.status_code, msg))
                 # lỗi 403/401/400 là lỗi hệ thống (quyền/property) → dừng sớm, khỏi quét hết
                 if r.status_code in (400, 401, 403) and len(rows) >= 3:
@@ -135,14 +135,15 @@ def main():
             res = r.json().get("inspectionResult", {}).get("indexStatusResult", {})
             verdict = res.get("verdict", "?")                 # PASS / NEUTRAL / FAIL
             coverage = res.get("coverageState", "?")          # "Submitted and indexed" / "Crawled - currently not indexed" ...
-            rows.append((u, verdict, coverage, res.get("lastCrawlTime", "")))
+            gcan = res.get("googleCanonical", "") or ""
+            rows.append((u, verdict, coverage, res.get("lastCrawlTime", ""), gcan))
             tally[coverage] = tally.get(coverage, 0) + 1
         except Exception as e:
-            rows.append((u, "LỖI", str(e)[:200], ""))
+            rows.append((u, "LỖI", str(e)[:200], "", ""))
         time.sleep(0.6)   # nhẹ tay với quota
     # ghi báo cáo
     now = os.environ.get("RUN_DATE", "") or "hôm nay"
-    indexed = sum(1 for _,v,_,_ in rows if v == "PASS")
+    indexed = sum(1 for r in rows if r[1] == "PASS")
     out = []
     out.append(f"# Trạng thái index — Google Search Console\n")
     out.append(f"Cập nhật: {now} · Property: `{SITE}` · Tổng URL: {len(urls)} · **Đã index (PASS): {indexed}**\n")
@@ -154,10 +155,14 @@ def main():
     if not bad:
         out.append("Không có — tất cả URL trong sitemap đã index. 🎉")
     else:
-        out.append("| URL | Verdict | Trạng thái |")
-        out.append("|---|---|---|")
-        for u,v,c,_ in bad:
-            out.append(f"| {u.replace('https://nambanpanorama.com','')} | {v} | {c} |")
+        # thu thập lần cuối + canonical Google chọn: để chẩn đoán rớt index (thêm 13/11/2026)
+        out.append("| URL | Verdict | Trạng thái | Thu thập lần cuối | Canonical Google chọn |")
+        out.append("|---|---|---|---|---|")
+        short = lambda x: x.replace('https://nambanpanorama.com','') or '/'
+        for u,v,c,lc,gc in bad:
+            lc = (lc or "")[:10] or "chưa"
+            gc = "như URL" if (not gc or gc == u) else short(gc)
+            out.append(f"| {short(u)} | {v} | {c} | {lc} | {gc} |")
     os.makedirs(os.path.join(ROOT,"docs"), exist_ok=True)
     open(os.path.join(ROOT,"docs","gsc-status.md"),"w",encoding="utf-8").write("\n".join(out)+"\n")
     log(f"Xong. Đã index {indexed}/{len(urls)}. Chưa index: {len(bad)}. → docs/gsc-status.md")

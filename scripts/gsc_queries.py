@@ -135,7 +135,10 @@ def report(sess, cfg, site, win):
 
     os.makedirs(OUT, exist_ok=True)
     json.dump({"site": site, "start": start.isoformat(), "end": end.isoformat(),
-               "totals": {"clicks": tc, "impressions": ti, "position": tp}, "queries": cur},
+               "totals": {"clicks": tc, "impressions": ti, "position": tp}, "queries": cur,
+               # lượt hiện từng trang (thêm 13/11/2026, để chẩn đoán rớt index) — chỉ nằm trong JSON đã mã hoá
+               "pages": {short(r["keys"][0], host): {"imp": r["impressions"], "clicks": r["clicks"],
+                                                    "pos": round(r["position"], 1)} for r in page_rows}},
               open(os.path.join(OUT, f"{cfg['key']}-{end.isoformat()}.json"), "w", encoding="utf-8"),
               ensure_ascii=False, indent=0, sort_keys=True)
 

@@ -437,7 +437,7 @@ máy, chưa sửa): câu "xã Lạc Dương cao hơn" ở `/nam-ban-hay-lac-duon
   (Index, ảnh tự chụp, số có nguồn là đúng hướng). AI Overviews (10/2024) và AI Mode (7/10/2025) đều có tiếng Việt;
   I/O 20/5/2026 gộp hai thứ thành một trải nghiệm. Search Console có báo cáo AI riêng (toàn cầu từ 31/8/2026) — chỉ có lượt
   hiện theo trang/quốc gia/thiết bị, không có lượt bấm, không có từ khoá; site ít dữ liệu thì chưa hiện. 2026 đã có 2 core
-  update (27/3–8/4, 21/5–2/6) và 4 spam update — đợt cuối 24/9–8/10/2026 đã xong (status.search.google.com, kiểm 5/11; từ 8/10 không đợt nào chạy); luật spam mới 13/4/2026: cấm
+  update (27/3–8/4, 21/5–2/6) và 4 spam update — đợt spam cuối 24/9–8/10/2026 đã xong; **core update tháng 11/2026 bắt đầu 10/11/2026 (18:06 UTC), đang chạy, Google hẹn tới 2 tuần** (status.search.google.com, kiểm 13/11 — xong thì ghi ngày kết thúc vào đây); luật spam mới 13/4/2026: cấm
   "back button hijacking" (đã kiểm: link "← Quay lại" chỉ chạy khi người đọc bấm, hợp lệ). Core Web Vitals giữ ngưỡng cũ
   (LCP ≤ 2,5 s · INP ≤ 200 ms · CLS ≤ 0,1). Bot cần mở để được trích: Googlebot, OAI-SearchBot (ChatGPT search), PerplexityBot,
   Claude-SearchBot + Claude-User (thêm vào robots.txt 6/10), Bingbot; GPTBot/ClaudeBot chỉ là bot huấn luyện. Google-Extended không
@@ -452,6 +452,15 @@ máy, chưa sửa): câu "xã Lạc Dương cao hơn" ở `/nam-ban-hay-lac-duon
   **Đã làm 6/10:** khối "Mới cập nhật" trên trang chủ + 22 link trong câu từ bài đã index tới 13 trang chưa index (chỉ bọc chữ có
   sẵn, mỗi trang nguồn một link mỗi đích, lời đọc không đổi). Không ép link cho `/tuyen-tranh-nam-ban`, `/dau-gia-dat-nam-ban`,
   `/hoi-nhanh`, trang sự kiện (Trung thu, Vu Lan, pickleball) — chưa có câu nào tự nhiên dẫn sang. Đo lại `docs/gsc-status.md` khoảng 20/10.
+  **Rà chỉ mục 13/11/2026 (workflow + phản biện, số đo ở scratchpad phiên):** số trang index đi 187/215 (5–7/10) → 160/218 (9/11);
+  "đã thu thập – chưa lập chỉ mục" 6 → 37; 33 trang rớt. Kỹ thuật sạch (200, canonical tự trỏ, không noindex, sitemap khớp). Phần rớt dồn vào
+  **cụm vườn – cây trồng** (cà phê, bơ, dâu tằm, rau hoa: còn 3/20 URL được index, 6 trang mới chưa hề được thu thập) và **lứa bài đăng tháng 7**
+  (rớt 24/42; tháng 8 rớt 2/57; tháng 9–10 rớt 0/50); 32/33 trang rớt gần như không có lượt hiện. Tổng lượt hiện vẫn tăng (801 → 1.301 / 28 ngày).
+  Link nội bộ KHÔNG cứu được (đợt 6/10: 10/12 đích vẫn ngoài index). Đợt đổi tựa 26/9 theo Luật 26c: 4/5 trang cũ nay ngoài index — mẫu nhỏ,
+  lẫn yếu tố, chưa kết luận; xem lại đầu tháng 12 trước khi áp 26c cho bài khác. **Hoãn mọi gộp trang / 301 / noindex / đổi tựa tới ít nhất một
+  tuần sau khi core update tháng 11 xong** (khoảng đầu tháng 12); báo cáo GSC 16/11 và 23/11 coi là nhiễu. Phương án chờ Chú (sau đợt đó): gom
+  khối chữ lặp cụm bơ theo bản đồ nhà 26f (bảng ba thang giá chỉ giữ ở `/mua-bo-nam-ban`); nhà của chuyện giấy phép xây dựng là `/xay-nha-o-nam-ban`.
+  Đã bỏ: gộp `/mua-dat-co-vuon-bo` với `/mua-dat-co-vuon-ca-phe` (hai câu tra khác nhau), gỡ câu FAQ "cách Đà Lạt bao xa" ở 8 trang.
   **Rà 7/10/2026 (đã đọc nguồn gốc):** (1) Google sửa trang "Using generative AI content" 1/10/2026: phải tự kiểm từng
   dữ kiện kể cả title, description, schema, alt; nên cho người đọc biết bài được làm thế nào; rater chấm thấp nội dung "ít công,
   ít mới, ít giá trị" (QRG 4.6.5–4.6.6). Site CHƯA có trang "Về Panorama" công khai (`demo-ve-panorama` noindex, chưa duyệt) —
