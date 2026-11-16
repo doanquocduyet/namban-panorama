@@ -128,6 +128,21 @@ def report(sess, cfg, site, win):
     prev_rows = query(sess, site, pstart, pend, ["query", "page"])
     page_rows = query(sess, site, start, end, ["page"])
     prev_page_rows = query(sess, site, pstart, pend, ["page"])
+    # Thêm 16/11/2026 (chẩn đoán "tìm không thấy web"): lượt hiện theo ngày (2 kỳ liền), theo quốc gia,
+    # theo thiết bị, và quốc gia × trang — để biết web đang được hiện cho ai, và tụt/tăng từ ngày nào.
+    # Mọi thứ chỉ nằm trong JSON đã mã hoá. Lỗi ở phần này không làm hỏng báo cáo chính.
+    extra = {}
+    try:
+        cell = lambda r: {"imp": r["impressions"], "clicks": r["clicks"], "pos": round(r["position"], 1)}
+        extra["daily"] = {r["keys"][0]: cell(r) for r in query(sess, site, pstart, end, ["date"])}
+        extra["countries"] = {r["keys"][0]: cell(r) for r in query(sess, site, start, end, ["country"])}
+        extra["devices"] = {r["keys"][0]: cell(r) for r in query(sess, site, start, end, ["device"])}
+        cp = {}
+        for r in query(sess, site, start, end, ["country", "page"]):
+            cp.setdefault(r["keys"][0], {})[short(r["keys"][1], host)] = cell(r)
+        extra["country_pages"] = cp
+    except Exception as e:
+        log(f"{cfg['name']}: không đọc được phần theo ngày/quốc gia ({str(e)[:120]})")
     cur, prev = by_query(cur_rows, host), by_query(prev_rows, host)
     # Tổng lấy theo trang: Google giấu các truy vấn hiếm (ẩn danh) khỏi bảng từ khoá, nên cộng từ khoá sẽ thiếu.
     tc, ti, tp = totals(page_rows)
@@ -138,7 +153,8 @@ def report(sess, cfg, site, win):
                "totals": {"clicks": tc, "impressions": ti, "position": tp}, "queries": cur,
                # lượt hiện từng trang (thêm 13/11/2026, để chẩn đoán rớt index) — chỉ nằm trong JSON đã mã hoá
                "pages": {short(r["keys"][0], host): {"imp": r["impressions"], "clicks": r["clicks"],
-                                                    "pos": round(r["position"], 1)} for r in page_rows}},
+                                                    "pos": round(r["position"], 1)} for r in page_rows},
+               **extra},
               open(os.path.join(OUT, f"{cfg['key']}-{end.isoformat()}.json"), "w", encoding="utf-8"),
               ensure_ascii=False, indent=0, sort_keys=True)
 
