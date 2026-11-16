@@ -29,6 +29,11 @@ jobs:
           python-version: "3.12"
       - name: Cài thư viện Google
         run: pip install --quiet google-auth requests
+      - name: Sitemap + trang ưu tiên (nhanh) → docs/gsc-sitemaps.md
+        env:
+          GSC_SA_JSON: ${{ secrets.GSC_SA_JSON }}
+          GSC_SITE: ${{ vars.GSC_SITE || 'sc-domain:nambanpanorama.com' }}
+        run: python3 scripts/gsc_sitemaps.py
       - name: Đọc GSC + ghi báo cáo
         if: ${{ !inputs.chi_tu_khoa }}
         env:
@@ -47,7 +52,7 @@ jobs:
         run: |
           git config user.name "namban-gsc-bot"
           git config user.email "actions@users.noreply.github.com"
-          for f in docs/gsc-status.md docs/gsc-private; do [ -e "$f" ] && git add "$f"; done
+          for f in docs/gsc-status.md docs/gsc-sitemaps.md docs/gsc-private; do [ -e "$f" ] && git add "$f"; done
           if git diff --cached --quiet; then echo "Không đổi / chưa cấu hình secret."; else
             git commit -m "GSC: cập nhật báo cáo index + từ khoá [skip ci]"
             for i in 1 2 3 4 5; do git push && break; git pull --rebase origin main; sleep $((i*3)); done
