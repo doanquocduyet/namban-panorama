@@ -26,25 +26,25 @@ Cập nhật: hôm nay · Property: `https://nambanpanorama.com/` · Tổng URL:
 | /doc-the-dat-nam-ban | NEUTRAL | Đã thu thập dữ liệu – hiện chưa được lập chỉ mục | 2026-07-12 | như URL |
 | /len-tho-cu-het-bao-nhieu-tien | NEUTRAL | Đã thu thập dữ liệu – hiện chưa được lập chỉ mục | 2026-07-12 | như URL |
 | /tach-thua-dat-nam-ban | NEUTRAL | Đã thu thập dữ liệu – hiện chưa được lập chỉ mục | 2026-08-15 | như URL |
-| /dau-gia-dat-nam-ban | NEUTRAL | Google không xác định được URL | chưa | như URL |
+| /dau-gia-dat-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục | chưa | như URL |
 | /tuyen-tranh-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục | chưa | như URL |
 | /khi-hau-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục | chưa | như URL |
-| /du-lich-nong-nghiep-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục | chưa | như URL |
+| /du-lich-nong-nghiep-nam-ban | NEUTRAL | Google không xác định được URL | chưa | như URL |
 | /thue-nguoi-lam-vuon-nam-ban | NEUTRAL | Google không xác định được URL | chưa | như URL |
 | /hop-tac-canh-tac-dat-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục | chưa | như URL |
-| /chi-phi-trong-ca-phe-nam-ban | NEUTRAL | Google không xác định được URL | chưa | như URL |
+| /chi-phi-trong-ca-phe-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục | chưa | như URL |
 | /chi-phi-dat-dai-nam-ban | NEUTRAL | Đã thu thập dữ liệu – hiện chưa được lập chỉ mục | 2026-09-09 | như URL |
 | /dat-vuon-nam-ban-xay-duoc-gi | NEUTRAL | Đã thu thập dữ liệu – hiện chưa được lập chỉ mục | 2026-08-15 | như URL |
 | /nhan-tien-den-bu-dat-nen-lam-gi | NEUTRAL | Đã thu thập dữ liệu – hiện chưa được lập chỉ mục | 2026-08-15 | như URL |
 | /ta-nung-hay-me-linh | NEUTRAL | Đã thu thập dữ liệu – hiện chưa được lập chỉ mục | 2026-08-16 | như URL |
 | /mua-dat-duong-gia-nam-ban | NEUTRAL | Đã thu thập dữ liệu – hiện chưa được lập chỉ mục | 2026-07-13 | như URL |
 | /homestay-nam-ban-co-lai-khong | NEUTRAL | Đã thu thập dữ liệu – hiện chưa được lập chỉ mục | 2026-07-13 | như URL |
-| /hoa-o-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục | chưa | như URL |
-| /thuy-dien-da-chomo-phi-to | NEUTRAL | Google không xác định được URL | chưa | như URL |
+| /hoa-o-nam-ban | NEUTRAL | Google không xác định được URL | chưa | như URL |
+| /thuy-dien-da-chomo-phi-to | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục | chưa | như URL |
 | /vua-mua-dat-nam-ban-lam-gi | NEUTRAL | Đã thu thập dữ liệu – hiện chưa được lập chỉ mục | 2026-08-14 | như URL |
-| /dat-nam-ban-kinh-doanh-gi | NEUTRAL | Google không xác định được URL | chưa | như URL |
+| /dat-nam-ban-kinh-doanh-gi | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục | chưa | như URL |
 | /do-cao-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục | chưa | như URL |
-| /nam-ban-tap-huan-chuyen-doi-so-2026 | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục | chưa | như URL |
+| /nam-ban-tap-huan-chuyen-doi-so-2026 | NEUTRAL | Google không xác định được URL | chưa | như URL |
 | /nam-ban-hay-dran | NEUTRAL | Đã thu thập dữ liệu – hiện chưa được lập chỉ mục | 2026-07-31 | như URL |
 | /mua-dat-nam-ban-500-trieu-1-ty | NEUTRAL | Đã thu thập dữ liệu – hiện chưa được lập chỉ mục | 2026-07-31 | như URL |
 | /giu-dat-nam-ban-tu-xa | NEUTRAL | Đã thu thập dữ liệu – hiện chưa được lập chỉ mục | 2026-11-12 | như URL |
@@ -83,7 +83,7 @@ Cập nhật: hôm nay · Property: `https://nambanpanorama.com/` · Tổng URL:
 | /da-lat-di-nam-ban | NEUTRAL | Google không xác định được URL | chưa | như URL |
 | /mot-ngay-lam-vuon-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục | chưa | như URL |
 | /nam-ban-chua-lanh | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục | chưa | như URL |
-| /trung-thu-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục | chưa | như URL |
+| /trung-thu-nam-ban | NEUTRAL | Google không xác định được URL | chưa | như URL |
 | /ram-vu-lan-nam-ban | NEUTRAL | Đã phát hiện thấy – hiện chưa được lập chỉ mục | chưa | như URL |
 | /nguoi-ngoai-tinh-mua-dat-nam-ban | NEUTRAL | Đã thu thập dữ liệu – hiện chưa được lập chỉ mục | 2026-08-14 | như URL |
 | /dat-nguon-goc-lam-nghiep-nam-ban | NEUTRAL | Đã thu thập dữ liệu – hiện chưa được lập chỉ mục | 2026-08-14 | như URL |
