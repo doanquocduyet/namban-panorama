@@ -486,6 +486,29 @@ máy, chưa sửa): câu "xã Lạc Dương cao hơn" ở `/nam-ban-hay-lac-duon
   hướng dẫn mới nhất và góc so sánh sâu (hết hạn mức). Bộ đo mới: `scripts/gsc_sitemaps.py` → `docs/gsc-sitemaps.md` (sitemap Google tải
   lần cuối 13/11, 218 URL, 0 lỗi; 16 trang ưu tiên); dữ liệu mã hoá có thêm `daily`, `countries`, `devices`, `country_pages`.
   Đã chạy `indexnow-all.yml` 17/11 (Bing, Cốc Cốc, Yandex, Naver). Việc Chú tự làm + đề xuất chờ duyệt: xem báo cáo lượt 17/11 trong phiên.
+  **Soi datnenlamdong.com.vn 17/11/2026 (Chú: "tham khảo cách lên top search của web datnenlamdong của tôi"; 3 góc rà có đối chiếu tài liệu
+  Google).** Web tin rao kiểu cũ: 1.490 tin rao, 144 trang danh mục theo từng xã cũ, 52 bài "đất X là gì"; tựa tự gắn "11/2026", H1 tự gắn ngày
+  hôm nay, sitemap ghi `lastmod` hôm nay cho mọi trang. **KHÔNG HỌC chiêu nào**: danh mục theo xã làm theo khuôn = doorway; tin rao hàng loạt
+  = scaled content; đổi ngày cho trông mới = câu tự kiểm "helpful content"; hồ sơ zotero lấy link = link spam; tên miền trùng từ khoá "hardly
+  any effect". Phần dùng được Panorama đã có bản làm thật (nhãn kỳ `data-idx-period`, `pm-updated` khớp `dateModified`, tên cũ kèm mốc
+  1/7/2025, bốn bài khu). Chưa đo được web đó đứng top ở câu nào (công cụ tìm của Claude chạy từ Mỹ, không thấy nó ở 4 câu thử) →
+  `gsc_queries.py` đã thêm property `sc-domain:datnenlamdong.com.vn` (tự bỏ qua khi chưa cấp quyền; ra `gsc-datnen.md` đã mã hoá).
+  Web đó ghi sai: độ cao Nam Ban 1.500 m, cao tốc Tân Phú – Bảo Lộc "hoàn thành năm 2025", "chuẩn bị sát nhập vào Đà Lạt", toạ độ schema
+  lệch khoảng 109 km — đã báo Chú, Panorama không sửa, không link sang. Bản yêu cầu "master plan datnenlamdong.vn" (17/11) là việc của
+  web khác, làm ở ô riêng.
+  **Hẹn đầu tháng 12 (sau khi core update xong ≥ 1 tuần):** (1) thêm vế "tính từ trung tâm Nam Ban (khu thị trấn Nam Ban cũ, từ 1/7/2025 là
+  trung tâm xã Nam Ban Lâm Hà) lên trung tâm Đà Lạt" vào câu đáp khoảng cách ở `/dat-gan-da-lat` (hiển thị + schema) — GSC có câu "thị trấn
+  nam ban cách đà lạt bao nhiêu km" (Panorama vị trí 10,3 ở trang này; Villas 6,8); không đổi câu hỏi, không thêm FAQ; (2) mô tả + câu thân
+  bài `/dat-nam-ban-gia-re`, `/dat-gan-da-lat`, `/mua-dat-nam-ban-500-trieu-1-ty` còn ghi số tháng 10 (3,43 / 1,47) trong khi kỳ chính đã
+  sang tháng 11 (đủ 4/4 ô) — cập nhật một lượt, quét cả llms/feed (Luật 11); (3) đưa `/do-cao-nam-ban`, `/nam-ban-co-sap-nhap-da-lat`,
+  `/duong-di-nam-ban` (ba trang sửa đúng các số sai đang lan trên mạng, đều ngoài chỉ mục) vào danh sách Chú bấm "Yêu cầu lập chỉ mục";
+  (4) xem GSC có câu "xã Đông Thanh / Mê Linh / Gia Lâm" không — có lượt hiện mà vị trí trên 10 thì thêm tên đủ "xã Đông Thanh (huyện
+  Lâm Hà cũ)" vào câu đáp FAQ "… có thuộc xã Nam Ban Lâm Hà không?" sẵn có; không có số thì thôi. Khoá tựa 12 trang hết hạn (Index, cụm
+  26c, ven Đà Lạt, cần kiểm tra gì) đã gia hạn tới 15/12/2026, tựa lưu đã đổi sang "Nam Ban Panorama" (chỉ khác tên, H1 giữ nguyên).
+  **Chờ Chú — Index đếm tin cũ của datnenlamdong:** mốc nền "648 tin còn đang rao" (15/11) có 217 tin (33 %) từ web này; đối chiếu sitemap của
+  nó, 85 % tin trên bốn trang danh mục Nam Ban/Đông Thanh/Mê Linh/Gia Lâm đăng từ trước 11/2025 (95 % trước 5/2026). Bảng tháng KHÔNG
+  dính (tin không ngày không vào bảng tháng); dính: số tin còn đang rao, khoảng p10–p90 mục 03, câu "phần mười rẻ nhất" ở `/dat-nam-ban-gia-re`.
+  Đề xuất: `aggregate.py` đọc tháng đăng từ sitemap của nguồn này, bỏ tin quá 12 tháng khỏi mốc nền (không đụng `crawl.py`).
   **Rà 7/10/2026 (đã đọc nguồn gốc):** (1) Google sửa trang "Using generative AI content" 1/10/2026: phải tự kiểm từng
   dữ kiện kể cả title, description, schema, alt; nên cho người đọc biết bài được làm thế nào; rater chấm thấp nội dung "ít công,
   ít mới, ít giá trị" (QRG 4.6.5–4.6.6). Site CHƯA có trang "Về Panorama" công khai (`demo-ve-panorama` noindex, chưa duyệt) —
