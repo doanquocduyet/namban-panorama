@@ -141,7 +141,7 @@ kết thúc mỗi lượt:
 
 ## 1. WEBSITE LÀ GÌ
 
-**TÊN KHAI VỚI GOOGLE LUÔN LÀ "Nam Ban …" — CÓ DẤU CÁCH (Chú chốt 17/11/2026: "namban panorama là tên đặt để các đường link
+**"NamBan Panorama" LÀ THƯƠNG HIỆU; CÒN MỌI THỨ ĐỂ LÊN TOP SEARCH VÀ CHO NGƯỜI ĐỌC LÀ "Nam Ban …" — CÓ DẤU CÁCH (Chú chốt 17/11/2026, nói hai lần: "NamBan Panorama là thương hiệu, làm cho mọi thứ top search và trải nghiệm tốt nhất cho người dùng phải là Nam Ban"; "namban panorama là tên đặt để các đường link
 hoặc page cho liền khối, tất cả mọi thứ khai Google phải là Nam Ban…, không ai search Google là namban a hay namban b").**
 Tên web = **Nam Ban Panorama**, chỉ số giá = **Nam Ban Index**, ở MỌI chỗ người đọc hoặc máy đọc thấy: `<title>`, H1, chữ hiển thị,
 meta/og, JSON-LD (`name` của Organization/WebSite/publisher; `alternateName` chỉ còn `nambanpanorama.com`), llms, feed, search-index,
