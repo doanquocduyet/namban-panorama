@@ -65,7 +65,7 @@ G = [("tach_thua_150_300", "Đất nền tách thửa 150–300 m²", lambda r: 
      ("nha", "Nhà / biệt thự (m² đất)", lambda r: r["loai"] == "nhà / biệt thự")]
 
 out = {"ngay_do": TODAY.isoformat(), "phieu": "So sánh giá rao Nam Ban – Tà Nung – Đà Lạt, 2/10/2026",
-       "cach_do": "Giống mốc nền Namban Index: tin còn đang rao tại ngày đo, 7 trang tin rao công khai (kiểm robots.txt), "
+       "cach_do": "Giống mốc nền Nam Ban Index: tin còn đang rao tại ngày đo, 7 trang tin rao công khai (kiểm robots.txt), "
                   "loại tin thiếu giá/diện tích, gộp trùng diện tích ±2% và giá ±3% trong cùng vùng, bỏ tin đăng trước 2026. "
                   "Giá rao, chưa phải giá chốt. Dưới 10 tin: mẫu nhỏ, không tính trung vị. Đơn vị đồng/m² đất.",
        "vung": {}, "ghi_chu": {"dong_tho": note_raw, "phan_vung_dong_tho_vung_khac": dict(khu_v.most_common())}}

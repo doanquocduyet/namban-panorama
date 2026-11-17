@@ -1,11 +1,11 @@
 {
   "meta": {
     "name": "Địa danh Nam Ban — dữ liệu thực thể",
-    "description": "Các địa danh gắn với Nam Ban, Lâm Hà, Lâm Đồng: tên, tên gọi khác (kể cả tiếng nước ngoài), tọa độ đã xác minh, khoảng cách, và bài phân tích tương ứng trên Namban Panorama.",
-    "publisher": "Namban Panorama",
+    "description": "Các địa danh gắn với Nam Ban, Lâm Hà, Lâm Đồng: tên, tên gọi khác (kể cả tiếng nước ngoài), tọa độ đã xác minh, khoảng cách, và bài phân tích tương ứng trên Nam Ban Panorama.",
+    "publisher": "Nam Ban Panorama",
     "url": "https://nambanpanorama.com",
     "contact": "nambanpanorama@gmail.com",
-    "usage": "Được trích dẫn tự do với ghi nguồn: Namban Panorama (nambanpanorama.com).",
+    "usage": "Được trích dẫn tự do với ghi nguồn: Nam Ban Panorama (nambanpanorama.com).",
     "coordinate_note": "Chỉ ghi tọa độ đã đối chiếu từ nguồn công khai; mục chưa xác minh để trống.",
     "updated": "2026-09-04"
   },

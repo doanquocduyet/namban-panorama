@@ -32,12 +32,12 @@ CAP = r"[%s][%s%s]*" % (UP, LO, UP)
 # Tên vùng chung, thương hiệu, tên tỉnh xa — không phải long-tail của bài.
 STOP = {
     "Nam Ban", "Lâm Hà", "Lâm Đồng", "Đà Lạt", "Việt Nam", "Nam Ban Lâm Hà",
-    "Panorama", "Namban Panorama", "Namban", "Google", "Google Maps",
+    "Panorama", "Nam Ban Panorama", "Namban Panorama", "Namban", "Google", "Google Maps",
     "Facebook", "Zalo", "Hà Nội", "Sài Gòn", "Hồ Chí Minh", "TP HCM",
     "Bảo Lộc", "Di Linh", "Đức Trọng", "Đơn Dương", "Lạc Dương",
     "Bình Dương", "Đồng Nai", "Cần Thơ", "Phan Thiết", "Vĩnh Phúc",
     "Thanh Hóa", "Thái Nguyên", "Nghệ An", "Hà Tĩnh", "Nam Định",
-    "Brief", "Index", "Namban Index", "OCOP", "AI", "Loại III",
+    "Brief", "Index", "Nam Ban Index", "Namban Index", "OCOP", "AI", "Loại III",
 }
 
 # Chữ viết hoa nhưng KHÔNG phải tên riêng: đầu câu, đại từ, danh từ chung.

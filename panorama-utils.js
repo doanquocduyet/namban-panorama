@@ -98,7 +98,7 @@
       m.setAttribute('href',GMAIL);
       m.setAttribute('target','_blank');
       m.setAttribute('rel','noopener');
-      m.setAttribute('title','Soạn mail gửi Namban Panorama');
+      m.setAttribute('title','Soạn mail gửi Nam Ban Panorama');
     }
     /* tel: → Zalo CHỈ trên PC; điện thoại giữ tel: để bấm gọi */
     var isPhone=/Android|iPhone|iPod|Windows Phone|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(navigator.userAgent||'');
@@ -384,8 +384,8 @@
           try{
             navigator.mediaSession.metadata=new MediaMetadata({
               title:(h1?h1.textContent.trim():document.title),
-              artist:'Đoàn Quốc Duyệt — Namban Panorama',
-              album:'Namban Panorama'
+              artist:'Đoàn Quốc Duyệt — Nam Ban Panorama',
+              album:'Nam Ban Panorama'
             });
             navigator.mediaSession.setActionHandler('play',function(){ audio.play(); });
             navigator.mediaSession.setActionHandler('pause',function(){ audio.pause(); });
@@ -659,7 +659,7 @@
     ov.className='pm-sov';
     ov.innerHTML='<button class="pm-sclose" aria-label="Đóng tìm kiếm">×</button>'+
       '<div class="pm-sbox"><input class="pm-sin" type="text" autocomplete="off" spellcheck="false" '+
-      'aria-label="Tìm trong Namban Panorama" placeholder="Tìm trong Namban Panorama…">'+
+      'aria-label="Tìm trong Nam Ban Panorama" placeholder="Tìm trong Nam Ban Panorama…">'+
       '<div class="pm-sres"></div>'+
       '<p class="pm-shint">Gõ không dấu cũng được. Esc để đóng.</p></div>';
     document.body.appendChild(ov);
@@ -718,7 +718,7 @@
       w.className='pm-shome';
       w.innerHTML='<span class="pm-sic">'+ICON+'</span>'+
         '<input class="pm-sin" type="text" autocomplete="off" spellcheck="false" '+
-        'aria-label="Tìm trong Namban Panorama" placeholder="Tìm một khu, một hồ, một câu hỏi…">'+
+        'aria-label="Tìm trong Nam Ban Panorama" placeholder="Tìm một khu, một hồ, một câu hỏi…">'+
         '<div class="pm-sres"></div>';
       slot.appendChild(w);
       var hin=w.querySelector('.pm-sin'), hres=w.querySelector('.pm-sres');

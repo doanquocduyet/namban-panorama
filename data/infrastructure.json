@@ -1,11 +1,11 @@
 {
   "meta": {
     "name": "Hạ tầng Nam Ban — dữ liệu công trình",
-    "description": "Dữ liệu các công trình hạ tầng ảnh hưởng trực tiếp tới Nam Ban, Lâm Hà, Lâm Đồng — số liệu từ văn bản chính thức và khảo sát hiện trường của Namban Panorama.",
-    "publisher": "Namban Panorama",
+    "description": "Dữ liệu các công trình hạ tầng ảnh hưởng trực tiếp tới Nam Ban, Lâm Hà, Lâm Đồng — số liệu từ văn bản chính thức và khảo sát hiện trường của Nam Ban Panorama.",
+    "publisher": "Nam Ban Panorama",
     "url": "https://nambanpanorama.com",
     "contact": "nambanpanorama@gmail.com",
-    "usage": "Được trích dẫn tự do với ghi nguồn: Namban Panorama (nambanpanorama.com).",
+    "usage": "Được trích dẫn tự do với ghi nguồn: Nam Ban Panorama (nambanpanorama.com).",
     "updated": "2026-09-04"
   },
   "items": [
@@ -47,7 +47,7 @@
       "sources": [
         "Thông báo số 55/TB-BQLDALH ngày 10/7/2026 — Ban Quản lý dự án đầu tư xây dựng khu vực Lâm Hà",
         "Bản tin UBND xã Nam Ban Lâm Hà ngày 14/7/2026",
-        "Khảo sát và ảnh hiện trường Namban Panorama, 14/7/2026",
+        "Khảo sát và ảnh hiện trường Nam Ban Panorama, 14/7/2026",
         "Báo Xây dựng, 19/9/2026 — tổng mức đầu tư 32 tỷ đồng, tiến độ thi công"
       ]
     },
@@ -83,7 +83,7 @@
       "location": "Trục nối Đà Lạt – đèo Tà Nung – Nam Ban",
       "note": "Tuyến chính từ Đà Lạt về Nam Ban (~25 km, ~45 phút qua đèo Tà Nung). Nửa đầu 2026 dịch vụ mới (quán ăn, cafe, cửa hàng) mở dọc mặt tiền đoạn Nam Ban.",
       "sources": [
-        "Khảo sát thực địa Namban Panorama, 2026"
+        "Khảo sát thực địa Nam Ban Panorama, 2026"
       ]
     },
     {
@@ -123,7 +123,7 @@
       "completion": "chưa ghi trên biển dự án",
       "note": "Điểm cuối cách ~3km là tới tuyến Lâm Hà – Đà Lạt mới (qua hồ thủy điện Đạ Chomo, Đạ Nghịt, Ankroet); là đường thứ hai về Đà Lạt ngoài đèo Tà Nung.",
       "sources": [
-        "Biển thông tin dự án tại công trường (gói thầu số 24); khảo sát Namban Panorama 7/2026"
+        "Biển thông tin dự án tại công trường (gói thầu số 24); khảo sát Nam Ban Panorama 7/2026"
       ]
     },
     {

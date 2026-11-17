@@ -141,6 +141,18 @@ kết thúc mỗi lượt:
 
 ## 1. WEBSITE LÀ GÌ
 
+**TÊN KHAI VỚI GOOGLE LUÔN LÀ "Nam Ban …" — CÓ DẤU CÁCH (Chú chốt 17/11/2026: "namban panorama là tên đặt để các đường link
+hoặc page cho liền khối, tất cả mọi thứ khai Google phải là Nam Ban…, không ai search Google là namban a hay namban b").**
+Tên web = **Nam Ban Panorama**, chỉ số giá = **Nam Ban Index**, ở MỌI chỗ người đọc hoặc máy đọc thấy: `<title>`, H1, chữ hiển thị,
+meta/og, JSON-LD (`name` của Organization/WebSite/publisher; `alternateName` chỉ còn `nambanpanorama.com`), llms, feed, search-index,
+data, chữ trong JS, câu mạng xã hội. **"namban" viết liền chỉ còn ở đường dẫn, tên miền, email, tên tài khoản (@nambanpanorama,
+@namban.panorama, @NamBanPanorama) và hashtag** — đừng đụng mấy chỗ đó. Chữ hiển thị trong HTML viết `Nam&nbsp;Ban` để không vỡ dòng;
+`<title>`, thuộc tính, JSON-LD, JS dùng dấu cách thường. Đã đổi 17/11/2026: 2.439 chỗ / 231 file + các bộ sinh (`gen-index-history.py`,
+`gen_feed.py`, `gen-search-index.py`, `scan-faq-coverage.py`, `so-sanh-aggregate.py`, `gsc_queries.py`); 31 tựa khoá cập nhật bằng
+`--update` (chỉ khác phần tên); KHÔNG đổi `dateModified` (đổi tên không phải sửa nội dung). Giữ nguyên: lịch sử `data/fb-queue.json`
+(social-fix khớp theo chữ cũ), ảnh og `/images/namban-index.jpg` (chữ in trên ảnh — Chú thiết kế lại thì thay). Các mục cũ trong
+file này còn ghi "Namban Panorama"/"Namban Index" là ghi chép lịch sử; viết mới thì dùng tên có dấu cách.
+
 `nambanpanorama.com` — **publication (báo/tạp chí)** về bất động sản vùng Nam Ban, Lâm Hà,
 Lâm Đồng. **KHÔNG phải web bán hàng.**
 

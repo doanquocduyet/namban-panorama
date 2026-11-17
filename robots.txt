@@ -1,4 +1,4 @@
-# robots.txt — Namban Panorama
+# robots.txt — Nam Ban Panorama
 # Mục tiêu: ĐƯỢC TÌM THẤY TỐI ĐA.
 # Mở cho mọi công cụ tìm kiếm (Google, Bing, Coc Coc, Yandex...) + bot chia sẻ link
 # (Zalo, Facebook, Messenger) + bot AI có trích nguồn. Chỉ chặn các bot SEO/scraper

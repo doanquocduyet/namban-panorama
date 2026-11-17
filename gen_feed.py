@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-# Sinh feed.xml (RSS 2.0) cho Namban Panorama tu cac file HTML o thu muc goc repo.
+# Sinh feed.xml (RSS 2.0) cho Nam Ban Panorama tu cac file HTML o thu muc goc repo.
 import glob, re, html, subprocess
 from email.utils import format_datetime
 from datetime import datetime, timezone
 
 SITE  = "https://nambanpanorama.com"
-TITLE = "Namban Panorama"
+TITLE = "Nam Ban Panorama"
 DESC  = "Phan tich doc lap ve bat dong san va doi song vung Nam Ban, Lam Ha, Lam Dong. Doc rui ro, khong ban giac mo."
 EXCLUDE = {
     "index.html","doc-nhanh.html","trao-doi.html",

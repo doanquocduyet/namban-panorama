@@ -98,7 +98,7 @@ def sent(key, r):
 
 # ---- IDX-LEAD: dòng kỳ + dòng ký tên (ai đo, ở đâu, dẫn xuống cách đo) ----
 lead = f'''<p class="idx-period">Kỳ tháng {last_m} · đo tới <time class="nw" datetime="{base["measured_on"]}">{m_on}</time> · giá rao, chưa phải giá&nbsp;chốt</p>
-<p class="idx-by">Đo và tổng hợp bởi Namban&nbsp;Panorama, <span class="nw">tại Nam Ban · <a href="#du-lieu">cách đo</a></span></p>'''
+<p class="idx-by">Đo và tổng hợp bởi Nam&nbsp;Ban Panorama, <span class="nw">tại Nam Ban · <a href="#du-lieu">cách đo</a></span></p>'''
 
 # ---- IDX-NOW: mục 01 ----
 cells = []; below = []
@@ -252,13 +252,13 @@ data += f'''
 # ---- IDX-CITE ----
 cite_nums = "; ".join(f'{LOW[k]} {tr(cur[k]["v"])}' for k, _, _ in GROUPS if k in cur)
 cite = f'''<div class="idx-cite pm-selectable">
-<p id="citeText">Tháng {last_m}, giá rao đất ở xã Nam Ban Lâm Hà, <span class="nw">Lâm Đồng</span> — trung vị theo Namban Index, triệu đồng/m²: {cite_nums}. Giá rao, chưa phải giá chốt; đo tới {m_on}.</p>
-<p class="src" id="citeSrc">Nguồn: Namban Panorama, Namban Index, kỳ tháng {last_m}. https://nambanpanorama.com/namban-index</p>
+<p id="citeText">Tháng {last_m}, giá rao đất ở xã Nam Ban Lâm Hà, <span class="nw">Lâm Đồng</span> — trung vị theo Nam Ban Index, triệu đồng/m²: {cite_nums}. Giá rao, chưa phải giá chốt; đo tới {m_on}.</p>
+<p class="src" id="citeSrc">Nguồn: Nam Ban Panorama, Nam Ban Index, kỳ tháng {last_m}. https://nambanpanorama.com/namban-index</p>
 <div class="idx-cite-actions"><button class="idx-act" type="button" id="copyCite"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="1.5"/><path d="M15 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3"/></svg><span>Chép trích dẫn</span></button><button class="idx-act" type="button" id="copyLink"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.2 1.2"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.2-1.2"/></svg><span>Chép link</span></button></div>
 </div>'''
 
 # ---- IDX-FAQ: 2 câu sinh theo số + 5 câu tĩnh ----
-q1 = f"Theo Namban Index, đo tới {m_on}: trung vị giá rao tháng {last_m} ở xã Nam Ban Lâm Hà, Lâm Đồng, triệu đồng/m²: {cite_nums}. "
+q1 = f"Theo Nam Ban Index, đo tới {m_on}: trung vị giá rao tháng {last_m} ở xã Nam Ban Lâm Hà, Lâm Đồng, triệu đồng/m²: {cite_nums}. "
 if RANGE: q1 += "Khoảng rao phổ biến nửa đầu 2026 theo quan sát thực địa: " + "; ".join(f'{LOW[k]} {tr1(RANGE[k][0])}–{tr1(RANGE[k][1])}' for k, _, _ in GROUPS if k in RANGE) + ". "
 q1 += "Đây là giá rao, chưa phải giá chốt; mỗi lô khác nhau tùy vị trí, pháp lý, thương lượng."
 q2 = plain(verdict) + f" Tháng {last_m} so với tháng gần nhất có đủ số: " + "; ".join(
@@ -271,8 +271,8 @@ q3 = (f"Mỗi tuần một lần. Sau mỗi lượt quét, số tin còn đang r
       "Tháng mới chỉ thay tháng trước làm kỳ chính khi ít nhất ba trong bốn loại đất có từ 10 tin trở lên; chưa đủ thì giữ kỳ trước và ghi rõ ngày đo.")
 FAQ = [("Giá đất Nam Ban hôm nay bao nhiêu một mét vuông?", q1),
        ("Giá đất Nam Ban đang tăng hay giảm?", q2),
-       ("Namban Index cập nhật giá đất Nam Ban bao lâu một lần?", q3),
-       ("Giá đất \"thị trấn Nam Ban\" trên các trang rao bây giờ là giá ở đâu?", "Là giá ở xã Nam Ban Lâm Hà. Từ 1/7/2025, thị trấn Nam Ban cùng ba xã Đông Thanh, Mê Linh, Gia Lâm nhập thành xã Nam Ban Lâm Hà và cấp huyện không còn, nhưng nhiều tin rao vẫn ghi địa chỉ cũ \"thị trấn Nam Ban, huyện Lâm Hà\". Namban Index tính chung cho cả xã mới theo bốn loại đất, không theo ranh thị trấn cũ; tin ở xã Nam Hà bên cạnh không được tính."),
+       ("Nam Ban Index cập nhật giá đất Nam Ban bao lâu một lần?", q3),
+       ("Giá đất \"thị trấn Nam Ban\" trên các trang rao bây giờ là giá ở đâu?", "Là giá ở xã Nam Ban Lâm Hà. Từ 1/7/2025, thị trấn Nam Ban cùng ba xã Đông Thanh, Mê Linh, Gia Lâm nhập thành xã Nam Ban Lâm Hà và cấp huyện không còn, nhưng nhiều tin rao vẫn ghi địa chỉ cũ \"thị trấn Nam Ban, huyện Lâm Hà\". Nam Ban Index tính chung cho cả xã mới theo bốn loại đất, không theo ranh thị trấn cũ; tin ở xã Nam Hà bên cạnh không được tính."),
        ("Giá đất Nam Ban có còn rẻ không?", "So với Đà Lạt và Bảo Lộc, mặt bằng giá Nam Ban vẫn dễ tiếp cận hơn. Nhưng đó là so theo giá rao; giá chốt của từng lô vẫn phải kiểm tại thực địa."),
        ("Phân khúc đất Nam Ban nào dễ bán lại nhất?", "Theo quan sát thị trường, lô có view hồ hoặc view toàn cảnh thường dễ bán lại hơn — người mua tìm view thật hiếm khi hối tiếc. Khoảng rao phổ biến nửa đầu 2026 của nhóm này là 4–6 triệu/m², tổng giá phổ biến 1,2–1,8 tỷ một lô; trung vị tin rao từng tháng xem ở mục 01."),
        ("Vì sao giá rao và giá bán thật ở Nam Ban chênh nhau?", "Giá rao là giá người bán muốn, không phải giá giao dịch được. Khoảng chênh giữa hai con số ở Nam Ban chưa có nguồn công khai nào đo, Index cũng chưa đo được, nên con số \"rẻ\" cần kiểm chứng tại thực địa thay vì tin theo tin rao."),
@@ -390,7 +390,7 @@ s = re.sub(r'("@type": "Article",[\s\S]*?"dateModified": )"[^"]*"', lambda m: m.
 SHORT = {"tach_thua_150_300": "đất nền tách thửa", "lo_500_tho_cu": "lô 500 m² có thổ cư", "dat_tren_1000": "đất trên 1.000 m²", "view": "lô view"}
 parts = [f'{SHORT[k]} {tr(cur[k]["v"])}' for k, _, _ in GROUPS if k in cur]
 if parts: parts[0] += " tr/m²"
-desc = (f"Giá đất Nam Ban hôm nay theo Namban Index (đo tới {m_on}): " + ", ".join(parts) +
+desc = (f"Giá đất Nam Ban hôm nay theo Nam Ban Index (đo tới {m_on}): " + ", ".join(parts) +
         f" — trung vị giá rao tháng {last_m}, xã Nam Ban Lâm Hà, Lâm Đồng. Đo mỗi tuần, có số tin và cách đo.")
 s = re.sub(r'(<meta name="description" content=")[^"]*(">)', lambda m: m.group(1) + desc + m.group(2), s, count=1)
 s = re.sub(r'(<meta property="og:description" content=")[^"]*(">)', lambda m: m.group(1) + desc + m.group(2), s, count=1)
@@ -442,11 +442,11 @@ if os.path.exists(LL):
     t = open(LL, encoding="utf-8").read()
     t2, k = re.subn(r"^- https://nambanpanorama\.com/namban-index — .*$", lambda m: ll_line, t, count=1, flags=re.M)
     if k == 1 and t2 != t: open(LL, "w", encoding="utf-8").write(t2); period_files.append(LL)
-# bản chép chữ trang chủ trong llms-full.txt cũng mang nhãn "Namban Index · T…/…"
+# bản chép chữ trang chủ trong llms-full.txt cũng mang nhãn "Nam Ban Index · T…/…" (trước 17/11/2026: "Namban Index")
 LF = "llms-full.txt"
 if os.path.exists(LF):
     t = open(LF, encoding="utf-8").read()
-    t2 = re.sub(r"Namban Index · T\d{1,2}/\d{4}", "Namban Index · " + PERIOD[""], t)
+    t2 = re.sub(r"Nam(?:ban| Ban) Index · T\d{1,2}/\d{4}", "Nam Ban Index · " + PERIOD[""], t)
     if t2 != t: open(LF, "w", encoding="utf-8").write(t2); period_files.append(LF)
 if period_files: print("Nhãn kỳ", PERIOD[""], "→", ", ".join(period_files))
 for m in re.finditer(r"<style[^>]*>(.*?)</style>", s, re.S): assert m.group(1).count("{") == m.group(1).count("}")

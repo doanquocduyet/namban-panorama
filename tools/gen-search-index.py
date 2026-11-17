@@ -7,7 +7,7 @@ slug · tiêu đề · mô tả ngắn · từ khoá · hub.
 Ba chỗ dễ sai, đã xử sẵn:
   1. `&nbsp;` (Luật 13d) — phải html.unescape() rồi bỏ \xa0, nếu không
      "Nam Ban" trong index thành "Nam\xa0Ban" và gõ "nam ban" không ra.
-  2. Tiêu đề có đuôi "| Namban Panorama" — cắt, để không trang nào cũng
+  2. Tiêu đề có đuôi "| Nam Ban Panorama" — cắt, để không trang nào cũng
      khớp khi người ta gõ "panorama".
   3. Trang tiếng nước ngoài (en/ fr/ zh/ ko/ ja/) KHÔNG vào index này —
      ô search nằm ở trang tiếng Việt, trộn vào là ra kết quả người đọc

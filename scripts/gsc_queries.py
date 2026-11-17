@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Đọc từ khoá · vị trí · lượt hiện · lượt bấm từ Google Search Console (Search Analytics API)
-cho Namban Panorama và Nam Ban Villas (cùng một service account), so với kỳ trước, rồi ghi vào
+cho Nam Ban Panorama và Nam Ban Villas (cùng một service account), so với kỳ trước, rồi ghi vào
 thư mục $GSC_OUT (mặc định ./gsc-out, KHÔNG nằm trong docs/):
   gsc-queries.md   — báo cáo Panorama
   gsc-villas.md    — báo cáo Villas (chỉ khi service account đã được cấp quyền property Villas)
@@ -24,7 +24,7 @@ API = "https://searchconsole.googleapis.com/webmasters/v3"
 MIN_IMP = 5          # ngưỡng lượt hiện để tính lên/xuống — dưới mức này vị trí nhảy lung tung
 WINDOW = 28
 SITES = [
-    {"key": "panorama", "name": "Namban Panorama", "host": "nambanpanorama.com",
+    {"key": "panorama", "name": "Nam Ban Panorama", "host": "nambanpanorama.com",
      "want": os.environ.get("GSC_SITE", "sc-domain:nambanpanorama.com").strip(), "out": "gsc-queries.md"},
     {"key": "villas", "name": "Nam Ban Villas", "host": "nambanvillas.vn",
      "want": "sc-domain:nambanvillas.vn", "out": "gsc-villas.md"},
@@ -231,7 +231,7 @@ def compare(pano, vil, win):
         out += [f"| {q} | {cell(p)} | {cell(v)} | {imp} |" for imp, q, p, v in sorted(items, key=lambda x: -x[0])[:n]]
         return out if len(out) > 2 else out + ["| — | | | |"]
 
-    L = ["# So 2 web theo từ khoá — Namban Panorama × Nam Ban Villas\n",
+    L = ["# So 2 web theo từ khoá — Nam Ban Panorama × Nam Ban Villas\n",
          f"Kỳ **{start:%d/%m}–{end:%d/%m/%Y}** ({WINDOW} ngày). \"Trang 1\" = vị trí trung bình ≤ 10. "
          "Ô ghi: vị trí · lượt hiện · lượt bấm. Chỉ tính từ khoá có lượt hiện ở ít nhất một web.\n",
          "| Nhóm | Số từ khoá |\n|---|---|",

@@ -1,11 +1,11 @@
 {
   "meta": {
-    "name": "Namban Index — Giá đất Nam Ban",
+    "name": "Nam Ban Index — Giá đất Nam Ban",
     "description": "Giá chào bán tham khảo đất ở xã Nam Ban Lâm Hà, Lâm Đồng theo phân khúc — tổng hợp từ tin rao công khai và quan sát thực địa, chưa phải giá đã chốt.",
-    "publisher": "Namban Panorama",
+    "publisher": "Nam Ban Panorama",
     "url": "https://nambanpanorama.com/namban-index",
     "contact": "nambanpanorama@gmail.com",
-    "usage": "Được trích dẫn tự do với ghi nguồn: Namban Panorama (nambanpanorama.com).",
+    "usage": "Được trích dẫn tự do với ghi nguồn: Nam Ban Panorama (nambanpanorama.com).",
     "method": "Tổng hợp tin rao công khai trên nhiều trang, đối chiếu với quan sát thực địa ở Nam Ban; ghi giá chào bán, chưa phải giá giao dịch đã chốt.",
     "unit_price": "VND/m2",
     "disclaimer": "Giá tham khảo theo khoảng. Mỗi lô khác nhau tùy vị trí, pháp lý, thương lượng — luôn thẩm định trực tiếp trước giao dịch.",
