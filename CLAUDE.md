@@ -461,6 +461,19 @@ máy, chưa sửa): câu "xã Lạc Dương cao hơn" ở `/nam-ban-hay-lac-duon
   tuần sau khi core update tháng 11 xong** (khoảng đầu tháng 12); báo cáo GSC 16/11 và 23/11 coi là nhiễu. Phương án chờ Chú (sau đợt đó): gom
   khối chữ lặp cụm bơ theo bản đồ nhà 26f (bảng ba thang giá chỉ giữ ở `/mua-bo-nam-ban`); nhà của chuyện giấy phép xây dựng là `/xay-nha-o-nam-ban`.
   Đã bỏ: gộp `/mua-dat-co-vuon-bo` với `/mua-dat-co-vuon-ca-phe` (hai câu tra khác nhau), gỡ câu FAQ "cách Đà Lạt bao xa" ở 8 trang.
+  **Chẩn đoán "tìm không thấy web" 16–17/11/2026 (Chú hỏi "nam ban cách đà lạt bao xa", "di linh so với nam ban"; 7 góc rà, 5 xong):**
+  KHÔNG có lỗi kỹ thuật (10 URL thật: 200, Googlebot = trình duyệt, canonical, robots, sitemap, JS, biến thể URL đều sạch). Nguyên nhân là
+  phía Google: index 187 (7/10) → 140/218 (16/11); 41/56 trang "đã thu thập – chưa lập chỉ mục" Google đọc lần cuối tháng 7–8 (đánh giá
+  trên bản cũ, không quay lại dù lastmod mới). Mueller 10/11/2026: tỉ lệ lớn trang loại này "usually" là hệ thống chất lượng chưa tin cả site;
+  9/11: site mới "busy with content" → "quality over quantity". Tên miền đăng ký 9/6/2026; gần như 0 nhắc tên/link ngoài; kênh YouTube 8
+  người đăng ký. Lượt hiện theo tuần đỉnh 447 (17–23/10) rồi tụt còn ~205 từ 31/10 (trước core update); cùng lúc Villas `/ve-nam-ban/`
+  (hiện từ ~24/10) đứng trên Panorama ở cụm "nam ban ở đâu / cách Đà Lạt bao xa". 79 % lượt hiện từ Việt Nam; `/en` chủ yếu hiện cho
+  người ở Mỹ (không phải lỗi). Câu "di linh so với nam ban", "đức trọng và nam ban": 0 lượt hiện có tên ở cả hai web (gần như không ai gõ);
+  `/nam-ban-hay-di-linh`, `-lac-duong`, `-dran`, `/ta-nung-hay-me-linh` ngoài index (đọc lần cuối 31/7–5/9), `-duc-trong`, `-don-duong` còn
+  (Google đọc lại 15–16/11) — khác nhau ở lần đọc cuối, không ở chữ (trùng cụm 8 chữ giữa các bài so sánh ≤ 3,2 %). Chưa rà xong: góc
+  hướng dẫn mới nhất và góc so sánh sâu (hết hạn mức). Bộ đo mới: `scripts/gsc_sitemaps.py` → `docs/gsc-sitemaps.md` (sitemap Google tải
+  lần cuối 13/11, 218 URL, 0 lỗi; 16 trang ưu tiên); dữ liệu mã hoá có thêm `daily`, `countries`, `devices`, `country_pages`.
+  Đã chạy `indexnow-all.yml` 17/11 (Bing, Cốc Cốc, Yandex, Naver). Việc Chú tự làm + đề xuất chờ duyệt: xem báo cáo lượt 17/11 trong phiên.
   **Rà 7/10/2026 (đã đọc nguồn gốc):** (1) Google sửa trang "Using generative AI content" 1/10/2026: phải tự kiểm từng
   dữ kiện kể cả title, description, schema, alt; nên cho người đọc biết bài được làm thế nào; rater chấm thấp nội dung "ít công,
   ít mới, ít giá trị" (QRG 4.6.5–4.6.6). Site CHƯA có trang "Về Panorama" công khai (`demo-ve-panorama` noindex, chưa duyệt) —
