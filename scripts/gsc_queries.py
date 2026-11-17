@@ -5,6 +5,7 @@ cho Nam Ban Panorama và Nam Ban Villas (cùng một service account), so với 
 thư mục $GSC_OUT (mặc định ./gsc-out, KHÔNG nằm trong docs/):
   gsc-queries.md   — báo cáo Panorama
   gsc-villas.md    — báo cáo Villas (chỉ khi service account đã được cấp quyền property Villas)
+  gsc-datnen.md    — báo cáo datnenlamdong.com.vn (chỉ khi đã được cấp quyền; thêm 17/11/2026)
   gsc-so-sanh.md   — bảng so 2 web theo từng từ khoá
   <web>-<ngày>.json — ảnh chụp số
 Repo công khai nên workflow MÃ HOÁ cả thư mục này rồi mới commit (docs/gsc-private/*.enc).
@@ -28,6 +29,10 @@ SITES = [
      "want": os.environ.get("GSC_SITE", "sc-domain:nambanpanorama.com").strip(), "out": "gsc-queries.md"},
     {"key": "villas", "name": "Nam Ban Villas", "host": "nambanvillas.vn",
      "want": "sc-domain:nambanvillas.vn", "out": "gsc-villas.md"},
+    # Thêm 17/11/2026 (Chú: "tham khảo cách lên top search của web datnenlamdong"): web tin rao của Chú,
+    # chỉ để học từ khoá nào nó thật sự đứng cao. Chưa cấp quyền cho service account thì tự bỏ qua.
+    {"key": "datnen", "name": "datnenlamdong.com.vn", "host": "datnenlamdong.com.vn",
+     "want": "sc-domain:datnenlamdong.com.vn", "out": "gsc-datnen.md"},
 ]
 
 
@@ -272,6 +277,8 @@ def main():
             log(f"{cfg['name']}: lỗi khi đọc Search Analytics:", str(e)[:300])
     if "panorama" in res and "villas" in res:
         compare(res["panorama"], res["villas"], win)
+    # Ghi chú đọc được từ phiên Claude (annotation check-runs): web nào đã có báo cáo lượt này
+    log(f"::notice::Báo cáo từ khoá lượt này: {', '.join(c['name'] for c in SITES if c['key'] in res) or 'không web nào'}")
 
 
 if __name__ == "__main__":
