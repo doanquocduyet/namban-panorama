@@ -64,11 +64,13 @@ def pick_site(all_sites, host, want):
     return (dom or sites)[0]
 
 
-def query(sess, site, start, end, dims):
+def query(sess, site, start, end, dims, stype=None):
     rows, start_row = [], 0
     while True:
         body = {"startDate": start.isoformat(), "endDate": end.isoformat(), "dimensions": dims,
                 "rowLimit": 25000, "startRow": start_row, "dataState": "final"}
+        if stype:
+            body["type"] = stype   # web (mặc định) | image | video | webMultimodal | discover | news | googleNews
         r = sess.post(f"{API}/sites/{quote(site, safe='')}/searchAnalytics/query", json=body, timeout=120)
         r.raise_for_status()
         got = r.json().get("rows", [])
@@ -137,8 +139,8 @@ def report(sess, cfg, site, win):
     # theo thiết bị, và quốc gia × trang — để biết web đang được hiện cho ai, và tụt/tăng từ ngày nào.
     # Mọi thứ chỉ nằm trong JSON đã mã hoá. Lỗi ở phần này không làm hỏng báo cáo chính.
     extra = {}
+    cell = lambda r: {"imp": r["impressions"], "clicks": r["clicks"], "pos": round(r["position"], 1)}
     try:
-        cell = lambda r: {"imp": r["impressions"], "clicks": r["clicks"], "pos": round(r["position"], 1)}
         extra["daily"] = {r["keys"][0]: cell(r) for r in query(sess, site, pstart, end, ["date"])}
         extra["countries"] = {r["keys"][0]: cell(r) for r in query(sess, site, start, end, ["country"])}
         extra["devices"] = {r["keys"][0]: cell(r) for r in query(sess, site, start, end, ["device"])}
@@ -148,6 +150,19 @@ def report(sess, cfg, site, win):
         extra["country_pages"] = cp
     except Exception as e:
         log(f"{cfg['name']}: không đọc được phần theo ngày/quốc gia ({str(e)[:120]})")
+    # Thêm 18/11/2026 (Search Analytics API cập nhật 16/11/2026): lượt hiện theo trang ở tab Hình ảnh và ở
+    # tìm kiếm đa phương thức (Google Lens, Circle to Search, tải ảnh lên Google) — Panorama có ảnh tự chụp
+    # nên đây là cửa riêng; và tách câu có tên thương hiệu / không có (chỉ property đủ dữ liệu mới có dòng).
+    # Mỗi phần tự bắt lỗi riêng; vẫn chỉ nằm trong JSON đã mã hoá.
+    for key, stype in (("image_pages", "image"), ("multimodal_pages", "webMultimodal")):
+        try:
+            extra[key] = {short(r["keys"][0], host): cell(r) for r in query(sess, site, start, end, ["page"], stype)}
+        except Exception as e:
+            log(f"{cfg['name']}: không đọc được {key} ({str(e)[:120]})")
+    try:
+        extra["branded"] = {r["keys"][0]: cell(r) for r in query(sess, site, start, end, ["brandedClassification"])}
+    except Exception as e:
+        log(f"{cfg['name']}: không đọc được phần thương hiệu ({str(e)[:120]})")
     cur, prev = by_query(cur_rows, host), by_query(prev_rows, host)
     # Tổng lấy theo trang: Google giấu các truy vấn hiếm (ẩn danh) khỏi bảng từ khoá, nên cộng từ khoá sẽ thiếu.
     tc, ti, tp = totals(page_rows)

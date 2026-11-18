@@ -1,5 +1,6 @@
 name: IndexNow — submit ALL URLs
-# Đẩy TẤT CẢ URL trong sitemap.xml lên IndexNow (Bing, Yandex, Naver, Coc Coc, Seznam...).
+# Đẩy TẤT CẢ URL trong sitemap.xml lên IndexNow (Bing, Yandex, Seznam, Naver, Yep, Internet Archive, Amazon —
+# danh sách indexnow.org/searchengines.json, kiểm 17/11/2026; Cốc Cốc KHÔNG nhận IndexNow, Cốc Cốc đọc sitemap qua robots.txt).
 # Dùng khi muốn hích recrawl toàn site (vd sau khi cập nhật hàng loạt). Chạy tay từ tab Actions.
 on:
   workflow_dispatch:

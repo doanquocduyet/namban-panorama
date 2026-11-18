@@ -24,7 +24,8 @@ jobs:
         run: python3 tools/sync-hub-news.py
       - name: Ghi ngày cập nhật tĩnh cho bot
         run: python3 tools/sync-updated-date.py
-      - name: Commit & push nếu hub đổi
+      - id: commit
+        name: Commit & push nếu hub đổi
         run: |
           git config user.name "namban-hub-bot"
           git config user.email "actions@users.noreply.github.com"
@@ -35,10 +36,18 @@ jobs:
           fi
           git commit -m "Hub /nam-ban: cập nhật 3 tin mới nhất từ /nam-ban-co-gi-moi"
           for i in 1 2 3 4 5; do
-            if git push; then echo "Đã push."; exit 0; fi
+            if git push; then echo "Đã push."; echo "pushed=true" >> "$GITHUB_OUTPUT"; exit 0; fi
             echo "Push bị từ chối, rebase rồi thử lại (lần $i)..."
             git fetch origin main
             git rebase origin/main || { git rebase --abort; exit 1; }
             sleep $((i*3))
           done
           exit 1
+      - name: Báo IndexNow hub /nam-ban vừa đổi (Bing, Copilot, các công cụ AI dùng chỉ mục Bing)
+        # Thêm 17/11/2026: commit của bot đẩy bằng GITHUB_TOKEN không kích workflow indexnow.yml, nên báo thẳng ở đây
+        if: steps.commit.outputs.pushed == 'true'
+        run: |
+          sleep 90
+          curl -sS -X POST "https://api.indexnow.org/indexnow" -H "Content-Type: application/json; charset=utf-8" \
+            -d '{"host":"nambanpanorama.com","key":"aeba74e4ac00031d44bcb9899ddda293","keyLocation":"https://nambanpanorama.com/aeba74e4ac00031d44bcb9899ddda293.txt","urlList":["https://nambanpanorama.com/nam-ban"]}' \
+            -w "\nHTTP %{http_code}\n" || true

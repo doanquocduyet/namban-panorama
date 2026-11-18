@@ -440,7 +440,9 @@ máy, chưa sửa): câu "xã Lạc Dương cao hơn" ở `/nam-ban-hay-lac-duon
 - **Hướng tối ưu AI 2026 (tra 25/9/2026, nguồn Google/Bing/Ahrefs):** Google tuyên bố AI Overviews/AI Mode
   KHÔNG cần llms.txt, markdown, schema đặc biệt, chia nhỏ đoạn; Ahrefs đo thêm schema KHÔNG tăng trích dẫn →
   đừng đổ công vào đó. Chỉ 38 % trang được AI Overviews trích nằm top 10 (AI tách câu hỏi thành nhiều câu nhỏ)
-  → **mỗi câu hỏi nhỏ một trang trả lời gọn, nối về hub** là hướng ăn điểm nhất. Theo dõi bằng Search Console
+  → **mỗi câu hỏi nhỏ một trang trả lời gọn, nối về hub** là hướng ăn điểm nhất — **ĐÍNH CHÍNH 18/11/2026:** chỉ mở trang mới
+  khi câu hỏi là câu người thật gõ, chưa có nhà trong site, và trang có dữ kiện gốc; trang theo từng biến thể câu hỏi / câu fan-out
+  là scaled content abuse (hướng dẫn AI của Google, bản 10/7/2026). Theo dõi bằng Search Console
   (mục Search generative AI, giữ "Include") và Bing Webmaster Tools → AI Performance (câu hỏi thật khiến
   ChatGPT/Copilot trích mình).
   **Cập nhật 6/10/2026 (đã kiểm nguồn gốc):** Google có trang hướng dẫn chính thức "AI optimization guide" (15/5, sửa
@@ -454,7 +456,8 @@ máy, chưa sửa): câu "xã Lạc Dương cao hơn" ở `/nam-ban-hay-lac-duon
   (LCP ≤ 2,5 s · INP ≤ 200 ms · CLS ≤ 0,1). Bot cần mở để được trích: Googlebot, OAI-SearchBot (ChatGPT search), PerplexityBot,
   Claude-SearchBot + Claude-User (thêm vào robots.txt 6/10), Bingbot; GPTBot/ClaudeBot chỉ là bot huấn luyện. Google-Extended không
   ảnh hưởng Search nhưng điều khiển cả grounding trong Gemini (chặn là mất lượt hiện/bấm trong Gemini Apps) → giữ mở.
-  IndexNow chỉ Bing/Yandex/Naver nhận, Google KHÔNG. Thị phần VN 9/2026: Google ~93 %, Cốc Cốc ~6 %, Bing <1 %.
+  IndexNow: Bing, Yandex, Seznam, Naver, Yep, Internet Archive, Amazon nhận (indexnow.org/searchengines.json, kiểm 17/11/2026);
+  Google KHÔNG, Cốc Cốc KHÔNG (Cốc Cốc đọc sitemap qua robots.txt). Thị phần VN 9/2026: Google ~93 %, Cốc Cốc ~6 %, Bing <1 %.
   Nghiên cứu (tương quan, không phải nhân quả): nhắc thương hiệu ngoài site ~0,66–0,74 (YouTube cao nhất) so với backlink ~0,22.
   **Nút "nguồn ưu tiên" đã hỗ trợ tiếng Việt (30/4/2026)** — nhưng Chú đã gỡ dòng này 4/10/2026, giữ quyết định đó.
   **Rà site 6/10/2026:** 219 trang, 0 link gãy/tựa trùng/lỗi schema/lỗi hreflang; tươi trung vị 11 ngày. Vấn đề thật là
@@ -485,7 +488,7 @@ máy, chưa sửa): câu "xã Lạc Dương cao hơn" ở `/nam-ban-hay-lac-duon
   (Google đọc lại 15–16/11) — khác nhau ở lần đọc cuối, không ở chữ (trùng cụm 8 chữ giữa các bài so sánh ≤ 3,2 %). Chưa rà xong: góc
   hướng dẫn mới nhất và góc so sánh sâu (hết hạn mức). Bộ đo mới: `scripts/gsc_sitemaps.py` → `docs/gsc-sitemaps.md` (sitemap Google tải
   lần cuối 13/11, 218 URL, 0 lỗi; 16 trang ưu tiên); dữ liệu mã hoá có thêm `daily`, `countries`, `devices`, `country_pages`.
-  Đã chạy `indexnow-all.yml` 17/11 (Bing, Cốc Cốc, Yandex, Naver). Việc Chú tự làm + đề xuất chờ duyệt: xem báo cáo lượt 17/11 trong phiên.
+  Đã chạy `indexnow-all.yml` 17/11 (Bing, Yandex, Naver, Seznam… — Cốc Cốc KHÔNG nhận IndexNow, xem mục 18/11). Việc Chú tự làm + đề xuất chờ duyệt: xem báo cáo lượt 17/11 trong phiên.
   **Soi datnenlamdong.com.vn 17/11/2026 (Chú: "tham khảo cách lên top search của web datnenlamdong của tôi"; 3 góc rà có đối chiếu tài liệu
   Google).** Web tin rao kiểu cũ: 1.490 tin rao, 144 trang danh mục theo từng xã cũ, 52 bài "đất X là gì"; tựa tự gắn "11/2026", H1 tự gắn ngày
   hôm nay, sitemap ghi `lastmod` hôm nay cho mọi trang. **KHÔNG HỌC chiêu nào**: danh mục theo xã làm theo khuôn = doorway; tin rao hàng loạt
@@ -509,13 +512,38 @@ máy, chưa sửa): câu "xã Lạc Dương cao hơn" ở `/nam-ban-hay-lac-duon
   nó, 85 % tin trên bốn trang danh mục Nam Ban/Đông Thanh/Mê Linh/Gia Lâm đăng từ trước 11/2025 (95 % trước 5/2026). Bảng tháng KHÔNG
   dính (tin không ngày không vào bảng tháng); dính: số tin còn đang rao, khoảng p10–p90 mục 03, câu "phần mười rẻ nhất" ở `/dat-nam-ban-gia-re`.
   Đề xuất: `aggregate.py` đọc tháng đăng từ sitemap của nguồn này, bỏ tin quá 12 tháng khỏi mốc nền (không đụng `crawl.py`).
+  **Đo truy xuất AI + rà "trả lời ngay" 17–18/11/2026 (Chú: "tối ưu aeo seo geo theo các cách mới nhất", "coi chừng lan man").**
+  (1) **Đo truy xuất:** 25 câu người ta thật sự gõ (từ GSC) chạy qua công cụ tìm của trợ lý AI (máy ở Mỹ, không phải Google VN): Panorama
+  có trong kết quả tự nhiên 0/25. Lọc theo tên miền thì chỉ mục của công cụ đó chỉ giữ 6/218 trang (`/nam-ban`, `/namban-index`,
+  `/ca-phe-nam-ban`, `/living-in-nam-ban`, `/en`, `/en/long-term-rental-nam-ban`), bản cũ (Index còn số tháng 9). 20/25 câu vắng vì trang nhà
+  chưa vào chỉ mục (lỗi truy xuất), 5/25 trang nhà có trong chỉ mục mà không được chọn. Khi lọc tên miền, công cụ trích Panorama ĐÚNG (25 km,
+  45 phút, 19–21°C, 800–1.000 m) → chữ đọc được, thua ở bước vào chỉ mục, cùng gốc với chuyện Google (site mới, ít được nhắc tên ngoài).
+  Thứ đang được trả thay chỗ Panorama: "thị trấn Nam Ban thuộc huyện Lâm Hà" (thì hiện tại), khoảng cách đoán "30–40 km", chùa Linh Ẩn
+  "ở Đà Lạt", "lên Văn phòng đăng ký đất đai huyện Lâm Hà". **Hệ quả: hub `/nam-ban` là trang AI đang đọc thay cho cả site** — mỗi dòng mô tả
+  trên hub phải tự đứng được khi bị trích rời. Đã sửa dòng "Chưa. Hai xã riêng từ 1/7/2025…" (bị trích nhầm hai lần, một lần đem đáp câu
+  "sáp nhập Đà Lạt") thành "Nam Hà chưa sáp nhập vào Nam Ban: hai xã riêng…"; quét 5 hub: còn 0 dòng mở đầu bằng đáp trần ("Chưa.", "Có."…).
+  Dòng mô tả mới trên hub: luôn có chủ ngữ.
+  (2) **Rà trả lời ngay 21 trang nhiều lượt hiện nhất:** 15 đạt, 4 bỏ qua (đang thắng / bài kể chuyện / đã hẹn tháng 12), 2 đề xuất thêm một
+  câu (`/len-lam-dong-nen-song-o-dau`, `/nen-xem-khu-nao-o-nam-ban`) — cả hai BỊ BÁC ở vòng kiểm chéo (lặp ý ngay câu sau, trang ngoài chỉ
+  mục nên không đo được, câu "Tà Nung, Lạc Dương, Lâm Hà" viết ở thì hiện tại). KHÔNG sửa. Đừng mở lại đợt "thêm câu trả lời đầu trang".
+  Để ngỏ: FAQ #1 của `/len-lam-dong-nen-song-o-dau` còn gọi "vùng ven như Tà Nung, Lạc Dương, Đức Trọng, Lâm Hà" theo tên trước 1/7/2025.
+  (3) **Sửa dữ kiện:** "khu bảo tồn rừng … không xây được nhà / không được xây nhà" (câu tuyệt đối, đã bị gỡ ở `/len-tho-cu` 13/10) còn sót ở
+  TLDR `/quy-hoach-2050` và og/twitter description `/ban-do-quy-hoach-nam-ban` → "khu bảo tồn và kinh tế dưới tán rừng … về nguyên tắc không
+  phát triển đất ở". (4) **IndexNow:** `indexnow.yml` giờ báo cả trang đã xoá, bỏ khuôn `_*.html` + trang noindex, `en/index.html` báo đúng
+  `/en` (trước báo nhầm `/en/index`); `home-latest.yml` và `hub-news-sync.yml` tự báo IndexNow sau khi bot đẩy (commit của bot không kích
+  `indexnow.yml`). `indexnow-all.yml` chỉ chạy tay sau thay đổi lớn toàn site. (5) **Số đo mới:** `gsc_queries.py` đọc thêm lượt hiện theo
+  trang ở tab Hình ảnh, tìm kiếm đa phương thức (`type: webMultimodal` — Lens, Circle to Search) và tách câu có / không có tên thương hiệu
+  (`brandedClassification`; property nhỏ có thể chưa có dòng) — đều trong JSON mã hoá. (6) **Chú tự làm (đã gửi từng bước):** Bing Webmaster
+  Tools nhập từ GSC + xem AI Performance / Topics (Copilot neo vào chỉ mục Bing — đây là cửa truy xuất AI lớn nhất còn bỏ ngỏ); công tắc
+  Search generative AI = Include; thêm "platform property" YouTube + Instagram trong Search Console (có từ 29/7/2026). Không làm: token từ
+  chối huấn luyện AI, llms mới, schema thêm, trang theo biến thể câu hỏi.
   **Rà 7/10/2026 (đã đọc nguồn gốc):** (1) Google sửa trang "Using generative AI content" 1/10/2026: phải tự kiểm từng
   dữ kiện kể cả title, description, schema, alt; nên cho người đọc biết bài được làm thế nào; rater chấm thấp nội dung "ít công,
   ít mới, ít giá trị" (QRG 4.6.5–4.6.6). Site CHƯA có trang "Về Panorama" công khai (`demo-ve-panorama` noindex, chưa duyệt) —
   đề xuất chờ Chú. (2) Mueller 7/9/2026: Google có thể "mất niềm tin" cả site vì nhiều trang ít giá trị, hồi lại mất nhiều tháng →
   ưu tiên làm dày bài đang có (ảnh tự chụp, số có nguồn) hơn đẻ trang mới. (3) Spam update 24/9 vẫn chạy (Google hẹn ≤ 2 tuần);
   Gemini 3.8 vào AI Mode; Search Console có báo cáo AI toàn cầu + thử "AI Contribution" trả tiền nhà báo (chọn lọc). (4) Search
-  Profiles (Discover) chỉ ở Mỹ, đòi ≥ 100.000 người theo dõi — chưa áp. (5) Copilot neo vào chỉ mục Bing (câu "ChatGPT tìm nguồn
+  Profiles (Discover) chỉ ở Mỹ, ngưỡng 10.000 người theo dõi (Google hạ từ 100.000 ngày 16/9/2026) — chưa áp. (5) Copilot neo vào chỉ mục Bing (câu "ChatGPT tìm nguồn
   qua Bing" chưa có nguồn gốc: OpenAI chỉ nói ChatGPT search dùng "nhà cung cấp tìm kiếm bên thứ ba") → Bing Webmaster Tools
   (có báo cáo AI Performance từ 2/2026) đáng làm; site chưa có meta/file xác minh Bing trong repo (có thể Chú xác minh bằng
   nhập từ GSC). (6) Cốc Cốc nhận sitemap qua dòng `Sitemap:` trong robots.txt — đã có, không cần console. (7) Kỹ thuật đo 7/10:

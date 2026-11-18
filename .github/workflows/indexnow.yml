@@ -24,11 +24,16 @@ jobs:
           else
             CHANGED=$(git diff --name-only HEAD~1 HEAD -- '*.html' || true)
           fi
+          # Sửa 17/11/2026 theo FAQ IndexNow + Bing Webmaster Guidelines: báo cả trang đã XOÁ (để Bing gỡ nhanh),
+          # bỏ khuôn "_*.html" và trang noindex; "en/index.html" → "/en" (trước đó báo nhầm "/en/index").
           URLS=""
           for f in $CHANGED; do
-            [ -f "$f" ] || continue
+            case "$(basename "$f")" in _*) continue ;; esac
+            case "$f" in docs/*|tools/*|scripts/*|node_modules/*) continue ;; esac
+            if [ -f "$f" ] && grep -qiE '<meta[^>]+name="robots"[^>]+noindex' "$f"; then continue; fi
             slug="${f%.html}"
-            if [ "$slug" = "index" ]; then u="https://$HOST/"; else u="https://$HOST/$slug"; fi
+            slug="${slug%/index}"
+            if [ "$slug" = "index" ] || [ -z "$slug" ]; then u="https://$HOST/"; else u="https://$HOST/$slug"; fi
             if [ -z "$URLS" ]; then URLS="\"$u\""; else URLS="$URLS,\"$u\""; fi
           done
           if [ -z "$URLS" ]; then echo "No HTML changes to submit"; exit 0; fi

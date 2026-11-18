@@ -21,7 +21,8 @@ jobs:
           python-version: "3.12"
       - name: Lấy 6 bài mới nhất vào trang chủ
         run: python3 tools/sync-home-latest.py
-      - name: Commit & push nếu trang chủ đổi
+      - id: commit
+        name: Commit & push nếu trang chủ đổi
         run: |
           git config user.name "namban-home-bot"
           git config user.email "actions@users.noreply.github.com"
@@ -32,10 +33,18 @@ jobs:
           fi
           git commit -m "Trang chủ: cập nhật khối Mới cập nhật"
           for i in 1 2 3 4 5; do
-            if git push; then echo "Đã push."; exit 0; fi
+            if git push; then echo "Đã push."; echo "pushed=true" >> "$GITHUB_OUTPUT"; exit 0; fi
             echo "Push bị từ chối, rebase rồi thử lại (lần $i)..."
             git fetch origin main
             git rebase origin/main || { git rebase --abort; exit 1; }
             sleep $((i*3))
           done
           exit 1
+      - name: Báo IndexNow trang chủ vừa đổi (Bing, Copilot, các công cụ AI dùng chỉ mục Bing)
+        # Thêm 17/11/2026: commit của bot đẩy bằng GITHUB_TOKEN không kích workflow indexnow.yml, nên báo thẳng ở đây
+        if: steps.commit.outputs.pushed == 'true'
+        run: |
+          sleep 90
+          curl -sS -X POST "https://api.indexnow.org/indexnow" -H "Content-Type: application/json; charset=utf-8" \
+            -d '{"host":"nambanpanorama.com","key":"aeba74e4ac00031d44bcb9899ddda293","keyLocation":"https://nambanpanorama.com/aeba74e4ac00031d44bcb9899ddda293.txt","urlList":["https://nambanpanorama.com/"]}' \
+            -w "\nHTTP %{http_code}\n" || true
