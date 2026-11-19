@@ -65,6 +65,8 @@ jobs:
         run: |
           python tools/gen-index-history.py
           python tools/gen-llms-index-entry.py || echo "llms-full: không đồng bộ (Luật 25 chặn) — trang vẫn cập nhật"
+          # ô hỏi–đáp (ô tìm kiếm + /hoi-nhanh) trả nguyên văn FAQ Index → số giá phải theo kịp mỗi tuần (19/11/2026)
+          python tools/gen-chat-index.py || echo "chat-index: không sinh lại được — ô hỏi–đáp giữ số tuần trước"
       - name: Lưu dòng thô 30 ngày (không vào repo)
         uses: actions/upload-artifact@v4
         with:
@@ -77,7 +79,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # index.html + mọi trang có <span data-idx-period> + llms.txt: nhãn kỳ Index tự đổi theo tháng (4/11/2026)
-          git add data/index namban-index.html llms.txt llms-full.txt sitemap.xml
+          git add data/index namban-index.html llms.txt llms-full.txt sitemap.xml chat-index.json
           git add -u -- '*.html'
           if [ "${{ steps.agg.outputs.rc }}" = "0" ]; then msg="Index: số đo giá rao tuần $(date -u +%G-W%V) (tự động)"; else msg="Index: cảnh báo tuần $(date -u +%G-W%V) — không sửa trang (tự động)"; fi
           git commit -m "$msg" || exit 0

@@ -528,13 +528,15 @@
       s=(s||'').toLowerCase().replace(/đ/g,'d');
       return s.normalize?s.normalize('NFD').replace(/[̀-ͯ]/g,''):s;
     }
+    var WAIT=[];
     function load(cb){
       if(IDX){cb();return;}
+      WAIT.push(cb);
       if(LOADING)return;
       LOADING=true;
+      function done(d){ IDX=d; LOADING=false; var w=WAIT; WAIT=[]; w.forEach(function(f){ f(); }); }
       fetch('/search-index.json').then(function(r){return r.json();})
-        .then(function(d){IDX=d;LOADING=false;cb();})
-        .catch(function(){LOADING=false;IDX=[];cb();});
+        .then(done).catch(function(){ done([]); });
     }
     /* Xếp hạng 5 bậc. Bậc "khớp TRỌN TỪ" là bậc quan trọng nhất: gõ "ho"
        phải ra "Hồ Thanh Trì" chứ không phải "Hợp tác" — vì bỏ dấu thì
@@ -602,7 +604,7 @@
       /* lớp phủ */
       '.pm-sov{position:fixed;inset:0;z-index:1200;display:none;background:rgba(241,236,226,.92);'+
       '-webkit-backdrop-filter:blur(18px) saturate(1.15);backdrop-filter:blur(18px) saturate(1.15);}'+
-      '.pm-sov.on{display:block;}'+
+      '.pm-sov.on{display:block;overflow-y:auto;overscroll-behavior:contain;}'+
       '.pm-sbox{max-width:640px;margin:0 auto;padding:14vh 28px 0;}'+
       '.pm-sin{width:100%;background:none;border:0;border-bottom:1px solid var(--line,#e1d9c8);'+
       "font-family:'Fraunces',serif;font-weight:300;font-size:28px;color:var(--ink,#1a1815);"+
@@ -629,20 +631,110 @@
       'background:var(--card,#faf6ee);border:1px solid var(--line,#e1d9c8);border-radius:2px;'+
       'padding:4px 18px;box-shadow:0 14px 40px rgba(26,24,21,.09);display:none;}'+
       '.pm-shome .pm-sres.on{display:block;}'+
-      '@media(max-width:600px){.pm-sbox{padding-top:9vh;}.pm-sin{font-size:22px;}}';
+      /* thẻ "Trả lời nhanh" (ô tìm kiếm + ô hỏi /hoi-nhanh) — chữ là chính, không khung màu, không icon */
+      '.pm-ans{padding:6px 0 18px;border-bottom:1px solid var(--line,#e1d9c8);}'+
+      '.pm-ans-k{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--stone-text,#726a5c);margin-bottom:7px;}'+
+      ".pm-ans-q{font-family:'Fraunces',serif;font-style:italic;font-size:18px;line-height:1.4;color:var(--forest-deep,#1e2a20);"+
+      'margin-bottom:8px;text-wrap:balance;}'+
+      '.pm-ans-a{font-size:15px;font-weight:400;line-height:1.65;color:var(--ink,#1a1815);margin:0 0 10px;text-wrap:pretty;'+
+      'display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden;}'+
+      '.pm-ans-a.full{display:block;-webkit-line-clamp:unset;overflow:visible;}'+
+      '.pm-ans-more{display:block;background:none;border:0;padding:2px 0;margin:-4px 0 10px;min-height:28px;font:inherit;font-size:13px;'+
+      'color:var(--muted,#6e6759);cursor:pointer;text-decoration:underline;text-decoration-color:var(--line,#e1d9c8);text-underline-offset:4px;}'+
+      '.pm-sres .pm-ans a.pm-ans-l,.pm-ans a.pm-ans-l{display:inline;padding:0 0 1px;font-size:14.5px;font-weight:400;color:var(--forest,#2f4034);'+
+      'text-decoration:none;border-bottom:1px solid var(--clay-soft,#bb8862);line-height:1.6;}'+
+      '.pm-ans a.pm-ans-l:hover{border-bottom-color:var(--forest,#2f4034);}'+
+      '.pm-slab{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--stone-text,#726a5c);margin:18px 0 0;}'+
+      /* ô hỏi đầu /hoi-nhanh */
+      '.pm-ask-f{display:flex;gap:8px;}'+
+      '.pm-ask-in{flex:1;min-width:0;font:inherit;font-size:16px;font-weight:400;padding:12px 18px;border:1px solid var(--stone,#a79c87);'+
+      'border-radius:999px;background:var(--card,#faf6ee);color:var(--ink,#1a1815);}'+
+      '.pm-ask-in::placeholder{color:var(--stone-text,#726a5c);}'+
+      '.pm-ask-in:focus{outline:2px solid var(--forest,#2f4034);outline-offset:1px;}'+
+      '.pm-ask-f button{font:inherit;font-size:15px;font-weight:500;padding:0 22px;border:0;border-radius:999px;background:var(--forest,#2f4034);'+
+      'color:#f1ece2;cursor:pointer;min-height:46px;}'+
+      '.pm-ask-f button:hover{background:var(--forest-deep,#1e2a20);}'+
+      '.pm-ask-note{font-size:12.5px;color:var(--muted,#6e6759);margin:8px 0 0 18px;line-height:1.55;text-wrap:pretty;}'+
+      '.pm-ask-note a{color:var(--forest,#2f4034);}'+
+      '.pm-ask-out:not(:empty){margin-top:22px;}'+
+      '.pm-ask-out .pm-ans-note,.pm-ask-out>.pm-ask-note{margin-left:0;}'+
+      '.pm-ask-more button{display:block;width:100%;text-align:left;font:inherit;font-size:15px;font-weight:400;color:var(--forest,#2f4034);'+
+      'background:none;border:0;border-bottom:1px solid var(--line,#e1d9c8);padding:11px 0;cursor:pointer;min-height:44px;line-height:1.45;}'+
+      '.pm-ask-more button span{display:block;font-size:12.5px;color:var(--muted,#6e6759);font-weight:300;margin-top:2px;}'+
+      '@media(max-width:600px){.pm-sbox{padding-top:9vh;}.pm-sin{font-size:22px;}.pm-ans-q{font-size:17px;}}';
     document.head.appendChild(st);
 
     var ICON='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" '+
       'stroke-width="1.6" stroke-linecap="round" aria-hidden="true">'+
       '<circle cx="11" cy="11" r="7"></circle><line x1="16.2" y1="16.2" x2="21" y2="21"></line></svg>';
 
-    function render(box, list, q){
+    /* ── HỎI–ĐÁP (19/11/2026): gõ thành câu hỏi thì có thẻ "Trả lời nhanh" đứng trên danh sách bài.
+       Bot không dùng AI: chat-bot.js so câu hỏi với chat-index.json rồi trả NGUYÊN VĂN câu trả lời đã có
+       trên web, kèm link bài. Hai file chỉ tải khi người đọc mở ô tìm (hoặc ô hỏi ở /hoi-nhanh).
+       Không khớp đủ chắc thì KHÔNG hiện thẻ — chỉ còn danh sách bài như cũ. Câu hỏi không gửi đi đâu. */
+    var WK=null, WKP=null, WKFAIL=0, ASKN=0, PEND={}, BOTV='20261119';
+    /* Bot chạy NỀN (Web Worker): dựng kho và chấm câu ngoài luồng chính nên gõ không khựng, kể cả máy yếu. */
+    function loadBot(){
+      if(WKP) return WKP;
+      if(WKFAIL>1||typeof Worker==='undefined') return Promise.resolve(false);
+      WKP=new Promise(function(ok){
+        try{
+          WK=new Worker('/chat-bot.js?v='+BOTV);
+          WK.onmessage=function(e){
+            var m=e.data||{};
+            if(m.type==='ready') ok(true);
+            else if(m.type==='fail') ok(false);
+            else if(m.type==='ans'&&PEND[m.id]){ PEND[m.id](m); delete PEND[m.id]; }
+          };
+          WK.onerror=function(){ ok(false); };
+          WK.postMessage({type:'load',url:'/chat-index.json?v='+BOTV});
+        }catch(e){ ok(false); }
+      }).then(function(r){ if(!r){ WKFAIL++; WKP=null; try{WK&&WK.terminate();}catch(e){} WK=null; } return r; });
+      return WKP;
+    }
+    function askBot(q){
+      return loadBot().then(function(ok){
+        if(!ok) return null;
+        return new Promise(function(res){ var id=++ASKN; PEND[id]=res; WK.postMessage({type:'ask',id:id,q:q}); });
+      });
+    }
+    function esc(t){ return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+    /* Link tới đúng câu trong bài: mục bài có #neo; câu hỏi–đáp dùng text fragment (#:~:text=) để trình duyệt
+       cuộn tới và tô câu đó — trình duyệt không hỗ trợ thì chỉ mở đầu bài, không hỏng gì. */
+    function ansHref(d){
+      if(d.k!==0) return d.u;
+      var t=d.q.replace(/[?？]\s*$/,'').split(/\s+/).slice(0,8).join(' ');
+      return d.p+'#:~:text='+encodeURIComponent(t).replace(/-/g,'%2D');
+    }
+    function cardHTML(d){
+      return '<div class="pm-ans"><div class="pm-ans-k">'+(d.k===2?'Tin mới':'Trả lời nhanh')+'</div>'+
+        '<div class="pm-ans-q">'+esc(d.q)+'</div>'+
+        '<p class="pm-ans-a">'+esc(d.a)+'</p>'+
+        '<a class="pm-ans-l" href="'+esc(ansHref(d))+'">'+(d.k===2?'Đọc tin trong bài: ':'Đọc trong bài: ')+esc(d.t)+'&nbsp;→</a></div>';
+    }
+    /* Câu trả lời dài thì gập còn 5 dòng, có nút mở — chỉ hiện nút khi thật sự bị gập. */
+    function fitCards(box){
+      var as=box.querySelectorAll('.pm-ans-a');
+      for(var i=0;i<as.length;i++){
+        var a=as[i];
+        if(a.scrollHeight>a.clientHeight+2&&!a.nextElementSibling.classList.contains('pm-ans-more')){
+          var b=document.createElement('button'); b.type='button'; b.className='pm-ans-more'; b.textContent='Đọc hết câu trả lời';
+          b.addEventListener('click',(function(a,b){return function(e){e.stopPropagation();a.classList.add('full');b.remove();};})(a,b));
+          a.parentNode.insertBefore(b,a.nextSibling);
+        }
+      }
+    }
+    function track(o){ try{ if(typeof gtag==='function') gtag('event','hoi_dap',o); }catch(e){} }
+
+    function render(box, list, q, ans){
       if(!q||q.length<2){ box.innerHTML=''; box.classList.remove('on'); return; }
-      if(!list.length){
+      var card=(ans&&ans.question&&ans.ok&&ans.top)?cardHTML(ans.top.d):'';
+      if(!list.length&&!card){
         box.innerHTML='<p class="pm-snone">Chưa có bài nào về chuyện này.</p>';
         box.classList.add('on'); return;
       }
-      var h='';
+      var h=card;
+      if(card&&list.length) h+='<div class="pm-slab">Bài liên quan</div>';
       for(var i=0;i<list.length;i++){
         var x=list[i];
         h+='<a href="/'+x.s+'">'+
@@ -652,23 +744,50 @@
            '</a>';
       }
       box.innerHTML=h; box.classList.add('on');
+      if(card){
+        fitCards(box);
+        var l=box.querySelector('.pm-ans-l');
+        if(l) l.addEventListener('click',function(){ track({noi:'tim_kiem',hanh_dong:'bam_tra_loi'}); });
+      }
+    }
+    /* Gõ tới đâu tìm tới đó (chờ 90 ms cho ngón tay nghỉ). Câu từ hai chữ trở lên thì hỏi thêm bot nền,
+       chờ tối đa 450 ms để thẻ trả lời và danh sách bài hiện cùng lúc; bot về muộn thì chèn thẻ khi về. */
+    function live(inp, box){
+      var tm=null, seq=0;
+      function go(){
+        var my=++seq;
+        load(function(){
+          var q=inp.value.trim(), list=search(q);
+          if(my!==seq) return;
+          if(q.split(/\s+/).length<2){ render(box,list,q,null); return; }
+          var got=false, t=setTimeout(function(){ if(!got&&my===seq) render(box,list,q,null); },450);
+          askBot(q).then(function(m){
+            got=true; clearTimeout(t);
+            if(my===seq&&inp.value.trim()===q) render(box,list,q,m);
+          });
+        });
+      }
+      inp.addEventListener('input',function(){ clearTimeout(tm); tm=setTimeout(go,90); });
+      return go;
     }
 
     /* ── lớp phủ (mở từ icon trên thanh menu) ── */
     var ov=document.createElement('div');
     ov.className='pm-sov';
     ov.innerHTML='<button class="pm-sclose" aria-label="Đóng tìm kiếm">×</button>'+
-      '<div class="pm-sbox"><input class="pm-sin" type="text" autocomplete="off" spellcheck="false" '+
-      'aria-label="Tìm trong Nam Ban Panorama" placeholder="Tìm trong Nam Ban Panorama…">'+
-      '<div class="pm-sres"></div>'+
-      '<p class="pm-shint">Gõ không dấu cũng được. Esc để đóng.</p></div>';
+      '<div class="pm-sbox"><input class="pm-sin" type="text" autocomplete="off" spellcheck="false" enterkeyhint="search" '+
+      'aria-label="Tìm hoặc hỏi trong Nam Ban Panorama" placeholder="Tìm bài, hoặc hỏi một câu…">'+
+      '<div class="pm-sres" aria-live="polite"></div>'+
+      '<p class="pm-shint">Gõ vài chữ để tìm bài, gõ cả câu để hỏi. Không dấu cũng&nbsp;được.</p></div>';
     document.body.appendChild(ov);
     var oin=ov.querySelector('.pm-sin'), ores=ov.querySelector('.pm-sres');
+    var ogo=live(oin,ores);
 
     function openOv(){
       ov.classList.add('on');
       document.body.style.overflow='hidden';
-      load(function(){ if(oin.value)render(ores,search(oin.value),oin.value); });
+      loadBot();
+      if(oin.value)ogo();
       setTimeout(function(){oin.focus();},40);
     }
     function closeOv(){
@@ -678,9 +797,8 @@
     }
     ov.querySelector('.pm-sclose').addEventListener('click',closeOv);
     ov.addEventListener('click',function(e){ if(e.target===ov)closeOv(); });
-    oin.addEventListener('input',function(){
-      var q=oin.value.trim();
-      load(function(){ render(ores,search(q),q); });
+    oin.addEventListener('keydown',function(e){
+      if(e.key==='Enter'){ var a=ores.querySelector('a'); if(a){ e.preventDefault(); location.href=a.getAttribute('href'); } }
     });
     document.addEventListener('keydown',function(e){
       if(e.key==='Escape'&&ov.classList.contains('on')){ closeOv(); return; }
@@ -717,16 +835,13 @@
       var w=document.createElement('div');
       w.className='pm-shome';
       w.innerHTML='<span class="pm-sic">'+ICON+'</span>'+
-        '<input class="pm-sin" type="text" autocomplete="off" spellcheck="false" '+
-        'aria-label="Tìm trong Nam Ban Panorama" placeholder="Tìm một khu, một hồ, một câu hỏi…">'+
-        '<div class="pm-sres"></div>';
+        '<input class="pm-sin" type="text" autocomplete="off" spellcheck="false" enterkeyhint="search" '+
+        'aria-label="Tìm hoặc hỏi trong Nam Ban Panorama" placeholder="Tìm một khu, một hồ, một câu hỏi…">'+
+        '<div class="pm-sres" aria-live="polite"></div>';
       slot.appendChild(w);
       var hin=w.querySelector('.pm-sin'), hres=w.querySelector('.pm-sres');
-      hin.addEventListener('input',function(){
-        var q=hin.value.trim();
-        load(function(){ render(hres,search(q),q); });
-      });
-      hin.addEventListener('focus',function(){ load(function(){}); });
+      live(hin,hres);
+      hin.addEventListener('focus',function(){ load(function(){}); loadBot(); });
       document.addEventListener('click',function(e){
         if(!w.contains(e.target)){ hres.classList.remove('on'); }
         else if(hin.value.trim().length>1){ hres.classList.add('on'); }
@@ -734,6 +849,50 @@
       hin.addEventListener('keydown',function(e){
         if(e.key==='Escape'){ hin.value=''; hres.innerHTML=''; hres.classList.remove('on'); hin.blur(); }
         if(e.key==='Enter'){ var a=hres.querySelector('a'); if(a)location.href=a.getAttribute('href'); }
+      });
+    }
+
+    /* ── ô hỏi ở đầu /hoi-nhanh: chèn vào chỗ đánh dấu #pm-ask (chỗ giữ sẵn chiều cao, không xô trang) ──
+       Hỏi bằng Enter hoặc nút. Mỗi lần một câu trả lời (không dồn thành chuỗi chat), kèm tối đa ba câu gần giống. */
+    var askSlot=document.getElementById('pm-ask');
+    if(askSlot){
+      askSlot.innerHTML='<form class="pm-ask-f" role="search" autocomplete="off">'+
+        '<input class="pm-ask-in" type="text" maxlength="200" enterkeyhint="send" aria-label="Hỏi một câu về Nam Ban" '+
+        'placeholder="Hỏi một câu về Nam Ban…"><button type="submit">Hỏi</button></form>'+
+        '<p class="pm-ask-note">Trả lời lấy nguyên văn từ các bài trên web, không do AI viết. Câu hỏi không được&nbsp;lưu.</p>'+
+        '<div class="pm-ask-out" aria-live="polite"></div>';
+      var af=askSlot.querySelector('form'), ain=askSlot.querySelector('.pm-ask-in'), aout=askSlot.querySelector('.pm-ask-out');
+      ain.addEventListener('focus',function(){ loadBot(); },{once:true});
+      function moreList(items,label){
+        if(!items.length) return '';
+        var h='<div class="pm-ask-more"><div class="pm-slab">'+label+'</div>';
+        items.forEach(function(m,i){ h+='<button type="button" data-i="'+i+'">'+esc(m.d.q)+'<span>'+esc(m.d.t)+'</span></button>'; });
+        return h+'</div>';
+      }
+      function show(top,more,ok){
+        var h=ok?cardHTML(top.d):'<div class="pm-ans"><div class="pm-ans-k">Chưa có trong bài</div>'+
+          '<div class="pm-ans-q">Nam Ban Panorama chưa có bài trả lời đúng câu&nbsp;này.</div></div>';
+        h+=moreList(more,ok?'Câu gần giống':'Có thể gần với');
+        if(!ok) h+='<p class="pm-ask-note">Cần người ở Nam Ban trả lời thì nhắn qua trang <a href="/trao-doi">Trao đổi</a>.</p>';
+        aout.innerHTML=h; fitCards(aout);
+        var bs=aout.querySelectorAll('.pm-ask-more button');
+        for(var i=0;i<bs.length;i++) bs[i].addEventListener('click',function(){
+          var m=more[+this.getAttribute('data-i')], rest=more.filter(function(x){return x!==m;});
+          show(m,rest,true); aout.scrollIntoView({behavior:'smooth',block:'nearest'});
+        });
+      }
+      af.addEventListener('submit',function(e){
+        e.preventDefault();
+        var q=ain.value.trim(); if(!q) return;
+        aout.innerHTML='<p class="pm-ask-note">Đang tìm trong các bài…</p>';
+        askBot(q).then(function(r){
+          if(!r){ aout.innerHTML='<p class="pm-ask-note">Chưa tải được dữ liệu, thử lại sau ít phút.</p>'; return; }
+          /* chưa đủ chắc để trả lời thẳng: vẫn gợi tối đa ba câu có sẵn còn khớp phần lớn ý (câu lạc đề thì không gợi) */
+          var more=(r.ok?r.more:(r.top?[r.top]:[]).concat(r.more||[]).filter(function(m){return m.cov>=0.3||m.dcov>=0.6;}).slice(0,3));
+          show(r.top,more,r.ok);
+          track({noi:'hoi_nhanh',ket_qua:r.ok?'co':'chua_co'});
+          if(window.matchMedia&&window.matchMedia('(max-width:600px)').matches) ain.blur();
+        });
       });
     }
   }catch(e){}

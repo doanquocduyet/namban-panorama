@@ -53,8 +53,10 @@ html{overflow-x:clip;}
   .qa-close .open-q{font-family:'Fraunces',serif;font-style:italic;font-size:17px;color:var(--ink);line-height:1.5;margin:0 0 20px;}
   .qa-close a{color:var(--forest);text-decoration:none;border-bottom:1px solid rgba(47,64,52,.3);font-size:14.5px;}
   .qa-close a:hover{border-color:var(--forest);}
+  .pm-ask{max-width:680px;margin:30px auto 0;padding:0 40px;min-height:82px;}
   @media(max-width:680px){
     .qa-group,.qa-close{padding-left:24px;padding-right:24px;}
+    .pm-ask{padding:0 24px;min-height:100px;}
   }
 
 /* — polish: micro-typography & touch feel — */
@@ -701,6 +703,9 @@ var PM={get:function(k){try{return JSON.parse(localStorage.getItem('pm_'+k));}ca
 <div class="tldr"><span class="tldr-label">Trả lời nhanh</span><p>Nam Ban thuộc xã Nam Ban Lâm Hà, tỉnh Lâm Đồng (từ 1/7/2025). Độ cao 800–1000m, nhiệt độ trung bình năm khoảng 19–21°C, mùa mưa khoảng tháng 4 đến tháng 11. Từ Đà Lạt đi chừng 45 phút qua đèo Tà Nung. Giá đất giữa 2026: nông nghiệp 1,7–2,8tr/m², thổ cư 3–4,5tr/m², view hồ 4–6tr/m². Dưới đây là những câu hay được hỏi nhất, sắp theo thứ tự người ta thường hỏi.</p></div>
 
 </div>
+
+<!-- Ô hỏi (19/11/2026): panorama-utils.js dựng form vào đây; bot trả nguyên văn câu trả lời có sẵn trên web. Chiều cao giữ sẵn để trang không xô. -->
+<div id="pm-ask" class="pm-ask"></div>
 
 <div class="qa-group">
 

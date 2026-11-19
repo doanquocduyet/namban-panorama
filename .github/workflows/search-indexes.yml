@@ -1,0 +1,45 @@
+name: Đồng bộ kho tìm kiếm + kho hỏi–đáp
+# Lưới an toàn (19/11/2026): khi trang .html đổi trên main mà người sửa quên chạy
+#   python3 tools/gen-search-index.py  → search-index.json (ô tìm kiếm)
+#   python3 tools/gen-chat-index.py    → chat-index.json   (thẻ "Trả lời nhanh" + ô hỏi ở /hoi-nhanh)
+# thì bot sinh lại và commit. Người sửa đã chạy sẵn → hai file khớp → không commit, không tốn lượt deploy Vercel.
+on:
+  push:
+    branches: [main]
+    paths: ['*.html', 'tools/gen-search-index.py', 'tools/gen-chat-index.py']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: search-indexes
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Sinh lại hai kho
+        run: |
+          python3 tools/gen-search-index.py
+          python3 tools/gen-chat-index.py
+      - name: Commit & push nếu kho đổi
+        run: |
+          git config user.name "namban-index-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add search-index.json chat-index.json
+          if git diff --cached --quiet; then
+            echo "Hai kho đã khớp, không commit."
+            exit 0
+          fi
+          git commit -m "Kho tìm kiếm / hỏi–đáp: sinh lại theo trang vừa sửa"
+          for i in 1 2 3 4 5; do
+            if git push; then echo "Đã push."; exit 0; fi
+            echo "Push bị từ chối, rebase rồi thử lại (lần $i)..."
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort; exit 1; }
+            sleep $((i*3))
+          done
+          exit 1

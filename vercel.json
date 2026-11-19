@@ -29,9 +29,23 @@
           "value": "public, max-age=86400, stale-while-revalidate=604800"
         }
       ]
+    },
+    {
+      "source": "/(chat-index|search-index)\\.json",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
     }
   ],
   "redirects": [
+    {
+      "source": "/demo-hoi-dap",
+      "destination": "/hoi-nhanh",
+      "permanent": true
+    },
     {
       "source": "/selection-03-lo-binh-thuong",
       "destination": "/lo-dat-nam-ban-binh-thuong",

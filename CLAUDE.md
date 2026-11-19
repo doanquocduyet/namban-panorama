@@ -603,6 +603,25 @@ phần cuối `panorama-utils.js` dựng giao diện · `index.html` có slot `#
   là trả kết quả người đọc không mở được.
 - Phím `/` mở, `Esc` đóng. Không kết quả → "Chưa có bài nào về chuyện này." (không CTA).
 
+### HỎI–ĐÁP MIỄN PHÍ — THẺ "TRẢ LỜI NHANH" + Ô HỎI ĐẦU `/hoi-nhanh` (Chú gật 19/11/2026)
+
+Không AI, không máy chủ, 0 đồng: `chat-bot.js` chạy nền (Web Worker) trong máy người đọc, so câu hỏi với
+`chat-index.json` (FAQPage + mục H2 + 39 mục tin của `/nam-ban-co-gi-moi`) rồi trả **nguyên văn** câu trả lời có sẵn,
+kèm link bài (FAQ dùng `#:~:text=` để trình duyệt cuộn tới câu). Hai cửa vào, **KHÔNG icon chat nổi** (Chú chốt: không
+làm rối web): (1) ô tìm kiếm — gõ thành câu thì thẻ "Trả lời nhanh" đứng trên "Bài liên quan"; không đủ chắc thì không
+hiện thẻ, chỉ còn danh sách bài; (2) `#pm-ask` đầu `/hoi-nhanh` (chiều cao giữ sẵn trong CSS trang, không xô trang).
+Câu hỏi không gửi đi đâu; GA4 chỉ nhận sự kiện `hoi_dap` (có/chưa có, bấm thẻ), không có chữ khách gõ.
+`/demo-hoi-dap` đã gỡ, 301 về `/hoi-nhanh`; `chat-index.json`, `search-index.json` gắn `X-Robots-Tag: noindex`.
+- **Sinh kho:** `python3 tools/gen-chat-index.py` cùng lúc với `gen-search-index.py` sau khi sửa bài. Quên thì workflow
+  `search-indexes.yml` tự sinh lại và commit (đã chạy sẵn thì hai file khớp, không tốn lượt deploy). `index-weekly.yml`
+  sinh lại mỗi tuần để FAQ giá của Index trong bot theo kịp số mới.
+- **Chấm trước khi đẩy mỗi lần sửa `chat-bot.js` / `gen-chat-index.py`:** `node tools/chat-eval.js -v`. Mốc 19/11/2026:
+  bộ chỉnh 93/100 đúng ngay câu đầu, 0 trả bừa; bộ giữ lại (chưa dùng để chỉnh) 35/44, 1 sai bài, 2/8 câu web không có
+  bài bị trả bừa. Số tụt (nhất là "sai bài", "trả bừa") thì không đẩy.
+- **Đã vấp, đừng làm lại:** gộp thống kê có dấu/không dấu thì "mùa mưa" ra "mùa bơ"; tách ý theo chữ "còn" cắt nhầm
+  "giờ còn cho chuyển"; bỏ "dau/tam/chung/dang/bay" khỏi câu gõ không dấu là mất đầu tư, dâu tằm, sổ chung, đáng sống,
+  sân bay; chạy bot ở luồng chính thì dựng kho khựng ~0,4 s (máy chủ) — trên điện thoại còn lâu hơn.
+
 ### NAMBAN INDEX `/namban-index` — TRANG HUB GIÁ ĐẤT (xếp lại 25/9/2026 theo mẫu Zillow/Nationwide, Chú duyệt)
 
 Trang đỉnh nhất về giá đất của site. Đã soi 8 trang chỉ số giá (Zillow, Redfin, Rightmove, Zoopla,

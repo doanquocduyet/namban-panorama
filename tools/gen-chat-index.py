@@ -130,13 +130,30 @@ def main():
         for h, a, hid in sections(raw):
             rows.append([1, h, a, pi, hid])
             n_muc += 1
-    # Gọn: mỗi dòng [loại 0=hỏi–đáp 1=mục bài, câu hỏi/tiêu đề mục, trả lời, chỉ số trang, neo #id];
+    # Tin mới: mỗi mục .tl-item của /nam-ban-co-gi-moi thành một dòng (loại 2), dẫn về bài nhà của tin
+    # (tl-link) nếu có, không thì về trang tin. Trang tin là hub nên không lấy mục H2 ở trên.
+    n_tin = 0
+    idx = {p[0]: i for i, p in enumerate(plist)}
+    if "/nam-ban-co-gi-moi" in idx and os.path.exists("nam-ban-co-gi-moi.html"):
+        raw = open("nam-ban-co-gi-moi.html", encoding="utf-8").read()
+        for blk in re.findall(r'<div class="tl-item"[^>]*>(.*?)\n\s*</div>\s*(?=<div class="tl-item"|</div>|<!--)', raw, re.S):
+            dm = re.search(r'<div class="tl-date">(.*?)</div>', blk, re.S)
+            tm = re.search(r'<div class="tl-title">(.*?)</div>', blk, re.S)
+            sm = re.search(r'<div class="tl-sum"[^>]*>(.*?)</div>', blk, re.S)
+            lm = re.search(r'<a class="tl-link" href="/?([^"#?]+)', blk)
+            if not (tm and sm):
+                continue
+            pi = idx.get("/" + lm.group(1), idx["/nam-ban-co-gi-moi"]) if lm else idx["/nam-ban-co-gi-moi"]
+            date = strip_tags(dm.group(1)) if dm else ""
+            rows.append([2, strip_tags(tm.group(1)), cut((date + " — " if date else "") + strip_tags(sm.group(1))), pi, ""])
+            n_tin += 1
+    # Gọn: mỗi dòng [loại 0=hỏi–đáp 1=mục bài 2=tin, câu hỏi/tiêu đề mục, trả lời, chỉ số trang, neo #id];
     # bỏ dấu làm ở trình duyệt lúc tải (vài chục mili-giây), đỡ gần nửa dung lượng.
     data = {"v": 2, "pages": plist, "rows": rows}
     out = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
     open("chat-index.json", "w", encoding="utf-8").write(out)
     import gzip
-    print(f"Đã ghi chat-index.json: {pages} trang · {n_faq} hỏi–đáp · {n_muc} mục bài · "
+    print(f"Đã ghi chat-index.json: {pages} trang · {n_faq} hỏi–đáp · {n_muc} mục bài · {n_tin} tin · "
           f"{len(out.encode()) // 1024} KB · gzip ~{len(gzip.compress(out.encode())) // 1024} KB")
 
 
