@@ -50,10 +50,13 @@ def main():
     os.chdir(ROOT)
     rows = []
     for f in sorted(glob.glob("*.html")):
-        if f in SKIP:
+        if f in SKIP or f.startswith(("_", "demo")):
             continue
         raw = open(f, encoding="utf-8").read()
         if 'lang="vi"' not in raw[:400]:
+            continue
+        # Trang ẩn khỏi Google (noindex: bản thử, trang nháp) cũng không vào ô tìm kiếm (sửa 19/11/2026)
+        if re.search(r'<meta[^>]+name="robots"[^>]+noindex', raw, re.I):
             continue
         m = re.search(r"<title>(.*?)</title>", raw, re.S)
         if not m:
