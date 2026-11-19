@@ -41,7 +41,7 @@ def clean(s):
 def strip_tags(s):
     s = re.sub(r"<(script|style)\b.*?</\1>", " ", s, flags=re.S | re.I)
     s = re.sub(r"<br\s*/?>", " ", s, flags=re.I)
-    return clean(re.sub(r"<[^>]+>", " ", s))
+    return re.sub(r"\s+([:;,.!?…)])", r"\1", clean(re.sub(r"<[^>]+>", " ", s)))
 
 
 def fold(s):

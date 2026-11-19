@@ -733,6 +733,16 @@
         box.innerHTML='<p class="pm-snone">Chưa có bài nào về chuyện này.</p>';
         box.classList.add('on'); return;
       }
+      if(card){
+        /* có thẻ trả lời: "Bài liên quan" lấy trước các bài bot xếp gần nhất (đúng ý câu hỏi hơn dò chữ),
+           rồi tới kết quả dò chữ; bỏ bài đã dẫn trong thẻ; tối đa 4 */
+        var by={}, seen={}, rel=[]; for(var k=0;k<IDX.length;k++) by['/'+IDX[k].s]=IDX[k];
+        seen[ans.top.d.p]=1;
+        (ans.more||[]).map(function(m){return by[m.d.p];}).concat(list).forEach(function(x){
+          if(x&&!seen['/'+x.s]&&rel.length<4){ seen['/'+x.s]=1; rel.push(x); }
+        });
+        list=rel;
+      }
       var h=card;
       if(card&&list.length) h+='<div class="pm-slab">Bài liên quan</div>';
       for(var i=0;i<list.length;i++){

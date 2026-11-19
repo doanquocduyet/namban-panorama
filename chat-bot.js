@@ -198,7 +198,7 @@
   }
 
   function score(doc, P) {
-    var s = 0, hit = 0, tot = P.novel;
+    var s = 0, hit = 0, tot = P.novel, rareI = -1, rareHit = false;
     P.terms.forEach(function (t) {
       var M = D[t.m], st = doc[t.m], avg = D.avg[t.m];
       var i = M.m[t.w] !== undefined ? M.m[t.w] : M.max; // chữ không có trong kho = hiếm nhất (câu ngoài chủ đề sẽ hụt độ phủ)
@@ -207,6 +207,7 @@
         v2 = W[2] * bm25(st.tf[2], st.len[2], avg[2], t.w, i);
       s += v0 + v1 + v2;
       if (v0 > 0 || v1 > 0) hit += i; else if (v2 > 0) hit += 0.6 * i; // chữ chỉ nằm trong câu trả lời: tính một phần
+      if (i > rareI) { rareI = i; rareHit = v0 + v1 + v2 > 0; } // chữ hiếm nhất của câu hỏi có khớp không
     });
     P.extra.forEach(function (w) {
       var i = (D.F.m[w] || 0) * 0.6;
@@ -229,7 +230,7 @@
     }
     if (doc.k === 0) s *= 1.12; // hỏi–đáp viết sẵn được ưu tiên hơn mục bài
     if (doc.p === '/hoi-nhanh') s *= 0.9; // cùng câu có ở bài chuyên sâu thì dẫn về bài đó (hub ↔ spoke, §7.3)
-    return { s: s, cov: tot ? hit / tot : 0, dcov: dcov, dw: dw };
+    return { s: s, cov: tot ? hit / tot : 0, dcov: dcov, dw: dw, rare: rareHit };
   }
 
   // Ngưỡng chọn 19/11/2026 trên 164 câu thử (112 câu chỉnh + 52 câu giữ lại), ưu tiên ít trả sai hơn ít "chưa có".
@@ -248,13 +249,14 @@
     var res = [];
     for (var c = 0; c < cand.length; c++) {
       var r = score(D.docs[cand[c]], P);
-      if (r.s > 0) res.push({ d: D.docs[cand[c]], s: r.s, cov: r.cov, dcov: r.dcov, dw: r.dw });
+      if (r.s > 0) res.push({ d: D.docs[cand[c]], s: r.s, cov: r.cov, dcov: r.dcov, dw: r.dw, rare: r.rare });
     }
     res.sort(function (a, b) { return b.s - a.s; });
     var t = res[0];
     // nhận khi: phủ gần hết câu người gõ · hoặc câu có sẵn nằm gần trọn trong câu người gõ ·
     // hoặc câu có sẵn nằm TRỌN trong câu người gõ và có ít nhất một chữ mang nghĩa ("Ăn gì ở Nam Ban?" ← "an gi o nam ban ngon")
-    var ok = !!t && t.s >= o.minScore && (t.cov >= o.minCov || (t.dcov >= o.minDcov && t.cov >= o.minCov2) ||
+    // (đường thứ hai đòi chữ hiếm nhất của câu hỏi phải khớp: "sổ đỏ và sổ hồng khác nhau" không được trả bằng câu "có sổ / chưa có sổ")
+    var ok = !!t && t.s >= o.minScore && (t.cov >= o.minCov || (t.dcov >= o.minDcov && t.cov >= o.minCov2 && t.rare) ||
       (t.dcov >= 0.99 && t.dw >= 2 && t.cov >= o.minCov3));
     return { ok: ok, res: res, P: P };
   }
