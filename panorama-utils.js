@@ -118,7 +118,7 @@
 /* "CẬP NHẬT LẦN CUỐI" — lấy ngày THẬT từ JSON-LD dateModified (không thể lùi khống) */
 (function(){
   try{
-    var pub=null, mod=null;
+    var pub=null, mod=null, anyMod=null;
     var S=document.querySelectorAll('script[type="application/ld+json"]');
     for(var i=0;i<S.length;i++){
       var d; try{d=JSON.parse(S[i].textContent);}catch(e){continue;}
@@ -128,9 +128,11 @@
         if(ty==='Article'||ty==='NewsArticle'||ty==='BlogPosting'){
           if(o.datePublished) pub=String(o.datePublished).slice(0,10);
           if(o.dateModified) mod=String(o.dateModified).slice(0,10);
-        }
+        }else if(o&&o.dateModified){ var dm=String(o.dateModified).slice(0,10); if(!anyMod||dm>anyMod) anyMod=dm; }
       }
     }
+    /* trang không có Article (FAQPage, CollectionPage…): chỉ đồng bộ ô ngày tĩnh đã có sẵn, không chèn dòng mới */
+    if(!mod&&anyMod&&document.getElementById('pm-updated')) mod=anyMod;
     if(!mod) return;                 /* không có ngày sửa → không hiện */
     if(pub && mod<=pub) return;       /* chưa sửa sau khi đăng → chỉ giữ ngày đăng */
     var p=mod.split('-');

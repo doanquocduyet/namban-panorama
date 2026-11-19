@@ -11,6 +11,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  actions: write   # gọi generate-audio-free cho bài "giá hiện tại" vừa đổi số (19/11/2026)
 concurrency:
   group: index-weekly
   cancel-in-progress: false
@@ -64,6 +65,8 @@ jobs:
         if: steps.agg.outputs.rc == '0'
         run: |
           python tools/gen-index-history.py
+          # bài "giá hiện tại" vừa được bộ sinh đổi số (tools/idx-live-state.json) → ô "Cập nhật d/m/yyyy" tĩnh theo dateModified mới
+          python tools/sync-updated-date.py
           python tools/gen-llms-index-entry.py || echo "llms-full: không đồng bộ (Luật 25 chặn) — trang vẫn cập nhật"
           # ô hỏi–đáp (ô tìm kiếm + /hoi-nhanh) trả nguyên văn FAQ Index → số giá phải theo kịp mỗi tuần (19/11/2026)
           python tools/gen-chat-index.py || echo "chat-index: không sinh lại được — ô hỏi–đáp giữ số tuần trước"
@@ -79,16 +82,35 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # index.html + mọi trang có <span data-idx-period> + llms.txt: nhãn kỳ Index tự đổi theo tháng (4/11/2026)
-          git add data/index namban-index.html llms.txt llms-full.txt sitemap.xml chat-index.json
+          git add data/index namban-index.html llms.txt llms-full.txt sitemap.xml chat-index.json tools/idx-live-state.json
           git add -u -- '*.html'
           if [ "${{ steps.agg.outputs.rc }}" = "0" ]; then msg="Index: số đo giá rao tuần $(date -u +%G-W%V) (tự động)"; else msg="Index: cảnh báo tuần $(date -u +%G-W%V) — không sửa trang (tự động)"; fi
           git commit -m "$msg" || exit 0
           for i in 1 2 3 4 5; do git push origin HEAD:main && break; git pull --rebase origin main; done
+      - name: Sinh lại audio các bài "giá hiện tại" vừa đổi số (lời đọc có số giá)
+        # Chạy SAU khi commit đã lên main (Luật 16/21). Commit của bot không kích audio-auto nên không đua nhau.
+        if: steps.agg.outputs.rc == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          [ -f .idx-live-changed ] || exit 0
+          S=""
+          for f in $(cat .idx-live-changed); do
+            grep -q 'name="pm-audio" content="/audio/' "$f" && S="$S${S:+,}${f%.html}"
+          done
+          [ -n "$S" ] || { echo "Không bài nào có audio."; exit 0; }
+          echo "Sinh lại audio: $S"
+          gh workflow run generate-audio-free.yml --ref main -f scope="$S" -f overwrite=true || echo "::warning::không gọi được generate-audio-free"
       - name: Báo IndexNow trang Index vừa đổi số (Bing, Copilot, ChatGPT search)
         # commit của bot đẩy bằng GITHUB_TOKEN không kích workflow indexnow.yml, nên báo thẳng ở đây
         if: steps.agg.outputs.rc == '0'
         run: |
           sleep 90
+          # Index + các bài "giá hiện tại" vừa đổi số trong lượt này (.idx-live-changed do gen-index-history.py ghi, không vào repo)
+          URLS='"https://nambanpanorama.com/namban-index"'
+          if [ -f .idx-live-changed ]; then
+            for f in $(cat .idx-live-changed); do URLS="$URLS,\"https://nambanpanorama.com/${f%.html}\""; done
+          fi
           curl -sS -X POST "https://api.indexnow.org/indexnow" -H "Content-Type: application/json; charset=utf-8" \
-            -d '{"host":"nambanpanorama.com","key":"aeba74e4ac00031d44bcb9899ddda293","keyLocation":"https://nambanpanorama.com/aeba74e4ac00031d44bcb9899ddda293.txt","urlList":["https://nambanpanorama.com/namban-index"]}' \
+            -d "{\"host\":\"nambanpanorama.com\",\"key\":\"aeba74e4ac00031d44bcb9899ddda293\",\"keyLocation\":\"https://nambanpanorama.com/aeba74e4ac00031d44bcb9899ddda293.txt\",\"urlList\":[$URLS]}" \
             -w "\nHTTP %{http_code}\n" || true

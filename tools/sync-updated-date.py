@@ -34,9 +34,18 @@ for p in sorted(glob.glob("*.html") + glob.glob("*/*.html")):
     pub, mod = dates(s)
     t = OLD.sub("", s)
     if not mod:
-        # Trang tổng hợp (CollectionPage, vd /nam-ban-co-gi-moi — thêm 3/10/2026): CHỈ thay ngày ngay trong ô
+        # Trang không có Article (CollectionPage /nam-ban-co-gi-moi từ 3/10/2026; FAQPage /hoi-nhanh từ 19/11/2026): CHỈ thay ngày ngay trong ô
         # "Cập nhật …" đã có sẵn ở .issue-date; không chèn dòng mới vào trang không có ô đó (/brief, các hub).
-        cm = re.search(r'"@type": "CollectionPage"[\s\S]*?"dateModified": "(\d{4}-\d{2}-\d{2})', s)
+        # 19/11/2026: thêm trang chỉ có FAQPage/WebPage (vd /hoi-nhanh từng hiện "Cập nhật Tháng 6, 2026" trong khi đã sửa 3/11)
+        # — lấy dateModified mới nhất của mọi khối JSON-LD trên trang.
+        am = []
+        for b in re.findall(r'<script type="application/ld\+json">([\s\S]*?)</script>', s):
+            try: j = json.loads(b)
+            except Exception: continue
+            for o_ in (j.get("@graph", [j]) if isinstance(j, dict) else j):
+                if isinstance(o_, dict) and re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(o_.get("dateModified") or "")[:10]):
+                    am.append(str(o_["dateModified"])[:10])
+        cm = re.match(r"(.*)", max(am)) if am else None
         u = re.search(r'<span class="issue-date">(?:\s*[Cc](?:ẬP NHẬT|ập nhật)[^<]*|<time id="pm-updated" datetime="[^"]*">[^<]*</time>)</span>', t)
         if cm and u:
             y, m, d = cm.group(1).split("-")

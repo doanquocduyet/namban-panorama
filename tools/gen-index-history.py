@@ -449,6 +449,125 @@ if os.path.exists(LF):
     t2 = re.sub(r"Nam(?:ban| Ban) Index · T\d{1,2}/\d{4}", "Nam Ban Index · " + PERIOD[""], t)
     if t2 != t: open(LF, "w", encoding="utf-8").write(t2); period_files.append(LF)
 if period_files: print("Nhãn kỳ", PERIOD[""], "→", ", ".join(period_files))
+
+# ---- SỐ INDEX Ở CÁC BÀI "GIÁ HIỆN TẠI" TỰ ĐỔI MỖI TUẦN (19/11/2026 — Chú: "luôn luôn phải cập nhật mới nhất") ----
+# Các bài trong LIVE trích số Index như giá đang có (mô tả trang, FAQ trong schema, thân bài, bảng, tiền cả lô).
+# Mỗi lần chạy: lấy bộ số đã in lần trước (tools/idx-live-state.json) → thay đúng những chuỗi đó bằng số kỳ chính mới,
+# CHỈ khi chuỗi đứng đúng ngữ cảnh (đi liền "triệu/m²", sau "đo tới", "(N tin)", "chừng … triệu", "tháng …" gần chữ
+# Index/giá rao/trung vị). Số khác trong bài không bị đụng. Bài đổi số thì dateModified + lastmod sitemap theo hôm nay.
+# Viết câu mới trong các bài này thì giữ đúng các khuôn đó (vd "đo tới 15/11/2026", "khoảng 3,55 triệu/m²") để bộ sinh nhận ra.
+# KHÔNG đưa vào LIVE bài có số lịch sử theo tháng (báo cáo tháng/quý, /dat-nen-nam-ban-ngang-5m): số đó phải đứng yên.
+from decimal import Decimal, ROUND_HALF_UP
+LIVE = ["hoi-nhanh.html", "dat-gan-da-lat.html", "dat-nam-ban-gia-re.html", "mua-dat-nam-ban-500-trieu-1-ty.html",
+        "vung-ven-da-lat-nao-tot-nhat.html"]
+STATE = "tools/idx-live-state.json"
+def q2(v): return Decimal(str(v / 1e6)).quantize(Decimal("0.01"), ROUND_HALF_UP)
+def dec(x, n): return (f"{x:.{n}f}").replace(".", ",")
+def p_fmt(v):  # p10/p90: một số lẻ, dưới 1 triệu thì hai số lẻ ("0,47")
+    x = Decimal(str(v / 1e6)); return dec(x.quantize(Decimal("0.01") if x < 1 else Decimal("0.1"), ROUND_HALF_UP), 2 if x < 1 else 1)
+def tot(price2, area):  # tiền cả lô = giá hiển thị × diện tích, tròn tới 5 triệu; từ 1 tỷ ghi "x,xx tỷ"
+    t = (Decimal(price2.replace(",", ".")) * area / 5).quantize(Decimal("1"), ROUND_HALF_UP) * 5
+    return dec(t / 1000, 2) + " tỷ" if t >= 1000 else f"{t} triệu"
+new = {"ky": f"{int(last['month'][5:])}/{last['month'][:4]}", "ky_m": str(int(last["month"][5:])),
+       "d_full": m_on, "d_short": dt.date.fromisoformat(base["measured_on"]).strftime("%-d/%-m"), "n_tin": str(base["n"]),
+       "med2": {}, "med1": {}, "n": {}, "p10": {}, "p90": {}, "tot": {}}
+for k, _, _ in GROUPS:
+    if k in cur:
+        m2 = q2(cur[k]["v"]); new["med2"][k] = dec(m2, 2); new["med1"][k] = dec(m2.quantize(Decimal("0.1"), ROUND_HALF_UP), 1)
+        new["n"][k] = str(cur[k]["n"])
+    g = base["groups"].get(k) or {}
+    if g.get("p10_vnd_m2"): new["p10"][k] = p_fmt(g["p10_vnd_m2"]); new["p90"][k] = p_fmt(g["p90_vnd_m2"])
+if "tach_thua_150_300" in new["med2"]: new["tot"]["nen150"] = tot(new["med2"]["tach_thua_150_300"], 150)
+if "tach_thua_150_300" in new["p10"]: new["tot"]["p10nen150"] = tot(new["p10"]["tach_thua_150_300"], 150)
+if "lo_500_tho_cu" in new["med2"]: new["tot"]["lo500x500"] = tot(new["med2"]["lo_500_tho_cu"], 500)
+old = json.load(open(STATE, encoding="utf-8")) if os.path.exists(STATE) else None
+SP = r"(?:&nbsp;| )"
+def live_rules(o, n):
+    """[(regex, thay)] từ bộ số cũ → mới. Một chuỗi cũ mà ứng với hai số mới khác nhau thì bỏ (không đoán)."""
+    rules, warn = [], []
+    def add_map(kind, pairs, pat):
+        m = {}
+        for a, b in pairs:
+            if a is None or b is None or a == b: continue
+            if a in m and m[a] != b: m[a] = None; warn.append(f"{kind}: '{a}' mơ hồ, không thay")
+            elif a not in m: m[a] = b
+        for a, b in m.items():
+            if b: rules.append((re.compile(pat.format(re.escape(a))), b))
+    ks = [k for k, _, _ in GROUPS]
+    # khoảng phổ biến "2,4–5,1 triệu/m²" — thay cả cặp trước
+    for k in ks:
+        a = (o["p10"].get(k), o["p90"].get(k)); b = (n["p10"].get(k), n["p90"].get(k))
+        if None not in a and None not in b and a != b:
+            rules.append((re.compile(rf"(?<![\d,]){re.escape(a[0])}–{re.escape(a[1])}(?={SP}triệu)"), f"{b[0]}–{b[1]}"))
+    # một số đứng trước "triệu/m²": trung vị (2 số lẻ, 1 số lẻ) và ngưỡng p10
+    add_map("giá", [(o["med2"].get(k), n["med2"].get(k)) for k in ks] + [(o["med1"].get(k), n["med1"].get(k)) for k in ks]
+            + [(o["p10"].get(k), n["p10"].get(k)) for k in ks], r"(?<![\d,–]){}(?=" + SP + r"triệu/m²)")
+    add_map("số tin", [(o["n"].get(k), n["n"].get(k)) for k in ks], r"(?<=\()(?<![\d]){}(?=" + SP + r"tin\))")
+    add_map("tin đang rao", [(o["n_tin"], n["n_tin"])], r"(?<![\d.]){}(?=" + SP + r"tin (?:đất )?còn đang rao)")
+    for k, a in o["tot"].items():  # tiền cả lô "chừng 515 triệu", "chừng 1,14&nbsp;tỷ" — giữ dấu cách cũ khi đổi đơn vị
+        b = n["tot"].get(k)
+        if not b or a == b: continue
+        (na, ua), (nb, ub) = a.rsplit(" ", 1), b.rsplit(" ", 1)
+        rules.append((re.compile(r"(chừng" + SP + ")" + re.escape(na) + "(" + SP + ")" + ua + r"(?!\w)"), r"\g<1>" + nb + r"\g<2>" + ub))
+    if o["d_full"] != n["d_full"]:
+        rules.append((re.compile(r"((?:[Đđ]o tới|rao ngày|đang rao|\(ngày|[Tt]ới ngày)" + SP + ")" + re.escape(o["d_full"]) + r"(?![\d/])"), r"\g<1>" + n["d_full"]))
+        rules.append((re.compile(r"((?:[Đđ]o tới|đang rao)" + SP + ")" + re.escape(o["d_short"]) + r"(?=\))"), r"\g<1>" + n["d_short"]))
+    return rules, warn
+def ky_sub(t, o, n):
+    if o["ky"] == n["ky"]: return t, 0
+    cnt = 0
+    def f(m):
+        # chỉ đổi khi tháng gắn thẳng với số Index: "giá rao tháng …", "Index tháng …", "tháng … (đo tới", "(tháng …, đo tới".
+        # Câu kể chuyện của một tháng ("quan sát cung cầu tháng 10/2026", "tháng 10/2026 ở Nam Ban cung nhiều cầu ít") giữ nguyên.
+        nonlocal cnt
+        bef, aft = t[max(0, m.start() - 60): m.start()].replace("&nbsp;", " "), t[m.end(): m.end() + 30]  # &nbsp; có dấu ";" — chuẩn hoá trước
+        if re.search(r"(?:[Gg]iá rao|Index(?:</a>)?)[^.;:!?]{0,40}$", bef) or \
+           re.match(r"\)?,?\s*\(?(?:Nam(?:&nbsp;| )Ban Index|đo tới|theo Nam|trong Nam)", aft):
+            cnt += 1; return m.group(1) + n["ky"]
+        return m.group(0)
+    t = re.sub(r"([Tt]háng" + SP + ")" + re.escape(o["ky"]) + r"(?![\d])", f, t)
+    t, c2 = re.subn(r"((?:Trung vị|trung vị)(?:" + SP + "giá rao)?" + SP + "tháng" + SP + ")" + re.escape(o["ky_m"]) + r"(?=[\"<)])", r"\g<1>" + n["ky_m"], t)
+    return t, cnt + c2
+live_changed = []
+if old is None:
+    print("LIVE: chưa có tools/idx-live-state.json — ghi bộ số hiện tại làm mốc, lần sau mới thay")
+elif old != new:
+    rules, warn = live_rules(old, new)
+    for w in warn: print("LIVE cảnh báo:", w)
+    today_iso = NOW.strftime("%Y-%m-%dT%H:%M:00+07:00")
+    for fp in LIVE:
+        if not os.path.exists(fp): continue
+        t0 = open(fp, encoding="utf-8").read(); t = t0; hits = 0
+        for rx, b in rules: t, c = rx.subn(b, t); hits += c
+        t, c = ky_sub(t, old, new); hits += c
+        if t == t0: continue
+        t = re.sub(r'("dateModified":\s*")[^"]+(")', r"\g<1>" + today_iso + r"\g<2>", t)
+        for m in re.finditer(r'<script type="application/ld\+json">(.*?)</script>', t, re.S): json.loads(m.group(1))
+        open(fp, "w", encoding="utf-8").write(t); live_changed.append(fp); print(f"LIVE {fp}: {hits} chỗ")
+        slug = fp[:-5]
+        if os.path.exists(SM):
+            sm = open(SM, encoding="utf-8").read()
+            sm2 = re.sub(rf"(<loc>https://nambanpanorama\.com/{re.escape(slug)}</loc><lastmod>)[^<]*", lambda m: m.group(1) + NOW.date().isoformat(), sm, count=1)
+            if sm2 != sm: open(SM, "w", encoding="utf-8").write(sm2)
+    # cùng các bài đó trong llms.txt (một dòng mỗi bài) và llms-full.txt (một khối mỗi bài)
+    urls = ["https://nambanpanorama.com/" + fp[:-5] for fp in LIVE]
+    for LP in (LL, LF):
+        if not os.path.exists(LP): continue
+        t0 = open(LP, encoding="utf-8").read()
+        parts = t0.split("\n---\n") if LP == LF else t0.split("\n")
+        n_url = len(re.findall(r"https://nambanpanorama\.com/", t0))
+        for i, part in enumerate(parts):
+            head = part[:400] if LP == LF else part
+            if not any(re.search(re.escape(u) + r"(?![\w-])", head) for u in urls): continue
+            if LP == LL and not any(part.startswith("- " + u) for u in urls): continue
+            for rx, b in rules: part = rx.sub(b, part)
+            part, _ = ky_sub(part, old, new); parts[i] = part
+        t = ("\n---\n" if LP == LF else "\n").join(parts)
+        assert len(re.findall(r"https://nambanpanorama\.com/", t)) == n_url  # Luật 25: không nuốt bài nào
+        if t != t0: open(LP, "w", encoding="utf-8").write(t); live_changed.append(LP)
+    if live_changed:
+        open(".idx-live-changed", "w").write("\n".join(f for f in live_changed if f.endswith(".html")))
+json.dump(new, open(STATE, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 for m in re.finditer(r"<style[^>]*>(.*?)</style>", s, re.S): assert m.group(1).count("{") == m.group(1).count("}")
 for t in ["div", "figure", "table", "thead", "tbody", "tr", "th", "td", "p", "h2", "h3", "dl", "dt", "dd"]:
     o = len(re.findall(rf"<{t}\b[^>]*>", s)); c = len(re.findall(rf"</{t}>", s)); assert o == c, (t, o, c)

@@ -428,6 +428,8 @@ máy, chưa sửa): câu "xã Lạc Dương cao hơn" ở `/nam-ban-hay-lac-duon
   ô ghi "Tháng …, 2026" (tháng đăng) giữ nguyên, ngày cập nhật đứng cạnh. Quên chạy thì người đọc vẫn thấy
   đúng (JS tự đồng bộ chữ + `datetime` theo JSON-LD), chỉ bot thấy ngày cũ. Không đổi lời đọc audio.
   (14/10/2026: script giờ có phương án cuối "h1 bất kỳ" như JS, nên 21 bài template cũ không có `.art-header` cũng có ngày tĩnh.)
+  (19/11/2026: trang không có Article — FAQPage `/hoi-nhanh`, `/doc-nhanh` — từng đứng "Cập nhật Tháng 6/T6/2026" dù đã sửa nhiều lần;
+  script và JS giờ lấy `dateModified` mới nhất của mọi khối JSON-LD và thay ngay trong ô `.issue-date`. Không chèn dòng mới vào hub.)
 - **KHOÁ TỰA — `python3 tools/check-title-locks.py` TRƯỚC MỖI LẦN PUSH (học Villas 13/10/2026).** Danh sách `tools/title-locks.json`
   (không lên web): 42 trang = mọi khoá tựa trong CLAUDE.md + trang có lượt hiện GSC 28 ngày tới 9/10/2026. So title + H1 theo chữ
   người đọc thấy (thêm `&nbsp;`, `<br>`, span nowrap không tính là đổi). Lệch → báo đỏ, trả lại tựa cũ. Chú duyệt đổi tựa thì chạy
@@ -647,6 +649,14 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   `llms.txt`** (số, chiều giá, lý do tháng trong `REASON`, khoảng nửa đầu năm) và nhãn "Namban Index · T…" trong bản chép
   trang chủ ở `llms-full.txt` — đừng sửa tay hai chỗ đó. Workflow tuần commit thêm `llms.txt` + mọi `.html` đã đổi.
   Thêm nhãn kỳ ở trang mới thì dùng span này, đừng gõ cứng tháng.
+  **SỐ GIÁ Ở CÁC BÀI "GIÁ HIỆN TẠI" CŨNG TỰ ĐỔI (Chú chốt 19/11/2026: "luôn luôn phải cập nhật mới nhất").** Danh sách `LIVE`
+  trong `gen-index-history.py`: `/hoi-nhanh`, `/dat-gan-da-lat`, `/dat-nam-ban-gia-re`, `/mua-dat-nam-ban-500-trieu-1-ty`,
+  `/vung-ven-da-lat-nao-tot-nhat`. Mỗi lượt đo, bộ sinh lấy bộ số đã in lần trước (`tools/idx-live-state.json`) rồi thay bằng số kỳ
+  chính mới ở mô tả trang, FAQ trong schema, thân bài, bảng, tiền cả lô ("chừng 535 triệu"), `llms.txt`, `llms-full.txt`; bài đổi số
+  thì `dateModified`, ô "Cập nhật d/m/yyyy", `lastmod` sitemap theo hôm nay, báo IndexNow, và gọi `generate-audio-free` cho bài có
+  nghe bài. Chỉ thay chuỗi đúng khuôn: số đứng liền "triệu/m²", "(N tin)", "đo tới d/m/yyyy", "chừng … triệu/tỷ", "tháng M/YYYY" gắn
+  thẳng với "giá rao"/"Index"/"(đo tới". Câu kể chuyện của một tháng ("quan sát cung cầu tháng 10/2026") đứng yên. Viết câu mới trong
+  năm bài này thì giữ đúng khuôn đó. KHÔNG đưa vào `LIVE` bài có số lịch sử theo tháng (báo cáo tháng/quý, `/dat-nen-nam-ban-ngang-5m`).
 - **Một bộ phân loại 4 nhóm cho mọi khối** (Chú chốt 25/9): đất nền tách thửa 150–300 m² · lô
   khoảng 500 m² có thổ cư (ngang 10–18 m, tách từ thời luật chưa cho tách nhỏ) · đất trên 1.000 m²
   (nông nghiệp tách từ rẫy) · lô có view hồ, đồi, toàn cảnh. KHÔNG dùng lại tên cũ "nông nghiệp diện
