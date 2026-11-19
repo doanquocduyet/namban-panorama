@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://nambanpanorama.com/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
+  <url><loc>https://nambanpanorama.com/</loc><lastmod>2026-11-20</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://nambanpanorama.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://nambanpanorama.com/en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nambanpanorama.com/"/>
@@ -55,7 +55,7 @@
   <url><loc>https://nambanpanorama.com/dac-san-nam-ban</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://nambanpanorama.com/doc-nhanh</loc><lastmod>2026-11-19</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://nambanpanorama.com/cau-chuyen-nam-ban</loc><lastmod>2026-09-24</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://nambanpanorama.com/hoi-nhanh</loc><lastmod>2026-11-19</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://nambanpanorama.com/hoi-nhanh</loc><lastmod>2026-11-20</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://nambanpanorama.com/quy-hoach-2050</loc><lastmod>2026-11-17</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://nambanpanorama.com/quy-hoach-chung-nam-ban</loc><lastmod>2026-10-10</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://nambanpanorama.com/namban-index</loc><lastmod>2026-11-16</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
@@ -113,7 +113,8 @@
   <url><loc>https://nambanpanorama.com/ho-o-nam-ban</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://nambanpanorama.com/xay-nha-nho-nam-ban-bao-nhieu-tien</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://nambanpanorama.com/view-panorama-nam-ban</loc><lastmod>2026-09-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://nambanpanorama.com/hoa-o-nam-ban</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nambanpanorama.com/tam-giac-mach-nam-ban</loc><lastmod>2026-11-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nambanpanorama.com/hoa-o-nam-ban</loc><lastmod>2026-11-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://nambanpanorama.com/ho-me-linh-nam-ban-cam-ly-thuong</loc><lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://nambanpanorama.com/thuy-dien-da-chomo-phi-to</loc><lastmod>2026-11-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://nambanpanorama.com/ho-thanh-tri-nam-ban</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -333,7 +334,7 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://nambanpanorama.com/ja/nam-ban-zou-no-taki"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nambanpanorama.com/elephant-waterfall-nam-ban"/>
   </url>
-  <url><loc>https://nambanpanorama.com/nam-ban</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
+  <url><loc>https://nambanpanorama.com/nam-ban</loc><lastmod>2026-11-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://nambanpanorama.com/nam-ban"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://nambanpanorama.com/en/nam-ban"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nambanpanorama.com/nam-ban"/>

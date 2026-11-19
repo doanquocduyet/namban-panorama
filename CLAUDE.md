@@ -1271,6 +1271,17 @@ Báo cáo đầy đủ nằm ở scratchpad phiên 2/11 (không vào repo). Chú
   báo chí chưa có bài; số liệu lấy theo phiếu Chú đã duyệt. Mở được cổng thì đối chiếu lại tên hợp tác xã (Tuổi Trẻ 24/10/2026 gọi
   "HTX Nam Ban", 25 thành viên, khoảng 50 ha ở thôn Chi Lăng), 300 ha, 50 ha và các mốc tháng.
 
+### TAM GIÁC MẠCH — NHÀ LÀ `/tam-giac-mach-nam-ban` (Chú chốt 19/11/2026)
+- Ground truth của Chú: ở Nam Ban, tam giác mạch **chỉ có ở cụm Nam Ban Panorama** (khu view gần hồ Bãi Công); Google Maps tên
+  "Nam Ban Panorama" (https://maps.app.goo.gl/qYrv7Eq7nfxW8Xrx7, 11.8545029, 108.3181479 — cũng là đường dẫn đang nằm trong `sameAs`
+  của Organization). Câu viết luôn gắn mốc "tới tháng 11/2026" (luật viết dữ kiện cho bền). Không viết "duy nhất ở Lâm Đồng": các
+  đồi Tà Nung, Tu Tra mà bài du lịch cũ nhắc chưa kiểm được năm 2026.
+- Ba key: "tam giác mạch nam ban", "tam giác mạch lâm đồng", "hoa tam giác mạch nam ban ở đâu" + biến thể "tam giác mạch Đà Lạt / gần Đà Lạt".
+  Câu "Ở Nam Ban có hoa tam giác mạch không?" ở `/hoa-o-nam-ban` chỉ còn hiển thị (đã rời schema). `/hoi-nhanh` có câu hiển thị dẫn về.
+  Schema: `TouristAttraction` `@id` `/tam-giac-mach-nam-ban#doi-tam-giac-mach`, `hasMap` = link Maps; `data/places.json` id `doi-tam-giac-mach`.
+- KHÔNG có mùa nở cố định, giá vé, giờ mở cửa: chưa có dữ kiện, đừng điền. Chú cấp mùa hoa/ảnh đợt mới thì thêm vào bài nhà.
+  Khóa tựa tới 20/12/2026.
+
 ### SỔ CHỜ ẢNH — CÒN HAI BÀI TRỐNG, CHỜ CHÚ CHỤP (mở 8/9/2026, bài suối xong 24/9)
 
 Hai bài còn lại dưới đây (`/nha-go-thong-nam-ban`, `/10-10-1975-nam-ban`) **cố ý không có ảnh trong thân bài** — kho không có tấm nào đúng chủ đề,

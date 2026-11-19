@@ -7,7 +7,7 @@
     "contact": "nambanpanorama@gmail.com",
     "usage": "Được trích dẫn tự do với ghi nguồn: Nam Ban Panorama (nambanpanorama.com).",
     "coordinate_note": "Chỉ ghi tọa độ đã đối chiếu từ nguồn công khai; mục chưa xác minh để trống.",
-    "updated": "2026-09-04"
+    "updated": "2026-11-20"
   },
   "places": [
     {
@@ -167,6 +167,40 @@
       },
       "note": "Khu view hồ giá tham khảo ~4–6 triệu/m²; từ 2025 có nhiều villa hoàn thiện quanh hồ. Tọa độ để trống vì chưa đối chiếu nguồn công khai.",
       "url": "https://nambanpanorama.com/ho-bai-cong-nam-ban"
+    },
+    {
+      "id": "doi-tam-giac-mach",
+      "schema_id": "https://nambanpanorama.com/tam-giac-mach-nam-ban#doi-tam-giac-mach",
+      "contained_in": "https://nambanpanorama.com/#namban",
+      "name": "Đồi tam giác mạch Nam Ban Panorama",
+      "alias": [
+        "cụm Nam Ban Panorama",
+        "tam giác mạch Nam Ban",
+        "đồi hoa tam giác mạch Nam Ban",
+        "Nam Ban Panorama (Google Maps)",
+        "buckwheat flower hill Nam Ban"
+      ],
+      "type": "đồi hoa tam giác mạch, điểm ngắm cảnh",
+      "region": "gần hồ Bãi Công, xã Nam Ban Lâm Hà, tỉnh Lâm Đồng",
+      "coordinates": {
+        "lat": 11.8545029,
+        "lon": 108.3181479
+      },
+      "map": "https://maps.app.goo.gl/qYrv7Eq7nfxW8Xrx7",
+      "distance": {
+        "da_lat_km": 25,
+        "da_lat_note": "tính từ trung tâm Nam Ban, qua đèo Tà Nung, ~45 phút",
+        "san_bay_lien_khuong_km": 20,
+        "san_bay_note": "35–45 phút"
+      },
+      "status": "Tới tháng 11/2026 là chỗ duy nhất ở Nam Ban có tam giác mạch (ghi nhận tại chỗ).",
+      "best_season": "không cố định — gieo theo đợt, hoa nở theo đợt gieo, mỗi đợt đẹp chừng vài tuần",
+      "nearby": [
+        "hồ Bãi Công",
+        "thác Voi",
+        "chùa Linh Ẩn"
+      ],
+      "url": "https://nambanpanorama.com/tam-giac-mach-nam-ban"
     },
     {
       "id": "xa-nam-ban-lam-ha",

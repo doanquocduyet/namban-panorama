@@ -982,6 +982,12 @@
     <image:image><image:loc>https://nambanpanorama.com/images/tach-thua-dat-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://nambanpanorama.com/tam-giac-mach-nam-ban</loc>
+    <image:image><image:loc>https://nambanpanorama.com/images/hoa-tam-giac-mach-nam-ban.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/tam-giac-mach-nhin-qua-cua-xe-nam-ban.webp</image:loc></image:image>
+    <image:image><image:loc>https://nambanpanorama.com/images/tam-giac-mach-nam-ban.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://nambanpanorama.com/thac-voi-nam-ban</loc>
     <image:image><image:loc>https://nambanpanorama.com/images/elephant-waterfall-nam-ban-da-lat.webp</image:loc></image:image>
     <image:image><image:loc>https://nambanpanorama.com/images/thac-voi-nam-ban.webp</image:loc></image:image>
