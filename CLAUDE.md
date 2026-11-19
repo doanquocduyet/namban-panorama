@@ -170,6 +170,15 @@ Lâm Đồng. **KHÔNG phải web bán hàng.**
 
 ## 1b. NAM BAN ECOSYSTEM — LUẬT VẬN HÀNH CHUNG 3 WEB (Chú chốt 4/10/2026)
 
+**PANORAMA LÀ HUB CỦA NAM BAN — ĐƯỢC VIẾT MỌI CHỦ ĐỀ (Chú chốt 19/11/2026: "Panorama là hub của Nam Ban. Được quyền viết tất cả,
+cùng key nhưng góc nhìn chứ không bán hàng").** Không còn chủ đề nào "để Villas lo" về mặt nội dung: kể cả key giao dịch ("bán đất Nam Ban",
+"giá đất Nam Ban Lâm Hà"), khu dự án / khu biệt thự có tên (HT86, Thiên Vân Village, The Nest Village, Đà Lạt Tỉnh Thức…), cơ sở có tên mà
+người ta tìm. Điều kiện duy nhất là GÓC: Panorama viết phân tích — ở đâu, thuộc xã nào, loại đất trên sổ, quy hoạch, đường vào, giá rao so với
+Index, rủi ro, câu nên hỏi trước khi xuống tiền. KHÔNG bán: không giá chào của bên bán làm "giá", không nút gọi, không "liên hệ ngay", không lời
+khen quảng cáo, không đăng lại tin rao. Khu nào Villas đang bán thì ghi câu công khai lợi ích (ngoại lệ disclosure §1b: "Panorama không bán lô
+này và không đại diện cho bên bán"). Kill-list §5 luật 2 (tên cơ sở kinh doanh) từ nay chỉ còn cấm dùng tên làm mốc giới thiệu, quảng cáo;
+không cấm bài phân tích về chính khu đó. Trong nội bộ Panorama vẫn mỗi key một nhà (Luật 26d).
+
 **Ô này là WORKER CỦA PANORAMA.** Chỉ tự quyết trong phạm vi Panorama. Việc thuộc Villas hoặc GreenSpacers → báo sang
 ô đó (qua Chú), không tự làm thay.
 
@@ -1102,7 +1111,9 @@ vì tên riêng địa phương gần như không ai cạnh tranh. Rà bằng
    `/ho-bai-cong-nam-ban` nhắc 5 lần, `/cho-nam-ban` nhắc 4 — nhà vẫn là
    `/cho-nam-ban`, vì bài kia chỉ dùng chợ làm mốc chỉ đường (§7.4).
 
-2. **Mốc là cơ sở kinh doanh → KHÔNG FAQ, KHÔNG link, KHÔNG đứng tên giới thiệu.**
+2. **Mốc là cơ sở kinh doanh → KHÔNG FAQ, KHÔNG link, KHÔNG đứng tên giới thiệu.** *(Thu hẹp 19/11/2026 — Chú: "Panorama là hub
+   của Nam Ban, được quyền viết tất cả, cùng key nhưng góc nhìn chứ không bán hàng": luật này chỉ áp khi tên đứng làm mốc giới thiệu/quảng
+   cáo trong bài khác. Một khu dự án hay khu biệt thự có tên mà người ta tìm thì ĐƯỢC có bài phân tích riêng, xem §1b.)*
    `Nacasoo Hill` · `Phương Minh Farm` · `HT86` · `Hualong` · `King Coffee` và mọi
    tên cùng loại. Chỉ được nhắc tên làm mốc chỉ đường. Bộ quét cố ý không bắt
    nhóm này (nó không có danh từ chỉ loại đứng trước) — **đừng đi đọc tay để bù**.
