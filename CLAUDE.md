@@ -1250,6 +1250,12 @@ Báo cáo đầy đủ nằm ở scratchpad phiên 2/11 (không vào repo). Chú
   thức. Không nêu tên hộ.
 - **Số Index tháng 9 cũ (4,06 / 2,33 / 1,37 / 3,16)** đã gỡ khỏi `/en/land-prices-nam-ban` và hai bài thị trường; bài MXH 1/10 đính chính
   qua `social-fix.yml` (mục hàng đợi được gắn `key: thi-truong-dat-nam-ban-2026` ngày 3/11).
+- **Kiểm 20/11/2026:** Luật Đất đai (sửa đổi) và Luật KDBĐS (sửa đổi) mới qua UBTVQH 17/11, CHƯA thấy nguồn xác nhận Quốc hội biểu quyết
+  (lịch dự kiến 21/11 trở đi). Luật Đấu giá tài sản (sửa đổi, bổ sung): MỘT bài báo (Người Đưa Tin 20/11) ghi Quốc hội thông qua sáng 20/11,
+  475/482 phiếu, hiệu lực 1/7/2027; tiền đặt trước đấu giá QSDĐ giao đất ở cho cá nhân 20–50 % giá khởi điểm (dự án 10–20 %); trúng rồi từ
+  chối/không nộp tiền có thể bị cấm đấu giá loại tài sản đó 6 tháng – 5 năm. Chưa có nguồn thứ hai/văn bản → CHƯA sửa `/dau-gia-dat-nam-ban`
+  (bài ghi mức 5–20 % của luật 2024; các phiên ở Nam Ban tới nay là tài sản thi hành án, ngân hàng — không thuộc nhóm 20–50 %). Có văn bản thì
+  thêm một câu có mốc hiệu lực vào mục tiền đặt trước, không đổi số các phiên đã ghi.
 - **Chờ văn bản:** kỳ họp Quốc hội thứ 2 khóa XVI (bế mạc khoảng 21/11/2026) — Luật Đất đai sửa đổi (dự kiến hiệu lực 1/3/2027), Luật
   KDBĐS sửa đổi (dự thảo bỏ yêu cầu môi giới phải lập doanh nghiệp), thuế 0,2 % đất bỏ hoang (đề xuất từ 1/1/2027) · dự thảo bổ sung
   bảng giá đất Lâm Đồng · 3 phường mới (Đức Trọng, Hàm Thuận Nam, Cư Jút; Nam Ban không có) · kết quả đấu giá 13/11/2026.
