@@ -1292,6 +1292,21 @@ Báo cáo đầy đủ nằm ở scratchpad phiên 2/11 (không vào repo). Chú
 - KHÔNG có mùa nở cố định, giá vé, giờ mở cửa: chưa có dữ kiện, đừng điền. Chú cấp mùa hoa/ảnh đợt mới thì thêm vào bài nhà.
   Khóa tựa tới 20/12/2026.
 
+### KHO ẢNH ĐỢT 22/11/2026 — 128 FILE CHÚ UP VÀO GỐC REPO (xử lý 25/11/2026)
+- File gốc nằm công khai trên web 3 ngày, **EXIF có toạ độ GPS** (nhiều tấm chụp buổi tối ở cùng một điểm — đừng ghi toạ độ đó ra đâu).
+  Đã chặn bằng `.vercelignore` (`/IMG_*`, `/temp_image_*`… ở gốc — lần sau Chú up vào gốc cũng bị chặn sẵn) rồi gỡ khỏi cây; lịch sử git
+  công khai vẫn còn file gốc (xoá khỏi lịch sử phải viết lại `main` — chỉ làm khi Chú yêu cầu).
+- **85 tấm vào `/images/`** (webp ≤ 300 KB, đã bỏ metadata), tên theo đúng thứ thấy trong ảnh; chỉ ghi "nam-ban" khi GPS nằm trong xã.
+  Đáng dùng: `tam-giac-mach-cum-nam-ban-panorama-thung-lung` (GPS trùng điểm Maps của cụm), `bien-chao-mung-50-nam-…` (đã gắn
+  `/50-nam-vung-kinh-te-moi-nam-ban`), `tay-gang-hai-ca-phe-xanh`, `may-xuc-san-lap-mat-bang`, `cong-thon-gan-thi-nam-ban-ngay-mua`,
+  `xe-cau-trong-cay-thong-lon-tren-lo-dat` (cẩu thông bứng bầu, KHÔNG phải khoan giếng), flycam thác Voi / chùa Linh Ẩn ngày và đêm,
+  biển mây, đêm thung lũng. Ảnh biệt thự/nội thất kiểu quảng cáo (`biet-thu-*`, `noi-that-*`, `flycam-biet-thu-*`) = lệch làn, để dành.
+- **43 tấm KHÔNG đưa lên web:** 16 ảnh chụp màn hình (TikTok/YouTube của người khác có tên, SĐT; app thời tiết; Guland; Street View),
+  10 giấy tờ đất có tên người/số CCCD/con dấu và sơ đồ phân lô của dự án cụ thể, 10 ảnh người/đời tư (họp, chân dung, nhậu, cổng nhà,
+  ổ khoá có mã số, trẻ con lội suối), 1 ảnh tư liệu đen trắng (không phải ảnh Chú), 6 tấm "Giá đất Nam Ban tháng 11/2026" có chữ trên ảnh.
+- 6 tấm chữ đó là **ghi nhận thị trường tháng 11/2026 của Chú** — đã dùng làm nguồn cho khối tín hiệu tháng 11 trên Index và giá thuê
+  ở `/thue-nha-nam-ban`, `/en/long-term-rental-nam-ban`. Tấm "250–450 m² … triệu/m²" thiếu con số trước chữ "TRIỆU/M²" (lỗi thiết kế).
+
 ### SỔ CHỜ ẢNH — CÒN HAI BÀI TRỐNG, CHỜ CHÚ CHỤP (mở 8/9/2026, bài suối xong 24/9)
 
 Hai bài còn lại dưới đây (`/nha-go-thong-nam-ban`, `/10-10-1975-nam-ban`) **cố ý không có ảnh trong thân bài** — kho không có tấm nào đúng chủ đề,
