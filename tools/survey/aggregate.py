@@ -142,7 +142,10 @@ if prev_weeks:
         pm, cm = og.get("median_vnd_m2"), cg.get("median_vnd_m2")
         if pm and cm and og.get("n", 0) >= 30 and cg.get("n", 0) >= 30 and abs(cm - pm) / pm > .25:
             alerts.append(f"trung vị {cg['label']} lệch {100*(cm-pm)/pm:.0f}% so tuần trước")
+    # nguồn đã ĐÓNG CỬA hẳn (đã gỡ khỏi ma trận quét) — về 0 là đúng, không phải bị chặn
+    RETIRED = {"batdongsanonline.vn"}   # dừng hoạt động ~22/11/2026, trang chủ là thông báo dừng
     for s_, n in prev_weeks[-1]["snapshot"]["sources"].items():
+        if s_ in RETIRED: continue
         if n > 0 and raw_by_src.get(s_, 0) == 0: alerts.append(f"nguồn {s_} về 0 tin (tuần trước {n}) — nghi bị chặn")
 if base["n"] and base["villas_n"] / base["n"] > .4: alerts.append(f"Villas chiếm {100*base['villas_n']/base['n']:.0f}% (>40%)")
 if base["n"] < 100: alerts.append(f"tổng chỉ {base['n']} tin sau khử trùng (<100)")

@@ -593,6 +593,8 @@ def src_villas_digest():
 
 SOURCES = {
     "guland": src_guland,
+    # batdongsanonline.vn DỪNG HOẠT ĐỘNG từ khoảng 22/11/2026 (trang chủ là thông báo dừng, mọi trang danh mục 404) —
+    # đã gỡ khỏi ma trận index-weekly.yml và so-sanh-vung.yml; giữ hàm để đọc lại dòng thô cũ nếu cần.
     "batdongsanonline": lambda: src_bdsonline_like("batdongsanonline.vn", "batdongsanonline.vn",
         [("https://batdongsanonline.vn/nha-dat-thi-tran-nam-ban/", "Nam Ban"), ("https://batdongsanonline.vn/nha-dat-xa-dong-thanh/", "Đông Thanh"),
          ("https://batdongsanonline.vn/nha-dat-xa-me-linh/", "Mê Linh"), ("https://batdongsanonline.vn/nha-dat-xa-gia-lam/", None)], r"-\d{3,}/?$"),

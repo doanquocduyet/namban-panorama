@@ -204,7 +204,7 @@ hist = f'''<div class="idx-section-label">02 — Diễn biến</div>
 <p class="idx-note">Ô có từ {MIN_N} tin là trung vị đủ tin cậy, dùng để kết luận tăng hay giảm. Ô ghi "mẫu nhỏ" là trung vị của 5–9 tin: vẫn là số thật, đọc để tham khảo, không dùng để so tăng giảm. Dưới 5 tin thì không tính, vì trung vị lúc đó chỉ là giá của một hai&nbsp;lô.{gap}{dagger}</p>'''
 
 # ---- IDX-DATA: mục 03 ----
-n_src = 7  # danh sách nguồn quét (meta.method) — không đếm theo tháng có tin
+n_src = 6  # danh sách nguồn quét (meta.method) — không đếm theo tháng có tin; batdongsanonline.vn dừng hoạt động 11/2026 (7 → 6)
 DIGESTS = {"video môi giới + sàn (tổng hợp)", "nambanvillas.vn/tin-rao"}  # nhãn mới + nhãn cũ (run #5)
 dg_n = D["meta"].get("digest_n") or 0
 dg_m = [m["month"] for m in months if DIGESTS & set(k for k, v in m["ghi_nhan"]["sources"].items() if v)]

@@ -771,7 +771,11 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   10 tin". Tháng hiện tại vẫn tính lại mỗi lần. Bài học: tin phải được lưu lúc còn trên mạng, tìm lại sau là mất.
   Mục 03 tự in một câu nêu số tin và tháng bổ sung. Luật "ít hơn 15 tin mới" chỉ xét khi lần đo trước cách
   ≥6 ngày, để chạy lại trong tuần không bị chặn oan.
-- **Nguồn ghi "7 trang"** = danh sách quét trong `meta.method`, không đếm theo tháng có tin (mogi
+- **batdongsanonline.vn DỪNG HOẠT ĐỘNG (~22/11/2026)** — trang chủ là thông báo dừng, mọi trang danh mục 404; lượt W48 (23/11)
+  bị luật dừng chặn vì "nguồn về 0". Đã gỡ khỏi ma trận `index-weekly.yml` + `so-sanh-vung.yml`, thêm `RETIRED` trong `aggregate.py`
+  (nguồn đóng cửa về 0 không tính là bị chặn), `n_src` 7 → 6, `meta.method` + Dataset ghi "batdongsanonline.vn tới 15/11/2026".
+  Tin cũ của nguồn này vẫn nằm trong các tháng đã đo. Nguồn khác đóng cửa thì làm y vậy, đừng tắt luật dừng.
+- **Nguồn ghi "7 trang"** (nay 6) = danh sách quét trong `meta.method`, không đếm theo tháng có tin (mogi
   tháng 9 = 0 tin nhưng vẫn là nguồn). Có `nambanvillas.vn` (web cùng chủ) trong danh sách — đã khử
   trùng với 6 nguồn còn lại; chưa ghi chú xung đột lợi ích trên trang, cân nhắc sau.
 - **Index KHÔNG có nghe bài (Chú chốt 25/9/2026: "trang này index thì không cần có file đọc").**

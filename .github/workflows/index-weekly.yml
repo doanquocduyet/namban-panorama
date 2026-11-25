@@ -22,7 +22,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        source: [guland, batdongsanonline, datnenlamdong, thuviennhadat, muaban, mogi, nambanvillas, villasdigest]
+        source: [guland, datnenlamdong, thuviennhadat, muaban, mogi, nambanvillas, villasdigest]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
