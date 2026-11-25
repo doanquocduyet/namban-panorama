@@ -12,3 +12,9 @@ scripts/
 data/fb-queue.json
 data/images-manifest.json
 data/index/seen.json
+# Ảnh gốc Chú tải thẳng lên gốc repo (22/11/2026): file gốc có toạ độ GPS trong EXIF, nặng 268 MB — KHÔNG lên web.
+# Bản nén (đã bỏ EXIF) nằm trong /images/. Lần sau Chú up ảnh vào gốc repo thì mẫu này cũng chặn luôn.
+/IMG_*
+/temp_image_*
+/1K319UKSA_7TGC1G.jpeg
+/8CE0EFEA-*.png
