@@ -37,7 +37,9 @@ for seg in PR["periods"][0]["segments"]:
     if k: RANGE[k] = (seg["price_min_vnd_m2"], seg["price_max_vnd_m2"], seg.get("total_price_note"))
 # lý do của tháng — CHỈ ghi khi Chú xác nhận (ground truth thực địa); tháng không có dòng thì không in
 REASON = {"2026-09": "Theo quan sát thực địa của Panorama, giá rao tháng 9/2026 mềm hơn vì mùa mưa bão và kinh tế: nguồn cung mùa này ra nhiều hơn cầu, người bán rao mềm hơn để ra hàng.",
-          "2026-10": "Theo quan sát thực địa của Panorama, tháng 10/2026 cung nhiều cầu ít; nhiều người bán muốn giải quyết việc nhanh nên giảm giá sâu để bán nhanh."}
+          "2026-10": "Theo quan sát thực địa của Panorama, tháng 10/2026 cung nhiều cầu ít; nhiều người bán muốn giải quyết việc nhanh nên giảm giá sâu để bán nhanh.",
+          # Chú cấp 22/11/2026 (bộ slide "Giá đất Nam Ban tháng 11 · 2026 — ghi nhận từ thị trường thực tế")
+          "2026-11": "Theo quan sát thực địa của Panorama, từ đầu tháng 11/2026 đất nền có nhiều giao dịch thực tế hơn tháng 9 và 10; nhiều lô khoảng 500–1.000 m² có thổ cư ra giá rất tốt, quanh 1,3–1,5 triệu/m²."}
 
 def tr(v): return f"{v/1e6:.2f}".replace(".", ",")
 def tr1(v): return (f"{v/1e6:.1f}".rstrip("0").rstrip(".")).replace(".", ",")
