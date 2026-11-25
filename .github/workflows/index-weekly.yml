@@ -44,7 +44,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
+      # lấy main MỚI NHẤT lúc job này bắt đầu, không phải commit lúc lượt đo khởi động:
+      # 25/11/2026 lượt W48 đọc tin 18 phút, giữa chừng main có commit sửa hoi-nhanh/sitemap → rebase đụng độ, mất lượt ghi số
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
