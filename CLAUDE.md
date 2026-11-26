@@ -462,7 +462,7 @@ máy, chưa sửa): câu "xã Lạc Dương cao hơn" ở `/nam-ban-hay-lac-duon
   (Index, ảnh tự chụp, số có nguồn là đúng hướng). AI Overviews (10/2024) và AI Mode (7/10/2025) đều có tiếng Việt;
   I/O 20/5/2026 gộp hai thứ thành một trải nghiệm. Search Console có báo cáo AI riêng (toàn cầu từ 31/8/2026) — chỉ có lượt
   hiện theo trang/quốc gia/thiết bị, không có lượt bấm, không có từ khoá; site ít dữ liệu thì chưa hiện. 2026 đã có 2 core
-  update (27/3–8/4, 21/5–2/6) và 4 spam update — đợt spam cuối 24/9–8/10/2026 đã xong; **core update tháng 11/2026 bắt đầu 10/11/2026 (18:06 UTC), đang chạy, Google hẹn tới 2 tuần** (status.search.google.com, kiểm 13/11 — xong thì ghi ngày kết thúc vào đây); luật spam mới 13/4/2026: cấm
+  update (27/3–8/4, 21/5–2/6) và 4 spam update — đợt spam cuối 24/9–8/10/2026 đã xong; **core update tháng 11/2026 bắt đầu 10/11/2026 (18:06 UTC), XONG 24/11/2026 (13 ngày 20 giờ); cùng ngày Google báo trước core update tháng 12/2026, chưa có ngày** (status.search.google.com, đọc 26/11); luật spam mới 13/4/2026: cấm
   "back button hijacking" (đã kiểm: link "← Quay lại" chỉ chạy khi người đọc bấm, hợp lệ). Core Web Vitals giữ ngưỡng cũ
   (LCP ≤ 2,5 s · INP ≤ 200 ms · CLS ≤ 0,1). Bot cần mở để được trích: Googlebot, OAI-SearchBot (ChatGPT search), PerplexityBot,
   Claude-SearchBot + Claude-User (thêm vào robots.txt 6/10), Bingbot; GPTBot/ClaudeBot chỉ là bot huấn luyện. Google-Extended không
