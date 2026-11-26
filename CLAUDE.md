@@ -771,6 +771,17 @@ Ban mới nhất". Đã bỏ: TL;DR, cta-strip 5 nút clay, hai mục trống "T
   10 tin". Tháng hiện tại vẫn tính lại mỗi lần. Bài học: tin phải được lưu lúc còn trên mạng, tìm lại sau là mất.
   Mục 03 tự in một câu nêu số tin và tháng bổ sung. Luật "ít hơn 15 tin mới" chỉ xét khi lần đo trước cách
   ≥6 ngày, để chạy lại trong tuần không bị chặn oan.
+- **MỘT TRANG, KHÔNG TÁCH (nghiên cứu 26/11/2026, Chú hỏi "Index nên là 1 trang xuyên suốt hay tách"; 5 hướng + 2 phản biện):**
+  mọi biến thể "giá đất Nam Ban / mới nhất / hôm nay / 2026 / bao nhiêu 1 m² / Lâm Hà Lâm Đồng / thị trấn Nam Ban / tăng hay giảm" về
+  `/namban-index`. Đã tách đúng theo ý định, không theo kỳ: báo cáo quý là bài lưu trữ, giá nhà nước ở `/bang-gia-dat-nam-ban`, ngân sách / giá rẻ /
+  ven Đà Lạt mỗi thứ một trang LIVE. KHÔNG mở trang tháng/biến thể, không tách theo loại đất/khu, không đổi slug, không gắn tháng vào tựa.
+  Căn cứ: Google khuyên một URL lặp lại cho nội dung theo kỳ; chỉ mục đang nghẽn (142/219); mẫu mỗi loại mỗi tháng chỉ 10–49 tin.
+  Sổ chờ (cần Chú duyệt, sau hạn khoá tựa): thử MỘT đổi tựa Index có "xã Nam Ban Lâm Hà, Lâm Đồng"; viết lại `/mua-dat-nam-ban-500-trieu-1-ty` theo tầm tiền.
+  **Bộ sinh đã vá 26/11:** (1) dòng `llms.txt` dạng `- [tựa](url)` cũng được tự đổi số, số không đơn vị trong dòng llms LIVE cũng thay;
+  (2) thay số MỘT LƯỢT bằng bảng tra (trước đây thay nối tiếp nên 2,4→2,3 rồi 2,3→2,1 dây chuyền) và cặp không đổi vẫn tính để bắt trùng;
+  (3) "(mốc d/m/yyyy)" cũng đổi; (4) chỉ đổi `dateModified`/`lastmod` của Index khi khối số hay FAQ đổi thật.
+  **Trang `/en/land-prices-nam-ban` sửa tay MỖI THÁNG** cùng lúc viết khối "Tín hiệu" (đoạn "November against October" là chữ kể, không tự đổi được);
+  `tools/check-idx-stale.py` chạy trong lượt tuần, báo `::warning::` khi trang LIVE / trang EN / dòng llms còn ngày đo hay kỳ cũ.
 - **batdongsanonline.vn DỪNG HOẠT ĐỘNG (~22/11/2026)** — trang chủ là thông báo dừng, mọi trang danh mục 404; lượt W48 (23/11)
   bị luật dừng chặn vì "nguồn về 0". Đã gỡ khỏi ma trận `index-weekly.yml` + `so-sanh-vung.yml`, thêm `RETIRED` trong `aggregate.py`
   (nguồn đóng cửa về 0 không tính là bị chặn), `n_src` 7 → 6, `meta.method` + Dataset ghi "batdongsanonline.vn tới 15/11/2026".

@@ -286,6 +286,7 @@ faq_ld = json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "main
 
 # ---- ghép vào trang ----
 s = open(P, encoding="utf-8").read()
+s_orig = s
 def replace_block(s, tag, body):
     st = re.search(rf"<!-- {tag}:START[^>]*-->", s).group(0); a = s.index(st) + len(st); end = f"<!-- {tag}:END -->"; b = s.index(end)
     return s[:a] + "\n" + body + "\n" + s[b:]
@@ -386,8 +387,16 @@ else:
 
 # ---- JSON-LD + dateModified ----
 s = re.sub(r'"temporalCoverage": "[^"]*"', f'"temporalCoverage": "{first_shown}/{latest["month"]}"', s, count=1)
-s = re.sub(r'("@type": "Dataset",[\s\S]*?"dateModified": )"[^"]*"', lambda m: m.group(1) + f'"{NOW.date().isoformat()}"', s, count=1)
-s = re.sub(r'("@type": "Article",[\s\S]*?"dateModified": )"[^"]*"', lambda m: m.group(1) + f'"{NOW.strftime("%Y-%m-%dT%H:%M:00+07:00")}"', s, count=1)
+# Chỉ đổi ngày khi phần số/FAQ thật sự đổi (26/11/2026): chạy lại, index-rebuild hay chạy tay trên cùng dữ liệu
+# mà vẫn nâng ngày là "đổi ngày cho trông mới" — Google coi là dấu xấu, lòng tin lastmod tính cho cả web.
+def _core(x):
+    secs = re.findall(r"<!-- IDX-[A-Z]+:START -->[\s\S]*?<!-- IDX-[A-Z]+:END -->", x)
+    faq = re.findall(r'"@type": "FAQPage"[\s\S]*?</script>', x)
+    return "".join(secs) + "".join(faq) + "".join(re.findall(r'<meta name="description" content="[^"]*"', x))
+IDX_CHANGED = _core(s) != _core(s_orig)
+if IDX_CHANGED:
+    s = re.sub(r'("@type": "Dataset",[\s\S]*?"dateModified": )"[^"]*"', lambda m: m.group(1) + f'"{NOW.date().isoformat()}"', s, count=1)
+    s = re.sub(r'("@type": "Article",[\s\S]*?"dateModified": )"[^"]*"', lambda m: m.group(1) + f'"{NOW.strftime("%Y-%m-%dT%H:%M:00+07:00")}"', s, count=1)
 # ---- mô tả trang (meta, og, Article) mang số + ngày đo: đoạn trích Google và AI đọc thấy giá ngay ----
 SHORT = {"tach_thua_150_300": "đất nền tách thửa", "lo_500_tho_cu": "lô 500 m² có thổ cư", "dat_tren_1000": "đất trên 1.000 m²", "view": "lô view"}
 parts = [f'{SHORT[k]} {tr(cur[k]["v"])}' for k, _, _ in GROUPS if k in cur]
@@ -402,7 +411,7 @@ open(P, "w", encoding="utf-8").write(s)
 for m in re.finditer(r'<script type="application/ld\+json">(.*?)</script>', s, re.S): json.loads(m.group(1))
 # ---- sitemap: lastmod của /namban-index theo ngày đo (trước đây đứng yên khi trang đổi mỗi tuần) ----
 SM = "sitemap.xml"
-if os.path.exists(SM):
+if os.path.exists(SM) and IDX_CHANGED:
     t = open(SM, encoding="utf-8").read()
     t2 = re.sub(r'(<loc>https://nambanpanorama\.com/namban-index</loc><lastmod>)[^<]*(</lastmod><changefreq>)[^<]*', lambda m: m.group(1) + NOW.date().isoformat() + m.group(2) + "weekly", t, count=1)
     if t2 != t: open(SM, "w", encoding="utf-8").write(t2)
@@ -489,12 +498,17 @@ def live_rules(o, n):
     rules, warn = [], []
     def add_map(kind, pairs, pat):
         m = {}
+        # cặp không đổi (a == b) vẫn phải ghi để bắt trùng: số cũ của loại này trùng số không đổi của loại khác
+        # (vd p10 nền 2,3 giữ nguyên, trung vị 1 số lẻ lô 500 m² 2,3 → 2,1) thì không biết chỗ nào là chỗ nào → bỏ (26/11/2026)
         for a, b in pairs:
-            if a is None or b is None or a == b: continue
+            if a is None or b is None: continue
             if a in m and m[a] != b: m[a] = None; warn.append(f"{kind}: '{a}' mơ hồ, không thay")
             elif a not in m: m[a] = b
-        for a, b in m.items():
-            if b: rules.append((re.compile(pat.format(re.escape(a))), b))
+        # thay CÙNG MỘT LƯỢT (một regex, tra bảng): thay nối tiếp thì 2,4→2,3 rồi 2,3→2,1 dây chuyền (26/11/2026)
+        mp = {a: b for a, b in m.items() if b and b != a}
+        if mp:
+            alt = "(" + "|".join(re.escape(a) for a in sorted(mp, key=len, reverse=True)) + ")"
+            rules.append((re.compile(pat.format(alt)), lambda mm, mp=mp: mp[mm.group(1)]))
     ks = [k for k, _, _ in GROUPS]
     # khoảng phổ biến "2,4–5,1 triệu/m²" — thay cả cặp trước
     for k in ks:
@@ -512,7 +526,7 @@ def live_rules(o, n):
         (na, ua), (nb, ub) = a.rsplit(" ", 1), b.rsplit(" ", 1)
         rules.append((re.compile(r"(chừng" + SP + ")" + re.escape(na) + "(" + SP + ")" + ua + r"(?!\w)"), r"\g<1>" + nb + r"\g<2>" + ub))
     if o["d_full"] != n["d_full"]:
-        rules.append((re.compile(r"((?:[Đđ]o tới|rao ngày|đang rao|\(ngày|[Tt]ới ngày)" + SP + ")" + re.escape(o["d_full"]) + r"(?![\d/])"), r"\g<1>" + n["d_full"]))
+        rules.append((re.compile(r"((?:[Đđ]o tới|rao ngày|đang rao|\(ngày|[Tt]ới ngày|\(mốc|mốc)" + SP + ")" + re.escape(o["d_full"]) + r"(?![\d/])"), r"\g<1>" + n["d_full"]))
         rules.append((re.compile(r"((?:[Đđ]o tới|đang rao)" + SP + ")" + re.escape(o["d_short"]) + r"(?=\))"), r"\g<1>" + n["d_short"]))
     return rules, warn
 def ky_sub(t, o, n):
@@ -553,6 +567,18 @@ elif old != new:
             if sm2 != sm: open(SM, "w", encoding="utf-8").write(sm2)
     # cùng các bài đó trong llms.txt (một dòng mỗi bài) và llms-full.txt (một khối mỗi bài)
     urls = ["https://nambanpanorama.com/" + fp[:-5] for fp in LIVE]
+    llms_rules = []
+    _m = {}
+    for k in [k for k, _, _ in GROUPS]:
+        for kind in ("med2", "p10"):
+            a, b = old[kind].get(k), new[kind].get(k)
+            if a and b: _m[a] = None if (a in _m and _m[a] != b) else b
+    _mp = {a: b for a, b in _m.items() if b and b != a}
+    if _mp:
+        _alt = "(" + "|".join(re.escape(a) for a in sorted(_mp, key=len, reverse=True)) + ")"
+        llms_rules.append((re.compile(r"(?<![\d,–.]){}(?=(?:, | / | \(| ·|\)))".format(_alt)), lambda mm, mp=_mp: mp[mm.group(1)]))
+    if old["d_full"] != new["d_full"]:
+        llms_rules.append((re.compile(r"\(" + re.escape(old["d_full"]) + r"\)"), "(" + new["d_full"] + ")"))
     for LP in (LL, LF):
         if not os.path.exists(LP): continue
         t0 = open(LP, encoding="utf-8").read()
@@ -561,8 +587,10 @@ elif old != new:
         for i, part in enumerate(parts):
             head = part[:400] if LP == LF else part
             if not any(re.search(re.escape(u) + r"(?![\w-])", head) for u in urls): continue
-            if LP == LL and not any(part.startswith("- " + u) for u in urls): continue
+            if LP == LL and not any(part.startswith("- " + u) or part.startswith("- [") and ("](" + u + ")") in part[:300] for u in urls): continue
             for rx, b in rules: part = rx.sub(b, part)
+            if LP == LL:  # dòng llms viết gọn: "2,28, đất…", "dưới 2,4 / 1,4 / 0,45 triệu/m²", "(1/11/2026)"
+                for rx, b in llms_rules: part = rx.sub(b, part)
             part, _ = ky_sub(part, old, new); parts[i] = part
         t = ("\n---\n" if LP == LF else "\n").join(parts)
         assert len(re.findall(r"https://nambanpanorama\.com/", t)) == n_url  # Luật 25: không nuốt bài nào

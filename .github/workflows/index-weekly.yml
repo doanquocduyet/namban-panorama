@@ -74,6 +74,8 @@ jobs:
           python tools/gen-llms-index-entry.py || echo "llms-full: không đồng bộ (Luật 25 chặn) — trang vẫn cập nhật"
           # ô hỏi–đáp (ô tìm kiếm + /hoi-nhanh) trả nguyên văn FAQ Index → số giá phải theo kịp mỗi tuần (19/11/2026)
           python tools/gen-chat-index.py || echo "chat-index: không sinh lại được — ô hỏi–đáp giữ số tuần trước"
+          # báo (không chặn) chỗ còn ngày đo / kỳ cũ ở trang "giá hiện tại", trang EN và dòng llms của chúng (26/11/2026)
+          python tools/check-idx-stale.py || true
       - name: Lưu dòng thô 30 ngày (không vào repo)
         uses: actions/upload-artifact@v4
         with:
