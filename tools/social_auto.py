@@ -47,6 +47,10 @@ SEASON_REPEAT = 300   # bài theo mùa: năm sau mới đăng lại
 STALE_NEWS_DAYS = 30  # NewsArticle cũ hơn thì không đưa vào nhóm E
 TAGS = "#NamBan #LamDong"
 THREADS_MAX = 500     # trần một bài Threads (tính cả link nối cuối)
+# Chỉ đăng trong khung giờ VN này (trừ bấm tay). GitHub chạy lịch trễ 7–10 giờ: đo 30 lượt 11–25/11/2026, lịch
+# 03:30 UTC chạy 10:41–13:59 UTC (17:41–20:59 giờ VN), lịch 12:30 UTC chạy 18:21–22:38 UTC (1:21–5:38 sáng giờ VN).
+# Lượt rơi vào ban đêm thì bỏ, lượt sau trong khung giờ đăng; nhịp 5 ngày bảo đảm không đăng hai lần.
+POST_HOURS = (7, 22)
 
 # Trang không phải bài: hub, mục lục, trang tin (đã có nhóm A), Index (nhóm B).
 SKIP = {"index", "nam-ban", "dat", "dau-tu", "hoi-nhanh", "trao-doi", "doc-lo-dat", "brief", "nam-ban-co-gi-moi",
@@ -415,7 +419,13 @@ def candidates(queue, today):
 # ------------------------------------------------------------------ chọn
 
 def pick(queue, field, force=False, ok=lambda p: True, today=None):
-    """Trả (mục, lý do) hoặc (None, lý do). `ok(mục)` → True nếu mục qua kiểm luật §2.1 / caption."""
+    """Trả (mục, lý do) hoặc (None, lý do). `ok(mục)` → True nếu mục qua kiểm luật §2.1 / caption.
+    `today` chỉ truyền khi mô phỏng — lúc đó không xét khung giờ."""
+    if today is None and not force:
+        now = datetime.datetime.now(VN)
+        if not POST_HOURS[0] <= now.hour < POST_HOURS[1]:
+            return None, ("ngoài giờ đăng: %s giờ VN, chỉ đăng %d:00–%d:00 — đợi lượt chạy sau"
+                          % (now.strftime("%H:%M"), POST_HOURS[0], POST_HOURS[1]))
     today = today or today_vn()
     others = [f for f in FIELDS if f != field]
 

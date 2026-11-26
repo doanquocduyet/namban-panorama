@@ -99,8 +99,9 @@ hỏng một hôm thì hôm sau tự bù); (2) **nhịp** — kênh đăng lần
 sang kỳ tháng mới (số từ `tools/idx-live-state.json` + đoạn đầu khối "Tín hiệu thị trường … tháng M/YYYY") → C bài đăng ≤ 30 ngày chưa
 lên mạng → D bài đúng mùa (dict `SEASON`; xen kẽ, không hai lượt liền) → E bài chưa từng đăng, mới sửa trước. Câu mồi tự chọn lấy ô
 "Trả lời nhanh"/"Nếu hỏi nhanh" của bài (không thì mô tả trang), `full: false`, `key` `<slug>#<ngày>-auto` / `-tin-…` / `namban-index#ky-YYYY-MM`.
-Phiếu đánh dấu mang nguyên mục, `apply-mark.py` chèn vào hàng đợi lúc ghi dấu. Cron còn một lần/ngày: Facebook 19:30, Instagram +
-Threads 20:07 giờ VN. Bài cố ý không tự đăng nằm ở `NO_AUTO` (báo cáo quý còn số cũ, bài nêu tên cơ sở kinh doanh, lô cụ thể giá cũ…) —
+Phiếu đánh dấu mang nguyên mục, `apply-mark.py` chèn vào hàng đợi lúc ghi dấu. Cron giữ hai lượt/ngày (Facebook 03:30 + 12:30 UTC,
+Instagram + Threads 04:07 + 13:07 UTC) nhưng **GitHub chạy lịch repo này trễ 7–10 giờ** (đo 30 lượt 11–25/11: lượt 03:30 chạy 17:41–20:59
+giờ VN, lượt 12:30 chạy 1:21–5:38 sáng) → bộ chọn chỉ đăng trong **7:00–22:00 giờ VN** (`POST_HOURS`), lượt đêm tự bỏ. Bài cố ý không tự đăng nằm ở `NO_AUTO` (báo cáo quý còn số cũ, bài nêu tên cơ sở kinh doanh, lô cụ thể giá cũ…) —
 bài mới có vấn đề tương tự thì thêm vào đó. Xem trước bằng `python3 tools/social_auto.py [YYYY-MM-DD]`. Luật "thêm mục `priority: 0`
 trong cùng commit" ở trên **không còn bắt buộc** (tin ≤ 21 ngày tự vào); vẫn viết tay khi muốn câu mồi riêng hoặc tin gấp (`now`).
 **Đính chính bài ĐÃ ĐĂNG (thêm 10/10/2026, ca thật: xã sửa số thu ngân sách sau khi bài đã lên 3 kênh):** workflow

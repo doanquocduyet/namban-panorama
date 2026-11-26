@@ -13,12 +13,14 @@ name: Đăng Instagram / Threads theo hàng đợi
 
 on:
   schedule:
-    # 20:07 giờ Việt Nam (UTC+7) → 13:07 UTC, mỗi ngày một lần; 5 ngày mới đăng một bài, cùng bài
-    # Facebook vừa đăng (luật "bắt kịp" trong tools/social_auto.py). Chú chốt 26/11/2026.
-    # Lệch 37 phút so với Facebook (19:30) để ba nơi không cùng đăng
+    # 04:07 + 13:07 UTC; 5 ngày mới đăng một bài, cùng bài Facebook vừa đăng (luật "bắt kịp" trong
+    # tools/social_auto.py). Chú chốt 26/11/2026. GitHub chạy trễ 7–10 giờ (xem fb-post.yml), script chỉ
+    # đăng trong 7:00–22:00 giờ VN.
+    # Lệch 37 phút so với Facebook để ba nơi không cùng đăng
     # một lúc — nhìn như máy chạy thì người đọc thấy ngay.
     # Cố ý KHÔNG lấy đúng 11:00 / 20:00: phút :00 bị xếp hàng lâu nhất,
     # xem ghi chú ở `fb-post.yml`.
+    - cron: "7 4 * * *"
     - cron: "7 13 * * *"
   workflow_dispatch:
     inputs:
