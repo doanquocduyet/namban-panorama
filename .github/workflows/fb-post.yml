@@ -12,15 +12,17 @@ name: Đăng Facebook theo hàng đợi
 
 on:
   schedule:
-    # 10:30 và 19:30 giờ Việt Nam (UTC+7) → 03:30 và 12:30 UTC.
-    # Chú chốt 17/9/2026 (đổi từ 12h/21h → 11h/20h → 10h30/19h30).
+    # 19:30 giờ Việt Nam (UTC+7) → 12:30 UTC, MỖI NGÀY MỘT LẦN — nhưng 5 NGÀY MỚI ĐĂNG MỘT BÀI
+    # (Chú chốt 26/11/2026: "5 ngày đăng 1 bài trên facebook, instagram và thread, ưu tiên các bài
+    # có tính chất thời điểm mới nhất"). Ngày nào chưa tới lượt thì script in "chưa tới lượt" rồi thoát.
+    # Chạy hằng ngày để hôm nào GitHub trễ/hỏng thì hôm sau tự đăng bù. Luật chọn bài: tools/social_auto.py.
+    # Trước đó: 10:30 + 19:30 mỗi ngày, hai bài/ngày khi hàng đợi còn mục (Chú chốt 17/9/2026).
     #
     # ⚠️ ĐỪNG ĐẶT PHÚT :00. Đo thật trên chính repo này: cron 05:00 chạy
     # lúc 09:39–09:45, cron 14:00 chạy lúc 18:01–18:02 — trễ bốn tiếng,
     # hai ngày liền. GitHub chạy lịch theo kiểu "cố gắng", lúc đông thì
     # xếp hàng, mà phút :00 là lúc đông nhất vì cả thế giới đặt vào đó.
     # Phút :30 đỡ hơn nhiều; phút lẻ hẳn thì đỡ nhất.
-    - cron: "30 3 * * *"
     - cron: "30 12 * * *"
   workflow_dispatch:
     inputs:
@@ -54,6 +56,8 @@ jobs:
           # đường đi thường dùng — script tự resolve từ token.
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FB_DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+          # Bấm nút chạy tay = đăng ngay, bỏ qua nhịp 5 ngày (vẫn theo thứ tự chọn bài).
+          SOCIAL_FORCE: ${{ github.event_name == 'workflow_dispatch' && '1' || '' }}
         run: python3 tools/fb-post.py
 
       - name: Ghi lại hàng đợi

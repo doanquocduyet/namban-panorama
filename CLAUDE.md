@@ -90,6 +90,19 @@ chính trang `/nam-ban-co-gi-moi`) mà có tin mới thì thêm **mục mới c�
 27/9/2026 trong `fb-post.py` + `apply-mark.py` + `social-post.py`). Ảnh og của bài có chữ cũ/sai thì khai
 `image` riêng cho mục đó. Chạy khô được: `FB_DRY_RUN=1 python3 tools/fb-post.py`,
 `PLATFORM=threads SOCIAL_DRY_RUN=1 python3 tools/social-post.py`.
+**NHỊP 5 NGÀY MỘT BÀI + TỰ CHỌN BÀI (Chú chốt 26/11/2026: "auto 5 ngày đăng 1 bài trên facebook, instagram và thread, ưu tiên các
+bài có tính chất thời điểm mới nhất").** Lý do: 62 mục viết tay đăng hết 20/11 thì ba kênh đứng im. Luật ở `tools/social_auto.py`,
+dùng chung cho ba kênh: (1) **bắt kịp** — bài đã lên kênh khác trong 5 ngày mà kênh này chưa có thì đăng luôn (ba kênh cùng bài, kênh
+hỏng một hôm thì hôm sau tự bù); (2) **nhịp** — kênh đăng lần cuối chưa đủ 5 ngày (giờ VN) thì thôi, trừ mục viết tay có `"now": true`
+(tin gấp) hoặc bấm chạy tay (workflow đặt `SOCIAL_FORCE=1` — bấm nút là đăng ngay); (3) mục viết tay trong hàng đợi đi trước theo
+`priority`; (4) hết mục viết tay thì **tự chọn**: A tin xã ≤ 21 ngày trên `/nam-ban-co-gi-moi` (bài nhà chưa đăng từ ngày tin) → B Index
+sang kỳ tháng mới (số từ `tools/idx-live-state.json` + đoạn đầu khối "Tín hiệu thị trường … tháng M/YYYY") → C bài đăng ≤ 30 ngày chưa
+lên mạng → D bài đúng mùa (dict `SEASON`; xen kẽ, không hai lượt liền) → E bài chưa từng đăng, mới sửa trước. Câu mồi tự chọn lấy ô
+"Trả lời nhanh"/"Nếu hỏi nhanh" của bài (không thì mô tả trang), `full: false`, `key` `<slug>#<ngày>-auto` / `-tin-…` / `namban-index#ky-YYYY-MM`.
+Phiếu đánh dấu mang nguyên mục, `apply-mark.py` chèn vào hàng đợi lúc ghi dấu. Cron còn một lần/ngày: Facebook 19:30, Instagram +
+Threads 20:07 giờ VN. Bài cố ý không tự đăng nằm ở `NO_AUTO` (báo cáo quý còn số cũ, bài nêu tên cơ sở kinh doanh, lô cụ thể giá cũ…) —
+bài mới có vấn đề tương tự thì thêm vào đó. Xem trước bằng `python3 tools/social_auto.py [YYYY-MM-DD]`. Luật "thêm mục `priority: 0`
+trong cùng commit" ở trên **không còn bắt buộc** (tin ≤ 21 ngày tự vào); vẫn viết tay khi muốn câu mồi riêng hoặc tin gấp (`now`).
 **Đính chính bài ĐÃ ĐĂNG (thêm 10/10/2026, ca thật: xã sửa số thu ngân sách sau khi bài đã lên 3 kênh):** workflow
 `social-fix.yml` (bấm tay; `tools/social-fix.py`). Facebook sửa thẳng đúng một câu (`fb_find` → `fb_replace`); không
 đọc/sửa được thì trả lời dưới bài. Instagram, Threads: API không cho sửa chữ → trả lời dưới bài (`reply`). KHÔNG xoá bài,

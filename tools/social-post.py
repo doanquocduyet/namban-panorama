@@ -317,18 +317,16 @@ def main():
     mark = "posted_threads" if plat == "threads" else "posted_ig"
 
     queue = fb.load()
-    today = datetime.date.today().isoformat()
-    # Cùng thang ưu tiên với Facebook — xem fb.by_priority.
-    due = sorted([p for p in queue
-                  if not p.get(mark) and p.get("date", "9999") <= today],
-                 key=fb.by_priority)
-    if not due:
-        print("Không có bài nào đến hạn cho %s (hôm nay %s)." % (plat, today))
+    # Cùng bộ chọn với Facebook (tools/social_auto.py): nhịp 5 ngày, bắt kịp bài kênh khác vừa đăng,
+    # mục viết tay trước, hết thì tự chọn bài có tính thời điểm. Cùng ngày cùng kho → cùng một bài.
+    post, why = fb.auto.pick(queue, mark, force=os.environ.get("SOCIAL_FORCE") == "1",
+                             ok=lambda p: not fb.check(p, p.get("message", "") + "\n" + p.get("threads", ""),
+                                                       p.get("comment", "")))
+    print("%s · hôm nay (giờ VN) %s · %s" % (plat, fb.auto.today_vn(), why))
+    if not post:
         return 0
-
-    post = due[0]
-    print("Chọn: /%s (ưu tiên %s, hẹn %s) — còn %d bài đến hạn."
-          % (post.get("slug"), post.get("priority", 5), post.get("date"), len(due)))
+    print("Chọn: /%s (ưu tiên %s, hẹn %s, khoá %s)"
+          % (post.get("slug"), post.get("priority", 5), post.get("date"), post.get("key")))
     link = "%s/%s" % (SITE, post["slug"]) if post.get("slug") else ""
     comment = post.get("comment", "").strip()
     if link and link not in comment:

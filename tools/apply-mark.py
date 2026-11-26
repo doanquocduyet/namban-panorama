@@ -47,6 +47,13 @@ def main():
     with open(QUEUE, encoding="utf-8") as fh:
         queue = json.load(fh)
 
+    # Mục tự chọn (tools/social_auto.py, 26/11/2026) chưa có trong hàng đợi → chèn nguyên mục phiếu mang theo.
+    # Kênh thứ hai, thứ ba đăng cùng mục thì khoá đã có, đi đường thường.
+    entry = mark.get("entry")
+    if entry and not any((p.get("key") or p.get("slug")) == key for p in queue):
+        queue.append(entry)
+        print("Chèn mục tự chọn %r vào hàng đợi." % key)
+
     for post in queue:
         if (post.get("key") or post.get("slug")) != key:
             continue

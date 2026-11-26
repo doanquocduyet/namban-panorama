@@ -40,6 +40,9 @@ import urllib.parse
 import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, "tools"))
+import social_auto as auto  # noqa: E402  (nhịp 5 ngày + bộ tự chọn bài, 26/11/2026)
+
 QUEUE = os.path.join(ROOT, "data", "fb-queue.json")
 GRAPH = "https://graph.facebook.com/v21.0"
 SITE = "https://nambanpanorama.com"
@@ -142,6 +145,10 @@ def mark_posted(post, field, pid):
         "id": pid,
         "at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
     }
+    # Mục tự chọn (tools/social_auto.py) chưa nằm trong hàng đợi: phiếu mang theo nguyên mục,
+    # apply-mark.py chèn vào rồi mới ghi dấu.
+    if post.get("auto"):
+        rec["entry"] = {k: v for k, v in post.items() if not k.startswith(("posted", "fix_"))}
     path = os.path.join(ROOT, "data", ".pending-mark.json")
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(rec, fh, ensure_ascii=False, indent=2)
@@ -439,17 +446,19 @@ def main():
     dry = os.environ.get("FB_DRY_RUN") == "1" or not token
 
     queue = load()
-    today = datetime.date.today().isoformat()
-    due = sorted([p for p in queue
-                  if not p.get("posted") and p.get("date", "9999") <= today],
-                 key=by_priority)
-    if not due:
-        print("Không có bài nào đến hạn (hôm nay %s)." % today)
+    # Nhịp 5 ngày một bài + tự chọn bài khi hàng đợi viết tay đã hết (Chú chốt 26/11/2026) —
+    # luật đầy đủ ở đầu tools/social_auto.py. Bấm chạy tay (SOCIAL_FORCE=1) thì bỏ qua nhịp.
+    post, why = auto.pick(queue, "posted", force=os.environ.get("SOCIAL_FORCE") == "1",
+                          ok=lambda p: not check(p, p.get("message", "") + "\n" + p.get("threads", ""),
+                                                 p.get("comment", "")))
+    print("Hôm nay (giờ VN) %s · %s" % (auto.today_vn(), why))
+    if not post:
         return 0
-
-    post = due[0]
-    print("Chọn: /%s (ưu tiên %s, hẹn %s) — còn %d bài đến hạn."
-          % (post.get("slug"), post.get("priority", 5), post.get("date"), len(due)))
+    print("Chọn: /%s (ưu tiên %s, hẹn %s, khoá %s)"
+          % (post.get("slug"), post.get("priority", 5), post.get("date"), post.get("key")))
+    if post.get("auto"):
+        print("Mục tự chọn — phiếu đánh dấu mang theo mục này để chèn vào hàng đợi:")
+        print(json.dumps(post, ensure_ascii=False, indent=1))
 
     link = "%s/%s" % (SITE, post["slug"]) if post.get("slug") else ""
     comment = post.get("comment", "").strip()
