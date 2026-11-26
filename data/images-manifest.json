@@ -8,8 +8,8 @@
   "css": "nền qua url() trong CSS",
   "unused": "chưa trỏ ở đâu — dự trữ trong kho"
  },
- "total_images": 537,
- "unused_count": 151,
+ "total_images": 539,
+ "unused_count": 112,
  "unused": [
   "anh-ve-tinh-thua-dat-nam-ban-gis.webp",
   "ban-an-trang-tri-giang-sinh.webp",
@@ -22,19 +22,15 @@
   "bien-may-buoi-sang-tren-doi-2.webp",
   "bien-may-buoi-sang-tren-doi.webp",
   "bien-may-dem-trang-dong-thanh-2.webp",
-  "bien-may-tren-thung-lung-sang-som.webp",
   "biet-thu-bac-thang-den-dem.webp",
   "biet-thu-da-luc-hoang-hon.webp",
   "biet-thu-go-giua-rung-thong.webp",
   "biet-thu-len-den-tu-tren-cao.webp",
   "biet-thu-mai-nhon-san-vuon-thong.webp",
-  "bo-booth-vao-vu-vua-nam-ban.webp",
   "bo-chuoi-dua-hau-dau-rong-tren-ban.webp",
   "bon-hoa-ven-hang-rao-nam-ban.webp",
-  "bua-trua-ngoai-troi-nhin-thung-lung-nam-ban.webp",
   "bui-hoa-tim-ven-duong-gia-lam.webp",
   "but-khac-nam-ban-panorama-tren-xe.webp",
-  "ca-phe-qua-xanh-macro-nam-ban.webp",
   "ca-phe-toi-ban-go-den-ban-2.webp",
   "ca-phe-toi-ban-go-den-ban.webp",
   "cafe-chaponte-noi-that.jpg",
@@ -48,47 +44,25 @@
   "com-trua-dia-com-ban-quan.webp",
   "cong-jong-minh-farm-me-linh.webp",
   "cong-khai-lay-y-kien-quy-hoach-chung-xa.webp",
-  "cong-thon-gan-thi-nam-ban-ngay-mua.webp",
   "dem-den-thung-lung-nam-ban-tu-tren-doi.webp",
   "dem-sao-den-thung-lung.webp",
   "dem-suong-thung-lung-den-dien.webp",
   "dem-thung-lung-den-mo.webp",
   "dien-linh-tuyen-nam-ban.webp",
-  "do-uong-ban-ca-phe-san-vuon.webp",
   "doi-ca-phe-duoi-chan-doi-thong.webp",
-  "doi-ca-phe-nguoi-lam-vuon-thung-lung.webp",
-  "doi-ca-phe-nhin-ra-thung-lung-troi-xanh.webp",
   "doi-che-chua-ro-vi-tri.jpg",
   "doi-thong-co-xanh-ven-duong.webp",
   "don-canh-cay-len-xe-ban-tai.webp",
   "du-khac-nam-ban-panorama-tren-duong-dat.webp",
-  "duong-be-tong-hang-cau-dua.webp",
   "duong-be-tong-hang-thong-rao-trang.webp",
-  "duong-be-tong-moi-giua-doi-nam-ban.webp",
   "duong-dat-cot-dien-doi-thong.webp",
-  "duong-dat-do-co-vang-nhin-ra-nui.webp",
-  "duong-dat-do-nha-dang-xay-ven-doi.webp",
-  "duong-dat-giua-hang-cay-an-trai.webp",
-  "duong-dat-hang-rao-go-trang.webp",
-  "duong-dat-trang-nhin-ra-thung-lung.webp",
   "duong-deo-mua-suong-mo.webp",
   "duong-ta-nung-nam-ban-dt725.webp",
-  "flycam-ao-ho-vuon-cay-lo-dat-do.webp",
   "flycam-biet-thu-mai-xanh-san-co.webp",
-  "flycam-dem-biet-thu-sang-den.webp",
-  "flycam-dem-trung-tam-nam-ban.webp",
-  "flycam-dem-tuong-quan-am-chua-linh-an.webp",
-  "flycam-duong-dat-giua-vuon-nha-kinh.webp",
-  "flycam-ho-nuoc-giua-doi-ca-phe.webp",
-  "flycam-khu-dan-cu-doc-duong-giua-vuon.webp",
   "flycam-khu-phan-lo-duong-nhua-moi.webp",
-  "flycam-lo-dat-do-duong-be-tong-moi.webp",
   "flycam-lo-dat-moi-san-ui-giua-vuon.webp",
   "flycam-lo-dat-xe-trang-duong-dat.webp",
-  "flycam-thac-voi-trung-tam-nam-ban.webp",
   "flycam-thung-lung-vuon-ca-phe-duong-be-tong.webp",
-  "flycam-tuong-quan-am-chua-linh-an.webp",
-  "flycam-vuon-ca-phe-lo-dat-do.webp",
   "ga-tha-vuon-dat-do-nam-ban.webp",
   "gia-lam-biet-thu-o-to.webp",
   "hang-rao-luoi-tren-doi-nhin-thung-lung.webp",
@@ -97,26 +71,21 @@
   "hoa-hong-cam-tu-cau-truoc-biet-thu.webp",
   "hoa-hong-leo-tuong-trang.webp",
   "hoa-vien-tiec-cuoi-ba-dinh-nam-ban.webp",
-  "hoa-vuon-nam-ban-04.webp",
   "hoa-vuon-nam-ban-05.webp",
   "hoang-hon-thung-lung-den-dien.webp",
   "lam-banh-cuon-nam-ban.webp",
   "lien-khuong-bang-gio-bay.webp",
   "lien-khuong-mo-lai.jpg",
   "lien-khuong-mo-lai.webp",
-  "lien-khuong-sanh-nha-ga.webp",
   "lo-dat-moi-rao-coc-trang-ven-duong.webp",
   "loi-di-da-ben-nha-kinh-rung-thong.webp",
   "mai-ngoi-nhin-doi-ca-phe.webp",
   "mam-com-toi-nam-ban.webp",
   "may-bay-tren-san-do-san-bay.webp",
-  "may-den-truoc-mua-thung-lung.webp",
-  "may-xuc-san-lap-mat-bang.webp",
   "me-linh-vuon-doi-cao.webp",
   "mon-nuoc-rau-song.webp",
   "nam-ban-toan-canh-chua.jpg",
   "nam-ban-vista.jpg",
-  "nha-moi-xay-duoi-doi-thong.webp",
   "nha-ong-mai-doc-san-trong.webp",
   "nha-tho-giao-xu-nam-ban.webp",
   "noi-that-biet-thu-ban-dao-bep.webp",
@@ -134,21 +103,15 @@
   "san-vuon-hoa-nhin-xuong-thung-lung.webp",
   "san-vuon-hoa-va-doi-nam-ban.webp",
   "san-vuon-qua-khung-cua-so.webp",
-  "suong-mu-phu-doi-co.webp",
   "tam-giac-mach-cum-nam-ban-panorama-thung-lung.webp",
   "tam-pin-mat-troi-nam-ban.webp",
-  "tay-gang-hai-ca-phe-xanh.webp",
   "thung-lung-duong-dat-giua-doi.webp",
   "thung-lung-may-trang-day-dien.webp",
-  "thung-lung-nam-ban-may-trang-troi-xanh.webp",
   "thung-lung-nam-ban-nha-kinh-nhin-tu-tren-cao.webp",
-  "thung-lung-nhin-tu-nha-dang-xay.webp",
-  "to-pho-buoi-sang-quan-ven-duong.webp",
   "tra-cuu-quy-hoach-tren-man-hinh.webp",
   "trai-cay-ban-ngoai-troi-nhin-doi.webp",
   "tram-sac-nam-ban-toan-canh.webp",
   "tram-sac-nam-ban-troi-chieu.webp",
-  "tram-y-te-xa-nam-ban-mat-truoc.webp",
   "trang-banh-cuon-cho-gia-lam.webp",
   "trong-xe-khach-len-nam-ban.webp",
   "tu-banh-croissant-nam-ban.webp",
@@ -157,8 +120,6 @@
   "van-phong-dien-linh-nam-ban.webp",
   "view-tu-ban-cong-nha-moi-xay.webp",
   "vuon-ca-phe-nhin-qua-cua-so.webp",
-  "vuon-rau-luong-go-san-nha.webp",
-  "xay-nha-giap-rung-thong-nam-ban.jpg",
   "xe-ban-tai-duong-dat-nhin-xuong-thung-lung.webp",
   "xe-cau-trong-cay-thong-lon-tren-lo-dat.webp",
   "xe-khach-nhin-ra-cua-nam-ban.webp"
@@ -195,6 +156,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "5km-o-nam-ban.jpg": {
+   "kb": 131,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "5km-o-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
@@ -500,6 +475,9 @@
    "used_in": {
     "50-nam-vung-kinh-te-moi-nam-ban.html": [
      "display"
+    ],
+    "image-sitemap.xml": [
+     "ref"
     ]
    }
   },
@@ -584,15 +562,6 @@
     ]
    }
   },
-  "bien-may-tren-thung-lung-sang-som.webp": {
-   "kb": 69,
-   "dims": [
-    1600,
-    1200
-   ],
-   "used_in": {},
-   "status": "unused"
-  },
   "biet-thu-bac-thang-den-dem.webp": {
    "kb": 158,
    "dims": [
@@ -644,8 +613,14 @@
     840,
     1600
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "thuong-mai-dien-tu-nam-ban.html": [
+     "display"
+    ],
+    "kinh-te-so-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "bo-chuoi-dua-hau-dau-rong-tren-ban.webp": {
    "kb": 78,
@@ -754,8 +729,11 @@
     1600,
     900
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "lam-viec-tu-xa-o-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "bui-hoa-tim-ven-duong-gia-lam.webp": {
    "kb": 282,
@@ -988,8 +966,14 @@
     1600,
     1066
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "chi-phi-trong-ca-phe-nam-ban.html": [
+     "display"
+    ],
+    "ai-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "ca-phe-rang-moc-nam-ban.webp": {
    "kb": 182,
@@ -1294,6 +1278,20 @@
    ],
    "used_in": {},
    "status": "unused"
+  },
+  "chi-phi-dat-dai-nam-ban.jpg": {
+   "kb": 196,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "chi-phi-dat-dai-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
   },
   "chi-phi-san-lap-ha-tang-nam-ban.jpg": {
    "kb": 192,
@@ -1655,15 +1653,6 @@
     ]
    }
   },
-  "cong-thon-gan-thi-nam-ban-ngay-mua.webp": {
-   "kb": 90,
-   "dims": [
-    900,
-    1600
-   ],
-   "used_in": {},
-   "status": "unused"
-  },
   "cong-thon-van-hoa-hoan-kiem-nam-ha.webp": {
    "kb": 220,
    "dims": [
@@ -1886,11 +1875,6 @@
     630
    ],
    "used_in": {
-    "xay-nha-giap-rung-thong-nam-ban.html": [
-     "og",
-     "schema",
-     "twitter"
-    ],
     "dat-giap-rung-thong-nam-ban.html": [
      "og",
      "schema",
@@ -2461,8 +2445,11 @@
     900,
     1600
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "dat-nam-ban-kinh-doanh-gi.html": [
+     "display"
+    ]
+   }
   },
   "doan-dai-hoc-da-lat-tai-nam-ban.webp": {
    "kb": 129,
@@ -2544,8 +2531,14 @@
     1600,
     900
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "xem-dat-nam-ban-chua-mua-duoc.html": [
+     "display"
+    ],
+    "quy-trinh-mua-dat-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "doi-ca-phe-nhin-ra-thung-lung-troi-xanh.webp": {
    "kb": 289,
@@ -2553,8 +2546,11 @@
     1200,
     1600
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "chi-phi-trong-ca-phe-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "doi-ca-phe-suong-nam-ban.webp": {
    "kb": 270,
@@ -2681,8 +2677,14 @@
     1600,
     1200
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "dat-nam-ban-kinh-doanh-gi.html": [
+     "display"
+    ],
+    "doc-tin-rao-dat-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "duong-be-tong-hang-thong-rao-trang.webp": {
    "kb": 249,
@@ -2727,13 +2729,16 @@
    }
   },
   "duong-be-tong-moi-giua-doi-nam-ban.webp": {
-   "kb": 118,
+   "kb": 114,
    "dims": [
     900,
     1600
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "quy-hoach-chung-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "duong-dat-cot-dien-doi-thong.webp": {
    "kb": 106,
@@ -2760,13 +2765,16 @@
    }
   },
   "duong-dat-do-co-vang-nhin-ra-nui.webp": {
-   "kb": 72,
+   "kb": 70,
    "dims": [
-    816,
+    795,
     1425
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "o-nam-ban-mot-nam-moi-biet.html": [
+     "display"
+    ]
+   }
   },
   "duong-dat-do-don-canh.jpg": {
    "kb": 290,
@@ -2789,8 +2797,14 @@
     979,
     1600
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "mua-mua-nam-ban.html": [
+     "display"
+    ],
+    "5km-o-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "duong-dat-giua-hang-cay-an-trai.webp": {
    "kb": 269,
@@ -2798,8 +2812,11 @@
     960,
     1280
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "nguoi-ngoai-tinh-mua-dat-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "duong-dat-hang-rao-go-trang.webp": {
    "kb": 193,
@@ -2807,8 +2824,14 @@
     900,
     1600
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "dat-phan-lo-nam-ban.html": [
+     "display"
+    ],
+    "tach-thua-dat-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "duong-dat-song-doi-nam-ban.webp": {
    "kb": 260,
@@ -2831,8 +2854,11 @@
     995,
     1600
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "xem-dat-nam-ban-chua-mua-duoc.html": [
+     "display"
+    ]
+   }
   },
   "duong-deo-mua-suong-mo.webp": {
    "kb": 34,
@@ -3039,8 +3065,14 @@
     1600,
     900
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "chuyen-muc-dich-su-dung-dat-nam-ban.html": [
+     "display"
+    ],
+    "lo-dat-nam-ban-binh-thuong.html": [
+     "display"
+    ]
+   }
   },
   "flycam-biet-thu-mai-xanh-san-co.webp": {
    "kb": 173,
@@ -3051,41 +3083,17 @@
    "used_in": {},
    "status": "unused"
   },
-  "flycam-dem-biet-thu-sang-den.webp": {
-   "kb": 71,
-   "dims": [
-    1566,
-    1045
-   ],
-   "used_in": {},
-   "status": "unused"
-  },
-  "flycam-dem-trung-tam-nam-ban.webp": {
-   "kb": 75,
-   "dims": [
-    1567,
-    1044
-   ],
-   "used_in": {},
-   "status": "unused"
-  },
-  "flycam-dem-tuong-quan-am-chua-linh-an.webp": {
-   "kb": 86,
-   "dims": [
-    1567,
-    1044
-   ],
-   "used_in": {},
-   "status": "unused"
-  },
   "flycam-duong-dat-giua-vuon-nha-kinh.webp": {
    "kb": 253,
    "dims": [
     1600,
     900
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "dat-vuon-nam-ban-xay-duoc-gi.html": [
+     "display"
+    ]
+   }
   },
   "flycam-ho-nuoc-giua-doi-ca-phe.webp": {
    "kb": 266,
@@ -3093,8 +3101,14 @@
     1600,
     900
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "nuoc-o-nam-ban.html": [
+     "display"
+    ],
+    "hop-tac-canh-tac-dat-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "flycam-khu-dan-cu-doc-duong-giua-vuon.webp": {
    "kb": 295,
@@ -3102,8 +3116,11 @@
     1600,
     900
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "doc-tin-rao-dat-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "flycam-khu-phan-lo-duong-nhua-moi.webp": {
    "kb": 175,
@@ -3120,8 +3137,11 @@
     1200,
     900
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "chi-phi-dat-dai-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "flycam-lo-dat-moi-san-ui-giua-vuon.webp": {
    "kb": 89,
@@ -3147,8 +3167,11 @@
     1280,
     712
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "tuyen-duong-dong-luc-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "flycam-thung-lung-vuon-ca-phe-duong-be-tong.webp": {
    "kb": 221,
@@ -3165,8 +3188,14 @@
     1280,
     728
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "nam-ban-giong-vung-nao-tren-the-gioi.html": [
+     "display"
+    ],
+    "vi-sao-nam-ban-nhieu-giao-dich.html": [
+     "display"
+    ]
+   }
   },
   "flycam-vuon-ca-phe-lo-dat-do.webp": {
    "kb": 282,
@@ -3174,8 +3203,14 @@
     1280,
     720
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "so-hoa-nam-ban.html": [
+     "display"
+    ],
+    "brief-03.html": [
+     "display"
+    ]
+   }
   },
   "founder.webp": {
    "kb": 43,
@@ -3905,8 +3940,11 @@
     1320,
     990
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "mua-nha-nam-ban-khong-o.html": [
+     "display"
+    ]
+   }
   },
   "hoa-vuon-nam-ban-05.webp": {
    "kb": 190,
@@ -4420,8 +4458,11 @@
     1600,
     1065
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "thi-truong-dat-nam-ban-quy-3-2026.html": [
+     "display"
+    ]
+   }
   },
   "linh-an-pagoda-lady-buddha-nam-ban.webp": {
    "kb": 252,
@@ -4718,8 +4759,14 @@
     1600,
     900
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "mua-mua-nam-ban.html": [
+     "display"
+    ],
+    "mua-lon-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "may-xuc-san-lap-mat-bang.webp": {
    "kb": 270,
@@ -4727,8 +4774,11 @@
     900,
     1600
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "chi-phi-dat-dai-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "me-linh-doi-thong.webp": {
    "kb": 290,
@@ -4970,6 +5020,20 @@
     ]
    }
   },
+  "mua-lon-nam-ban.jpg": {
+   "kb": 108,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "mua-lon-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
   "mua-mua-nam-ban.jpg": {
    "kb": 213,
    "dims": [
@@ -4985,6 +5049,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "mua-nha-nam-ban-khong-o.jpg": {
+   "kb": 181,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "mua-nha-nam-ban-khong-o.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
@@ -5181,6 +5259,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "nam-ban-giong-vung-nao-tren-the-gioi.jpg": {
+   "kb": 139,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "nam-ban-giong-vung-nao-tren-the-gioi.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
@@ -5408,17 +5500,7 @@
     630
    ],
    "used_in": {
-    "xem-dat-nam-ban-chua-mua-duoc.html": [
-     "og",
-     "schema",
-     "twitter"
-    ],
     "kinh-nghiem-mua-dat-nam-ban.html": [
-     "og",
-     "schema",
-     "twitter"
-    ],
-    "chi-phi-dat-dai-nam-ban.html": [
      "og",
      "schema",
      "twitter"
@@ -5433,16 +5515,6 @@
      "schema",
      "twitter"
     ],
-    "mua-lon-nam-ban.html": [
-     "og",
-     "schema",
-     "twitter"
-    ],
-    "5km-o-nam-ban.html": [
-     "og",
-     "schema",
-     "twitter"
-    ],
     "pickleball-nam-ban.html": [
      "og",
      "schema",
@@ -5453,23 +5525,8 @@
      "schema",
      "twitter"
     ],
-    "vi-sao-nam-ban-nhieu-giao-dich.html": [
-     "og",
-     "schema",
-     "twitter"
-    ],
     "nam-ban-co-gi-moi.html": [
      "og",
-     "twitter"
-    ],
-    "o-nam-ban-mot-nam-moi-biet.html": [
-     "og",
-     "schema",
-     "twitter"
-    ],
-    "mua-nha-nam-ban-khong-o.html": [
-     "og",
-     "schema",
      "twitter"
     ],
     "en/foreigners-buying-land-nam-ban.html": [
@@ -5779,8 +5836,14 @@
     1320,
     975
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "xay-nha-giap-rung-thong-nam-ban.html": [
+     "display"
+    ],
+    "mua-nha-xay-san-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "nha-ong-mai-doc-san-trong.webp": {
    "kb": 100,
@@ -5917,6 +5980,20 @@
     ],
     "image-sitemap.xml": [
      "ref"
+    ]
+   }
+  },
+  "o-nam-ban-mot-nam-moi-biet.jpg": {
+   "kb": 116,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "o-nam-ban-mot-nam-moi-biet.html": [
+     "og",
+     "schema",
+     "twitter"
     ]
    }
   },
@@ -6947,8 +7024,14 @@
     1600,
     900
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "thi-truong-dat-nam-ban-2026.html": [
+     "display"
+    ],
+    "thi-truong-dat-nam-ban-quy-3-2026.html": [
+     "display"
+    ]
+   }
   },
   "suong-mu-vuon-doi-21-9-2026.webp": {
    "kb": 240,
@@ -7102,8 +7185,14 @@
     900,
     1600
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "thuong-mai-dien-tu-nam-ban.html": [
+     "display"
+    ],
+    "thue-nguoi-lam-vuon-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "thac-voi-nam-ban.webp": {
    "kb": 280,
@@ -7157,11 +7246,6 @@
     630
    ],
    "used_in": {
-    "nam-ban-giong-vung-nao-tren-the-gioi.html": [
-     "og",
-     "schema",
-     "twitter"
-    ],
     "ja/nam-ban-zou-no-taki.html": [
      "og",
      "twitter"
@@ -7339,8 +7423,14 @@
     1600,
     900
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "quy-hoach-chung-nam-ban.html": [
+     "display"
+    ],
+    "nam-ban-giong-vung-nao-tren-the-gioi.html": [
+     "display"
+    ]
+   }
   },
   "thung-lung-nam-ban-nha-kinh-nhin-tu-tren-cao.webp": {
    "kb": 195,
@@ -7357,8 +7447,11 @@
     1600,
     900
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "mua-nha-xay-san-nam-ban.html": [
+     "display"
+    ]
+   }
   },
   "thuong-mai-dien-tu-nam-ban.jpg": {
    "kb": 67,
@@ -7418,8 +7511,11 @@
     1600,
     900
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "o-nam-ban-mot-nam-moi-biet.html": [
+     "display"
+    ]
+   }
   },
   "toan-canh-nam-ban-nhin-tu-tren-cao-lam-ha-lam-dong.webp": {
    "kb": 248,
@@ -7650,8 +7746,11 @@
     1600,
     1200
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "vi-sao-nam-ban-nhieu-giao-dich.html": [
+     "display"
+    ]
+   }
   },
   "tram-y-te-xa-nam-ban.webp": {
    "kb": 290,
@@ -7874,6 +7973,20 @@
     ]
    }
   },
+  "vi-sao-nam-ban-nhieu-giao-dich.jpg": {
+   "kb": 183,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "vi-sao-nam-ban-nhieu-giao-dich.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
+  },
   "vietnam-visa-long-stay-da-lat.jpg": {
    "kb": 216,
    "dims": [
@@ -8026,15 +8139,6 @@
     ]
    }
   },
-  "vuon-rau-luong-go-san-nha.webp": {
-   "kb": 236,
-   "dims": [
-    1100,
-    619
-   ],
-   "used_in": {},
-   "status": "unused"
-  },
   "vuon-rau-nha-vuon-nam-ban.webp": {
    "kb": 289,
    "dims": [
@@ -8140,8 +8244,13 @@
     1200,
     630
    ],
-   "used_in": {},
-   "status": "unused"
+   "used_in": {
+    "xay-nha-giap-rung-thong-nam-ban.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
   },
   "xay-nha-giap-suoi-nam-ban.jpg": {
    "kb": 107,
@@ -8221,6 +8330,20 @@
    ],
    "used_in": {},
    "status": "unused"
+  },
+  "xem-dat-nam-ban-chua-mua-duoc.jpg": {
+   "kb": 175,
+   "dims": [
+    1200,
+    630
+   ],
+   "used_in": {
+    "xem-dat-nam-ban-chua-mua-duoc.html": [
+     "og",
+     "schema",
+     "twitter"
+    ]
+   }
   }
  }
 }
