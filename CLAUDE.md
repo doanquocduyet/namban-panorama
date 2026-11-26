@@ -1304,6 +1304,11 @@ Báo cáo đầy đủ nằm ở scratchpad phiên 2/11 (không vào repo). Chú
 - **43 tấm KHÔNG đưa lên web:** 16 ảnh chụp màn hình (TikTok/YouTube của người khác có tên, SĐT; app thời tiết; Guland; Street View),
   10 giấy tờ đất có tên người/số CCCD/con dấu và sơ đồ phân lô của dự án cụ thể, 10 ảnh người/đời tư (họp, chân dung, nhậu, cổng nhà,
   ổ khoá có mã số, trẻ con lội suối), 1 ảnh tư liệu đen trắng (không phải ảnh Chú), 6 tấm "Giá đất Nam Ban tháng 11/2026" có chữ trên ảnh.
+- **26/11/2026 (Chú: "chọn lọc và ưu tiên đưa vào các bài viết chưa có hình"):** 47 ảnh vào 33 bài trước đó 0 ảnh (mỗi tấm ≤ 2 bài,
+  chú thích chỉ nói thứ thấy trong ảnh, có phản biện từng cặp); 8 bài thôi mượn `nam-ban-toan-canh-og.jpg`/`thac-voi-og.jpg` (ảnh chia sẻ cắt riêng).
+  Còn 23 bài 0 ảnh **cố ý** (bài thủ tục/pháp lý/bảng số; Mê Linh, Nam Hà, Phi Tô, đường Phi Tô, nhà gỗ thông, pickleball: kho không có tấm đúng nơi).
+  **Bài học: kho mới phải so điểm ảnh (dhash) với `/images/` trước khi nhận** — 6 tấm đợt 22/11 là ảnh cũ chụp lại/cắt khác (vd cổng thôn Gan Thi
+  = `cong-thon-gan-thi-gia-lam`, đã đủ 2 bài), đã gỡ. Ảnh có ô tô thì làm mờ biển số; khung cắt từ video thì cắt dải đen mép.
 - 6 tấm chữ đó là **ghi nhận thị trường tháng 11/2026 của Chú** — đã dùng làm nguồn cho khối tín hiệu tháng 11 trên Index và giá thuê
   ở `/thue-nha-nam-ban`, `/en/long-term-rental-nam-ban`. Tấm "250–450 m² … triệu/m²" thiếu con số trước chữ "TRIỆU/M²" (lỗi thiết kế).
 
