@@ -95,10 +95,10 @@ bài có tính chất thời điểm mới nhất").** Lý do: 62 mục viết t
 dùng chung cho ba kênh: (1) **bắt kịp** — bài đã lên kênh khác trong 5 ngày mà kênh này chưa có thì đăng luôn (ba kênh cùng bài, kênh
 hỏng một hôm thì hôm sau tự bù); (2) **nhịp** — kênh đăng lần cuối chưa đủ 5 ngày (giờ VN) thì thôi, trừ mục viết tay có `"now": true`
 (tin gấp) hoặc bấm chạy tay (workflow đặt `SOCIAL_FORCE=1` — bấm nút là đăng ngay); (3) mục viết tay trong hàng đợi đi trước theo
-`priority`; (4) hết mục viết tay thì **tự chọn**: A tin xã ≤ 21 ngày trên `/nam-ban-co-gi-moi` (bài nhà chưa đăng từ ngày tin) → B Index
+`priority`; (4) hết mục viết tay thì **tự chọn**: A tin xã ≤ 14 ngày trên `/nam-ban-co-gi-moi` (chưa lên mạng theo khoá tin) → B Index
 sang kỳ tháng mới (số từ `tools/idx-live-state.json` + đoạn đầu khối "Tín hiệu thị trường … tháng M/YYYY") → C bài đăng ≤ 30 ngày chưa
 lên mạng → D bài đúng mùa (dict `SEASON`; xen kẽ, không hai lượt liền) → E bài chưa từng đăng, mới sửa trước. Câu mồi tự chọn lấy ô
-"Trả lời nhanh"/"Nếu hỏi nhanh" của bài (không thì mô tả trang), `full: false`, `key` `<slug>#<ngày>-auto` / `-tin-…` / `namban-index#ky-YYYY-MM`.
+"Trả lời nhanh"/"Nếu hỏi nhanh" của bài (không thì mô tả trang), `full: false`, `key` `<slug>#auto` / `<slug>#mua-YYYY` / `<slug>#<ngày tin>-tin-…` / `namban-index#ky-YYYY-MM`.
 Phiếu đánh dấu mang nguyên mục, `apply-mark.py` chèn vào hàng đợi lúc ghi dấu. Cron giữ hai lượt/ngày (Facebook 03:30 + 12:30 UTC,
 Instagram + Threads 04:07 + 13:07 UTC) nhưng **GitHub chạy lịch repo này trễ 7–10 giờ** (đo 30 lượt 11–25/11: lượt 03:30 chạy 17:41–20:59
 giờ VN, lượt 12:30 chạy 1:21–5:38 sáng) → bộ chọn chỉ đăng trong **7:00–22:00 giờ VN** (`POST_HOURS`), lượt đêm tự bỏ. Bài cố ý không tự đăng nằm ở `NO_AUTO` (báo cáo quý còn số cũ, bài nêu tên cơ sở kinh doanh, lô cụ thể giá cũ…) —
@@ -109,7 +109,7 @@ bộ tự chọn bỏ qua · tin xã: đăng tin này không chặn tin khác, t
 để loại, câu nhắc sang bài khác bị bỏ · bài theo mùa chỉ đi nhóm D và năm sau chỉ đăng lại khi trang đã sửa · chốt câu mồi `good()`: bỏ "bài này",
 câu mở bằng chữ thường, giá/m² ở trang không LIVE, mốc "tính tới / giá … ngày" cũ hơn 120 ngày · Threads có tựa, không cắt mất ý đã hứa ("bốn điểm")
 · câu mồi Index không đưa số "tin còn đang rao" (đang lẫn tin cũ, chờ Chú), từ kỳ 2027 dùng ảnh không in năm. Xem trước bằng `python3 tools/social_auto.py [YYYY-MM-DD]`. Luật "thêm mục `priority: 0`
-trong cùng commit" ở trên **không còn bắt buộc** (tin ≤ 21 ngày tự vào); vẫn viết tay khi muốn câu mồi riêng hoặc tin gấp (`now`).
+trong cùng commit" ở trên **không còn bắt buộc** (tin ≤ 14 ngày tự vào); vẫn viết tay khi muốn câu mồi riêng hoặc tin gấp (`now`).
 **Đính chính bài ĐÃ ĐĂNG (thêm 10/10/2026, ca thật: xã sửa số thu ngân sách sau khi bài đã lên 3 kênh):** workflow
 `social-fix.yml` (bấm tay; `tools/social-fix.py`). Facebook sửa thẳng đúng một câu (`fb_find` → `fb_replace`); không
 đọc/sửa được thì trả lời dưới bài. Instagram, Threads: API không cho sửa chữ → trả lời dưới bài (`reply`). KHÔNG xoá bài,
