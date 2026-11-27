@@ -1291,7 +1291,7 @@ Báo cáo đầy đủ nằm ở scratchpad phiên 2/11 (không vào repo). Chú
   chối/không nộp tiền có thể bị cấm đấu giá loại tài sản đó 6 tháng – 5 năm. Chưa có nguồn thứ hai/văn bản → CHƯA sửa `/dau-gia-dat-nam-ban`
   (bài ghi mức 5–20 % của luật 2024; các phiên ở Nam Ban tới nay là tài sản thi hành án, ngân hàng — không thuộc nhóm 20–50 %). Có văn bản thì
   thêm một câu có mốc hiệu lực vào mục tiền đặt trước, không đổi số các phiên đã ghi.
-- **Chờ văn bản:** kỳ họp Quốc hội thứ 2 khóa XVI (bế mạc khoảng 21/11/2026) — Luật Đất đai sửa đổi (dự kiến hiệu lực 1/3/2027), Luật
+- **Chờ văn bản:** kỳ họp Quốc hội thứ 2 khóa XVI (bế mạc khoảng 21/11/2026) — Luật Đất đai sửa đổi (ĐÃ THÔNG QUA 21/11/2026, hiệu lực 1/7/2027 — xem đợt 27/11), Luật
   KDBĐS sửa đổi (dự thảo bỏ yêu cầu môi giới phải lập doanh nghiệp), thuế 0,2 % đất bỏ hoang (đề xuất từ 1/1/2027) · dự thảo bổ sung
   bảng giá đất Lâm Đồng · 3 phường mới (Đức Trọng, Hàm Thuận Nam, Cư Jút; Nam Ban không có) · kết quả đấu giá 13/11/2026.
 - **Không dùng:** tin chỉ có ở Dân Việt (trang chặn máy đọc — đường Buôn Chuối "đã thảm nhựa", 34,5 tỷ đầu tư công, đề án 1.000 ha rau
@@ -1342,6 +1342,28 @@ Báo cáo đầy đủ nằm ở scratchpad phiên 2/11 (không vào repo). Chú
   = `cong-thon-gan-thi-gia-lam`, đã đủ 2 bài), đã gỡ. Ảnh có ô tô thì làm mờ biển số; khung cắt từ video thì cắt dải đen mép.
 - 6 tấm chữ đó là **ghi nhận thị trường tháng 11/2026 của Chú** — đã dùng làm nguồn cho khối tín hiệu tháng 11 trên Index và giá thuê
   ở `/thue-nha-nam-ban`, `/en/long-term-rental-nam-ban`. Tấm "250–450 m² … triệu/m²" thiếu con số trước chữ "TRIỆU/M²" (lỗi thiết kế).
+
+### ĐỢT 27/11/2026 — 10 CHỖ SỬA TỪ NGHIÊN CỨU "KHÁCH HỎI GÌ" (GSC 23/11; mỗi chỗ một người soạn có kiểm nguồn + một người phản biện)
+- 21 trang, 173 chỗ, đều có nguồn: người nước ngoài không đứng tên sổ, mua trong hôn nhân sổ chỉ ghi tên người Việt (`/nam-ban-co-dang-song`) ·
+  **đất ở trong địa giới xã là đất ở nông thôn** (k1 Đ13 NĐ 49/2026, hiệu lực 31/1/2026), FAQ mới ở `/nam-ban-thuoc-xa-nao`, câu "nộp hồ sơ ở đâu"
+  rời schema `/so-hoa-nam-ban` · còn một số khu dân cư chưa có điện lưới (cử tri 17/12/2025, không nêu tên khu) ở `/chuyen-len-nam-ban-song`,
+  `/vua-mua-dat-nam-ban-lam-gi` · **mức 30/50/100 % NQ 254 chỉ cho đất vườn, ao gắn liền đất ở: cùng thửa có đất ở, hoặc đã tách ra từ thửa đó**
+  (CV 6546/BTC-QLCS 21/5/2026; mốc 1/7/2014 chỉ bắt buộc với nhóm 3) ở `/len-tho-cu-het-bao-nhieu-tien` (+1 FAQ), `/hoi-nhanh`, `/tiem-nang-dau-tu`,
+  `/mua-dat-nam-ban`, `/dat-nam-ban-gia-re` · khoảng 1.400 ha đất gốc nông, lâm trường cũ ở xã chưa cấp sổ, ngưng cấp từ 2008, xã kiến nghị
+  tỉnh gỡ (Báo Lâm Đồng 14/4/2026) ở `/nguoi-ngoai-tinh-mua-dat-nam-ban` · **thuế 0,2 % đất bỏ hoang: Quốc hội thông qua chiều 20/11/2026, áp
+  từ 1/7/2027**, chưa có hướng dẫn lô đất ở để chưa xây có thuộc diện không (`/chi-phi-dat-dai-nam-ban`, `/dat-nam-ban-chua-xay`) · lên thổ cư một
+  phần thửa không bắt buộc tách thửa (k3 Đ11 NQ 254) ở `/thu-tuc-len-tho-cu-nam-ban` · mục "thấy ranh bị lấn thì làm gì" + hòa giải bắt buộc ở
+  UBND xã (k2 Đ235 Luật Đất đai 2024) ở `/giu-dat-nam-ban-tu-xa` · cọc hẹn ngày ra sổ: chỉ ghi điều khoản "tới hẹn không tách được thửa" (không
+  khuyên "chỉ hoàn cọc" khi không sang tên được — trái cảnh báo của chính bài) ở `/coc-dat-nam-ban` · `/elephant-waterfall-nam-ban` (EN): chùa Linh Ẩn
+  vào tự do, FAQ sân bay. Kèm 4 link chữ "bài này" đổi sang cụm danh từ (`/nguoi-ngoai-tinh…`, `/tiem-nang-dau-tu`, `/chuyen-muc-dich…`, `/lam-ha-truoc…`).
+- **Luật Đất đai (sửa đổi) ĐÃ THÔNG QUA sáng 21/11/2026, 466/479 phiếu, hiệu lực 1/7/2027** (trừ k4, k5 Đ109) — xaydungchinhsach.chinhphu.vn,
+  baotintuc.vn. Thay mốc "dự kiến 1/3/2027" ở mục chờ văn bản.
+- **Chờ Chú:** (1) `/truoc-khi-xuong-tien` (cụm ĐỂ YÊN) còn hai câu cùng lỗi 30 % — thân bài "chỉ khi đất vườn/ao nằm cùng thửa có đất ở. Đất nông
+  nghiệp tách rời không được ưu đãi" và FAQ "lời hứa sau này lên thổ cư" (hiển thị + schema); bản sửa đề xuất: "chỉ với đất vườn, ao gắn liền đất ở:
+  nằm cùng thửa có đất ở, hoặc đã tách ra từ thửa đó thành thửa riêng"; sửa thì sinh lại MP3. (2) Giờ chùa Linh Ẩn "7:00–19:00" ở
+  `/chua-linh-an-nam-ban` + `/en/linh-an-pagoda-nam-ban` chưa tra được nguồn (Vinpearl, Mia.vn, Mytour ghi mở từ 5 giờ). (3) Bài MXH đã đăng
+  `len-tho-cu-het-bao-nhieu-tien#2026-11-12-ba-muc` có câu "thửa không có phần đất ở nào thì không được giảm" — có chạy `social-fix.yml` không.
+  (4) NĐ 49/2026 và NĐ 50/2026 cùng ngày 31/1/2026, nguồn ghi lệch số hiệu nghị định hướng dẫn NQ 254 → bài không ghi số hiệu.
 
 ### SỔ CHỜ ẢNH — CÒN HAI BÀI TRỐNG, CHỜ CHÚ CHỤP (mở 8/9/2026, bài suối xong 24/9)
 

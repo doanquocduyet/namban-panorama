@@ -6181,7 +6181,7 @@ Không. Hai bên có thể bỏ qua bước cọc và đi thẳng tới hợp đ
 
 Thửa chưa tách được thì có nên cọc không?
 
-Cọc được, nhưng phải hỏi rõ bao giờ tách xong trước khi chốt ngày hẹn ra công chứng. Tách thửa có điều kiện riêng, và đây là lý do phổ biến nhất khiến giao dịch trễ hẹn.
+Cọc được, nhưng lúc đó lô mình cọc chưa phải một thửa có sổ riêng, nên ngày hẹn ra sổ vẫn chỉ là lời hứa. Tách thửa có điều kiện riêng, và đây là lý do phổ biến nhất khiến giao dịch trễ hẹn. Hỏi rõ hồ sơ tách đã nộp chưa và đang tới đâu trước khi chốt ngày hẹn ra công chứng. Trong giấy cọc ghi thêm một dòng: tới hẹn mà thửa không tách được thì người mua được nhận lại đủ tiền cọc.
 
 Chuyển khoản tiền cọc thì ghi nội dung thế nào?
 
@@ -6846,7 +6846,7 @@ Trường học
 
 Có đủ, ngay tại chỗ. 
 
-Mầm non, tiểu học, trung học cơ sở, và trung học phổ thông. Trường trung học phổ thông Nam Ban nằm trong xã. Con đi học không phải lên Đà Lạt. 
+Mầm non, tiểu học, trung học cơ sở, và trung học phổ thông. Cấp ba là Trường THPT Thăng Long, nằm trong xã. Con đi học không phải lên Đà Lạt. 
 
 Không phải xã nào ở Lâm Đồng cũng có cấp ba tại chỗ. Nhiều nơi hết cấp hai là phải gửi con đi trọ. 
 
@@ -6862,9 +6862,9 @@ Con số 45 phút là con số nên biết trước khi mua đất, nhất là n
 
 Điện, nước, internet 
 
-Điện lưới ổn định. 
+Phần lớn khu dân cư ở Nam Ban có điện lưới. Nhưng tháng 12/2025, ở buổi tiếp xúc cử tri, người trong xã còn nêu một số khu dân cư chưa có điện lưới quốc gia. Lô xa trung tâm thì hỏi điện đã tới chưa trước khi cọc. 
 
-Nước dùng giếng khoan. Mùa khô không thiếu. 
+Nước lâu nay dùng giếng khoan, mùa khô không thiếu. Gần đây nước sạch từ Đà Lạt đã bắt đầu về, chạy dọc ĐT.725 khúc từ Cầu Cam Ly thượng tới Cầu Thác Voi — nhà dọc tuyến đăng ký lắp được. Các khu khác vẫn giếng khoan. 
 
 Internet có cáp quang, ba nhà mạng lớn đều phủ. Gói phổ thông tầm 180 đến 200 nghìn một tháng, đủ để họp online, làm việc từ xa, con học trực tuyến. 
 
@@ -6924,7 +6924,7 @@ Câu hỏi thường gặp
 
 Nam Ban có trường cấp 3 không? 
 
-Có. Trường trung học phổ thông Nam Ban nằm ngay trong xã, cùng các trường mầm non, tiểu học, trung học cơ sở. Con đi học không phải lên Đà Lạt. Muốn trường tư hoặc quốc tế thì lên Đà Lạt, chừng 45 phút. 
+Có. Trường THPT Thăng Long nằm ngay trong xã, cùng các trường mầm non, tiểu học, trung học cơ sở. Con đi học không phải lên Đà Lạt. Muốn trường tư hoặc quốc tế thì lên Đà Lạt, chừng 45 phút. 
 
 Bệnh viện gần Nam Ban nhất ở đâu? 
 
@@ -6936,7 +6936,7 @@ Có. Ba nhà mạng lớn đều phủ, gói phổ thông tầm 180–200 nghìn
 
 Nam Ban có điện, nước đầy đủ không? 
 
-Điện lưới ổn định. Nước dùng giếng khoan, mùa khô không thiếu. Internet có cáp quang, ba nhà mạng lớn đều phủ. 
+Có ở phần lớn khu dân cư, chưa phải khắp nơi. Về điện, tháng 12/2025 cử tri trong xã còn nêu một số khu chưa có điện lưới quốc gia, nên lô xa trung tâm thì hỏi trước. Nước lâu nay dùng giếng khoan; gần đây nước sạch đã bắt đầu về dọc tuyến ĐT.725, phần lớn khu khác vẫn dùng giếng. Internet có cáp quang, ba nhà mạng lớn đều phủ. 
 
 Sống ở Nam Ban có an toàn không? 
 
@@ -7260,12 +7260,12 @@ Trao đổi với người ở đây
 
 URL: https://nambanpanorama.com/elephant-waterfall-nam-ban
 
-Tóm tắt: Elephant Waterfall sits in Nam Ban, about 25km from Da Lat over the Ta Nung pass — a 30-metre cascade in a farmed highland valley. An honest guide to the falls, and to the quiet town most visitors never really see.
+Tóm tắt: Elephant Waterfall is in Nam Ban, about 25 km from Da Lat, with Lien Khuong airport about 20 km away. The tourist site has been closed since 2021, with no official ticket or opening hours, but you can still see the falls from above at Linh An Pagoda next door.
 
 The essentials 
 Elephant Waterfall (also called Lieng Rowoa) is in Nam Ban, Lam Dong , about 25km southwest of Da Lat over the Ta Nung pass — roughly a 45-minute drive. It's a powerful cascade around 30 metres tall in a farmed highland valley, and one of the largest falls in the province. 
 
-Best in the dry season (Jan–Apr). The path down is steep and slippery — proper shoes matter. Linh An Pagoda (Linh Ẩn) sits right beside it. Important: the official tourist site has been closed since 2021 (national scenic relic since 2001; two investor projects revoked, 2008 and 2021). As of September 2026 the province was still choosing a new investor and no reopening date had been set. The main gate is locked and there is no official ticket: in July 2026 the commune ordered a household business near the falls to stop charging 60,000 VND per visitor. 
+Best in the dry season (roughly Jan–Apr). The path down is steep and slippery — proper shoes matter. Linh An Pagoda (Linh Ẩn) sits right beside it. Important: the official tourist site has been closed since 2021 (national scenic relic since 2001; two investor projects revoked, 2008 and 2021). As of September 2026 the province was still choosing a new investor and no reopening date had been set. The main gate is locked and there is no official ticket: in July 2026 the commune ordered a household business near the falls to stop charging 60,000 VND per visitor. There are no official opening hours either. You can still see the falls from above: from the grounds of Linh An Pagoda next door, which is free to enter, you look down on the falls and the valley. 
 
 Nam Ban panorama — the Lady Buddha of Linh An Pagoda, Elephant Waterfall and the town below 
 
@@ -7290,7 +7290,7 @@ each way
 waterfall 
 height 
 
-Jan–Apr 
+~Jan–Apr 
 
 best 
 season 
@@ -7315,7 +7315,7 @@ Time needed: a half-day trip from Da Lat is enough for the falls alone.
 
 Footwear: closed shoes with grip. The descent is slippery year-round. 
 
-Season: dry months (Jan–Apr) for the safest path; wet months for the most powerful flow. 
+Season: dry months (roughly Jan–Apr) for the safest path; wet months for the most powerful flow. 
 
 Nearby: Linh An Pagoda, silk workshop, coffee farms, small local cafes. 
 
@@ -7338,9 +7338,13 @@ How do you get there from Da Lat?
 
 Take Ba Thang Hai then Hoang Van Thu Street toward Van Thanh flower village, cross the Ta Nung pass, and continue about 25km to Nam Ban town. The falls are signposted on the right. Motorbike or private car, about 45 minutes. 
 
+Can you go straight from Lien Khuong airport to Elephant Waterfall? 
+
+Yes. Lien Khuong (Da Lat) airport is about 20 km from Nam Ban, roughly 35–45 minutes by road. From the falls it is about 25 km, around 45 minutes, on up to Da Lat over the Ta Nung pass, a road best driven in daylight. If you hire a car, agree the price, including any waiting time, before you set off. 
+
 Is it worth visiting? 
 
-Yes, if you like raw, unspoiled nature. At about 30 metres it's one of Lam Dong's largest falls. The path down is steep and slippery, so wear proper shoes. Dry season (Jan–Apr) is best; July–August is peak rain and can be dangerous. 
+Yes, if you like raw, unspoiled nature. At about 30 metres it's one of Lam Dong's largest falls. The path down is steep and slippery, so wear proper shoes. Dry season (roughly Jan–Apr) is best; July–August is peak rain and can be dangerous. 
 
 What else is near Elephant Waterfall? 
 
@@ -7669,7 +7673,7 @@ Về Đất Tháng 7, 2026
 Lên thổ cư ở Nam Ban hết bao nhiêu tiền? 
 
 Trả lời nhanh 
-Chi phí lên thổ cư đất ở Nam Ban (Lâm Đồng): không có một con số, mà ba mức. Từ 1/1/2026, chuyển đất vườn sang đất ở được tính: 30% chênh lệch cho phần trong hạn mức, 50% cho phần vượt hạn mức nhưng không quá một lần hạn mức, và 100% cho phần vượt xa hơn (Nghị quyết 254/2025/QH15, Điều 10). Hạn mức giao đất ở tại xã là 150m² một cá nhân. Nghĩa là cái gọi là "giảm 70%" chỉ áp cho 150 mét vuông đầu tiên. Và nếu thửa đất không có phần đất ở nào, bạn không được giảm gì cả. 
+Chi phí lên thổ cư đất ở Nam Ban (Lâm Đồng): không có một con số, mà ba mức. Từ 1/1/2026, chuyển đất vườn sang đất ở được tính: 30% chênh lệch cho phần trong hạn mức, 50% cho phần vượt hạn mức nhưng không quá một lần hạn mức, và 100% cho phần vượt xa hơn (Nghị quyết 254/2025/QH15, Điều 10). Hạn mức giao đất ở tại xã là 150m² một cá nhân. Nghĩa là cái gọi là "giảm 70%" chỉ áp cho 150 mét vuông đầu tiên. Và nếu thửa đất không có phần đất ở, cũng không có nguồn gốc là đất vườn, ao gắn liền đất ở, bạn không được giảm gì cả. 
 
 Người mua đất vườn ở Nam Ban hay nghe một câu: từ 2026 lên thổ cư được giảm 70%. 
 
@@ -7707,7 +7711,7 @@ Sáu khoản đó đều tính theo bảng giá, không tính theo giá bạn mu
 
 Ba mức, không phải một mức 
 
-Nghị quyết 254/2025/QH15, Điều 10, quy định tiền sử dụng đất khi chuyển đất vườn, ao trong cùng thửa có đất ở sang đất ở: 
+Nghị quyết 254/2025/QH15, Điều 10, quy định tiền sử dụng đất khi chuyển đất vườn, ao gắn liền đất ở sang đất ở: 
 
 30% chênh lệch — với diện tích trong hạn mức giao đất ở tại địa phương. 
 
@@ -7743,17 +7747,21 @@ Nhưng trước hết: thửa của bạn có đất ở không
 
 Đây là điều kiện đứng trước mọi con số ở trên. 
 
-Nghị quyết 254 quy định mức 30% chỉ áp cho đất vườn, ao, đất nông nghiệp nằm trong cùng thửa đất CÓ ĐẤT Ở — đất ở đã được công nhận khi cấp sổ. 
+Nghị quyết 254 (điểm c khoản 2 Điều 10) không áp mức 30% cho mọi mảnh vườn. Nó áp cho đất vườn, ao gắn liền đất ở, trong ba trường hợp: 
 
-Nghĩa là thửa đất phải có sẵn một phần là đất ở. Cùng một thửa, cùng một sổ. 
+Cùng thửa. Đất vườn, ao, đất nông nghiệp nằm trong cùng thửa có đất ở, xác định khi công nhận quyền sử dụng đất. Cùng một thửa, cùng một sổ. 
 
-Phần lớn người mua đất ở Nam Ban mua đất nông nghiệp thuần. Sổ ghi CLN (đất trồng cây lâu năm) hoặc BHK (đất trồng cây hàng năm), không có mét vuông đất ở nào. 
+Tách ra để chuyển quyền. Đất có nguồn gốc là đất vườn, ao gắn liền đất ở, nhưng người sử dụng đất đã tách ra để chuyển quyền. Lô đứng thành thửa riêng, sổ có thể không còn mét đất ở nào. 
 
-Với những thửa đó: không có mức 30%, không có mức 50%. Trả 100% chênh lệch từ mét vuông đầu tiên. 
+Đo đạc tự tách. Đất vườn, ao gắn liền đất ở mà đơn vị đo đạc tự tách thành thửa riêng khi đo vẽ bản đồ địa chính trước 1/7/2014. 
+
+Phần lớn người mua đất ở Nam Ban mua lô mà sổ chỉ ghi CLN (đất trồng cây lâu năm) hoặc BHK (đất trồng cây hàng năm), không có mét vuông đất ở nào. 
+
+Với những lô đó, nhìn sổ chưa đủ. Lô tách ra từ một thửa có nhà ở, đất ở vẫn có thể thuộc trường hợp thứ hai hoặc thứ ba. Còn đất nông nghiệp thuần, không có nguồn gốc gắn liền đất ở, thì không có mức 30%, không có mức 50%: trả 100% chênh lệch từ mét vuông đầu tiên. 
 
 Đây là chỗ nhiều người vấp. Họ nghe "2026 lên thổ cư giảm 70%", mua một mảnh vườn, rồi sau mới biết mảnh của mình không thuộc diện được giảm. 
 
-Cách kiểm: nhìn sổ. Sổ có ghi phần đất ở (ODT hoặc ONT) không? Nếu không có, bạn không nằm trong diện ưu đãi này. 
+Cách kiểm: nhìn sổ trước. Sổ có ghi phần đất ở (ODT hoặc ONT) là trường hợp cùng thửa. Không có thì hỏi tiếp nguồn gốc: lô tách từ thửa nào, thửa gốc có nhà ở, đất ở không, ai tách và tách lúc nào. Theo Bộ Tài chính trả lời một bạn đọc ở Lâm Đồng (Báo Lâm Đồng đăng ngày 29/5/2026), mốc 1/7/2014 chỉ gắn với trường hợp đơn vị đo đạc tự tách; lô do người sử dụng đất tách ra để chuyển quyền không bị đặt mốc đó. Ca nào cụ thể cũng được xét theo hồ sơ nguồn gốc sử dụng đất. 
 
 Hỏi trước khi mua. Đừng hỏi sau. 
 
@@ -7779,7 +7787,7 @@ Nhầm hai loại giá. Lấy giá mua bán để tính, thay vì lấy bảng g
 
 Bỏ qua hạn mức. Tính cả nghìn mét vuông đều được giảm 70%. Thực tế chỉ 150m² đầu. 
 
-Không biết mình không đủ điều kiện. Đất nông nghiệp thuần không thuộc diện giảm, nhưng người mua không kiểm sổ trước. 
+Không biết mình không đủ điều kiện. Đất nông nghiệp thuần không thuộc diện giảm, nhưng người mua không kiểm sổ và nguồn gốc thửa trước. 
 
 Cả ba đều dẫn tới cùng một chỗ: nhận thông báo nộp tiền, và con số cao hơn nhiều lần so với dự tính. 
 
@@ -7801,7 +7809,7 @@ Ba bước, làm được trong một buổi:
 
 Một — tra bảng giá đất cho xã của mình. Nghị quyết 82/2025 có 124 phụ lục, mỗi xã phường một bảng. Tìm phụ lục của xã Nam Ban Lâm Hà, xem giá đất ở và giá đất nông nghiệp tại vị trí lô của bạn. 
 
-Hai — xác định lô có đủ điều kiện không. Sổ có phần đất ở không? Nếu không, bạn trả 100% từ mét đầu. 
+Hai — xác định lô có đủ điều kiện không. Sổ có phần đất ở không? Nếu không, lô có tách ra từ một thửa có nhà ở, đất ở không? Cả hai đều không thì bạn trả 100% từ mét đầu. 
 
 Ba — chia diện tích theo ba mức. 150m² đầu × 30% chênh lệch. 150m² tiếp × 50%. Phần còn lại × 100%. 
 
@@ -7817,7 +7825,9 @@ Biết trước thì tính đúng được.
 
 Nguồn 
 
-Luật Đất đai 2024 và Nghị quyết 254/2025/QH15 — từ 1/1/2026 bảng giá đất chỉ điều chỉnh khi cần, hệ số điều chỉnh giá đất ban hành hằng năm (trước đây giữ nguyên 5 năm). Mức phí cụ thể tính theo bảng giá đất của tỉnh Lâm Đồng tại thời điểm nộp hồ sơ. 
+Luật Đất đai 2024 và Nghị quyết 254/2025/QH15 — từ 1/1/2026 bảng giá đất chỉ điều chỉnh khi cần, hệ số điều chỉnh giá đất ban hành hằng năm (trước đây giữ nguyên 5 năm). Bảng giá Lâm Đồng hiện hành: Nghị quyết 82/2025/NQ-HĐND, hiệu lực 1/1/2026. Mức phí cụ thể tính theo giá đất tại thời điểm có quyết định cho phép chuyển mục đích. 
+
+Ba trường hợp được tính theo ba mức 30%, 50%, 100%: điểm c khoản 2 Điều 10 Nghị quyết 254/2025/QH15 (Quốc hội thông qua 11/12/2025, hiệu lực 1/1/2026) và Công văn 6546/BTC-QLCS ngày 21/5/2026 của Bộ Tài chính; mức thu chỉ tính một lần cho một hộ gia đình, cá nhân trên một thửa. Mốc 1/7/2014 chỉ gắn với trường hợp đơn vị đo đạc tự tách thửa: Bộ Tài chính trả lời bạn đọc ở Lâm Đồng, Báo Lâm Đồng đăng ngày 29/5/2026 (dẫn Báo Chính phủ). Thửa có đất ở đã được cấp sổ mà tách một phần đất trồng cây lâu năm ra để chuyển quyền thì phần tách ra được xác định là có nguồn gốc đất vườn, ao gắn liền đất ở: Bộ Nông nghiệp và Môi trường trả lời công dân, Luật sư Việt Nam (lsvn.vn) đăng ngày 24/2/2026. 
 
 Câu hỏi thường gặp 
 
@@ -7831,7 +7841,11 @@ Không có con số cố định — phụ thuộc bảng giá đất tại vị
 
 Đất nông nghiệp thuần có được giảm 70% khi lên thổ cư không? 
 
-Không. Nghị quyết 254/2025/QH15 chỉ áp mức 30% cho đất vườn, ao, đất nông nghiệp nằm trong cùng thửa đất có đất ở đã được công nhận. Đất nông nghiệp thuần — sổ ghi CLN hoặc BHK, không có phần đất ở — trả 100% chênh lệch từ mét vuông đầu tiên. Kiểm sổ trước khi mua. 
+Không. Nghị quyết 254/2025/QH15 chỉ áp mức 30% cho đất vườn, ao gắn liền đất ở: nằm trong cùng thửa có đất ở đã được công nhận, hoặc đã thành thửa riêng vì người sử dụng đất tách ra để chuyển quyền, hay vì đơn vị đo đạc tự tách khi đo bản đồ địa chính trước 1/7/2014. Đất nông nghiệp thuần, không có nguồn gốc đó, trả 100% chênh lệch từ mét vuông đầu tiên. Sổ chỉ ghi CLN hoặc BHK thì chưa đủ để kết luận; hỏi nguồn gốc thửa trước khi mua. 
+
+Mua lô đất vườn tách ra từ thửa có nhà ở thì lên thổ cư có được tính 30% không? 
+
+Có thể, nếu hồ sơ chứng minh lô có nguồn gốc là đất vườn, ao gắn liền đất ở trước khi tách. Nghị quyết 254/2025/QH15 tính cả trường hợp người sử dụng đất tách phần đất này ra để chuyển quyền, và Bộ Nông nghiệp và Môi trường đã trả lời rằng khi thửa có đất ở đã được cấp sổ, phần đất trồng cây lâu năm tách ra như vậy được xác định là có nguồn gốc đất vườn, ao gắn liền đất ở. Mốc 1/7/2014 chỉ gắn với thửa do đơn vị đo đạc tự tách, không áp cho thửa tách ra để chuyển quyền. Mức 30% vẫn chỉ cho phần trong hạn mức đất ở 150m² tại xã ở Lâm Đồng, và chỉ tính một lần cho một hộ gia đình, cá nhân trên một thửa. Trước khi cọc, mang giấy tờ của thửa gốc tới Văn phòng Đăng ký Đất đai hỏi. 
 
 Hạn mức đất ở Lâm Đồng là bao nhiêu? 
 
@@ -7917,6 +7931,8 @@ Sáu bước, theo quy trình đã công bố cho cấp xã:
 6. Cập nhật lên sổ và trả kết quả.
 
 Bước 2 là lúc có người xuống tận đất. Mốc ranh rõ, đường vào đi được thì buổi đó nhẹ nhàng cho cả hai bên.
+
+Đến bước 4, đọc kỹ thông báo trước khi nộp tiền: diện tích được chuyển có khớp quyết định không, phần nào tính trong hạn mức, phần nào ngoài, mức giảm (nếu thửa thuộc diện được giảm) đã ghi chưa. Thấy lệch thì hỏi lại ngay cơ quan thuế ra thông báo và xã, vì thuế tính số tiền từ phiếu chuyển thông tin do xã gửi sang.
 
 ### Khi nào mới kê khai thuế và tiền sử dụng đất?
 
@@ -9884,12 +9900,12 @@ Chỉ khi có nghị quyết của Ủy ban Thường vụ Quốc hội ghi rõ 
 
 URL: https://nambanpanorama.com/nam-ban-thuoc-xa-nao
 
-Tóm tắt: Từ 1/7/2025 Nam Ban thuộc xã Nam Ban Lâm Hà, tỉnh Lâm Đồng (NQ 1671). Sổ đỏ cũ vẫn còn giá trị, không bắt buộc đổi. Thủ tục đất nay làm ở cấp xã. Hướng dẫn tra cứu chính thức.
+Tóm tắt: Từ 1/7/2025 Nam Ban thuộc xã Nam Ban Lâm Hà, tỉnh Lâm Đồng (NQ 1671). Sổ đỏ cũ vẫn còn giá trị, không bắt buộc đổi. Làm thủ tục đất nay nộp hồ sơ ở xã, không còn lên huyện. Hướng dẫn tra cứu chính thức.
 
 Trả lời nhanh 
 Từ 1/7/2025 , thị trấn Nam Ban cũ thuộc xã Nam Ban Lâm Hà, tỉnh Lâm Đồng , theo Nghị quyết 1671/NQ-UBTVQH15. Xã mới hình thành từ việc nhập Nam Ban với ba xã Đông Thanh, Gia Lâm và Mê Linh. Cấp huyện Lâm Hà đã bỏ. 
 
-Sổ đỏ cũ vẫn nguyên giá trị , không bắt buộc đổi. Thủ tục đất đai nay làm ở cấp xã , không còn lên huyện. 
+Sổ đỏ cũ vẫn nguyên giá trị , không bắt buộc đổi. Hồ sơ đất nay nộp gần nhất ở bộ phận Một cửa của xã , không còn lên huyện; sang tên, tách thửa cũng nộp được ở văn phòng hoặc chi nhánh đăng ký đất đai. 
 
 01 — XÃ MỚI 
 Nam Ban thành xã Nam Ban Lâm Hà 
@@ -9915,7 +9931,7 @@ Chỗ dễ vướng nhất không phải sổ, mà là khớp thông tin . Khi m
 03 — THỦ TỤC 
 Làm thủ tục đất ở Nam Ban giờ nộp hồ sơ ở đâu? 
 
-Cấp huyện đã bỏ. Thủ tục đất đai trước làm ở huyện Lâm Hà nay chuyển về UBND cấp xã theo Nghị định 151/2025/NĐ-CP. Nghĩa là hồ sơ đất Nam Ban — chuyển nhượng, tách thửa, đăng ký biến động — giờ nộp và xử lý ở xã, không còn lên huyện. 
+Cấp huyện kết thúc từ 1/7/2025, nên hồ sơ đất Nam Ban — chuyển nhượng, tách thửa, đăng ký biến động — không còn lên huyện Lâm Hà. Hồ sơ đất của thửa ở Nam Ban nay nộp gần nhất ở bộ phận Một cửa của xã Nam Ban Lâm Hà ; hồ sơ sang tên, tách thửa cũng nộp được ở văn phòng hoặc chi nhánh đăng ký đất đai. Nơi giữ thông tin về thửa đất, cùng những việc nên kiểm trước khi đặt cọc, gom ở bài mua đất Nam Ban cần kiểm tra gì. 
 
 Muốn kiểm tra thửa đất của mình nằm ở đơn vị hành chính mới nào, có thể tra tại cổng chính thức sapnhap.bando.com.vn — nhập tên đơn vị mới để đối chiếu ranh giới. Đây là bước nên làm trước khi giao dịch, để địa chỉ trên hợp đồng khớp với đơn vị hành chính hiện hành. 
 
@@ -9931,11 +9947,15 @@ Không. Sổ đã cấp giữ nguyên giá trị theo Nghị quyết 190/2025/QH
 
 Sau sáp nhập, làm thủ tục đất ở Nam Ban nộp hồ sơ ở đâu? 
 
-Cấp huyện đã bỏ. Thủ tục đất đai nay làm ở UBND cấp xã theo Nghị định 151/2025/NĐ-CP. Tra cứu thửa đất theo đơn vị hành chính mới tại cổng chính thức sapnhap.bando.com.vn. 
+Cấp huyện kết thúc từ 1/7/2025. Hồ sơ đất của thửa ở Nam Ban nay nộp gần nhất ở bộ phận Một cửa của xã Nam Ban Lâm Hà; hồ sơ sang tên, tách thửa cũng nộp được ở văn phòng hoặc chi nhánh đăng ký đất đai. Tra cứu thửa đất theo đơn vị hành chính mới tại cổng chính thức sapnhap.bando.com.vn. 
 
 Nam Ban đã là đô thị loại mấy? 
 
 Loại III — nhưng chỉ phần thị trấn Nam Ban cũ. Từ 30/3/2026, theo Quyết định 1078/QĐ-UBND của UBND tỉnh Lâm Đồng, đô thị Nam Ban — phạm vi là thị trấn Nam Ban cũ, khoảng 20,47 km² — được xếp vào nhóm đô thị loại III (trước đó loại V). Quy hoạch tỉnh (Quyết định 2786/QĐ-UBND ngày 6/6/2026) giữ Nam Ban ở loại III. Cả xã Nam Ban Lâm Hà rộng khoảng 117 km², nên phần lớn diện tích xã nằm ngoài phạm vi đô thị. 
+
+Đất ở thị trấn Nam Ban cũ nay là đất ở đô thị hay đất ở nông thôn? 
+
+Theo quy định hiện hành, đó là đất ở nông thôn. Từ 1/7/2025, thị trấn Nam Ban cũ thuộc xã Nam Ban Lâm Hà. Nghị định 102/2024/NĐ-CP (khoản 1 Điều 5, sửa bởi Nghị định 49/2026/NĐ-CP, hiệu lực 31/1/2026) xếp đất ở trong địa giới xã là đất ở nông thôn, trừ đất ở thuộc khu vực thực hiện dự án xây dựng đô thị mới theo quy hoạch đô thị được duyệt. Việc phần thị trấn cũ được xếp đô thị loại III không làm nó thành phường. Sổ cấp trước sáp nhập ghi đất ở đô thị (ODT) vẫn giữ giá trị theo Nghị quyết 190/2025/QH15. Ngưỡng tách thửa và hạn mức đất ở của tỉnh cũng lấy theo mức của xã: ngưỡng tách thửa đọc ở bài tách thửa đất Nam Ban, hạn mức đất ở đọc ở bài giá lên thổ cư đất Nam Ban. 
 
 Bán đất Nam Ban năm 2026 phải nộp thuế bao nhiêu? 
 
@@ -10299,7 +10319,7 @@ Về Đất Tháng 7, 2026
 Vừa mua đất Nam Ban xong — làm gì tiếp 
 
 Trả lời nhanh 
-Sang tên có thời hạn: 30 ngày kể từ ngày có biến động — với mua bán là ngày công chứng hợp đồng. Quá hạn bị phạt 2–3 triệu đồng (Nghị định 281/2026/NĐ-CP). Thủ tục làm ở cấp xã (sau sáp nhập, không còn lên huyện) — luật quy định không quá 10 ngày làm việc, thực tế 15–30 ngày tùy hồ sơ. San đất thì đợi mùa khô, tháng 12 đến tháng 4; san vào mùa mưa là làm hỏng nền. Đất bazan Nam Ban hợp cà phê, bơ, chè, cây ăn trái. Điện lưới có sẵn ở khu dân cư; nước dùng giếng khoan, mùa khô không thiếu. 
+Sang tên có thời hạn: 30 ngày kể từ ngày có biến động — với mua bán là ngày công chứng hợp đồng. Quá hạn bị phạt 2–3 triệu đồng (Nghị định 281/2026/NĐ-CP). Thủ tục làm ở cấp xã (sau sáp nhập, không còn lên huyện) — luật quy định không quá 10 ngày làm việc, thực tế 15–30 ngày tùy hồ sơ. San đất thì đợi mùa khô, tháng 12 đến tháng 4; san vào mùa mưa là làm hỏng nền. Đất bazan Nam Ban hợp cà phê, bơ, chè, cây ăn trái. Điện lưới có ở phần lớn khu dân cư, chưa phải mọi khu; nước phần lớn dùng giếng khoan, mùa khô không thiếu; nước sạch đã bắt đầu về dọc tuyến ĐT.725. 
 
 Mua xong rồi thì thấy trống. 
 
@@ -10367,9 +10387,9 @@ Còn nếu chỉ muốn giữ đất, chưa canh tác: trồng cây che phủ, �
 
 Điện, nước 
 
-Điện. Khu dân cư có điện lưới sẵn. Lô xa trục chính thì phải kéo — và tiền kéo tính theo khoảng cách. Hỏi trước, đừng để đến lúc xây nhà mới biết. 
+Điện. Phần lớn khu dân cư có điện lưới sẵn; tháng 12/2025 cử tri trong xã còn nêu một số khu chưa có điện lưới quốc gia. Lô xa trục chính thì phải kéo — và tiền kéo tính theo khoảng cách. Hỏi trước, đừng để đến lúc xây nhà mới biết. 
 
-Nước. Dùng giếng khoan. Mùa khô không thiếu — đây là vùng cao nguyên, mạch nước ngầm khá. Khoan giếng thường một hai ngày là xong, tùy độ sâu. 
+Nước. Phần lớn dùng giếng khoan. Mùa khô không thiếu — đây là vùng cao nguyên, mạch nước ngầm khá; nước sạch đã bắt đầu về dọc tuyến ĐT.725. Khoan giếng thường một hai ngày là xong, tùy độ sâu. 
 
 Hai thứ này nên làm trước khi xây. Xây xong rồi mới kéo điện, khoan giếng thì tốn công gấp đôi. 
 
@@ -10427,7 +10447,7 @@ Trồng cây che phủ, đừng để trống. Đất trống trên đồi mùa 
 
 Kéo điện, khoan giếng ở Nam Ban thế nào? 
 
-Khu dân cư có điện lưới sẵn. Lô xa trục chính phải kéo, tiền tính theo khoảng cách — hỏi trước khi xây. Nước dùng giếng khoan, mùa khô không thiếu; khoan thường một hai ngày là xong. Nên làm cả hai trước khi xây nhà. 
+Phần lớn khu dân cư có điện lưới sẵn; tháng 12/2025 cử tri trong xã còn nêu một số khu chưa có điện lưới quốc gia. Lô xa trục chính phải kéo, tiền tính theo khoảng cách — hỏi trước khi xây. Nước phần lớn dùng giếng khoan, mùa khô không thiếu; nước sạch đã bắt đầu về dọc tuyến ĐT.725. Khoan giếng thường một hai ngày là xong. Nên làm cả hai trước khi xây nhà. 
 
 Xây nhà trên đất mới mua có cần xin phép không? 
 
@@ -14407,6 +14427,16 @@ Cỏ dại mọc nhanh, nhất là qua mùa mưa — vài tháng không ngó là
 
 Nói vậy không phải để dọa. Đất không xấu đi chỉ vì mình chưa xây — nó chỉ thay đổi theo tự nhiên, chuyện bình thường. Điều mình cần làm không phải là chăm bẵm liên tục, mà là đừng để mất kết nối với mảnh đất quá lâu. Thỉnh thoảng quay lại nhìn, hoặc nhờ ai đó ngó giùm, là đủ.
 
+Đất để lâu, quay lại thấy ranh bị lấn thì làm gì?
+
+Chưa vội nói với ai. Việc đầu tiên là đặt sơ đồ thửa trên sổ cạnh ranh ngoài thực địa: mốc còn không, còn đúng chỗ không, phần lệch rộng chừng nào. Mốc mất hay bị vùi thì thuê đo và cắm lại — giá đo đạc, cắm mốc có trong bài chi phí san lấp, làm hạ tầng đất Nam Ban. Có số đo trong tay thì nói chuyện với hàng xóm dễ hơn nhiều so với câu "hình như đất tôi tới chỗ kia".
+
+Rồi nói với người đang canh tác cạnh bên, lúc phần lệch còn mới. Đất để lâu không ai qua lại thì nhiều khi chỉ là canh tác lấn dần qua vài mùa, chưa chắc ai cố ý. Nói sớm, nói nhẹ thì dễ gỡ hơn để dồn tới lúc cần bán hay cần xây.
+
+Trong lúc đó, chụp ảnh có ngày, ghi lại vị trí mốc, giữ tin nhắn hai bên trao đổi. Và đừng tự nhổ cây, phá rào hay dời mốc của người khác, kể cả khi chắc phần đó là đất mình — tự xử bằng tay thì từ chuyện ranh dễ thành chuyện khác, khó gỡ hơn.
+
+Nói mãi không xong thì mới tới giấy tờ. Theo khoản 2 Điều 235 Luật Đất đai 2024, trước khi cơ quan nhà nước có thẩm quyền giải quyết tranh chấp đất đai, các bên tranh chấp phải hòa giải tại Ủy ban nhân dân cấp xã nơi có đất. Đó là quy định đang áp dụng ở thời điểm tháng 11/2026. Luật Đất đai (sửa đổi) được Quốc hội thông qua ngày 21/11/2026, có hiệu lực từ 1/7/2027, nên từ mốc đó cần đọc lại theo luật mới.
+
 Có nên cho người địa phương canh tác không
 
 Đây là cách nhiều người ở xa chọn, và tôi thấy hợp lý.
@@ -14452,6 +14482,10 @@ Không cần xây hay làm gì lớn ngay. Việc nên lo trước là sắp x�
 Đất Nam Ban bỏ không một thời gian có sao không?
 
 Thông thường không có vấn đề gì nghiêm trọng nếu được để tự nhiên trong một thời gian. Tuy nhiên cỏ dại, cây con, lối đi và ranh đất vẫn nên được kiểm tra định kỳ, nên có người ngó chừng thay vì bỏ mặc hoàn toàn.
+
+Đất để lâu không ai trông bị hàng xóm lấn ranh thì làm gì?
+
+Trước hết đối chiếu ranh ngoài thực địa với sơ đồ thửa trên sổ; mốc mất hay bị vùi thì thuê đo và cắm lại. Rồi nói với người canh tác cạnh bên lúc phần lệch còn mới, chụp ảnh có ngày, giữ tin nhắn trao đổi, và đừng tự nhổ cây, phá rào hay dời mốc. Nói không xong thì theo khoản 2 Điều 235 Luật Đất đai 2024 (quy định đang áp dụng ở thời điểm tháng 11/2026), các bên tranh chấp phải hòa giải tại Ủy ban nhân dân cấp xã nơi có đất trước khi cơ quan nhà nước có thẩm quyền giải quyết; từ 1/7/2027 cần đọc theo Luật Đất đai (sửa đổi) được Quốc hội thông qua ngày 21/11/2026.
 
 Cho người khác canh tác trên đất của mình có bị mất đất không?
 
@@ -16321,7 +16355,7 @@ Vi bằng ghi nhận sự việc đã xảy ra, không làm cho thửa đất đ
 
 Đất chưa có sổ ở Nam Ban có làm sổ được không?
 
-Tùy từng thửa, phụ thuộc nguồn gốc, thời điểm sử dụng, giấy tờ hiện có, tình trạng tranh chấp và quy hoạch. Không nên nghe một câu chung rồi áp cho thửa mình đang xem.
+Tùy từng thửa, phụ thuộc nguồn gốc, thời điểm sử dụng, giấy tờ hiện có, tình trạng tranh chấp và quy hoạch. Không nên nghe một câu chung rồi áp cho thửa mình đang xem. Riêng đất gốc nông, lâm trường cũ thì có một chỗ vướng chung: Báo Lâm Đồng ngày 14/4/2026 dẫn lời Bí thư Đảng ủy xã cho biết xã Nam Ban Lâm Hà có khoảng 1.400 ha đất loại này, đã đưa ra khỏi quy hoạch ba loại rừng, người dân dùng ổn định hàng chục năm mà vẫn chưa cấp được sổ; việc cấp sổ cho diện tích này dừng từ năm 2008. Cũng theo bài báo, xã kiến nghị tỉnh tháo gỡ, còn lãnh đạo tỉnh yêu cầu các xã rà soát, phân loại từng diện tích để làm căn cứ cấp sổ. Nên gặp thửa chưa có sổ thì hỏi luôn nguồn gốc có phải đất nông, lâm trường cũ không.
 
 Vì sao đất chưa có sổ ở Nam Ban thường rẻ hơn?
 
@@ -17403,7 +17437,7 @@ Bài không hướng dẫn thủ tục hồ sơ và không kết luận cho mộ
 
 Giữ đất ở Nam Ban mỗi năm đóng thuế bao nhiêu?
 
-Tùy loại đất. Đất nông nghiệp (vườn cà phê, đất trồng cây lâu năm) của hộ gia đình, cá nhân đang được miễn thuế sử dụng đất nông nghiệp tới hết 31/12/2030 theo Nghị quyết 216/2025/QH15; ai không tự canh tác mà cho người khác thuê đất thì nên hỏi lại cơ quan thuế xem có còn được miễn. Đất ở thì nộp thuế sử dụng đất phi nông nghiệp: phần trong hạn mức tính 0,03% nhân diện tích và giá trong bảng giá đất, phần vượt hạn mức chịu thuế suất cao hơn. Ví dụ giả định 200 m² đất ở, giá bảng 2 triệu đồng/m²: 200 × 2.000.000 × 0,03% = 120.000 đồng một năm. Vì tính theo bảng giá, khoản này thường nhỏ so với các chi phí khác.
+Tùy loại đất. Đất nông nghiệp (vườn cà phê, đất trồng cây lâu năm) của hộ gia đình, cá nhân đang được miễn thuế sử dụng đất nông nghiệp tới hết 31/12/2030 theo Nghị quyết 216/2025/QH15; ai không tự canh tác mà cho người khác thuê đất thì nên hỏi lại cơ quan thuế xem có còn được miễn. Đất ở thì nộp thuế sử dụng đất phi nông nghiệp: phần trong hạn mức tính 0,03% nhân diện tích và giá trong bảng giá đất, phần vượt hạn mức chịu thuế suất cao hơn. Ví dụ giả định 200 m² đất ở, giá bảng 2 triệu đồng/m²: 200 × 2.000.000 × 0,03% = 120.000 đồng một năm. Vì tính theo bảng giá, khoản này thường nhỏ so với các chi phí khác. Riêng đất bỏ hoang: luật sửa đổi Luật Thuế sử dụng đất phi nông nghiệp, Quốc hội thông qua ngày 20/11/2026, đặt thuế suất 0,2%, không áp hạn mức, áp dụng từ 1/7/2027. Đất nào bị coi là bỏ hoang thì theo pháp luật đất đai; tới cuối tháng 11/2026 các trường hợp cụ thể còn chờ văn bản hướng dẫn.
 
 ---
 
@@ -17756,7 +17790,7 @@ URL: https://nambanpanorama.com/dat-nam-ban-chua-xay
 
 Tóm tắt: Có đất Nam Ban mà chưa xây: khu vắng có nên xây, xây xong ít lên thì sao, để đất hay xây rồi bán, vì sao mỗi người báo một giá, và khi nào mới thật sự nên bắt đầu.
 
-Mua đất rồi để một thời gian chưa xây là bình thường và không tự nhiên thành chuyện bị thu hồi. Với đất nông nghiệp, khoản 7 Điều 81 Luật Đất đai 2024 đặt mốc không sử dụng liên tục — 12 tháng với đất trồng cây hằng năm, 18 tháng với cây lâu năm, 24 tháng với đất trồng rừng — NHƯNG kèm điều kiện đã bị xử phạt vi phạm hành chính mà vẫn không đưa đất vào sử dụng theo thời hạn ghi trong quyết định xử phạt. Chưa xây không đồng nghĩa bị thu hồi.
+Mua đất rồi để một thời gian chưa xây là bình thường và không tự nhiên thành chuyện bị thu hồi. Với đất nông nghiệp, khoản 7 Điều 81 Luật Đất đai 2024 đặt mốc không sử dụng liên tục — 12 tháng với đất trồng cây hằng năm, 18 tháng với cây lâu năm, 24 tháng với đất trồng rừng — NHƯNG kèm điều kiện đã bị xử phạt vi phạm hành chính mà vẫn không đưa đất vào sử dụng theo thời hạn ghi trong quyết định xử phạt. Chưa xây không đồng nghĩa bị thu hồi. Với đất ở: luật sửa đổi Luật Thuế sử dụng đất phi nông nghiệp (Quốc hội thông qua 20/11/2026) áp thuế suất 0,2% cho đất bỏ hoang từ 1/7/2027; lô đất ở mua lại rồi để chưa xây có bị tính là bỏ hoang hay không thì tới cuối tháng 11/2026 còn chờ văn bản hướng dẫn, chưa nói chắc được.
 
 Khu còn vắng: lúc đi xem cái vắng được chấm bằng mắt, lúc tính xây nó được chấm bằng đời sống — đường vào ban đêm, ai ngó nhà lúc mình vắng, thợ có chịu vào không. Câu tự hỏi: mình mua sự yên tĩnh hay đang chờ một khu dân cư hình thành.
 
