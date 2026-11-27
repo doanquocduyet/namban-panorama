@@ -102,7 +102,13 @@ lên mạng → D bài đúng mùa (dict `SEASON`; xen kẽ, không hai lượt 
 Phiếu đánh dấu mang nguyên mục, `apply-mark.py` chèn vào hàng đợi lúc ghi dấu. Cron giữ hai lượt/ngày (Facebook 03:30 + 12:30 UTC,
 Instagram + Threads 04:07 + 13:07 UTC) nhưng **GitHub chạy lịch repo này trễ 7–10 giờ** (đo 30 lượt 11–25/11: lượt 03:30 chạy 17:41–20:59
 giờ VN, lượt 12:30 chạy 1:21–5:38 sáng) → bộ chọn chỉ đăng trong **7:00–22:00 giờ VN** (`POST_HOURS`), lượt đêm tự bỏ. Bài cố ý không tự đăng nằm ở `NO_AUTO` (báo cáo quý còn số cũ, bài nêu tên cơ sở kinh doanh, lô cụ thể giá cũ…) —
-bài mới có vấn đề tương tự thì thêm vào đó. Xem trước bằng `python3 tools/social_auto.py [YYYY-MM-DD]`. Luật "thêm mục `priority: 0`
+bài mới có vấn đề tương tự thì thêm vào đó. **Vá sau phản biện 27/11/2026** (3 góc soi, mô phỏng tới 12/2027, 0 bài trùng): mục tự chọn của kênh
+khác KHÔNG bao giờ thành "mục viết tay" (quá 5 ngày thì bỏ, không đăng bù bài cũ) · khoá không gắn ngày chọn (`<slug>#auto`, mùa `<slug>#mua-YYYY`)
+nên cron trễ qua nửa đêm không sinh hai khoá · hai workflow `checkout ref: main` (đọc hàng đợi mới nhất) · trang có mục viết tay đang chờ hẹn thì
+bộ tự chọn bỏ qua · tin xã: đăng tin này không chặn tin khác, tin mời/dự báo chỉ trong 3 ngày, cửa sổ 14 ngày, `data-social="no"` trên `.tl-item`
+để loại, câu nhắc sang bài khác bị bỏ · bài theo mùa chỉ đi nhóm D và năm sau chỉ đăng lại khi trang đã sửa · chốt câu mồi `good()`: bỏ "bài này",
+câu mở bằng chữ thường, giá/m² ở trang không LIVE, mốc "tính tới / giá … ngày" cũ hơn 120 ngày · Threads có tựa, không cắt mất ý đã hứa ("bốn điểm")
+· câu mồi Index không đưa số "tin còn đang rao" (đang lẫn tin cũ, chờ Chú), từ kỳ 2027 dùng ảnh không in năm. Xem trước bằng `python3 tools/social_auto.py [YYYY-MM-DD]`. Luật "thêm mục `priority: 0`
 trong cùng commit" ở trên **không còn bắt buộc** (tin ≤ 21 ngày tự vào); vẫn viết tay khi muốn câu mồi riêng hoặc tin gấp (`now`).
 **Đính chính bài ĐÃ ĐĂNG (thêm 10/10/2026, ca thật: xã sửa số thu ngân sách sau khi bài đã lên 3 kênh):** workflow
 `social-fix.yml` (bấm tay; `tools/social-fix.py`). Facebook sửa thẳng đúng một câu (`fb_find` → `fb_replace`); không

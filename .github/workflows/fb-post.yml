@@ -50,6 +50,10 @@ jobs:
       # v5 từ 16/9/2026 — hết cảnh báo "Node 20 deprecated". Đã chạy thật
       # ở run #16: checkout 46 giây, thành công.
       - uses: actions/checkout@v5
+        with:
+          # đọc hàng đợi MỚI NHẤT lúc job bắt đầu, không phải ảnh chụp lúc run được tạo: run xếp hàng sau một run
+          # bấm tay, re-run, và job Threads đứng sau job Instagram phải thấy dấu vừa ghi (phản biện 27/11/2026)
+          ref: main
 
       - name: Đăng bài đến hạn
         env:

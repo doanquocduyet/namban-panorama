@@ -40,7 +40,9 @@ VN = datetime.timezone(datetime.timedelta(hours=7))
 FIELDS = ("posted", "posted_ig", "posted_threads")
 
 GAP_DAYS = 5          # một bài mỗi 5 ngày (Chú chốt 26/11/2026)
-NEWS_DAYS = 21        # tin xã cũ hơn thì không còn là "tin"
+NEWS_DAYS = 14        # tin xã cũ hơn thì không còn là "tin"
+EVENT_DAYS = 3        # tin mời/dự báo/sự kiện ("mấy hôm này", "dự báo"…) chỉ đăng trong 3 ngày sau ngày cuối
+STALE_DAYS = 120      # câu mồi có mốc "tính tới / giá … ngày d/m/yyyy" cũ hơn thì không tự đăng
 NEW_DAYS = 30         # bài mới đăng
 INDEX_QUIET = 14      # Index vừa đăng trong 14 ngày thì thôi
 SEASON_REPEAT = 300   # bài theo mùa: năm sau mới đăng lại
@@ -63,7 +65,18 @@ NO_AUTO = {
     "cay-xang-petro-moi-o-nam-ban": "tin cửa hàng xăng tháng 7, đã cũ",
     "doc-lo-dat-02-view-ho": "đọc một lô cụ thể với giá rao tháng 6, đã cũ",
     "brief-01": "số Brief theo kỳ", "brief-02": "số Brief theo kỳ", "brief-03": "số Brief theo kỳ",
+    # rà phản biện 27/11/2026
+    "ram-vu-lan-nam-ban": "bài sự kiện theo năm (rằm tháng Bảy 2026) — năm sau viết tay một mục khi trang đã cập nhật",
+    "trung-thu-nam-ban": "bài sự kiện theo năm (Trung thu 2026) — như trên",
+    "mua-dat-nam-ban": "ô trả lời nhanh còn khoảng giá giữa 2026, lệch Index",
+    "mua-dat-duong-gia-nam-ban": "ô trả lời nhanh còn khoảng giá không ghi kỳ, lệch Index",
+    "tiem-nang-dau-tu": "ô trả lời nhanh còn khoảng giá nửa đầu 2026, lệch Index",
+    "ocop-nam-ban": "câu mồi mở bằng tên thương hiệu sản phẩm (§5 kill-list luật 2)",
+    "nen-xem-khu-nao-o-nam-ban": "câu mồi dùng tên khu dự án làm mốc giới thiệu (§5 kill-list luật 2)",
+    "mot-ngay-o-nam-ban": "câu mồi có \"bài này\" — trên mạng đọc thành chính bài đăng",
 }
+# Năm bài "giá hiện tại" bộ sinh Index tự đổi số mỗi tuần (LIVE trong gen-index-history.py): câu mồi có giá/m² vẫn đúng kỳ.
+LIVE = {"hoi-nhanh", "dat-gan-da-lat", "dat-nam-ban-gia-re", "mua-dat-nam-ban-500-trieu-1-ty", "vung-ven-da-lat-nao-tot-nhat"}
 # Bài theo mùa → tháng (dương lịch) đáng đăng. Ngoài mùa thì nhóm E cũng không lấy.
 SEASON = {
     "mua-ca-phe-nam-ban": [2, 3, 10, 11, 12],   # mùa hoa 2–4 rộ tháng 3; thu hoạch 10→1, rộ 11–12
@@ -72,8 +85,6 @@ SEASON = {
     "ca-phe-nam-ban": [11, 12],
     "mua-bo-nam-ban": [5, 6, 9, 10, 11],        # bơ 034 rộ cuối 5 đầu 6; Booth 8–12
     "mua-mua-nam-ban": [5, 6, 7, 8],
-    "ram-vu-lan-nam-ban": [8],
-    "trung-thu-nam-ban": [9],
 }
 LABELS = [("tach_thua_150_300", "đất nền tách thửa 150–300 m²"), ("lo_500_tho_cu", "lô khoảng 500 m² có thổ cư"),
           ("dat_tren_1000", "đất trên 1.000 m²"), ("view", "lô có view hồ, đồi, toàn cảnh")]
@@ -173,7 +184,12 @@ def threads_text(lead, body, slug):
     room = THREADS_MAX - len("%s/%s" % (SITE, slug)) - 2
     head = (lead + "\n\n") if lead else ""
     t = fit(body, room - len(head))
+    if t and len(t) < len(" ".join(body.split())) and re.search(PROMISE, t, re.I):
+        t = None                      # bị cắt mà câu giữ lại hứa "bốn điểm / ba việc…" → không dùng
     return (head + t) if t else (fit(lead, room) or "")
+
+
+PROMISE = r"\b(hai|ba|bốn|năm|sáu|bảy|tám|chín|mười|\d+)\s+(điểm|thứ|việc|cách|bước|loại|chỗ|câu|điều|lý do|khoản)\b"
 
 
 # ------------------------------------------------------------------ đọc trang
@@ -226,7 +242,15 @@ def page_meta(slug):
     else:
         m = re.search(r'<div class="quick-answer">(.*?)</div>', s, re.S)
         if m:
-            qa = re.sub(r"^(Nếu hỏi nhanh|Hỏi nhanh|Trả lời nhanh)\s*:?\s*", "", clean(m.group(1)))
+            raw = m.group(1).strip()
+            # nhãn "Nếu hỏi nhanh:", "Hỏi nhanh.", "Nói ngắn gọn:"… nằm trong <strong> đầu khối → bỏ;
+            # nhãn là câu hỏi ("Nam Ban hay Lạc Dương?") thì giữ, vì nó chính là câu đang được trả lời
+            lm = re.match(r"<strong>(.*?)</strong>\s*", raw, re.S)
+            if lm and clean(lm.group(1)).endswith((":", ".")):
+                raw = raw[lm.end():]
+            qa = re.sub(r"^(Nếu hỏi nhanh|Hỏi nhanh|Trả lời nhanh|Nói ngắn gọn|Nếu chỉ cần câu trả lời ngắn)\s*[:.]?\s*",
+                        "", clean(raw))
+    qa = qa[:1].upper() + qa[1:]
     d = re.search(r'<meta name="description" content="([^"]*)"', s)
     return {"pub": pub, "mod": mod or pub, "news": news, "title": title, "qa": qa,
             "desc": clean(d.group(1)) if d else "",
@@ -242,6 +266,8 @@ def news_items():
     body = s[s.index('<div class="tl">'):]
     out = []
     for m in re.finditer(r'<div class="tl-item"([^>]*)>(.*?)\n    </div>', body, re.S):
+        if 'data-social="no"' in m.group(1):
+            continue
         inner = m.group(2)
         date = re.search(r'<div class="tl-date">(.*?)</div>', inner, re.S)
         title = re.search(r'<div class="tl-title">(.*?)</div>', inner, re.S)
@@ -263,7 +289,21 @@ def news_items():
             if href and not href.startswith("http") and os.path.exists(os.path.join(ROOT, href + ".html")):
                 home = href
                 ltxt = re.sub(r"^Đọc bài\s*[—–-]\s*", "", clean(link.group(2))).rstrip(" →").strip()
-        out.append((nd, clean(title.group(1)), clean(summ.group(1)), home, ltxt))
+        # câu nhắc sang bài khác ("Tôi viết riêng ở bài đất nguồn gốc lâm nghiệp.") mất thẻ <a> khi lên mạng,
+        # còn link dưới bài lại trỏ bài nhà → bỏ câu đó khỏi câu mồi
+        others = [clean(a.group(2)) for a in re.finditer(r'<a [^>]*href="([^"]+)"[^>]*>(.*?)</a>', summ.group(1), re.S)
+                  if a.group(1).split("#")[0].strip("/") != home]
+        text = clean(summ.group(1))
+        if others:
+            paras = []
+            for para in text.split("\n\n"):
+                keep = [x for x in sentences(para) if not any(o and o in x for o in others)] if "\n" not in para else (
+                    [para] if not any(o and o in para for o in others) else [])
+                if keep:
+                    paras.append(" ".join(keep))
+            text = "\n\n".join(paras)
+        if text:
+            out.append((nd, clean(title.group(1)), text, home, ltxt))
     return out
 
 
@@ -287,11 +327,12 @@ def article_entry(slug, today, prio, tier, note):
     body = fit_paras(src, 1200) if src else None
     if not body:
         return None
-    th = threads_text("", src, slug)
-    if not th or len(th) < 80:
-        th = threads_text("", m["desc"], slug) or th
-    return _entry(slug, "%s#%s-auto" % (slug, today.isoformat()), today, prio, tier, note,
-                  m["title"], body, th, m["title"])
+    th = threads_text(m["title"], src, slug)
+    if not th or th == fit(m["title"], THREADS_MAX):
+        th = threads_text(m["title"], m["desc"], slug) or th
+    # khoá KHÔNG gắn ngày chọn: hai kênh chọn cùng bài ở hai phía nửa đêm (cron trễ) vẫn ra cùng một khoá
+    key = "%s#mua-%d" % (slug, today.year) if tier == "D-mua" else "%s#auto" % slug
+    return _entry(slug, key, today, prio, tier, note, m["title"], body, th, m["title"])
 
 
 def ascii_slug(text, words=4):
@@ -331,10 +372,8 @@ def index_entry(today):
     if len(parts) < 3:
         return None
     mo, yy = ky.split("/")
-    nums = "Trung vị giá rao, triệu đồng/m²: " + " · ".join(parts) + "."
-    if st.get("n_tin"):
-        nums += " Ngày %s có %s tin đất còn đang rao." % (dfull, st["n_tin"])
-    paras = [nums]
+    # Không đưa số "tin còn đang rao": mốc nền đang lẫn tin cũ của một nguồn (CLAUDE.md, chờ Chú quyết).
+    paras = ["Trung vị giá rao, triệu đồng/m²: " + " · ".join(parts) + "."]
     s = read("namban-index")
     h2 = "Tín hiệu thị trường đất Nam Ban tháng %s" % ky
     for m in re.finditer(r'<h2[^>]*>((?:(?!</h2>).)*)</h2>\s*<div class="signal-now">\s*<p>(.*?)</p>', s, re.S):
@@ -353,23 +392,42 @@ def index_entry(today):
                "Tự chọn: Nam Ban Index sang kỳ tháng %s." % ky, title, "\n\n".join(paras), th,
                "Giá đất Nam Ban hôm nay")
     e["message"] = e["message"].replace(TAGS, TAGS + " #GiaDatNamBan")
+    if yy != "2026":                  # ảnh og của Index in chữ "Giá đất Nam Ban 2026"
+        e["image"] = "/images/nam-ban-toan-canh-og.jpg"
     return e
 
 
 def candidates(queue, today):
     """Sinh mục tự chọn theo thứ tự ưu tiên A → E (lười: chỉ dựng tới khi có mục qua kiểm)."""
     keys = {key_of(p) for p in queue}
+    # trang đang có mục viết tay chờ tới hẹn → không tự chọn trang đó (tránh đăng hai lần cách nhau vài ngày)
+    pending = {p.get("slug") for p in queue if not p.get("auto") and not any(p.get(f) for f in FIELDS)}
 
     def since(slug, d0):
         return any(d >= d0 for d in slug_posts(queue, slug))
 
+    def covered(it):
+        """Tin đã lên mạng chưa: đúng khoá tin, hoặc bài nhà đã đăng (bằng mục không phải tin tự chọn) từ ngày tin,
+        hoặc mục viết tay cũ cho tin đó (khoá chứa ngày tin)."""
+        nd, home = it[0], it[3]
+        if news_key(it) in keys:
+            return True
+        for p in queue:
+            if p.get("slug") != home or p.get("auto") == "A-tin":
+                continue
+            if not any(d and d >= nd for d in (posted_on(p, f) for f in FIELDS)):
+                continue
+            if home != "nam-ban-co-gi-moi" or nd.isoformat() in str(p.get("key") or ""):
+                return True
+        return False
+
     # A — tin xã mới
     for it in news_items():
         nd, home = it[0], it[3]
-        if (today - nd).days > NEWS_DAYS or nd > today:
+        if (today - nd).days > NEWS_DAYS or nd > today or home in pending or covered(it):
             continue
-        if since(home, nd) or since("nam-ban-co-gi-moi", nd) or news_key(it) in keys:
-            continue
+        if (today - nd).days > EVENT_DAYS and re.search(EVENT_WORDS, it[1] + " " + it[2], re.I):
+            continue                  # tin mời / dự báo / sự kiện đã qua
         e = news_entry(it, today)
         if e:
             yield e
@@ -386,34 +444,66 @@ def candidates(queue, today):
         m = page_meta(slug)
         if m and m["vi"] and not m["noindex"] and m["pub"]:
             pages[slug] = m
-    never = {s: m for s, m in pages.items() if not slug_posts(queue, s)}
+    never = {s: m for s, m in pages.items() if not slug_posts(queue, s) and s not in pending}
     in_season = lambda s: s not in SEASON or today.month in SEASON[s]
     for s, m in sorted(never.items(), key=lambda x: (x[1]["pub"], x[0]), reverse=True):
         if (today - m["pub"]).days <= NEW_DAYS and in_season(s):
             e = article_entry(s, today, 1, "C-moi", "Tự chọn: bài mới đăng %s, chưa lên mạng xã hội."
                               % m["pub"].strftime("%-d/%-m/%Y"))
-            if e:
+            if e and good(e, today):
                 yield e
     # Bài theo mùa xen với bài khác: lượt trước đã là bài mùa (trong 2 nhịp gần nhất) thì lượt này nhường nhóm E,
     # để tháng 12 không ra bốn bài cà phê liền nhau.
     recent_d = any(p.get("auto") == "D-mua" and any(d and (today - d).days < 2 * GAP_DAYS
                                                     for d in (posted_on(p, f) for f in FIELDS)) for p in queue)
     for s in ([] if recent_d else SEASON):
-        if s in pages and today.month in SEASON[s]:
+        if s in pages and s not in pending and today.month in SEASON[s]:
             last = max(slug_posts(queue, s), default=None)
-            if last is None or (today - last).days >= SEASON_REPEAT:
+            # đăng lại năm sau chỉ khi trang đã được làm mới sau lần đăng trước (không đăng lại số của năm cũ)
+            if last is None or ((today - last).days >= SEASON_REPEAT and pages[s]["mod"] > last):
                 e = article_entry(s, today, 2, "D-mua", "Tự chọn: bài đúng mùa (tháng %d)." % today.month)
-                if e:
+                if e and good(e, today):
                     yield e
     for s, m in sorted(never.items(), key=lambda x: (x[1]["mod"], x[1]["pub"], x[0]), reverse=True):
-        if not in_season(s):
+        if s in SEASON:               # bài theo mùa chỉ đi đường D, để luật xen kẽ còn tác dụng
             continue
         if m["news"] and (today - m["pub"]).days > STALE_NEWS_DAYS:
             continue
         e = article_entry(s, today, 5, "E-chua-dang", "Tự chọn: bài chưa từng lên mạng xã hội, sửa gần nhất %s."
                           % m["mod"].strftime("%-d/%-m/%Y"))
-        if e:
+        if e and good(e, today):
             yield e
+
+
+EVENT_WORDS = r"dự báo|mấy hôm này|mấy ngày này|sẽ diễn ra|cứ ghé|xin mời|mời bà con"
+DATE_AT = re.compile(r"(?:tính tới|tính đến|tới ngày|đến ngày|đo tới|ghi nhận|cập nhật|tới|đến)\s+(?:ngày\s+)?"
+                     r"(\d{1,2})/(\d{1,2})/(20\d\d)", re.I)
+PRICE_AT = re.compile(r"giá[^.]{0,60}?(?:ngày|tháng)\s+(?:(\d{1,2})/)?(\d{1,2})/(20\d\d)", re.I)
+# trang có giá/m² nhưng giá đó còn hiệu lực tới một ngày biết trước (bảng giá nhà nước theo năm)
+PRICE_OK_UNTIL = {"bang-gia-dat-nam-ban": datetime.date(2026, 12, 31)}
+PER_M2 = re.compile(r"(?:tr|triệu)\s*(?:đồng\s*)?/\s*m(?:²|2)", re.I)
+
+
+def good(e, today):
+    """Chốt chất lượng cho câu mồi bài (C/D/E), rút từ vòng phản biện 27/11/2026."""
+    text = e["message"] + "\n" + e["threads"]
+    body = e["message"].split("\n\n")[1] if "\n\n" in e["message"] else ""
+    if re.search(r"\bbài này\b", text, re.I):
+        print("  (bỏ /%s — câu mồi có 'bài này')" % e["slug"]); return False
+    if not body[:1].isupper() and not body[:1].isdigit():
+        print("  (bỏ /%s — câu mồi không mở bằng chữ hoa)" % e["slug"]); return False
+    if e["slug"] not in LIVE and PER_M2.search(text) and today > PRICE_OK_UNTIL.get(e["slug"], datetime.date.min):
+        print("  (bỏ /%s — câu mồi có giá theo m² không tự cập nhật)" % e["slug"]); return False
+    for rx in (DATE_AT, PRICE_AT):
+        for m in rx.finditer(text):
+            d, mo, y = m.group(1), m.group(2), m.group(3)
+            try:
+                dt = datetime.date(int(y), int(mo), int(d) if d else 28)
+            except ValueError:
+                continue
+            if (today - dt).days > STALE_DAYS:
+                print("  (bỏ /%s — mốc '%s' đã cũ)" % (e["slug"], m.group(0)[:40])); return False
+    return True
 
 
 # ------------------------------------------------------------------ chọn
@@ -433,14 +523,18 @@ def pick(queue, field, force=False, ok=lambda p: True, today=None):
         ds = [d for d in (posted_on(p, f) for f in others) if d]
         return min(ds) if ds else None
 
+    recent = {p.get("slug") for p in queue if posted_on(p, field)
+              and (today - posted_on(p, field)).days < 2 * GAP_DAYS}
     catch = [p for p in queue if not p.get(field) and other_day(p)
-             and (today - other_day(p)).days <= GAP_DAYS]
+             and (today - other_day(p)).days <= GAP_DAYS
+             and ("-tin-" in str(p.get("key") or "") or p.get("slug") not in recent)]
     if catch:
         p = sorted(catch, key=other_day)[0]
         return p, "bắt kịp: /%s đã lên kênh khác ngày %s" % (p.get("slug"), other_day(p))
 
     t = today.isoformat()
-    due = sorted([p for p in queue if not p.get(field) and str(p.get("date") or "9999") <= t],
+    # mục tự chọn của kênh khác chỉ sang kênh này qua đường bắt kịp (≤ GAP_DAYS); quá hạn thì bỏ, không đăng bù
+    due = sorted([p for p in queue if not p.get(field) and not p.get("auto") and str(p.get("date") or "9999") <= t],
                  key=lambda p: (p.get("priority", 5), str(p.get("date") or "9999")))
     urgent = [p for p in due if p.get("now")]
     if urgent:
